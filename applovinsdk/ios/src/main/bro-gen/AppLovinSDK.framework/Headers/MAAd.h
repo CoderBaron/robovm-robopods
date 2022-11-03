@@ -92,6 +92,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) MAAdWaterfallInfo *waterfall;
 
 /**
+ * The latency of the mediation ad load request in seconds.
+ */
+@property (nonatomic, assign, readonly) NSTimeInterval requestLatency;
+
+/**
  * For Native ads only. Get an instance of the @c MANativeAd containing the assets used to render the native ad view.
  */
 @property (nonatomic, strong, readonly, nullable) MANativeAd *nativeAd;

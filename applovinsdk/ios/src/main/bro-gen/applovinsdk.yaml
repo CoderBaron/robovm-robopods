@@ -357,6 +357,8 @@ classes:
         methods:
             '-initWithFormat:builderBlock:':
                 name: init
+            '-prepareForInteractionClickableViews:withContainer:':
+                name: prepareForInteractionClickableViews
     MANativeAdBuilder: {}
     MANativeAdImage:
         methods:

@@ -16,20 +16,24 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ALCMessage : NSNotification
 
 /**
- * Convenience property for retrieving the raw data of the message. This will also be available via the "data" key of the @c userInfo property.
+ * The unique id of the message.
  */
-@property (nonatomic, strong, readonly) NSDictionary<NSString *, id> *data;
+@property (nonatomic, copy, readonly) NSString *uniqueIdentifier;
 
 /**
- * Convenience property for retrieving the topic of the message. This will also be available via the "topic" key of the @c userInfo property.
- * A full list of supported topics may be found in ALCTopic.h.
+ * The topic of the message.  A full list of supported topics may be found in ALCTopic.h.
  */
 @property (nonatomic, copy, readonly) NSString *topic;
 
 /**
- * Convenience method for retrieving the id of the publisher of the message. This will also be available via the "pub_id" key of the @c userInfo property.
+ * The id of the publisher of the message.
  */
 @property (nonatomic, copy, readonly) NSString *publisherIdentifier;
+
+/**
+ * The raw data of the message. 
+ */
+@property (nonatomic, copy, readonly) NSDictionary<NSString *, id> *data;
 
 /**
  * Initialize a message with data in a pre-determined format for a given topic.

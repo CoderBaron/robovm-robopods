@@ -50,12 +50,16 @@ import org.robovm.apple.coreanimation.*;
     protected ALSdkConfiguration(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "consentDialogState")
-    public native ALConsentDialogState getConsentDialogState();
     @Property(selector = "countryCode")
     public native String getCountryCode();
     @Property(selector = "appTrackingTransparencyStatus")
     public native ALAppTrackingTransparencyStatus getAppTrackingTransparencyStatus();
+    /**
+     * @deprecated This API has been deprecated and will be removed in a future release.
+     */
+    @Deprecated
+    @Property(selector = "consentDialogState")
+    public native ALConsentDialogState getConsentDialogState();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

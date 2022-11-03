@@ -72,6 +72,8 @@ import org.robovm.apple.coreanimation.*;
     public native String getPlacement();
     @Property(selector = "waterfall")
     public native MAAdWaterfallInfo getWaterfall();
+    @Property(selector = "requestLatency")
+    public native double getRequestLatency();
     @Property(selector = "nativeAd")
     public native MANativeAd getNativeAd();
     @Property(selector = "DSPName")

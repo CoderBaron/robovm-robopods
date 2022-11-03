@@ -66,6 +66,10 @@ import org.robovm.apple.coreanimation.*;
     public native MAAdRequestDelegate getRequestDelegate();
     @Property(selector = "setRequestDelegate:", strongRef = true)
     public native void setRequestDelegate(MAAdRequestDelegate v);
+    @Property(selector = "adReviewDelegate")
+    public native MAAdReviewDelegate getAdReviewDelegate();
+    @Property(selector = "setAdReviewDelegate:", strongRef = true)
+    public native void setAdReviewDelegate(MAAdReviewDelegate v);
     @Property(selector = "adUnitIdentifier")
     public native String getAdUnitIdentifier();
     @Property(selector = "isReady")

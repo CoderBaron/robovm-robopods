@@ -51,12 +51,14 @@ import org.robovm.apple.coreanimation.*;
     public ALCMessage(NSDictionary<NSString, ?> data, String topic, ALCPublisher publisher) { super((SkipInit) null); initObject(init(data, topic, publisher)); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "data")
-    public native NSDictionary<NSString, ?> getData();
+    @Property(selector = "uniqueIdentifier")
+    public native String getUniqueIdentifier();
     @Property(selector = "topic")
     public native String getTopic();
     @Property(selector = "publisherIdentifier")
     public native String getPublisherIdentifier();
+    @Property(selector = "data")
+    public native NSDictionary<NSString, ?> getData();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

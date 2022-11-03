@@ -70,7 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSTimeInterval)al_timeIntervalNow;
 @end
 
-@interface UIImageView (ALUtils)
+@interface UIImageView (ALSdk)
 - (void)al_setImageWithURL:(NSURL *)URL;
 @end
 

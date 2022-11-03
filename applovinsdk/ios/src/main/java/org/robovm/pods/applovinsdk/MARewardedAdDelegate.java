@@ -49,12 +49,20 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "didStartRewardedVideoForAd:")
-    void didStartRewardedVideoForAd(MAAd ad);
-    @Method(selector = "didCompleteRewardedVideoForAd:")
-    void didCompleteRewardedVideoForAd(MAAd ad);
     @Method(selector = "didRewardUserForAd:withReward:")
     void didRewardUser(MAAd ad, MAReward reward);
+    /**
+     * @deprecated This API is deprecated because not all adapters support this callback. Please use -[MAAdDelegate didDisplayAd:] instead
+     */
+    @Deprecated
+    @Method(selector = "didStartRewardedVideoForAd:")
+    void didStartRewardedVideoForAd(MAAd ad);
+    /**
+     * @deprecated This function is deprecated because not all adapters support this callback. Please use -[MAAdDelegate didHideAd:] instead
+     */
+    @Deprecated
+    @Method(selector = "didCompleteRewardedVideoForAd:")
+    void didCompleteRewardedVideoForAd(MAAd ad);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

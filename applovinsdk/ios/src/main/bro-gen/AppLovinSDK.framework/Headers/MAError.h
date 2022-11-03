@@ -41,6 +41,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong, readonly, nullable) MAAdWaterfallInfo *waterfall;
 
+/**
+ * The latency of the mediation ad load request in seconds.
+ */
+@property (nonatomic, assign, readonly) NSTimeInterval requestLatency;
+
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)new NS_UNAVAILABLE;
 

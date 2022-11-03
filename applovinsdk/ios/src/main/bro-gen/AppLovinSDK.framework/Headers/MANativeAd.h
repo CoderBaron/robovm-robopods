@@ -48,6 +48,9 @@ typedef void (^MANativeAdBuilderBlock) (MANativeAdBuilder *builder);
 
 @end
 
+/**
+ * Represents a native ad to be rendered for an instance of a @c MAAd.
+ */
 @interface MANativeAd : NSObject
 
 /**
@@ -82,7 +85,8 @@ typedef void (^MANativeAdBuilderBlock) (MANativeAdBuilder *builder);
 
 /**
  * The native ad icon image view.
- * Note: This is only used for banners using native APIs. Native ads must provide a `MANativeAdImage` instead.
+ *
+ * This is only used for banners using native APIs. Native ads must provide a  `MANativeAdImage` instead.
  */
 @property (nonatomic, strong, readonly, nullable) UIView *iconView;
 
@@ -135,7 +139,18 @@ typedef void (^MANativeAdBuilderBlock) (MANativeAdBuilder *builder);
  *
  * @param nativeAdView a rendered native ad view.
  */
-- (void)prepareViewForInteraction:(MANativeAdView *)nativeAdView;
+- (void)prepareViewForInteraction:(MANativeAdView *)nativeAdView __deprecated_msg("This method has been deprecated and will be removed in a future SDK version. Please use -[MANativeAd prepareForInteractionClickableViews:withContainer:] instead.");
+
+/**
+ * This method is called before the ad view is returned to the publisher.
+ * The adapters should override this method to register the rendered native ad view and make sure that the view is interactable.
+ *
+ * @param clickableViews The clickable views for the native ad.
+ * @param container The container for the native ad.
+ *
+ * @return @c YES if the call has been successfully handled by a subclass of @c MANativeAd.
+ */
+- (BOOL)prepareForInteractionClickableViews:(NSArray<UIView *> *)clickableViews withContainer:(UIView *)container;
 
 - (instancetype)initWithFormat:(MAAdFormat *)format builderBlock:(NS_NOESCAPE MANativeAdBuilderBlock)builderBlock;
 - (instancetype)init NS_UNAVAILABLE;

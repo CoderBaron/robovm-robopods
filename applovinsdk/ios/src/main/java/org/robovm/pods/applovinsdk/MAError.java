@@ -60,6 +60,8 @@ import org.robovm.apple.coreanimation.*;
     public native String getMediatedNetworkErrorMessage();
     @Property(selector = "waterfall")
     public native MAAdWaterfallInfo getWaterfall();
+    @Property(selector = "requestLatency")
+    public native double getRequestLatency();
     /**
      * @deprecated This property is deprecated and removed in a future SDK version. Please use `-[MAError code]` instead.
      */
