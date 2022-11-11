@@ -49,7 +49,7 @@ v1.27.0 - in development
 | [BranchMetrics](branchmetrics/) | 1.43.2  |
 | [Charts](charts/)               | 4.1.0   |
 | [ClearAds](clearads/)           | 2.9.3   |
-| [Facebook](facebook/)           | 15.0.0  |
+| [Facebook](facebook/)           | 15.1.0  |
 | [Firebase](firebase/)           | 10.0.0  |
 | [Flurry](flurry/)               | 11.2.1  |
 | [Fyber](fyber/)                 | 8.1.6   |

@@ -52,7 +52,8 @@ import org.robovm.pods.facebook.corebasics.*;
     protected FBSDKAppLinkTarget() {}
     protected FBSDKAppLinkTarget(Handle h, long handle) { super(h, handle); }
     protected FBSDKAppLinkTarget(SkipInit skipInit) { super(skipInit); }
-    public FBSDKAppLinkTarget(NSURL url, String appStoreId, String appName) { super((Handle) null, create(url, appStoreId, appName)); retain(getHandle()); }
+    @Method(selector = "initWithURL:appStoreId:appName:")
+    public FBSDKAppLinkTarget(NSURL url, String appStoreId, String appName) { super((SkipInit) null); initObject(init(url, appStoreId, appName)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "URL")
@@ -64,7 +65,7 @@ import org.robovm.pods.facebook.corebasics.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "appLinkTargetWithURL:appStoreId:appName:")
-    protected static native @Pointer long create(NSURL url, String appStoreId, String appName);
+    @Method(selector = "initWithURL:appStoreId:appName:")
+    protected native @Pointer long init(NSURL url, String appStoreId, String appName);
     /*</methods>*/
 }

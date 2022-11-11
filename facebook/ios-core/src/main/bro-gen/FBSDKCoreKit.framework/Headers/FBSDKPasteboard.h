@@ -8,21 +8,25 @@
 
 #if !TARGET_OS_TV
 
-#import <FBSDKCoreKit/FBSDKAppLinkResolverRequestBuilding.h>
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- Internal Protocol exposed to facilitate transition to Swift.
+ Internal protocol exposed to facilitate transition to Swift.
  API Subject to change or removal without warning. Do not use.
 
  @warning INTERNAL - DO NOT USE
- 
- Class responsible for generating the appropriate FBSDKGraphRequest for a given set of urls
  */
-NS_SWIFT_NAME(_AppLinkResolverRequestBuilder)
-@interface FBSDKAppLinkResolverRequestBuilder : NSObject <FBSDKAppLinkResolverRequestBuilding>
+NS_SWIFT_NAME(_Pasteboard)
+@protocol FBSDKPasteboard
+
+@property (nonatomic, readonly) NSString *name;
+
+@property (nonatomic, readonly) BOOL _isGeneralPasteboard;
+
+- (nullable NSData *)dataForPasteboardType:(NSString *)pasteboardType;
+- (void)setData:(NSData *)data forPasteboardType:(NSString *)pasteboardType;
 
 @end
 

@@ -8,20 +8,18 @@
 
 #if !TARGET_OS_TV
 
+#import <FBSDKCoreKit/FBSDKAppLinkNavigationType.h>
 #import <Foundation/Foundation.h>
-
-@class FBSDKAppLink;
 
 NS_ASSUME_NONNULL_BEGIN
 
 /**
  Describes the callback for appLinkFromURLInBackground.
- @param appLinks the FBSDKAppLinks representing the deferred App Links
+ @param navType the FBSDKAppLink representing the deferred App Link
  @param error the error during the request, if any
  */
-typedef void (^ FBSDKAppLinksBlock)(NSDictionary<NSURL *, FBSDKAppLink *> *appLinks,
-  NSError *_Nullable error)
-NS_SWIFT_NAME(AppLinksBlock);
+typedef void (^ FBSDKAppLinkNavigationBlock)(FBSDKAppLinkNavigationType navType, NSError *_Nullable error)
+NS_SWIFT_NAME(AppLinkNavigationBlock);
 
 NS_ASSUME_NONNULL_END
 

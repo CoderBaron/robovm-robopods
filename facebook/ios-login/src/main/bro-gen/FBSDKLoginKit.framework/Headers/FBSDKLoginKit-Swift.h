@@ -743,6 +743,7 @@ SWIFT_CLASS_NAMED("LoginManager")
 @class UIApplication;
 
 @interface FBSDKLoginManager (SWIFT_EXTENSION(FBSDKLoginKit)) <FBSDKURLOpening>
++ (FBSDKLoginManager * _Nonnull)makeOpener SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)application:(UIApplication * _Nullable)application openURL:(NSURL * _Nullable)url sourceApplication:(NSString * _Nullable)sourceApplication annotation:(id _Nullable)annotation SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)canOpenURL:(NSURL * _Nonnull)url forApplication:(UIApplication * _Nullable)application sourceApplication:(NSString * _Nullable)sourceApplication annotation:(id _Nullable)annotation SWIFT_WARN_UNUSED_RESULT;
 - (void)applicationDidBecomeActive:(UIApplication * _Nonnull)application;

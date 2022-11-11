@@ -43,7 +43,7 @@ import org.robovm.pods.facebook.corebasics.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKProfile/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements NSSecureCoding, FBSDKProfileProviding/*</implements>*/ {
+    /*<implements>*/implements FBSDKProfileProviding, NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKProfilePtr extends Ptr<FBSDKProfile, FBSDKProfilePtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKProfile.class); }/*</bind>*/
@@ -54,18 +54,14 @@ import org.robovm.pods.facebook.corebasics.*;
     protected FBSDKProfile(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:")
     public FBSDKProfile(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate) { super((SkipInit) null); initObject(init(userID, firstName, middleName, lastName, name, linkURL, refreshDate)); }
-    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:hometown:location:gender:isLimited:")
-    public FBSDKProfile(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email, NSArray<NSString> friendIDs, NSDate birthday, FBSDKUserAgeRange ageRange, FBSDKLocation hometown, FBSDKLocation location, String gender, boolean isLimited) { super((SkipInit) null); initObject(init(userID, firstName, middleName, lastName, name, linkURL, refreshDate, imageURL, email, friendIDs, birthday, ageRange, hometown, location, gender, isLimited)); }
     @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:hometown:location:gender:")
     public FBSDKProfile(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email, NSArray<NSString> friendIDs, NSDate birthday, FBSDKUserAgeRange ageRange, FBSDKLocation hometown, FBSDKLocation location, String gender) { super((SkipInit) null); initObject(init(userID, firstName, middleName, lastName, name, linkURL, refreshDate, imageURL, email, friendIDs, birthday, ageRange, hometown, location, gender)); }
+    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:hometown:location:gender:isLimited:")
+    public FBSDKProfile(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email, NSArray<NSString> friendIDs, NSDate birthday, FBSDKUserAgeRange ageRange, FBSDKLocation hometown, FBSDKLocation location, String gender, boolean isLimited) { super((SkipInit) null); initObject(init(userID, firstName, middleName, lastName, name, linkURL, refreshDate, imageURL, email, friendIDs, birthday, ageRange, hometown, location, gender, isLimited)); }
     @Method(selector = "initWithCoder:")
     public FBSDKProfile(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "currentProfile")
-    public static native FBSDKProfile getCurrentProfile();
-    @Property(selector = "setCurrentProfile:")
-    public static native void setCurrentProfile(FBSDKProfile v);
     @Property(selector = "userID")
     public native String getUserID();
     @Property(selector = "firstName")
@@ -96,8 +92,6 @@ import org.robovm.pods.facebook.corebasics.*;
     public native FBSDKLocation getLocation();
     @Property(selector = "gender")
     public native String getGender();
-    @Property(selector = "supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -115,23 +109,35 @@ import org.robovm.pods.facebook.corebasics.*;
     
     @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:")
     protected native @Pointer long init(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate);
-    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:hometown:location:gender:isLimited:")
-    protected native @Pointer long init(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email, NSArray<NSString> friendIDs, NSDate birthday, FBSDKUserAgeRange ageRange, FBSDKLocation hometown, FBSDKLocation location, String gender, boolean isLimited);
     @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:hometown:location:gender:")
     protected native @Pointer long init(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email, NSArray<NSString> friendIDs, NSDate birthday, FBSDKUserAgeRange ageRange, FBSDKLocation hometown, FBSDKLocation location, String gender);
-    @Method(selector = "imageURLForPictureMode:size:")
-    public native NSURL getImageURL(FBSDKProfilePictureMode mode, @ByVal CGSize size);
-    @Method(selector = "isEqualToProfile:")
-    public native boolean isEqualToProfile(FBSDKProfile profile);
+    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:hometown:location:gender:isLimited:")
+    protected native @Pointer long init(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email, NSArray<NSString> friendIDs, NSDate birthday, FBSDKUserAgeRange ageRange, FBSDKLocation hometown, FBSDKLocation location, String gender, boolean isLimited);
+    @Method(selector = "isUpdatedWithAccessTokenChange")
+    public static native boolean isUpdatedWithAccessTokenChange();
+    @Method(selector = "setIsUpdatedWithAccessTokenChange:")
+    public static native void setIsUpdatedWithAccessTokenChange(boolean value);
+    /**
+     * @deprecated This method is deprecated and will be removed in the next major release. Use `isUpdatedWithAccessTokenChange` instead.
+     */
+    @Deprecated
     @Method(selector = "enableUpdatesOnAccessTokenChange:")
-    public static native void enableUpdatesOnAccessTokenChange(boolean enable);
-    @Method(selector = "loadCurrentProfileWithCompletion:")
-    public static native void loadCurrentProfile(@Block VoidBlock2<FBSDKProfile, NSError> completion);
-    @Method(selector = "encodeWithCoder:")
-    public native void encode(NSCoder coder);
-    @Method(selector = "initWithCoder:")
-    protected native @Pointer long init(NSCoder coder);
+    public static native void enableUpdatesOnAccessTokenChange(boolean enabled);
+    @Method(selector = "imageURLForPictureMode:size:")
+    public native NSURL getImageURL(FBSDKProfilePictureMode pictureMode, @ByVal CGSize size);
+    @Method(selector = "currentProfile")
+    public static native FBSDKProfile currentProfile();
+    @Method(selector = "setCurrentProfile:")
+    public static native void setCurrentProfile(FBSDKProfile newValue);
     @Method(selector = "fetchCachedProfile")
     public static native FBSDKProfile fetchCachedProfile();
+    @Method(selector = "initWithCoder:")
+    protected native @Pointer long init(NSCoder coder);
+    @Method(selector = "encodeWithCoder:")
+    public native void encode(NSCoder coder);
+    @Method(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+    @Method(selector = "loadCurrentProfileWithCompletion:")
+    public static native void loadCurrentProfile(@Block VoidBlock2<FBSDKProfile, NSError> completion);
     /*</methods>*/
 }

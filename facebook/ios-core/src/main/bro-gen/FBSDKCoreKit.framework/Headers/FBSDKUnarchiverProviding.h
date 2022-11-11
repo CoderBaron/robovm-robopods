@@ -6,9 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-#if !TARGET_OS_TV
-
-#import <FBSDKCoreKit/FBSDKAppLinkURLCreating.h>
+#import <FBSDKCoreKit/FBSDKObjectDecoding.h>
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -19,11 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 
  @warning INTERNAL - DO NOT USE
  */
-NS_SWIFT_NAME(_AppLinkURLFactory)
-@interface FBSDKAppLinkURLFactory : NSObject <FBSDKAppLinkURLCreating>
+@protocol FBSDKUnarchiverProviding <NSObject>
+
++ (nonnull id<FBSDKObjectDecoding>)createSecureUnarchiverFor:(NSData *)data;
++ (nonnull id<FBSDKObjectDecoding>)createInsecureUnarchiverFor:(NSData *)data;
 
 @end
 
 NS_ASSUME_NONNULL_END
-
-#endif

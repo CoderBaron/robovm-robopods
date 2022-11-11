@@ -6,21 +6,14 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+#import <Foundation/Foundation.h>
+
 #if !TARGET_OS_TV
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class FBSDKProfile;
-
-NS_SWIFT_NAME(ProfileProviding)
-@protocol FBSDKProfileProviding
-
-@property (class, nullable, nonatomic, strong) FBSDKProfile *currentProfile
-NS_SWIFT_NAME(current);
-
-+ (nullable FBSDKProfile *)fetchCachedProfile;
-
-@end
+/// A unique identifier for an end user.
+typedef NSString *FBSDKUserIdentifier NS_SWIFT_NAME(UserIdentifier) NS_SWIFT_BRIDGED_TYPEDEF;
 
 NS_ASSUME_NONNULL_END
 

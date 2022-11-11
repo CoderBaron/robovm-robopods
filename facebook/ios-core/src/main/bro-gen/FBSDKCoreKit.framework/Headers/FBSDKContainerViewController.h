@@ -6,12 +6,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-#import <Foundation/Foundation.h>
+#if !TARGET_OS_TV
+
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class FBSDKAccessToken;
-@class FBSDKAuthenticationToken;
+@class FBSDKContainerViewController;
 
 /**
  Internal Type exposed to facilitate transition to Swift.
@@ -19,8 +20,12 @@ NS_ASSUME_NONNULL_BEGIN
 
  @warning INTERNAL - DO NOT USE
  */
-NS_SWIFT_NAME(TokenCaching)
-@protocol FBSDKTokenCaching
+NS_SWIFT_NAME(_ContainerViewControllerDelegate)
+@protocol FBSDKContainerViewControllerDelegate <NSObject>
+
+- (void)viewControllerDidDisappear:(FBSDKContainerViewController *)viewController animated:(BOOL)animated;
+
+@end
 
 /**
  Internal Type exposed to facilitate transition to Swift.
@@ -28,16 +33,15 @@ NS_SWIFT_NAME(TokenCaching)
 
  @warning INTERNAL - DO NOT USE
  */
-@property (nullable, nonatomic, copy) FBSDKAccessToken *accessToken;
+NS_SWIFT_NAME(_ContainerViewController)
+@interface FBSDKContainerViewController : UIViewController
 
-/**
- Internal Type exposed to facilitate transition to Swift.
- API Subject to change or removal without warning. Do not use.
+@property (nullable, nonatomic, weak) id<FBSDKContainerViewControllerDelegate> delegate;
 
- @warning INTERNAL - DO NOT USE
- */
-@property (nullable, nonatomic, copy) FBSDKAuthenticationToken *authenticationToken;
+- (void)displayChildController:(UIViewController *)childController;
 
 @end
 
 NS_ASSUME_NONNULL_END
+
+#endif

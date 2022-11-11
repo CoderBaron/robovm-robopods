@@ -10,7 +10,9 @@ include:
     - storekit
     - ../../../../ios-core-basics/src/main/bro-gen/facebook-core-basics.yaml
 clang_args: ['-x', 'objective-c', '-fobjc-arc', '-Ffacebook/ios-aem/src/main/bro-gen/']
-headers: 
+headers:
+    - "#import <SafariServices/SafariServices.h>"
+    - "#import <AuthenticationServices/AuthenticationServices.h>"
     - FBSDKCoreKit.h
     - FBSDKCoreKit-Swift.h
 
@@ -189,16 +191,21 @@ classes:
     FBSDKAppLink:
         methods:
             '+appLinkWithSourceURL:targets:webURL:':
-                name: create
-                constructor: true
+                exclude: true
+            '-initWithSourceURL:targets:webURL:':
+                name: init
+            '-initWithSourceURL:targets:webURL:isBackToReferrer:':
+                name: init
     FBSDKAppLinkNavigation:
         methods:
+            '-initWithAppLink:extras:appLinkData:':
+                name: init
+            '-initWithAppLink:extras:appLinkData:settings:':
+                name: init
             '+navigationWithAppLink:extras:appLinkData:':
-                name: create
-                constructor: true
+                exclude: true
             '+navigationWithAppLink:extras:appLinkData:settings:':
-                name: create
-                constructor: true
+                exclude: true
             '+callbackAppLinkDataForAppWithName:url:':
                 name: getCallbackAppLinkData
             '+resolveAppLink:handler:':
@@ -225,8 +232,9 @@ classes:
     FBSDKAppLinkTarget:
         methods:
             '+appLinkTargetWithURL:appStoreId:appName:':
-                name: create
-                constructor: true
+                exclude: true
+            '-initWithURL:appStoreId:appName:':
+                name: init
     FBSDKAppLinkUtility:
         methods:
             '+configureWithGraphRequestFactory:infoDictionaryProvider:settings:appEventsConfigurationProvider:advertiserIDProvider:appEventsDropDeterminer:appEventParametersExtractor:appLinkURLFactory:userIDProvider:userDataStore:':
@@ -350,6 +358,8 @@ classes:
                 exclude: true #INTERNAL - DO NOT USE
             '+configureWithDataStore:accessTokenProvider:notificationCenter:settings:urlHoster:':
                 exclude: true #INTERNAL - DO NOT USE
+            '+setIsUpdatedWithAccessTokenChange:':
+                name: setIsUpdatedWithAccessTokenChange
     FBSDKProfilePictureView:
         methods:
             '-initWithFrame:profile:':
@@ -360,42 +370,16 @@ classes:
                 name: init
     FBSDKSettings:
         properties:
-            '+graphAPIVersion':
-                name: fbSdkGetGraphAPIVersion
-            '+sdkVersion':
+            autoLogAppEventsEnabled:
                 exclude: true # as deprecated
-            '+defaultGraphAPIVersion':
+            codelessDebugLogEnabled:
                 exclude: true # as deprecated
-            '+JPEGCompressionQuality':
+            advertiserIDCollectionEnabled:
                 exclude: true # as deprecated
-            '+autoLogAppEventsEnabled':
+            advertiserTrackingEnabled:
                 exclude: true # as deprecated
-            '+codelessDebugLogEnabled':
-                exclude: true # as deprecated
-            '+advertiserIDCollectionEnabled':
-                exclude: true # as deprecated
-            '+SKAdNetworkReportEnabled':
-                exclude: true # as deprecated
-            '+limitEventAndDataUsage':
-                exclude: true # as deprecated
-            '+shouldUseCachedValuesForExpensiveMetadata':
-                exclude: true # as deprecated
-            '+graphErrorRecoveryEnabled':
-                exclude: true # as deprecated
-            '+appID':
-                exclude: true # as deprecated
-            '+appURLSchemeSuffix':
-                exclude: true # as deprecated
-            '+clientToken':
-                exclude: true # as deprecated
-            '+displayName':
-                exclude: true # as deprecated
-            '+facebookDomainPart':
-                exclude: true # as deprecated
-            '+loggingBehaviors':
-                exclude: true # as deprecated
-            'skAdNetworkReportEnabled':
-                name: SKAdNetworkReportEnabled  # to match getter declared in protocol
+            advertisingTrackingStatus:
+                exclude: true # as using internal types
         methods:
             '-setDataProcessingOptions:country:state:':
                 name: setDataProcessingOptions
@@ -634,6 +618,18 @@ classes:
         exclude: true #INTERNAL - DO NOT USE
     _FBSDKAccessTokenExpirer:
         exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppEventsConfiguration:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKBridgeAPIProtocolNativeV1:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKContainerViewController:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKGraphRequestMetadata:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKUnarchiverProvider:
+        exclude: true #INTERNAL - DO NOT USE
+    _BridgeAPI:
+        exclude: true #INTERNAL - DO NOT USE
 protocols:
     FBSDKAppLinkResolving:
         methods:
@@ -665,6 +661,9 @@ protocols:
             '-startWithCompletion:':
                 name: start
     FBSDKGraphRequestConnecting:
+        properties:
+            requests:
+                exclude: true # as FBSDKGraphRequestMetadata is internal
         methods:
             '-addRequest:completion:':
                 name: addRequest
@@ -696,6 +695,14 @@ protocols:
                 exclude: true # as deprecated
             userAgentSuffix:
                 exclude: true #INTERNAL - DO NOT USE
+            codelessDebugLogEnabled:
+                exclude: true # as deprecated
+            advertiserIDCollectionEnabled:
+                exclude: true # as deprecated
+            skAdNetworkReportEnabled:
+                exclude: true # as deprecated
+            advertiserTrackingEnabled:
+                exclude: true # as deprecated
         methods:
             '-setDataProcessingOptions:country:state:':
                 name: setDataProcessingOptions
@@ -966,6 +973,16 @@ protocols:
         exclude: true #INTERNAL - DO NOT USE
     _FBSDKNotificationPosting:
         exclude: true #INTERNAL - DO NOT USE
+    FBSDKAppEventsConfiguration:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKContainerViewControllerDelegate:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKObjectDecoding:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKPasteboard:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKUnarchiverProviding:
+        exclude: true #INTERNAL - DO NOT USE
 functions:
     fb_randomString:
         exclude: true
@@ -1047,13 +1064,19 @@ values:
         exclude: true
     DefaultKeychainServicePrefix:
         exclude: true # INTERNAL - DO NOT USE
-    FBSDKAppLink(.*)EventName:
+    FBSDKAppLink(.*):
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKDataProcessingOptionKey(.*):
         exclude: true #INTERNAL - DO NOT USE
     FBSDKServerConfigurationVersion:
         class: FBSDKServerConfiguration
         name: getServerConfigurationVersion
 
     FBLinkable_NSNotificationCenter_NotificationPosting:
+        exclude: true
+    FBLinkable_UIPasteboard_FBSDKPasteboard:
+        exclude: true
+    FBLink_UIPasteboard_FBSDKPasteboard:
         exclude: true
     FBLink_NSNotificationCenter_NotificationPosting:
         exclude: true

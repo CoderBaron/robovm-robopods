@@ -43,19 +43,17 @@ import org.robovm.pods.facebook.corebasics.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKSettings/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKSettingsProtocol, FBSDKSettingsLogging/*</implements>*/ {
+    /*<implements>*/implements FBSDKSettingsLogging, FBSDKSettingsProtocol/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKSettingsPtr extends Ptr<FBSDKSettings, FBSDKSettingsPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKSettings.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected FBSDKSettings() {}
+    public FBSDKSettings() {}
     protected FBSDKSettings(Handle h, long handle) { super(h, handle); }
     protected FBSDKSettings(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "sharedSettings")
-    public static native FBSDKSettings getSharedSettings();
     @Property(selector = "sdkVersion")
     public native String getSdkVersion();
     @Property(selector = "defaultGraphAPIVersion")
@@ -66,20 +64,32 @@ import org.robovm.pods.facebook.corebasics.*;
     public native void setJPEGCompressionQuality(@MachineSizedFloat double v);
     @Property(selector = "isAutoLogAppEventsEnabled")
     public native boolean isAutoLogAppEventsEnabled();
-    @Property(selector = "setAutoLogAppEventsEnabled:")
-    public native void setAutoLogAppEventsEnabled(boolean v);
+    @Property(selector = "setIsAutoLogAppEventsEnabled:")
+    public native void setIsAutoLogAppEventsEnabled(boolean v);
     @Property(selector = "isCodelessDebugLogEnabled")
     public native boolean isCodelessDebugLogEnabled();
-    @Property(selector = "setCodelessDebugLogEnabled:")
-    public native void setCodelessDebugLogEnabled(boolean v);
+    @Property(selector = "setIsCodelessDebugLogEnabled:")
+    public native void setIsCodelessDebugLogEnabled(boolean v);
     @Property(selector = "isAdvertiserIDCollectionEnabled")
     public native boolean isAdvertiserIDCollectionEnabled();
-    @Property(selector = "setAdvertiserIDCollectionEnabled:")
-    public native void setAdvertiserIDCollectionEnabled(boolean v);
+    @Property(selector = "setIsAdvertiserIDCollectionEnabled:")
+    public native void setIsAdvertiserIDCollectionEnabled(boolean v);
+    /**
+     * @deprecated This property is deprecated and will be removed in the next major release.       Use `isSKAdNetworkReportEnabled` instead.
+     */
+    @Deprecated
+    @Property(selector = "skAdNetworkReportEnabled")
+    public native boolean isSkAdNetworkReportEnabled();
+    /**
+     * @deprecated This property is deprecated and will be removed in the next major release.       Use `isSKAdNetworkReportEnabled` instead.
+     */
+    @Deprecated
+    @Property(selector = "setSkAdNetworkReportEnabled:")
+    public native void setSkAdNetworkReportEnabled(boolean v);
     @Property(selector = "isSKAdNetworkReportEnabled")
     public native boolean isSKAdNetworkReportEnabled();
-    @Property(selector = "setSkAdNetworkReportEnabled:")
-    public native void setSKAdNetworkReportEnabled(boolean v);
+    @Property(selector = "setIsSKAdNetworkReportEnabled:")
+    public native void setIsSKAdNetworkReportEnabled(boolean v);
     @Property(selector = "isEventDataUsageLimited")
     public native boolean isEventDataUsageLimited();
     @Property(selector = "setIsEventDataUsageLimited:")
@@ -112,10 +122,6 @@ import org.robovm.pods.facebook.corebasics.*;
     public native String getFacebookDomainPart();
     @Property(selector = "setFacebookDomainPart:")
     public native void setFacebookDomainPart(String v);
-    @Property(selector = "loggingBehaviors")
-    public native NSSet<NSString> getLoggingBehaviors();
-    @Property(selector = "setLoggingBehaviors:")
-    public native void setLoggingBehaviors(NSSet<NSString> v);
     @Property(selector = "graphAPIVersion")
     public native String getGraphAPIVersion();
     @Property(selector = "setGraphAPIVersion:")
@@ -126,24 +132,40 @@ import org.robovm.pods.facebook.corebasics.*;
     public native void setUserAgentSuffix(String v);
     @Property(selector = "isAdvertiserTrackingEnabled")
     public native boolean isAdvertiserTrackingEnabled();
-    @Property(selector = "setAdvertiserTrackingEnabled:")
-    public native void setAdvertiserTrackingEnabled(boolean v);
+    @Property(selector = "setIsAdvertiserTrackingEnabled:")
+    public native void setIsAdvertiserTrackingEnabled(boolean v);
     @Property(selector = "isDataProcessingRestricted")
     public native boolean isDataProcessingRestricted();
-    @Property(selector = "isSetATETimeExceedsInstallTime")
-    public native boolean isSetATETimeExceedsInstallTime();
-    @Property(selector = "installTimestamp")
-    public native NSDate getInstallTimestamp();
-    @Property(selector = "advertiserTrackingEnabledTimestamp")
-    public native NSDate getAdvertiserTrackingEnabledTimestamp();
+    @Property(selector = "persistableDataProcessingOptions")
+    public native NSDictionary<NSString, ?> getPersistableDataProcessingOptions();
+    @Property(selector = "loggingBehaviors")
+    public native NSSet<NSString> getLoggingBehaviors();
+    @Property(selector = "setLoggingBehaviors:")
+    public native void setLoggingBehaviors(NSSet<NSString> v);
     @Property(selector = "shouldUseTokenOptimizations")
     public native boolean shouldUseTokenOptimizations();
     @Property(selector = "setShouldUseTokenOptimizations:")
     public native void setShouldUseTokenOptimizations(boolean v);
+    /**
+     * @deprecated This property is deprecated and will be removed in the next major release.       Use `isATETimeSufficientlyDelayed` instead.
+     */
+    @Deprecated
+    @Property(selector = "isSetATETimeExceedsInstallTime")
+    public native boolean isSetATETimeExceedsInstallTime();
+    @Property(selector = "isATETimeSufficientlyDelayed")
+    public native boolean isATETimeSufficientlyDelayed();
+    @Property(selector = "installTimestamp")
+    public native NSDate getInstallTimestamp();
+    @Property(selector = "advertiserTrackingEnabledTimestamp")
+    public native NSDate getAdvertiserTrackingEnabledTimestamp();
+    /**
+     * @deprecated This property is deprecated and will be removed in the next major release.       Use `graphAPIDebugParameterValue` instead.
+     */
+    @Deprecated
     @Property(selector = "graphAPIDebugParamValue")
     public native String getGraphAPIDebugParamValue();
-    @Property(selector = "persistableDataProcessingOptions")
-    public native NSDictionary<NSString, ?> getPersistableDataProcessingOptions();
+    @Property(selector = "graphAPIDebugParameterValue")
+    public native String getGraphAPIDebugParameterValue();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -155,11 +177,13 @@ import org.robovm.pods.facebook.corebasics.*;
     public native void enableLoggingBehavior(FBSDKLoggingBehavior loggingBehavior);
     @Method(selector = "disableLoggingBehavior:")
     public native void disableLoggingBehavior(FBSDKLoggingBehavior loggingBehavior);
+    @Method(selector = "sharedSettings")
+    public static native FBSDKSettings sharedSettings();
+    @Method(selector = "recordInstall")
+    public native void recordInstall();
     @Method(selector = "logWarnings")
     public native void logWarnings();
     @Method(selector = "logIfSDKSettingsChanged")
     public native void logIfSDKSettingsChanged();
-    @Method(selector = "recordInstall")
-    public native void recordInstall();
     /*</methods>*/
 }

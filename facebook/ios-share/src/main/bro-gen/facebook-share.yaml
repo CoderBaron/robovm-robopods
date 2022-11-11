@@ -11,6 +11,8 @@ include:
     - ../../../../ios-core/src/main/bro-gen/facebook-core.yaml
 clang_args: ['-x', 'objective-c', '-fobjc-arc', '-Ffacebook/ios-aem/src/main/bro-gen/']
 headers:
+    - "#import <SafariServices/SafariServices.h>"
+    - "#import <AuthenticationServices/AuthenticationServices.h>"
     - "#include <FBSDKCoreKit/FBSDKCoreKit.h>"
     - "#include <FBSDKCoreKit/FBSDKCoreKit-Swift.h>"
     - FBSDKShareKit.h

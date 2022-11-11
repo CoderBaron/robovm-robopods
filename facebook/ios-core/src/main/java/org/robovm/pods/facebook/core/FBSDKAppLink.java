@@ -52,7 +52,10 @@ import org.robovm.pods.facebook.corebasics.*;
     protected FBSDKAppLink() {}
     protected FBSDKAppLink(Handle h, long handle) { super(h, handle); }
     protected FBSDKAppLink(SkipInit skipInit) { super(skipInit); }
-    public FBSDKAppLink(NSURL sourceURL, NSArray<FBSDKAppLinkTarget> targets, NSURL webURL) { super((Handle) null, create(sourceURL, targets, webURL)); retain(getHandle()); }
+    @Method(selector = "initWithSourceURL:targets:webURL:")
+    public FBSDKAppLink(NSURL sourceURL, NSArray<FBSDKAppLinkTarget> targets, NSURL webURL) { super((SkipInit) null); initObject(init(sourceURL, targets, webURL)); }
+    @Method(selector = "initWithSourceURL:targets:webURL:isBackToReferrer:")
+    public FBSDKAppLink(NSURL sourceURL, NSArray<FBSDKAppLinkTarget> targets, NSURL webURL, boolean isBackToReferrer) { super((SkipInit) null); initObject(init(sourceURL, targets, webURL, isBackToReferrer)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "sourceURL")
@@ -61,13 +64,19 @@ import org.robovm.pods.facebook.corebasics.*;
     public native NSArray<FBSDKAppLinkTarget> getTargets();
     @Property(selector = "webURL")
     public native NSURL getWebURL();
+    @Property(selector = "isBackToReferrer")
+    public native boolean isBackToReferrer();
+    @Property(selector = "setBackToReferrer:")
+    public native void setBackToReferrer(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @GlobalValue(symbol="FBSDKAppLinkVersion", optional=true)
     public static native String getVersion();
     
-    @Method(selector = "appLinkWithSourceURL:targets:webURL:")
-    protected static native @Pointer long create(NSURL sourceURL, NSArray<FBSDKAppLinkTarget> targets, NSURL webURL);
+    @Method(selector = "initWithSourceURL:targets:webURL:")
+    protected native @Pointer long init(NSURL sourceURL, NSArray<FBSDKAppLinkTarget> targets, NSURL webURL);
+    @Method(selector = "initWithSourceURL:targets:webURL:isBackToReferrer:")
+    protected native @Pointer long init(NSURL sourceURL, NSArray<FBSDKAppLinkTarget> targets, NSURL webURL, boolean isBackToReferrer);
     /*</methods>*/
 }

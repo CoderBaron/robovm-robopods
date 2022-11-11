@@ -52,13 +52,17 @@ import org.robovm.pods.facebook.corebasics.*;
     protected FBSDKAppLinkNavigation() {}
     protected FBSDKAppLinkNavigation(Handle h, long handle) { super(h, handle); }
     protected FBSDKAppLinkNavigation(SkipInit skipInit) { super(skipInit); }
-    public FBSDKAppLinkNavigation(FBSDKAppLink appLink, NSDictionary<NSString, ?> extras, NSDictionary<NSString, ?> appLinkData, FBSDKSettingsProtocol settings) { super((Handle) null, create(appLink, extras, appLinkData, settings)); retain(getHandle()); }
+    @Method(selector = "initWithAppLink:extras:appLinkData:")
+    public FBSDKAppLinkNavigation(FBSDKAppLink appLink, NSDictionary<NSString, ?> extras, NSDictionary<NSString, ?> appLinkData) { super((SkipInit) null); initObject(init(appLink, extras, appLinkData)); }
+    /**
+     * @deprecated Please use init(appLink:extras:appLinkData:) to instantiate an `AppLinkNavigation`.
+      This method will be removed in the next major version."
+     */
+    @Deprecated
+    @Method(selector = "initWithAppLink:extras:appLinkData:settings:")
+    public FBSDKAppLinkNavigation(FBSDKAppLink appLink, NSDictionary<NSString, ?> extras, NSDictionary<NSString, ?> appLinkData, FBSDKSettingsProtocol settings) { super((SkipInit) null); initObject(init(appLink, extras, appLinkData, settings)); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "defaultResolver")
-    public static native FBSDKAppLinkResolving getDefaultResolver();
-    @Property(selector = "setDefaultResolver:")
-    public static native void setDefaultResolver(FBSDKAppLinkResolving v);
     @Property(selector = "extras")
     public native NSDictionary<NSString, ?> getExtras();
     @Property(selector = "appLinkData")
@@ -70,26 +74,37 @@ import org.robovm.pods.facebook.corebasics.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "initWithAppLink:extras:appLinkData:")
+    protected native @Pointer long init(FBSDKAppLink appLink, NSDictionary<NSString, ?> extras, NSDictionary<NSString, ?> appLinkData);
+    /**
+     * @deprecated Please use init(appLink:extras:appLinkData:) to instantiate an `AppLinkNavigation`.
+      This method will be removed in the next major version."
+     */
+    @Deprecated
+    @Method(selector = "initWithAppLink:extras:appLinkData:settings:")
+    protected native @Pointer long init(FBSDKAppLink appLink, NSDictionary<NSString, ?> extras, NSDictionary<NSString, ?> appLinkData, FBSDKSettingsProtocol settings);
     @Method(selector = "navigate:")
-    public native FBSDKAppLinkNavigationType navigate(NSError.NSErrorPtr error);
-    @Method(selector = "navigationWithAppLink:extras:appLinkData:settings:")
-    protected static native @Pointer long create(FBSDKAppLink appLink, NSDictionary<NSString, ?> extras, NSDictionary<NSString, ?> appLinkData, FBSDKSettingsProtocol settings);
+    public native FBSDKAppLinkNavigationType navigate(NSError.NSErrorPtr errorPointer);
+    @Method(selector = "defaultResolver")
+    public static native FBSDKAppLinkResolving defaultResolver();
+    @Method(selector = "setDefaultResolver:")
+    public static native void setDefaultResolver(FBSDKAppLinkResolving newValue);
     @Method(selector = "callbackAppLinkDataForAppWithName:url:")
     public static native NSDictionary<?, ?> getCallbackAppLinkData(String appName, String url);
     @Method(selector = "resolveAppLink:handler:")
     public static native void resolveAppLink(NSURL destination, @Block VoidBlock2<FBSDKAppLink, NSError> handler);
     @Method(selector = "resolveAppLink:resolver:handler:")
     public static native void resolveAppLink(NSURL destination, FBSDKAppLinkResolving resolver, @Block VoidBlock2<FBSDKAppLink, NSError> handler);
-    public static FBSDKAppLinkNavigationType navigateToAppLink(FBSDKAppLink link) throws NSErrorException {
+    public static FBSDKAppLinkNavigationType navigateToAppLink(FBSDKAppLink appLink) throws NSErrorException {
        NSError.NSErrorPtr ptr = new NSError.NSErrorPtr();
-       FBSDKAppLinkNavigationType result = navigateToAppLink(link, ptr);
+       FBSDKAppLinkNavigationType result = navigateToAppLink(appLink, ptr);
        if (ptr.get() != null) { throw new NSErrorException(ptr.get()); }
        return result;
     }
     @Method(selector = "navigateToAppLink:error:")
-    private static native FBSDKAppLinkNavigationType navigateToAppLink(FBSDKAppLink link, NSError.NSErrorPtr error);
+    private static native FBSDKAppLinkNavigationType navigateToAppLink(FBSDKAppLink appLink, NSError.NSErrorPtr errorPointer);
     @Method(selector = "navigationTypeForLink:")
-    public static native FBSDKAppLinkNavigationType navigationTypeForLink(FBSDKAppLink link);
+    public static native FBSDKAppLinkNavigationType navigationTypeForLink(FBSDKAppLink appLink);
     @Method(selector = "navigateToURL:handler:")
     public static native void navigateToURL(NSURL destination, @Block VoidBlock2<FBSDKAppLinkNavigationType, NSError> handler);
     @Method(selector = "navigateToURL:resolver:handler:")

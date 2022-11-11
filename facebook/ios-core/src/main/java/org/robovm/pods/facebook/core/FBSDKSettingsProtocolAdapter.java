@@ -83,14 +83,20 @@ import org.robovm.pods.facebook.corebasics.*;
     public boolean isAutoLogAppEventsEnabled() { return false; }
     @NotImplemented("isCodelessDebugLogEnabled")
     public boolean isCodelessDebugLogEnabled() { return false; }
-    @NotImplemented("setCodelessDebugLogEnabled:")
-    public void setCodelessDebugLogEnabled(boolean v) {}
+    @NotImplemented("setIsCodelessDebugLogEnabled:")
+    public void setIsCodelessDebugLogEnabled(boolean v) {}
     @NotImplemented("isAdvertiserIDCollectionEnabled")
     public boolean isAdvertiserIDCollectionEnabled() { return false; }
-    @NotImplemented("setAdvertiserIDCollectionEnabled:")
-    public void setAdvertiserIDCollectionEnabled(boolean v) {}
+    @NotImplemented("setIsAdvertiserIDCollectionEnabled:")
+    public void setIsAdvertiserIDCollectionEnabled(boolean v) {}
+    /**
+     * @deprecated This property is deprecated and will be removed in the next major release.       Use `isATETimeSufficientlyDelayed` instead.
+     */
+    @Deprecated
     @NotImplemented("isSetATETimeExceedsInstallTime")
     public boolean isSetATETimeExceedsInstallTime() { return false; }
+    @NotImplemented("isATETimeSufficientlyDelayed")
+    public boolean isATETimeSufficientlyDelayed() { return false; }
     @NotImplemented("isSKAdNetworkReportEnabled")
     public boolean isSKAdNetworkReportEnabled() { return false; }
     @NotImplemented("installTimestamp")
@@ -113,12 +119,18 @@ import org.robovm.pods.facebook.corebasics.*;
     public boolean isGraphErrorRecoveryEnabled() { return false; }
     @NotImplemented("setIsGraphErrorRecoveryEnabled:")
     public void setIsGraphErrorRecoveryEnabled(boolean v) {}
+    /**
+     * @deprecated This property is deprecated and will be removed in the next major release.       Use `graphAPIDebugParameterValue` instead.
+     */
+    @Deprecated
     @NotImplemented("graphAPIDebugParamValue")
     public String getGraphAPIDebugParamValue() { return null; }
+    @NotImplemented("graphAPIDebugParameterValue")
+    public String getGraphAPIDebugParameterValue() { return null; }
     @NotImplemented("isAdvertiserTrackingEnabled")
     public boolean isAdvertiserTrackingEnabled() { return false; }
-    @NotImplemented("setAdvertiserTrackingEnabled:")
-    public void setAdvertiserTrackingEnabled(boolean v) {}
+    @NotImplemented("setIsAdvertiserTrackingEnabled:")
+    public void setIsAdvertiserTrackingEnabled(boolean v) {}
     @NotImplemented("shouldUseCachedValuesForExpensiveMetadata")
     public boolean shouldUseCachedValuesForExpensiveMetadata() { return false; }
     @NotImplemented("setShouldUseCachedValuesForExpensiveMetadata:")

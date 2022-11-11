@@ -82,14 +82,20 @@ import org.robovm.pods.facebook.corebasics.*;
     boolean isAutoLogAppEventsEnabled();
     @Property(selector = "isCodelessDebugLogEnabled")
     boolean isCodelessDebugLogEnabled();
-    @Property(selector = "setCodelessDebugLogEnabled:")
-    void setCodelessDebugLogEnabled(boolean v);
+    @Property(selector = "setIsCodelessDebugLogEnabled:")
+    void setIsCodelessDebugLogEnabled(boolean v);
     @Property(selector = "isAdvertiserIDCollectionEnabled")
     boolean isAdvertiserIDCollectionEnabled();
-    @Property(selector = "setAdvertiserIDCollectionEnabled:")
-    void setAdvertiserIDCollectionEnabled(boolean v);
+    @Property(selector = "setIsAdvertiserIDCollectionEnabled:")
+    void setIsAdvertiserIDCollectionEnabled(boolean v);
+    /**
+     * @deprecated This property is deprecated and will be removed in the next major release.       Use `isATETimeSufficientlyDelayed` instead.
+     */
+    @Deprecated
     @Property(selector = "isSetATETimeExceedsInstallTime")
     boolean isSetATETimeExceedsInstallTime();
+    @Property(selector = "isATETimeSufficientlyDelayed")
+    boolean isATETimeSufficientlyDelayed();
     @Property(selector = "isSKAdNetworkReportEnabled")
     boolean isSKAdNetworkReportEnabled();
     @Property(selector = "installTimestamp")
@@ -112,12 +118,18 @@ import org.robovm.pods.facebook.corebasics.*;
     boolean isGraphErrorRecoveryEnabled();
     @Property(selector = "setIsGraphErrorRecoveryEnabled:")
     void setIsGraphErrorRecoveryEnabled(boolean v);
+    /**
+     * @deprecated This property is deprecated and will be removed in the next major release.       Use `graphAPIDebugParameterValue` instead.
+     */
+    @Deprecated
     @Property(selector = "graphAPIDebugParamValue")
     String getGraphAPIDebugParamValue();
+    @Property(selector = "graphAPIDebugParameterValue")
+    String getGraphAPIDebugParameterValue();
     @Property(selector = "isAdvertiserTrackingEnabled")
     boolean isAdvertiserTrackingEnabled();
-    @Property(selector = "setAdvertiserTrackingEnabled:")
-    void setAdvertiserTrackingEnabled(boolean v);
+    @Property(selector = "setIsAdvertiserTrackingEnabled:")
+    void setIsAdvertiserTrackingEnabled(boolean v);
     @Property(selector = "shouldUseCachedValuesForExpensiveMetadata")
     boolean shouldUseCachedValuesForExpensiveMetadata();
     @Property(selector = "setShouldUseCachedValuesForExpensiveMetadata:")

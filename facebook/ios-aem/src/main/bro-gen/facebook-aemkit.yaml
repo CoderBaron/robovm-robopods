@@ -3,7 +3,6 @@ framework: FBAEMKit
 include: [foundation]
 clang_args: ['-x', 'objective-c']
 headers: 
-    - FBAEMKit.h
     - FBAEMKit-Swift.h
 
 enums:

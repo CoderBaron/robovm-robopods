@@ -98,5 +98,13 @@ import org.robovm.pods.facebook.corebasics.*;
     public static native NSString UnlockedAchievement();
     @GlobalValue(symbol="FBSDKAppEventNameSpentCredits", optional=true)
     public static native NSString SpentCredits();
+    @GlobalValue(symbol="FBSDKAppEventNameBackgroundStatusAvailable", optional=true)
+    public static native NSString BackgroundStatusAvailable();
+    @GlobalValue(symbol="FBSDKAppEventNameBackgroundStatusDenied", optional=true)
+    public static native NSString BackgroundStatusDenied();
+    @GlobalValue(symbol="FBSDKAppEventNameBackgroundStatusRestricted", optional=true)
+    public static native NSString BackgroundStatusRestricted();
+    @GlobalValue(symbol="FBSDKAppEventNameSDKSettingsChanged", optional=true)
+    public static native NSString SDKSettingsChanged();
     /*</methods>*/
 }

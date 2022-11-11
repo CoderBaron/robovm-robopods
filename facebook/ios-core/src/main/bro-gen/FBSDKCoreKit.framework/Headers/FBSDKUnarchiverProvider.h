@@ -6,9 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-#if !TARGET_OS_TV
-
-#import <FBSDKCoreKit/FBSDKAppLinkTargetCreating.h>
+#import <FBSDKCoreKit/FBSDKUnarchiverProviding.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,11 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
  @warning INTERNAL - DO NOT USE
  */
-NS_SWIFT_NAME(_AppLinkTargetFactory)
-@interface FBSDKAppLinkTargetFactory : NSObject <FBSDKAppLinkTargetCreating>
+NS_SWIFT_NAME(UnarchiverProvider)
+@interface FBSDKUnarchiverProvider : NSObject <FBSDKUnarchiverProviding>
 
 @end
 
 NS_ASSUME_NONNULL_END
-
-#endif

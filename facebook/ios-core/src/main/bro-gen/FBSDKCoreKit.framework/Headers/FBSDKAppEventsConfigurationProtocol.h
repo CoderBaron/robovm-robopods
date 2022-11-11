@@ -8,13 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import <FBSDKCoreKit/FBSDKAccessToken.h>
-#import <FBSDKCoreKit/FBSDKTokenCaching.h>
-
 NS_ASSUME_NONNULL_BEGIN
-
-@protocol FBSDKSettings;
-@protocol FBSDKKeychainStore;
 
 /**
  Internal type exposed to facilitate transition to Swift.
@@ -22,17 +16,18 @@ NS_ASSUME_NONNULL_BEGIN
 
  @warning INTERNAL - DO NOT USE
  */
-NS_SWIFT_NAME(_TokenCache)
-@interface FBSDKTokenCache : NSObject <FBSDKTokenCaching>
+NS_SWIFT_NAME(_AppEventsConfigurationProtocol)
+@protocol FBSDKAppEventsConfiguration
 
-@property (nonatomic) id<FBSDKSettings> settings;
-@property (nonatomic) id<FBSDKKeychainStore> keychainStore;
+@property (nonatomic, readonly, assign) FBSDKAdvertisingTrackingStatus defaultATEStatus;
+@property (nonatomic, readonly, assign) BOOL advertiserIDCollectionEnabled;
+@property (nonatomic, readonly, assign) BOOL eventCollectionEnabled;
 
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
 
-- (instancetype)initWithSettings:(id<FBSDKSettings>)settings
-                   keychainStore:(id<FBSDKKeychainStore>)keychainStore;
+- (instancetype)initWithJSON:(nullable NSDictionary<NSString *, id> *)dict;
++ (instancetype)defaultConfiguration;
 
 @end
 
