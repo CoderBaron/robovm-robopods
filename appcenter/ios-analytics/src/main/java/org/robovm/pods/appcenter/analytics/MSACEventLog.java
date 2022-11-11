@@ -43,7 +43,7 @@ import org.robovm.pods.appcenter.core.*;
     /*<bind>*/static { ObjCRuntime.bind(MSACEventLog.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public MSACEventLog() {}
+    protected MSACEventLog() {}
     protected MSACEventLog(Handle h, long handle) { super(h, handle); }
     protected MSACEventLog(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/

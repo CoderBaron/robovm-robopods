@@ -43,7 +43,7 @@ import org.robovm.pods.appcenter.core.*;
     /*<bind>*/static { ObjCRuntime.bind(MSACLogWithNameAndProperties.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public MSACLogWithNameAndProperties() {}
+    protected MSACLogWithNameAndProperties() {}
     protected MSACLogWithNameAndProperties(Handle h, long handle) { super(h, handle); }
     protected MSACLogWithNameAndProperties(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/

@@ -36,14 +36,14 @@ import org.robovm.pods.appcenter.core.*;
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/MSACErrorAttachmentLog/*</name>*/ 
-    extends /*<extends>*/MSACAbstractLog/*</extends>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
     /*<ptr>*/public static class MSACErrorAttachmentLogPtr extends Ptr<MSACErrorAttachmentLog, MSACErrorAttachmentLogPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(MSACErrorAttachmentLog.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public MSACErrorAttachmentLog() {}
+    protected MSACErrorAttachmentLog() {}
     protected MSACErrorAttachmentLog(Handle h, long handle) { super(h, handle); }
     protected MSACErrorAttachmentLog(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithFilename:attachmentBinary:contentType:")

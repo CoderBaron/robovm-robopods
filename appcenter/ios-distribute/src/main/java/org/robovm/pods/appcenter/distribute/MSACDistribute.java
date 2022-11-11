@@ -36,14 +36,14 @@ import org.robovm.pods.appcenter.core.*;
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/MSACDistribute/*</name>*/ 
-    extends /*<extends>*/MSACServiceAbstract/*</extends>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
     /*<ptr>*/public static class MSACDistributePtr extends Ptr<MSACDistribute, MSACDistributePtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(MSACDistribute.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public MSACDistribute() {}
+    protected MSACDistribute() {}
     protected MSACDistribute(Handle h, long handle) { super(h, handle); }
     protected MSACDistribute(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
@@ -64,10 +64,6 @@ import org.robovm.pods.appcenter.core.*;
     public static native String getInstallUrl();
     @Property(selector = "setInstallUrl:")
     public static native void setInstallUrl(String v);
-    @Property(selector = "isEnabled")
-    public static native boolean isEnabled();
-    @Property(selector = "setEnabled:")
-    public static native void setEnabled(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

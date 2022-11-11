@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>robopods-appcenter-analytics-ios</artifactId>
-    <name>RoboPods Microsoft AppCenter Analytics iOS v4.4.3</name>
+    <name>RoboPods Microsoft AppCenter Analytics iOS v5.0.0</name>
     <packaging>jar</packaging>
 
     <licenses>

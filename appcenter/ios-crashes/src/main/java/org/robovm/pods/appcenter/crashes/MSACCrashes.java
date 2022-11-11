@@ -36,14 +36,14 @@ import org.robovm.pods.appcenter.core.*;
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/MSACCrashes/*</name>*/ 
-    extends /*<extends>*/MSACServiceAbstract/*</extends>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
     /*<ptr>*/public static class MSACCrashesPtr extends Ptr<MSACCrashes, MSACCrashesPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(MSACCrashes.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public MSACCrashes() {}
+    protected MSACCrashes() {}
     protected MSACCrashes(Handle h, long handle) { super(h, handle); }
     protected MSACCrashes(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
@@ -62,10 +62,6 @@ import org.robovm.pods.appcenter.core.*;
     public static native @Block Block1<NSArray<MSACErrorReport>, Boolean> getUserConfirmationHandler();
     @Property(selector = "setUserConfirmationHandler:")
     public static native void setUserConfirmationHandler(@Block Block1<NSArray<MSACErrorReport>, Boolean> v);
-    @Property(selector = "isEnabled")
-    public static native boolean isEnabled();
-    @Property(selector = "setEnabled:")
-    public static native void setEnabled(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

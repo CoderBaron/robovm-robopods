@@ -36,14 +36,14 @@ import org.robovm.pods.appcenter.core.*;
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/MSACAnalytics/*</name>*/ 
-    extends /*<extends>*/MSACServiceAbstract/*</extends>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
     /*<ptr>*/public static class MSACAnalyticsPtr extends Ptr<MSACAnalytics, MSACAnalyticsPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(MSACAnalytics.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public MSACAnalytics() {}
+    protected MSACAnalytics() {}
     protected MSACAnalytics(Handle h, long handle) { super(h, handle); }
     protected MSACAnalytics(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
@@ -52,10 +52,6 @@ import org.robovm.pods.appcenter.core.*;
     public static native @MachineSizedUInt long getTransmissionInterval();
     @Property(selector = "setTransmissionInterval:")
     public static native void setTransmissionInterval(@MachineSizedUInt long v);
-    @Property(selector = "isEnabled")
-    public static native boolean isEnabled();
-    @Property(selector = "setEnabled:")
-    public static native void setEnabled(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

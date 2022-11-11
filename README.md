@@ -43,7 +43,7 @@ v1.27.0 - in development
 | Name                            | 1.27.0  |
 |---------------------------------|---------|
 | [AdaptySDK](adapty/)            | 1.17.7  |
-| [AppCenter](appcenter/)         | 4.4.3   |
+| [AppCenter](appcenter/)         | 5.0.0   |
 | [AppLovinSDK](applovinsdk/)     | 11.5.4  |
 | [Azure](azure/)                 | 3.1.4   |
 | [BranchMetrics](branchmetrics/) | 1.43.2  |
