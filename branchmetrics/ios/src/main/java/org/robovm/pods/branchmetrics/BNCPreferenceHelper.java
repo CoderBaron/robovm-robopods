@@ -96,6 +96,10 @@ import org.robovm.apple.coregraphics.*;
     public native String getUserUrl();
     @Property(selector = "setUserUrl:")
     public native void setUserUrl(String v);
+    @Property(selector = "localUrl")
+    public native String getLocalUrl();
+    @Property(selector = "setLocalUrl:")
+    public native void setLocalUrl(String v);
     @Property(selector = "userIdentity")
     public native String getUserIdentity();
     @Property(selector = "setUserIdentity:")

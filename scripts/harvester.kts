@@ -83,7 +83,7 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
     },
     "Branch" to { framework ->
         val artifact = "$framework.framework"
-        val artifactLocation = downloadFolder.extend("Branch.xcframework/ios-arm64_armv7/$artifact")
+        val artifactLocation = downloadFolder.extend("Branch.xcframework/ios-arm64/$artifact")
         processFramework(
             artifact = artifact,
             moduleFolder = "branchmetrics/ios",

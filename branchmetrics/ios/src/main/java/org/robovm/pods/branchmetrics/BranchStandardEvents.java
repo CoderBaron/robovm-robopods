@@ -82,6 +82,10 @@ import org.robovm.apple.coregraphics.*;
     public static native String getRate();
     @GlobalValue(symbol="BranchStandardEventShare", optional=true)
     public static native String getShare();
+    @GlobalValue(symbol="BranchStandardEventInitiateStream", optional=true)
+    public static native String getInitiateStream();
+    @GlobalValue(symbol="BranchStandardEventCompleteStream", optional=true)
+    public static native String getCompleteStream();
     @GlobalValue(symbol="BranchStandardEventCompleteRegistration", optional=true)
     public static native String getCompleteRegistration();
     @GlobalValue(symbol="BranchStandardEventCompleteTutorial", optional=true)

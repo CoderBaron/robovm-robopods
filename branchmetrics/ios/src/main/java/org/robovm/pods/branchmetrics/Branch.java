@@ -468,6 +468,11 @@ import org.robovm.apple.coregraphics.*;
     @Method(selector = "clearNetworkQueue")
     public native void clearNetworkQueue();
     /**
+     * @since Available in iOS 16.0 and later.
+     */
+    @Method(selector = "passPasteItemProviders:")
+    public native void passPasteItemProviders(NSArray<NSItemProvider> itemProviders);
+    /**
      * @deprecated Use `Branch.useTestBranchKey = YES;` instead.
      */
     @Deprecated
