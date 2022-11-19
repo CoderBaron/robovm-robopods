@@ -71,6 +71,14 @@ import org.robovm.apple.uikit.*;
     public static native void setLaunchURLsInApp(boolean launchInApp);
     @Method(selector = "setProvidesNotificationSettingsView:")
     public static native void setProvidesNotificationSettingsView(boolean providesView);
+    @Method(selector = "enterLiveActivity:withToken:")
+    public static native void enterLiveActivity(String activityId, String token);
+    @Method(selector = "enterLiveActivity:withToken:withSuccess:withFailure:")
+    public static native void enterLiveActivity(String activityId, String token, @Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
+    @Method(selector = "exitLiveActivity:")
+    public static native void exitLiveActivity(String activityId);
+    @Method(selector = "exitLiveActivity:withSuccess:withFailure:")
+    public static native void exitLiveActivity(String activityId, @Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
     @Method(selector = "setLogLevel:visualLevel:")
     public static native void setLogLevel(OSLogLevel logLevel, OSLogLevel visualLogLevel);
     @Method(selector = "onesignalLog:message:")

@@ -127,6 +127,13 @@ classes:
                 name: logoutSMSNumber
             '+setLanguage:withSuccess:withFailure:':
                 name: setLanguage
+            '+enterLiveActivity:withToken:':
+                name: enterLiveActivity
+            '+enterLiveActivity:withToken:withSuccess:withFailure:':
+                name: enterLiveActivity
+            '+exitLiveActivity:withSuccess:withFailure:':
+                name: exitLiveActivity
+
     OSEmailSubscriptionState: {}
     OSEmailSubscriptionStateChanges: {}
     OSInAppMessageAction: {}
@@ -371,6 +378,16 @@ classes:
         methods:
             '-initWithSession:notificationIds:name:timestamp:weight:':
                 name: init
+    OSRequestLiveActivityEnter:
+        methods:
+            '+withUserId:appId:activityId:token:':
+                name: create
+                constructor: true
+    OSRequestLiveActivityExit:
+        methods:
+            '+withUserId:appId:activityId:':
+                name: create
+                constructor: true
 protocols:
     OSPermissionObserver: {}
     OSSubscriptionObserver: {}
