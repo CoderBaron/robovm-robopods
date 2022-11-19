@@ -38,34 +38,26 @@ import org.robovm.apple.webkit.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/GADNativeAdDelegate/*</name>*/ 
-    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/GADQueryInfo/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/
-    /*</ptr>*/
-    /*<bind>*/
-    /*</bind>*/
+    /*<ptr>*/public static class GADQueryInfoPtr extends Ptr<GADQueryInfo, GADQueryInfoPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(GADQueryInfo.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
+    /*<constructors>*/
+    public GADQueryInfo() {}
+    protected GADQueryInfo(Handle h, long handle) { super(h, handle); }
+    protected GADQueryInfo(SkipInit skipInit) { super(skipInit); }
+    /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "query")
+    public native String getQuery();
     /*</properties>*/
+    /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "nativeAdDidRecordImpression:")
-    void didRecordImpression(GADNativeAd nativeAd);
-    @Method(selector = "nativeAdDidRecordClick:")
-    void didRecordClick(GADNativeAd nativeAd);
-    @Method(selector = "nativeAdDidRecordSwipeGestureClick:")
-    void nativeAdDidRecordSwipeGestureClick(GADNativeAd nativeAd);
-    @Method(selector = "nativeAdWillPresentScreen:")
-    void willPresentScreen(GADNativeAd nativeAd);
-    @Method(selector = "nativeAdWillDismissScreen:")
-    void willDismissScreen(GADNativeAd nativeAd);
-    @Method(selector = "nativeAdDidDismissScreen:")
-    void didDismissScreen(GADNativeAd nativeAd);
-    @Method(selector = "nativeAdIsMuted:")
-    void nativeAdIsMuted(GADNativeAd nativeAd);
+    @Method(selector = "createQueryInfoWithRequest:adFormat:completionHandler:")
+    public static native void createQueryInfo(GADRequest request, GADAdFormat adFormat, @Block VoidBlock2<GADQueryInfo, NSError> completionHandler);
     /*</methods>*/
-    /*<adapter>*/
-    /*</adapter>*/
 }

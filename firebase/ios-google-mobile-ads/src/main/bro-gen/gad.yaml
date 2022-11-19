@@ -190,6 +190,14 @@ classes:
             '+loadWithAdManagerAdUnitID:request:completionHandler:':
                 name: load
     GAMRequest: {}
+    GADNativeAdCustomClickGestureOptions:
+        methods:
+            '-initWithSwipeGestureDirection:tapsAllowed:':
+                name: init
+    GADQueryInfo:
+        methods:
+            '+createQueryInfoWithRequest:adFormat:completionHandler:':
+                name: createQueryInfo
 protocols:
     GADAdLoaderDelegate:
         methods:

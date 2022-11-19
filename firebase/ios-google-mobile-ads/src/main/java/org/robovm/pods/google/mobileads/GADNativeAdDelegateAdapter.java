@@ -57,6 +57,8 @@ import org.robovm.apple.webkit.*;
     public void didRecordImpression(GADNativeAd nativeAd) {}
     @NotImplemented("nativeAdDidRecordClick:")
     public void didRecordClick(GADNativeAd nativeAd) {}
+    @NotImplemented("nativeAdDidRecordSwipeGestureClick:")
+    public void nativeAdDidRecordSwipeGestureClick(GADNativeAd nativeAd) {}
     @NotImplemented("nativeAdWillPresentScreen:")
     public void willPresentScreen(GADNativeAd nativeAd) {}
     @NotImplemented("nativeAdWillDismissScreen:")

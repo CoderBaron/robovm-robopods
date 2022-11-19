@@ -78,6 +78,10 @@ import org.robovm.apple.webkit.*;
     public native String getRequestAgent();
     @Property(selector = "setRequestAgent:")
     public native void setRequestAgent(String v);
+    @Property(selector = "adString")
+    public native String getAdString();
+    @Property(selector = "setAdString:")
+    public native void setAdString(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
