@@ -159,6 +159,10 @@ import org.robovm.apple.coregraphics.*;
     public native void setAppClipAppGroup(String appGroup);
     @Method(selector = "handleATTAuthorizationStatus:")
     public native void handleATTAuthorizationStatus(@MachineSizedUInt long status);
+    /**
+     * @deprecated This is no longer supported for iOS 16.1+ - SKAN4.0
+     */
+    @Deprecated
     @Method(selector = "setSKAdNetworkCalloutMaxTimeSinceInstall:")
     public native void setSKAdNetworkCalloutMaxTimeSinceInstall(double maxTimeInterval);
     @Method(selector = "addFacebookPartnerParameterWithName:value:")
@@ -317,18 +321,26 @@ import org.robovm.apple.coregraphics.*;
     @Deprecated
     @Method(selector = "getCreditHistoryForBucket:after:number:order:andCallback:")
     public native void getCreditHistory(String bucket, String creditTransactionId, @MachineSizedSInt long length, BranchCreditHistoryOrder order, @Block VoidBlock2<NSArray<?>, NSError> callback);
+    /**
+     * @deprecated Please use BranchEvent to track commerce events. You can refer to https://help.branch.io/developers-hub/docs/tracking-commerce-content-lifecycle-and-custom-events for additional information.
+     */
+    @Deprecated
     @Method(selector = "userCompletedAction:")
     public native void userCompletedAction(String action);
+    /**
+     * @deprecated Please use BranchEvent to track commerce events. You can refer to https://help.branch.io/developers-hub/docs/tracking-commerce-content-lifecycle-and-custom-events for additional information.
+     */
+    @Deprecated
     @Method(selector = "userCompletedAction:withState:")
     public native void userCompletedAction(String action, NSDictionary<?, ?> state);
     /**
-     * @deprecated This API is deprecated. Please use userCompletedAction:action:state instead.
+     * @deprecated Please use BranchEvent to track commerce events. You can refer to https://help.branch.io/developers-hub/docs/tracking-commerce-content-lifecycle-and-custom-events for additional information.
      */
     @Deprecated
     @Method(selector = "userCompletedAction:withState:withDelegate:")
     public native void userCompletedAction(String action, NSDictionary<?, ?> state, NSObject branchViewCallback);
     /**
-     * @deprecated Please use BranchEvent to track commerce events.
+     * @deprecated Please use BranchEvent to track commerce events. You can refer to https://help.branch.io/developers-hub/docs/tracking-commerce-content-lifecycle-and-custom-events for additional information.
      */
     @Deprecated
     @Method(selector = "sendCommerceEvent:metadata:withCompletion:")

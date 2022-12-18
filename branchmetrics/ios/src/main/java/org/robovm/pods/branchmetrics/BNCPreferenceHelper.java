@@ -232,6 +232,22 @@ import org.robovm.apple.coregraphics.*;
     public native NSDate getReferrerGBRAIDInitDate();
     @Property(selector = "setReferrerGBRAIDInitDate:")
     public native void setReferrerGBRAIDInitDate(NSDate v);
+    @Property(selector = "skanCurrentWindow")
+    public native @MachineSizedSInt long getSkanCurrentWindow();
+    @Property(selector = "setSkanCurrentWindow:")
+    public native void setSkanCurrentWindow(@MachineSizedSInt long v);
+    @Property(selector = "highestConversionValueSent")
+    public native @MachineSizedSInt long getHighestConversionValueSent();
+    @Property(selector = "setHighestConversionValueSent:")
+    public native void setHighestConversionValueSent(@MachineSizedSInt long v);
+    @Property(selector = "firstAppLaunchTime")
+    public native NSDate getFirstAppLaunchTime();
+    @Property(selector = "setFirstAppLaunchTime:")
+    public native void setFirstAppLaunchTime(NSDate v);
+    @Property(selector = "invokeRegisterApp")
+    public native boolean isInvokeRegisterApp();
+    @Property(selector = "setInvokeRegisterApp:")
+    public native void setInvokeRegisterApp(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

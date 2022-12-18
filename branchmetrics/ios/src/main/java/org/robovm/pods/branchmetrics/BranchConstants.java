@@ -236,6 +236,12 @@ import org.robovm.apple.coregraphics.*;
     public static native String getResponseKeyInvokeRegisterApp();
     @GlobalValue(symbol="BRANCH_RESPONSE_KEY_UPDATE_CONVERSION_VALUE", optional=true)
     public static native String getResponseKeyUpdateConversionValue();
+    @GlobalValue(symbol="BRANCH_RESPONSE_KEY_COARSE_KEY", optional=true)
+    public static native String getResponseKeyCoarseKey();
+    @GlobalValue(symbol="BRANCH_RESPONSE_KEY_UPDATE_IS_LOCKED", optional=true)
+    public static native String getResponseKeyUpdateIsLocked();
+    @GlobalValue(symbol="BRANCH_RESPONSE_KEY_ASCENDING_ONLY", optional=true)
+    public static native String getResponseKeyAscendingOnly();
     @GlobalValue(symbol="BRANCH_LINK_DATA_KEY_OG_TITLE", optional=true)
     public static native String getLinkDataKeyOgTitle();
     @GlobalValue(symbol="BRANCH_LINK_DATA_KEY_OG_DESCRIPTION", optional=true)
