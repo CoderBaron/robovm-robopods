@@ -5,7 +5,6 @@
 //  Created by Thomas So on 7/4/19.
 //
 
-#import <Foundation/Foundation.h>
 #import <AppLovinSDK/ALCPublisher.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -31,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) NSString *publisherIdentifier;
 
 /**
- * The raw data of the message. 
+ * The raw data of the message.
  */
 @property (nonatomic, copy, readonly) NSDictionary<NSString *, id> *data;
 

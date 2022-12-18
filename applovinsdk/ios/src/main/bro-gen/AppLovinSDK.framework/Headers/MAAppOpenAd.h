@@ -5,11 +5,12 @@
 //  Created by Andrew Tian on 7/26/22.
 //
 
-#import <AppLovinSDK/ALSdk.h>
 #import <AppLovinSDK/MAAdDelegate.h>
 #import <AppLovinSDK/MAAdRequestDelegate.h>
 #import <AppLovinSDK/MAAdRevenueDelegate.h>
 #import <AppLovinSDK/MAAdReviewDelegate.h>
+
+@class ALSdk;
 
 NS_ASSUME_NONNULL_BEGIN
 

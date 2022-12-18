@@ -6,10 +6,11 @@
 //  Copyright © 2020 AppLovin Corporation. All rights reserved.
 //
 
-#import <AppLovinSDK/MAAdFormat.h>
-#import <AppLovinSDK/MAMediatedNetworkInfo.h>
-#import <AppLovinSDK/MAAdWaterfallInfo.h>
-#import <AppLovinSDK/MANativeAd.h>
+#import <CoreGraphics/CoreGraphics.h>
+
+@class MAAdFormat;
+@class MAAdWaterfallInfo;
+@class MANativeAd;
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>robopods-applovinsdk-ios</artifactId>
-    <name>RoboPods AppLovinSDK iOS v11.5.4</name>
+    <name>RoboPods AppLovinSDK iOS v11.6.0</name>
     <packaging>jar</packaging>
 
     <licenses>

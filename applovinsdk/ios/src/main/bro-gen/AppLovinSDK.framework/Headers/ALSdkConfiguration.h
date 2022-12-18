@@ -22,22 +22,22 @@ typedef NS_ENUM(NSInteger, ALAppTrackingTransparencyStatus)
      * Device is on iOS before iOS14, AppTrackingTransparency.framework is not available.
      */
     ALAppTrackingTransparencyStatusUnavailable = -1,
-
+    
     /**
      * The user has not yet received an authorization request to authorize access to app-related data that can be used for tracking the user or the device.
      */
     ALAppTrackingTransparencyStatusNotDetermined,
-
+    
     /**
      * Authorization to access app-related data that can be used for tracking the user or the device is restricted.
      */
     ALAppTrackingTransparencyStatusRestricted,
-
+    
     /**
      * The user denies authorization to access app-related data that can be used for tracking the user or the device.
      */
     ALAppTrackingTransparencyStatusDenied,
-
+    
     /**
      * The user authorizes access to app-related data that can be used for tracking the user or the device.
      */
@@ -65,7 +65,7 @@ typedef NS_ENUM(NSInteger, ALAppTrackingTransparencyStatus)
 
 NS_ASSUME_NONNULL_END
 
-__attribute__ ((deprecated))
+__attribute__((deprecated))
 typedef NS_ENUM(NSInteger, ALConsentDialogState)
 {
     ALConsentDialogStateUnknown,
@@ -73,6 +73,6 @@ typedef NS_ENUM(NSInteger, ALConsentDialogState)
     ALConsentDialogStateDoesNotApply
 };
 
-@interface ALSdkConfiguration(ALDeprecated)
+@interface ALSdkConfiguration (ALDeprecated)
 @property (nonatomic, assign, readonly) ALConsentDialogState consentDialogState __deprecated_msg("This API has been deprecated and will be removed in a future release.");
 @end

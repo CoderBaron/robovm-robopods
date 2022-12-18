@@ -79,8 +79,6 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "performClick")
-    public native void performClick();
     /**
      * @deprecated This method has been deprecated and will be removed in a future SDK version. Please use -[MANativeAd prepareForInteractionClickableViews:withContainer:] instead.
      */
@@ -89,6 +87,10 @@ import org.robovm.apple.coreanimation.*;
     public native void prepareViewForInteraction(MANativeAdView nativeAdView);
     @Method(selector = "prepareForInteractionClickableViews:withContainer:")
     public native boolean prepareForInteractionClickableViews(NSArray<UIView> clickableViews, UIView container);
+    @Method(selector = "isContainerClickable")
+    public native boolean isContainerClickable();
+    @Method(selector = "performClick")
+    public native void performClick();
     @Method(selector = "initWithFormat:builderBlock:")
     protected native @Pointer long init(MAAdFormat format, @Block VoidBlock1<MANativeAdBuilder> builderBlock);
     /*</methods>*/

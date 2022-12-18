@@ -5,8 +5,6 @@
 //  Created by Thomas So on 1/1/22.
 //
 
-
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -30,7 +28,6 @@ NS_ASSUME_NONNULL_BEGIN
  * @return If the app is running in an iOS simulator.
  */
 @property (class, nonatomic, readonly, getter=isSimulator) BOOL simulator;
-
 
 - (instancetype)init NS_UNAVAILABLE;
 

@@ -91,6 +91,8 @@ import org.robovm.apple.coreanimation.*;
     public native void showMediationDebugger();
     @Method(selector = "showMediationDebuggerWithAmazonAdSize:")
     public native void showMediationDebugger(NSDictionary<NSString, NSArray> amazonAdSizes);
+    @Method(selector = "showCreativeDebugger")
+    public native void showCreativeDebugger();
     @Method(selector = "initializeSdk")
     public native void initializeSdk();
     @Method(selector = "initializeSdkWithCompletionHandler:")

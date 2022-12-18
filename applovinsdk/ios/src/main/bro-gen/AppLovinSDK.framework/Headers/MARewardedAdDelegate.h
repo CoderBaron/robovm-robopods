@@ -7,8 +7,9 @@
 //
 
 #import <AppLovinSDK/MAAdDelegate.h>
-#import <AppLovinSDK/MAReward.h>
-#import <AppLovinSDK/MAAd.h>
+
+@class MAAd;
+@class MAReward;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/rewarded-ads">MAX Integration Guide ⇒ iOS ⇒ Rewarded Ads</a>
  */
-@protocol MARewardedAdDelegate<MAAdDelegate>
+@protocol MARewardedAdDelegate <MAAdDelegate>
 
 /**
  * The SDK invokes this method when a user should be granted a reward.
