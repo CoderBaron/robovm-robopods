@@ -166,24 +166,21 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
     },
     "Lottie" to { framework ->
         val artifact = "$framework.framework"
-        val artifactLocation = downloadFolder.extend("Lottie/Carthage/Build/Lottie.xcframework/ios-arm64//$artifact")
+        val artifactLocation = downloadFolder.extend("Lottie.xcframework/ios-arm64//$artifact")
+        val versionFile: String by lazy {
+            downloadFolder.extend("Lottie.xcframework/version").readText()
+        }
         processFramework(
             artifact = artifact,
             moduleFolder = "lottie/ios",
             sourceHeadersDir = artifactLocation.headers,
             yaml = "lottie.yaml",
-            version = {
-                downloadFolder.extend("Lottie/Cartfile").readLines()
-                    .find { it.startsWith("github") }
-                    ?.let { it.substringAfterLast(" \"").substringBeforeLast("\"") }
-                    ?: error("Failed to find out Lottie version!")
-            },
+            version = { versionFile },
             instruction = """
-                0. check latest version number at https://github.com/airbnb/lottie-ios/releases
-                1. get binaries using Carthage, (put proper version instead of X.Y.Z) run in ~/Downloads/Lottie:
-                  > echo 'github "airbnb/lottie-ios" "X.Y.Z"' > Cartfile
-                  > carthage update --platform ios --use-xcframeworks
-                2. expected location ${downloadFolder.extend("Lottie/Carthage/Build/Lottie.xcframework/ios-arm64/")}
+                1. goto https://github.com/airbnb/lottie-ios/releases and download latest Lottie.xcframework.zip
+                2. unpack 
+                3. create a file ${downloadFolder.extend("Lottie.xcframework/version")} and put verions there, e.g. 4.0.0 
+                4. expected location ${downloadFolder.extend("Lottie.xcframework/ios-arm64/")}
             """.trimIndent()
         )
     },

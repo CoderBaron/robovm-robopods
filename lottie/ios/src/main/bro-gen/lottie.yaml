@@ -148,6 +148,7 @@ classes:
     RepeaterLayer: {}
     LottieAnimationView: {}
     LottieAnimationViewBase: {}
+    InfiniteOpaqueAnimationLayer: {}
 protocols: {}
 
 

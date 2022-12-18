@@ -370,6 +370,8 @@ SWIFT_CLASS("_TtC6Lottie20BaseCompositionLayer")
 
 
 
+
+
 @class NSString;
 @class NSBundle;
 
@@ -485,6 +487,8 @@ SWIFT_CLASS("_TtC6Lottie10DebugLayer")
 @end
 
 
+
+
 /// A <code>CAGradientLayer</code> subclass used to render a gradient <em>outside</em> the normal layer bounds
 /// <ul>
 ///   <li>
@@ -541,6 +545,20 @@ SWIFT_CLASS("_TtC6Lottie10ImageLayer")
 - (nonnull instancetype)initWithLayer:(id _Nonnull)layer OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+
+/// A <code>BaseAnimationLayer</code> subclass that renders its background color
+/// as if the layer is infinitely large, without affecting its bounds
+/// or the bounds of its sublayers
+SWIFT_CLASS("_TtC6Lottie28InfiniteOpaqueAnimationLayer")
+@interface InfiniteOpaqueAnimationLayer : BaseAnimationLayer
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ OBJC_DESIGNATED_INITIALIZER;
+/// Called by CoreAnimation to create a shadow copy of this layer
+/// More details: https://developer.apple.com/documentation/quartzcore/calayer/1410842-init
+- (nonnull instancetype)initWithLayer:(id _Nonnull)layer OBJC_DESIGNATED_INITIALIZER;
+- (void)layoutSublayers;
+@end
 
 
 /// A layer that inverses the alpha output of its input layer.
