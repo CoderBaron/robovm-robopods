@@ -7,7 +7,7 @@
 //
 
 #import "ISAdUnit.h"
-#import "ISAdapterConfig.h"
+#import <IronSource/ISAdapterConfig.h>
 #import "ISAdapterBaseProtocol.h"
 #import "ISAdData.h"
 #import "ISAdapterAdDelegate.h"

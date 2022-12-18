@@ -48,7 +48,7 @@ import org.robovm.apple.coreanimation.*;
     public static final String IS_INTERSTITIAL = "interstitial";
     public static final String IS_OFFERWALL = "offerwall";
     public static final String IS_BANNER = "banner";
-    public static final String getSdkVersion = "7.2.5";
+    public static final String getSdkVersion = "7.2.6";
     public static final String DataSource_MOPUB = "MoPub";
     /*</constants>*/
     /*<constructors>*/

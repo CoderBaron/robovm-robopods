@@ -14,6 +14,8 @@ static NSString * const kSSErrorsAppKey                 = @"appKey";
 static NSString * const kSSErrorsUserId                 = @"UserId";
 static NSString * const kSSErrorsForSS                  = @"for IronSource";
 
+static NSString * const kEmptyString                    = @"";
+
 typedef NS_ENUM(NSUInteger, ISErrorCode) {
     
     ERROR_CODE_DECRYPT_FAILED = 1,

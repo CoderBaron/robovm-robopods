@@ -90,6 +90,8 @@ import org.robovm.apple.coreanimation.*;
     public native String getAdSourceNameForEvent();
     @Property(selector = "isBidder")
     public native boolean isBidder();
+    @Property(selector = "shouldEarlyInit")
+    public native boolean shouldEarlyInit();
     @Property(selector = "adUnit")
     public native ISAdUnit getAdUnit();
     @Property(selector = "setAdUnit:")

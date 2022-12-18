@@ -30,6 +30,7 @@
 @property (assign, nonatomic, readonly) BOOL          isMultiProviderInstance;
 @property (strong, nonatomic, readonly) NSString      *adSourceNameForEvent; // name from adSourceName property on init
 @property (assign, nonatomic, readonly) BOOL          isBidder;
+@property (assign, nonatomic, readonly) BOOL          shouldEarlyInit;
 @property (strong, nonatomic, readonly) ISAdUnit      *adUnit;
 @property (strong, nonatomic, readonly) NSDictionary  *appSettings;
 @property (strong, nonatomic, readonly) NSDictionary  *interstitialSettings;

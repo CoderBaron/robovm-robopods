@@ -1,6 +1,7 @@
 //
 //  Copyright © 2017 IronSource. All rights reserved.
 //
+#import "Foundation/Foundation.h"
 
 @interface ISSupersonicAdsConfiguration : NSObject
 
