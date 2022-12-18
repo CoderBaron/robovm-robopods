@@ -86,6 +86,8 @@ classes:
                 name: createReferrerShortLink
             '+createReferrerShortLink:referrerName:referrerId:passthroughParams:completionHandler:':
                 name: createReferrerShortLink
+            '+skanUpdateConversionValue:coarse:lock:':
+                name: skanUpdateConversionValue
     SingularAdData:
         methods:
             '-initWithAdPlatfrom:withCurrency:withRevenue:':

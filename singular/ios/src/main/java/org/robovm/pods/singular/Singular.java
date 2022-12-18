@@ -58,13 +58,9 @@ import org.robovm.apple.uikit.*;
         public static final String HOTEL_SCORE = "sng_attr_hotel_score";
         public static final String ITEM_DESCRIPTION = "sng_attr_item_description";
         public static final String ITEM_PRICE = "sng_attr_item_price";
-        public static final String LATITUDE = "sng_attr_latitude";
         public static final String LEVEL = "sng_attr_level";
-        public static final String LOCATION = "sng_attr_location";
-        public static final String LOCATION_ADDRESS_COUNTRY = "sng_attr_location_address_country";
-        public static final String LOCATION_ADDRESS_REGION_OR_PROVINCE = "sng_attr_location_address_region_or_province";
-        public static final String LOCATION_ADDRESS_STREET = "sng_attr_location_address_street";
-        public static final String LONGITUDE = "sng_attr_longitude";
+        public static final String COUNTRY = "sng_attr_country";
+        public static final String REGION = "sng_attr_region";
         public static final String MAX = "sng_attr_max";
         public static final String NEW_VERSION = "sng_attr_new_version";
         public static final String ORIGIN = "sng_attr_origin";
@@ -265,6 +261,8 @@ import org.robovm.apple.uikit.*;
     public static native void skanRegisterAppForAdNetworkAttribution();
     @Method(selector = "skanUpdateConversionValue:")
     public static native boolean skanUpdateConversionValue(@MachineSizedSInt long conversionValue);
+    @Method(selector = "skanUpdateConversionValue:coarse:lock:")
+    public static native void skanUpdateConversionValue(@MachineSizedSInt long conversionValue, @MachineSizedSInt long coarse, boolean lock);
     @Method(selector = "skanGetConversionValue")
     public static native NSNumber skanGetConversionValue();
     @Method(selector = "isSingularLink:")

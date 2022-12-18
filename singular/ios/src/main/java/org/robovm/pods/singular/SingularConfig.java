@@ -105,6 +105,10 @@ import org.robovm.apple.uikit.*;
     public native @Block("(@MachineSizedSInt)") VoidBlock1<Long> getConversionValueUpdatedCallback();
     @Property(selector = "setConversionValueUpdatedCallback:")
     public native void setConversionValueUpdatedCallback(@Block("(@MachineSizedSInt)") VoidBlock1<Long> v);
+    @Property(selector = "conversionValuesUpdatedCallback")
+    public native @Block VoidBlock3<NSNumber, NSNumber, Boolean> getConversionValuesUpdatedCallback();
+    @Property(selector = "setConversionValuesUpdatedCallback:")
+    public native void setConversionValuesUpdatedCallback(@Block VoidBlock3<NSNumber, NSNumber, Boolean> v);
     @Property(selector = "waitForTrackingAuthorizationWithTimeoutInterval")
     public native @MachineSizedSInt long getWaitForTrackingAuthorizationWithTimeoutInterval();
     @Property(selector = "setWaitForTrackingAuthorizationWithTimeoutInterval:")
