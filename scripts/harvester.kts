@@ -1147,12 +1147,7 @@ fun registerMobileAdsMediationAdapters(frameworkRegistry: MutableMap<String, (St
             moduleFolder = "firebase/ios-google-mobile-ads-adapters/ios-inmobi",
             sourceHeadersDir = artifactLocation.headers,
             yaml = "inmobi-adapter.yaml",
-            version = {
-                downloadFolder.extend("InMobiAdapter/CHANGELOG.md").readLines()
-                    .find { it.contains("Version ") }
-                    ?.let { it.substringAfter("Version ").substringBefore(" ").substringBefore("]") }
-                    ?: error("Failed to find out InMobiAdapter version!")
-            },
+            version = { downloadFolder.extend("InMobiAdapter/version").readText() },
             instruction = """
                 1. download InMobiAdapter-X.X.X.X.zip from https://developers.google.com/admob/ios/mediation/inmobi#inmobi-ios-mediation-adapter-changelog
                 2. extract and rename folder to InMobiAdapter 
