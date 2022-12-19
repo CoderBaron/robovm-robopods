@@ -28,6 +28,7 @@ enums:
     UPURTransactionError: { prefix: kUPURTransactionError }
     UPURStore: { prefix: kUPURStore }
     UnityAdsPurchasingEvent: { prefix: kUnityAdsPurchasingEvent }
+    USRVInitializeStateType: {}
 classes:
     UADSBannerError:
         skip_def_constructor: true
@@ -124,6 +125,11 @@ classes:
             '+createExpectedParametersString:current:received:':
                 name: createExpectedParametersString
     UnityServicesListener: { }
+    USRVInitializeStateFactory:
+        methods:
+            '+newWithBuilder:andConfigReader:':
+                name: create
+                constructor: true
 protocols:
     UADSBannerAdRefreshViewDelegate:
         methods:
@@ -155,6 +161,14 @@ protocols:
                 name: unityAdsShowFailed
     UADSJsonStorageContentsReader: {}
     UADSJsonStorageReader: {}
+    UADSDeviceInfoProvider:
+        methods:
+            '-getDeviceInfoWithExtended:':
+                name: getDeviceInfo
+    USRVInitializeTask:
+        methods:
+            '-startWithCompletion:error:':
+                name: start
 functions:
     NSStringFromPlacementContentState:
         class: UnityMonetizationPlacementContentState
