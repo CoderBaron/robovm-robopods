@@ -57,6 +57,8 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "saveException:")
+    public native void saveException(NSException exception);
     @Method(selector = "disable")
     public native void disable();
     @Method(selector = "disable")

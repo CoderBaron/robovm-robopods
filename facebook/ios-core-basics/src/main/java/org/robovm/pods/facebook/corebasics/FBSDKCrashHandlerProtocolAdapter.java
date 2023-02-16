@@ -57,5 +57,7 @@ import org.robovm.apple.coreanimation.*;
     public void addObserver(FBSDKCrashObserving observer) {}
     @NotImplemented("clearCrashReportFiles")
     public void clearCrashReportFiles() {}
+    @NotImplemented("saveException:")
+    public void saveException(NSException exception) {}
     /*</methods>*/
 }

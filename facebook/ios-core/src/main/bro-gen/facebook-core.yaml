@@ -630,6 +630,8 @@ classes:
         exclude: true #INTERNAL - DO NOT USE
     _BridgeAPI:
         exclude: true #INTERNAL - DO NOT USE
+    FBSDKAEMManager:
+        exclude: true #INTERNAL - DO NOT USE
 protocols:
     FBSDKAppLinkResolving:
         methods:
@@ -982,6 +984,8 @@ protocols:
     FBSDKPasteboard:
         exclude: true #INTERNAL - DO NOT USE
     FBSDKUnarchiverProviding:
+        exclude: true #INTERNAL - DO NOT USE
+    FBSDKAutoSetup:
         exclude: true #INTERNAL - DO NOT USE
 functions:
     fb_randomString:
