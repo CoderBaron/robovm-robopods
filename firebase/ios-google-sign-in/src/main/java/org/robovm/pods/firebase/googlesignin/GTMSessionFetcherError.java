@@ -45,7 +45,8 @@ public enum /*<name>*/GTMSessionFetcherError/*</name>*/ implements NSErrorCode {
     BackgroundExpiration(-3L),
     BackgroundFetchFailed(-4L),
     InsecureRequest(-5L),
-    TaskCreationFailed(-6L);
+    TaskCreationFailed(-6L),
+    UserCancelled(-7L);
     /*</values>*/
 
     /*<bind>*/static { Bro.bind(GTMSessionFetcherError.class); }/*</bind>*/

@@ -50,38 +50,16 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*/
     @NotImplemented("callbackQueue")
     public DispatchQueue getCallbackQueue() { return null; }
-    @NotImplemented("setCallbackQueue:")
-    public void setCallbackQueue(DispatchQueue v) {}
     @NotImplemented("reuseSession")
     public boolean isReuseSession() { return false; }
     @NotImplemented("setReuseSession:")
     public void setReuseSession(boolean v) {}
     @NotImplemented("delegateQueue")
     public NSOperationQueue getDelegateQueue() { return null; }
-    @NotImplemented("decorators")
-    public NSArray<?> getDecorators() { return null; }
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("fetcherShouldBeginFetching:")
-    public boolean fetcherShouldBeginFetching(GTMSessionFetcher fetcher) { return false; }
-    @NotImplemented("fetcherDidCreateSession:")
-    public void fetcherDidCreateSession(GTMSessionFetcher fetcher) {}
-    @NotImplemented("fetcherDidBeginFetching:")
-    public void fetcherDidBeginFetching(GTMSessionFetcher fetcher) {}
-    @NotImplemented("fetcherDidStop:")
-    public void fetcherDidStop(GTMSessionFetcher fetcher) {}
     @NotImplemented("fetcherWithRequest:")
     public GTMSessionFetcher getFetcher(NSURLRequest request) { return null; }
-    @NotImplemented("isDelayingFetcher:")
-    public boolean isDelayingFetcher(GTMSessionFetcher fetcher) { return false; }
-    @NotImplemented("session")
-    public NSURLSession session() { return null; }
-    @NotImplemented("sessionForFetcherCreation")
-    public NSURLSession sessionForFetcherCreation() { return null; }
-    @NotImplemented("sessionDelegate")
-    public NSURLSessionDelegate sessionDelegate() { return null; }
-    @NotImplemented("stoppedAllFetchersDate")
-    public NSDate stoppedAllFetchersDate() { return null; }
     /*</methods>*/
 }

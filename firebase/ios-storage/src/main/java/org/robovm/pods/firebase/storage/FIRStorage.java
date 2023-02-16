@@ -64,6 +64,10 @@ import org.robovm.apple.dispatch.*;
     public native double getMaxOperationRetryTime();
     @Property(selector = "setMaxOperationRetryTime:")
     public native void setMaxOperationRetryTime(double v);
+    @Property(selector = "uploadChunkSizeBytes")
+    public native long getUploadChunkSizeBytes();
+    @Property(selector = "setUploadChunkSizeBytes:")
+    public native void setUploadChunkSizeBytes(long v);
     @Property(selector = "callbackQueue")
     public native DispatchQueue getCallbackQueue();
     @Property(selector = "setCallbackQueue:")

@@ -63,8 +63,10 @@ import org.robovm.apple.foundation.*;
     public native String getClientID();
     @Property(selector = "setClientID:")
     public native void setClientID(String v);
+    @Deprecated
     @Property(selector = "trackingID")
     public native String getTrackingID();
+    @Deprecated
     @Property(selector = "setTrackingID:")
     public native void setTrackingID(String v);
     @Property(selector = "GCMSenderID")
@@ -75,8 +77,10 @@ import org.robovm.apple.foundation.*;
     public native String getProjectID();
     @Property(selector = "setProjectID:")
     public native void setProjectID(String v);
+    @Deprecated
     @Property(selector = "androidClientID")
     public native String getAndroidClientID();
+    @Deprecated
     @Property(selector = "setAndroidClientID:")
     public native void setAndroidClientID(String v);
     @Property(selector = "googleAppID")

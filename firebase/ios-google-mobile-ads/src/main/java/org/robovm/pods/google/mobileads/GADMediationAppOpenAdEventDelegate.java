@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.robovm.pods.firebase.googlesignin;
+package org.robovm.pods.google.mobileads;
 
 /*<imports>*/
 import java.io.*;
@@ -28,18 +28,19 @@ import org.robovm.rt.bro.*;
 import org.robovm.rt.bro.annotation.*;
 import org.robovm.rt.bro.ptr.*;
 import org.robovm.apple.foundation.*;
-import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
-import org.robovm.apple.dispatch.*;
+import org.robovm.apple.storekit.*;
+import org.robovm.apple.uikit.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.webkit.*;
 /*</imports>*/
 
 /*<javadoc>*/
 
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/GTMSessionFetcherServiceProtocol/*</name>*/ 
-    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/GADMediationAppOpenAdEventDelegate/*</name>*/ 
+    /*<implements>*/extends GADMediationAdEventDelegate/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
@@ -47,18 +48,10 @@ import org.robovm.apple.coreanimation.*;
     /*</bind>*/
     /*<constants>*//*</constants>*/
     /*<properties>*/
-    @Property(selector = "callbackQueue")
-    DispatchQueue getCallbackQueue();
-    @Property(selector = "reuseSession")
-    boolean isReuseSession();
-    @Property(selector = "setReuseSession:")
-    void setReuseSession(boolean v);
-    @Property(selector = "delegateQueue")
-    NSOperationQueue getDelegateQueue();
+    
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "fetcherWithRequest:")
-    GTMSessionFetcher getFetcher(NSURLRequest request);
+    
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

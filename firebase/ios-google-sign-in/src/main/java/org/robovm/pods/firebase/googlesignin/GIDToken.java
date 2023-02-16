@@ -38,40 +38,32 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/GIDAuthentication/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/GIDToken/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*/implements NSSecureCoding/*</implements>*/ {
 
-    /*<ptr>*/public static class GIDAuthenticationPtr extends Ptr<GIDAuthentication, GIDAuthenticationPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(GIDAuthentication.class); }/*</bind>*/
+    /*<ptr>*/public static class GIDTokenPtr extends Ptr<GIDToken, GIDTokenPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(GIDToken.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public GIDAuthentication() {}
-    protected GIDAuthentication(Handle h, long handle) { super(h, handle); }
-    protected GIDAuthentication(SkipInit skipInit) { super(skipInit); }
+    protected GIDToken() {}
+    protected GIDToken(Handle h, long handle) { super(h, handle); }
+    protected GIDToken(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithCoder:")
-    public GIDAuthentication(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
+    public GIDToken(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "clientID")
-    public native String getClientID();
-    @Property(selector = "accessToken")
-    public native String getAccessToken();
-    @Property(selector = "accessTokenExpirationDate")
-    public native NSDate getAccessTokenExpirationDate();
-    @Property(selector = "refreshToken")
-    public native String getRefreshToken();
-    @Property(selector = "idToken")
-    public native String getIdToken();
-    @Property(selector = "idTokenExpirationDate")
-    public native NSDate getIdTokenExpirationDate();
+    @Property(selector = "tokenString")
+    public native String getTokenString();
+    @Property(selector = "expirationDate")
+    public native NSDate getExpirationDate();
     @Property(selector = "supportsSecureCoding")
     public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "doWithFreshTokens:")
-    public native void doWithFreshTokens(@Block VoidBlock2<GIDAuthentication, NSError> action);
+    @Method(selector = "isEqualToToken:")
+    public native boolean isEqualToToken(GIDToken otherToken);
     @Method(selector = "encodeWithCoder:")
     public native void encode(NSCoder coder);
     @Method(selector = "initWithCoder:")

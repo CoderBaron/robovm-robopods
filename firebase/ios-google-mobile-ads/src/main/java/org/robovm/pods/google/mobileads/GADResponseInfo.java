@@ -54,8 +54,6 @@ import org.robovm.apple.webkit.*;
     /*<properties>*/
     @Property(selector = "responseIdentifier")
     public native String getResponseIdentifier();
-    @Property(selector = "adNetworkClassName")
-    public native String getAdNetworkClassName();
     @Property(selector = "extrasDictionary")
     public native NSDictionary<NSString, ?> getExtrasDictionary();
     @Property(selector = "loadedAdNetworkResponseInfo")
@@ -64,6 +62,12 @@ import org.robovm.apple.webkit.*;
     public native NSArray<GADAdNetworkResponseInfo> getAdNetworkInfoArray();
     @Property(selector = "dictionaryRepresentation")
     public native NSDictionary<NSString, ?> getDictionaryRepresentation();
+    /**
+     * @deprecated Deprecated. Use loadedAdNetworkResponseInfo.adNetworkClassName instead.
+     */
+    @Deprecated
+    @Property(selector = "adNetworkClassName")
+    public native String getAdNetworkClassName();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

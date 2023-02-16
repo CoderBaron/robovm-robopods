@@ -55,6 +55,10 @@ import org.robovm.apple.coreanimation.*;
     public static native GIDSignIn sharedInstance();
     @Property(selector = "currentUser")
     public native GIDGoogleUser getCurrentUser();
+    @Property(selector = "configuration")
+    public native GIDConfiguration getConfiguration();
+    @Property(selector = "setConfiguration:")
+    public native void setConfiguration(GIDConfiguration v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -62,19 +66,17 @@ import org.robovm.apple.coreanimation.*;
     public native boolean handleURL(NSURL url);
     @Method(selector = "hasPreviousSignIn")
     public native boolean hasPreviousSignIn();
-    @Method(selector = "restorePreviousSignInWithCallback:")
-    public native void restorePreviousSignIn(@Block VoidBlock2<GIDGoogleUser, NSError> callback);
+    @Method(selector = "restorePreviousSignInWithCompletion:")
+    public native void restorePreviousSignIn(@Block VoidBlock2<GIDGoogleUser, NSError> completion);
     @Method(selector = "signOut")
     public native void signOut();
-    @Method(selector = "disconnectWithCallback:")
-    public native void disconnect(@Block VoidBlock1<NSError> callback);
-    @Method(selector = "signInWithConfiguration:presentingViewController:callback:")
-    public native void signIn(GIDConfiguration configuration, UIViewController presentingViewController, @Block VoidBlock2<GIDGoogleUser, NSError> callback);
-    @Method(selector = "signInWithConfiguration:presentingViewController:hint:callback:")
-    public native void signIn(GIDConfiguration configuration, UIViewController presentingViewController, String hint, @Block VoidBlock2<GIDGoogleUser, NSError> callback);
-    @Method(selector = "signInWithConfiguration:presentingViewController:hint:additionalScopes:callback:")
-    public native void signIn(GIDConfiguration configuration, UIViewController presentingViewController, String hint, NSArray<NSString> additionalScopes, @Block VoidBlock2<GIDGoogleUser, NSError> callback);
-    @Method(selector = "addScopes:presentingViewController:callback:")
-    public native void addScopes(NSArray<NSString> scopes, UIViewController presentingViewController, @Block VoidBlock2<GIDGoogleUser, NSError> callback);
+    @Method(selector = "disconnectWithCompletion:")
+    public native void disconnect(@Block VoidBlock1<NSError> completion);
+    @Method(selector = "signInWithPresentingViewController:completion:")
+    public native void signIn(UIViewController presentingViewController, @Block VoidBlock2<GIDSignInResult, NSError> completion);
+    @Method(selector = "signInWithPresentingViewController:hint:completion:")
+    public native void signIn(UIViewController presentingViewController, String hint, @Block VoidBlock2<GIDSignInResult, NSError> completion);
+    @Method(selector = "signInWithPresentingViewController:hint:additionalScopes:completion:")
+    public native void signIn(UIViewController presentingViewController, String hint, NSArray<NSString> additionalScopes, @Block VoidBlock2<GIDSignInResult, NSError> completion);
     /*</methods>*/
 }

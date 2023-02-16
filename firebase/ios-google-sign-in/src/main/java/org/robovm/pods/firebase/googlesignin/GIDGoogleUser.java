@@ -57,23 +57,27 @@ import org.robovm.apple.coreanimation.*;
     public native String getUserID();
     @Property(selector = "profile")
     public native GIDProfileData getProfile();
-    @Property(selector = "authentication")
-    public native GIDAuthentication getAuthentication();
     @Property(selector = "grantedScopes")
     public native NSArray<NSString> getGrantedScopes();
-    @Property(selector = "hostedDomain")
-    public native String getHostedDomain();
-    @Property(selector = "serverClientID")
-    public native String getServerClientID();
-    @Property(selector = "serverAuthCode")
-    public native String getServerAuthCode();
-    @Property(selector = "openIDRealm")
-    public native String getOpenIDRealm();
+    @Property(selector = "configuration")
+    public native GIDConfiguration getConfiguration();
+    @Property(selector = "accessToken")
+    public native GIDToken getAccessToken();
+    @Property(selector = "refreshToken")
+    public native GIDToken getRefreshToken();
+    @Property(selector = "idToken")
+    public native GIDToken getIdToken();
+    @Property(selector = "fetcherAuthorizer")
+    public native GTMFetcherAuthorizationProtocol getFetcherAuthorizer();
     @Property(selector = "supportsSecureCoding")
     public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "refreshTokensIfNeededWithCompletion:")
+    public native void refreshTokensIfNeeded(@Block VoidBlock2<GIDGoogleUser, NSError> completion);
+    @Method(selector = "addScopes:presentingViewController:completion:")
+    public native void addScopes(NSArray<NSString> scopes, UIViewController presentingViewController, @Block VoidBlock2<GIDSignInResult, NSError> completion);
     @Method(selector = "encodeWithCoder:")
     public native void encode(NSCoder coder);
     @Method(selector = "initWithCoder:")

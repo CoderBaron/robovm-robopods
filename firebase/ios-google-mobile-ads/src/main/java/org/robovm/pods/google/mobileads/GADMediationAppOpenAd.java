@@ -36,36 +36,24 @@ import org.robovm.apple.webkit.*;
 /*</imports>*/
 
 /*<javadoc>*/
+
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/GADMRewardBasedVideoAdNetworkAdapterAdapter/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements GADMRewardBasedVideoAdNetworkAdapter/*</implements>*/ {
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/GADMediationAppOpenAd/*</name>*/ 
+    /*<implements>*/extends GADMediationAd/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*//*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
-    /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("setUp")
-    public void setUp() {}
-    @NotImplemented("requestRewardBasedVideoAd")
-    public void requestRewardBasedVideoAd() {}
-    @NotImplemented("presentRewardBasedVideoAdWithRootViewController:")
-    public void presentRewardBasedVideoAd(UIViewController viewController) {}
-    @NotImplemented("stopBeingDelegate")
-    public void stopBeingDelegate() {}
-    /**
-     * @deprecated Use setUp.
-     */
-    @Deprecated
-    @NotImplemented("setUpWithUserID:")
-    public void setUp(String userID) {}
+    @Method(selector = "presentFromViewController:")
+    void presentFromViewController(UIViewController viewController);
     /*</methods>*/
+    /*<adapter>*/
+    /*</adapter>*/
 }

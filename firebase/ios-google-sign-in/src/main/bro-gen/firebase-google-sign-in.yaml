@@ -5,7 +5,7 @@ header_root: '.'
 include: [foundation, uikit, coregraphics, dispatch, coreanimation]
 clang_args: ['-x', 'objective-c']
 headers:
-    - "#include <GTMSessionFetcher/GTMSessionFetcher.h>"
+    - "#include <GTMSessionFetcher/GTMSessionFetcher-umbrella.h>"
     - "#include <GoogleSignIn/GoogleSignIn.h>"
 
 enums:
@@ -27,7 +27,12 @@ classes:
                 exclude: true # for now, as requires GTMSessionFetcher
             '-doWithFreshTokens:':
                 name: doWithFreshTokens
-    GIDGoogleUser: {}
+    GIDGoogleUser:
+        methods:
+            '-refreshTokensIfNeededWithCompletion:':
+                name: refreshTokensIfNeeded
+            '-addScopes:presentingViewController:completion:':
+                name: addScopes
     GIDProfileData:
         methods:
             '-imageURLWithDimension:':
@@ -49,7 +54,27 @@ classes:
                 name: addScopes
             '-disconnectWithCallback:':
                 name: disconnect
+            '-restorePreviousSignInWithCompletion:':
+                name: restorePreviousSignIn
+            '-disconnectWithCompletion:':
+                name: disconnect
+            '-signInWithPresentingViewController:completion:':
+                name: signIn
+            '-signInWithPresentingViewController:hint:completion:':
+                name: signIn
+            '-signInWithPresentingViewController:hint:additionalScopes:completion:':
+                name: signIn
     GIDSignInButton: {}
+    GIDConfiguration:
+        methods:
+            '-initWithClientID:':
+                name: init
+            '-initWithClientID:serverClientID:':
+                name: init
+            '-initWithClientID:serverClientID:hostedDomain:openIDRealm:':
+                name: init
+    GIDSignInResult: { }
+    GIDToken: { }
 
     # GTMSessionFetcher
     GTMSessionCookieStorage: {}
@@ -86,14 +111,32 @@ classes:
             '+application:handleEventsForBackgroundURLSession:completionHandler:':
                 name: handleEventsForBackgroundURLSession
     GTMSessionFetcherUserDefaultsFactory: {}
-    GIDConfiguration:
+    GTMSessionFetcherService:
         methods:
-            '-initWithClientID:':
-                name: init
-            '-initWithClientID:serverClientID:':
-                name: init
-            '-initWithClientID:serverClientID:hostedDomain:openIDRealm:':
-                name: init
+            '-fetcherWithURL:':
+                name: getFetcher
+            '-fetcherWithURLString:':
+                name: getFetcher
+            '-fetcherWithRequest:fetcherClass:':
+                name: getFetcher
+            '-issuedFetchersWithRequestURL:':
+                name: issuedFetchers
+            '-waitForCompletionOfAllFetchersWithTimeout:':
+                name: waitForCompletionOfAllFetchers
+            '+mockFetcherServiceWithFakedData:fakedError:':
+                name: mockFetcherService
+            '+mockFetcherServiceWithFakedData:fakedResponse:fakedError:':
+                name: mockFetcherService
+    GTMSessionUploadFetcher:
+        methods:
+            '-setUploadDataLength:provider:':
+                name: setUploadDataLength
+            '+uploadFetcherWithRequest:uploadMIMEType:chunkSize:fetcherService:':
+                name: uploadFetcher
+            '+uploadFetcherWithLocation:uploadMIMEType:chunkSize:fetcherService:':
+                name: uploadFetcher
+            '+uploadFetcherWithLocation:uploadMIMEType:chunkSize:allowsCellularAccess:fetcherService:':
+                name: uploadFetcher
 protocols:
     GIDSignInDelegate:
         methods:
@@ -130,8 +173,6 @@ protocols:
             '-authorizeRequest:delegate:didFinishSelector:':
                 name: authorizeRequest
 functions:
-
-
     # GTMSessionFetcher
     GTMFetcherStandardUserAgentString:
         class: GTMSessionFetcher
@@ -169,8 +210,12 @@ values:
         static_class: Notifications
         name: '#{g[0]}'
 
-    kGTMSessionFetcher(.*):
+    k?GTMSessionFetcher(.*):
         class: GTMSessionFetcher
+        static_class: Consts
+        name: '#{g[0]}'
+    k?GTMSessionUploadFetcher(.*):
+        class: GTMSessionUploadFetcher
         static_class: Consts
         name: '#{g[0]}'
 

@@ -50,7 +50,7 @@ v1.29.0 - in development
 | [Charts](charts/)               | 4.1.0   |
 | [ClearAds](clearads/)           | 2.9.3   |
 | [Facebook](facebook/)           | 15.1.0  |
-| [Firebase](firebase/)           | 10.3.0  |
+| [Firebase](firebase/)           | 10.5.0  |
 | [Flurry](flurry/)               | 11.2.1  |
 | [Fyber](fyber/)                 | 8.1.6   |
 | [HelpShift](helpshift/)         | 7.11.2  |

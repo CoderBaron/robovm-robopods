@@ -152,9 +152,9 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "setAuthorizer:")
     public native void setAuthorizer(GTMFetcherAuthorizationProtocol v);
     @Property(selector = "service")
-    public native GTMSessionFetcherServiceProtocol getService();
+    public native GTMSessionFetcherService getService();
     @Property(selector = "setService:")
-    public native void setService(GTMSessionFetcherServiceProtocol v);
+    public native void setService(GTMSessionFetcherService v);
     @Property(selector = "serviceHost")
     public native String getServiceHost();
     @Property(selector = "setServiceHost:")
@@ -235,6 +235,10 @@ import org.robovm.apple.coreanimation.*;
     public native void setSkipBackgroundTask(boolean v);
     @Property(selector = "isFetching")
     public native boolean isFetching();
+    @Property(selector = "stopFetchingTriggersCompletionHandler")
+    public native boolean isStopFetchingTriggersCompletionHandler();
+    @Property(selector = "setStopFetchingTriggersCompletionHandler:")
+    public native void setStopFetchingTriggersCompletionHandler(boolean v);
     @Property(selector = "completionHandler")
     public native @Block VoidBlock2<NSData, NSError> getCompletionHandler();
     @Property(selector = "setCompletionHandler:")
@@ -291,6 +295,8 @@ import org.robovm.apple.coreanimation.*;
     public native @MachineSizedUInt long getTestBlockAccumulateDataChunkCount();
     @Property(selector = "setTestBlockAccumulateDataChunkCount:")
     public native void setTestBlockAccumulateDataChunkCount(@MachineSizedUInt long v);
+    @Property(selector = "parentUploadFetcher")
+    public native GTMSessionUploadFetcher getParentUploadFetcher();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -312,6 +318,14 @@ import org.robovm.apple.coreanimation.*;
         public static native String NumberOfRetriesDoneKey();
         @GlobalValue(symbol="kGTMSessionFetcherElapsedIntervalWithRetriesKey", optional=true)
         public static native String ElapsedIntervalWithRetriesKey();
+        @GlobalValue(symbol="kGTMSessionFetcherServiceSessionKey", optional=true)
+        public static native String ServiceSessionKey();
+        @GlobalValue(symbol="GTMSessionFetcherVersionNumber", optional=true)
+        public static native double VersionNumber();
+        @GlobalValue(symbol="GTMSessionFetcherVersionNumber", optional=true)
+    public static native void VersionNumber(double v);
+        @GlobalValue(symbol="GTMSessionFetcherVersionString", optional=true)
+        public static native BytePtr VersionString();
     }
 
     @Library(Library.INTERNAL)
@@ -328,6 +342,12 @@ import org.robovm.apple.coreanimation.*;
         public static native String RetryDelayStopped();
         @GlobalValue(symbol="kGTMSessionFetcherCompletionInvokedNotification", optional=true)
         public static native String CompletionInvoked();
+        @GlobalValue(symbol="kGTMSessionFetcherServiceSessionBecameInvalidNotification", optional=true)
+        public static native String ServiceSessionBecameInvalid();
+        @GlobalValue(symbol="kGTMSessionFetcherUploadLocationObtainedNotification", optional=true)
+        public static native String UploadLocationObtained();
+        @GlobalValue(symbol="kGTMSessionFetcherUploadInitialBackoffStartedNotification", optional=true)
+        public static native String UploadInitialBackoffStarted();
     }
     
     @Bridge(symbol="GTMFetcherStandardUserAgentString", optional=true)

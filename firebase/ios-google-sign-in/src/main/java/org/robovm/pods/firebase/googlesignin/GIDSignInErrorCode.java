@@ -45,8 +45,8 @@ public enum /*<name>*/GIDSignInErrorCode/*</name>*/ implements NSErrorCode {
     HasNoAuthInKeychain(-4L),
     Canceled(-5L),
     EMM(-6L),
-    NoCurrentUser(-7L),
-    ScopesAlreadyGranted(-8L);
+    ScopesAlreadyGranted(-8L),
+    MismatchWithCurrentUser(-9L);
     /*</values>*/
 
     /*<bind>*/static { Bro.bind(GIDSignInErrorCode.class); }/*</bind>*/

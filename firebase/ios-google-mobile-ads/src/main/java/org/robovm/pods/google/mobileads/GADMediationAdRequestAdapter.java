@@ -69,47 +69,5 @@ import org.robovm.apple.webkit.*;
     public NSNumber underAgeOfConsent() { return null; }
     @NotImplemented("userKeywords")
     public NSArray<?> userKeywords() { return null; }
-    /**
-     * @deprecated Deprecated. No replacement.
-     */
-    @Deprecated
-    @NotImplemented("userGender")
-    public GADGender userGender() { return null; }
-    /**
-     * @deprecated Deprecated. No replacement.
-     */
-    @Deprecated
-    @NotImplemented("userBirthday")
-    public NSDate userBirthday() { return null; }
-    /**
-     * @deprecated Deprecated and unsupported. Always returns NO.
-     */
-    @Deprecated
-    @NotImplemented("userHasLocation")
-    public boolean userHasLocation() { return false; }
-    /**
-     * @deprecated Deprecated and unsupported. Always returns 0.
-     */
-    @Deprecated
-    @NotImplemented("userLatitude")
-    public @MachineSizedFloat double userLatitude() { return 0; }
-    /**
-     * @deprecated Deprecated and unsupported. Always returns 0.
-     */
-    @Deprecated
-    @NotImplemented("userLongitude")
-    public @MachineSizedFloat double userLongitude() { return 0; }
-    /**
-     * @deprecated Deprecated and unsupported. Always returns 0.
-     */
-    @Deprecated
-    @NotImplemented("userLocationAccuracyInMeters")
-    public @MachineSizedFloat double userLocationAccuracyInMeters() { return 0; }
-    /**
-     * @deprecated Deprecated and unsupported. Always returns nil.
-     */
-    @Deprecated
-    @NotImplemented("userLocationDescription")
-    public String userLocationDescription() { return null; }
     /*</methods>*/
 }

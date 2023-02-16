@@ -65,5 +65,7 @@ import org.robovm.apple.webkit.*;
     public void loadRewardedAd(GADMediationRewardedAdConfiguration adConfiguration, @Block Block2<GADMediationRewardedAd, NSError, GADMediationRewardedAdEventDelegate> completionHandler) {}
     @NotImplemented("loadRewardedInterstitialAdForAdConfiguration:completionHandler:")
     public void loadRewardedInterstitialAd(GADMediationRewardedAdConfiguration adConfiguration, @Block Block2<GADMediationRewardedAd, NSError, GADMediationRewardedAdEventDelegate> completionHandler) {}
+    @NotImplemented("loadAppOpenAdForAdConfiguration:completionHandler:")
+    public void loadAppOpenAd(GADMediationAppOpenAdConfiguration adConfiguration, @Block Block2<GADMediationAppOpenAd, NSError, GADMediationAppOpenAdEventDelegate> completionHandler) {}
     /*</methods>*/
 }

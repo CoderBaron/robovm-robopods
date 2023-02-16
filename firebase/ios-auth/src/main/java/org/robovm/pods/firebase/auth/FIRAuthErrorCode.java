@@ -112,6 +112,7 @@ public enum /*<name>*/FIRAuthErrorCode/*</name>*/ implements NSErrorCode {
     UnsupportedFirstFactor(17089L),
     EmailChangeNeedsVerification(17090L),
     MissingOrInvalidNonce(17094L),
+    BlockingCloudFunctionError(17105L),
     MissingClientIdentifier(17993L),
     KeychainError(17995L),
     InternalError(17999L),

@@ -57,6 +57,8 @@ classes:
         methods:
             '+loadWithAdUnitID:request:orientation:completionHandler:':
                 name: load
+            '+loadWithAdUnitID:request:completionHandler:':
+                name: load
             '-canPresentFromRootViewController:error:':
                 name: canPresentFromRootViewController
     GADAppOpenAdView: {}
@@ -198,6 +200,7 @@ classes:
         methods:
             '+createQueryInfoWithRequest:adFormat:completionHandler:':
                 name: createQueryInfo
+    GADMediationAppOpenAdConfiguration: { }
 protocols:
     GADAdLoaderDelegate:
         methods:
@@ -410,6 +413,8 @@ protocols:
                 name: loadRewardedInterstitialAd
             '-loadInterscrollerAdForAdConfiguration:completionHandler:':
                 name: loadInterscrollerAd
+            '-loadAppOpenAdForAdConfiguration:completionHandler:':
+                name: loadAppOpenAd
     GADMediationBannerAd: {}
     GADMediationBannerAdEventDelegate:
         skip_adapter: true
@@ -490,6 +495,8 @@ protocols:
                 name: getValidBannerSizes
             '-adLoader:didReceiveGAMBannerView:':
                 name: didReceiveGAMBannerView
+    GADMediationAppOpenAd: { }
+    GADMediationAppOpenAdEventDelegate: { }
 functions:
     # GADAdSize
     GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth:

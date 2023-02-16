@@ -69,6 +69,8 @@ import org.robovm.apple.webkit.*;
     public native boolean canPresentFromRootViewController(UIViewController rootViewController, NSError.NSErrorPtr error);
     @Method(selector = "presentFromRootViewController:")
     public native void presentFromRootViewController(UIViewController rootViewController);
+    @Method(selector = "loadWithAdUnitID:request:completionHandler:")
+    public static native void load(String adUnitID, GADRequest request, @Block VoidBlock2<GADAppOpenAd, NSError> completionHandler);
     @Method(selector = "loadWithAdUnitID:request:orientation:completionHandler:")
     public static native void load(String adUnitID, GADRequest request, UIInterfaceOrientation orientation, @Block VoidBlock2<GADAppOpenAd, NSError> completionHandler);
     /*</methods>*/
