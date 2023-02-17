@@ -68,6 +68,8 @@ import org.robovm.pods.applovinsdk.*;
     public native void loadRewardedAd(GADMediationRewardedAdConfiguration adConfiguration, @Block Block2<GADMediationRewardedAd, NSError, GADMediationRewardedAdEventDelegate> completionHandler);
     @Method(selector = "loadRewardedInterstitialAdForAdConfiguration:completionHandler:")
     public native void loadRewardedInterstitialAd(GADMediationRewardedAdConfiguration adConfiguration, @Block Block2<GADMediationRewardedAd, NSError, GADMediationRewardedAdEventDelegate> completionHandler);
+    @Method(selector = "loadAppOpenAdForAdConfiguration:completionHandler:")
+    public native void loadAppOpenAd(GADMediationAppOpenAdConfiguration adConfiguration, @Block Block2<GADMediationAppOpenAd, NSError, GADMediationAppOpenAdEventDelegate> completionHandler);
     @Method(selector = "adapterVersion")
     public static native @ByVal GADVersionNumber adapterVersion();
     @Method(selector = "adSDKVersion")
