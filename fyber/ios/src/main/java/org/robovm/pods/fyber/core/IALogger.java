@@ -56,8 +56,16 @@ import org.robovm.apple.coregraphics.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    /**
+     * @deprecated IALogger class is deprecated and will be removed in future versions; please use FMPLogger API instead.
+     */
+    @Deprecated
     @Method(selector = "setLogLevel:")
     public static native void setLogLevel(IALogLevel logLevel);
+    /**
+     * @deprecated IALogger class is deprecated and will be removed in future versions; please use FMPLogger API instead.
+     */
+    @Deprecated
     @Method(selector = "logLevel:")
     public static native IALogLevel logLevel(IALogLevel logLevel);
     /*</methods>*/
