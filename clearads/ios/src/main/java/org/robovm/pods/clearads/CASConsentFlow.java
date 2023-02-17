@@ -37,23 +37,39 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/CASRequestUnit/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/CASConsentFlow/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class CASRequestUnitPtr extends Ptr<CASRequestUnit, CASRequestUnitPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(CASRequestUnit.class); }/*</bind>*/
+    /*<ptr>*/public static class CASConsentFlowPtr extends Ptr<CASConsentFlow, CASConsentFlowPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(CASConsentFlow.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public CASRequestUnit() {}
-    protected CASRequestUnit(Handle h, long handle) { super(h, handle); }
-    protected CASRequestUnit(SkipInit skipInit) { super(skipInit); }
+    public CASConsentFlow() {}
+    protected CASConsentFlow(Handle h, long handle) { super(h, handle); }
+    protected CASConsentFlow(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithEnabled:")
+    public CASConsentFlow(boolean isEnabled) { super((SkipInit) null); initObject(init(isEnabled)); }
     /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "requestGDPR")
+    public native boolean isRequestGDPR();
+    @Property(selector = "setRequestGDPR:")
+    public native void setRequestGDPR(boolean v);
+    @Property(selector = "requestATT")
+    public native boolean isRequestATT();
+    @Property(selector = "setRequestATT:")
+    public native void setRequestATT(boolean v);
+    @Property(selector = "privacyPolicyUrl")
+    public native String getPrivacyPolicyUrl();
+    @Property(selector = "setPrivacyPolicyUrl:")
+    public native void setPrivacyPolicyUrl(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "initWithEnabled:")
+    protected native @Pointer long init(boolean isEnabled);
+    @Method(selector = "withPrivacyPolicy:")
+    public native CASConsentFlow withPrivacyPolicy(String url);
     /*</methods>*/
 }

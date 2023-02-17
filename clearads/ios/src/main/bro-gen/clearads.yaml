@@ -136,7 +136,10 @@ classes:
         methods:
             '+native':
                 name: typeNative
-
+    CASConsentFlow:
+        methods:
+            '-initWithEnabled:':
+                name: init
 protocols:
     CASAdapterFactory: { }
     CASAnalyticsDelegate:
@@ -166,6 +169,7 @@ protocols:
                 name: onAdFailedToLoad
     CASStatusDelegate: { }
     CASStatusHandler: { }
+    CASPaidCallback: {}
 
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
@@ -193,6 +197,9 @@ constants:
     CASErrorDomain:
         class: CASError
         name: ErrorDomain
+    CAS_FRAMEWORK_(VERSION|CODE):
+        class: CAS
+        name: 'FRAMEWORK_#{g[0]}'
 
     # Make sure we don't miss any values if new ones are introduced in a later version
     (.*):

@@ -36,9 +36,9 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/CASAnalyticsHandlerAdapter/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements CASAnalyticsHandler/*</implements>*/ {
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/CASPaidCallbackAdapter/*</name>*/ 
+    extends /*<extends>*/CASCallbackAdapter/*</extends>*/ 
+    /*<implements>*/implements CASPaidCallback/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
@@ -51,7 +51,7 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("log::")
-    public void log(String eventName, NSDictionary<NSString, ?> map) {}
+    @NotImplemented("didPayRevenueFor:")
+    public void didPayRevenueFor(CASStatusHandler ad) {}
     /*</methods>*/
 }

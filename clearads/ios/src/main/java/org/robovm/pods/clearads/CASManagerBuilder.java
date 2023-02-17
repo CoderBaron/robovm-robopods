@@ -62,6 +62,8 @@ import org.robovm.apple.coreanimation.*;
     public native CASManagerBuilder withAdFlags(CASTypeFlags adTypes);
     @Method(selector = "withUserID:")
     public native CASManagerBuilder withUserID(String userID);
+    @Method(selector = "withConsentFlow:")
+    public native CASManagerBuilder withConsentFlow(CASConsentFlow flow);
     @Method(selector = "withMediationExtras:forKey:")
     public native CASManagerBuilder withMediationExtras(String value, String key);
     @Method(selector = "withFramework:version:")

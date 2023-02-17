@@ -54,8 +54,6 @@ import org.robovm.apple.coreanimation.*;
     public native String getError();
     @Property(selector = "manager")
     public native CASMediationManager getManager();
-    @Property(selector = "isShouldBeShownConsentDialog")
-    public native boolean isShouldBeShownConsentDialog();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

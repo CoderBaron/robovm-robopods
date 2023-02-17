@@ -43,7 +43,10 @@ import org.robovm.apple.coreanimation.*;
 
     /*<ptr>*/public static class CASPtr extends Ptr<CAS, CASPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(CAS.class); }/*</bind>*/
-    /*<constants>*//*</constants>*/
+    /*<constants>*/
+    public static final String FRAMEWORK_VERSION = "3.0.1";
+    public static final int FRAMEWORK_CODE = 3001;
+    /*</constants>*/
     /*<constructors>*/
     public CAS() {}
     protected CAS(Handle h, long handle) { super(h, handle); }
@@ -54,13 +57,6 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @GlobalValue(symbol="CleverAdsSolutionsVersionNumber", optional=true)
-    public static native double getVersionNumber();
-    @GlobalValue(symbol="CleverAdsSolutionsVersionString", optional=true)
-    public static native BytePtr getVersionString();
-    
-    @Method(selector = "getSDKVersion")
-    public static native String getSDKVersion();
     @Method(selector = "settings")
     public static native CASSettings settings();
     @Method(selector = "targetingOptions")
@@ -69,27 +65,13 @@ import org.robovm.apple.coreanimation.*;
     public static native CASMediationManager manager();
     @Method(selector = "buildManager")
     public static native CASManagerBuilder buildManager();
+    @Method(selector = "getSDKVersion")
+    public static native String getSDKVersion();
     @Method(selector = "validateIntegration")
     public static native void validateIntegration();
-    /**
-     * @deprecated Use new buildManager() feature instead.
-     */
-    @Deprecated
-    @Method(selector = "createWithManagerID:onInit:")
-    public static native CASMediationManager createMediationManager(String managerID, @Block VoidBlock2<Boolean, NSString> onInit);
-    /**
-     * @deprecated Use new buildManager() feature instead.
-     */
-    @Deprecated
-    @Method(selector = "createWithManagerID:enableTypes:demoAdMode:onInit:")
-    public static native CASMediationManager createMediationManager(String managerID, @MachineSizedUInt long enableTypes, boolean demoAdMode, @Block VoidBlock2<Boolean, NSString> onInit);
-    /**
-     * @deprecated Use new buildManager() feature instead.
-     */
-    @Deprecated
-    @Method(selector = "createWithManagerID:enableTypes:demoAdMode:mediationExtras:onInit:")
-    public static native CASMediationManager createMediationManager(String managerID, @MachineSizedUInt long enableTypes, boolean demoAdMode, NSDictionary<NSString, NSString> mediationExtras, @Block VoidBlock2<Boolean, NSString> onInit);
     @Method(selector = "getMessageOf:")
     public static native String getMessageOf(CASError error);
+    @Method(selector = "getErrorFor:")
+    public static native CASError getErrorFor(String message);
     /*</methods>*/
 }

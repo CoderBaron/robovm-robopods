@@ -58,10 +58,6 @@ import org.robovm.apple.coreanimation.*;
     public static native CASAnalyticsDelegate delegate();
     @Method(selector = "setDelegate:")
     public static native void setDelegate(CASAnalyticsDelegate value);
-    @Method(selector = "handler")
-    public static native CASAnalyticsHandler handler();
-    @Method(selector = "setHandler:")
-    public static native void setHandler(CASAnalyticsHandler value);
     @Method(selector = "eventNameForCrossPromo")
     public static native String eventNameForCrossPromo();
     @Method(selector = "setEventNameForCrossPromo:")

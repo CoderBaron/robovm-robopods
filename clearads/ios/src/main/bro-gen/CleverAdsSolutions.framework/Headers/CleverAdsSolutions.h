@@ -2,26 +2,13 @@
 //  CleverAdsSolutions.h
 //  CleverAdsSolutions
 //
-//  Copyright © 2020 Clever Ads Solutions. All rights reserved.
+//  Copyright © 2023 Clever Ads Solutions. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-
-//! Project version number for CleverAdsSolutions.
-FOUNDATION_EXPORT double CleverAdsSolutionsVersionNumber;
-
-//! Project version string for CleverAdsSolutions.
-FOUNDATION_EXPORT const unsigned char CleverAdsSolutionsVersionString[];
-
-
-typedef NS_OPTIONS (NSUInteger, CASTypeFlags){
-    CASTypeFlagsNone = 0,
-    CASTypeFlagsBanner = 1 << 0,
-    CASTypeFlagsInterstitial = 1 << 1,
-    CASTypeFlagsRewarded = 1 << 2,
-    CASTypeFlagsNative = 1 << 3,
-    CASTypeFlagsOpenApp = 1 << 6,
-    CASTypeFlagsEverything = CASTypeFlagsBanner | CASTypeFlagsInterstitial | CASTypeFlagsRewarded
-};
-
+#import <UIKit/UIKit.h>
+#import "CASTypeFlags.h"
 #import "CASInternalUtils.h"
+
+#define CAS_FRAMEWORK_VERSION @"3.0.1"
+#define CAS_FRAMEWORK_CODE 3001

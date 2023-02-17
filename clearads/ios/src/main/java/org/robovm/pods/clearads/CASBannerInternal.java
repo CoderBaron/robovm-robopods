@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC18CleverAdsSolutions17CASBannerInternal")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/CASBannerInternal/*</name>*/ 
     extends /*<extends>*/UIView/*</extends>*/ 
-    /*<implements>*/implements CASCallback/*</implements>*/ {
+    /*<implements>*/implements CASPaidCallback/*</implements>*/ {
 
     /*<ptr>*/public static class CASBannerInternalPtr extends Ptr<CASBannerInternal, CASBannerInternalPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(CASBannerInternal.class); }/*</bind>*/
@@ -78,13 +78,15 @@ import org.robovm.apple.coreanimation.*;
     public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute semanticContentAttribute, UIUserInterfaceLayoutDirection layoutDirection);
     @Method(selector = "didClickedAd")
     public native void didClickedAd();
+    @Method(selector = "didPayRevenueFor:")
+    public native void didPayRevenueFor(CASStatusHandler ad);
     @Method(selector = "willShownWithAd:")
     public native void willShown(CASStatusHandler adStatus);
-    @Method(selector = "didClosedAd")
-    public native void didClosedAd();
     @Method(selector = "didShowAdFailedWithError:")
     public native void didShowAdFailed(String error);
     @Method(selector = "didCompletedAd")
     public native void didCompletedAd();
+    @Method(selector = "didClosedAd")
+    public native void didClosedAd();
     /*</methods>*/
 }

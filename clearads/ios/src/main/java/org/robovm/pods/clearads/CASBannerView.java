@@ -54,12 +54,6 @@ import org.robovm.apple.coreanimation.*;
     public CASBannerView(CASSize adSize, @ByVal CGPoint origin, CASMediationManager manager) { super((SkipInit) null); initObject(init(adSize, origin, manager)); }
     @Method(selector = "initWithCoder:")
     public CASBannerView(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
-    /**
-     * @deprecated Use constructor with Ad Size instead.. Use initWithAdSize:manager:
-     */
-    @Deprecated
-    @Method(selector = "initWithManager:")
-    public CASBannerView(CASMediationManager manager) { super((SkipInit) null); initObject(init(manager)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "manager")
@@ -78,18 +72,6 @@ import org.robovm.apple.coreanimation.*;
     public native CASBannerDelegate getAdDelegate();
     @Property(selector = "setAdDelegate:", strongRef = true)
     public native void setAdDelegate(CASBannerDelegate v);
-    /**
-     * @deprecated Banner ads have migrated from CASCallback to use the new CASBannerDelegate with a more intuitive protocol.. Use adDelegate
-     */
-    @Deprecated
-    @Property(selector = "delegate")
-    public native CASCallback getDelegate();
-    /**
-     * @deprecated Banner ads have migrated from CASCallback to use the new CASBannerDelegate with a more intuitive protocol.. Use adDelegate
-     */
-    @Deprecated
-    @Property(selector = "setDelegate:", strongRef = true)
-    public native void setDelegate(CASCallback v);
     @Property(selector = "isAdReady")
     public native boolean isAdReady();
     @Property(selector = "isAutoloadEnabled")
@@ -100,18 +82,6 @@ import org.robovm.apple.coreanimation.*;
     public native @MachineSizedSInt long getRefreshInterval();
     @Property(selector = "setRefreshInterval:")
     public native void setRefreshInterval(@MachineSizedSInt long v);
-    /**
-     * @deprecated Use isAutoloadEnabled
-     */
-    @Deprecated
-    @Property(selector = "isRefreshAdaptiveSizeWhenChangingOrientation")
-    public native boolean isRefreshAdaptiveSizeWhenChangingOrientation();
-    /**
-     * @deprecated Use isAutoloadEnabled
-     */
-    @Deprecated
-    @Property(selector = "setIsRefreshAdaptiveSizeWhenChangingOrientation:")
-    public native void setIsRefreshAdaptiveSizeWhenChangingOrientation(boolean v);
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();
@@ -124,12 +94,6 @@ import org.robovm.apple.coreanimation.*;
     protected native @Pointer long init(CASSize adSize, @ByVal CGPoint origin, CASMediationManager manager);
     @Method(selector = "initWithCoder:")
     protected native @Pointer long init(NSCoder coder);
-    /**
-     * @deprecated Use constructor with Ad Size instead.. Use initWithAdSize:manager:
-     */
-    @Deprecated
-    @Method(selector = "initWithManager:")
-    protected native @Pointer long init(CASMediationManager manager);
     @Method(selector = "disableAdRefresh")
     public native void disableAdRefresh();
     @Method(selector = "loadNextAd")

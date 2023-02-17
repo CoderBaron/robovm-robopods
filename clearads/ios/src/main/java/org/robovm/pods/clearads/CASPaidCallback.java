@@ -34,13 +34,11 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-/**
- * @deprecated Use _TtP18CleverAdsSolutions20CASAnalyticsDelegate_
- */
+
 /*</javadoc>*/
-/*<annotations>*/@Deprecated/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/CASAnalyticsHandler/*</name>*/ 
-    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/CASPaidCallback/*</name>*/ 
+    /*<implements>*/extends CASCallback/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
@@ -51,8 +49,8 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "log::")
-    void log(String eventName, NSDictionary<NSString, ?> map);
+    @Method(selector = "didPayRevenueFor:")
+    void didPayRevenueFor(CASStatusHandler ad);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

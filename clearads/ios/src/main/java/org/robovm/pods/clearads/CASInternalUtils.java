@@ -54,6 +54,8 @@ import org.robovm.apple.coreanimation.*;
     public static native String getAdId();
     @Property(selector = "isAdTrackingEnabled")
     public static native boolean isAdTrackingEnabled();
+    @Property(selector = "isAdTrackingNotDetermined")
+    public static native boolean isAdTrackingNotDetermined();
     @Property(selector = "adTrackingStatus")
     public static native @MachineSizedUInt long getAdTrackingStatus();
     /*</properties>*/

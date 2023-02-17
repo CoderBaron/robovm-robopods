@@ -92,12 +92,6 @@ import org.robovm.apple.coreanimation.*;
     public native boolean isDebugMode();
     @Method(selector = "setDebugMode:")
     public native void setDebugMode(boolean enabled);
-    /**
-     * @deprecated Removed in version 3.0
-     */
-    @Deprecated
-    @Method(selector = "getTestDeviceIDs")
-    public native NSArray<NSString> getTestDeviceIDs();
     @Method(selector = "setTestDeviceWithIds:")
     public native void setTestDevice(NSArray<NSString> ids);
     @Method(selector = "getLoadingMode")
@@ -108,27 +102,5 @@ import org.robovm.apple.coreanimation.*;
     public native boolean isAnalyticsCollectionEnabled();
     @Method(selector = "setAnalyticsCollectionWithEnabled:")
     public native void setAnalyticsCollection(boolean enabled);
-    /**
-     * @deprecated Framework information migrated to CAS.buildManager().withFramework(name, version) function.
-     */
-    @Deprecated
-    @Method(selector = "setPluginPlatformWithName:version:")
-    public native void setPluginPlatform(String name, String version);
-    @Method(selector = "getPluginPlatformName")
-    public native String getPluginPlatformName();
-    @Method(selector = "getPluginPlatformVersion")
-    public native String getPluginPlatformVersion();
-    /**
-     * @deprecated Callbacks from background thread is no longer supported.
-     */
-    @Deprecated
-    @Method(selector = "isExecuteCallbacksInUIThread")
-    public native boolean isExecuteCallbacksInUIThread();
-    /**
-     * @deprecated Callbacks from background thread is no longer supported.
-     */
-    @Deprecated
-    @Method(selector = "setExecuteCallbacksInUIThread:")
-    public native void setExecuteCallbacksInUIThread(boolean uiThread);
     /*</methods>*/
 }

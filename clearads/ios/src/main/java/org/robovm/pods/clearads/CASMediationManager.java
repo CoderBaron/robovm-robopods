@@ -54,10 +54,6 @@ import org.robovm.apple.coreanimation.*;
     public native CASLoadDelegate getAdLoadDelegate();
     @Property(selector = "setAdLoadDelegate:", strongRef = true)
     public native void setAdLoadDelegate(CASLoadDelegate v);
-    @Property(selector = "adStatusDelegate")
-    public native CASStatusDelegate getAdStatusDelegate();
-    @Property(selector = "setAdStatusDelegate:", strongRef = true)
-    public native void setAdStatusDelegate(CASStatusDelegate v);
     @Property(selector = "managerID")
     public native String getManagerID();
     @Property(selector = "isDemoAdMode")
@@ -93,67 +89,5 @@ import org.robovm.apple.coreanimation.*;
     public native void disableAppReturnAds();
     @Method(selector = "skipNextAppReturnAds")
     public native void skipNextAppReturnAds();
-    /**
-     * @deprecated Use loadRewardedAd
-     */
-    @Deprecated
-    @Method(selector = "loadRewardedVideo")
-    public native void loadRewardedVideo();
-    /**
-     * @deprecated Use presentInterstitial() or presentRewardedVideo() instead.. Use presentInterstitialFromRootViewController:callback:
-     */
-    @Deprecated
-    @Method(selector = "isAdReadyWithType:")
-    public native boolean isAdReady(CASType type);
-    /**
-     * @deprecated Use presentInterstitial() or presentRewardedVideo() instead.. Use presentInterstitialFromRootViewController:callback:
-     */
-    @Deprecated
-    @Method(selector = "showFromRootViewController:type:callback:")
-    public native void show(UIViewController controller, CASType type, CASCallback callback);
-    @Method(selector = "getBannerSize")
-    public native CASSize getBannerSize();
-    /**
-     * @deprecated Set size for each banner view instead.
-     */
-    @Deprecated
-    @Method(selector = "setBannerSize:")
-    public native void setBannerSize(CASSize size);
-    /**
-     * @deprecated Not safe to use to hide all active banners. Please use CASBannerView.isHidden = true for each banner.
-     */
-    @Deprecated
-    @Method(selector = "hideBanner")
-    public native void hideBanner();
-    /**
-     * @deprecated Pause feature is deprecated.
-     */
-    @Deprecated
-    @Method(selector = "setManualPauseControl:")
-    public native void setManualPauseControl(boolean isManual);
-    /**
-     * @deprecated Use SetEnabled() instead
-     */
-    @Deprecated
-    @Method(selector = "onPause")
-    public native void onPause();
-    /**
-     * @deprecated Use SetEnabled() instead
-     */
-    @Deprecated
-    @Method(selector = "onResume")
-    public native void onResume();
-    /**
-     * @deprecated No longer supported
-     */
-    @Deprecated
-    @Method(selector = "getLastActiveMediationWithType:")
-    public native String getLastActiveMediation(CASType type);
-    /**
-     * @deprecated No longer supported
-     */
-    @Deprecated
-    @Method(selector = "isValidCallbackWithType:callback:")
-    public native boolean isValidCallback(CASType type, CASCallback callback);
     /*</methods>*/
 }
