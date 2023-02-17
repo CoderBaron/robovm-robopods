@@ -33,6 +33,7 @@ import org.robovm.apple.corespotlight.*;
 import org.robovm.apple.uniformtypeid.*;
 import org.robovm.apple.linkpresentation.*;
 import org.robovm.apple.coregraphics.*;
+import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -56,21 +57,5 @@ import org.robovm.apple.coregraphics.*;
     public static native NSArray<NSString> productCategoryAllCategories();
     @Bridge(symbol="BNCCurrencyAllCurrencies", optional=true)
     public static native NSArray<NSString> currencyAllCurrencies();
-    @Bridge(symbol="BNCForceNSErrorCategoryToLoad", optional=true)
-    public static native void forceNSErrorCategoryToLoad();
-    @Bridge(symbol="BNCLogDisplayLevel", optional=true)
-    public static native BNCLogLevel logDisplayLevel();
-    @Bridge(symbol="BNCLogSetDisplayLevel", optional=true)
-    public static native void logSetDisplayLevel(BNCLogLevel level);
-    @Bridge(symbol="BNCLogStringFromLogLevel", optional=true)
-    public static native String logStringFromLogLevel(BNCLogLevel level);
-    @Bridge(symbol="BNCLogLevelFromString", optional=true)
-    public static native BNCLogLevel logLevelFromString(String string);
-    @Bridge(symbol="BNCLogSetOutputFunction", optional=true)
-    public static native void logSetOutputFunction(FunctionPtr functionPtr);
-    @Bridge(symbol="BNCLogWriteMessage", optional=true)
-    public static native void logWriteMessage(BNCLogLevel logLevel, BytePtr sourceFileName, int sourceLineNumber, String message);
-    @Bridge(symbol="BNCForceUIViewControllerCategoryToLoad", optional=true)
-    public static native void forceUIViewControllerCategoryToLoad();
     /*</methods>*/
 }

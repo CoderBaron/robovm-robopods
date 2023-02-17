@@ -38,7 +38,6 @@ FOUNDATION_EXPORT BranchStandardEvent _Nonnull BranchStandardEventShare;
 FOUNDATION_EXPORT BranchStandardEvent _Nonnull BranchStandardEventInitiateStream;
 FOUNDATION_EXPORT BranchStandardEvent _Nonnull BranchStandardEventCompleteStream;
 
-
 ///@name User Lifecycle Events
 
 FOUNDATION_EXPORT BranchStandardEvent _Nonnull BranchStandardEventCompleteRegistration;

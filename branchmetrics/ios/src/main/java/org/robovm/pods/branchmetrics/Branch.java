@@ -33,6 +33,7 @@ import org.robovm.apple.corespotlight.*;
 import org.robovm.apple.uniformtypeid.*;
 import org.robovm.apple.linkpresentation.*;
 import org.robovm.apple.coregraphics.*;
+import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -79,6 +80,11 @@ import org.robovm.apple.coregraphics.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @GlobalValue(symbol="BranchSDKVersionNumber", optional=true)
+    public static native double getVersionNumber();
+    @GlobalValue(symbol="BranchSDKVersionString", optional=true)
+    public static native BytePtr getVersionString();
+    
     @Method(selector = "initSessionWithLaunchOptions:")
     public native void init(NSDictionary<?, ?> options);
     @Method(selector = "initSessionWithLaunchOptions:isReferrable:")
@@ -167,6 +173,8 @@ import org.robovm.apple.coregraphics.*;
     public native void setSKAdNetworkCalloutMaxTimeSinceInstall(double maxTimeInterval);
     @Method(selector = "addFacebookPartnerParameterWithName:value:")
     public native void addFacebookPartnerParameter(String name, String value);
+    @Method(selector = "addSnapPartnerParameterWithName:value:")
+    public native void addSnapPartnerParameter(String name, String value);
     @Method(selector = "clearPartnerParameters")
     public native void clearPartnerParameters();
     @Method(selector = "setRetryInterval:")

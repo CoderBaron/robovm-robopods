@@ -1,9 +1,16 @@
 package: org.robovm.pods.branchmetrics
-include: [foundation, uikit, corespotlight, uniformtypeid, linkpresentation, coregraphics]
-framework: Branch
+include:
+    - foundation
+    - uikit
+    - corespotlight
+    - uniformtypeid
+    - linkpresentation
+    - coregraphics
+    - coreanimation
+framework: BranchSDK
 clang_args: ['-x', 'objective-c']
 headers:
-    - Branch.h
+    - BranchSDK.h
 
 private_typedefs:
     BranchOpenRequest: NSObject
@@ -11,9 +18,7 @@ private_typedefs:
 typedefs: {}
 
 enums:
-    BNCErrorCode: {prefix: BNC, nserror: true}
     BranchLinkType: {}
-    BNCLogLevel: {}
     BNCViewControllerPresentationOption: {prefix: BNCViewControllerOption}
     BranchContentIndexMode: {}
     BranchCreditHistoryOrder: {prefix: Branch}
@@ -21,20 +26,6 @@ enums:
     BranchQRCodeImageFormat: {}
 
 categories:
-    UIViewController:
-        methods:
-            '-bnc_currentViewController':
-                name: getBranchCurrentViewController
-            '+bnc_currentViewController':
-                name: getBranchCurrentViewController
-            '+bnc_currentWindow':
-                name: getBranchCurrentWindow
-    NSError:
-        methods:
-            '+bncErrorDomain':
-                name: getClassDomain
-            '+branchError.*':
-                name: createBranchError
 
 classes:
     BNCCommerceEvent: {}
@@ -291,6 +282,8 @@ classes:
                 name: addFacebookPartnerParameter
             '-getLongAppLinkURLWithParams:andChannel:andTags:andFeature:andStage:andAlias:':
                 name: getLongAppLinkURL
+            '-addSnapPartnerParameterWithName:value:':
+                name: addSnapPartnerParameter
     BranchActivityItemProvider:
         methods:
             '-initWithParams:andTags:andFeature:andStage:andAlias:':
@@ -437,6 +430,10 @@ classes:
                 name: getQRCodeAsImage
             '-showShareSheetWithQRCodeFromViewController:anchor:universalObject:linkProperties:completion:':
                 name: showShareSheet
+    BranchPasteControl: #since 16.0
+        methods:
+            '-initWithFrame:AndConfiguration:':
+                name: init
 protocols:
     BNCNetworkOperationProtocol: {}
     BNCNetworkServiceProtocol:
@@ -475,7 +472,6 @@ functions:
         name: 'Function_#{g[0]}'
 
 values:
-
     BNCProductCategory(.*):
         class: BNCProductCategories
         name: '#{g[0]}'
@@ -483,22 +479,6 @@ values:
     BNCCurrency(.*):
         class: BNCCurrencies
         name: '#{g[0]}'
-
-#    BRANCH_REQUEST_KEY_(.*):
-#        class: BranchRequestKeys
-#        name: '#{g[0].camelize}'
-#
-#    BRANCH_RESPONSE_KEY_(.*):
-#        class: BranchResponseKeys
-#        name: '#{g[0].camelize}'
-#
-#    BRANCH_LINK_DATA_KEY_(.*):
-#        class: BranchLinkDataKeys
-#        name: '#{g[0].camelize}'
-#
-#    BRANCH_REQUEST_ENDPOINT_(.*):
-#        class: BranchRequestEndpoints
-#        name: '#{g[0].camelize}'
 
     BranchContentSchema(.*):
         class: BranchContentSchemas
@@ -512,17 +492,10 @@ values:
         class: BranchStandardEvents
         name: 'get#{g[0]}'
 
-#    BRANCH_FEATURE_TAG_(.*):
-#        class: BranchFeatureTags
-#        name: 'get#{g[0].camelize}'
-#
-#    BRANCH_INIT_KEY_(.*):
-#        class: BranchInitKeys
-#        name: 'get#{g[0].camelize}'
-
     BNC(.*)Event:
-      class: BranchEvents
-      name: 'get#{g[0]}'
+        class: BranchEvents
+        name: 'get#{g[0]}'
+
 
     BRANCH_(.*):
         class: BranchConstants
@@ -533,7 +506,7 @@ values:
         name: 'get#{g[0]}'
 
     # BUO Constants
-    BNC(CanonicalIdList|PurchaseAmount|PurchaseCurrency|CanonicalIdList|RegisterViewEvent|AddToWishlistEvent|AddToCartEvent|PurchaseInitiatedEvent|PurchasedEvent|ShareInitiatedEvent|ShareCompletedEvent):
+    BNC(CanonicalIdList|PurchaseAmount|PurchaseCurrency|CanonicalIdList):
         class: BNCBUOConstants
         name: 'get#{g[0]}'
 
@@ -541,9 +514,10 @@ values:
         class: BNCSpotlightConstants
         name: 'get#{g[0]}'
 
-    BNC_(SDK_VERSION|API_BASE_URL|API_PINNED|API_VERSION|LINK_URL):
-        class: BNCConfig
-        name: 'get#{g[0].camelize}'
+    BranchSDKVersion(.*):
+        readonly: true
+        class: Branch
+        name: 'getVersion#{g[0]}'
 
     # Make sure we don't miss any values if new ones are introduced in a later version
     (.*):

@@ -81,9 +81,9 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             """.trimIndent()
         )
     },
-    "Branch" to { framework ->
+    "BranchSDK" to { framework ->
         val artifact = "$framework.framework"
-        val artifactLocation = downloadFolder.extend("Branch.xcframework/ios-arm64/$artifact")
+        val artifactLocation = downloadFolder.extend("BranchSDK.xcframework/ios-arm64/$artifact")
         processFramework(
             artifact = artifact,
             moduleFolder = "branchmetrics/ios",
@@ -93,7 +93,7 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             instruction = """
                 1. Download recent Branch.zip from https://github.com/BranchMetrics/ios-branch-deep-linking-attribution/releases
                 2. Unpack
-                3. expected location ${downloadFolder.extend("Branch.xcframework")} 
+                3. expected location ${downloadFolder.extend("BranchSDK.xcframework")} 
             """.trimIndent()
         )
     },

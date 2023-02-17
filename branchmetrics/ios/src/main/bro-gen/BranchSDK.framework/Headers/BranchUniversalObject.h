@@ -15,7 +15,7 @@
 #endif
 
 #import "BNCCommerceEvent.h"
-@class BranchLinkProperties;
+#import "BranchLinkProperties.h"
 
 #pragma mark BranchContentIndexMode
 

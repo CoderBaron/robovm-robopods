@@ -13,36 +13,44 @@
 #import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 #endif
 
-#import "BNCCallbacks.h"
-#import "BNCCommerceEvent.h"
-#import "BNCConfig.h"
-#import "NSError+Branch.h"
-#import "BNCLinkCache.h"
-#import "BNCLog.h"
-#import "BNCPreferenceHelper.h"
-#import "BNCServerInterface.h"
-#import "BNCServerRequestQueue.h"
-#import "BNCAvailability.h"
-#import "BranchConstants.h"
-#import "BranchDeepLinkingController.h"
-#import "BranchEvent.h"
+// Public classes that should be in the umbrella header
 #import "BranchLinkProperties.h"
-#import "BranchDelegate.h"
 #import "BranchUniversalObject.h"
 #import "BranchCrossPlatformID.h"
 #import "BranchLastAttributedTouchData.h"
-#import "BNCInitSessionResponse.h"
-#import "UIViewController+Branch.h"
-#import "BranchScene.h"
-#import "BranchPluginSupport.h"
-#import "BranchQRCode.h"
+#import "BranchDeepLinkingController.h"
+#import "BranchDelegate.h"
 
 #if !TARGET_OS_TV
 // tvOS does not support these features
 #import "BranchShareLink.h"
-#import "BranchActivityItemProvider.h"
 #import "BranchCSSearchableItemAttributeSet.h"
+#import "BranchActivityItemProvider.h"
 #endif
+
+// Reconsider how this one is exposed. BNC classes should be used internal.
+#import "BNCInitSessionResponse.h"
+
+// Block typedefs. Consider deprecating this
+#import "BNCCallbacks.h"
+
+// Only used in an testing APIs. Let's work to move these.
+#import "BNCLinkCache.h"
+#import "BNCPreferenceHelper.h"
+#import "BNCServerInterface.h"
+#import "BNCServerRequestQueue.h"
+
+// Not used by Branch singleton public API
+//#import "BranchEvent.h"
+//#import "BranchScene.h"
+//#import "BranchPluginSupport.h"
+//#import "BranchQRCode.h"
+//#import "BNCCommerceEvent.h"
+//#import "BNCConfig.h"
+//#import "NSError+Branch.h"
+//#import "BNCLog.h"
+//#import "BranchConstants.h"
+//#import "UIViewController+Branch.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -710,6 +718,14 @@ typedef NS_ENUM(NSUInteger, BranchCreditHistoryOrder) {
  See Facebook's documentation for details on valid parameters
  */
 - (void)addFacebookPartnerParameterWithName:(NSString *)name value:(NSString *)value;
+
+/*
+ Add a Partner Parameter for Snap.
+ Once set, this parameter is attached to install, opens and events until cleared or the app restarts.
+ 
+ See Snap's documentation for details on valid parameters
+ */
+- (void)addSnapPartnerParameterWithName:(NSString *)name value:(NSString *)value;
 
 /**
  Clears all Partner Parameters
