@@ -34,7 +34,7 @@ import org.robovm.apple.uikit.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*//*</annotations>*/
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedUIntMarshaler.class)/*</annotations>*/
 public enum /*<name>*/HelpshiftAuthenticationFailureReason/*</name>*/ implements ValuedEnum {
     /*<values>*/
     AuthTokenNotProvided(0L),

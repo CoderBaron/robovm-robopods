@@ -32,32 +32,26 @@ import org.robovm.apple.uikit.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/HelpshiftFAQFilter/*</name>*/ 
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/HelpshiftDelegateAdapter/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements HelpshiftDelegate/*</implements>*/ {
 
-    /*<ptr>*/public static class HelpshiftFAQFilterPtr extends Ptr<HelpshiftFAQFilter, HelpshiftFAQFilterPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(HelpshiftFAQFilter.class); }/*</bind>*/
+    /*<ptr>*/
+    /*</ptr>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    protected HelpshiftFAQFilter() {}
-    protected HelpshiftFAQFilter(Handle h, long handle) { super(h, handle); }
-    protected HelpshiftFAQFilter(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithFilterOperator:andTags:")
-    public HelpshiftFAQFilter(HsOperator filterOperator, NSArray<?> tags) { super((SkipInit) null); initObject(init(filterOperator, tags)); }
-    /*</constructors>*/
+    /*<constructors>*//*</constructors>*/
     /*<properties>*/
-    @Property(selector = "filterOperator")
-    public native HsOperator getFilterOperator();
-    @Property(selector = "tags")
-    public native NSArray<?> getTags();
+    
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithFilterOperator:andTags:")
-    protected native @Pointer long init(HsOperator filterOperator, NSArray<?> tags);
+    @NotImplemented("handleHelpshiftEvent:withData:")
+    public void handleHelpshiftEvent(String eventName, NSDictionary<?, ?> data) {}
+    @NotImplemented("authenticationFailedForUserWithReason:")
+    public void authenticationFailed(HelpshiftAuthenticationFailureReason reason) {}
     /*</methods>*/
 }

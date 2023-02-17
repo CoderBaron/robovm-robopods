@@ -32,31 +32,24 @@ import org.robovm.apple.uikit.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-public enum /*<name>*/HelpshiftActionType/*</name>*/ implements ValuedEnum {
-    /*<values>*/
-    Link(0L),
-    Call(1L);
-    /*</values>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/HelpshiftProactiveAPIConfigCollectorDelegateAdapter/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*/implements HelpshiftProactiveAPIConfigCollectorDelegate/*</implements>*/ {
 
+    /*<ptr>*/
+    /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<methods>*//*</methods>*/
-
-    private final long n;
-
-    private /*<name>*/HelpshiftActionType/*</name>*/(long n) { this.n = n; }
-    public long value() { return n; }
-    public static /*<name>*/HelpshiftActionType/*</name>*/ valueOf(long n) {
-        for (/*<name>*/HelpshiftActionType/*</name>*/ v : values()) {
-            if (v.n == n) {
-                return v;
-            }
-        }
-        throw new IllegalArgumentException("No constant with value " + n + " found in " 
-            + /*<name>*/HelpshiftActionType/*</name>*/.class.getName());
-    }
+    /*<constructors>*//*</constructors>*/
+    /*<properties>*/
+    
+    /*</properties>*/
+    /*<members>*//*</members>*/
+    /*<methods>*/
+    @NotImplemented("getAPIConfig")
+    public NSDictionary<?, ?> getAPIConfig() { return null; }
+    /*</methods>*/
 }

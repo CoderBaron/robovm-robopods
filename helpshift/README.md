@@ -1,9 +1,10 @@
-# RoboPods for HelpShift
+# RoboPods for HelpShiftX
 
 ## Available RoboPods
 
 | RoboPods Version | HelpShift Version |
 |------------------|-------------------|
+| 1.29.0           | 10.2.2            |
 | 1.19.0           | 7.11.2            |
 | 1.15.0           | 7.10.0            |
 | 1.13.0           | 7.9.1             |

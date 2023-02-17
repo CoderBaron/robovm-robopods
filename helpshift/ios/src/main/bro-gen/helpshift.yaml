@@ -1,260 +1,53 @@
 package: org.robovm.pods.helpshift
 include: [foundation, uikit]
 clang_args: ['-x', 'objective-c']
-framework: Helpshift
+framework: HelpshiftX
 headers:
-    - Support.h
+    - HelpshiftX.h
 
 private_typedefs: {}
 
 typedefs: {}
 
 enums:
-    HsAddFAQsToDeviceSearch: {prefix: HsAddFaqsToDeviceSearch}
-    HsOperator: {}
-    HsEnableContactUs: {}
-    HelpshiftInboxMessageActionType: {}
-    HelpshiftSupportAlertToRateAppAction: {}
-    HelpshiftAuthenticationFailureReason: {}    
-    HelpshiftActionType: {}
+    HelpshiftAuthenticationFailureReason: {}
 classes:
-    HelpshiftAPIConfig: {}
-    HelpshiftAPIConfigBuilder: {}
-    HelpshiftAll: {}
-    HelpshiftCore:
+    Helpshift:
         methods:
-            '+initializeWithProvider:':
-                name: initialize
-            '+installForApiKey:domainName:appID:':
-                trim_after_first_colon: true
-            '+installForApiKey:domainName:appID:withOptions:':
-                trim_after_first_colon: true
-            '+installForApiKey:domainName:appID:withConfig:':
-                trim_after_first_colon: true
-            '+loginWithIdentifier:withName:andEmail:':
-                name: login
-            '+setName:andEmail:':
-                name: setNameAndEmail
+            '+installWithPlatformId:domain:config:':
+                name: install
+            '+showConversationWith:config:':
+                name: showConversation
+            '+showFAQsWith:config:':
+                name: showFAQs
+            '+showFAQSection:with:config:':
+                name: showFAQSection
+            '+showSingleFAQ:with:config:':
+                name: showSingleFAQ
             '+handleNotificationWithUserInfoDictionary:isAppLaunch:withController:':
                 name: handleNotification
-            '+handleNotificationResponseWithActionIdentifier:userInfo:completionHandler:':
-                name: handleNotificationResponse
-            '+handleEventsForBackgroundURLSession:completionHandler:':
-                trim_after_first_colon: true
-            '+handleRemoteNotification:withController:':
-                trim_after_first_colon: true
-            '+handleRemoteNotification:isAppLaunch:withController:':
-                trim_after_first_colon: true
-            '+handleLocalNotification:withController:':
-                trim_after_first_colon: true
-            '+handleInteractiveLocalNotification:forAction:completionHandler:':
-                trim_after_first_colon: true
-            '+handleInteractiveRemoteNotification:forAction:completionHandler:':
-                trim_after_first_colon: true
-            '+handleInteractiveLocalNotificationWithUserInfoDictionary:forAction:completionHandler:':
-                name: handleInteractiveLocalNotification
-            '+setLightTheme:darkTheme:':
-                name: setThemes
-
-    HelpshiftFAQFilter:
-        methods:
-            '-initWithFilterOperator:andTags:':
-                name: init
-    HelpshiftInstallConfig: {}
-    HelpshiftInstallConfigBuilder: {}
-    HelpshiftSupportMetaData:
-        methods:
-            '-initWithMetaData:':
-                name: init
-            '-initWithMetaData:andTags:':
-                name: init
-    HelpshiftUser: {}
-    HelpshiftUserBuilder:
-        methods:
-            '-initWithIdentifier:andEmail:':
-                name: init
-    HelpshiftCampaigns:
-        methods:
-            '+addProperty:withInteger:':
-                name: addProperty
-            '+addProperty:withLongLong:':
-                name: addPropertyLong
-            '+addProperty:withString:':
-                name: addProperty
-            '+addProperty:withBoolean:':
-                name: addProperty
-            '+addProperty:withDate:':
-                name: addProperty
-            '+showInboxOnViewController:withOptions:':
-                name: showInbox
-            '+showInboxOnViewController:withConfig:':
-                name: showInbox
-            '+showMessageWithId:onViewController:withOptions:':
-                name: showMessage
-            '+showMessageWithId:onViewController:withConfig:':
-                name: showMessage
-            '+configureWithOptions:':
-                name: configure
-    HelpshiftInbox: {}
-    HelpshiftSupport:
-        methods:
-            '-showDynamicFormOnViewController:withTitle:andFlows:withConfigOptions:':
-                exclude: true # as deprecated and conflicts
-            '-pushDynamicFormOnViewController:withTitle:andFlows:':
-                exclude: true # as deprecated and conflicts
-            '-dynamicFormWithTitle:andFlows:':
-                name: getDynamicForm
-            '+showConversation:withOptions:':
-                name: showConversation
-            '+showConversation:withConfig:':
-                name: showConversation
-            '+showFAQs:withOptions:':
-                name: showFAQs
-            '+showFAQs:withConfig:':
-                name: showFAQs
-            '+showFAQSection:withController:withOptions:':
-                name: showFAQSection
-            '+showFAQSection:withController:withConfig:':
-                name: showFAQSection
-            '+showSingleFAQ:withController:withOptions:':
-                name: showSingleFAQ
-            '+showSingleFAQ:withController:withConfig:':
-                name: showSingleFAQ
-            '+showAlertToRateAppWithURL:withCompletionBlock:':
-                name: showAlertToRateApp
-            '+handleContinueUserActivity:withController:andRestorationHandler:':
-                name: handleContinueUserActivity
-            '+showDynamicFormOnViewController:withTitle:andFlows:withConfigOptions:':
-                name: showDynamicForm
-            '+showDynamicFormOnViewController:withTitle:andFlows:withConfig:':
-                name: showDynamicForm
-            '+showDynamicFormOnViewController:withTitle:andFlowsData:withConfigOptions:':
-                name: showDynamicFormWithFlowsData
-            '+pushDynamicFormOnViewController:withTitle:andFlows:':
-                name: pushDynamicForm
-            '+dynamicFormWithTitle:andFlows:':
-                name: createDynamicForm
-            '+requestDynamicFormWithTitle:andFlows:':
-                name: requestDynamicFormWithTitle$andFlows$
-            '+flowToShowConversationWithDisplayText:andConfigOptions:':
-                name: createDlowToShowConversation
-            '+flowToShowConversationWithDisplayText:andConfig:':
-                name: createFlowToShowConversation
-            '+flowToShowFAQsWithDisplayText:andConfigOptions:':
-                name: createFlowToShowFAQs
-            '+flowToShowFAQsWithDisplayText:andConfig:':
-                name: createFlowToShowFAQs
-            '+flowToShowFAQSectionForPublishId:withDisplayText:andConfigOptions:':
-                name: createFlowToShowFAQSection
-            '+flowToShowFAQSectionForPublishId:withDisplayText:andConfig:':
-                name: createFlowToShowFAQSection
-            '+flowToShowSingleFAQForPublishId:withDisplayText:andConfigOptions:':
-                name: createFlowToShowSingleFAQForPublishId
-            '+flowToShowSingleFAQForPublishId:withDisplayText:andConfig:':
-                name: createFlowToShowSingleFAQForPublishId
-            '+flowToShowNestedDynamicFormWithFlows:withDisplayText:':
-                name: createFlowToShowNestedDynamicForm
-            '+flowToPerformCustomActionOnTarget:andSelector:withOptionalObject:withDisplayText:':
-                name: createFlowToPerformCustomAction
-            '+conversationViewControllerWithConfig:completion:':
-                name: getConversationViewController
-            '+handleRemoteNotification:withController:':
-                exclude: true # outdated and conflicts
-            '+handleLocalNotification:withController:':
-                exclude: true # outdated
-            '+setSDKLanguage:':
-                exclude: true # outdated and conflicts
-            '+closeHelpshiftSupportSessionWithCompletionHandler:':
-                name: closeHelpshiftSupportSession
-            '+log:':
-                exclude: true # variadic and deprecated, use addLog
 protocols:
-    HsApiProvider:
+    HelpshiftDelegate:
         methods:
-            '-_installForApiKey:domainName:appID:':
-                name: installForApiKey
-            '-_installForApiKey:domainName:appID:withConfig:':
-                name: installForApiKey
-            '-_setName:andEmail:':
-                name: setNameAndEmail
-            '-_handleRemoteNotification:withController:':
-                name: handleRemoteNotification
-            '-_handleRemoteNotification:isAppLaunch:withController:':
-                name: handleRemoteNotification
-            '-_handleLocalNotificationWithUserInfoDictionary:withController:':
-                name: handleLocalNotification
-            '-_handleInteractiveRemoteNotification:forAction:completionHandler:':
-                name: handleInteractiveRemoteNotification
-            '-_handleInteractiveLocalNotification:forAction:completionHandler:':
-                name: handleInteractiveLocalNotification
-            '-_handleEventsForBackgroundURLSession:completionHandler:':
-                name: handleEventsForBackgroundURLSession
-            '-_login:':
-                name: login
-            '-_logout':
-                name: logout
-            '-_clearAnonymousUser':
-                name: clearAnonymousUser
-            '-_registerDeviceToken:':
-                name: registerDeviceToken
-            '-_setSDKLanguage:':
-                name: setSDKLanguage
-            '-_setTheme:':
-                name: setTheme
-            '-_setLightTheme:darkTheme:':
-                name: setThemes
-    HelpshiftCampaignsDelegate: {}
-    HelpshiftInboxDelegate:
-        methods:
-            '-failedToAddInboxMessageWithId:':
-                name: failedToAddInboxMessage
-    HelpshiftInboxMessage:
-        methods:
-            '-executeActionAtIndex:onViewController:':
-                name: executeAction
-    HelpshiftInboxNotificationDelegate: {}
-    HelpshiftSupportDelegate:
-        methods:
-            '-didReceiveInAppNotificationWithMessageCount:':
-                name: didReceiveInAppNotification
-            '-newConversationStartedWithMessage:':
-                name: newConversationStarted
-            '-userRepliedToConversationWithMessage:':
-                name: userRepliedToConversation
-            '-userCompletedCustomerSatisfactionSurvey:withFeedback:':
-                trim_after_first_colon: true
-            '-displayAttachmentFileAtLocation:onViewController:':
-                name: displayAttachmentFile
-            '-authenticationFailedForUser:withReason:':
+            '-handleHelpshiftEvent:withData:':
+                name: handleHelpshiftEvent
+            '-authenticationFailedForUserWithReason:':
                 name: authenticationFailed
-            '-userDidClickOnActionWithType:withData:':
-                name: userDidClickOnAction
-functions: 
+    HelpshiftProactiveAPIConfigCollectorDelegate: { }
+functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):
         class: __FixMe
         name: 'Function_#{g[0]}'
 
 values:
-    HS_NO_EXPIRY_TIMESTAMP:
-        class: HelpshiftInbox
-        name: NO_EXPIRY_TIMESTAMP
-
-    HelpshiftSupportCustomMetadataKey:
-        class: HelpshiftSupport
-        name: getHelpshiftSupportCustomMetadata
-
-    HelpshiftSupportTagsKey:
-        class: HelpshiftSupport
-        name: getHelpshiftSupportTagsKey
-
-    HelpshiftVersionString:
+    HelpshiftXVersionString:
         class: HelpshiftSupport
         name: getVersionString
         type: String
         marshaler: StringMarshalers.AsAsciiZMarshaler
 
-    HelpshiftVersionNumber:
+    HelpshiftXVersionNumber:
         exclude: true
 
     # Make sure we don't miss any values if new ones are introduced in a later version
@@ -263,9 +56,19 @@ values:
         name: 'Value_#{g[0]}'
 
 constants:
-    HelpshiftSupport(.*):
-        class: HelpshiftSupport
-        name: '#{g[0]}'
+    Helpshift(UserName|UserIdentifier|UserEmail|UserAuthToken):
+        class: Helpshift
+        static_class: UserDetailKeys
+        name: '#{g[0].downcase_first}'
+    HelpshiftEventName(.*):
+        class: HelpshiftDelegate
+        static_class: EventNames
+        name: '#{g[0].downcase_first}'
+    HelpshiftEventData(.*):
+        class: HelpshiftDelegate
+        static_class: EventDataKeys
+        name: '#{g[0].downcase_first}'
+
 
     # Make sure we don't miss any constants if new ones are introduced in a later version
     (.*):

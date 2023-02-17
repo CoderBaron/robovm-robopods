@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>robopods-helpshift-ios</artifactId>
-    <name>RoboPods HelpShift iOS v7.11.2</name>
+    <name>RoboPods HelpShift iOS v10.2.2</name>
     <packaging>jar</packaging>
 
     <licenses>

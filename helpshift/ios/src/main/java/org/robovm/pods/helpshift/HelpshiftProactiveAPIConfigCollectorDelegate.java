@@ -34,31 +34,22 @@ import org.robovm.apple.uikit.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/HelpshiftUser/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/HelpshiftProactiveAPIConfigCollectorDelegate/*</name>*/ 
+    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
-    /*<ptr>*/public static class HelpshiftUserPtr extends Ptr<HelpshiftUser, HelpshiftUserPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(HelpshiftUser.class); }/*</bind>*/
+    /*<ptr>*/
+    /*</ptr>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    protected HelpshiftUser() {}
-    protected HelpshiftUser(Handle h, long handle) { super(h, handle); }
-    protected HelpshiftUser(SkipInit skipInit) { super(skipInit); }
-    /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "identifier")
-    public native String getIdentifier();
-    @Property(selector = "email")
-    public native String getEmail();
-    @Property(selector = "name")
-    public native String getName();
-    @Property(selector = "authToken")
-    public native String getAuthToken();
-    /*</properties>*/
-    /*<members>*//*</members>*/
-    /*<methods>*/
     
+    /*</properties>*/
+    /*<methods>*/
+    @Method(selector = "getAPIConfig")
+    NSDictionary<?, ?> getAPIConfig();
     /*</methods>*/
+    /*<adapter>*/
+    /*</adapter>*/
 }

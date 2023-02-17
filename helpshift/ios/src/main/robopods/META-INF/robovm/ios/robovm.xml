@@ -1,23 +1,5 @@
 <config>
-    <libs>
-        <lib>z</lib>
-        <lib>sqlite3</lib>
-        <lib>icucore</lib>
-    </libs>
     <frameworks>
-        <framework>CoreGraphics</framework>
-        <framework>QuartzCore</framework>
-        <framework>CoreText</framework>
-        <framework>SystemConfiguration</framework>
-        <framework>CoreTelephony</framework>
-        <framework>UIKit</framework>
-        <framework>Security</framework>
-        <framework>QuickLook</framework>
-        <framework>CoreLocation</framework>
-        <framework>MobileCoreServices</framework>
-        <framework>CoreSpotlight</framework>
-        <framework>Photos</framework>
-        <framework>WebKit</framework>
-        <framework>FileProvider</framework>
+        <framework>HelpshiftX</framework>
     </frameworks>
 </config>

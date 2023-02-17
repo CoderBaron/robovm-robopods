@@ -126,23 +126,23 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             """.trimIndent()
         )
     },
-    "Helpshift" to { framework ->
+    "HelpshiftX" to { framework ->
         val artifact = "$framework.framework"
         val artifactLocation =
-            downloadFolder.extend("helpshift-sdk-ios/Helpshift.xcframework/ios-arm64_armv7/$artifact")
+            downloadFolder.extend("helpshiftx-sdk-ios/HelpshiftX.xcframework/ios-arm64_armv7/$artifact")
         processFramework(
             artifact = artifact,
             moduleFolder = "helpshift/ios",
             sourceHeadersDir = artifactLocation.headers,
             yaml = "helpshift.yaml",
             version = {
-                downloadFolder.extend("helpshift-sdk-ios").list()
+                downloadFolder.extend("helpshiftx-sdk-ios").list()
                     ?.find { it.startsWith("Release") && it.endsWith(".txt") }
                     ?.let { it.substringAfter('-').substringBeforeLast('.') }
                     ?: error("Failed to find out Helpshift version!")
             },
             instruction = """
-                1. download iOS SDK from https://developers.helpshift.com
+                1. download iOS SDK from https://developers.helpshift.com/sdkx_ios/getting-started/#getting-sdk
                 2. unpack helpshift-sdk-ios-vX.Y.Z.zip
                 3. Rename to ${downloadFolder.extend("helpshift-sdk-ios")} 
             """.trimIndent()
