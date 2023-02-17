@@ -23,6 +23,8 @@
 @property (readonly,assign)     NSInteger       expiredDurationInMinutes;
 @property (readonly,assign)     NSInteger       delayLoadFailureTimeout;
 @property (readonly,assign)     BOOL            isOneFlow;
+@property (readonly,assign)     BOOL            isBiddingDataAsyncEnabled;
+@property (readonly,assign)     NSUInteger      biddingDataAsyncTimeout;
 
 
 
@@ -36,5 +38,7 @@ delayLoadFailureNotificationInSeconds:(NSUInteger)delayLoadFailure
                 premiumProviderName:(NSString *)premiumProviderName
            expiredDurationInMinutes:(NSInteger)expiredDurationInMinutes
             delayLoadFailureTimeout:(NSInteger)delayLoadFailureTimeout
-                          isOneFlow:(BOOL)isOneFlow;
+                          isOneFlow:(BOOL)isOneFlow
+          isBiddingDataAsyncEnabled:(BOOL)isBiddingDataAsyncEnabled
+            biddingDataAsyncTimeout:(NSUInteger)biddingDataAsyncTimeout;
 @end

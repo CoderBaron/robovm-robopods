@@ -48,19 +48,21 @@ import org.robovm.apple.coreanimation.*;
     public ISAdData() {}
     protected ISAdData(Handle h, long handle) { super(h, handle); }
     protected ISAdData(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithData:configuration:")
-    public ISAdData(String serverData, NSDictionary<?, ?> configuration) { super((SkipInit) null); initObject(init(serverData, configuration)); }
+    @Method(selector = "initWithServerData:configuration:adUnitData:")
+    public ISAdData(String serverData, NSDictionary<?, ?> configuration, NSDictionary<?, ?> adUnitData) { super((SkipInit) null); initObject(init(serverData, configuration, adUnitData)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "serverData")
     public native String getServerData();
     @Property(selector = "configuration")
     public native NSDictionary<?, ?> getConfiguration();
+    @Property(selector = "adUnitData")
+    public native NSDictionary<?, ?> getAdUnitData();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithData:configuration:")
-    protected native @Pointer long init(String serverData, NSDictionary<?, ?> configuration);
+    @Method(selector = "initWithServerData:configuration:adUnitData:")
+    protected native @Pointer long init(String serverData, NSDictionary<?, ?> configuration, NSDictionary<?, ?> adUnitData);
     @Method(selector = "getString:")
     public native String getString(String key);
     @Method(selector = "getInt:")

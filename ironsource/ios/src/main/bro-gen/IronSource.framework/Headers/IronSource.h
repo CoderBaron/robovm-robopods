@@ -53,8 +53,8 @@ NS_ASSUME_NONNULL_BEGIN
 #define IS_OFFERWALL @"offerwall"
 #define IS_BANNER @"banner"
 
-static NSString * const MEDIATION_SDK_VERSION     = @"7.2.6";
-static NSString * GitHash = @"f384f358e";
+static NSString * const MEDIATION_SDK_VERSION     = @"7.2.7";
+static NSString * GitHash = @"a6709cf14";
 
 /*
     This constant is for sending an external impression data from mopub
@@ -575,7 +575,15 @@ static NSString * const DataSource_MOPUB     = @"MoPub";
  @abstract Sets the delegate for demand only Banner callbacks.
  @param delegate The 'ISDemandOnlyBannerDelegate' for IronSource to send callbacks to.
  */
-+ (void)setISDemandOnlyBannerDelegate:(id<ISDemandOnlyBannerDelegate>)delegate;
++ (void)setISDemandOnlyBannerDelegate:(id<ISDemandOnlyBannerDelegate>)delegate __attribute__((deprecated("This method has been deprecated. Please use setISDemandOnlyBannerDelegateForInstanceId instead.")));
+
+/**
+ @abstract Sets the delegate for demand only Banner callbacks.
+ @param delegate The 'ISDemandOnlyBannerDelegate' for IronSource to send callbacks to.
+ @param instanceId The instance id on which the delegate will notify.
+ */
++ (void)setISDemandOnlyBannerDelegate:(id<ISDemandOnlyBannerDelegate>)delegate
+                        forInstanceId:(NSString *)instanceId;
 
 /**
  @abstract Loads a demand only Banner for a bidder instance.

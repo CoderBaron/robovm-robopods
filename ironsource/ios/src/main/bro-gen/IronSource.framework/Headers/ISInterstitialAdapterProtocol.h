@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "ISInterstitialAdapterDelegate.h"
+#import "ISBiddingDataDelegate.h"
 
 @class ISAdapterConfig;
 @protocol ISInterstitialAdapterProtocol <NSObject>
@@ -31,11 +32,20 @@
 - (void)loadInterstitialWithAdapterConfig:(ISAdapterConfig *)adapterConfig
                                  delegate:(id<ISInterstitialAdapterDelegate>)delegate;
 
+- (void)loadInterstitialWithAdapterConfig:(ISAdapterConfig *)adapterConfig
+                                   adData:(NSDictionary *)adData
+                                 delegate:(id<ISInterstitialAdapterDelegate>)delegate;
 
 #pragma mark - for bidders - mediation and demand only
 
 - (NSDictionary *)getInterstitialBiddingDataWithAdapterConfig:(ISAdapterConfig *)adapterConfig;
 
+- (NSDictionary *)getInterstitialBiddingDataWithAdapterConfig:(ISAdapterConfig *)adapterConfig
+                                                       adData:(NSDictionary *)adData;
+
+- (void)collectInterstitialBiddingDataWithAdapterConfig:(ISAdapterConfig *)adapterConfig
+                                                 adData:(NSDictionary *)adData
+                                               delegate:(id<ISBiddingDataDelegate>)delegate;
 
 - (void)initInterstitialForBiddingWithUserId:(NSString *)userId
                                adapterConfig:(ISAdapterConfig *)adapterConfig
@@ -45,6 +55,10 @@
                                    adapterConfig:(ISAdapterConfig *)adapterConfig
                                         delegate:(id<ISInterstitialAdapterDelegate>)delegate;
 
+- (void)loadInterstitialForBiddingWithServerData:(NSString *)serverData
+                                   adapterConfig:(ISAdapterConfig *)adapterConfig
+                                          adData:(NSDictionary *)adData
+                                        delegate:(id<ISInterstitialAdapterDelegate>)delegate;
 
 
 @end

@@ -48,7 +48,7 @@ import org.robovm.apple.coreanimation.*;
     public static final String IS_INTERSTITIAL = "interstitial";
     public static final String IS_OFFERWALL = "offerwall";
     public static final String IS_BANNER = "banner";
-    public static final String getSdkVersion = "7.2.6";
+    public static final String getSdkVersion = "7.2.7";
     public static final String DataSource_MOPUB = "MoPub";
     /*</constants>*/
     /*<constructors>*/
@@ -183,8 +183,14 @@ import org.robovm.apple.coreanimation.*;
     public static native void destroyBanner(ISBannerView banner);
     @Method(selector = "isBannerCappedForPlacement:")
     public static native boolean isBannerCappedForPlacement(String placementName);
+    /**
+     * @deprecated This method has been deprecated. Please use setISDemandOnlyBannerDelegateForInstanceId instead.
+     */
+    @Deprecated
     @Method(selector = "setISDemandOnlyBannerDelegate:")
     public static native void setISDemandOnlyBannerDelegate(ISDemandOnlyBannerDelegate delegate);
+    @Method(selector = "setISDemandOnlyBannerDelegate:forInstanceId:")
+    public static native void setISDemandOnlyBannerDelegate(ISDemandOnlyBannerDelegate delegate, String instanceId);
     @Method(selector = "loadISDemandOnlyBannerWithAdm:instanceId:viewController:size:")
     public static native void loadISDemandOnlyBanner(String adm, String instanceId, UIViewController viewController, ISBannerSize size);
     @Method(selector = "loadISDemandOnlyBannerWithInstanceId:viewController:size:")

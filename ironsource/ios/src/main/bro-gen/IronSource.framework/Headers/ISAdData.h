@@ -12,15 +12,17 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ISAdData : NSObject
 
 @property (nonatomic, strong, readonly, nullable) NSString                  *serverData;
-@property (nonatomic, strong, readonly) NSDictionary                        *configuration;
+@property (nonatomic, strong, readonly)           NSDictionary              *configuration;
+@property (nonatomic, strong, readonly, nullable) NSDictionary              *adUnitData;
 
+-(instancetype)initWithServerData:(nullable NSString *)serverData
+                    configuration:(NSDictionary *)configuration
+                       adUnitData:(nullable NSDictionary *)adUnitData;
 
--(instancetype)initWithData:(nullable NSString*)serverData configuration:(NSDictionary*)configuration;
-
--(nullable NSString*)getString:(NSString* )key;
--(NSInteger)getInt:(NSString*)key;
--(BOOL)getBoolean:(NSString*)key;
--(nullable NSNumber*)getNumber:(NSString*)key;
+-(nullable NSString *)getString:(NSString *)key;
+-(NSInteger)getInt:(NSString *)key;
+-(BOOL)getBoolean:(NSString *)key;
+-(nullable NSNumber *)getNumber:(NSString *)key;
 
 @end
 

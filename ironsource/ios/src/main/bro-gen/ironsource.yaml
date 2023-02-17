@@ -21,6 +21,8 @@ classes:
         methods:
             '-initWithData:configuration:':
                 name: init
+            '-initWithServerData:configuration:adUnitData:':
+                name: init
     ISAdUnit:
         methods:
             '-initWithValue:':
@@ -133,6 +135,8 @@ classes:
                 name: loadISDemandOnlyBanner
             '+destroyISDemandOnlyBannerWithInstanceId:':
                 name: destroyISDemandOnlyBanner
+            '+setISDemandOnlyBannerDelegate:forInstanceId:':
+                name: setISDemandOnlyBannerDelegate
     ISAdInfo:
         methods:
             '-initWithImpressionData:':
