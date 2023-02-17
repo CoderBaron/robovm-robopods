@@ -37,13 +37,13 @@ import org.robovm.pods.appcenter.core.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/MSACEventLog/*</name>*/ 
     extends /*<extends>*/MSACLogWithNameAndProperties/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class MSACEventLogPtr extends Ptr<MSACEventLog, MSACEventLogPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(MSACEventLog.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected MSACEventLog() {}
+    public MSACEventLog() {}
     protected MSACEventLog(Handle h, long handle) { super(h, handle); }
     protected MSACEventLog(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
@@ -56,6 +56,8 @@ import org.robovm.pods.appcenter.core.*;
     public native MSACEventProperties getTypedProperties();
     @Property(selector = "setTypedProperties:")
     public native void setTypedProperties(MSACEventProperties v);
+    @Property(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

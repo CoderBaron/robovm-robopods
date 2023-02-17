@@ -37,7 +37,7 @@ import org.robovm.pods.appcenter.core.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/MSACEventProperties/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class MSACEventPropertiesPtr extends Ptr<MSACEventProperties, MSACEventPropertiesPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(MSACEventProperties.class); }/*</bind>*/
@@ -46,9 +46,12 @@ import org.robovm.pods.appcenter.core.*;
     public MSACEventProperties() {}
     protected MSACEventProperties(Handle h, long handle) { super(h, handle); }
     protected MSACEventProperties(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithCoder:")
+    public MSACEventProperties(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -62,5 +65,9 @@ import org.robovm.pods.appcenter.core.*;
     public native MSACEventProperties setBool(boolean value, String key);
     @Method(selector = "setDate:forKey:")
     public native MSACEventProperties setDate(NSDate value, String key);
+    @Method(selector = "encodeWithCoder:")
+    public native void encode(NSCoder coder);
+    @Method(selector = "initWithCoder:")
+    protected native @Pointer long init(NSCoder coder);
     /*</methods>*/
 }

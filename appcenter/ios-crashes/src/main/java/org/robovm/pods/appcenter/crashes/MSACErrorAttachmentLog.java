@@ -36,14 +36,14 @@ import org.robovm.pods.appcenter.core.*;
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/MSACErrorAttachmentLog/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    extends /*<extends>*/MSACAbstractLog/*</extends>*/ 
+    /*<implements>*/implements NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class MSACErrorAttachmentLogPtr extends Ptr<MSACErrorAttachmentLog, MSACErrorAttachmentLogPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(MSACErrorAttachmentLog.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected MSACErrorAttachmentLog() {}
+    public MSACErrorAttachmentLog() {}
     protected MSACErrorAttachmentLog(Handle h, long handle) { super(h, handle); }
     protected MSACErrorAttachmentLog(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithFilename:attachmentBinary:contentType:")
@@ -64,6 +64,8 @@ import org.robovm.pods.appcenter.core.*;
     public native NSData getData();
     @Property(selector = "setData:")
     public native void setData(NSData v);
+    @Property(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

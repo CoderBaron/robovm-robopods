@@ -37,7 +37,7 @@ import org.robovm.pods.appcenter.core.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/MSACWrapperExceptionModel/*</name>*/ 
     extends /*<extends>*/MSACExceptionModel/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class MSACWrapperExceptionModelPtr extends Ptr<MSACWrapperExceptionModel, MSACWrapperExceptionModelPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(MSACWrapperExceptionModel.class); }/*</bind>*/
@@ -62,6 +62,8 @@ import org.robovm.pods.appcenter.core.*;
     public native String getWrapperSdkName();
     @Property(selector = "setWrapperSdkName:")
     public native void setWrapperSdkName(String v);
+    @Property(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

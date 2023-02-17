@@ -36,14 +36,14 @@ import org.robovm.pods.appcenter.core.*;
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/MSACLogWithProperties/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    extends /*<extends>*/MSACAbstractLog/*</extends>*/ 
+    /*<implements>*/implements NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class MSACLogWithPropertiesPtr extends Ptr<MSACLogWithProperties, MSACLogWithPropertiesPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(MSACLogWithProperties.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected MSACLogWithProperties() {}
+    public MSACLogWithProperties() {}
     protected MSACLogWithProperties(Handle h, long handle) { super(h, handle); }
     protected MSACLogWithProperties(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
@@ -52,6 +52,8 @@ import org.robovm.pods.appcenter.core.*;
     public native NSDictionary<NSString, NSString> getProperties();
     @Property(selector = "setProperties:")
     public native void setProperties(NSDictionary<NSString, NSString> v);
+    @Property(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

@@ -12,8 +12,6 @@ enums:
     MSACFlags: {}
 
 classes:
-    MSACAbstractLog:
-        exclude: true # part of core
     MSACAnalytics:
         methods:
             '+trackEvent:withProperties:':

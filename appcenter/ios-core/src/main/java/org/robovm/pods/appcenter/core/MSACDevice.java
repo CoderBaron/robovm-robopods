@@ -36,7 +36,7 @@ import org.robovm.apple.foundation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/MSACDevice/*</name>*/ 
     extends /*<extends>*/MSACWrapperSdk/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class MSACDevicePtr extends Ptr<MSACDevice, MSACDevicePtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(MSACDevice.class); }/*</bind>*/
@@ -81,6 +81,8 @@ import org.robovm.apple.foundation.*;
     public native String getAppBuild();
     @Property(selector = "appNamespace")
     public native String getAppNamespace();
+    @Property(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

@@ -36,7 +36,7 @@ import org.robovm.apple.foundation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/MSACWrapperSdk/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class MSACWrapperSdkPtr extends Ptr<MSACWrapperSdk, MSACWrapperSdkPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(MSACWrapperSdk.class); }/*</bind>*/
@@ -47,6 +47,8 @@ import org.robovm.apple.foundation.*;
     protected MSACWrapperSdk(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithWrapperSdkVersion:wrapperSdkName:wrapperRuntimeVersion:liveUpdateReleaseLabel:liveUpdateDeploymentKey:liveUpdatePackageHash:")
     public MSACWrapperSdk(String wrapperSdkVersion, String wrapperSdkName, String wrapperRuntimeVersion, String liveUpdateReleaseLabel, String liveUpdateDeploymentKey, String liveUpdatePackageHash) { super((SkipInit) null); initObject(init(wrapperSdkVersion, wrapperSdkName, wrapperRuntimeVersion, liveUpdateReleaseLabel, liveUpdateDeploymentKey, liveUpdatePackageHash)); }
+    @Method(selector = "initWithCoder:")
+    public MSACWrapperSdk(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "wrapperSdkVersion")
@@ -61,6 +63,8 @@ import org.robovm.apple.foundation.*;
     public native String getLiveUpdateDeploymentKey();
     @Property(selector = "liveUpdatePackageHash")
     public native String getLiveUpdatePackageHash();
+    @Property(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -68,5 +72,9 @@ import org.robovm.apple.foundation.*;
     protected native @Pointer long init(String wrapperSdkVersion, String wrapperSdkName, String wrapperRuntimeVersion, String liveUpdateReleaseLabel, String liveUpdateDeploymentKey, String liveUpdatePackageHash);
     @Method(selector = "isValid")
     public native boolean isValid();
+    @Method(selector = "encodeWithCoder:")
+    public native void encode(NSCoder coder);
+    @Method(selector = "initWithCoder:")
+    protected native @Pointer long init(NSCoder coder);
     /*</methods>*/
 }

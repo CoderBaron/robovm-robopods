@@ -36,7 +36,7 @@ import org.robovm.apple.foundation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/MSACAbstractLog/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class MSACAbstractLogPtr extends Ptr<MSACAbstractLog, MSACAbstractLogPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(MSACAbstractLog.class); }/*</bind>*/
@@ -45,12 +45,18 @@ import org.robovm.apple.foundation.*;
     public MSACAbstractLog() {}
     protected MSACAbstractLog(Handle h, long handle) { super(h, handle); }
     protected MSACAbstractLog(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithCoder:")
+    public MSACAbstractLog(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "encodeWithCoder:")
+    public native void encode(NSCoder coder);
+    @Method(selector = "initWithCoder:")
+    protected native @Pointer long init(NSCoder coder);
     /*</methods>*/
 }

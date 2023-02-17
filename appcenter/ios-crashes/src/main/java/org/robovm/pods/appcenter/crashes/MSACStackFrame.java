@@ -37,7 +37,7 @@ import org.robovm.pods.appcenter.core.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/MSACStackFrame/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements MSACSerializableObject/*</implements>*/ {
+    /*<implements>*/implements MSACSerializableObject, NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class MSACStackFramePtr extends Ptr<MSACStackFrame, MSACStackFramePtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(MSACStackFrame.class); }/*</bind>*/
@@ -74,6 +74,8 @@ import org.robovm.pods.appcenter.core.*;
     public native String getFileName();
     @Property(selector = "setFileName:")
     public native void setFileName(String v);
+    @Property(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

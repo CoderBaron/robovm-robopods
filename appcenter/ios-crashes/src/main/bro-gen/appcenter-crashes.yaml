@@ -16,8 +16,6 @@ enums:
     MSACUserConfirmation: {}
 
 classes:
-    MSACAbstractLog:
-        exclude: true # part of core
     MSACCrashes:
         methods:
             '+notifyWithUserConfirmation:':

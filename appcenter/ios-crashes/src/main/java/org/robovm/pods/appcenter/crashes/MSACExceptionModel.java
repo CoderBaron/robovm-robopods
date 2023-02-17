@@ -37,7 +37,7 @@ import org.robovm.pods.appcenter.core.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/MSACExceptionModel/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements MSACSerializableObject/*</implements>*/ {
+    /*<implements>*/implements MSACSerializableObject, NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class MSACExceptionModelPtr extends Ptr<MSACExceptionModel, MSACExceptionModelPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(MSACExceptionModel.class); }/*</bind>*/
@@ -72,6 +72,8 @@ import org.robovm.pods.appcenter.core.*;
     public native NSArray<MSACStackFrame> getFrames();
     @Property(selector = "setFrames:")
     public native void setFrames(NSArray<MSACStackFrame> v);
+    @Property(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

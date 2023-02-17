@@ -37,13 +37,13 @@ import org.robovm.pods.appcenter.core.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/MSACLogWithNameAndProperties/*</name>*/ 
     extends /*<extends>*/MSACLogWithProperties/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class MSACLogWithNameAndPropertiesPtr extends Ptr<MSACLogWithNameAndProperties, MSACLogWithNameAndPropertiesPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(MSACLogWithNameAndProperties.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected MSACLogWithNameAndProperties() {}
+    public MSACLogWithNameAndProperties() {}
     protected MSACLogWithNameAndProperties(Handle h, long handle) { super(h, handle); }
     protected MSACLogWithNameAndProperties(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
@@ -52,6 +52,8 @@ import org.robovm.pods.appcenter.core.*;
     public native String getName();
     @Property(selector = "setName:")
     public native void setName(String v);
+    @Property(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

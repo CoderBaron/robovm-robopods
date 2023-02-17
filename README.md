@@ -43,7 +43,7 @@ v1.29.0 - in development
 | Name                            | 1.29.0  |
 |---------------------------------|---------|
 | [AdaptySDK](adapty/)            | 1.17.7  |
-| [AppCenter](appcenter/)         | 5.0.0   |
+| [AppCenter](appcenter/)         | 5.0.1   |
 | [AppLovinSDK](applovinsdk/)     | 11.6.0  |
 | [Azure](azure/)                 | 3.1.4   |
 | [BranchMetrics](branchmetrics/) | 1.45.2  |

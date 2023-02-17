@@ -36,7 +36,7 @@ import org.robovm.apple.foundation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/MSACLogWithProperties/*</name>*/ 
     extends /*<extends>*/MSACAbstractLog/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements NSSecureCoding/*</implements>*/ {
 
     /*<ptr>*/public static class MSACLogWithPropertiesPtr extends Ptr<MSACLogWithProperties, MSACLogWithPropertiesPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(MSACLogWithProperties.class); }/*</bind>*/
@@ -51,6 +51,8 @@ import org.robovm.apple.foundation.*;
     public native NSDictionary<NSString, NSString> getProperties();
     @Property(selector = "setProperties:")
     public native void setProperties(NSDictionary<NSString, NSString> v);
+    @Property(selector = "supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
