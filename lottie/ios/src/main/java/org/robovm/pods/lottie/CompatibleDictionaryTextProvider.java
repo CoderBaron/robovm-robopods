@@ -36,29 +36,27 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Lottie19CompatibleAnimation")/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/CompatibleAnimation/*</name>*/ 
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Lottie32CompatibleDictionaryTextProvider")/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/CompatibleDictionaryTextProvider/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class CompatibleAnimationPtr extends Ptr<CompatibleAnimation, CompatibleAnimationPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(CompatibleAnimation.class); }/*</bind>*/
+    /*<ptr>*/public static class CompatibleDictionaryTextProviderPtr extends Ptr<CompatibleDictionaryTextProvider, CompatibleDictionaryTextProviderPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(CompatibleDictionaryTextProvider.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected CompatibleAnimation() {}
-    protected CompatibleAnimation(Handle h, long handle) { super(h, handle); }
-    protected CompatibleAnimation(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithName:subdirectory:bundle:")
-    public CompatibleAnimation(String name, String subdirectory, NSBundle bundle) { super((SkipInit) null); initObject(init(name, subdirectory, bundle)); }
+    protected CompatibleDictionaryTextProvider() {}
+    protected CompatibleDictionaryTextProvider(Handle h, long handle) { super(h, handle); }
+    protected CompatibleDictionaryTextProvider(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithValues:")
+    public CompatibleDictionaryTextProvider(NSDictionary<NSString, NSString> values) { super((SkipInit) null); initObject(init(values)); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithName:subdirectory:bundle:")
-    protected native @Pointer long init(String name, String subdirectory, NSBundle bundle);
-    @Method(selector = "named:")
-    public static native CompatibleAnimation named(String name);
+    @Method(selector = "initWithValues:")
+    protected native @Pointer long init(NSDictionary<NSString, NSString> values);
     /*</methods>*/
 }

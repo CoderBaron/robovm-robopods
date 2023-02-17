@@ -50,6 +50,16 @@ import org.robovm.apple.coreanimation.*;
     protected CompatibleAnimationView(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithCompatibleAnimation:")
     public CompatibleAnimationView(CompatibleAnimation compatibleAnimation) { super((SkipInit) null); initObject(init(compatibleAnimation)); }
+    @Method(selector = "initWithCompatibleAnimation:compatibleRenderingEngineOption:")
+    public CompatibleAnimationView(CompatibleAnimation compatibleAnimation, CompatibleRenderingEngineOption compatibleRenderingEngineOption) { super((SkipInit) null); initObject(init(compatibleAnimation, compatibleRenderingEngineOption)); }
+    @Method(selector = "initWithUrl:")
+    public CompatibleAnimationView(NSURL url) { super((SkipInit) null); initObject(init(url)); }
+    @Method(selector = "initWithUrl:compatibleRenderingEngineOption:")
+    public CompatibleAnimationView(NSURL url, CompatibleRenderingEngineOption compatibleRenderingEngineOption) { super((SkipInit) null); initObject(init(url, compatibleRenderingEngineOption)); }
+    @Method(selector = "initWithData:")
+    public CompatibleAnimationView(NSData data) { super((SkipInit) null); initObject(init(data)); }
+    @Method(selector = "initWithData:compatibleRenderingEngineOption:")
+    public CompatibleAnimationView(NSData data, CompatibleRenderingEngineOption compatibleRenderingEngineOption) { super((SkipInit) null); initObject(init(data, compatibleRenderingEngineOption)); }
     @Method(selector = "initWithFrame:")
     public CompatibleAnimationView(@ByVal CGRect frame) { super((SkipInit) null); initObject(init(frame)); }
     @Method(selector = "initWithCoder:")
@@ -64,6 +74,10 @@ import org.robovm.apple.coreanimation.*;
     public native @MachineSizedFloat double getLoopAnimationCount();
     @Property(selector = "setLoopAnimationCount:")
     public native void setLoopAnimationCount(@MachineSizedFloat double v);
+    @Property(selector = "compatibleDictionaryTextProvider")
+    public native CompatibleDictionaryTextProvider getCompatibleDictionaryTextProvider();
+    @Property(selector = "setCompatibleDictionaryTextProvider:")
+    public native void setCompatibleDictionaryTextProvider(CompatibleDictionaryTextProvider v);
     @Property(selector = "contentMode")
     public native UIViewContentMode getContentMode();
     @Property(selector = "setContentMode:")
@@ -76,6 +90,8 @@ import org.robovm.apple.coreanimation.*;
     public native @MachineSizedFloat double getCurrentProgress();
     @Property(selector = "setCurrentProgress:")
     public native void setCurrentProgress(@MachineSizedFloat double v);
+    @Property(selector = "duration")
+    public native @MachineSizedFloat double getDuration();
     @Property(selector = "currentTime")
     public native double getCurrentTime();
     @Property(selector = "setCurrentTime:")
@@ -106,6 +122,16 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "initWithCompatibleAnimation:")
     protected native @Pointer long init(CompatibleAnimation compatibleAnimation);
+    @Method(selector = "initWithCompatibleAnimation:compatibleRenderingEngineOption:")
+    protected native @Pointer long init(CompatibleAnimation compatibleAnimation, CompatibleRenderingEngineOption compatibleRenderingEngineOption);
+    @Method(selector = "initWithUrl:")
+    protected native @Pointer long init(NSURL url);
+    @Method(selector = "initWithUrl:compatibleRenderingEngineOption:")
+    protected native @Pointer long init(NSURL url, CompatibleRenderingEngineOption compatibleRenderingEngineOption);
+    @Method(selector = "initWithData:")
+    protected native @Pointer long init(NSData data);
+    @Method(selector = "initWithData:compatibleRenderingEngineOption:")
+    protected native @Pointer long init(NSData data, CompatibleRenderingEngineOption compatibleRenderingEngineOption);
     @Method(selector = "initWithFrame:")
     protected native @Pointer long init(@ByVal CGRect frame);
     @Method(selector = "initWithCoder:")

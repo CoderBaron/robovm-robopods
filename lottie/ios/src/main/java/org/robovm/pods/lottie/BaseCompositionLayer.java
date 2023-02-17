@@ -63,6 +63,8 @@ import org.robovm.apple.coreanimation.*;
     protected native @Pointer long init(NSCoder coder);
     @Method(selector = "initWithLayer:")
     protected native @Pointer long init(CALayer layer);
+    @Method(selector = "addSublayer:")
+    public native void addSublayer(CALayer layer);
     @Method(selector = "defaultValueForKey:")
     public static native NSObject getDefaultValue(String key);
     @Method(selector = "needsDisplayForKey:")
