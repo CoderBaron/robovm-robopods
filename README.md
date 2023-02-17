@@ -21,7 +21,6 @@ This is the list of currently available AltPods. Click them to get more informat
 | [CleverAdsSolutions](clearads/) | Clever Ads Solutions iOS SDK                                                                                                                                       |
 | [Facebook](facebook/)           | Used to integrate the Facebook Platform with your iOS & tvOS apps                                                                                                  |
 | [Firebase](firebase/)           | Firebase (analytics, databases, mobile ads)                                                                                                                        |
-| [Flurry](flurry/)               | Flurry analytics, ads, remote config and push                                                                                                                      |
 | [Fyber](fyber/)                 | Fyber Markertplace                                                                                                                                                 |
 | [HelpShift](helpshift/)         | Deliver a superior customer service experience at a lower cost with Helpshift’s AI-powered messaging platform.                                                     |
 | [InMobi](inmobi/)               | Monetization SDK for iOS                                                                                                                                           |
@@ -51,7 +50,6 @@ v1.29.0 - in development
 | [ClearAds](clearads/)           | 3.0.1   |
 | [Facebook](facebook/)           | 16.0.0  |
 | [Firebase](firebase/)           | 10.5.0  |
-| [Flurry](flurry/)               | 11.2.1  |
 | [Fyber](fyber/)                 | 8.1.6   |
 | [HelpShift](helpshift/)         | 7.11.2  |
 | [InMobi](inmobi/)               | 10.1.0  |
