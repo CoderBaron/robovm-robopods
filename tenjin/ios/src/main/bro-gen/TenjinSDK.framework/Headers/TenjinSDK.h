@@ -1,7 +1,6 @@
 //
 // Created by Tenjin on 2016-05-20.
-//  Version 1.12.18
-
+//  Version 88.88.8008
 //  Copyright (c) 2016 Tenjin. All rights reserved.
 //
 
@@ -154,6 +153,21 @@ andDeferredDeeplink:(NSURL *)url
 // Update conversion value
 + (void)updatePostbackConversionValue:(int)conversionValue;
 
+// Update conversion value and coarse value (iOS 16.1+)
++ (void)updatePostbackConversionValue:(int)conversionValue
+                          coarseValue:(NSString*)coarseValue;
+
+// Update conversion value, coarse value and lock window (iOS 16.1+)
++ (void)updatePostbackConversionValue:(int)conversionValue
+                          coarseValue:(NSString*)coarseValue
+                           lockWindow:(BOOL)lockWindow;
+
+// Set customer user id to send as parameter on each event request
++ (void)setCustomerUserId:(NSString *)userId;
+
+// Get customer user id saved on the device
++ (NSString *)getCustomerUserId;
+
 #pragma mark Util
 
 + (void)verboseLogs;
@@ -177,66 +191,3 @@ andDeferredDeeplink:(NSURL *)url
 - (void)getAttributionInfo:(void (^)(NSDictionary *attributionInfo, NSError *error))completionHandler;
 
 @end
-//
-// Created by Tenjin
-// Copyright (c) 2022 Tenjin. All rights reserved.
-//
-
-#import <Foundation/Foundation.h>
-#import "TenjinSDK.h"
-
-@interface TenjinSDK (TopOnILRD)
-+ (void)topOnImpressionFromDict:(NSDictionary *)adImpression;
-+ (void)topOnImpressionFromJSON:(NSString *)jsonString;
-@end
-//
-// Created by Tenjin
-// Copyright (c) 2022 Tenjin. All rights reserved.
-//
-
-#import "TenjinSDK.h"
-#import <Foundation/Foundation.h>
-
-@interface TenjinSDK (AppLovinILRD)
-+ (void)subscribeAppLovinImpressions;
-+ (void)appLovinImpressionFromJSON:(NSString *)jsonString;
-@end
-//
-// Created by Tenjin
-// Copyright (c) 2022 Tenjin. All rights reserved.
-//
-
-#import <Foundation/Foundation.h>
-#import "TenjinSDK.h"
-
-@interface TenjinSDK (HyperBidILRD)
-+ (void)hyperBidImpressionFromDict:(NSDictionary *)adImpression;
-+ (void)hyperBidImpressionFromJSON:(NSString *)jsonString;
-@end
-//
-// Created by Tenjin
-// Copyright (c) 2022 Tenjin. All rights reserved.
-//
-
-#import <Foundation/Foundation.h>
-#import "TenjinSDK.h"
-
-@class GADAdValue;
-
-@interface TenjinSDK (AdMobILRD)
-+ (void)handleAdMobILRD:(NSObject *)adView :(GADAdValue *)adValue;
-+ (void)adMobImpressionFromJSON:(NSString *)jsonString;
-@end
-//
-// Created by Tenjin
-// Copyright (c) 2022 Tenjin. All rights reserved.
-//
-
-#import "TenjinSDK.h"
-#import <Foundation/Foundation.h>
-
-@interface TenjinSDK (IronSourceILRD)
-+ (void)subscribeIronSourceImpressions;
-+ (void)ironSourceImpressionFromJSON:(NSString *)jsonString;
-@end
-

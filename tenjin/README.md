@@ -4,6 +4,7 @@
 
 | RoboPods Version | Tenjin Version |
 |------------------|----------------|
+| 1.29.0           | 1.12.22        |
 | 1.26.0           | 1.12.18        |
 
 ## Official website

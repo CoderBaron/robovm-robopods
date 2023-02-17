@@ -1,5 +1,5 @@
 package: org.robovm.pods.tenjin
-framework: Tenjin
+framework: TenjinSDK
 include: [foundation, uikit, storekit]
 clang_args: ['-x', 'objective-c']
 headers: 
@@ -56,6 +56,10 @@ classes:
                 name: requestTrackingAuthorization
             '+handleAdMobILRD::':
                 name: handleAdMobILRD
+            '+updatePostbackConversionValue:coarseValue:':
+                name: updatePostbackConversion
+            '+updatePostbackConversionValue:coarseValue:lockWindow:':
+                name: updatePostbackConversion
 protocols:
 
 functions:

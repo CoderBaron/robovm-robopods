@@ -160,6 +160,14 @@ import org.robovm.apple.storekit.*;
     public static native void updateConversionValue(int conversionValue);
     @Method(selector = "updatePostbackConversionValue:")
     public static native void updatePostbackConversionValue(int conversionValue);
+    @Method(selector = "updatePostbackConversionValue:coarseValue:")
+    public static native void updatePostbackConversion(int conversionValue, String coarseValue);
+    @Method(selector = "updatePostbackConversionValue:coarseValue:lockWindow:")
+    public static native void updatePostbackConversion(int conversionValue, String coarseValue, boolean lockWindow);
+    @Method(selector = "setCustomerUserId:")
+    public static native void setCustomerUserId(String userId);
+    @Method(selector = "getCustomerUserId")
+    public static native String getCustomerUserId();
     @Method(selector = "verboseLogs")
     public static native void verboseLogs();
     @Method(selector = "debugLogs")
@@ -180,25 +188,5 @@ import org.robovm.apple.storekit.*;
     public static native void registerAppForAdNetworkAttribution();
     @Method(selector = "requestTrackingAuthorizationWithCompletionHandler:")
     public static native void requestTrackingAuthorization(@Block("(@MachineSizedUInt)") VoidBlock1<Long> completion);
-    @Method(selector = "topOnImpressionFromDict:")
-    public static native void topOnImpressionFromDict(NSDictionary<?, ?> adImpression);
-    @Method(selector = "topOnImpressionFromJSON:")
-    public static native void topOnImpressionFromJSON(String jsonString);
-    @Method(selector = "subscribeAppLovinImpressions")
-    public static native void subscribeAppLovinImpressions();
-    @Method(selector = "appLovinImpressionFromJSON:")
-    public static native void appLovinImpressionFromJSON(String jsonString);
-    @Method(selector = "hyperBidImpressionFromDict:")
-    public static native void hyperBidImpressionFromDict(NSDictionary<?, ?> adImpression);
-    @Method(selector = "hyperBidImpressionFromJSON:")
-    public static native void hyperBidImpressionFromJSON(String jsonString);
-    @Method(selector = "handleAdMobILRD::")
-    public static native void handleAdMobILRD(NSObject adView, org.robovm.pods.google.mobileads.GADAdValue adValue);
-    @Method(selector = "adMobImpressionFromJSON:")
-    public static native void adMobImpressionFromJSON(String jsonString);
-    @Method(selector = "subscribeIronSourceImpressions")
-    public static native void subscribeIronSourceImpressions();
-    @Method(selector = "ironSourceImpressionFromJSON:")
-    public static native void ironSourceImpressionFromJSON(String jsonString);
     /*</methods>*/
 }

@@ -408,30 +408,25 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             """.trimIndent(),
         )
     },
-    "Tenjin" to { lib ->
-        val artifactLocation = downloadFolder.extend("tenjin-ios-sdk")
+    "TenjinSDK" to { framework ->
+        val artifactLocation = downloadFolder.extend("tenjin-ios-sdk/TenjinSDK.xcframework/ios-arm64/$framework.framework")
         val tenjinvVersion: String by lazy {
-            artifactLocation.extend("TenjinSDK.h").readLines()
+            downloadFolder.extend("tenjin-ios-sdk/TenjinSDK.h").readLines()
                 .find{ it.contains(" Version ") }
                 ?.substringAfterLast(" ")
-                ?: error("Filed to evaluate $lib version")
+                ?: error("Filed to evaluate $framework version")
         }
         processFramework(
-            artifact = "$lib.lib",
+            artifact = "$framework.framework",
             moduleFolder = "tenjin/ios",
-            sourceHeadersDir = artifactLocation,
+            sourceHeadersDir = artifactLocation.headers,
             yaml = "tenjin.yaml",
             version = { tenjinvVersion },
             instruction = """
                 0. download latest version from https://github.com/tenjin/tenjin-ios-sdk/releases
                 1. unpack and rename to ${downloadFolder.extend("tenjin-ios-sdk")}
                 1. expected location ${artifactLocation}
-            """.trimIndent(),
-            headersCopier = { frm, sourceHeadersDir, destinationHeadersDir ->
-                copyHeadersFiltered(frm, sourceHeadersDir, destinationHeadersDir, flatten = true) {
-                    it.fileName.toString().endsWith(".h")
-                }
-            }
+            """.trimIndent()
         )
     },
     "CleverAdsSolutions" to { framework ->

@@ -1,0 +1,5 @@
+<config>
+    <frameworks>
+        <framework>TenjinSDK</framework>
+    </frameworks>
+</config>
