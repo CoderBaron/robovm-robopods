@@ -74,6 +74,8 @@ import org.robovm.apple.coreanimation.*;
     public native MANativeAdImage getMainImage();
     @Property(selector = "mediaContentAspectRatio")
     public native @MachineSizedFloat double getMediaContentAspectRatio();
+    @Property(selector = "starRating")
+    public native NSNumber getStarRating();
     @Property(selector = "isExpired")
     public native boolean isExpired();
     /*</properties>*/
@@ -87,6 +89,8 @@ import org.robovm.apple.coreanimation.*;
     public native void prepareViewForInteraction(MANativeAdView nativeAdView);
     @Method(selector = "prepareForInteractionClickableViews:withContainer:")
     public native boolean prepareForInteractionClickableViews(NSArray<UIView> clickableViews, UIView container);
+    @Method(selector = "shouldPrepareViewForInteractionOnMainThread")
+    public native boolean shouldPrepareViewForInteractionOnMainThread();
     @Method(selector = "isContainerClickable")
     public native boolean isContainerClickable();
     @Method(selector = "performClick")

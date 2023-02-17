@@ -88,6 +88,10 @@ import org.robovm.apple.coreanimation.*;
     public native UIView getOptionsContentView();
     @Property(selector = "setOptionsContentView:", strongRef = true)
     public native void setOptionsContentView(UIView v);
+    @Property(selector = "starRatingContentView")
+    public native UIView getStarRatingContentView();
+    @Property(selector = "setStarRatingContentView:", strongRef = true)
+    public native void setStarRatingContentView(UIView v);
     @Property(selector = "mediaContentView")
     public native UIView getMediaContentView();
     @Property(selector = "setMediaContentView:", strongRef = true)

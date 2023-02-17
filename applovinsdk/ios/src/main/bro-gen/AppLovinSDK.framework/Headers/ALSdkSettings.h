@@ -11,32 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
  * This class contains settings that enable the AppLovin consent flow.
  */
 @interface ALConsentFlowSettings : NSObject
-
-/**
- * Set this to @c YES to enable the consent flow. You must also provide your privacy policy and terms of service URLs in this object, and you must provide a
- * @c NSUserTrackingUsageDescription string in your @code Info.plist @endcode file.
- *
- * This defaults to the value that you entered into your @code Info.plist @endcode file via @c AppLovinConsentFlowInfo ⇒ @c AppLovinConsentFlowEnabled.
- */
-@property (nonatomic, assign, getter=isEnabled) BOOL enabled;
-
-/**
- * URL for your company’s privacy policy. This is required in order to enable the consent flow.
- *
- * This defaults to the value that you entered into your @code Info.plist @endcode file via @c AppLovinConsentFlowInfo ⇒ @c AppLovinConsentFlowPrivacyPolicy.
- */
-@property (nonatomic, copy, nullable) NSURL *privacyPolicyURL;
-
-/**
- * URL for your company’s terms of service. This is optional; you can enable the consent flow with or without it.
- *
- * This defaults to the value that you entered into your @code Info.plist @endcode file via @c AppLovinConsentFlowInfo ⇒ @c AppLovinConsentFlowTermsOfService.
- */
-@property (nonatomic, copy, nullable) NSURL *termsOfServiceURL;
-
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
-
 @end
 
 /**
@@ -114,6 +90,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ALSdkSettings (ALDeprecated)
 @property (nonatomic, assign) BOOL isVerboseLogging __deprecated_msg("This property is deprecated and will be removed in a future SDK version. Please use `-[ALSdkSettings isVerboseLoggingEnabled]` instead.");
+@end
+
+@interface ALConsentFlowSettings (ALDeprecated)
+@property (nonatomic, assign, getter=isEnabled) BOOL enabled __deprecated_msg("This API has been deprecated and will be removed in a future release.");
+@property (nonatomic, copy, nullable) NSURL *privacyPolicyURL __deprecated_msg("This API has been deprecated and will be removed in a future release.");
+@property (nonatomic, copy, nullable) NSURL *termsOfServiceURL __deprecated_msg("This API has been deprecated and will be removed in a future release.");
 @end
 
 NS_ASSUME_NONNULL_END

@@ -50,16 +50,40 @@ import org.robovm.apple.coreanimation.*;
     protected ALConsentFlowSettings(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
+    /**
+     * @deprecated This API has been deprecated and will be removed in a future release.
+     */
+    @Deprecated
     @Property(selector = "isEnabled")
     public native boolean isEnabled();
+    /**
+     * @deprecated This API has been deprecated and will be removed in a future release.
+     */
+    @Deprecated
     @Property(selector = "setEnabled:")
     public native void setEnabled(boolean v);
+    /**
+     * @deprecated This API has been deprecated and will be removed in a future release.
+     */
+    @Deprecated
     @Property(selector = "privacyPolicyURL")
     public native NSURL getPrivacyPolicyURL();
+    /**
+     * @deprecated This API has been deprecated and will be removed in a future release.
+     */
+    @Deprecated
     @Property(selector = "setPrivacyPolicyURL:")
     public native void setPrivacyPolicyURL(NSURL v);
+    /**
+     * @deprecated This API has been deprecated and will be removed in a future release.
+     */
+    @Deprecated
     @Property(selector = "termsOfServiceURL")
     public native NSURL getTermsOfServiceURL();
+    /**
+     * @deprecated This API has been deprecated and will be removed in a future release.
+     */
+    @Deprecated
     @Property(selector = "setTermsOfServiceURL:")
     public native void setTermsOfServiceURL(NSURL v);
     /*</properties>*/

@@ -90,6 +90,10 @@ import org.robovm.apple.coreanimation.*;
     public native @MachineSizedFloat double getMediaContentAspectRatio();
     @Property(selector = "setMediaContentAspectRatio:")
     public native void setMediaContentAspectRatio(@MachineSizedFloat double v);
+    @Property(selector = "starRating")
+    public native NSNumber getStarRating();
+    @Property(selector = "setStarRating:")
+    public native void setStarRating(NSNumber v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

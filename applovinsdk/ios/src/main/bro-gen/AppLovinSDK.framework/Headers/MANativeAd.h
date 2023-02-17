@@ -28,6 +28,7 @@ typedef void (^MANativeAdBuilderBlock) (MANativeAdBuilder *builder);
 @property (nonatomic, strong, nullable) UIView *optionsView;
 @property (nonatomic, strong, nullable) UIView *mediaView;
 @property (nonatomic, assign) CGFloat mediaContentAspectRatio;
+@property (nonatomic, strong, nullable) NSNumber *starRating;
 
 @end
 
@@ -125,6 +126,11 @@ typedef void (^MANativeAdBuilderBlock) (MANativeAdBuilder *builder);
 @property (nonatomic, assign, readonly) CGFloat mediaContentAspectRatio;
 
 /**
+ * The star rating of the native ad in the [0.0, 5.0] range if provided by the network. Otherwise returns @c nil.
+ */
+@property (nonatomic, strong, readonly, nullable) NSNumber *starRating;
+
+/**
  * Whether or not the ad is expired.
  */
 @property (nonatomic, assign, readonly, getter=isExpired) BOOL expired;
@@ -151,6 +157,13 @@ typedef void (^MANativeAdBuilderBlock) (MANativeAdBuilder *builder);
  * @return @c YES if the call has been successfully handled by a subclass of @c MANativeAd.
  */
 - (BOOL)prepareForInteractionClickableViews:(NSArray<UIView *> *)clickableViews withContainer:(UIView *)container;
+
+/**
+ * Whether or not to run the @code -[MANativeAd prepareForInteractionClickableViews:withContainer:] @endcode call on the main thread or background thread.
+ *
+ * @return @c YES to run the operation on the main thread, @c NO to run the operation on a background thread. Defaults to @c YES.
+ */
+- (BOOL)shouldPrepareViewForInteractionOnMainThread;
 
 /**
  * *********************

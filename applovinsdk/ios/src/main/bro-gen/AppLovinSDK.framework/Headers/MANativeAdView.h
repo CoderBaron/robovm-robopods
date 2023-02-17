@@ -51,6 +51,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) IBOutlet UIView *optionsContentView;
 
 /**
+ * The native ad star rating view for holding the star rating view.
+ */
+@property (nonatomic, weak) IBOutlet UIView *starRatingContentView;
+
+/**
  * The native ad media view for holding an arbitrary content view provided by the 3rd-party SDK.
  */
 @property (nonatomic, weak) IBOutlet UIView *mediaContentView;

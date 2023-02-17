@@ -52,6 +52,17 @@ typedef NS_ENUM(NSInteger, ALAppTrackingTransparencyStatus)
 @property (nonatomic, copy, readonly) NSString *countryCode;
 
 /**
+ * Get the list of those Ad Unit IDs that are in the waterfall that is currently active for a particular user and
+ * for which Amazon Publisher Services is enabled.
+ *
+ * Which waterfall is currently active for a user depends on things like A/B tests, keyword targeting, or DNT.
+ *
+ * @return @c nil when configuration fetching fails (e.g. in the case of no connection) or
+ * an empty array if no Ad Unit IDs have Amazon Publisher Services enabled.
+ */
+@property (nonatomic, strong, readonly, nullable) NSArray<NSString *> *enabledAmazonAdUnitIdentifiers;
+
+/**
  * Indicates whether or not the user authorizes access to app-related data that can be used for tracking the user or the device.
  *
  * @warning Users can revoke permission at any time through the "Allow Apps To Request To Track" privacy setting on the device.

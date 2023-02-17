@@ -52,6 +52,8 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*/
     @Property(selector = "countryCode")
     public native String getCountryCode();
+    @Property(selector = "enabledAmazonAdUnitIdentifiers")
+    public native NSArray<NSString> getEnabledAmazonAdUnitIdentifiers();
     @Property(selector = "appTrackingTransparencyStatus")
     public native ALAppTrackingTransparencyStatus getAppTrackingTransparencyStatus();
     /**

@@ -70,6 +70,10 @@ import org.robovm.apple.coreanimation.*;
     public native @MachineSizedSInt long getOptionsContentViewTag();
     @Property(selector = "setOptionsContentViewTag:")
     public native void setOptionsContentViewTag(@MachineSizedSInt long v);
+    @Property(selector = "starRatingContentViewTag")
+    public native @MachineSizedSInt long getStarRatingContentViewTag();
+    @Property(selector = "setStarRatingContentViewTag:")
+    public native void setStarRatingContentViewTag(@MachineSizedSInt long v);
     @Property(selector = "mediaContentViewTag")
     public native @MachineSizedSInt long getMediaContentViewTag();
     @Property(selector = "setMediaContentViewTag:")
