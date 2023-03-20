@@ -38,8 +38,8 @@ This is the list of currently available AltPods. Click them to get more informat
 
 ## Version of AltPods to framework version mapping
 
-v1.29.0 - in development
-| Name                            | 1.29.0  |
+v1.30.0 - in development
+| Name                            | 1.30.0  |
 |---------------------------------|---------|
 | [AdaptySDK](adapty/)            | 1.17.7  |
 | [AppCenter](appcenter/)         | 5.0.1   |
@@ -60,7 +60,7 @@ v1.29.0 - in development
 | [Pollfish](pollfish/)           | 6.3.1   |
 | [SAMKeychain](samkeychain/)     | 1.5.3   |
 | [Singular](singular/)           | 12.0.1  |
-| [Tenjin](tenjin/)               | 1.12.22   |
+| [Tenjin](tenjin/)               | 1.12.22 |
 | [UnityAds](unityads/)           | 4.5.0   |
 | [YouTubePlayer](youtube/)       | 1.0.4   |
 
