@@ -123,6 +123,8 @@ import org.robovm.apple.coreanimation.*;
     public native boolean openURL(UIApplication application, NSURL url, NSDictionary<NSString, ?> options);
     @Method(selector = "dispatchToIsolationQueue:")
     public native void dispatchToIsolationQueue(@Block Runnable initBlock);
+    @Method(selector = "notifyNativeToInit")
+    public native void notifyNativeToInit();
     @Method(selector = "handlePushNotification:")
     public native void handlePushNotification(NSDictionary<?, ?> userInfo);
     /**
