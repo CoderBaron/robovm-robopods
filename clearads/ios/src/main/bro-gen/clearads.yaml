@@ -139,7 +139,9 @@ classes:
     CASConsentFlow:
         methods:
             '-initWithEnabled:':
-                name: init
+                name:
+    CASNativeAdContent: { }
+    CASNativeView: {}
 protocols:
     CASAdapterFactory: { }
     CASAnalyticsDelegate:

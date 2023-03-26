@@ -275,8 +275,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) CASSettings 
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) CASTargetingOptions * _Nonnull targetingOptions;)
 + (CASTargetingOptions * _Nonnull)targetingOptions SWIFT_WARN_UNUSED_RESULT;
 /// Get last created <code>CASMediationManager</code> by <code>CAS.create()</code>
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) CASMediationManager * _Nullable manager;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) CASMediationManager * _Nullable manager;)
 + (CASMediationManager * _Nullable)manager SWIFT_WARN_UNUSED_RESULT;
++ (void)setManager:(CASMediationManager * _Nullable)value;
 + (CASManagerBuilder * _Nonnull)buildManager SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nonnull)getSDKVersion SWIFT_WARN_UNUSED_RESULT;
 /// Call Integration Helper and check current integration in console.
@@ -965,6 +966,14 @@ SWIFT_CLASS_NAMED("CASMediationManager")
 
 
 
+
+SWIFT_CLASS_NAMED("CASNativeView")
+@interface CASNativeView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS_NAMED("CASNetwork")
 @interface CASNetwork : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull googleAds;)
@@ -1332,6 +1341,16 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSUInteger everythin
 + (NSUInteger)everything SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+SWIFT_CLASS_NAMED("NativeAdContent")
+@interface CASNativeAdContent : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
 
 
 

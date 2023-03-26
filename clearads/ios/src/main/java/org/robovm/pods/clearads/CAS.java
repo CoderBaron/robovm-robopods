@@ -44,8 +44,8 @@ import org.robovm.apple.coreanimation.*;
     /*<ptr>*/public static class CASPtr extends Ptr<CAS, CASPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(CAS.class); }/*</bind>*/
     /*<constants>*/
-    public static final String FRAMEWORK_VERSION = "3.0.1";
-    public static final int FRAMEWORK_CODE = 3001;
+    public static final String FRAMEWORK_VERSION = "3.1.1";
+    public static final int FRAMEWORK_CODE = 3101;
     /*</constants>*/
     /*<constructors>*/
     public CAS() {}
@@ -63,6 +63,8 @@ import org.robovm.apple.coreanimation.*;
     public static native CASTargetingOptions targetingOptions();
     @Method(selector = "manager")
     public static native CASMediationManager manager();
+    @Method(selector = "setManager:")
+    public static native void setManager(CASMediationManager value);
     @Method(selector = "buildManager")
     public static native CASManagerBuilder buildManager();
     @Method(selector = "getSDKVersion")
