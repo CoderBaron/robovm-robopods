@@ -56,6 +56,8 @@ import org.robovm.apple.coreanimation.*;
     public native MAMediatedNetworkInfo getMediatedNetwork();
     @Property(selector = "credentials")
     public native NSDictionary<NSString, ?> getCredentials();
+    @Property(selector = "isBidding")
+    public native boolean isBidding();
     @Property(selector = "latency")
     public native double getLatency();
     @Property(selector = "error")

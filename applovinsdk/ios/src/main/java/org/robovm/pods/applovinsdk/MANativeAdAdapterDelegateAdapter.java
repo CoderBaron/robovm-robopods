@@ -59,5 +59,7 @@ import org.robovm.apple.coreanimation.*;
     public void didDisplayNativeAd(NSDictionary<NSString, ?> extraInfo) {}
     @NotImplemented("didClickNativeAd")
     public void didClickNativeAd() {}
+    @NotImplemented("didClickNativeAdWithExtraInfo:")
+    public void didClickNativeAd(NSDictionary<NSString, ?> extraInfo) {}
     /*</methods>*/
 }

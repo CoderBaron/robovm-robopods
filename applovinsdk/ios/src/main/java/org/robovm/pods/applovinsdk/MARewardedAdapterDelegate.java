@@ -61,6 +61,8 @@ import org.robovm.apple.coreanimation.*;
     void didDisplayRewardedAd(NSDictionary<NSString, ?> extraInfo);
     @Method(selector = "didFailToDisplayRewardedAdWithError:")
     void didFailToDisplayRewardedAd(MAAdapterError adapterError);
+    @Method(selector = "didFailToDisplayRewardedAdWithError:extraInfo:")
+    void didFailToDisplayRewardedAd(MAAdapterError adapterError, NSDictionary<NSString, ?> extraInfo);
     @Method(selector = "didClickRewardedAd")
     void didClickRewardedAd();
     @Method(selector = "didClickRewardedAdWithExtraInfo:")
@@ -75,6 +77,8 @@ import org.robovm.apple.coreanimation.*;
     void didCompleteRewardedAdVideo();
     @Method(selector = "didRewardUserWithReward:")
     void didRewardUser(MAReward reward);
+    @Method(selector = "didRewardUserWithReward:extraInfo:")
+    void didRewardUser(MAReward reward, NSDictionary<NSString, ?> extraInfo);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

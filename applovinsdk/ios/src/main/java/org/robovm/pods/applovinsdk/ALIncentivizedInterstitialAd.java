@@ -85,6 +85,8 @@ import org.robovm.apple.coreanimation.*;
     public native void show(ALAdRewardDelegate adRewardDelegate);
     @Method(selector = "showAd:andNotify:")
     public native void showAd(ALAd ad, ALAdRewardDelegate adRewardDelegate);
+    @Method(selector = "setExtraInfoForKey:value:")
+    public native void setExtraInfo(String key, NSObject value);
     @Method(selector = "shared")
     public static native ALIncentivizedInterstitialAd shared();
     @Method(selector = "preloadAndNotify:")

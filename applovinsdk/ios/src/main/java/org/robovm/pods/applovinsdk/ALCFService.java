@@ -37,34 +37,25 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/ALConsentFlowSettings/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/ALCFService/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class ALConsentFlowSettingsPtr extends Ptr<ALConsentFlowSettings, ALConsentFlowSettingsPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(ALConsentFlowSettings.class); }/*</bind>*/
+    /*<ptr>*/public static class ALCFServicePtr extends Ptr<ALCFService, ALCFServicePtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(ALCFService.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected ALConsentFlowSettings() {}
-    protected ALConsentFlowSettings(Handle h, long handle) { super(h, handle); }
-    protected ALConsentFlowSettings(SkipInit skipInit) { super(skipInit); }
+    protected ALCFService() {}
+    protected ALCFService(Handle h, long handle) { super(h, handle); }
+    protected ALCFService(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "isEnabled")
-    public native boolean isEnabled();
-    @Property(selector = "setEnabled:")
-    public native void setEnabled(boolean v);
-    @Property(selector = "privacyPolicyURL")
-    public native NSURL getPrivacyPolicyURL();
-    @Property(selector = "setPrivacyPolicyURL:")
-    public native void setPrivacyPolicyURL(NSURL v);
-    @Property(selector = "termsOfServiceURL")
-    public native NSURL getTermsOfServiceURL();
-    @Property(selector = "setTermsOfServiceURL:")
-    public native void setTermsOfServiceURL(NSURL v);
+    @Property(selector = "cfType")
+    public native ALCFType getCfType();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "scfWithCompletionHander:")
+    public native void scfWithCompletionHander$(@Block VoidBlock1<ALCFError> completionHandler);
     /*</methods>*/
 }

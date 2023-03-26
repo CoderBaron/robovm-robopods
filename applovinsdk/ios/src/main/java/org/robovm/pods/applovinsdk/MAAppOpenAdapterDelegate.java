@@ -69,6 +69,8 @@ import org.robovm.apple.coreanimation.*;
     void didHideAppOpenAd(NSDictionary<NSString, ?> extraInfo);
     @Method(selector = "didFailToDisplayAppOpenAdWithError:")
     void didFailToDisplayAppOpenAd(MAAdapterError adapterError);
+    @Method(selector = "didFailToDisplayAppOpenAdWithError:extraInfo:")
+    void didFailToDisplayAppOpenAd(MAAdapterError adapterError, NSDictionary<NSString, ?> extraInfo);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

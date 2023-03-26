@@ -36,30 +36,30 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/MANativeAdAdapterDelegate/*</name>*/ 
-    /*<implements>*/extends MAAdapterDelegate/*</implements>*/ {
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
+public enum /*<name>*/ALCFType/*</name>*/ implements ValuedEnum {
+    /*<values>*/
+    Unknown(0L),
+    Standard(1L),
+    Detailed(2L);
+    /*</values>*/
 
-    /*<ptr>*/
-    /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<properties>*/
-    
-    /*</properties>*/
-    /*<methods>*/
-    @Method(selector = "didLoadAdForNativeAd:withExtraInfo:")
-    void didLoadAdForNativeAd(MANativeAd nativeAd, NSDictionary<NSString, ?> extraInfo);
-    @Method(selector = "didFailToLoadNativeAdWithError:")
-    void didFailToLoadNativeAd(MAAdapterError adapterError);
-    @Method(selector = "didDisplayNativeAdWithExtraInfo:")
-    void didDisplayNativeAd(NSDictionary<NSString, ?> extraInfo);
-    @Method(selector = "didClickNativeAd")
-    void didClickNativeAd();
-    @Method(selector = "didClickNativeAdWithExtraInfo:")
-    void didClickNativeAd(NSDictionary<NSString, ?> extraInfo);
-    /*</methods>*/
-    /*<adapter>*/
-    /*</adapter>*/
+    /*<methods>*//*</methods>*/
+
+    private final long n;
+
+    private /*<name>*/ALCFType/*</name>*/(long n) { this.n = n; }
+    public long value() { return n; }
+    public static /*<name>*/ALCFType/*</name>*/ valueOf(long n) {
+        for (/*<name>*/ALCFType/*</name>*/ v : values()) {
+            if (v.n == n) {
+                return v;
+            }
+        }
+        throw new IllegalArgumentException("No constant with value " + n + " found in " 
+            + /*<name>*/ALCFType/*</name>*/.class.getName());
+    }
 }

@@ -17,6 +17,8 @@ enums:
     ALAdContentRating: { }
     ALGender: { }
     MAAdapterInitializationStatus: { }
+    ALCFType: { }
+    ALCFErrorCode: { }
 classes:
     ALAd:
         methods:
@@ -58,6 +60,8 @@ classes:
                 name: init
             '-render:overPlacement:':
                 name: render
+            '-setExtraInfoForKey:value:':
+                name: setExtraInfo
     ALEventService:
         methods:
             '-setSuperProperty:forKey:':
@@ -115,6 +119,8 @@ classes:
                 name: ShowOver
             '+showOver:andNotify:':
                 name: ShowOver
+            '-setExtraInfoForKey:value:':
+                name: setExtraInfo
 
     ALInterstitialAd:
         methods:
@@ -138,6 +144,8 @@ classes:
                 name: ShowOverPlacement
             '+isReadyForDisplay':
                 name: IsReadyForDisplay
+            '-setExtraInfoForKey:value:':
+                name: setExtraInfo
     ALNativeAd:
         methods:
             '-videoEndTrackingURL:firstPlay:':
@@ -429,6 +437,11 @@ classes:
             '-setLocalExtraParameterForKey:value:':
                 #trim_after_first_colon: true
                 name: setLocalExtraParameterForKey$value$
+    ALCFError: { }
+    ALCFService:
+        methods:
+            '-scfWithCompletionHander:':
+                name: scfWithCompletionHander$
 protocols:
     ALAdDisplayDelegate:
         methods:
@@ -541,6 +554,12 @@ protocols:
                 name: didClickAdViewAd
             '-didHideAdViewAdWithExtraInfo:':
                 name: didHideAdViewAd
+            '-didFailToDisplayAdViewAdWithError:extraInfo:':
+                name: didFailToDisplayAdViewAd
+            '-didExpandAdViewAdWithExtraInfo:':
+                name: didExpandAdViewAd
+            '-didCollapseAdViewAdWithExtraInfo:':
+                name: didCollapseAdViewAd
     MAAdapter:
         methods:
             '-initializeWithParameters:withCompletionHandler:':
@@ -571,6 +590,8 @@ protocols:
                 name: didClickInterstitialAd
             '-didHideInterstitialAdWithExtraInfo:':
                 name: didHideInterstitialAd
+            '-didFailToDisplayInterstitialAdWithError:extraInfo:':
+                name: didFailToDisplayInterstitialAd
     MANativeAdAdapter:
         methods:
             '-loadNativeAdForParameters:andNotify:':
@@ -583,6 +604,8 @@ protocols:
                 name: didFailToLoadNativeAd
             '-didDisplayNativeAdWithExtraInfo:':
                 name: didDisplayNativeAd
+            '-didClickNativeAdWithExtraInfo:':
+                name: didClickNativeAd
     MARewardedAdapter:
         methods:
             '-loadRewardedAdForParameters:andNotify:':
@@ -605,6 +628,10 @@ protocols:
                 name: didClickRewardedAd
             '-didHideRewardedAdWithExtraInfo:':
                 name: didHideRewardedAd
+            '-didFailToDisplayRewardedAdWithError:extraInfo:':
+                name: didFailToDisplayRewardedAd
+            '-didRewardUserWithReward:extraInfo:':
+                name: didRewardUser
     MARewardedInterstitialAdapter:
         methods:
             '-loadRewardedInterstitialAdForParameters:andNotify:':
@@ -627,6 +654,10 @@ protocols:
                 name: didClickRewardedInterstitialAd
             '-didHideRewardedInterstitialAdWithExtraInfo:':
                 name: didHideRewardedInterstitialAd
+            '-didFailToDisplayRewardedInterstitialAdWithError:extraInfo:':
+                name: didFailToDisplayRewardedInterstitialAd
+            '-didRewardUserWithReward:extraInfo:':
+                name: didRewardUser
     MASignalCollectionDelegate:
         methods:
             '-didFailToCollectSignalWithErrorMessage:':
@@ -661,6 +692,8 @@ protocols:
             '-didHideAppOpenAdWithExtraInfo:':
                 name: didHideAppOpenAd
             '-didFailToDisplayAppOpenAdWithError:':
+                name: didFailToDisplayAppOpenAd
+            '-didFailToDisplayAppOpenAdWithError:extraInfo:':
                 name: didFailToDisplayAppOpenAd
 functions:
 

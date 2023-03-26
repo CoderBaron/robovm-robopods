@@ -63,6 +63,8 @@ import org.robovm.apple.coreanimation.*;
     public void didDisplayRewardedInterstitialAd(NSDictionary<NSString, ?> extraInfo) {}
     @NotImplemented("didFailToDisplayRewardedInterstitialAdWithError:")
     public void didFailToDisplayRewardedInterstitialAd(MAAdapterError adapterError) {}
+    @NotImplemented("didFailToDisplayRewardedInterstitialAdWithError:extraInfo:")
+    public void didFailToDisplayRewardedInterstitialAd(MAAdapterError adapterError, NSDictionary<NSString, ?> extraInfo) {}
     @NotImplemented("didClickRewardedInterstitialAd")
     public void didClickRewardedInterstitialAd() {}
     @NotImplemented("didClickRewardedInterstitialAdWithExtraInfo:")
@@ -77,5 +79,7 @@ import org.robovm.apple.coreanimation.*;
     public void didCompleteRewardedInterstitialAdVideo() {}
     @NotImplemented("didRewardUserWithReward:")
     public void didRewardUser(MAReward reward) {}
+    @NotImplemented("didRewardUserWithReward:extraInfo:")
+    public void didRewardUser(MAReward reward, NSDictionary<NSString, ?> extraInfo) {}
     /*</methods>*/
 }

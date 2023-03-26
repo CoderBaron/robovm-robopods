@@ -92,6 +92,8 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "setExtraInfoForKey:value:")
+    public native void setExtraInfo(String key, NSObject value);
     @Method(selector = "loadNextAd")
     public native void loadNextAd();
     @Method(selector = "render:")

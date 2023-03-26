@@ -71,5 +71,7 @@ import org.robovm.apple.coreanimation.*;
     public void didHideAppOpenAd(NSDictionary<NSString, ?> extraInfo) {}
     @NotImplemented("didFailToDisplayAppOpenAdWithError:")
     public void didFailToDisplayAppOpenAd(MAAdapterError adapterError) {}
+    @NotImplemented("didFailToDisplayAppOpenAdWithError:extraInfo:")
+    public void didFailToDisplayAppOpenAd(MAAdapterError adapterError, NSDictionary<NSString, ?> extraInfo) {}
     /*</methods>*/
 }

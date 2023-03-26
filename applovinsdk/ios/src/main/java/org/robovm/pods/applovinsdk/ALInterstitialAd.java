@@ -71,6 +71,8 @@ import org.robovm.apple.coreanimation.*;
     public native void show();
     @Method(selector = "showAd:")
     public native void showAd(ALAd ad);
+    @Method(selector = "setExtraInfoForKey:value:")
+    public native void setExtraInfo(String key, NSObject value);
     @Method(selector = "initWithSdk:")
     protected native @Pointer long init(ALSdk sdk);
     @Method(selector = "show")
