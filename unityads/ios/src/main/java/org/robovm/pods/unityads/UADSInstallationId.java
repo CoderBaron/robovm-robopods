@@ -36,26 +36,27 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/USRVInitializeTask/*</name>*/ 
-    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/UADSInstallationId/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/
-    /*</ptr>*/
-    /*<bind>*/
-    /*</bind>*/
+    /*<ptr>*/public static class UADSInstallationIdPtr extends Ptr<UADSInstallationId, UADSInstallationIdPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(UADSInstallationId.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
+    /*<constructors>*/
+    public UADSInstallationId() {}
+    protected UADSInstallationId(Handle h, long handle) { super(h, handle); }
+    protected UADSInstallationId(SkipInit skipInit) { super(skipInit); }
+    /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
+    /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "startWithCompletion:error:")
-    void start(@Block Runnable completion, @Block VoidBlock1<NSError> error);
-    @Method(selector = "systemName")
-    String systemName();
-    @Method(selector = "retryCount")
-    @MachineSizedSInt long retryCount();
+    @Method(selector = "installationId")
+    public native String installationId();
+    @Method(selector = "shared")
+    public static native UADSInstallationId shared();
     /*</methods>*/
-    /*<adapter>*/
-    /*</adapter>*/
 }

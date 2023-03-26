@@ -39,10 +39,12 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
 public enum /*<name>*/UADSBannerErrorCode/*</name>*/ implements ValuedEnum {
     /*<values>*/
-    Unknown(0L),
-    NativeError(1L),
-    WebViewError(2L),
-    NoFillError(3L);
+    CodeUnknown(0L),
+    CodeNativeError(1L),
+    CodeWebViewError(2L),
+    CodeNoFillError(3L),
+    InitializeFailed(4L),
+    InvalidArgument(5L);
     /*</values>*/
 
     /*<bind>*/

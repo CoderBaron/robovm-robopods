@@ -74,6 +74,8 @@ import org.robovm.apple.coreanimation.*;
     protected native @Pointer long init(String placementId, @ByVal CGSize size);
     @Method(selector = "load")
     public native void load();
+    @Method(selector = "loadWithOptions:")
+    public native void load(UADSLoadOptions options);
     /**
      * @since Available in iOS 9.0 and later.
      */

@@ -55,5 +55,7 @@ import org.robovm.apple.coreanimation.*;
     public void start(@Block Runnable completion, @Block VoidBlock1<NSError> error) {}
     @NotImplemented("systemName")
     public String systemName() { return null; }
+    @NotImplemented("retryCount")
+    public @MachineSizedSInt long retryCount() { return 0; }
     /*</methods>*/
 }

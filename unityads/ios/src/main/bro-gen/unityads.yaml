@@ -39,6 +39,8 @@ classes:
         methods:
             '-initWithPlacementId:size:':
                 name: init
+            '-loadWithOptions:':
+                name: load
     UADSBaseOptions:
         properties:
             'dictionary':
@@ -130,6 +132,8 @@ classes:
             '+newWithBuilder:andConfigReader:':
                 name: create
                 constructor: true
+    UADSInstallationId: { }
+    UADSSessionId: { }
 protocols:
     UADSBannerAdRefreshViewDelegate:
         methods:
