@@ -409,7 +409,7 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
         )
     },
     "TenjinSDK" to { framework ->
-        val artifactLocation = downloadFolder.extend("tenjin-ios-sdk/TenjinSDK.xcframework/ios-arm64/$framework.framework")
+        val artifactLocation = downloadFolder.extend("tenjin-ios-sdk/TenjinSDK.xcframework/ios-arm64_armv7/$framework.framework")
         val tenjinvVersion: String by lazy {
             downloadFolder.extend("tenjin-ios-sdk/TenjinSDK.h").readLines()
                 .find{ it.contains(" Version ") }
