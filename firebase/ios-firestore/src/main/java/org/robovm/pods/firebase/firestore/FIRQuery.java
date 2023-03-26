@@ -63,6 +63,8 @@ import org.robovm.apple.dispatch.*;
     public native FIRListenerRegistration addSnapshotListener(@Block VoidBlock2<FIRQuerySnapshot, NSError> listener);
     @Method(selector = "addSnapshotListenerWithIncludeMetadataChanges:listener:")
     public native FIRListenerRegistration addSnapshotListener(boolean includeMetadataChanges, @Block VoidBlock2<FIRQuerySnapshot, NSError> listener);
+    @Method(selector = "queryWhereFilter:")
+    public native FIRQuery queryWhereFilter(FIRFilter filter);
     @Method(selector = "queryWhereField:isEqualTo:")
     public native FIRQuery queryWhereFieldIsEqualTo(String field, NSObject value);
     @Method(selector = "queryWhereFieldPath:isNotEqualTo:")

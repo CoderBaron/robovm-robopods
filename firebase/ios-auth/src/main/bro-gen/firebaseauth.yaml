@@ -140,6 +140,8 @@ classes:
                 name: createUsingIDToken
             '+credentialWithProviderID:IDToken:rawNonce:':
                 name: createUsingIDToken
+            '+appleCredentialWithIDToken:rawNonce:fullName:':
+                name: appleCredential
     FIRPhoneAuthCredential: {}
     FIRPhoneAuthProvider:
         methods:

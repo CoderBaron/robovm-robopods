@@ -93,6 +93,8 @@ import org.robovm.apple.foundation.*;
     public native void setDefaultsFromPlistFileName(String fileName);
     @Method(selector = "defaultValueForKey:")
     public native FIRRemoteConfigValue defaultValueForKey(String key);
+    @Method(selector = "addOnConfigUpdateListener:")
+    public native FIRConfigUpdateListenerRegistration addOnConfigUpdateListener(@Block VoidBlock2<FIRRemoteConfigUpdate, NSError> listener);
     @Method(selector = "remoteConfig")
     public static native FIRRemoteConfig remoteConfig();
     @Method(selector = "remoteConfigWithApp:")

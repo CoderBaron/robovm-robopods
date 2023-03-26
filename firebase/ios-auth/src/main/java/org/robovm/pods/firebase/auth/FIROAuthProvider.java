@@ -73,6 +73,8 @@ import org.robovm.apple.uikit.*;
     public static native FIROAuthCredential createUsingIDToken(String providerID, String IDToken, String rawNonce, String accessToken);
     @Method(selector = "credentialWithProviderID:IDToken:rawNonce:")
     public static native FIROAuthCredential createUsingIDToken(String providerID, String IDToken, String rawNonce);
+    @Method(selector = "appleCredentialWithIDToken:rawNonce:fullName:")
+    public static native FIROAuthCredential appleCredential(String IDToken, String rawNonce, NSPersonNameComponents fullName);
     @Method(selector = "getCredentialWithUIDelegate:completion:")
     public native void getCredential(FIRAuthUIDelegate UIDelegate, @Block VoidBlock2<FIRAuthCredential, NSError> completion);
     /*</methods>*/

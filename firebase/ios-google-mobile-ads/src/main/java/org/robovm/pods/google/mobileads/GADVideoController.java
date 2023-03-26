@@ -56,6 +56,8 @@ import org.robovm.apple.webkit.*;
     public native GADVideoControllerDelegate getDelegate();
     @Property(selector = "setDelegate:", strongRef = true)
     public native void setDelegate(GADVideoControllerDelegate v);
+    @Property(selector = "isMuted")
+    public native boolean isMuted();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

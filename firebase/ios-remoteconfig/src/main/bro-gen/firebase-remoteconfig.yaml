@@ -13,7 +13,7 @@ enums:
     FIRRemoteConfigFetchAndActivateStatus: {}
     FIRRemoteConfigError: {nserror: true}
     FIRRemoteConfigSource: {}
-
+    FIRRemoteConfigUpdateError: {nserror: true}
 classes:
     FIRRemoteConfig:
         methods:
@@ -55,7 +55,8 @@ classes:
             '-initWithDeveloperModeEnabled:':
                 name: init
     FIRRemoteConfigValue: {}
-
+    FIRConfigUpdateListenerRegistration: { }
+    FIRRemoteConfigUpdate: { }
 protocols:
 
 functions:
@@ -67,6 +68,9 @@ functions:
 values:
     FIRRemoteConfigErrorDomain:
         class: FIRRemoteConfigError
+        name: getClassDomain
+    FIRRemoteConfigUpdateErrorDomain:
+        class: FIRRemoteConfigUpdateError
         name: getClassDomain
     FIRRemoteConfigThrottledEndTimeInSecondsKey:
         class: FIRRemoteConfigError

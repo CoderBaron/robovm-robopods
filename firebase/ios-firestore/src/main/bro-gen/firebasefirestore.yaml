@@ -212,6 +212,52 @@ classes:
             '-aggregationWithSource:completion:':
                 name: aggregation
     FIRAggregateQuerySnapshot: { }
+    FIRFilter:
+        methods:
+            '+filterWhereField:isEqualTo:':
+                name: filterWhereFieldIsEqualT
+            '+filterWhereFieldPath:isEqualTo:':
+                name: filterWhereFieldPathIsEqualTo
+            '+filterWhereField:isNotEqualTo:':
+                name: filterWhereFieldIsNotEqualTo
+            '+filterWhereFieldPath:isNotEqualTo:':
+                name: filterWhereFieldPathIsNotEqualTo
+            '+filterWhereField:isGreaterThan:':
+                name: filterWhereFieldIsGreaterThan
+            '+filterWhereFieldPath:isGreaterThan:':
+                name: filterWhereFieldPathIsGreaterThan
+            '+filterWhereField:isGreaterThanOrEqualTo:':
+                name: filterWhereFieldIsGreaterThanOrEqualTo
+            '+filterWhereFieldPath:isGreaterThanOrEqualTo:':
+                name: filterWhereFieldPathIsGreaterThanOrEqualTo
+            '+filterWhereField:isLessThan:':
+                name: filterWhereFieldIsLessThan
+            '+filterWhereFieldPath:isLessThan:':
+                name: filterWhereFieldPathIsLessThan
+            '+filterWhereField:isLessThanOrEqualTo:':
+                name: filterWhereFieldIsLessThanOrEqualTo
+            '+filterWhereFieldPath:isLessThanOrEqualTo:':
+                name: filterWhereFieldPathIsLessThanOrEqualTo
+            '+filterWhereField:arrayContains:':
+                name: filterWhereFieldArrayContains
+            '+filterWhereFieldPath:arrayContains:':
+                name: filterWhereFieldPathArrayContains
+            '+filterWhereField:arrayContainsAny:':
+                name: filterWhereFieldArrayContainsAny
+            '+filterWhereFieldPath:arrayContainsAny:':
+                name: filterWhereFieldPathArrayContainsAny
+            '+filterWhereField:in:':
+                name: filterWhereFieldIn
+            '+filterWhereFieldPath:in:':
+                name: filterWhereFieldPathIn
+            '+filterWhereField:notIn:':
+                name: filterWhereFieldNotIn
+            '+filterWhereFieldPath:notIn:':
+                name: filterWhereFieldPathNotIn
+            '+orFilterWithFilters:':
+                name: orFilter
+            '+andFilterWithFilters:':
+                name: andFilter
 protocols:
     FIRListenerRegistration: {}
 
