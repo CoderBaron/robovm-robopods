@@ -20,6 +20,8 @@ classes:
                 exclude: true #INTERNAL - DO NOT USE
             '+configureWithNetworker:appID:reporter:analyticsAppID:':
                 exclude: true #INTERNAL - DO NOT USE
+            '+configureWithNetworker:appID:reporter:analyticsAppID:store:':
+                exclude: true #INTERNAL - DO NOT USE
             '+recordAndUpdateEvent:currency:value:parameters:':
                 name: recordAndUpdateEvent
     FBAEMAdvertiserRuleFactory:

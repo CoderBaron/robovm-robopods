@@ -17,12 +17,4 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-
-    <dependencies>
-        <dependency>
-            <groupId>io.github.dkimitsa.robovm</groupId>
-            <artifactId>robopods-facebook-core-ios</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-    </dependencies>
 </project>

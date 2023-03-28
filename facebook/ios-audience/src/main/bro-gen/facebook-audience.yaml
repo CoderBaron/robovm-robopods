@@ -9,7 +9,6 @@ include:
     - uikit
     - storekit
     - avfoundation
-    - ../../../../ios-core/src/main/bro-gen/facebook-core.yaml
 clang_args: ['-x', 'objective-c']
 headers: 
     - FBAudienceNetwork.h

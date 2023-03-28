@@ -35,7 +35,6 @@ import org.robovm.apple.coreanimation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.storekit.*;
 import org.robovm.apple.avfoundation.*;
-import org.robovm.pods.facebook.core.*;
 /*</imports>*/
 
 /*<javadoc>*/
