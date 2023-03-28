@@ -139,7 +139,7 @@ classes:
     CASConsentFlow:
         methods:
             '-initWithEnabled:':
-                name:
+                name: init
     CASNativeAdContent: { }
     CASNativeView: {}
 protocols:

@@ -49,7 +49,7 @@ import org.robovm.apple.coreanimation.*;
     protected CASConsentFlow(Handle h, long handle) { super(h, handle); }
     protected CASConsentFlow(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithEnabled:")
-    public CASConsentFlow(boolean isEnabled) { super((SkipInit) null); initObject(initWithEnabled(isEnabled)); }
+    public CASConsentFlow(boolean isEnabled) { super((SkipInit) null); initObject(init(isEnabled)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "requestGDPR")
@@ -68,7 +68,7 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "initWithEnabled:")
-    protected native @Pointer long initWithEnabled(boolean isEnabled);
+    protected native @Pointer long init(boolean isEnabled);
     @Method(selector = "withPrivacyPolicy:")
     public native CASConsentFlow withPrivacyPolicy(String url);
     /*</methods>*/
