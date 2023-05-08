@@ -23,6 +23,8 @@ classes:
                 name: tokenForcingRefresh
             '+appCheckWithApp:':
                 name: appCheck
+            '-limitedUseTokenWithCompletion:':
+                name: limitedUseToken
     FIRAppCheckDebugProvider:
         methods:
             '-initWithApp:':

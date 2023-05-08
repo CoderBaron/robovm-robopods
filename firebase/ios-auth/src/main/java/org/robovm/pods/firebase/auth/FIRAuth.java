@@ -139,6 +139,8 @@ import org.robovm.apple.uikit.*;
     public native void setAPNSToken(NSData token, FIRAuthAPNSTokenType type);
     @Method(selector = "canHandleNotification:")
     public native boolean canHandleNotification(NSDictionary<?, ?> userInfo);
+    @Method(selector = "revokeTokenWithAuthorizationCode:completion:")
+    public native void revokeToken(String authorizationCode, @Block VoidBlock1<NSError> completion);
     @Method(selector = "useUserAccessGroup:error:")
     public native boolean useUserAccessGroup(String accessGroup, NSError.NSErrorPtr outError);
     @Method(selector = "getStoredUserForAccessGroup:error:")

@@ -1004,7 +1004,7 @@ fun registerFirebase(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
     val versionProvider = object {
         val versions: Map<String, String> by lazy {
             // read versions from README.md
-            downloadFolder.extend("Firebase/README.md")
+            downloadFolder.extend("Firebase/METADATA.md")
                 .readLines()
                 .filter { it.contains(" | ") }
                 .mapNotNull {

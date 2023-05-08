@@ -49,7 +49,7 @@ v1.31.0 - in development
 | [Charts](charts/)               | 4.1.0   |
 | [ClearAds](clearads/)           | 2.9.4   |
 | [Facebook](facebook/)           | 16.0.1  |
-| [Firebase](firebase/)           | 10.7.0  |
+| [Firebase](firebase/)           | 10.9.0  |
 | [Fyber](fyber/)                 | 8.1.9   |
 | [HelpShiftX](helpshift/)        | 10.2.2  |
 | [InMobi](inmobi/)               | 10.1.0  |

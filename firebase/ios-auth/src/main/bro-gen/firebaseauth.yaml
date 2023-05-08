@@ -81,6 +81,8 @@ classes:
                 name: auth
             '-useEmulatorWithHost:port:':
                 name: useEmulator
+            '-revokeTokenWithAuthorizationCode:completion:':
+                name: revokeToken
     FIRAuthCredential: {}
     FIRAuthDataResult: {}
     FIRAuthErrors: {exclude: true} # empty used only for aggregation

@@ -258,8 +258,23 @@ classes:
                 name: orFilter
             '+andFilterWithFilters:':
                 name: andFilter
+    FIRMemoryCacheSettings:
+        methods:
+            '-initWithGarbageCollectorSettings:':
+                name: init
+    FIRMemoryEagerGCSettings: { }
+    FIRMemoryLRUGCSettings:
+        methods:
+            '-initWithSizeBytes:':
+                name: initWithSizeBytes$
+    FIRPersistentCacheSettings:
+        methods:
+            '-initWithSizeBytes:':
+                name: init
 protocols:
-    FIRListenerRegistration: {}
+    FIRListenerRegistration: { }
+    FIRLocalCacheSettings: { }
+    FIRMemoryGarbageCollectorSettings: { }
 
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version

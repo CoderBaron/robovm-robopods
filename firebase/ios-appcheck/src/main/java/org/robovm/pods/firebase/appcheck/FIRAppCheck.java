@@ -68,6 +68,8 @@ import org.robovm.apple.foundation.*;
     
     @Method(selector = "tokenForcingRefresh:completion:")
     public native void tokenForcingRefresh(boolean forcingRefresh, @Block VoidBlock2<FIRAppCheckToken, NSError> handler);
+    @Method(selector = "limitedUseTokenWithCompletion:")
+    public native void limitedUseToken(@Block VoidBlock2<FIRAppCheckToken, NSError> handler);
     @Method(selector = "appCheck")
     public static native FIRAppCheck appCheck();
     @Method(selector = "appCheckWithApp:")

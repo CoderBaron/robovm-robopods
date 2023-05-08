@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.dkimitsa.robovm</groupId>
-    <version>1.30.0-SNAPSHOT</version>
+    <version>1.31.0-SNAPSHOT</version>
     <artifactId>robopods-parent</artifactId>
     <name>RoboPods Parent</name>
     <packaging>pom</packaging>
@@ -34,7 +34,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <robovm.version>2.3.19-SNAPSHOT</robovm.version>
+        <robovm.version>2.3.19</robovm.version>
         <robopods.version>${project.version}</robopods.version>
         <skipTests>true</skipTests>
     </properties>

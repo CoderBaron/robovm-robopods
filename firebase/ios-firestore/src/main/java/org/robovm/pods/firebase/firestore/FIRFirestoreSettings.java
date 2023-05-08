@@ -60,14 +60,34 @@ import org.robovm.apple.dispatch.*;
     public native DispatchQueue getDispatchQueue();
     @Property(selector = "setDispatchQueue:")
     public native void setDispatchQueue(DispatchQueue v);
+    /**
+     * @deprecated This field is deprecated. Use `cacheSettings` instead.
+     */
+    @Deprecated
     @Property(selector = "isPersistenceEnabled")
     public native boolean isPersistenceEnabled();
+    /**
+     * @deprecated This field is deprecated. Use `cacheSettings` instead.
+     */
+    @Deprecated
     @Property(selector = "setPersistenceEnabled:")
     public native void setPersistenceEnabled(boolean v);
+    /**
+     * @deprecated This field is deprecated. Use `cacheSettings` instead.
+     */
+    @Deprecated
     @Property(selector = "cacheSizeBytes")
     public native long getCacheSizeBytes();
+    /**
+     * @deprecated This field is deprecated. Use `cacheSettings` instead.
+     */
+    @Deprecated
     @Property(selector = "setCacheSizeBytes:")
     public native void setCacheSizeBytes(long v);
+    @Property(selector = "cacheSettings")
+    public native <T0 extends Object & FIRLocalCacheSettings & NSObjectProtocol> T0 getCacheSettings();
+    @Property(selector = "setCacheSettings:")
+    public native <T0 extends Object & FIRLocalCacheSettings & NSObjectProtocol> void setCacheSettings(T0 v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
