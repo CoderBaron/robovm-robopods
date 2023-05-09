@@ -61,7 +61,7 @@ v1.31.0 - in development
 | [SAMKeychain](samkeychain/)     | 1.5.3   |
 | [Singular](singular/)           | 12.0.1  |
 | [Tenjin](tenjin/)               | 1.12.24 |
-| [UnityAds](unityads/)           | 4.6.1   |
+| [UnityAds](unityads/)           | 4.7.1   |
 | [YouTubePlayer](youtube/)       | 1.0.4   |
 
 [Older versions](CHANGELOG.md)
