@@ -142,6 +142,7 @@ classes:
                 name: init
     CASNativeAdContent: { }
     CASNativeView: {}
+    CASMNativeAdContent: {}
 protocols:
     CASAdapterFactory: { }
     CASAnalyticsDelegate:

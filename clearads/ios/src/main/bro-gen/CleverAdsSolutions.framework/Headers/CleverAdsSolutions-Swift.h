@@ -812,6 +812,18 @@ typedef SWIFT_ENUM_NAMED(NSInteger, CASLoadingManagerMode, "CASLoadingManagerMod
 };
 
 
+SWIFT_CLASS_NAMED("NativeAdContent")
+@interface CASNativeAdContent : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC18CleverAdsSolutions19CASMNativeAdContent")
+@interface CASMNativeAdContent : CASNativeAdContent
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS_NAMED("CASManagerBuilder")
 @interface CASManagerBuilder : NSObject
 /// Set handler to receive a callback after all CAS initialization processes have completed.
@@ -1342,11 +1354,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSUInteger everythin
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-SWIFT_CLASS_NAMED("NativeAdContent")
-@interface CASNativeAdContent : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
 
 
 

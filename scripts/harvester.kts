@@ -436,7 +436,12 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             moduleFolder = "clearads/ios",
             sourceHeadersDir = artifactLocation.headers,
             yaml = "clearads.yaml",
-            version = { artifactLocation.infoPlist.extractVersion() },
+            version = {
+                artifactLocation.headers.extend("CleverAdsSolutions.h").readLines()
+                    .find{ it.contains("CAS_FRAMEWORK_VERSION") }
+                    ?.substringAfterLast("@\"")?.substringBefore("\"")
+                    ?: error("Filed to evaluate $framework version")
+            },
             instruction = """
                 0. download latest CleverAdsSolutionsBase.tar.gz from https://github.com/cleveradssolutions/CAS-iOS/releases/
                 1. unpack
