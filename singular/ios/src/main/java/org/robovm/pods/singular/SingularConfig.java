@@ -83,8 +83,10 @@ import org.robovm.apple.uikit.*;
     public native @MachineSizedSInt long getShortLinkResolveTimeOut();
     @Property(selector = "setShortLinkResolveTimeOut:")
     public native void setShortLinkResolveTimeOut(@MachineSizedSInt long v);
+    @Deprecated
     @Property(selector = "supportedDomains")
     public native NSArray<?> getSupportedDomains();
+    @Deprecated
     @Property(selector = "setSupportedDomains:")
     public native void setSupportedDomains(NSArray<?> v);
     @Property(selector = "espDomains")
@@ -113,6 +115,14 @@ import org.robovm.apple.uikit.*;
     public native @MachineSizedSInt long getWaitForTrackingAuthorizationWithTimeoutInterval();
     @Property(selector = "setWaitForTrackingAuthorizationWithTimeoutInterval:")
     public native void setWaitForTrackingAuthorizationWithTimeoutInterval(@MachineSizedSInt long v);
+    @Property(selector = "supportAppExtension")
+    public native boolean isSupportAppExtension();
+    @Property(selector = "setSupportAppExtension:")
+    public native void setSupportAppExtension(boolean v);
+    @Property(selector = "appGroupName")
+    public native String getAppGroupName();
+    @Property(selector = "setAppGroupName:")
+    public native void setAppGroupName(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

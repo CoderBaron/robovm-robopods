@@ -88,6 +88,10 @@ classes:
                 name: createReferrerShortLink
             '+skanUpdateConversionValue:coarse:lock:':
                 name: skanUpdateConversionValue
+            '+customeRevenue:productJsonRepresentation:':
+                name: customeRevenue
+            '+customeRevenue:transactionJsonRepresentation:productJsonRepresentation:':
+                name: customeRevenue
     SingularAdData:
         methods:
             '-initWithAdPlatfrom:withCurrency:withRevenue:':

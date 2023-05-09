@@ -25,7 +25,7 @@
 @property NSURL* openUrl;
 @property void(^singularLinksHandler)(SingularLinkParams*);
 @property long shortLinkResolveTimeOut;
-@property NSArray* supportedDomains;
+@property NSArray* supportedDomains __attribute__((deprecated));
 @property NSArray* espDomains;
 
 // Global Properties fields
@@ -42,5 +42,9 @@
 
 -(void)setGlobalProperty:(NSString*)key withValue:(NSString*)value overrideExisting:(BOOL)overrideExisiting;
 -(NSString*)toJsonString;
+
+//Test for app extension
+@property BOOL supportAppExtension;
+@property NSString *appGroupName;
 
 @end

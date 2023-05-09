@@ -129,16 +129,20 @@ import org.robovm.apple.uikit.*;
     public static native boolean startSession(String apiKey, String apiSecret, NSDictionary<?, ?> launchOptions, @Block VoidBlock1<SingularLinkParams> handler);
     @Method(selector = "startSession:withKey:andLaunchOptions:withSingularLinkHandler:andShortLinkResolveTimeout:")
     public static native boolean startSession(String apiKey, String apiSecret, NSDictionary<?, ?> launchOptions, @Block VoidBlock1<SingularLinkParams> handler, @MachineSizedSInt long timeoutSec);
+    @Deprecated
     @Method(selector = "startSession:withKey:andLaunchOptions:withSingularLinkHandler:andSupportedDomains:")
     public static native boolean startSession(String apiKey, String apiSecret, NSDictionary<?, ?> launchOptions, @Block VoidBlock1<SingularLinkParams> handler, NSArray<?> domains);
+    @Deprecated
     @Method(selector = "startSession:withKey:andLaunchOptions:withSingularLinkHandler:andShortLinkResolveTimeout:andSupportedDomains:")
     public static native boolean startSession(String apiKey, String apiSecret, NSDictionary<?, ?> launchOptions, @Block VoidBlock1<SingularLinkParams> handler, @MachineSizedSInt long timeoutSec, NSArray<?> domains);
     @Method(selector = "startSession:withKey:andUserActivity:withSingularLinkHandler:")
     public static native boolean startSession(String apiKey, String apiSecret, NSUserActivity userActivity, @Block VoidBlock1<SingularLinkParams> handler);
     @Method(selector = "startSession:withKey:andUserActivity:withSingularLinkHandler:andShortLinkResolveTimeout:")
     public static native boolean startSession(String apiKey, String apiSecret, NSUserActivity userActivity, @Block VoidBlock1<SingularLinkParams> handler, @MachineSizedSInt long timeoutSec);
+    @Deprecated
     @Method(selector = "startSession:withKey:andUserActivity:withSingularLinkHandler:andSupportedDomains:")
     public static native boolean startSession(String apiKey, String apiSecret, NSUserActivity userActivity, @Block VoidBlock1<SingularLinkParams> handler, NSArray<?> domains);
+    @Deprecated
     @Method(selector = "startSession:withKey:andUserActivity:withSingularLinkHandler:andShortLinkResolveTimeout:andSupportedDomains:")
     public static native boolean startSession(String apiKey, String apiSecret, NSUserActivity userActivity, @Block VoidBlock1<SingularLinkParams> handler, @MachineSizedSInt long timeoutSec, NSArray<?> domains);
     @Method(selector = "startSession:withKey:andLaunchOptions:")
@@ -225,6 +229,10 @@ import org.robovm.apple.uikit.*;
     public static native void customRevenue(String eventname, String currency, double amount, NSDictionary<?, ?> attributes);
     @Method(selector = "customRevenue:currency:amount:productSKU:productName:productCategory:productQuantity:productPrice:")
     public static native void customRevenue(String eventname, String currency, double amount, String productSKU, String productName, String productCategory, int productQuantity, double productPrice);
+    @Method(selector = "customeRevenue:productJsonRepresentation:")
+    public static native void customeRevenue(NSData transactionJsonRepresentation, NSData productJsonRepresentation);
+    @Method(selector = "customeRevenue:transactionJsonRepresentation:productJsonRepresentation:")
+    public static native void customeRevenue(String eventName, NSData transactionJsonRepresentation, NSData productJsonRepresentation);
     @Method(selector = "setCustomUserId:")
     public static native void setCustomUserId(String customUserId);
     @Method(selector = "unsetCustomUserId")

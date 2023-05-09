@@ -347,7 +347,7 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             yaml = "singular.yaml",
             version = { singularVersion },
             instruction = """
-                0. download latest version from https://support.singular.net/hc/en-us/articles/360037950591-iOS-SDK-Basic-Integration
+                0. download latest version from https://support.singular.net/hc/en-us/articles/12054824479387
                 1. unpack and rename to ${downloadFolder.extend("Singular-iOS-sdk")}
                 3. create a file ${downloadFolder.extend("Singular-iOS-sdk/version")} and put verions there, e.g. 11.0.4 
             """.trimIndent(),
