@@ -79,6 +79,14 @@ import org.robovm.apple.coreanimation.*;
     public native void userError(String message, NSException ex);
     @Method(selector = "initializeWithParameters:withCompletionHandler:")
     public native void initialize(MAAdapterInitializationParameters parameters, @Block Runnable completionHandler);
+    @Method(selector = "shouldInitializeOnMainThread")
+    public native NSNumber shouldInitializeOnMainThread();
+    @Method(selector = "shouldCollectSignalsOnMainThread")
+    public native NSNumber shouldCollectSignalsOnMainThread();
+    @Method(selector = "shouldLoadAdsOnMainThreadForAdFormat:")
+    public native NSNumber shouldLoadAdsOnMainThreadForAdFormat(MAAdFormat adFormat);
+    @Method(selector = "shouldShowAdsOnMainThreadForAdFormat:")
+    public native NSNumber shouldShowAdsOnMainThreadForAdFormat(MAAdFormat adFormat);
     @Method(selector = "destroy")
     public native void destroy();
     @Method(selector = "initializeWithParameters:completionHandler:")

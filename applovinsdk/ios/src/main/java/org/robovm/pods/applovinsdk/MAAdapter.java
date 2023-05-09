@@ -56,6 +56,14 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "initializeWithParameters:withCompletionHandler:")
     void initialize(MAAdapterInitializationParameters parameters, @Block Runnable completionHandler);
+    @Method(selector = "shouldInitializeOnMainThread")
+    NSNumber shouldInitializeOnMainThread();
+    @Method(selector = "shouldCollectSignalsOnMainThread")
+    NSNumber shouldCollectSignalsOnMainThread();
+    @Method(selector = "shouldLoadAdsOnMainThreadForAdFormat:")
+    NSNumber shouldLoadAdsOnMainThreadForAdFormat(MAAdFormat adFormat);
+    @Method(selector = "shouldShowAdsOnMainThreadForAdFormat:")
+    NSNumber shouldShowAdsOnMainThreadForAdFormat(MAAdFormat adFormat);
     @Method(selector = "destroy")
     void destroy();
     @Method(selector = "initializeWithParameters:completionHandler:")

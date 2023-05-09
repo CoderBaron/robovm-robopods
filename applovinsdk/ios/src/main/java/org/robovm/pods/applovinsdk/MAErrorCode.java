@@ -46,7 +46,8 @@ public enum /*<name>*/MAErrorCode/*</name>*/ implements ValuedEnum {
     NetworkTimeout(-1001L),
     NoNetwork(-1009L),
     FullscreenAdAlreadyShowing(-23L),
-    FullscreenAdNotReady(-24L);
+    FullscreenAdNotReady(-24L),
+    FullscreenAdInvalidViewController(-25L);
     /*</values>*/
 
     /*<bind>*/

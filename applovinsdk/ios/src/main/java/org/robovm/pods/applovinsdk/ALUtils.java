@@ -59,5 +59,7 @@ import org.robovm.apple.coreanimation.*;
     public static native UIViewController topViewControllerFromKeyWindow();
     @Method(selector = "currentOrientationMask")
     public static native UIInterfaceOrientationMask currentOrientationMask();
+    @Method(selector = "deviceSafeAreaDimensions")
+    public static native @ByVal CGRect deviceSafeAreaDimensions();
     /*</methods>*/
 }

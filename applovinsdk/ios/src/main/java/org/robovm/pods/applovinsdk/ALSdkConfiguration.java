@@ -56,6 +56,8 @@ import org.robovm.apple.coreanimation.*;
     public native NSArray<NSString> getEnabledAmazonAdUnitIdentifiers();
     @Property(selector = "appTrackingTransparencyStatus")
     public native ALAppTrackingTransparencyStatus getAppTrackingTransparencyStatus();
+    @Property(selector = "isTestModeEnabled")
+    public native boolean isTestModeEnabled();
     /**
      * @deprecated This API has been deprecated and will be removed in a future release.
      */
