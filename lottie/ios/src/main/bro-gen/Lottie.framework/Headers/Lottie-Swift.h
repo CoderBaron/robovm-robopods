@@ -357,6 +357,7 @@ enum CompatibleRenderingEngineOption : NSInteger;
 @class NSURL;
 @class NSData;
 @class CompatibleDictionaryTextProvider;
+enum CompatibleBackgroundBehavior : NSInteger;
 @class UIColor;
 
 /// An Objective-C compatible wrapper around Lottie’s LottieAnimationView.
@@ -396,6 +397,7 @@ SWIFT_CLASS("_TtC6Lottie23CompatibleAnimationView")
 @property (nonatomic) CGFloat animationSpeed;
 @property (nonatomic) BOOL respectAnimationFrameRate;
 @property (nonatomic, readonly) BOOL isAnimationPlaying;
+@property (nonatomic) enum CompatibleBackgroundBehavior backgroundMode;
 - (void)play;
 - (void)playWithCompletion:(void (^ _Nullable)(BOOL))completion;
 /// Note: When calling this code from Objective-C, the method signature is
@@ -423,6 +425,37 @@ SWIFT_CLASS("_TtC6Lottie23CompatibleAnimationView")
 - (CGFloat)frameTimeForMarker:(NSString * _Nonnull)named SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)durationFrameTimeForMarker:(NSString * _Nonnull)named SWIFT_WARN_UNUSED_RESULT;
 @end
+
+/// An Objective-C compatible version of <code>LottieBackgroundBehavior</code>.
+typedef SWIFT_ENUM(NSInteger, CompatibleBackgroundBehavior, open) {
+/// Stop the animation and reset it to the beginning of its current play time. The completion block is called.
+  CompatibleBackgroundBehaviorStop = 0,
+/// Pause the animation in its current state. The completion block is called.
+  CompatibleBackgroundBehaviorPause = 1,
+/// Pause the animation and restart it when the application moves to the foreground.
+/// The completion block is stored and called when the animation completes.
+/// <ul>
+///   <li>
+///     This is the default when using the Main Thread rendering engine.
+///   </li>
+/// </ul>
+  CompatibleBackgroundBehaviorPauseAndRestore = 2,
+/// Stops the animation and sets it to the end of its current play time. The completion block is called.
+  CompatibleBackgroundBehaviorForceFinish = 3,
+/// The animation continues playing in the background.
+/// <ul>
+///   <li>
+///     This is the default when using the Core Animation rendering engine.
+///     Playing an animation using the Core Animation engine doesn’t come with any CPU overhead,
+///     so using <code>.continuePlaying</code> avoids the need to stop and then resume the animation
+///     (which does come with some CPU overhead).
+///   </li>
+///   <li>
+///     This mode should not be used with the Main Thread rendering engine.
+///   </li>
+/// </ul>
+  CompatibleBackgroundBehaviorContinuePlaying = 4,
+};
 
 
 /// An Objective-C compatible wrapper around Lottie’s DictionaryTextProvider.

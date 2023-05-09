@@ -11,7 +11,7 @@ typedefs: {}
 
 enums:
     CompatibleRenderingEngineOption: {}
-
+    CompatibleBackgroundBehavior: {}
 classes:
     AnimatedButton: {}
 

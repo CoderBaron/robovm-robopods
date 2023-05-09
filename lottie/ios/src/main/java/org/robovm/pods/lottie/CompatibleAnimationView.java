@@ -114,6 +114,10 @@ import org.robovm.apple.coreanimation.*;
     public native void setRespectAnimationFrameRate(boolean v);
     @Property(selector = "isAnimationPlaying")
     public native boolean isAnimationPlaying();
+    @Property(selector = "backgroundMode")
+    public native CompatibleBackgroundBehavior getBackgroundMode();
+    @Property(selector = "setBackgroundMode:")
+    public native void setBackgroundMode(CompatibleBackgroundBehavior v);
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();
