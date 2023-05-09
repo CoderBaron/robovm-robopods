@@ -34,6 +34,7 @@ import org.robovm.apple.uniformtypeid.*;
 import org.robovm.apple.linkpresentation.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.storekit.*;
 /*</imports>*/
 
 /*<javadoc>*/

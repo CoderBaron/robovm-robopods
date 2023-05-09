@@ -34,6 +34,7 @@ import org.robovm.apple.uniformtypeid.*;
 import org.robovm.apple.linkpresentation.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.storekit.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -547,5 +548,9 @@ import org.robovm.apple.coreanimation.*;
     public static native boolean trackingDisabled();
     @Method(selector = "setReferrerGbraidValidityWindow:")
     public static native void setReferrerGbraidValidityWindow(double validityWindow);
+    @Method(selector = "setLogInAppPurchasesAsEventsEnabled:")
+    public static native void setLogInAppPurchasesAsEventsEnabled(boolean enabled);
+    @Method(selector = "logInAppPurchasesBranchEventsEnabled")
+    public static native boolean logInAppPurchasesBranchEventsEnabled();
     /*</methods>*/
 }

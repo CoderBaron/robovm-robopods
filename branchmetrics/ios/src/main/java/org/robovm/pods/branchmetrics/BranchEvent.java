@@ -34,6 +34,7 @@ import org.robovm.apple.uniformtypeid.*;
 import org.robovm.apple.linkpresentation.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.storekit.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -42,7 +43,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/BranchEvent/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements SKProductsRequestDelegate/*</implements>*/ {
 
     /*<ptr>*/public static class BranchEventPtr extends Ptr<BranchEvent, BranchEventPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(BranchEvent.class); }/*</bind>*/
@@ -121,6 +122,8 @@ import org.robovm.apple.coreanimation.*;
     public native NSDictionary<?, ?> dictionary();
     @Method(selector = "description")
     public native String description();
+    @Method(selector = "logEventWithTransaction:")
+    public native void logEvent(SKPaymentTransaction transaction);
     @Method(selector = "standardEvent:")
     public static native BranchEvent standardEvent(String standardEvent);
     @Method(selector = "standardEvent:withContentItem:")
@@ -129,5 +132,11 @@ import org.robovm.apple.coreanimation.*;
     public static native BranchEvent createCustomEvent(String name);
     @Method(selector = "customEventWithName:contentItem:")
     public static native BranchEvent createCustomEvent(String name, BranchUniversalObject contentItem);
+    @Method(selector = "productsRequest:didReceiveResponse:")
+    public native void didReceiveResponse(SKProductsRequest request, SKProductsResponse response);
+    @Method(selector = "requestDidFinish:")
+    public native void didFinish(SKRequest request);
+    @Method(selector = "request:didFailWithError:")
+    public native void didFail(SKRequest request, NSError error);
     /*</methods>*/
 }

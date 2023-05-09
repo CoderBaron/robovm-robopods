@@ -34,6 +34,7 @@ import org.robovm.apple.uniformtypeid.*;
 import org.robovm.apple.linkpresentation.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.storekit.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -73,6 +74,10 @@ import org.robovm.apple.coreanimation.*;
     public native String getRandomizedBundleToken();
     @Property(selector = "setRandomizedBundleToken:")
     public native void setRandomizedBundleToken(String v);
+    @Property(selector = "anonID")
+    public native String getAnonID();
+    @Property(selector = "setAnonID:")
+    public native void setAnonID(String v);
     @Property(selector = "sessionID")
     public native String getSessionID();
     @Property(selector = "setSessionID:")
@@ -233,6 +238,10 @@ import org.robovm.apple.coreanimation.*;
     public native NSDate getReferrerGBRAIDInitDate();
     @Property(selector = "setReferrerGBRAIDInitDate:")
     public native void setReferrerGBRAIDInitDate(NSDate v);
+    @Property(selector = "referringURLQueryParameters")
+    public native NSMutableDictionary<?, ?> getReferringURLQueryParameters();
+    @Property(selector = "setReferringURLQueryParameters:")
+    public native void setReferringURLQueryParameters(NSMutableDictionary<?, ?> v);
     @Property(selector = "skanCurrentWindow")
     public native @MachineSizedSInt long getSkanCurrentWindow();
     @Property(selector = "setSkanCurrentWindow:")
@@ -249,6 +258,10 @@ import org.robovm.apple.coreanimation.*;
     public native boolean isInvokeRegisterApp();
     @Property(selector = "setInvokeRegisterApp:")
     public native void setInvokeRegisterApp(boolean v);
+    @Property(selector = "logInAppPurchasesAsBranchEvents")
+    public native boolean isLogInAppPurchasesAsBranchEvents();
+    @Property(selector = "setLogInAppPurchasesAsBranchEvents:")
+    public native void setLogInAppPurchasesAsBranchEvents(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

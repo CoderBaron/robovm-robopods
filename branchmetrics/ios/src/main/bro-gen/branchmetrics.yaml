@@ -7,6 +7,7 @@ include:
     - linkpresentation
     - coregraphics
     - coreanimation
+    - storekit
 framework: BranchSDK
 clang_args: ['-x', 'objective-c']
 headers:
@@ -325,6 +326,8 @@ classes:
             '+customEventWithName:contentItem:':
                 name: createCustomEvent # returns autorelease object
             '-logEventWithCompletion:':
+                name: logEvent
+            '-logEventWithTransaction:':
                 name: logEvent
     BranchEventRequest:
         methods:
