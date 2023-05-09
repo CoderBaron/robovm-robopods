@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>robopods-pollfish-ios</artifactId>
-    <name>RoboPods Pollfish iOS v6.3.1</name>
+    <name>RoboPods Pollfish iOS v6.4.1</name>
     <packaging>jar</packaging>
 
     <licenses>

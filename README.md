@@ -57,7 +57,7 @@ v1.31.0 - in development
 | [Kochava](kochava/)             | 5.1.1   |
 | [Lottie](lottie/)               | 4.2.0   |
 | [OneSignal](onesignal/)         | 3.12.4  |
-| [Pollfish](pollfish/)           | 6.3.1   |
+| [Pollfish](pollfish/)           | 6.4.1   |
 | [SAMKeychain](samkeychain/)     | 1.5.3   |
 | [Singular](singular/)           | 12.0.1  |
 | [Tenjin](tenjin/)               | 1.12.24 |
