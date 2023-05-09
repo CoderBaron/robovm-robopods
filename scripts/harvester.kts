@@ -1163,7 +1163,7 @@ fun registerMobileAdsMediationAdapters(frameworkRegistry: MutableMap<String, (St
     registry["InMobiAdapter"] = { framework ->
         val artifact = "$framework.framework"
         val artifactLocation =
-            downloadFolder.extend("InMobiAdapter/InMobiAdapter.xcframework/ios-arm64_armv7/$artifact")
+            downloadFolder.extend("InMobiAdapter/InMobiAdapter.xcframework/ios-arm64/$artifact")
         processFramework(
             artifact = artifact,
             moduleFolder = "firebase/ios-google-mobile-ads-adapters/ios-inmobi",

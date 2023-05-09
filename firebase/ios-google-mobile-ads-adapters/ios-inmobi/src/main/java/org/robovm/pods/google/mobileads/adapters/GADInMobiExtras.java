@@ -94,14 +94,6 @@ import org.robovm.pods.inmobi.sdk.*;
     public native NSDictionary<NSString, ?> getAdditionalParameters();
     @Property(selector = "setAdditionalParameters:")
     public native void setAdditionalParameters(NSDictionary<NSString, ?> v);
-    @Property(selector = "loginId")
-    public native String getLoginId();
-    @Property(selector = "setLoginId:")
-    public native void setLoginId(String v);
-    @Property(selector = "sessionId")
-    public native String getSessionId();
-    @Property(selector = "setSessionId:")
-    public native void setSessionId(String v);
     @Property(selector = "city")
     public native String getCity();
     @Property(selector = "state")
