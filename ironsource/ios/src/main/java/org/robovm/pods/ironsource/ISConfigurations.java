@@ -58,10 +58,6 @@ import org.robovm.apple.coreanimation.*;
     public native String getAppKey();
     @Property(selector = "setAppKey:")
     public native void setAppKey(String v);
-    @Property(selector = "mediationSegment")
-    public native String getMediationSegment();
-    @Property(selector = "setMediationSegment:")
-    public native void setMediationSegment(String v);
     @Property(selector = "segmentId")
     public native String getSegmentId();
     @Property(selector = "setSegmentId:")

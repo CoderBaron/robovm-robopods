@@ -48,7 +48,7 @@ import org.robovm.apple.coreanimation.*;
     public static final String IS_INTERSTITIAL = "interstitial";
     public static final String IS_OFFERWALL = "offerwall";
     public static final String IS_BANNER = "banner";
-    public static final String getSdkVersion = "7.2.7";
+    public static final String getSdkVersion = "7.3.0";
     public static final String DataSource_MOPUB = "MoPub";
     /*</constants>*/
     /*<constructors>*/
@@ -73,12 +73,6 @@ import org.robovm.apple.coreanimation.*;
     public static native String advertiserId();
     @Method(selector = "setMediationType:")
     public static native void setMediationType(String mediationType);
-    /**
-     * @deprecated This method has been deprecated and won’t be included in ironSource SDK versions 7.3.0 and above.
-     */
-    @Deprecated
-    @Method(selector = "setMediationSegment:")
-    public static native void setMediationSegment(String segment);
     @Method(selector = "setSegment:")
     public static native void setSegment(ISSegment segment);
     @Method(selector = "setSegmentDelegate:")
@@ -201,12 +195,6 @@ import org.robovm.apple.coreanimation.*;
     public static native void setLogDelegate(ISLogDelegate delegate);
     @Method(selector = "setConsent:")
     public static native void setConsent(boolean consent);
-    /**
-     * @deprecated This method has been deprecated and won’t be included in ironSource SDK versions 7.3.0 and above. Please use addImpressionDataDelegate instead.
-     */
-    @Deprecated
-    @Method(selector = "setImpressionDataDelegate:")
-    public static native void setImpressionDataDelegate(ISImpressionDataDelegate delegate);
     @Method(selector = "addImpressionDataDelegate:")
     public static native void addImpressionDataDelegate(ISImpressionDataDelegate delegate);
     @Method(selector = "setAdRevenueDataWithDataSource:impressionData:")
@@ -221,5 +209,7 @@ import org.robovm.apple.coreanimation.*;
     public static native void showConsentView(UIViewController viewController, String consentViewType);
     @Method(selector = "getConversionValue")
     public static native NSNumber getConversionValue();
+    @Method(selector = "launchTestSuite:")
+    public static native void launchTestSuite(UIViewController viewController);
     /*</methods>*/
 }

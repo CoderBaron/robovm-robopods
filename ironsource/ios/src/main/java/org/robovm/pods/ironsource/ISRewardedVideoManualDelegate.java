@@ -34,9 +34,11 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
+/**
+ * @deprecated This class has been deprecated as of SDK 7.3.0. Please use LevelPlayRewardedVideoManualDelegate instead.
+ */
 /*</javadoc>*/
-/*<annotations>*//*</annotations>*/
+/*<annotations>*/@Deprecated/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ interface /*<name>*/ISRewardedVideoManualDelegate/*</name>*/ 
     /*<implements>*/extends ISRewardedVideoDelegate/*</implements>*/ {
 
@@ -49,8 +51,16 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoManualDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "rewardedVideoDidLoad")
     void rewardedVideoDidLoad();
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoManualDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "rewardedVideoDidFailToLoadWithError:")
     void rewardedVideoDidFailToLoad(NSError error);
     /*</methods>*/

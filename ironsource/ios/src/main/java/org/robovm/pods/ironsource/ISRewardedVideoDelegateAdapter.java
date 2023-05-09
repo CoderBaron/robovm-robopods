@@ -51,20 +51,52 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("rewardedVideoHasChangedAvailability:")
     public void rewardedVideoHasChangedAvailability(boolean available) {}
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("didReceiveRewardForPlacement:")
     public void didReceiveRewardForPlacement(ISPlacementInfo placementInfo) {}
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("rewardedVideoDidFailToShowWithError:")
     public void rewardedVideoDidFailToShow(NSError error) {}
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("rewardedVideoDidOpen")
     public void rewardedVideoDidOpen() {}
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("rewardedVideoDidClose")
     public void rewardedVideoDidClose() {}
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("rewardedVideoDidStart")
     public void rewardedVideoDidStart() {}
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("rewardedVideoDidEnd")
     public void rewardedVideoDidEnd() {}
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("didClickRewardedVideo:")
     public void didClickRewardedVideo(ISPlacementInfo placementInfo) {}
     /*</methods>*/

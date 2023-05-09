@@ -15,26 +15,15 @@
 
 @optional
 
+#pragma mark - for bidders, non bidders and demand only
+
 - (BOOL)hasRewardedVideoWithAdapterConfig:(ISAdapterConfig *)adapterConfig;
 
 - (void)showRewardedVideoWithViewController:(UIViewController *)viewController
                               adapterConfig:(ISAdapterConfig *)adapterConfig
                                    delegate:(id<ISRewardedVideoAdapterDelegate>)delegate;
 
-#pragma mark - for traditional, non bidders
-
-- (void)initRewardedVideoWithUserId:(NSString *)userId
-                      adapterConfig:(ISAdapterConfig *)adapterConfig
-                           delegate:(id<ISRewardedVideoAdapterDelegate>)delegate;
-
-- (void)initRewardedVideoWithUserId:(NSString *)userId
-                      adapterConfig:(ISAdapterConfig *)adapterConfig
-                             adData:(NSDictionary *)adData
-                           delegate:(id<ISRewardedVideoAdapterDelegate>)delegate;
-
-- (void)initAndLoadRewardedVideoWithUserId:(NSString *)userId
-                             adapterConfig:(ISAdapterConfig *)adapterConfig
-                                  delegate:(id<ISRewardedVideoAdapterDelegate>)delegate;
+#pragma mark - for non bidders
 
 - (void)initAndLoadRewardedVideoWithUserId:(NSString *)userId
                              adapterConfig:(ISAdapterConfig *)adapterConfig
@@ -45,16 +34,11 @@
                                   adapterConfig:(ISAdapterConfig *)adapterConfig
                                        delegate:(id<ISRewardedVideoAdapterDelegate>)delegate;
 
-- (void)fetchRewardedVideoForAutomaticLoadWithAdapterConfig:(ISAdapterConfig *)adapterConfig
-                                                   delegate:(id<ISRewardedVideoAdapterDelegate>)delegate;
-
-- (void)fetchRewardedVideoForAutomaticLoadWithAdapterConfig:(ISAdapterConfig *)adapterConfig
-                                                     adData:(NSDictionary *)adData
-                                                   delegate:(id<ISRewardedVideoAdapterDelegate>)delegate;
+- (void)loadRewardedVideoWithAdapterConfig:(ISAdapterConfig *)adapterConfig
+                                    adData:(NSDictionary *)adData
+                                  delegate:(id<ISRewardedVideoAdapterDelegate>)delegate;
 
 #pragma mark - for bidders
-
-- (NSDictionary *)getRewardedVideoBiddingDataWithAdapterConfig:(ISAdapterConfig *)adapterConfig;
 
 - (NSDictionary *)getRewardedVideoBiddingDataWithAdapterConfig:(ISAdapterConfig *)adapterConfig
                                                         adData:(NSDictionary *)adData;
@@ -66,10 +50,6 @@
 - (void)initRewardedVideoForBiddingWithUserId:(NSString *)userId
                                 adapterConfig:(ISAdapterConfig *)adapterConfig
                                      delegate:(id<ISRewardedVideoAdapterDelegate>)delegate;
-
-- (void)loadRewardedVideoForBiddingWithAdapterConfig:(ISAdapterConfig *)adapterConfig
-                                          serverData:(NSString *)serverData
-                                            delegate:(id<ISRewardedVideoAdapterDelegate>)delegate;
 
 - (void)loadRewardedVideoForBiddingWithAdapterConfig:(ISAdapterConfig *)adapterConfig
                                               adData:(NSDictionary *)adData

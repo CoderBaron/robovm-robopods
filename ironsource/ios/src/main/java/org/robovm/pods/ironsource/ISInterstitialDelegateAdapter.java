@@ -51,18 +51,46 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayInterstitialDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("interstitialDidLoad")
     public void interstitialDidLoad() {}
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayInterstitialDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("interstitialDidFailToLoadWithError:")
     public void interstitialDidFailToLoad(NSError error) {}
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayInterstitialDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("interstitialDidOpen")
     public void interstitialDidOpen() {}
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayInterstitialDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("interstitialDidClose")
     public void interstitialDidClose() {}
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayInterstitialDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("interstitialDidShow")
     public void interstitialDidShow() {}
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayInterstitialDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("interstitialDidFailToShowWithError:")
     public void interstitialDidFailToShow(NSError error) {}
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayInterstitialDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("didClickInterstitial")
     public void didClickInterstitial() {}
     /*</methods>*/

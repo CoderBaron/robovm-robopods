@@ -53,8 +53,8 @@ NS_ASSUME_NONNULL_BEGIN
 #define IS_OFFERWALL @"offerwall"
 #define IS_BANNER @"banner"
 
-static NSString * const MEDIATION_SDK_VERSION     = @"7.2.7";
-static NSString * GitHash = @"a6709cf14";
+static NSString * const MEDIATION_SDK_VERSION     = @"7.3.0";
+static NSString * GitHash = @"abe5c7bb3";
 
 /*
     This constant is for sending an external impression data from mopub
@@ -117,14 +117,6 @@ static NSString * const DataSource_MOPUB     = @"MoPub";
  @param mediationType a mediation type name. Should be alphanumeric and between 1-64 chars in length.
  */
 + (void)setMediationType:(NSString *)mediationType;
-
-/**
- @abstract Sets a mediation segment.
- @discussion This method is used only for IronSource's SDK, and will be passed as a custom param.
- 
- @param segment A segment name, which should not exceed 64 characters.
- */
-+ (void)setMediationSegment:(NSString *)segment __attribute__((deprecated("This method has been deprecated and won’t be included in ironSource SDK versions 7.3.0 and above.")));
 
 /**
  @abstract Sets a segment.
@@ -630,14 +622,6 @@ static NSString * const DataSource_MOPUB     = @"MoPub";
 #pragma mark - Impression Data
 
 /**
- @abstract Sets the delegate for impression data callbacks.
-
- @param delegate The 'ISImpressionDataDelegate' for IronSource to send callbacks to.
- */
-
-+ (void)setImpressionDataDelegate:(id<ISImpressionDataDelegate>)delegate __attribute__((deprecated("This method has been deprecated and won’t be included in ironSource SDK versions 7.3.0 and above. Please use addImpressionDataDelegate instead.")));
-
-/**
  @abstract Adds the delegate for impression data callbacks.
 
  @param delegate The 'ISImpressionDataDelegate' for IronSource to send callbacks to.
@@ -697,6 +681,14 @@ static NSString * const DataSource_MOPUB     = @"MoPub";
  @abstract get current conversion value
 */
 + (NSNumber *)getConversionValue;
+
+#pragma mark - Test Suite
+
+/**
+ @abstract Launch the Test suite
+ @param viewController The UIViewController to display the Test Suite within.
+*/
++ (void)launchTestSuite:(UIViewController *)viewController;
 
 @end
 

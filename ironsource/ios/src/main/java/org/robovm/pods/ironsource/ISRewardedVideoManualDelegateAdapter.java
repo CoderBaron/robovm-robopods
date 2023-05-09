@@ -51,8 +51,16 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoManualDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("rewardedVideoDidLoad")
     public void rewardedVideoDidLoad() {}
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoManualDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("rewardedVideoDidFailToLoadWithError:")
     public void rewardedVideoDidFailToLoad(NSError error) {}
     /*</methods>*/

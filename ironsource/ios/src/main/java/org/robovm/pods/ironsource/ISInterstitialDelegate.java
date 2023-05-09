@@ -34,9 +34,11 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
+/**
+ * @deprecated This class has been deprecated as of SDK 7.3.0. Please use LevelPlayInterstitialDelegate instead.
+ */
 /*</javadoc>*/
-/*<annotations>*//*</annotations>*/
+/*<annotations>*/@Deprecated/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ interface /*<name>*/ISInterstitialDelegate/*</name>*/ 
     /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
@@ -49,18 +51,46 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayInterstitialDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "interstitialDidLoad")
     void interstitialDidLoad();
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayInterstitialDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "interstitialDidFailToLoadWithError:")
     void interstitialDidFailToLoad(NSError error);
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayInterstitialDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "interstitialDidOpen")
     void interstitialDidOpen();
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayInterstitialDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "interstitialDidClose")
     void interstitialDidClose();
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayInterstitialDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "interstitialDidShow")
     void interstitialDidShow();
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayInterstitialDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "interstitialDidFailToShowWithError:")
     void interstitialDidFailToShow(NSError error);
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayInterstitialDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "didClickInterstitial")
     void didClickInterstitial();
     /*</methods>*/

@@ -56,5 +56,7 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "USER_ID")
     public static native String USER_ID();
+    @Method(selector = "AD_UNIT")
+    public static native String AD_UNIT();
     /*</methods>*/
 }

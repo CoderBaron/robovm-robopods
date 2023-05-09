@@ -1,5 +1,5 @@
 //
-//  ConcurrentMutableSet.h
+//  ISConcurrentMutableSet.h
 //  Environment
 //
 //  Created by Hadar Pur on 02/06/2021.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ConcurrentMutableSet : NSObject
+@interface ISConcurrentMutableSet : NSObject
 
 + (instancetype)set;
 + (instancetype)setWithSet:(id)set;

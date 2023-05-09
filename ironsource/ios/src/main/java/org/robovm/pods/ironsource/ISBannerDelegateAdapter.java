@@ -51,16 +51,40 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayBannerDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("bannerDidLoad:")
     public void bannerDidLoad(ISBannerView bannerView) {}
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayBannerDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("bannerDidFailToLoadWithError:")
     public void bannerDidFailToLoad(NSError error) {}
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayBannerDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("didClickBanner")
     public void didClickBanner() {}
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayBannerDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("bannerWillPresentScreen")
     public void bannerWillPresentScreen() {}
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayBannerDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("bannerDidDismissScreen")
     public void bannerDidDismissScreen() {}
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayBannerDelegate instead.
+     */
+    @Deprecated
     @NotImplemented("bannerWillLeaveApplication")
     public void bannerWillLeaveApplication() {}
     /*</methods>*/

@@ -34,9 +34,11 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
+/**
+ * @deprecated This class has been deprecated as of SDK 7.3.0. Please use LevelPlayBannerDelegate instead.
+ */
 /*</javadoc>*/
-/*<annotations>*//*</annotations>*/
+/*<annotations>*/@Deprecated/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ interface /*<name>*/ISBannerDelegate/*</name>*/ 
     /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
@@ -49,16 +51,40 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayBannerDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "bannerDidLoad:")
     void bannerDidLoad(ISBannerView bannerView);
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayBannerDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "bannerDidFailToLoadWithError:")
     void bannerDidFailToLoad(NSError error);
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayBannerDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "didClickBanner")
     void didClickBanner();
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayBannerDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "bannerWillPresentScreen")
     void bannerWillPresentScreen();
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayBannerDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "bannerDidDismissScreen")
     void bannerDidDismissScreen();
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayBannerDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "bannerWillLeaveApplication")
     void bannerWillLeaveApplication();
     /*</methods>*/

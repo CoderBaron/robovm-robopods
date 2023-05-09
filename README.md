@@ -53,7 +53,7 @@ v1.31.0 - in development
 | [Fyber](fyber/)                 | 8.2.2   |
 | [HelpShiftX](helpshift/)        | 10.2.2  |
 | [InMobi](inmobi/)               | 10.1.4  |
-| [IronSource](ironsource/)       | 7.2.7   |
+| [IronSource](ironsource/)       | 7.3.0   |
 | [Kochava](kochava/)             | 5.1.1   |
 | [Lottie](lottie/)               | 4.2.0   |
 | [OneSignal](onesignal/)         | 3.12.4  |

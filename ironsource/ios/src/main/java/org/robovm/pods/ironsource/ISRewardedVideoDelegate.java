@@ -34,9 +34,11 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
+/**
+ * @deprecated This class has been deprecated as of SDK 7.3.0. Please use LevelPlayRewardedVideoDelegate instead.
+ */
 /*</javadoc>*/
-/*<annotations>*//*</annotations>*/
+/*<annotations>*/@Deprecated/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ interface /*<name>*/ISRewardedVideoDelegate/*</name>*/ 
     /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
@@ -49,20 +51,52 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "rewardedVideoHasChangedAvailability:")
     void rewardedVideoHasChangedAvailability(boolean available);
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "didReceiveRewardForPlacement:")
     void didReceiveRewardForPlacement(ISPlacementInfo placementInfo);
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "rewardedVideoDidFailToShowWithError:")
     void rewardedVideoDidFailToShow(NSError error);
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "rewardedVideoDidOpen")
     void rewardedVideoDidOpen();
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "rewardedVideoDidClose")
     void rewardedVideoDidClose();
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "rewardedVideoDidStart")
     void rewardedVideoDidStart();
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "rewardedVideoDidEnd")
     void rewardedVideoDidEnd();
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "didClickRewardedVideo:")
     void didClickRewardedVideo(ISPlacementInfo placementInfo);
     /*</methods>*/

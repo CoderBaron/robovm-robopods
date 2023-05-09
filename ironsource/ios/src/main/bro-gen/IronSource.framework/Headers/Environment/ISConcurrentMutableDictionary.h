@@ -1,5 +1,5 @@
 //
-//  ConcurrentMutableDictionary.h
+//  ISConcurrentMutableDictionary.h
 //  Environment
 //
 //  Created by Hadar Pur on 02/06/2021.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ConcurrentMutableDictionary : NSObject
+@interface ISConcurrentMutableDictionary : NSObject
 
 + (instancetype)dictionary;
 + (instancetype)dictionaryWithDictionary:(id)dictionary;
@@ -40,3 +40,4 @@
 - (BOOL)hasObjectForKey:(id)key;
 
 @end
+
