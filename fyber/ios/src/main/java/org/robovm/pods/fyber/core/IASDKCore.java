@@ -80,6 +80,10 @@ import org.robovm.apple.coregraphics.*;
     public native IALGPDConsentType getLGPDConsent();
     @Property(selector = "setLGPDConsent:")
     public native void setLGPDConsent(IALGPDConsentType v);
+    @Property(selector = "coppaApplies")
+    public native IACoppaAppliesType getCoppaApplies();
+    @Property(selector = "setCoppaApplies:")
+    public native void setCoppaApplies(IACoppaAppliesType v);
     @Property(selector = "userID")
     public native String getUserID();
     @Property(selector = "setUserID:")
@@ -92,10 +96,6 @@ import org.robovm.apple.coregraphics.*;
     public native String getKeywords();
     @Property(selector = "setKeywords:")
     public native void setKeywords(String v);
-    @Property(selector = "location")
-    public native CLLocation getLocation();
-    @Property(selector = "setLocation:")
-    public native void setLocation(CLLocation v);
     @Property(selector = "muteAudio")
     public native boolean isMuteAudio();
     @Property(selector = "setMuteAudio:")
@@ -121,6 +121,8 @@ import org.robovm.apple.coregraphics.*;
     public native void clearGDPRConsentData();
     @Method(selector = "clearLGPDConsentData")
     public native void clearLGPDConsentData();
+    @Method(selector = "enableAutomaticAudioSessionManagement")
+    public native void enableAutomaticAudioSessionManagement();
     @Method(selector = "sharedInstance")
     public static native IASDKCore sharedInstance();
     /*</methods>*/

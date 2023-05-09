@@ -2,8 +2,8 @@
 //  IAMediationAdmost.h
 //  IASDKCore
 //
-//  Created by Fyber on 14/07/2021.
-//  Copyright ©2021 Fyber. All rights reserved.
+//  Created by Digital Turbine on 14/07/2021.
+//  Copyright © 2022 Digital Turbine. All rights reserved.
 //
 
 #import <IASDKCore/IASDKCore.h>

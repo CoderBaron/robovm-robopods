@@ -2,8 +2,8 @@
 //  IAVideoView.h
 //  IASDKCore
 //
-//  Created by Fyber on 02/07/2017.
-//  Copyright © 2017 Fyber. All rights reserved.
+//  Created by Digital Turbine on 02/07/2017.
+//  Copyright © 2022 Digital Turbine. All rights reserved.
 //
 
 #import <IASDKCore/IAMRAIDAdView.h>

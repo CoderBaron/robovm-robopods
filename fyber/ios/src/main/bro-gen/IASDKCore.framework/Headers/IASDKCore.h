@@ -2,15 +2,20 @@
 //  IASDKCore.h
 //  IASDKCore
 //
-//  Created by Fyber on 29/01/2017.
-//  Copyright © 2017 Fyber. All rights reserved.
+//  Created by Digital Turbine on 29/01/2017.
+//  Copyright © 2022 Digital Turbine. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import <IASDKCore/IALogger.h>
-#import <IASDKCore/FMPLogger.h>
+//! Project version number for IASDKCore.
+FOUNDATION_EXPORT double IASDKCoreVersionNumber;
+
+//! Project version string for IASDKCore.
+FOUNDATION_EXPORT const unsigned char IASDKCoreVersionString[];
+
+#import <IASDKCore/DTXLogger.h>
 
 #import <IASDKCore/IAInterfaceAllocBlocker.h>
 #import <IASDKCore/IAInterfaceBuilder.h>
@@ -44,6 +49,7 @@
 #import <IASDKCore/IAMediationAdmost.h>
 #import <IASDKCore/IAGDPRConsent.h>
 #import <IASDKCore/IALGPDConsent.h>
+#import <IASDKCore/IACoppaApplies.h>
 #import <IASDKCore/FMPBiddingManager.h>
 
 #import <IASDKCore/IASDKMRAID.h>
@@ -153,6 +159,34 @@ typedef NS_ENUM(NSInteger, IASDKCoreInitErrorType) {
  */
 @property (atomic) IALGPDConsentType LGPDConsent;
 
+
+/**
+ *  @brief The COPPA complience status.
+ *
+ *  @discussion Use this property in order to set the COPPA complience accoring to your preferences.
+ *
+ * It can be used as one of the following, in order to allow/restrict:
+ *
+ * - `[IASDKCore.sharedInstance setCoppaApplies:YES]`
+ *
+ * - `[IASDKCore.sharedInstance setCoppaApplies:true]`
+ *
+ * - `IASDKCore.sharedInstance.coppaApplies = NO`
+ *
+ * - `IASDKCore.sharedInstance.coppaApplies = 1`
+ *
+ * - `IASDKCore.sharedInstance.setCoppaApplies = IACoppaAppliesTypeGiven`
+ *
+ * Or it can be cleared by using the following:
+ *
+ * - `IASDKCore.sharedInstance.coppaApplies = IACoppaAppliesTypeUnknown`.
+ *
+ * The default value is unknown, which is the `IACoppaAppliesTypeUnknown`.
+ *
+ * The property is thread-safe.
+ */
+@property (atomic) IACoppaAppliesType coppaApplies;
+
 /**
  *  @brief Use this property in order to provide a user Id. Once it's set, it is saved on a device.
  *
@@ -171,12 +205,6 @@ typedef NS_ENUM(NSInteger, IASDKCoreInitErrorType) {
  *  @discussion These keywords will be used in bidding flow, while bidding token creation.
  */
 @property (nonatomic, nullable) NSString *keywords;
-
-/**
- *  @brief Current location. Use for better ad targeting.
- *  @discussion This value will be used in bidding flow, while bidding token creation.
- */
-@property (nonatomic, nullable) CLLocation *location;
 
 /**
  *  @brief In case is enabled and the responded creative supports this feature, the creative will start interacting without sound.
@@ -240,5 +268,13 @@ typedef NS_ENUM(NSInteger, IASDKCoreInitErrorType) {
  *  @brief Clears all the LGPD related information. The state of the `LGPDConsent` property will become `-1` or `IALGPDConsentTypeUnknown`.
  */
 - (void)clearLGPDConsentData;
+
+/**
+ *  @brief Enable in order to manage audio session on behalf of SDK.
+ *
+ *  @discussion Resolves an occasional issue wnen there is no sound in VAST in iPadOS 16.1+ on certain iPads, in case AVAudioSession isn't managed explicitly in host app.
+ *  This method isn't thread-safe and should be used immediately after SDK init.
+ */
+- (void)enableAutomaticAudioSessionManagement;
 
 @end

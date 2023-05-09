@@ -1,45 +1,45 @@
 //
-//  FMPLogger.h
+//  DTXLogger.h
 //  IASDKCore
 //
 //  Created on 15/06/2021.
-//  Copyright © 2021 Fyber. All rights reserved.
+//  Copyright © 2022 Digital Turbine. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, FMPLogLevel) {
+typedef NS_ENUM(NSUInteger, DTXLogLevel) {
     /**
     @brief Disabled.
     */
-    FMPLogLevelOff = 0,
+    DTXLogLevelOff = 0,
     
     /**
     @brief Includes system-level or multi-process information when reporting system errors
     */
-    FMPLogLevelFault = 1,
+    DTXLogLevelFault = 1,
     
     /**
     @brief Includes process-level errors
     */
-    FMPLogLevelError = 2,
+    DTXLogLevelError = 2,
     
     /**
     @brief Includes info, error fault logging.
      */
-    FMPLogLevelInfo = 3,
+    DTXLogLevelInfo = 3,
     
     /**
     @brief Includes debug information, and all types of logging.
      */
-    FMPLogLevelDebug = 4,
+    DTXLogLevelDebug = 4,
 };
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FMPLogger : NSObject
+@interface DTXLogger : NSObject
 
-+ (void)setLogLevel:(FMPLogLevel)logLevel;
++ (void)setLogLevel:(DTXLogLevel)logLevel;
 
 @end
 

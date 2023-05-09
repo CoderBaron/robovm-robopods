@@ -2,8 +2,8 @@
 //  IABaseView.h
 //  IASDKCore
 //
-//  Created by Fyber on 09/09/2019.
-//  Copyright © 2019 Fyber. All rights reserved.
+//  Created by Digital Turbine on 09/09/2019.
+//  Copyright © 2022 Digital Turbine. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

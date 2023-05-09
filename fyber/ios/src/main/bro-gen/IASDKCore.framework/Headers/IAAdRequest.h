@@ -2,8 +2,8 @@
 //  IAAdRequest.h
 //  IASDKCore
 //
-//  Created by Fyber on 13/03/2017.
-//  Copyright © 2017 Fyber. All rights reserved.
+//  Created by Digital Turbine on 13/03/2017.
+//  Copyright © 2022 Digital Turbine. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -13,7 +13,6 @@
 #import <IASDKCore/IAInterfaceAdDescription.h>
 
 @class IAUserData;
-@class CLLocation;
 @class IADebugger;
 @class IAMediation;
 
@@ -41,11 +40,6 @@
  *  @brief Single keyword string or several keywords, separated by comma.
  */
 @property (nonatomic, copy, nullable) NSString *keywords DEPRECATED_MSG_ATTRIBUTE("In current version setting this property will not affect anything. In the next SDK version this property will be removed. Please use 'keywords' property of IASDKCore instead.");
-
-/**
- *  @brief Current location. Use for better ad targeting.
- */
-@property (nonatomic, copy, nullable) CLLocation *location DEPRECATED_MSG_ATTRIBUTE("In current version setting this property will will not affect anything. In the next SDK version this property will be removed. Please use 'location' property of IASDKCore instance.");
 
 @property (nonatomic, copy, nullable) IADebugger *debugger;
 

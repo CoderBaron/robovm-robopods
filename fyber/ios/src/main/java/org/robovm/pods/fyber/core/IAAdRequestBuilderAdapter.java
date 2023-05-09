@@ -85,18 +85,6 @@ import org.robovm.apple.coregraphics.*;
     @Deprecated
     @NotImplemented("setKeywords:")
     public void setKeywords(String v) {}
-    /**
-     * @deprecated In current version setting this property will will not affect anything. In the next SDK version this property will be removed. Please use 'location' property of IASDKCore instance.
-     */
-    @Deprecated
-    @NotImplemented("location")
-    public CLLocation getLocation() { return null; }
-    /**
-     * @deprecated In current version setting this property will will not affect anything. In the next SDK version this property will be removed. Please use 'location' property of IASDKCore instance.
-     */
-    @Deprecated
-    @NotImplemented("setLocation:")
-    public void setLocation(CLLocation v) {}
     @NotImplemented("debugger")
     public IADebugger getDebugger() { return null; }
     @NotImplemented("setDebugger:")

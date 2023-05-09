@@ -2,7 +2,7 @@
 //  IAImpressionData.h
 //  IASDKCore
 //
-//  Copyright © 2019 Fyber. All rights reserved.
+//  Copyright © 2022 Digital Turbine. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

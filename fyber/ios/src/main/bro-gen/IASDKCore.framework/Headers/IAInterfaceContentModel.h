@@ -2,8 +2,8 @@
 //  IAInterfaceContentModel.h
 //  IASDKCore
 //
-//  Created by Fyber on 27/03/2017.
-//  Copyright © 2017 Fyber. All rights reserved.
+//  Created by Digital Turbine on 27/03/2017.
+//  Copyright © 2022 Digital Turbine. All rights reserved.
 //
 
 #ifndef IAInterfaceContentModel_h

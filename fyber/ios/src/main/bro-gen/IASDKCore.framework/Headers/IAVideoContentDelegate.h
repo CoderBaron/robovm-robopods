@@ -2,8 +2,8 @@
 //  IAVideoContentDelegate.h
 //  IASDKCore
 //
-//  Created by Fyber on 14/03/2017.
-//  Copyright © 2017 Fyber. All rights reserved.
+//  Created by Digital Turbine on 14/03/2017.
+//  Copyright © 2022 Digital Turbine. All rights reserved.
 //
 
 #ifndef IAVideoContentDelegate_h

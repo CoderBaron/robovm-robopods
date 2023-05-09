@@ -2,8 +2,8 @@
 //  IAInterfaceAdDescription.h
 //  IASDKCore
 //
-//  Created by Fyber on 27/04/2017.
-//  Copyright © 2017 Fyber. All rights reserved.
+//  Created by Digital Turbine on 27/04/2017.
+//  Copyright © 2022 Digital Turbine. All rights reserved.
 //
 
 #ifndef IAInterfaceAdDescription_h

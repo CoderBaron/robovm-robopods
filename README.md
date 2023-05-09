@@ -50,7 +50,7 @@ v1.31.0 - in development
 | [ClearAds](clearads/)           | 3.1.5   |
 | [Facebook](facebook/)           | 16.1.0  |
 | [Firebase](firebase/)           | 10.9.0  |
-| [Fyber](fyber/)                 | 8.1.9   |
+| [Fyber](fyber/)                 | 8.2.2   |
 | [HelpShiftX](helpshift/)        | 10.2.2  |
 | [InMobi](inmobi/)               | 10.1.0  |
 | [IronSource](ironsource/)       | 7.2.7   |

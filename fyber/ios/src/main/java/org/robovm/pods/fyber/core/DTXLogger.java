@@ -39,17 +39,17 @@ import org.robovm.apple.coregraphics.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FMPLogger/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/DTXLogger/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class FMPLoggerPtr extends Ptr<FMPLogger, FMPLoggerPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(FMPLogger.class); }/*</bind>*/
+    /*<ptr>*/public static class DTXLoggerPtr extends Ptr<DTXLogger, DTXLoggerPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(DTXLogger.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FMPLogger() {}
-    protected FMPLogger(Handle h, long handle) { super(h, handle); }
-    protected FMPLogger(SkipInit skipInit) { super(skipInit); }
+    public DTXLogger() {}
+    protected DTXLogger(Handle h, long handle) { super(h, handle); }
+    protected DTXLogger(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
     
@@ -57,6 +57,6 @@ import org.robovm.apple.coregraphics.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "setLogLevel:")
-    public static native void setLogLevel(FMPLogLevel logLevel);
+    public static native void setLogLevel(DTXLogLevel logLevel);
     /*</methods>*/
 }

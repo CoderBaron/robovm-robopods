@@ -2,8 +2,8 @@
 //  IAInterfaceSingleton.h
 //  IASDKCore
 //
-//  Created by Fyber on 22/03/2017.
-//  Copyright © 2017 Fyber. All rights reserved.
+//  Created by Digital Turbine on 22/03/2017.
+//  Copyright © 2022 Digital Turbine. All rights reserved.
 //
 
 #ifndef IAInterfaceSingleton_h

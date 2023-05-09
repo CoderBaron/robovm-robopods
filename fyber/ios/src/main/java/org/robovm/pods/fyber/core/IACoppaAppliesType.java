@@ -38,35 +38,30 @@ import org.robovm.apple.coregraphics.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/IALogger/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
+public enum /*<name>*/IACoppaAppliesType/*</name>*/ implements ValuedEnum {
+    /*<values>*/
+    Unknown(-1L),
+    Denied(0L),
+    Given(1L);
+    /*</values>*/
 
-    /*<ptr>*/public static class IALoggerPtr extends Ptr<IALogger, IALoggerPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(IALogger.class); }/*</bind>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    public IALogger() {}
-    protected IALogger(Handle h, long handle) { super(h, handle); }
-    protected IALogger(SkipInit skipInit) { super(skipInit); }
-    /*</constructors>*/
-    /*<properties>*/
-    
-    /*</properties>*/
-    /*<members>*//*</members>*/
-    /*<methods>*/
-    /**
-     * @deprecated IALogger class is deprecated and will be removed in future versions; please use FMPLogger API instead.
-     */
-    @Deprecated
-    @Method(selector = "setLogLevel:")
-    public static native void setLogLevel(IALogLevel logLevel);
-    /**
-     * @deprecated IALogger class is deprecated and will be removed in future versions; please use FMPLogger API instead.
-     */
-    @Deprecated
-    @Method(selector = "logLevel:")
-    public static native IALogLevel logLevel(IALogLevel logLevel);
-    /*</methods>*/
+    /*<methods>*//*</methods>*/
+
+    private final long n;
+
+    private /*<name>*/IACoppaAppliesType/*</name>*/(long n) { this.n = n; }
+    public long value() { return n; }
+    public static /*<name>*/IACoppaAppliesType/*</name>*/ valueOf(long n) {
+        for (/*<name>*/IACoppaAppliesType/*</name>*/ v : values()) {
+            if (v.n == n) {
+                return v;
+            }
+        }
+        throw new IllegalArgumentException("No constant with value " + n + " found in " 
+            + /*<name>*/IACoppaAppliesType/*</name>*/.class.getName());
+    }
 }

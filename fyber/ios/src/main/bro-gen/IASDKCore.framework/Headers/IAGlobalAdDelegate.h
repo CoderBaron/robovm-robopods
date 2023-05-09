@@ -2,8 +2,8 @@
 //  IAGlobalAdDelegate.h
 //  IASDKCore
 //
-//  Created by Fyber on 08/12/2019.
-//  Copyright © 2019 Fyber. All rights reserved.
+//  Created by Digital Turbine on 08/12/2019.
+//  Copyright © 2022 Digital Turbine. All rights reserved.
 //
 
 #ifndef IAGlobalAdDelegate_h

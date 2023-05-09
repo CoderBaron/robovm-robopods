@@ -39,7 +39,7 @@ import org.robovm.apple.coregraphics.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedUIntMarshaler.class)/*</annotations>*/
-public enum /*<name>*/FMPLogLevel/*</name>*/ implements ValuedEnum {
+public enum /*<name>*/DTXLogLevel/*</name>*/ implements ValuedEnum {
     /*<values>*/
     Off(0L),
     Fault(1L),
@@ -55,15 +55,15 @@ public enum /*<name>*/FMPLogLevel/*</name>*/ implements ValuedEnum {
 
     private final long n;
 
-    private /*<name>*/FMPLogLevel/*</name>*/(long n) { this.n = n; }
+    private /*<name>*/DTXLogLevel/*</name>*/(long n) { this.n = n; }
     public long value() { return n; }
-    public static /*<name>*/FMPLogLevel/*</name>*/ valueOf(long n) {
-        for (/*<name>*/FMPLogLevel/*</name>*/ v : values()) {
+    public static /*<name>*/DTXLogLevel/*</name>*/ valueOf(long n) {
+        for (/*<name>*/DTXLogLevel/*</name>*/ v : values()) {
             if (v.n == n) {
                 return v;
             }
         }
         throw new IllegalArgumentException("No constant with value " + n + " found in " 
-            + /*<name>*/FMPLogLevel/*</name>*/.class.getName());
+            + /*<name>*/DTXLogLevel/*</name>*/.class.getName());
     }
 }

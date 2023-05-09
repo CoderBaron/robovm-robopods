@@ -283,16 +283,13 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
         )
     },
     "IASDKCore" to { framework ->
-        val fyberVersion: String by lazy {
-            downloadFolder.extend("InneractiveAdSDK-iOS-master/IASDKCore/IASDKCore.xcframework/IASDKResources.bundle/").infoPlist.extractVersion()
-        }
-        val artifactLocation = downloadFolder.extend("InneractiveAdSDK-iOS-master/$framework/$framework.xcframework/ios-arm64_armv7/$framework.framework")
+        val artifactLocation = downloadFolder.extend("InneractiveAdSDK-iOS-master/$framework/$framework.xcframework/ios-arm64/$framework.framework")
         processFramework(
             artifact = "$framework.framework",
             moduleFolder = "fyber/ios",
             sourceHeadersDir = artifactLocation.headers,
             yaml = "iasdk-core.yaml",
-            version = { fyberVersion },
+            version = { artifactLocation.infoPlist.extractVersion() },
             instruction = """
                 1. download and unpack https://github.com/inner-active/InneractiveAdSDK-iOS/archive/refs/heads/master.zip
                 2. unpack, expected location ${downloadFolder.extend("InneractiveAdSDK-iOS-master")}

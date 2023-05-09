@@ -18,6 +18,8 @@ enums:
     IAVideoType: {}
     FMPLogLevel: {}
     IALGPDConsentType: {}
+    DTXLogLevel: {}
+    IACoppaAppliesType: {}
 
 typed_enums:
 
@@ -72,6 +74,7 @@ classes:
                 name: setTopLeftControlType
     IAVideoView: {}
     FMPLogger: {}
+    DTXLogger: {}
 protocols:
     IAAdRequestBuilder: {}
     IAAdSpotBuilder: {}
@@ -126,6 +129,8 @@ functions:
         name: 'Function_#{g[0]}'
 
 values:
+    IASDKCoreVersion(.*):
+        exclude: true
 
     # Make sure we don't miss any values if new ones are introduced in a later version
     (.*):
