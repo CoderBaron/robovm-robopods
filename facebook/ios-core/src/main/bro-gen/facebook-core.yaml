@@ -490,6 +490,8 @@ classes:
                 name: configure
             '-callCapiGatewayAPIWith:':
                 name: callCapiGatewayAPI
+            '-callCapiGatewayAPIWith:userAgent:':
+                name: callCapiGatewayAPI
     FBSDKAEMNetworker:
         exclude: true #INTERNAL - DO NOT USE
     FBSDKATEPublisherFactory:

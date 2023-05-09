@@ -64,6 +64,10 @@ classes:
                 name: logIn
             '-logInWithPermissions:fromViewController:handler:':
                 name: logIn
+            '-application:openURL:sourceApplication:annotation:':
+                name: openURL
+            '-canOpenURL:forApplication:sourceApplication:annotation:':
+                name: canOpenURL
     FBSDKLoginManagerLoginResult:
         methods:
             '-initWithToken:isCancelled:grantedPermissions:declinedPermissions:':

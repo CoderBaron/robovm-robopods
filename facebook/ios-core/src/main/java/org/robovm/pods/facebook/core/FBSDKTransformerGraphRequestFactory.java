@@ -60,8 +60,8 @@ import org.robovm.pods.facebook.corebasics.*;
     /*<methods>*/
     @Method(selector = "configureWithDatasetID:url:accessKey:")
     public native void configure(String datasetID, String url, String accessKey);
-    @Method(selector = "callCapiGatewayAPIWith:")
-    public native void callCapiGatewayAPI(NSDictionary<NSString, ?> parameters);
+    @Method(selector = "callCapiGatewayAPIWith:userAgent:")
+    public native void callCapiGatewayAPI(NSDictionary<NSString, ?> parameters, String userAgent);
     @Method(selector = "shared")
     public static native FBSDKTransformerGraphRequestFactory shared();
     /*</methods>*/

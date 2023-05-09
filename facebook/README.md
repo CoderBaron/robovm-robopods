@@ -4,17 +4,18 @@
 
 | RoboPod                             | Description                      | Version |
 |-------------------------------------|----------------------------------|---------|
-| [ios-core](ios-core/)               | Facebook Core                    | 16.0.1  |
-| [ios-core-basics](ios-core-basics/) | Facebook Core Basics             | 16.0.1  |
-| [ios-login](ios-login/)             | Facebook iOS Login Kit           | 16.0.1  |
-| [ios-share](ios-share/)             | Facebook iOS Share Kit           | 16.0.1  |
-| [ios-aem](ios-aem/)                 | Facebook iOS AEM Kit             | 16.0.1  |
+| [ios-core](ios-core/)               | Facebook Core                    | 16.1.0  |
+| [ios-core-basics](ios-core-basics/) | Facebook Core Basics             | 16.1.0  |
+| [ios-login](ios-login/)             | Facebook iOS Login Kit           | 16.1.0  |
+| [ios-share](ios-share/)             | Facebook iOS Share Kit           | 16.1.0  |
+| [ios-aem](ios-aem/)                 | Facebook iOS AEM Kit             | 16.1.0  |
 | [ios-audience](ios-audience/)       | Facebook iOS Audience Ad Network | 6.12.0  |
 
 ## Versions
 
 | RoboPods Version | Facebook Version |
 |------------------|------------------|
+| 1.31.0           | 16.1.0           |
 | 1.30.0           | 16.0.1           |
 | 1.29.0           | 16.0.0           |
 | 1.27.0           | 15.1.0           |

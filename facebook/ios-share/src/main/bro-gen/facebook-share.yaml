@@ -93,6 +93,12 @@ classes:
                 exclude: true
             '+showFromViewController:withContent:delegate:':
                 name: show
+            '-webDialog:didCompleteWithResults:':
+                exclude: true
+            '-webDialog:didFailWithError:':
+                exclude: true
+            '-webDialogDidCancel:':
+                exclude: true
     FBSDKShareLinkContent: {}
     FBSDKShareMediaContent: {}
     FBSDKSharePhoto:
