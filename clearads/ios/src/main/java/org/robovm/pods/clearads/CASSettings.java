@@ -50,22 +50,21 @@ import org.robovm.apple.coreanimation.*;
     protected CASSettings(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "userConsent")
+    public native CASConsentStatus getUserConsent();
+    @Property(selector = "setUserConsent:")
+    public native void setUserConsent(CASConsentStatus v);
+    @Property(selector = "userCCPAStatus")
+    public native CASCCPAStatus getUserCCPAStatus();
+    @Property(selector = "setUserCCPAStatus:")
+    public native void setUserCCPAStatus(CASCCPAStatus v);
+    @Property(selector = "taggedAudience")
+    public native CASAudience getTaggedAudience();
+    @Property(selector = "setTaggedAudience:")
+    public native void setTaggedAudience(CASAudience v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "getUserConsent")
-    public native CASConsentStatus getUserConsent();
-    @Method(selector = "updateUserWithConsent:")
-    public native void updateUser(CASConsentStatus consent);
-    @Method(selector = "getCCPAStatus")
-    public native CASCCPAStatus getCCPAStatus();
-    @Method(selector = "updateCCPAWithStatus:")
-    public native void updateCCPA(CASCCPAStatus status);
-    @Method(selector = "getTaggedAudience")
-    public native CASAudience getTaggedAudience();
-    @Method(selector = "setTaggedWithAudience:")
-    public native void setTagged(CASAudience audience);
     @Method(selector = "isTrackLocationEnabled")
     public native boolean isTrackLocationEnabled();
     @Method(selector = "setTrackLocationWithEnabled:")
@@ -98,6 +97,14 @@ import org.robovm.apple.coreanimation.*;
     public native CASLoadingManagerMode getLoadingMode();
     @Method(selector = "setLoadingWithMode:")
     public native void setLoading(CASLoadingManagerMode mode);
+    @Method(selector = "updateUserWithConsent:")
+    public native void updateUser(CASConsentStatus consent);
+    @Method(selector = "getCCPAStatus")
+    public native CASCCPAStatus getCCPAStatus();
+    @Method(selector = "updateCCPAWithStatus:")
+    public native void updateCCPA(CASCCPAStatus status);
+    @Method(selector = "setTaggedWithAudience:")
+    public native void setTagged(CASAudience audience);
     @Method(selector = "isAnalyticsCollectionEnabled")
     public native boolean isAnalyticsCollectionEnabled();
     @Method(selector = "setAnalyticsCollectionWithEnabled:")

@@ -54,6 +54,10 @@ import org.robovm.apple.coreanimation.*;
     public native String getError();
     @Property(selector = "manager")
     public native CASMediationManager getManager();
+    @Property(selector = "countryCode")
+    public native String getCountryCode();
+    @Property(selector = "isConsentRequired")
+    public native boolean isConsentRequired();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

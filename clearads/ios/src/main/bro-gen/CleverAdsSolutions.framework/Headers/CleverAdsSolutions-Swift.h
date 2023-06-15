@@ -640,6 +640,8 @@ SWIFT_CLASS_NAMED("CASConsentFlow")
 @property (nonatomic) BOOL requestGDPR;
 @property (nonatomic) BOOL requestATT;
 @property (nonatomic, copy) NSString * _Nullable privacyPolicyUrl;
+@property (nonatomic, copy) void (^ _Nullable dismissHandler)(void);
+@property (nonatomic, strong) UIViewController * _Nullable viewControllerToPresent;
 /// Create Consent flow configuration
 /// \param isEnabled If enabled then the consent flow will be shown to users who are protected by laws.
 ///
@@ -648,7 +650,13 @@ SWIFT_CLASS_NAMED("CASConsentFlow")
 /// Override a link to the App’s Privacy Policy in the consent dialog.
 /// \param url String of the  App’s Privacy Policy url
 ///
-- (CASConsentFlow * _Nonnull)withPrivacyPolicy:(NSString * _Nonnull)url;
+- (CASConsentFlow * _Nonnull)withPrivacyPolicy:(NSString * _Nullable)url;
+/// Optional.  Set a handler to be invoked when the dialog is dismissed.
+/// \param handler The block to execute after the dialog dismiss finishes. This block has no return value and takes no parameters. You may specify nil for this parameter.
+///
+- (CASConsentFlow * _Nonnull)withDismissHandler:(void (^ _Nullable)(void))handler;
+/// Override the view controller to display over the current view controller’s content.
+- (CASConsentFlow * _Nonnull)withViewControllerToPresent:(UIViewController * _Nullable)controller;
 @end
 
 typedef SWIFT_ENUM_NAMED(NSInteger, CASConsentStatus, "CASConsentStatus", open) {
@@ -735,6 +743,10 @@ SWIFT_CLASS_NAMED("CASInitialConfig")
 @property (nonatomic, readonly, copy) NSString * _Nullable error;
 /// Get the initialized CAS manager.
 @property (nonatomic, readonly, strong) CASMediationManager * _Nonnull manager;
+/// Get the user’s ISO-2 country code.
+@property (nonatomic, readonly, copy) NSString * _Nullable countryCode;
+/// The consent must be requested from the user.
+@property (nonatomic, readonly) BOOL isConsentRequired;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -811,9 +823,29 @@ typedef SWIFT_ENUM_NAMED(NSInteger, CASLoadingManagerMode, "CASLoadingManagerMod
   CASLoadingManagerModeManual = 5,
 };
 
+@class UIImage;
+@class NSURL;
+@class NSNumber;
 
 SWIFT_CLASS_NAMED("NativeAdContent")
 @interface CASNativeAdContent : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nullable headline;
+@property (nonatomic, readonly, copy) NSString * _Nullable body;
+@property (nonatomic, readonly, copy) NSString * _Nullable callToAction;
+@property (nonatomic, readonly, strong) UIImage * _Nullable icon;
+@property (nonatomic, readonly, copy) NSURL * _Nullable iconURL;
+@property (nonatomic, readonly, copy) NSString * _Nullable advertiser;
+@property (nonatomic, readonly, copy) NSString * _Nullable store;
+@property (nonatomic, readonly, copy) NSString * _Nullable price;
+@property (nonatomic, readonly, strong) NSNumber * _Nullable starRating;
+@property (nonatomic, readonly, copy) NSString * _Nullable reviewCount;
+@property (nonatomic, readonly, copy) NSString * _Nullable adLabel;
+@property (nonatomic, readonly, strong) UIView * _Nullable adChoicesContent;
+@property (nonatomic, readonly, strong) UIImage * _Nullable mediaImage;
+@property (nonatomic, readonly, copy) NSURL * _Nullable mediaImageURL;
+@property (nonatomic, readonly) BOOL hasVideoContent;
+@property (nonatomic, readonly) CGFloat mediaContentAspectRatio;
+- (UIView * _Nullable)createMediaContentView SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -821,6 +853,23 @@ SWIFT_CLASS_NAMED("NativeAdContent")
 SWIFT_CLASS("_TtC18CleverAdsSolutions19CASMNativeAdContent")
 @interface CASMNativeAdContent : CASNativeAdContent
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, copy) NSString * _Nullable headline;
+@property (nonatomic, copy) NSString * _Nullable body;
+@property (nonatomic, copy) NSString * _Nullable callToAction;
+@property (nonatomic, strong) UIImage * _Nullable icon;
+@property (nonatomic, copy) NSURL * _Nullable iconURL;
+@property (nonatomic, strong) NSNumber * _Nullable starRating;
+@property (nonatomic, copy) NSString * _Nullable advertiser;
+@property (nonatomic, copy) NSString * _Nullable store;
+@property (nonatomic, copy) NSString * _Nullable price;
+@property (nonatomic) BOOL hasVideoContent;
+@property (nonatomic) CGFloat mediaContentAspectRatio;
+@property (nonatomic, strong) UIImage * _Nullable mediaImage;
+@property (nonatomic, copy) NSURL * _Nullable mediaImageURL;
+@property (nonatomic, copy) NSString * _Nullable reviewCount;
+@property (nonatomic, copy) NSString * _Nullable adLabel;
+@property (nonatomic, strong) UIView * _Nullable adChoicesContent;
+- (UIView * _Nullable)createMediaContentView SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -986,6 +1035,7 @@ SWIFT_CLASS_NAMED("CASNativeView")
 @end
 
 
+
 SWIFT_CLASS_NAMED("CASNetwork")
 @interface CASNetwork : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull googleAds;)
@@ -1091,24 +1141,15 @@ SWIFT_CLASS_NAMED("CASSettings")
 @interface CASSettings : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-/// GDPR user Consent SDK Implementation for ads on session.
+/// GDPR user Consent to use personal data in Ads requests.
 /// Default CASConsentStatus undefined
-- (enum CASConsentStatus)getUserConsent SWIFT_WARN_UNUSED_RESULT;
-/// GDPR user Consent SDK Implementation for ads on session.
-/// Default CASConsentStatus undefined
-- (void)updateUserWithConsent:(enum CASConsentStatus)consent;
+@property (nonatomic) enum CASConsentStatus userConsent;
 /// Whether or not user has opted out of the sale of their personal information.
 /// Default CASCCPAStatus undefined
-- (enum CASCCPAStatus)getCCPAStatus SWIFT_WARN_UNUSED_RESULT;
-/// Whether or not user has opted out of the sale of their personal information.
-/// Default CASCCPAStatus undefined
-- (void)updateCCPAWithStatus:(enum CASCCPAStatus)status;
+@property (nonatomic) enum CASCCPAStatus userCCPAStatus;
 /// Ad filters by Audience
-/// Default: Tagged Mixed Audience
-- (enum CASAudience)getTaggedAudience SWIFT_WARN_UNUSED_RESULT;
-/// Ad filters by Audience
-/// Default: Tagged Mixed Audience
-- (void)setTaggedWithAudience:(enum CASAudience)audience;
+/// Default: undefined
+@property (nonatomic) enum CASAudience taggedAudience;
 /// The SDK automatically collects location data if the user allowed the app to track the location.
 - (BOOL)isTrackLocationEnabled SWIFT_WARN_UNUSED_RESULT;
 /// The SDK automatically collects location data if the user allowed the app to track the location.
@@ -1197,15 +1238,13 @@ SWIFT_CLASS_NAMED("CASSettings")
 /// Mediation loading manager mode.
 /// Default: <code>CASLoadingManagerMode.optimal</code>
 - (void)setLoadingWithMode:(enum CASLoadingManagerMode)mode;
-/// Sets CAS analytics collection is enabled for this app on this device.
-/// This setting is persisted across app sessions.
-/// By default it is disabled.
+- (enum CASConsentStatus)getUserConsent SWIFT_WARN_UNUSED_RESULT;
+- (void)updateUserWithConsent:(enum CASConsentStatus)consent;
+- (enum CASCCPAStatus)getCCPAStatus SWIFT_WARN_UNUSED_RESULT;
+- (void)updateCCPAWithStatus:(enum CASCCPAStatus)status;
+- (enum CASAudience)getTaggedAudience SWIFT_WARN_UNUSED_RESULT;
+- (void)setTaggedWithAudience:(enum CASAudience)audience;
 - (BOOL)isAnalyticsCollectionEnabled SWIFT_WARN_UNUSED_RESULT;
-/// Sets CAS analytics collection is enabled for this app on this device.
-/// This setting is persisted across app sessions.
-/// By default it is disabled.
-/// warning:
-/// Required set <code>CASAnalyticsHandler</code> instance to <code>CASAnalytics.handler</code> property.
 - (void)setAnalyticsCollectionWithEnabled:(BOOL)enabled;
 @end
 
@@ -1257,7 +1296,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) CASSize * _N
 ///     The adaptive banners use fixed aspect ratios instead of fixed heights.
 ///   </li>
 /// </ul>
-+ (CASSize * _Nonnull)getAdaptiveBannerInContainer:(UIView * _Nonnull)inContainer SWIFT_WARN_UNUSED_RESULT;
++ (CASSize * _Nonnull)getAdaptiveBannerInContainer:(UIView * _Nonnull)inContainer SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("Use getAdaptiveBanner(forMaxWidth:) instead.");
 /// Create Adaptive AdSize with window width for current orientation.
 /// <ul>
 ///   <li>

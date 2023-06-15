@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>robopods-clearads-ios</artifactId>
-    <name>RoboPods Clever Ads Solutions iOS SDK iOS v3.1.5</name>
+    <name>RoboPods Clever Ads Solutions iOS SDK iOS v3.1.8</name>
     <packaging>jar</packaging>
 
     <licenses>

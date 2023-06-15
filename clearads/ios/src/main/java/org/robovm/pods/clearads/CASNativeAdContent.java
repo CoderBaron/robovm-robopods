@@ -50,10 +50,42 @@ import org.robovm.apple.coreanimation.*;
     protected CASNativeAdContent(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "headline")
+    public native String getHeadline();
+    @Property(selector = "body")
+    public native String getBody();
+    @Property(selector = "callToAction")
+    public native String getCallToAction();
+    @Property(selector = "icon")
+    public native UIImage getIcon();
+    @Property(selector = "iconURL")
+    public native NSURL getIconURL();
+    @Property(selector = "advertiser")
+    public native String getAdvertiser();
+    @Property(selector = "store")
+    public native String getStore();
+    @Property(selector = "price")
+    public native String getPrice();
+    @Property(selector = "starRating")
+    public native NSNumber getStarRating();
+    @Property(selector = "reviewCount")
+    public native String getReviewCount();
+    @Property(selector = "adLabel")
+    public native String getAdLabel();
+    @Property(selector = "adChoicesContent")
+    public native UIView getAdChoicesContent();
+    @Property(selector = "mediaImage")
+    public native UIImage getMediaImage();
+    @Property(selector = "mediaImageURL")
+    public native NSURL getMediaImageURL();
+    @Property(selector = "hasVideoContent")
+    public native boolean hasVideoContent();
+    @Property(selector = "mediaContentAspectRatio")
+    public native @MachineSizedFloat double getMediaContentAspectRatio();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "createMediaContentView")
+    public native UIView createMediaContentView();
     /*</methods>*/
 }
