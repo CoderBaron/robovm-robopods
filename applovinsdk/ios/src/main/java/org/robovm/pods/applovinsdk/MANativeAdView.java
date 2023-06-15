@@ -68,6 +68,10 @@ import org.robovm.apple.coreanimation.*;
     public native UILabel getBodyLabel();
     @Property(selector = "setBodyLabel:", strongRef = true)
     public native void setBodyLabel(UILabel v);
+    @Property(selector = "callToActionButton")
+    public native UIButton getCallToActionButton();
+    @Property(selector = "setCallToActionButton:", strongRef = true)
+    public native void setCallToActionButton(UIButton v);
     @Property(selector = "iconImageView")
     public native UIImageView getIconImageView();
     @Property(selector = "setIconImageView:", strongRef = true)
@@ -88,18 +92,14 @@ import org.robovm.apple.coreanimation.*;
     public native UIView getOptionsContentView();
     @Property(selector = "setOptionsContentView:", strongRef = true)
     public native void setOptionsContentView(UIView v);
-    @Property(selector = "starRatingContentView")
-    public native UIView getStarRatingContentView();
-    @Property(selector = "setStarRatingContentView:", strongRef = true)
-    public native void setStarRatingContentView(UIView v);
     @Property(selector = "mediaContentView")
     public native UIView getMediaContentView();
     @Property(selector = "setMediaContentView:", strongRef = true)
     public native void setMediaContentView(UIView v);
-    @Property(selector = "callToActionButton")
-    public native UIButton getCallToActionButton();
-    @Property(selector = "setCallToActionButton:", strongRef = true)
-    public native void setCallToActionButton(UIButton v);
+    @Property(selector = "starRatingContentView")
+    public native UIView getStarRatingContentView();
+    @Property(selector = "setStarRatingContentView:", strongRef = true)
+    public native void setStarRatingContentView(UIView v);
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();

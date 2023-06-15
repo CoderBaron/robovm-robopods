@@ -77,7 +77,7 @@ typedef NS_ENUM(NSInteger, MAAdapterInitializationStatus)
 
 /**
  * *********************
- * AVAILABLE IN v11.8.3+
+ * AVAILABLE IN v11.9.0+
  * *********************
  * <p>
  * Whether or not to initialize the third-party SDK on main thread.
@@ -88,7 +88,7 @@ typedef NS_ENUM(NSInteger, MAAdapterInitializationStatus)
 
 /**
  * *********************
- * AVAILABLE IN v11.8.3+
+ * AVAILABLE IN v11.9.0+
  * *********************
  * <p>
  * Whether or not to collect signals on main thread.
@@ -99,7 +99,7 @@ typedef NS_ENUM(NSInteger, MAAdapterInitializationStatus)
 
 /**
  * *********************
- * AVAILABLE IN v11.8.3+
+ * AVAILABLE IN v11.9.0+
  * *********************
  * <p>
  * Whether or not to load ads on main thread.
@@ -112,7 +112,7 @@ typedef NS_ENUM(NSInteger, MAAdapterInitializationStatus)
 
 /**
  * *********************
- * AVAILABLE IN v11.8.3+
+ * AVAILABLE IN v11.9.0+
  * *********************
  * <p> 
  * Whether or not to show ads on main thread.

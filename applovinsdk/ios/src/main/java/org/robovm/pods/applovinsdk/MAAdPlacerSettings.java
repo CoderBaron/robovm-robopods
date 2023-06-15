@@ -53,6 +53,10 @@ import org.robovm.apple.coreanimation.*;
     /*<properties>*/
     @Property(selector = "adUnitIdentifier")
     public native String getAdUnitIdentifier();
+    @Property(selector = "placement")
+    public native String getPlacement();
+    @Property(selector = "setPlacement:")
+    public native void setPlacement(String v);
     @Property(selector = "fixedPositions")
     public native NSOrderedSet<NSIndexPath> getFixedPositions();
     @Property(selector = "repeatingInterval")
