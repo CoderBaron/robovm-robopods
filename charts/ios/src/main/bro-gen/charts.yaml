@@ -1,9 +1,10 @@
 package: org.robovm.pods.charts
 include: [ foundation, uikit, coregraphics, coreanimation ]
-framework: Charts
+framework: DGCharts
 clang_args: [ '-x', 'objective-c', "-DSWIFT_EXTENSION(M)=M" ]
 headers:
-    - Charts.h
+    - DGCharts.h
+    - DGCharts-Swift.h
 
 private_typedefs:
 

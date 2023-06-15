@@ -36,7 +36,7 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Charts21TriangleShapeRenderer")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC8DGCharts21TriangleShapeRenderer")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/TriangleShapeRenderer/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*/implements ShapeRenderer/*</implements>*/ {

@@ -97,9 +97,9 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             """.trimIndent()
         )
     },
-    "Charts" to { framework ->
+    "DGCharts" to { framework ->
         val artifact = "$framework.framework"
-        val artifactLocation = downloadFolder.extend("Charts/Carthage/Build/Charts.xcframework/ios-arm64/$artifact")
+        val artifactLocation = downloadFolder.extend("Charts/Carthage/Build/DGCharts.xcframework/ios-arm64/$artifact")
         processFramework(
             artifact = artifact,
             moduleFolder = "charts/ios",
@@ -111,11 +111,6 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
                     ?.substringAfterLast("\"danielgindi/Charts\"")
                     ?.replace("v", "")?.replace("\"", "")?.trim()
                     ?: error("Failed to find out Charts version!")
-            },
-            headersCopier = { frm, sourceHeadersDir, destinationHeadersDir ->
-                copyHeaders(frm, sourceHeadersDir, destinationHeadersDir)
-                // after copied include Charts/Charts-Swift.h to Charts.h
-                File(destinationHeadersDir, "Charts.h").appendText("\n#import <Charts/Charts-Swift.h>")
             },
             instruction = """
                 0. check latest version number at https://github.com/danielgindi/Charts/releases

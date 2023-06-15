@@ -1,6 +1,6 @@
 <config>
     <frameworks>
-        <framework>Charts</framework>
+        <framework>DGCharts</framework>
         <framework>CoreGraphics</framework>
         <framework>QuartzCore</framework>
         <framework>UIKit</framework>

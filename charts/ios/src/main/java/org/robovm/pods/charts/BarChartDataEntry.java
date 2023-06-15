@@ -36,7 +36,7 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC6Charts17BarChartDataEntry")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC8DGCharts17BarChartDataEntry")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/BarChartDataEntry/*</name>*/ 
     extends /*<extends>*/ChartDataEntry/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
