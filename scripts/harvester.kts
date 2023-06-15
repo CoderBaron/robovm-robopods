@@ -446,31 +446,6 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             """.trimIndent(),
         )
     },
-    "BitLabs" to { framework ->
-        val artifactLocation = Path.of("bitlabs/cocoapods/BitLabs.framework").toFile()
-        processFramework(
-            artifact = "$framework.framework",
-            moduleFolder = "bitlabs/ios",
-            sourceHeadersDir = artifactLocation.headers,
-            yaml = "bitlabs.yaml",
-            version = { artifactLocation.infoPlist.extractVersion() },
-            headersCopier = { frm, sourceHeadersDir, destinationHeadersDir ->
-                copyHeaders(frm, sourceHeadersDir, destinationHeadersDir)
-                File(destinationHeadersDir, "BitLabs.h").appendText(
-                    """
-                    #import <Foundation/Foundation.h>
-                    #include <TargetConditionals.h>
-                    #import <UIKit/UIKit.h>
-                    #import <BitLabs/BitLabs-Swift.h>
-                """.trimIndent()
-                )
-            },
-            instruction = """
-                0. run bitlabs/cocoatouch/fetch.sh to fetch and build from cocotouch 
-                1. expected location ${artifactLocation}
-            """.trimIndent(),
-        )
-    },
 
 
     ).also {
