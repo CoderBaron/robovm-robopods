@@ -101,6 +101,10 @@ import org.robovm.apple.dispatch.*;
     public static native FIRFirestore firestore();
     @Method(selector = "firestoreForApp:")
     public static native FIRFirestore firestoreForApp(org.robovm.pods.firebase.core.FIRApp app);
+    @Method(selector = "firestoreForApp:database:")
+    public static native FIRFirestore firestoreForApp(org.robovm.pods.firebase.core.FIRApp app, String database);
+    @Method(selector = "firestoreForDatabase:")
+    public static native FIRFirestore firestoreForDatabase(String database);
     @Method(selector = "enableLogging:")
     public static native void enableLogging(boolean logging);
     /*</methods>*/

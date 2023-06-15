@@ -99,6 +99,8 @@ classes:
                 name: setIndexConfigurationFromJSON
             '-setIndexConfigurationFromStream:completion:':
                 name: setIndexConfigurationFromStream
+            '+firestoreForApp:database:':
+                name: firestoreForApp
     FIRFirestoreSettings: {}
     FIRGeoPoint:
         methods:
