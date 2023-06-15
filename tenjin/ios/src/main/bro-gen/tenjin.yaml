@@ -1,9 +1,13 @@
 package: org.robovm.pods.tenjin
 framework: TenjinSDK
-include: [foundation, uikit, storekit]
+include: [foundation, uikit, storekit, coredata]
 clang_args: ['-x', 'objective-c']
-headers: 
-    - TenjinSDK.h
+headers:
+    - "#include <TargetConditionals.h>"
+    - "#import <UIKit/UIKit.h>"
+    - "#import <CoreData/CoreData.h>"
+    - TJNRequestSender.h
+    - TenjinSDK-Swift.h
 enums:
 
 private_typedefs:
@@ -60,7 +64,22 @@ classes:
                 name: updatePostbackConversion
             '+updatePostbackConversionValue:coarseValue:lockWindow:':
                 name: updatePostbackConversion
+    TJNHTTPClient:
+        exclude: true # from private headers
+    QueueEvent: {}
+    RequestHelper:
+        methods:
+            '-initWithApiKey:':
+                name: init
+            '-handlePostRequestWithEndpoint:params:':
+                name: handlePostRequest
+    TenjinRepository:
+        methods:
+            '-initWithApiKey:':
+                name: iniWithApiKey$
 protocols:
+    TJNRequestSender:
+        exclude: true # from private headers
 
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
@@ -76,6 +95,9 @@ values:
         name: 'Value_#{g[0]}'
 
 constants:
+    SWIFT_.*:
+        exclude: true
+
     # Make sure we don't miss any constants if new ones are introduced in a later version
     (.*):
         class: __FixMe

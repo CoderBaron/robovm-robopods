@@ -416,9 +416,18 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
         processFramework(
             artifact = "$framework.framework",
             moduleFolder = "tenjin/ios",
-            sourceHeadersDir = artifactLocation.headers,
+            sourceHeadersDir = artifactLocation,
             yaml = "tenjin.yaml",
             version = { tenjinvVersion },
+            headersCopier = { _, _, dst ->
+                copyHeaders("$framework.framework",
+                    artifactLocation.extend("Headers"),
+                    dst)
+                copyHeaders("$framework.framework",
+                    artifactLocation.extend("PrivateHeaders"),
+                    dst,
+                    intoExisting = true)
+            } ,
             instruction = """
                 0. download latest version from https://github.com/tenjin/tenjin-ios-sdk/releases
                 1. unpack and rename to ${downloadFolder.extend("tenjin-ios-sdk")}
@@ -606,11 +615,15 @@ fun interactiveValidateHeaderFolder(framework: String, sourceHeadersDir: File, i
 }
 
 fun copyHeaders(framework: String, sourceHeadersDir: File, destinationHeadersDir: File) {
+    copyHeaders(framework, sourceHeadersDir, destinationHeadersDir, false)
+}
+
+fun copyHeaders(framework: String, sourceHeadersDir: File, destinationHeadersDir: File, intoExisting: Boolean) {
     // check if source folder exists
     sourceHeadersDir.requiresIsDirectory { "Missing header folder for $framework at ${sourceHeadersDir.canonicalPath}" }
 
     // copy new headers
-    destinationHeadersDir.requireMkdirs()
+    destinationHeadersDir.requireMkdirs(skipIfExist = intoExisting)
     log.i("$framework:  Copy headers from ${sourceHeadersDir.canonicalPath}")
     log.i("$framework:                 to ${destinationHeadersDir.canonicalPath}")
     sourceHeadersDir.copyRecursively(destinationHeadersDir)
@@ -817,7 +830,9 @@ fun File.requiresDeleteRecursively() {
         throw IllegalStateException("Failed to delete ${this.canonicalPath}")
 }
 
-fun File.requireMkdirs(): File {
+fun File.requireMkdirs(skipIfExist: Boolean = false): File {
+    if (this.exists() && this.isDirectory && skipIfExist)
+        return this
     if (!this.mkdirs())
         throw IllegalStateException("Failed to mkdirs ${this.canonicalPath}")
     return this

@@ -30,6 +30,7 @@ import org.robovm.rt.bro.ptr.*;
 import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.storekit.*;
+import org.robovm.apple.coredata.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -168,6 +169,8 @@ import org.robovm.apple.storekit.*;
     public static native void setCustomerUserId(String userId);
     @Method(selector = "getCustomerUserId")
     public static native String getCustomerUserId();
+    @Method(selector = "setCacheEventSetting:")
+    public static native void setCacheEventSetting(boolean isCacheEventsEnabled);
     @Method(selector = "verboseLogs")
     public static native void verboseLogs();
     @Method(selector = "debugLogs")
