@@ -229,10 +229,10 @@ import org.robovm.apple.uikit.*;
     public static native void customRevenue(String eventname, String currency, double amount, NSDictionary<?, ?> attributes);
     @Method(selector = "customRevenue:currency:amount:productSKU:productName:productCategory:productQuantity:productPrice:")
     public static native void customRevenue(String eventname, String currency, double amount, String productSKU, String productName, String productCategory, int productQuantity, double productPrice);
-    @Method(selector = "customeRevenue:productJsonRepresentation:")
-    public static native void customeRevenue(NSData transactionJsonRepresentation, NSData productJsonRepresentation);
-    @Method(selector = "customeRevenue:transactionJsonRepresentation:productJsonRepresentation:")
-    public static native void customeRevenue(String eventName, NSData transactionJsonRepresentation, NSData productJsonRepresentation);
+    @Method(selector = "customRevenue:productJsonRepresentation:")
+    public static native void customRevenue(NSData transactionJsonRepresentation, NSData productJsonRepresentation);
+    @Method(selector = "customRevenue:transactionJsonRepresentation:productJsonRepresentation:")
+    public static native void customRevenue(String eventName, NSData transactionJsonRepresentation, NSData productJsonRepresentation);
     @Method(selector = "setCustomUserId:")
     public static native void setCustomUserId(String customUserId);
     @Method(selector = "unsetCustomUserId")
