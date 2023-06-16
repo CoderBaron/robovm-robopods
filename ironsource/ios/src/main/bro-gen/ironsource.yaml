@@ -137,6 +137,10 @@ classes:
                 name: destroyISDemandOnlyBanner
             '+setISDemandOnlyBannerDelegate:forInstanceId:':
                 name: setISDemandOnlyBannerDelegate
+            '+setWaterfallConfiguration:forAdUnit:':
+                name: setWaterfallConfiguration
+    ISWaterfallConfiguration: {}
+    ISWaterfallConfigurationBuilder: {}
     ISAdInfo:
         methods:
             '-initWithImpressionData:':

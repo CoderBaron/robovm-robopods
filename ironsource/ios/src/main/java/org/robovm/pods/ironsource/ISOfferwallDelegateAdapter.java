@@ -51,16 +51,40 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    /**
+     * @deprecated This API call is for the ironSource Offerwall, which will soon be deprecated. Please migrate to the Tapjoy Offerwall using the 'Offerwall migration checklist'.
+     */
+    @Deprecated
     @NotImplemented("offerwallHasChangedAvailability:")
     public void offerwallHasChangedAvailability(boolean available) {}
+    /**
+     * @deprecated This API call is for the ironSource Offerwall, which will soon be deprecated. Please migrate to the Tapjoy Offerwall using the 'Offerwall migration checklist'.
+     */
+    @Deprecated
     @NotImplemented("offerwallDidShow")
     public void offerwallDidShow() {}
+    /**
+     * @deprecated This API call is for the ironSource Offerwall, which will soon be deprecated. Please migrate to the Tapjoy Offerwall using the 'Offerwall migration checklist'.
+     */
+    @Deprecated
     @NotImplemented("offerwallDidFailToShowWithError:")
     public void offerwallDidFailToShow(NSError error) {}
+    /**
+     * @deprecated This API call is for the ironSource Offerwall, which will soon be deprecated. Please migrate to the Tapjoy Offerwall using the 'Offerwall migration checklist'.
+     */
+    @Deprecated
     @NotImplemented("offerwallDidClose")
     public void offerwallDidClose() {}
+    /**
+     * @deprecated This API call is for the ironSource Offerwall, which will soon be deprecated. Please migrate to the Tapjoy Offerwall using the 'Offerwall migration checklist'.
+     */
+    @Deprecated
     @NotImplemented("didReceiveOfferwallCredits:")
     public boolean didReceiveOfferwallCredits(NSDictionary<?, ?> creditInfo) { return false; }
+    /**
+     * @deprecated This API call is for the ironSource Offerwall, which will soon be deprecated. Please migrate to the Tapjoy Offerwall using the 'Offerwall migration checklist'.
+     */
+    @Deprecated
     @NotImplemented("didFailToReceiveOfferwallCreditsWithError:")
     public void didFailToReceiveOfferwallCredits(NSError error) {}
     /*</methods>*/

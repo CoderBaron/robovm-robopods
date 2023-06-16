@@ -129,7 +129,15 @@ import org.robovm.apple.coreanimation.*;
     public native void setLoadTimeOut(double loadTimeOut);
     @Method(selector = "isIronSource")
     public native boolean isIronSource();
+    @Method(selector = "setIsOneFlow:")
+    public native void setIsOneFlow(boolean isOneFlow);
     @Method(selector = "customNetworkAdapterNameForAdUnit:")
     public native String customNetworkAdapterNameForAdUnit(ISAdUnit adUnit);
+    @Method(selector = "adUnitSettings")
+    public native NSDictionary<?, ?> adUnitSettings();
+    @Method(selector = "demandSourceName")
+    public native String demandSourceName();
+    @Method(selector = "isOneFlow")
+    public native NSNumber isOneFlow();
     /*</methods>*/
 }

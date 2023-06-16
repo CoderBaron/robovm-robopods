@@ -48,7 +48,7 @@ import org.robovm.apple.coreanimation.*;
     public static final String IS_INTERSTITIAL = "interstitial";
     public static final String IS_OFFERWALL = "offerwall";
     public static final String IS_BANNER = "banner";
-    public static final String getSdkVersion = "7.3.0";
+    public static final String getSdkVersion = "7.3.1";
     public static final String DataSource_MOPUB = "MoPub";
     /*</constants>*/
     /*<constructors>*/
@@ -97,6 +97,10 @@ import org.robovm.apple.coreanimation.*;
     public static native void init(String appKey, NSArray<NSString> adUnits, ISInitializationDelegate delegate);
     @Method(selector = "initISDemandOnly:adUnits:")
     public static native void initISDemandOnly(String appKey, NSArray<NSString> adUnits);
+    /**
+     * @deprecated This API has been deprecated. Please use setLevelPlayRewardedVideoDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "setRewardedVideoDelegate:")
     public static native void setRewardedVideoDelegate(ISRewardedVideoDelegate delegate);
     @Method(selector = "setLevelPlayRewardedVideoDelegate:")
@@ -125,12 +129,20 @@ import org.robovm.apple.coreanimation.*;
     public static native void showISDemandOnlyRewardedVideo(UIViewController viewController, String instanceId);
     @Method(selector = "hasISDemandOnlyRewardedVideo:")
     public static native boolean hasISDemandOnlyRewardedVideo(String instanceId);
+    /**
+     * @deprecated This API has been deprecated. Please use setLevelPlayRewardedVideoManualDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "setRewardedVideoManualDelegate:")
     public static native void setRewardedVideoManualDelegate(ISRewardedVideoManualDelegate delegate);
     @Method(selector = "setLevelPlayRewardedVideoManualDelegate:")
     public static native void setLevelPlayRewardedVideoManualDelegate(LevelPlayRewardedVideoManualDelegate delegate);
     @Method(selector = "loadRewardedVideo")
     public static native void loadRewardedVideo();
+    /**
+     * @deprecated This API has been deprecated. Please use setLevelPlayInterstitialDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "setInterstitialDelegate:")
     public static native void setInterstitialDelegate(ISInterstitialDelegate delegate);
     @Method(selector = "setLevelPlayInterstitialDelegate:")
@@ -155,16 +167,40 @@ import org.robovm.apple.coreanimation.*;
     public static native void showISDemandOnlyInterstitial(UIViewController viewController, String instanceId);
     @Method(selector = "hasISDemandOnlyInterstitial:")
     public static native boolean hasISDemandOnlyInterstitial(String instanceId);
+    /**
+     * @deprecated This API call is for the ironSource Offerwall, which will soon be deprecated. Please migrate to the Tapjoy Offerwall using the 'Offerwall migration checklist'.
+     */
+    @Deprecated
     @Method(selector = "setOfferwallDelegate:")
     public static native void setOfferwallDelegate(ISOfferwallDelegate delegate);
+    /**
+     * @deprecated This API call is for the ironSource Offerwall, which will soon be deprecated. Please migrate to the Tapjoy Offerwall using the 'Offerwall migration checklist'.
+     */
+    @Deprecated
     @Method(selector = "showOfferwallWithViewController:")
     public static native void showOfferwallWithViewController$(UIViewController viewController);
+    /**
+     * @deprecated This API call is for the ironSource Offerwall, which will soon be deprecated. Please migrate to the Tapjoy Offerwall using the 'Offerwall migration checklist'.
+     */
+    @Deprecated
     @Method(selector = "showOfferwallWithViewController:placement:")
     public static native void showOfferwall(UIViewController viewController, String placementName);
+    /**
+     * @deprecated This API call is for the ironSource Offerwall, which will soon be deprecated. Please migrate to the Tapjoy Offerwall using the 'Offerwall migration checklist'.
+     */
+    @Deprecated
     @Method(selector = "offerwallCredits")
     public static native void offerwallCredits();
+    /**
+     * @deprecated This API call is for the ironSource Offerwall, which will soon be deprecated. Please migrate to the Tapjoy Offerwall using the 'Offerwall migration checklist'.
+     */
+    @Deprecated
     @Method(selector = "hasOfferwall")
     public static native boolean hasOfferwall();
+    /**
+     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use setLevelPlayBannerDelegate instead.
+     */
+    @Deprecated
     @Method(selector = "setBannerDelegate:")
     public static native void setBannerDelegate(ISBannerDelegate delegate);
     @Method(selector = "setLevelPlayBannerDelegate:")
@@ -211,5 +247,7 @@ import org.robovm.apple.coreanimation.*;
     public static native NSNumber getConversionValue();
     @Method(selector = "launchTestSuite:")
     public static native void launchTestSuite(UIViewController viewController);
+    @Method(selector = "setWaterfallConfiguration:forAdUnit:")
+    public static native void setWaterfallConfiguration(ISWaterfallConfiguration waterfallConfiguration, ISAdUnit adUnit);
     /*</methods>*/
 }

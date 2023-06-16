@@ -34,9 +34,11 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
+/**
+ * @deprecated This class is for the ironSource Offerwall, which will soon be deprecated. Please migrate to the Tapjoy Offerwall using the 'Offerwall migration checklist'.
+ */
 /*</javadoc>*/
-/*<annotations>*//*</annotations>*/
+/*<annotations>*/@Deprecated/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ interface /*<name>*/ISOfferwallDelegate/*</name>*/ 
     /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
@@ -49,16 +51,40 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
+    /**
+     * @deprecated This API call is for the ironSource Offerwall, which will soon be deprecated. Please migrate to the Tapjoy Offerwall using the 'Offerwall migration checklist'.
+     */
+    @Deprecated
     @Method(selector = "offerwallHasChangedAvailability:")
     void offerwallHasChangedAvailability(boolean available);
+    /**
+     * @deprecated This API call is for the ironSource Offerwall, which will soon be deprecated. Please migrate to the Tapjoy Offerwall using the 'Offerwall migration checklist'.
+     */
+    @Deprecated
     @Method(selector = "offerwallDidShow")
     void offerwallDidShow();
+    /**
+     * @deprecated This API call is for the ironSource Offerwall, which will soon be deprecated. Please migrate to the Tapjoy Offerwall using the 'Offerwall migration checklist'.
+     */
+    @Deprecated
     @Method(selector = "offerwallDidFailToShowWithError:")
     void offerwallDidFailToShow(NSError error);
+    /**
+     * @deprecated This API call is for the ironSource Offerwall, which will soon be deprecated. Please migrate to the Tapjoy Offerwall using the 'Offerwall migration checklist'.
+     */
+    @Deprecated
     @Method(selector = "offerwallDidClose")
     void offerwallDidClose();
+    /**
+     * @deprecated This API call is for the ironSource Offerwall, which will soon be deprecated. Please migrate to the Tapjoy Offerwall using the 'Offerwall migration checklist'.
+     */
+    @Deprecated
     @Method(selector = "didReceiveOfferwallCredits:")
     boolean didReceiveOfferwallCredits(NSDictionary<?, ?> creditInfo);
+    /**
+     * @deprecated This API call is for the ironSource Offerwall, which will soon be deprecated. Please migrate to the Tapjoy Offerwall using the 'Offerwall migration checklist'.
+     */
+    @Deprecated
     @Method(selector = "didFailToReceiveOfferwallCreditsWithError:")
     void didFailToReceiveOfferwallCredits(NSError error);
     /*</methods>*/
