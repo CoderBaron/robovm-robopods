@@ -48,7 +48,7 @@ v1.32.0 - in development
 | [BranchMetrics](branchmetrics/) | 2.1.2   |
 | [Charts](charts/)               | 5.0.0   |
 | [ClearAds](clearads/)           | 3.1.8   |
-| [Facebook](facebook/)           | 16.1.0  |
+| [Facebook](facebook/)           | 16.1.1  |
 | [Firebase](firebase/)           | 10.11.0 |
 | [Fyber](fyber/)                 | 8.2.2   |
 | [HelpShiftX](helpshift/)        | 10.2.2  |
