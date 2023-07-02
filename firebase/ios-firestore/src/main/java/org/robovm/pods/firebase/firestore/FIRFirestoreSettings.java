@@ -85,9 +85,9 @@ import org.robovm.apple.dispatch.*;
     @Property(selector = "setCacheSizeBytes:")
     public native void setCacheSizeBytes(long v);
     @Property(selector = "cacheSettings")
-    public native <T0 extends Object & FIRLocalCacheSettings & NSObjectProtocol> T0 getCacheSettings();
+    public native FIRLocalCacheSettings getCacheSettings();
     @Property(selector = "setCacheSettings:")
-    public native <T0 extends Object & FIRLocalCacheSettings & NSObjectProtocol> void setCacheSettings(T0 v);
+    public native void setCacheSettings(FIRLocalCacheSettings v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

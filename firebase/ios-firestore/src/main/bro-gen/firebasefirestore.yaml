@@ -101,7 +101,10 @@ classes:
                 name: setIndexConfigurationFromStream
             '+firestoreForApp:database:':
                 name: firestoreForApp
-    FIRFirestoreSettings: {}
+    FIRFirestoreSettings:
+        properties:
+            cacheSettings:
+                type: FIRLocalCacheSettings
     FIRGeoPoint:
         methods:
             '-initWithLatitude:longitude:':
