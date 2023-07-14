@@ -78,6 +78,14 @@ import org.robovm.apple.storekit.*;
     public native void setSessionInitWithBranchUniversalObjectCallback(@Block VoidBlock3<BranchUniversalObject, BranchLinkProperties, NSError> v);
     @Property(selector = "serverInterface")
     public native BNCServerInterface getServerInterface();
+    @Property(selector = "installUserId")
+    public native String getInstallUserId();
+    @Property(selector = "setInstallUserId:")
+    public native void setInstallUserId(String v);
+    @Property(selector = "setIdentityCallback")
+    public native @Block VoidBlock2<NSDictionary<?, ?>, NSError> getSetIdentityCallback();
+    @Property(selector = "setSetIdentityCallback:")
+    public native void setSetIdentityCallback(@Block VoidBlock2<NSDictionary<?, ?>, NSError> v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -154,12 +162,6 @@ import org.robovm.apple.storekit.*;
     public native void setAllowedSchemes(NSArray<?> schemes);
     @Method(selector = "registerFacebookDeepLinkingClass:")
     public native void registerFacebookDeepLinkingClass(NSObject FBSDKAppLinkUtility);
-    @Method(selector = "delayInitToCheckForSearchAds")
-    public native void delayInitToCheckForSearchAds();
-    @Method(selector = "useLongerWaitForAppleSearchAds")
-    public native void useLongerWaitForAppleSearchAds();
-    @Method(selector = "ignoreAppleSearchAdsTestData")
-    public native void ignoreAppleSearchAdsTestData();
     @Method(selector = "checkPasteboardOnInstall")
     public native void checkPasteboardOnInstall();
     @Method(selector = "willShowPasteboardToast")
@@ -548,9 +550,5 @@ import org.robovm.apple.storekit.*;
     public static native boolean trackingDisabled();
     @Method(selector = "setReferrerGbraidValidityWindow:")
     public static native void setReferrerGbraidValidityWindow(double validityWindow);
-    @Method(selector = "setLogInAppPurchasesAsEventsEnabled:")
-    public static native void setLogInAppPurchasesAsEventsEnabled(boolean enabled);
-    @Method(selector = "logInAppPurchasesBranchEventsEnabled")
-    public static native boolean logInAppPurchasesBranchEventsEnabled();
     /*</methods>*/
 }

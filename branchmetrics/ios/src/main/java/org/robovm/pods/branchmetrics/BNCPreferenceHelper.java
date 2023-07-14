@@ -126,10 +126,6 @@ import org.robovm.apple.storekit.*;
     public native boolean isCheckedFacebookAppLinks();
     @Property(selector = "setCheckedFacebookAppLinks:")
     public native void setCheckedFacebookAppLinks(boolean v);
-    @Property(selector = "checkedAppleSearchAdAttribution")
-    public native boolean isCheckedAppleSearchAdAttribution();
-    @Property(selector = "setCheckedAppleSearchAdAttribution:")
-    public native void setCheckedAppleSearchAdAttribution(boolean v);
     @Property(selector = "appleAttributionTokenChecked")
     public native boolean isAppleAttributionTokenChecked();
     @Property(selector = "setAppleAttributionTokenChecked:")
@@ -162,14 +158,6 @@ import org.robovm.apple.storekit.*;
     public native NSMutableDictionary<?, ?> getSavedAnalyticsData();
     @Property(selector = "setSavedAnalyticsData:")
     public native void setSavedAnalyticsData(NSMutableDictionary<?, ?> v);
-    @Property(selector = "appleSearchAdDetails")
-    public native NSDictionary<?, ?> getAppleSearchAdDetails();
-    @Property(selector = "setAppleSearchAdDetails:")
-    public native void setAppleSearchAdDetails(NSDictionary<?, ?> v);
-    @Property(selector = "appleSearchAdNeedsSend")
-    public native boolean isAppleSearchAdNeedsSend();
-    @Property(selector = "setAppleSearchAdNeedsSend:")
-    public native void setAppleSearchAdNeedsSend(boolean v);
     @Property(selector = "lastSystemBuildVersion")
     public native String getLastSystemBuildVersion();
     @Property(selector = "setLastSystemBuildVersion:")
@@ -258,10 +246,6 @@ import org.robovm.apple.storekit.*;
     public native boolean isInvokeRegisterApp();
     @Property(selector = "setInvokeRegisterApp:")
     public native void setInvokeRegisterApp(boolean v);
-    @Property(selector = "logInAppPurchasesAsBranchEvents")
-    public native boolean isLogInAppPurchasesAsBranchEvents();
-    @Property(selector = "setLogInAppPurchasesAsBranchEvents:")
-    public native void setLogInAppPurchasesAsBranchEvents(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

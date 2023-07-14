@@ -62,5 +62,9 @@ import org.robovm.apple.storekit.*;
     public native NSDictionary<NSString, NSString> deviceDescription();
     @Method(selector = "instance")
     public static native BranchPluginSupport instance();
+    @Method(selector = "setAPIUrl:")
+    public static native void setAPIUrl(String url);
+    @Method(selector = "setCDNBaseUrl:")
+    public static native void setCDNBaseUrl(String url);
     /*</methods>*/
 }
