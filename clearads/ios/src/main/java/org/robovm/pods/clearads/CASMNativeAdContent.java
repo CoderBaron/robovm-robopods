@@ -36,7 +36,7 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC18CleverAdsSolutions19CASMNativeAdContent")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/CASMNativeAdContent/*</name>*/ 
     extends /*<extends>*/CASNativeAdContent/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
@@ -50,74 +50,11 @@ import org.robovm.apple.coreanimation.*;
     protected CASMNativeAdContent(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "headline")
-    public native String getHeadline();
-    @Property(selector = "setHeadline:")
-    public native void setHeadline(String v);
-    @Property(selector = "body")
-    public native String getBody();
-    @Property(selector = "setBody:")
-    public native void setBody(String v);
-    @Property(selector = "callToAction")
-    public native String getCallToAction();
-    @Property(selector = "setCallToAction:")
-    public native void setCallToAction(String v);
-    @Property(selector = "icon")
-    public native UIImage getIcon();
-    @Property(selector = "setIcon:")
-    public native void setIcon(UIImage v);
-    @Property(selector = "iconURL")
-    public native NSURL getIconURL();
-    @Property(selector = "setIconURL:")
-    public native void setIconURL(NSURL v);
-    @Property(selector = "starRating")
-    public native NSNumber getStarRating();
-    @Property(selector = "setStarRating:")
-    public native void setStarRating(NSNumber v);
-    @Property(selector = "advertiser")
-    public native String getAdvertiser();
-    @Property(selector = "setAdvertiser:")
-    public native void setAdvertiser(String v);
-    @Property(selector = "store")
-    public native String getStore();
-    @Property(selector = "setStore:")
-    public native void setStore(String v);
-    @Property(selector = "price")
-    public native String getPrice();
-    @Property(selector = "setPrice:")
-    public native void setPrice(String v);
-    @Property(selector = "hasVideoContent")
-    public native boolean hasVideoContent();
-    @Property(selector = "setHasVideoContent:")
-    public native void setHasVideoContent(boolean v);
-    @Property(selector = "mediaContentAspectRatio")
-    public native @MachineSizedFloat double getMediaContentAspectRatio();
-    @Property(selector = "setMediaContentAspectRatio:")
-    public native void setMediaContentAspectRatio(@MachineSizedFloat double v);
-    @Property(selector = "mediaImage")
-    public native UIImage getMediaImage();
-    @Property(selector = "setMediaImage:")
-    public native void setMediaImage(UIImage v);
-    @Property(selector = "mediaImageURL")
-    public native NSURL getMediaImageURL();
-    @Property(selector = "setMediaImageURL:")
-    public native void setMediaImageURL(NSURL v);
-    @Property(selector = "reviewCount")
-    public native String getReviewCount();
-    @Property(selector = "setReviewCount:")
-    public native void setReviewCount(String v);
-    @Property(selector = "adLabel")
-    public native String getAdLabel();
-    @Property(selector = "setAdLabel:")
-    public native void setAdLabel(String v);
-    @Property(selector = "adChoicesContent")
-    public native UIView getAdChoicesContent();
-    @Property(selector = "setAdChoicesContent:")
-    public native void setAdChoicesContent(UIView v);
+    @Property(selector = "mediaContent")
+    public native UIView getMediaContent();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "createMediaContentView")
-    public native UIView createMediaContentView();
+    
     /*</methods>*/
 }

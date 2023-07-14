@@ -54,6 +54,54 @@ import org.robovm.apple.coreanimation.*;
     public CASNativeView(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "headlineView")
+    public native UILabel getHeadlineView();
+    @Property(selector = "setHeadlineView:")
+    public native void setHeadlineView(UILabel v);
+    @Property(selector = "callToActionView")
+    public native UIButton getCallToActionView();
+    @Property(selector = "setCallToActionView:")
+    public native void setCallToActionView(UIButton v);
+    @Property(selector = "iconView")
+    public native UIImageView getIconView();
+    @Property(selector = "setIconView:")
+    public native void setIconView(UIImageView v);
+    @Property(selector = "bodyView")
+    public native UILabel getBodyView();
+    @Property(selector = "setBodyView:")
+    public native void setBodyView(UILabel v);
+    @Property(selector = "priceView")
+    public native UILabel getPriceView();
+    @Property(selector = "setPriceView:")
+    public native void setPriceView(UILabel v);
+    @Property(selector = "advertiserView")
+    public native UILabel getAdvertiserView();
+    @Property(selector = "setAdvertiserView:")
+    public native void setAdvertiserView(UILabel v);
+    @Property(selector = "storeView")
+    public native UILabel getStoreView();
+    @Property(selector = "setStoreView:")
+    public native void setStoreView(UILabel v);
+    @Property(selector = "mediaView")
+    public native UIView getMediaView();
+    @Property(selector = "setMediaView:")
+    public native void setMediaView(UIView v);
+    @Property(selector = "starRatingView")
+    public native UIView getStarRatingView();
+    @Property(selector = "setStarRatingView:")
+    public native void setStarRatingView(UIView v);
+    @Property(selector = "reviewCountView")
+    public native UILabel getReviewCountView();
+    @Property(selector = "setReviewCountView:")
+    public native void setReviewCountView(UILabel v);
+    @Property(selector = "adLabelView")
+    public native UILabel getAdLabelView();
+    @Property(selector = "setAdLabelView:")
+    public native void setAdLabelView(UILabel v);
+    @Property(selector = "adChoicesView")
+    public native UIView getAdChoicesView();
+    @Property(selector = "setAdChoicesView:")
+    public native void setAdChoicesView(UIView v);
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();
