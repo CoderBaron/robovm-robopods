@@ -613,6 +613,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FBSDKTransfo
 - (void)callCapiGatewayAPIWith:(NSDictionary<NSString *, id> * _Nonnull)parameters userAgent:(NSString * _Nonnull)userAgent;
 @end
 
+
+SWIFT_PROTOCOL_NAMED("MACARuleMatching")
+@protocol FBSDKMACARuleMatching
+- (void)enable;
+- (NSDictionary * _Nullable)processParameters:(NSDictionary * _Nullable)params event:(NSString * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
+@end
+
 @class NSDate;
 @class FBSDKUserAgeRange;
 @class FBSDKLocation;

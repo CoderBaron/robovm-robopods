@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>robopods-facebook-login-ios</artifactId>
-    <name>RoboPods Facebook Login iOS v16.1.1</name>
+    <name>RoboPods Facebook Login iOS v16.1.3</name>
     <packaging>jar</packaging>
 
     <licenses>

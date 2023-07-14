@@ -845,6 +845,8 @@ protocols:
                 name: fb_removeItem
             '-fb_contentsOfDirectoryAtPath:error:':
                 name: fb_contentsOfDirectory
+    FBSDKMACARuleMatching:
+        exclude: true #INTERNAL - DO NOT USE
     FBSDKAEMReporter:
         exclude: true #INTERNAL - DO NOT USE
     FBSDKATEPublisherCreating:
