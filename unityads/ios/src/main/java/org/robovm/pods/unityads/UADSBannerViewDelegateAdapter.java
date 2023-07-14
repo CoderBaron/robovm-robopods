@@ -53,6 +53,8 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @NotImplemented("bannerViewDidLoad:")
     public void bannerViewDidLoad(UADSBannerView bannerView) {}
+    @NotImplemented("bannerViewDidShow:")
+    public void bannerViewDidShow(UADSBannerView bannerView) {}
     @NotImplemented("bannerViewDidClick:")
     public void bannerViewDidClick(UADSBannerView bannerView) {}
     @NotImplemented("bannerViewDidLeaveApplication:")
