@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>robopods-appcenter-crashes-ios</artifactId>
-    <name>RoboPods Microsoft AppCenter Crashes iOS v5.0.2</name>
+    <name>RoboPods Microsoft AppCenter Crashes iOS v5.0.3</name>
     <packaging>jar</packaging>
 
     <licenses>
