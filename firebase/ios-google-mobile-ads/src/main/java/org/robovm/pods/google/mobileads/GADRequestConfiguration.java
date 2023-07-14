@@ -60,14 +60,30 @@ import org.robovm.apple.webkit.*;
     public native NSArray<NSString> getTestDeviceIdentifiers();
     @Property(selector = "setTestDeviceIdentifiers:")
     public native void setTestDeviceIdentifiers(NSArray<NSString> v);
+    @Property(selector = "tagForUnderAgeOfConsent")
+    public native NSNumber getTagForUnderAgeOfConsent();
+    @Property(selector = "setTagForUnderAgeOfConsent:")
+    public native void setTagForUnderAgeOfConsent(NSNumber v);
+    @Property(selector = "tagForChildDirectedTreatment")
+    public native NSNumber getTagForChildDirectedTreatment();
+    @Property(selector = "setTagForChildDirectedTreatment:")
+    public native void setTagForChildDirectedTreatment(NSNumber v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "tagForUnderAgeOfConsent:")
-    public native void tagForUnderAgeOfConsent(boolean underAgeOfConsent);
-    @Method(selector = "tagForChildDirectedTreatment:")
-    public native void tagForChildDirectedTreatment(boolean childDirectedTreatment);
     @Method(selector = "setSameAppKeyEnabled:")
     public native void setSameAppKeyEnabled(boolean enabled);
+    /**
+     * @deprecated This method is deprecated. Use the tagForUnderAgeOfConsent property instead. Calling this method internally sets the property.
+     */
+    @Deprecated
+    @Method(selector = "tagForUnderAgeOfConsent:")
+    public native void tagForUnderAgeOfConsent(boolean underAgeOfConsent);
+    /**
+     * @deprecated This method is deprecated. Use the tagForChildDirectedTreatment property instead. PCalling this method internally sets the property.
+     */
+    @Deprecated
+    @Method(selector = "tagForChildDirectedTreatment:")
+    public native void tagForChildDirectedTreatment(boolean childDirectedTreatment);
     /*</methods>*/
 }

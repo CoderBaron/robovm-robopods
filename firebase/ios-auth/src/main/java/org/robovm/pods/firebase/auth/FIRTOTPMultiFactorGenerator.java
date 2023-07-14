@@ -35,36 +35,28 @@ import org.robovm.apple.uikit.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FIRMultiFactor/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FIRTOTPMultiFactorGenerator/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class FIRMultiFactorPtr extends Ptr<FIRMultiFactor, FIRMultiFactorPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(FIRMultiFactor.class); }/*</bind>*/
+    /*<ptr>*/public static class FIRTOTPMultiFactorGeneratorPtr extends Ptr<FIRTOTPMultiFactorGenerator, FIRTOTPMultiFactorGeneratorPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(FIRTOTPMultiFactorGenerator.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FIRMultiFactor() {}
-    protected FIRMultiFactor(Handle h, long handle) { super(h, handle); }
-    protected FIRMultiFactor(SkipInit skipInit) { super(skipInit); }
+    public FIRTOTPMultiFactorGenerator() {}
+    protected FIRTOTPMultiFactorGenerator(Handle h, long handle) { super(h, handle); }
+    protected FIRTOTPMultiFactorGenerator(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "enrolledFactors")
-    public native NSArray<FIRMultiFactorInfo> getEnrolledFactors();
+    
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @GlobalValue(symbol="FIRPhoneMultiFactorID", optional=true)
-    public static native String getPhoneFactorID();
-    @GlobalValue(symbol="FIRTOTPMultiFactorID", optional=true)
-    public static native String getTOTPFactorID();
-    
-    @Method(selector = "getSessionWithCompletion:")
-    public native void getSession(@Block VoidBlock2<FIRMultiFactorSession, NSError> completion);
-    @Method(selector = "enrollWithAssertion:displayName:completion:")
-    public native void enroll(FIRMultiFactorAssertion assertion, String displayName, @Block VoidBlock1<NSError> completion);
-    @Method(selector = "unenrollWithInfo:completion:")
-    public native void unenroll(FIRMultiFactorInfo factorInfo, @Block VoidBlock1<NSError> completion);
-    @Method(selector = "unenrollWithFactorUID:completion:")
-    public native void unenroll(String factorUID, @Block VoidBlock1<NSError> completion);
+    @Method(selector = "generateSecretWithMultiFactorSession:completion:")
+    public static native void generateSecret(FIRMultiFactorSession session, @Block VoidBlock2<FIRTOTPSecret, NSError> completion);
+    @Method(selector = "assertionForEnrollmentWithSecret:oneTimePassword:")
+    public static native FIRTOTPMultiFactorAssertion assertionForEnrollment(FIRTOTPSecret secret, String oneTimePassword);
+    @Method(selector = "assertionForSignInWithEnrollmentID:oneTimePassword:")
+    public static native FIRTOTPMultiFactorAssertion assertionForSignIn(String enrollmentID, String oneTimePassword);
     /*</methods>*/
 }

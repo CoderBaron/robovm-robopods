@@ -35,36 +35,28 @@ import org.robovm.apple.uikit.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FIRMultiFactor/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FIRTOTPSecret/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class FIRMultiFactorPtr extends Ptr<FIRMultiFactor, FIRMultiFactorPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(FIRMultiFactor.class); }/*</bind>*/
+    /*<ptr>*/public static class FIRTOTPSecretPtr extends Ptr<FIRTOTPSecret, FIRTOTPSecretPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(FIRTOTPSecret.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FIRMultiFactor() {}
-    protected FIRMultiFactor(Handle h, long handle) { super(h, handle); }
-    protected FIRMultiFactor(SkipInit skipInit) { super(skipInit); }
+    public FIRTOTPSecret() {}
+    protected FIRTOTPSecret(Handle h, long handle) { super(h, handle); }
+    protected FIRTOTPSecret(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "enrolledFactors")
-    public native NSArray<FIRMultiFactorInfo> getEnrolledFactors();
+    
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @GlobalValue(symbol="FIRPhoneMultiFactorID", optional=true)
-    public static native String getPhoneFactorID();
-    @GlobalValue(symbol="FIRTOTPMultiFactorID", optional=true)
-    public static native String getTOTPFactorID();
-    
-    @Method(selector = "getSessionWithCompletion:")
-    public native void getSession(@Block VoidBlock2<FIRMultiFactorSession, NSError> completion);
-    @Method(selector = "enrollWithAssertion:displayName:completion:")
-    public native void enroll(FIRMultiFactorAssertion assertion, String displayName, @Block VoidBlock1<NSError> completion);
-    @Method(selector = "unenrollWithInfo:completion:")
-    public native void unenroll(FIRMultiFactorInfo factorInfo, @Block VoidBlock1<NSError> completion);
-    @Method(selector = "unenrollWithFactorUID:completion:")
-    public native void unenroll(String factorUID, @Block VoidBlock1<NSError> completion);
+    @Method(selector = "sharedSecretKey")
+    public native String sharedSecretKey();
+    @Method(selector = "generateQRCodeURLWithAccountName:issuer:")
+    public native String generateQRCode(String accountName, String issuer);
+    @Method(selector = "openInOTPAppWithQRCodeURL:")
+    public native void openInOTPApp(String QRCodeURL);
     /*</methods>*/
 }

@@ -220,6 +220,21 @@ classes:
             '-commitChangesWithCompletion:':
                 name: commitChanges
 
+    FIRTOTPMultiFactorAssertion: {}
+    FIRTOTPMultiFactorGenerator:
+        methods:
+            '+generateSecretWithMultiFactorSession:completion:':
+                name: generateSecret
+            '+assertionForEnrollmentWithSecret:oneTimePassword:':
+                name: assertionForEnrollment
+            '+assertionForSignInWithEnrollmentID:oneTimePassword:':
+                name: assertionForSignIn
+    FIRTOTPSecret:
+        methods:
+            '-generateQRCodeURLWithAccountName:issuer:':
+                name: generateQRCode
+            '-openInOTPAppWithQRCodeURL:':
+                name: openInOTPApp
 protocols:
     FIRAuthUIDelegate:
         methods:
@@ -296,6 +311,9 @@ values:
     FIRPhoneMultiFactorID:
         class: FIRMultiFactor
         name: getPhoneFactorID
+    FIRTOTPMultiFactorID:
+        class: FIRMultiFactor
+        name: getTOTPFactorID
 
     # Make sure we don't miss any values if new ones are introduced in a later version
     (.*):

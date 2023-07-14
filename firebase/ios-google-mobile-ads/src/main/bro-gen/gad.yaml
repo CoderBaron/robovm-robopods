@@ -555,6 +555,9 @@ functions:
     GADClosestValidSizeForAdSizes:
         class: GADAdSize
         name: getClosestValidSize
+    GADGetStringFromVersionNumber:
+        class: GADMobileAds
+        name: getStringFromVersionNumber
 
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):
