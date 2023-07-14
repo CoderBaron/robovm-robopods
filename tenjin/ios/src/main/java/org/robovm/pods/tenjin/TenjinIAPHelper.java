@@ -37,31 +37,33 @@ import org.robovm.apple.dispatch.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9TenjinSDK16TenjinRepository")/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/TenjinRepository/*</name>*/ 
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/TenjinIAPHelper/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements SKProductsRequestDelegate/*</implements>*/ {
 
-    /*<ptr>*/public static class TenjinRepositoryPtr extends Ptr<TenjinRepository, TenjinRepositoryPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(TenjinRepository.class); }/*</bind>*/
+    /*<ptr>*/public static class TenjinIAPHelperPtr extends Ptr<TenjinIAPHelper, TenjinIAPHelperPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(TenjinIAPHelper.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected TenjinRepository() {}
-    protected TenjinRepository(Handle h, long handle) { super(h, handle); }
-    protected TenjinRepository(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithApiKey:client:")
-    public TenjinRepository(String apiKey, TenjinImpl client) { super((SkipInit) null); initObject(init(apiKey, client)); }
+    public TenjinIAPHelper() {}
+    protected TenjinIAPHelper(Handle h, long handle) { super(h, handle); }
+    protected TenjinIAPHelper(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithApiKey:client:")
-    protected native @Pointer long init(String apiKey, TenjinImpl client);
-    @Method(selector = "setCacheEventsSetting:")
-    public static native void setCacheEventsSetting(boolean isRetryEventsEnabled);
-    @Method(selector = "getCacheEventsSetting")
-    public static native boolean getCacheEventsSetting();
+    @Method(selector = "getProductFor:withCompletion:")
+    public native void getProduct(String productIdentifier, @Block VoidBlock1<SKProduct> completion);
+    @Method(selector = "extractPropertiesFromProduct:to:")
+    public static native void extractProperties(SKProduct product, NSMutableDictionary<?, ?> props);
+    @Method(selector = "productsRequest:didReceiveResponse:")
+    public native void didReceiveResponse(SKProductsRequest request, SKProductsResponse response);
+    @Method(selector = "requestDidFinish:")
+    public native void didFinish(SKRequest request);
+    @Method(selector = "request:didFailWithError:")
+    public native void didFail(SKRequest request, NSError error);
     /*</methods>*/
 }

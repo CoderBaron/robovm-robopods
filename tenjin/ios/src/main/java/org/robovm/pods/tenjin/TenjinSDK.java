@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.storekit.*;
 import org.robovm.apple.coredata.*;
+import org.robovm.apple.dispatch.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -191,5 +192,31 @@ import org.robovm.apple.coredata.*;
     public static native void registerAppForAdNetworkAttribution();
     @Method(selector = "requestTrackingAuthorizationWithCompletionHandler:")
     public static native void requestTrackingAuthorization(@Block("(@MachineSizedUInt)") VoidBlock1<Long> completion);
+    @Method(selector = "handleAdMobILRD::")
+    public static native void handleAdMobILRD(NSObject adView, org.robovm.pods.google.mobileads.GADAdValue adValue);
+    @Method(selector = "adMobImpressionFromJSON:")
+    public static native void adMobImpressionFromJSON(String jsonString);
+    @Method(selector = "subscribeAppLovinImpressions")
+    public static native void subscribeAppLovinImpressions();
+    @Method(selector = "appLovinImpressionFromJSON:")
+    public static native void appLovinImpressionFromJSON(String jsonString);
+    @Method(selector = "subscribeCASBannerImpressions")
+    public static native void subscribeCASBannerImpressions();
+    @Method(selector = "casImpressionFromJSON:")
+    public static native void casImpressionFromJSON(String jsonString);
+    @Method(selector = "handleCASILRD:")
+    public static native void handleCASILRD(NSObject adImpression);
+    @Method(selector = "hyperBidImpressionFromDict:")
+    public static native void hyperBidImpressionFromDict(NSDictionary<?, ?> adImpression);
+    @Method(selector = "hyperBidImpressionFromJSON:")
+    public static native void hyperBidImpressionFromJSON(String jsonString);
+    @Method(selector = "subscribeIronSourceImpressions")
+    public static native void subscribeIronSourceImpressions();
+    @Method(selector = "ironSourceImpressionFromJSON:")
+    public static native void ironSourceImpressionFromJSON(String jsonString);
+    @Method(selector = "topOnImpressionFromDict:")
+    public static native void topOnImpressionFromDict(NSDictionary<?, ?> adImpression);
+    @Method(selector = "topOnImpressionFromJSON:")
+    public static native void topOnImpressionFromJSON(String jsonString);
     /*</methods>*/
 }

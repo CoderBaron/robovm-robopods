@@ -37,30 +37,26 @@ import org.robovm.apple.dispatch.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9TenjinSDK16TenjinRepository")/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/TenjinRepository/*</name>*/ 
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9TenjinSDK16TenjinDatasource")/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/TenjinDatasource/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class TenjinRepositoryPtr extends Ptr<TenjinRepository, TenjinRepositoryPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(TenjinRepository.class); }/*</bind>*/
+    /*<ptr>*/public static class TenjinDatasourcePtr extends Ptr<TenjinDatasource, TenjinDatasourcePtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(TenjinDatasource.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected TenjinRepository() {}
-    protected TenjinRepository(Handle h, long handle) { super(h, handle); }
-    protected TenjinRepository(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithApiKey:client:")
-    public TenjinRepository(String apiKey, TenjinImpl client) { super((SkipInit) null); initObject(init(apiKey, client)); }
+    public TenjinDatasource() {}
+    protected TenjinDatasource(Handle h, long handle) { super(h, handle); }
+    protected TenjinDatasource(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithApiKey:client:")
-    protected native @Pointer long init(String apiKey, TenjinImpl client);
     @Method(selector = "setCacheEventsSetting:")
-    public static native void setCacheEventsSetting(boolean isRetryEventsEnabled);
+    public static native void setCacheEventsSetting(boolean isCacheEventsEnabled);
     @Method(selector = "getCacheEventsSetting")
     public static native boolean getCacheEventsSetting();
     /*</methods>*/

@@ -1,13 +1,20 @@
 package: org.robovm.pods.tenjin
 framework: TenjinSDK
-include: [foundation, uikit, storekit, coredata]
+include: [foundation, uikit, storekit, coredata, dispatch]
 clang_args: ['-x', 'objective-c']
 headers:
     - "#include <TargetConditionals.h>"
     - "#import <UIKit/UIKit.h>"
     - "#import <CoreData/CoreData.h>"
+    - TenjinImpl.h
     - TJNRequestSender.h
     - TenjinSDK-Swift.h
+    - TenjinSDK+AdMobILRD.h
+    - TenjinSDK+AppLovinILRD.h
+    - TenjinSDK+CASILRD.h
+    - TenjinSDK+HyperBidILRD.h
+    - TenjinSDK+IronSourceILRD.h
+    - TenjinSDK+TopOnILRD.h
 enums:
 
 private_typedefs:
@@ -71,16 +78,88 @@ classes:
         methods:
             '-initWithApiKey:':
                 name: init
+            '-initWithApiKey:client:':
+                name: init
             '-handlePostRequestWithEndpoint:params:':
                 name: handlePostRequest
     TenjinRepository:
         methods:
             '-initWithApiKey:':
-                name: iniWithApiKey$
+                name: init
+            '-initWithApiKey:client:':
+                name: init
+    TenjinDatasource: { }
+    TenjinImpl:
+        methods:
+            '-initWithToken:andSharedSecret:andAppSubversion:ping:requestSender:':
+                name: init
+            '-initWithToken:andSharedSecret:andAppSubversion:ping:':
+                name: init
+            '-pingWithDeferredDeeplink:':
+                name: ping
+            '-pingEventWithName:':
+                name: pingEvent
+            '-pingEventWithName:andIntegerValue:':
+                name: pingEvent
+            '-transactionWithProductName:andCurrencyCode:andQuantity:andUnitPrice:':
+                name: transaction
+            '-deviceDataWithEvent:':
+                name: deviceData
+            '-transaction:andReceipt:':
+                name: transaction
+            '-transactionWithProductName:andCurrencyCode:andQuantity:andUnitPrice:andTransactionId:andReceipt:':
+                name: transaction
+            '-transactionWithProductName:andCurrencyCode:andQuantity:andUnitPrice:andTransactionId:andBase64Receipt:':
+                name: transaction
+            '-trackConversionValue:coarseValue:lockWindow:hasLockWindow:':
+                name: trackConversionValue
+            '-setValue:forKey:':
+                name: setValue
+    PersistedFileStore: { }
+    TenjinConfig:
+        methods:
+            '-setValue:forKey:':
+                name: setValue
+    TenjinIAPHelper:
+        methods:
+            '-getProductFor:withCompletion:':
+                name: getProduct
+            '+extractPropertiesFromProduct:to:':
+                name: extractProperties
 protocols:
     TJNRequestSender:
-        exclude: true # from private headers
+        methods:
+            '-post:body:headers:':
+                name: post
+            '-method:url:body:':
+                name: method
+            '-method:url:body:headers:':
+                name: method
+            '-method:url:body:headers:completionBlock:':
+                name: method
 
+    DataStore:
+        methods:
+            '-getString:withDefault:':
+                name: getString
+            '-getInteger:withDefault:':
+                name: getInteger
+            '-getLong:withDefault:':
+                name: getLong
+            '-getFloat:withDefault:':
+                name: getFloat
+            '-getBool:withDefault:':
+                name: getBool
+            '-putString:value:':
+                name: putString
+            '-putInteger:value:':
+                name: putInteger
+            '-putLong:value:':
+                name: putLong
+            '-putFloat:value:':
+                name: putFloat
+            '-putBool:value:':
+                name: putBool
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):

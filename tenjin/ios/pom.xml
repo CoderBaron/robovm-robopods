@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>robopods-tenjin-ios</artifactId>
-    <name>RoboPods Tenjin SDK iOS v1.12.25</name>
+    <name>RoboPods Tenjin SDK iOS v1.12.26</name>
     <packaging>jar</packaging>
 
     <licenses>

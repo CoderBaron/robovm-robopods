@@ -37,31 +37,31 @@ import org.robovm.apple.dispatch.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9TenjinSDK16TenjinRepository")/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/TenjinRepository/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/TJNRequestSender/*</name>*/ 
+    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
-    /*<ptr>*/public static class TenjinRepositoryPtr extends Ptr<TenjinRepository, TenjinRepositoryPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(TenjinRepository.class); }/*</bind>*/
+    /*<ptr>*/
+    /*</ptr>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    protected TenjinRepository() {}
-    protected TenjinRepository(Handle h, long handle) { super(h, handle); }
-    protected TenjinRepository(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithApiKey:client:")
-    public TenjinRepository(String apiKey, TenjinImpl client) { super((SkipInit) null); initObject(init(apiKey, client)); }
-    /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "defaultPostCompletionBlock")
+    @Block VoidBlock4<NSData, NSURLResponse, NSError, Boolean> getDefaultPostCompletionBlock();
+    @Property(selector = "setDefaultPostCompletionBlock:")
+    void setDefaultPostCompletionBlock(@Block VoidBlock4<NSData, NSURLResponse, NSError, Boolean> v);
     /*</properties>*/
-    /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithApiKey:client:")
-    protected native @Pointer long init(String apiKey, TenjinImpl client);
-    @Method(selector = "setCacheEventsSetting:")
-    public static native void setCacheEventsSetting(boolean isRetryEventsEnabled);
-    @Method(selector = "getCacheEventsSetting")
-    public static native boolean getCacheEventsSetting();
+    @Method(selector = "post:body:headers:")
+    void post(String url, String body, NSDictionary<?, ?> headers);
+    @Method(selector = "method:url:body:")
+    void method(String method, String url, NSMutableString body);
+    @Method(selector = "method:url:body:headers:")
+    void method(String method, String url, String body, NSDictionary<?, ?> headers);
+    @Method(selector = "method:url:body:headers:completionBlock:")
+    void method(String method, String url, String body, NSDictionary<?, ?> headers, @Block VoidBlock4<NSData, NSURLResponse, NSError, Boolean> block);
     /*</methods>*/
+    /*<adapter>*/
+    /*</adapter>*/
 }
