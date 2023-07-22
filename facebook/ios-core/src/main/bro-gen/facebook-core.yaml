@@ -180,6 +180,8 @@ classes:
                 name: logPushNotificationOpen
             '-logProductItem:availability:condition:description:imageLink:link:title:priceAmount:currency:gtin:mpn:brand:parameters:':
                 name: logProductItem
+            '-activateApp':
+                name: activateApp # This declaration is needed because excluding FBSDKApplicationActivating also stops this method from generating
             '-requestForCustomAudienceThirdPartyIDWithAccessToken:':
                 name: requestForCustomAudienceThirdPartyID
             '-logInternalEvent:parameters:isImplicitlyLogged:':
@@ -654,7 +656,7 @@ protocols:
     FBSDKGraphErrorRecoveryProcessorDelegate:
         methods:
             '-processorDidAttemptRecovery:didRecover:error:':
-                name: didRecover
+                name: didAttemptRecovery
             '-processorWillProcessError:error:':
                 name: willProcessError
     FBSDKGraphRequest:

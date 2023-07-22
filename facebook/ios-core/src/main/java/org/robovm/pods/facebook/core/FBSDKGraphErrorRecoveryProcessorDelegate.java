@@ -54,7 +54,7 @@ import org.robovm.pods.facebook.corebasics.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "processorDidAttemptRecovery:didRecover:error:")
-    void didRecover(FBSDKGraphErrorRecoveryProcessor processor, boolean didRecover, NSError error);
+    void didAttemptRecovery(FBSDKGraphErrorRecoveryProcessor processor, boolean didRecover, NSError error);
     @Method(selector = "processorWillProcessError:error:")
     boolean willProcessError(FBSDKGraphErrorRecoveryProcessor processor, NSError error);
     /*</methods>*/

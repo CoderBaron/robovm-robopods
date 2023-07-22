@@ -56,7 +56,7 @@ import org.robovm.pods.facebook.corebasics.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("processorDidAttemptRecovery:didRecover:error:")
-    public void didRecover(FBSDKGraphErrorRecoveryProcessor processor, boolean didRecover, NSError error) {}
+    public void didAttemptRecovery(FBSDKGraphErrorRecoveryProcessor processor, boolean didRecover, NSError error) {}
     @NotImplemented("processorWillProcessError:error:")
     public boolean willProcessError(FBSDKGraphErrorRecoveryProcessor processor, NSError error) { return false; }
     /*</methods>*/
