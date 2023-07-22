@@ -117,8 +117,14 @@ import org.robovm.apple.uikit.*;
     public native void sendPasswordReset(String email, FIRActionCodeSettings actionCodeSettings, @Block VoidBlock1<NSError> completion);
     @Method(selector = "sendSignInLinkToEmail:actionCodeSettings:completion:")
     public native void sendSignInLink(String email, FIRActionCodeSettings actionCodeSettings, @Block VoidBlock1<NSError> completion);
+    public boolean signOut() throws NSErrorException {
+       NSError.NSErrorPtr ptr = new NSError.NSErrorPtr();
+       boolean result = signOut(ptr);
+       if (ptr.get() != null) { throw new NSErrorException(ptr.get()); }
+       return result;
+    }
     @Method(selector = "signOut:")
-    public native boolean signOut(NSError.NSErrorPtr error);
+    private native boolean signOut(NSError.NSErrorPtr error);
     @Method(selector = "isSignInWithEmailLink:")
     public native boolean isSignInWithEmailLink(String link);
     @Method(selector = "addAuthStateDidChangeListener:")
