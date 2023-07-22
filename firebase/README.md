@@ -13,6 +13,7 @@ Firebase gives you functionality like analytics, databases, messaging and crash 
 | [ios-database](ios-database/)                                                    | Firebase iOS DataBase                          | 10.11.0  |
 | [ios-dylinks](ios-dylinks/)                                                      | Firebase iOS Dynamic Links                     | 10.11.0  |
 | [ios-firestore](ios-firestore/)                                                  | Firebase iOS Firestore                         | 10.11.0  |
+| [ios-installations](ios-installations/)                                          | Firebase iOS Installations                     | 10.11.0  |
 | [ios-mobile ads](ios-google-mobile-ads/)                                         | Firebase iOS Google Mobile Ads                 | 10.6.0   |
 | [ios-mobile ads-adapters](ios-google-mobile-ads-adapters/)                       | Firebase iOS AdMob Adapters                    |          |
 | [ios-mobile ads-mediation-testsuite](ios-google-mobile-ads-mediation-testsuite/) | Firebase iOS Google AdMob Mediation Test Suite | 2.0.0    |

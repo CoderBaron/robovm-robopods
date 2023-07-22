@@ -22,6 +22,7 @@
     <modules>
         <module>ios-core</module>
         <module>ios-analytics</module>
+        <module>ios-installations</module>
         <module>ios-database</module>
         <module>ios-google-mobile-ads</module>
         <module>ios-crashlytics</module>
