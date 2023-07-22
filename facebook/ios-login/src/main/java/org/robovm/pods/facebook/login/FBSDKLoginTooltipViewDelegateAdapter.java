@@ -57,8 +57,8 @@ import org.robovm.pods.facebook.corebasics.*;
     @NotImplemented("loginTooltipView:shouldAppear:")
     public boolean shouldAppear(FBSDKLoginTooltipView view, boolean appIsEligible) { return false; }
     @NotImplemented("loginTooltipViewWillAppear:")
-    public void loginTooltipViewWillAppear(FBSDKLoginTooltipView view) {}
+    public void willAppear(FBSDKLoginTooltipView view) {}
     @NotImplemented("loginTooltipViewWillNotAppear:")
-    public void loginTooltipViewWillNotAppear(FBSDKLoginTooltipView view) {}
+    public void willNotAppear(FBSDKLoginTooltipView view) {}
     /*</methods>*/
 }

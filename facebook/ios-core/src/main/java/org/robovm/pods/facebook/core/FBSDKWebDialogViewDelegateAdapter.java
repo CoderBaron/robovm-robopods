@@ -60,8 +60,8 @@ import org.robovm.pods.facebook.corebasics.*;
     @NotImplemented("webDialogView:didFailWithError:")
     public void didFail(FBSDKWebDialogView webDialogView, NSError error) {}
     @NotImplemented("webDialogViewDidCancel:")
-    public void webDialogViewDidCancel(FBSDKWebDialogView webDialogView) {}
+    public void didCancel(FBSDKWebDialogView webDialogView) {}
     @NotImplemented("webDialogViewDidFinishLoad:")
-    public void webDialogViewDidFinishLoad(FBSDKWebDialogView webDialogView) {}
+    public void didFinishLoad(FBSDKWebDialogView webDialogView) {}
     /*</methods>*/
 }

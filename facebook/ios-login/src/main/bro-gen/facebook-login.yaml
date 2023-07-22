@@ -183,10 +183,18 @@ protocols:
         methods:
             '-loginButton:didCompleteWithResult:error:':
                 name: didComplete
+            '-loginButtonDidLogOut:':
+                name: didLogOut
+            '-loginButtonWillLogin:':
+                name: willLogin
     FBSDKLoginTooltipViewDelegate:
         methods:
             '-loginTooltipView:shouldAppear:':
                 name: shouldAppear
+            '-loginTooltipViewWillAppear:':
+                name: willAppear
+            '-loginTooltipViewWillNotAppear:':
+                name: willNotAppear
     FBSDKLoginProviding:
         methods:
             '-logInFromViewController:configuration:completion:':

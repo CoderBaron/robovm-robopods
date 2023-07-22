@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.robovm.pods.facebook.share;
+package org.robovm.pods.facebook.gamingservices;
 
 /*<imports>*/
 import java.io.*;
@@ -28,38 +28,39 @@ import org.robovm.rt.bro.*;
 import org.robovm.rt.bro.annotation.*;
 import org.robovm.rt.bro.ptr.*;
 import org.robovm.apple.foundation.*;
-import org.robovm.apple.dispatch.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
-import org.robovm.apple.photos.*;
-import org.robovm.apple.coreanimation.*;
 import org.robovm.pods.facebook.corebasics.*;
 import org.robovm.pods.facebook.core.*;
+import org.robovm.pods.facebook.share.*;
 /*</imports>*/
 
 /*<javadoc>*/
+
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKSharingDelegateAdapter/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKSharingDelegate/*</implements>*/ {
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/FBSDKDialog/*</name>*/ 
+    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*//*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "delegate")
+    FBSDKContextDialogDelegate getDelegate();
+    @Property(selector = "setDelegate:", strongRef = true)
+    void setDelegate(FBSDKContextDialogDelegate v);
+    @Property(selector = "dialogContent")
+    FBSDKValidatable getDialogContent();
+    @Property(selector = "setDialogContent:")
+    void setDialogContent(FBSDKValidatable v);
     /*</properties>*/
-    /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("sharer:didCompleteWithResults:")
-    public void didComplete(FBSDKSharing sharer, NSDictionary<NSString, ?> results) {}
-    @NotImplemented("sharer:didFailWithError:")
-    public void didFail(FBSDKSharing sharer, NSError error) {}
-    @NotImplemented("sharerDidCancel:")
-    public void didCancel(FBSDKSharing sharer) {}
+    @Method(selector = "show")
+    boolean show();
     /*</methods>*/
+    /*<adapter>*/
+    /*</adapter>*/
 }

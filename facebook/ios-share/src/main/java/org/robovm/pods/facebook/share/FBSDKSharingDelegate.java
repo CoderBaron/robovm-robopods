@@ -58,7 +58,7 @@ import org.robovm.pods.facebook.core.*;
     @Method(selector = "sharer:didFailWithError:")
     void didFail(FBSDKSharing sharer, NSError error);
     @Method(selector = "sharerDidCancel:")
-    void sharerDidCancel(FBSDKSharing sharer);
+    void didCancel(FBSDKSharing sharer);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

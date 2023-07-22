@@ -58,9 +58,9 @@ import org.robovm.pods.facebook.corebasics.*;
     @Method(selector = "webDialogView:didFailWithError:")
     void didFail(FBSDKWebDialogView webDialogView, NSError error);
     @Method(selector = "webDialogViewDidCancel:")
-    void webDialogViewDidCancel(FBSDKWebDialogView webDialogView);
+    void didCancel(FBSDKWebDialogView webDialogView);
     @Method(selector = "webDialogViewDidFinishLoad:")
-    void webDialogViewDidFinishLoad(FBSDKWebDialogView webDialogView);
+    void didFinishLoad(FBSDKWebDialogView webDialogView);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

@@ -1,0 +1,292 @@
+package: org.robovm.pods.facebook.gamingservices
+framework: FBSDKGamingServicesKit
+include:
+    - foundation
+    - coregraphics
+    - uikit
+    - ../../../../ios-core-basics/src/main/bro-gen/facebook-core-basics.yaml
+    - ../../../../ios-core/src/main/bro-gen/facebook-core.yaml
+    - ../../../../ios-share/src/main/bro-gen/facebook-share.yaml
+clang_args: ['-x', 'objective-c', '-fobjc-arc', '-Ffacebook/ios-aem/src/main/bro-gen/']
+headers:
+    - "#include <FBSDKCoreKit/FBSDKCoreKit.h>"
+    - "#include <FBSDKCoreKit/FBSDKCoreKit-Swift.h>"
+    - "#include <FBSDKShareKit/FBSDKShareKit.h>"
+    - "#include <FBSDKShareKit/FBSDKShareKit-Swift.h>"
+    - FBSDKGamingServicesKit-Swift.h
+
+private_typedefs:
+
+enums:
+    FBSDKChooseContextFilter: {}
+    FBSDKGameRequestActionType: {}
+    FBSDKGameRequestFilter: {}
+    _FBSDKTournamentScoreType: { exclude: true }
+    _FBSDKTournamentSortOrder: { exclude: true }
+
+typed_enums:
+
+classes:
+    FBSDKChooseContextContent:
+        methods:
+            '+filtersNameForFilters:':
+                name: getFiltersName
+    FBSDKChooseContextDialog:
+        methods:
+            '-initWithContent:delegate:': # store delegate
+                name: init
+            '-application:openURL:sourceApplication:annotation:':
+                name: openURL
+            '-canOpenURL:forApplication:sourceApplication:annotation:':
+                name: canOpenURL
+            '-applicationDidBecomeActive:':
+                name: didBecomeActive
+            '-validateAndReturnError:':
+                name: validate
+                throws: NSErrorException
+    FBSDKContextDialogPresenter:
+        methods:
+            '-makeAndShowCreateContextDialogWithContent:delegate:error:': # store delegate
+                name: makeAndShowCreateContextDialog
+                throws: NSErrorException
+            '-makeAndShowSwitchContextDialogWithContent:delegate:error:': # store delegate
+                name: makeAndShowSwitchContextDialog
+                throws: NSErrorException
+            '-makeAndShowChooseContextDialogWithContent:delegate:': # store delegate
+                name: makeAndShowChooseContextDialog
+            '+showCreateContextDialogWithContent:delegate:':
+                exclude: true # deprecated
+            '+showSwitchContextDialogWithContent:delegate:':
+                exclude: true # deprecated
+            '+showChooseContextDialogWithContent:delegate:':
+                exclude: true # deprecated
+            '+showChooseContextDialogWith:delegate:':
+                exclude: true # deprecated
+            '+createContextDialogWithContent:delegate:':
+                exclude: true # deprecated
+            '+switchContextDialogWithContent:delegate:':
+                exclude: true # deprecated
+    FBSDKContextWebDialog:
+        properties:
+            currentWebDialog:
+                exclude: true
+        methods:
+            '-webDialog:didCompleteWithResults:':
+                name: didComplete
+                exclude: true
+            '-webDialog:didFailWithError:':
+                name: didFail
+                exclude: true
+            '-webDialogDidCancel:':
+                name: didCancel
+                exclude: true
+            '-createWebDialogFrameWithWidth:height:windowFinder:':
+                exclude: true
+            '-validateAndReturnError:':
+                name: validate
+                throws: NSErrorException
+    FBSDKCreateContextContent:
+        methods:
+            '-initDialogContentWithPlayerID:':
+                name: init
+                exclude: true
+    FBSDKCreateContextDialog:
+        methods:
+            '-initWithContent:windowFinder:delegate:': # store delegate
+                name: init
+    FBSDKFriendFinderDialog:
+        methods:
+            '+launchFriendFinderDialogWithCompletionHandler:':
+                name: launchFriendFinderDialog
+    FBSDKGameRequestContent:
+        properties:
+            '(recipients|recipientSuggestions)':
+                type: List<String>
+                marshaler: NSArray.AsStringListMarshaler
+        methods:
+            '-isEqualToGameRequestContent:':
+                name: isEqual
+            '-validateWithOptions:error:':
+                name: validate
+                throws: NSErrorException
+            '-initWithCoder:':
+                name: init
+            '-encodeWithCoder:':
+                name: encode
+    FBSDKGameRequestDialog:
+        properties:
+            isFrictionlessRequestsEnabled:
+                setter: setFrictionlessRequestsEnabled
+        methods:
+            '-initWithContent:delegate:': # store delegate
+                name: init
+            '-validateWithError:':
+                name: validate
+                throws: NSErrorException
+            '+dialogWithContent:delegate:':
+                exclude: true
+            '+showWithContent:delegate:': # store delegate
+                name: show
+            '-webDialog:didCompleteWithResults:':
+                name: didComplete
+                exclude: true
+            '-webDialog:didFailWithError:':
+                name: didFail
+                exclude: true
+            '-webDialogDidCancel:':
+                name: didCancel
+                exclude: true
+            '-application:openURL:sourceApplication:annotation:':
+                name: openURL
+                exclude: true
+            '-canOpenURL:forApplication:sourceApplication:annotation:':
+                name: canOpenURL
+                exclude: true
+            '-applicationDidBecomeActive:':
+                name: didBecomeActive
+                exclude: true
+    FBSDKGameRequestURLProvider:
+        methods:
+            '+createDeepLinkURLWithQueryDictionary:':
+                name: createDeepLinkURL
+            '+filtersNameForFilters:':
+                name: getFiltersName
+            '+actionTypeNameForActionType:':
+                name: getActionTypeName
+    FBSDKGamingContext:
+        methods:
+            '-initWithIdentifier:size:':
+                name: init
+            '+currentContext':
+                property: true
+    FBSDKGamingGroupIntegration:
+        methods:
+            '+openGroupPageWithCompletionHandler:':
+                name: openGroupPage
+    FBSDKGamingImageUploader:
+        methods:
+            '+uploadImageWithConfiguration:andResultCompletion:':
+                name: uploadImage
+            '+uploadImageWithConfiguration:completion:andProgressHandler:':
+                name: uploadImage
+    FBSDKGamingImageUploaderConfiguration:
+        methods:
+            '-initWithImage:caption:shouldLaunchMediaDialog:':
+                name: init
+    FBSDKGamingPayload:
+        methods:
+            '-initWithURL:':
+                name: init
+    FBSDKGamingPayloadObserver:
+        methods:
+            '-initWithDelegate:': # store delegate
+                name: init
+            '-application:openURL:sourceApplication:annotation:':
+                name: openURL
+    FBSDKGamingVideoUploader:
+        methods:
+            '+uploadVideoWithConfiguration:andResultCompletion:':
+                name: uploadVideo
+            '+uploadVideoWithConfiguration:completion:andProgressHandler:':
+                name: uploadVideo
+    FBSDKGamingVideoUploaderConfiguration:
+        methods:
+            '-initWithVideoURL:caption:':
+                name: init
+    FBSDKSwitchContextContent:
+        methods:
+            '-initDialogContentWithContextID:':
+                name: init
+    FBSDKSwitchContextDialog:
+        methods:
+            '-initWithContent:windowFinder:delegate:': # store delegate
+                name: init
+            '+dialogWithContent:windowFinder:delegate:':
+                exclude: true
+    ShareTournamentDialog:
+        name: FBSDKShareTournamentDialog
+        methods:
+            '-application:openURL:sourceApplication:annotation:':
+                name: openURL
+                exclude: true
+            '-canOpenURL:forApplication:sourceApplication:annotation:':
+                name: canOpenURL
+                exclude: true
+            '-applicationDidBecomeActive:':
+                name: didBecomeActive
+                exclude: true
+    _FBSDKShareTournamentDialog:
+        exclude: true
+    _FBSDKTournament:
+        exclude: true
+    _FBSDKTournamentConfig:
+        exclude: true
+    _FBSDKTournamentFetcher:
+        exclude: true
+    _FBSDKTournamentUpdater:
+        exclude: true
+
+protocols:
+    FBSDKContextDialogDelegate:
+        methods:
+            '-contextDialogDidComplete:':
+                name: didComplete
+            '-contextDialog:didFailWithError:':
+                name: didFail
+            '-contextDialogDidCancel:':
+                name: didCancel
+    FBSDKDialog:
+        skip_adapter: true
+        methods:
+            '-validateAndReturnError:':
+                name: validate
+                throws: NSErrorException
+                exclude: true
+    FBSDKGameRequestDialogDelegate:
+        methods:
+            '-gameRequestDialog:didCompleteWithResults:':
+                name: didComplete
+            '-gameRequestDialog:didFailWithError:':
+                name: didFail
+            '-gameRequestDialogDidCancel:':
+                name: didCancel
+    FBSDKGamingPayloadDelegate:
+        methods:
+            '-parsedGameRequestURLContaining:gameRequestID:':
+                name: parsedGameRequestURL
+            '-parsedTournamentURLContaining:tournamentID:':
+                name: parsedTournamentURL
+    FBSDKShowable:
+        skip_adapter: true
+    FBSDKValidatable:
+        skip_adapter: true
+        methods:
+            '-validateAndReturnError:':
+                name: validate
+                throws: NSErrorException
+    _FBSDKWindowFinding:
+        skip_adapter: true
+        name: FBSDKWindowFinding
+    _FBSDKShareTournamentDialogDelegate:
+        exclude: true
+
+functions:
+    # Make sure we don't miss any functions if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Function__#{g[0]}'
+
+values:
+    # Make sure we don't miss any values if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Value__#{g[0]}'
+
+constants:
+    # Make sure we don't miss any constants if new ones are introduced in a later version
+    SWIFT_TYPEDEFS:
+        exclude: true
+
+    (.*):
+        class: __Fixme
+        name: 'Constant__#{g[0]}'

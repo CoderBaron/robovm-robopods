@@ -673,6 +673,10 @@ protocols:
                 name: addRequest
     FBSDKGraphRequestConnectionDelegate:
         methods:
+            '-requestConnectionWillBeginLoading:':
+                name: willBeginLoading
+            '-requestConnectionDidFinishLoading:':
+                name: didFinishLoading
             '-requestConnection:didFailWithError:':
                 name: didFail
             '-requestConnection:didSendBodyData:totalBytesWritten:totalBytesExpectedToWrite:':
@@ -742,6 +746,10 @@ protocols:
                 name: didComplete
             '-webDialogView:didFailWithError:':
                 name: didFail
+            '-webDialogViewDidCancel:':
+                name: didCancel
+            '-webDialogViewDidFinishLoad:':
+                name: didFinishLoad
     FBSDKWindowFinding: {}
     FBSDKAuthenticationTokenProviding:
         exclude: true #INTERNAL - DO NOT USE

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.robovm.pods.facebook.share;
+package org.robovm.pods.facebook.gamingservices;
 
 /*<imports>*/
 import java.io.*;
@@ -28,38 +28,37 @@ import org.robovm.rt.bro.*;
 import org.robovm.rt.bro.annotation.*;
 import org.robovm.rt.bro.ptr.*;
 import org.robovm.apple.foundation.*;
-import org.robovm.apple.dispatch.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
-import org.robovm.apple.photos.*;
-import org.robovm.apple.coreanimation.*;
 import org.robovm.pods.facebook.corebasics.*;
 import org.robovm.pods.facebook.core.*;
+import org.robovm.pods.facebook.share.*;
 /*</imports>*/
 
 /*<javadoc>*/
-/*</javadoc>*/
-/*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKSharingDelegateAdapter/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKSharingDelegate/*</implements>*/ {
 
-    /*<ptr>*/
-    /*</ptr>*/
-    /*<bind>*/
-    /*</bind>*/
+/*</javadoc>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKGamingVideoUploader/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*//*</implements>*/ {
+
+    /*<ptr>*/public static class FBSDKGamingVideoUploaderPtr extends Ptr<FBSDKGamingVideoUploader, FBSDKGamingVideoUploaderPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(FBSDKGamingVideoUploader.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*//*</constructors>*/
+    /*<constructors>*/
+    protected FBSDKGamingVideoUploader() {}
+    protected FBSDKGamingVideoUploader(Handle h, long handle) { super(h, handle); }
+    protected FBSDKGamingVideoUploader(SkipInit skipInit) { super(skipInit); }
+    /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("sharer:didCompleteWithResults:")
-    public void didComplete(FBSDKSharing sharer, NSDictionary<NSString, ?> results) {}
-    @NotImplemented("sharer:didFailWithError:")
-    public void didFail(FBSDKSharing sharer, NSError error) {}
-    @NotImplemented("sharerDidCancel:")
-    public void didCancel(FBSDKSharing sharer) {}
+    @Method(selector = "uploadVideoWithConfiguration:andResultCompletion:")
+    public static native void uploadVideo(FBSDKGamingVideoUploaderConfiguration configuration, @Block VoidBlock3<Boolean, NSDictionary<NSString, ?>, NSError> completion);
+    @Method(selector = "uploadVideoWithConfiguration:completion:andProgressHandler:")
+    public static native void uploadVideo(FBSDKGamingVideoUploaderConfiguration configuration, @Block VoidBlock3<Boolean, NSDictionary<NSString, ?>, NSError> completion, @Block VoidBlock3<Long, Long, Long> progressHandler);
     /*</methods>*/
 }

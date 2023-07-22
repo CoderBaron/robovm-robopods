@@ -54,9 +54,9 @@ import org.robovm.pods.facebook.corebasics.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "requestConnectionWillBeginLoading:")
-    void requestConnectionWillBeginLoading(FBSDKGraphRequestConnecting connection);
+    void willBeginLoading(FBSDKGraphRequestConnecting connection);
     @Method(selector = "requestConnectionDidFinishLoading:")
-    void requestConnectionDidFinishLoading(FBSDKGraphRequestConnecting connection);
+    void didFinishLoading(FBSDKGraphRequestConnecting connection);
     @Method(selector = "requestConnection:didFailWithError:")
     void didFail(FBSDKGraphRequestConnecting connection, NSError error);
     @Method(selector = "requestConnection:didSendBodyData:totalBytesWritten:totalBytesExpectedToWrite:")

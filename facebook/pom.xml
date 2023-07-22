@@ -22,6 +22,7 @@
     <modules>
         <module>ios-core</module>
         <module>ios-core-basics</module>
+        <module>ios-gaming</module>
         <module>ios-login</module>
         <module>ios-share</module>
         <module>ios-aem</module>

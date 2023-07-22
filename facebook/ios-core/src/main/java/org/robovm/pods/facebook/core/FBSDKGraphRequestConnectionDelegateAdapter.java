@@ -56,9 +56,9 @@ import org.robovm.pods.facebook.corebasics.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("requestConnectionWillBeginLoading:")
-    public void requestConnectionWillBeginLoading(FBSDKGraphRequestConnecting connection) {}
+    public void willBeginLoading(FBSDKGraphRequestConnecting connection) {}
     @NotImplemented("requestConnectionDidFinishLoading:")
-    public void requestConnectionDidFinishLoading(FBSDKGraphRequestConnecting connection) {}
+    public void didFinishLoading(FBSDKGraphRequestConnecting connection) {}
     @NotImplemented("requestConnection:didFailWithError:")
     public void didFail(FBSDKGraphRequestConnecting connection, NSError error) {}
     @NotImplemented("requestConnection:didSendBodyData:totalBytesWritten:totalBytesExpectedToWrite:")

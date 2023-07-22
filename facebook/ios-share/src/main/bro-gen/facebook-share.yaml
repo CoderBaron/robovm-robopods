@@ -23,8 +23,6 @@ enums:
     FBSDKShareError: {}
     FBSDKAppGroupPrivacy: {}
     FBSDKAppInviteDestination: {}
-    FBSDKGameRequestActionType: {}
-    FBSDKGameRequestFilter: {}
     FBSDKLikeObjectType: {}
     FBSDKShareDialogMode: {}
 
@@ -51,16 +49,6 @@ classes:
         methods:
             '-setImage:forKey:':
                 name: setImage
-    FBSDKGameRequestContent: {}
-    FBSDKGameRequestDialog:
-        methods:
-            '-validateWithError:':
-                name: validate
-            '+dialogWithContent:delegate:':
-                constructor: true
-                name: create
-            '+showWithContent:delegate:':
-                name: show
     FBSDKHashtag:
         methods:
             '-initWithString:':
@@ -140,17 +128,7 @@ classes:
             '+videoWithVideoURL:previewPhoto:':
                 exclude: true
     FBSDKShareVideoContent: {}
-    FBSDKGameRequestURLProvider:
-        methods:
-            '+createDeepLinkURLWithQueryDictionary:':
-                name: createDeepLinkURL
 protocols:
-    FBSDKGameRequestDialogDelegate:
-        methods:
-            '-gameRequestDialog:didCompleteWithResults:':
-                name: didComplete
-            '-gameRequestDialog:didFailWithError:':
-                name: didFail
     FBSDKLiking: {}
     FBSDKShareMedia: {}
     FBSDKShareMessengerActionButton: {}
@@ -169,12 +147,10 @@ protocols:
                 name: didComplete
             '-sharer:didFailWithError:':
                 name: didFail
+            '-sharerDidCancel:':
+                name: didCancel
     FBSDKSharingDialog: {}
     FBSDKSharingScheme: {}
-    FBSDKSharingValidation:
-        methods:
-            '-validateWithOptions:error:':
-                name: validate
     FBSDKSharingValidatable:
         methods:
             '-validateWithOptions:error:':

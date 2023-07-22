@@ -55,9 +55,9 @@ import org.robovm.pods.facebook.corebasics.*;
     @Method(selector = "loginButton:didCompleteWithResult:error:")
     void didComplete(FBSDKLoginButton loginButton, FBSDKLoginManagerLoginResult result, NSError error);
     @Method(selector = "loginButtonDidLogOut:")
-    void loginButtonDidLogOut(FBSDKLoginButton loginButton);
+    void didLogOut(FBSDKLoginButton loginButton);
     @Method(selector = "loginButtonWillLogin:")
-    boolean loginButtonWillLogin(FBSDKLoginButton loginButton);
+    boolean willLogin(FBSDKLoginButton loginButton);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

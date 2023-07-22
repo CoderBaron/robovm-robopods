@@ -1,0 +1,5 @@
+<config>
+    <frameworks>
+        <framework>FBSDKGamingServicesKit</framework>
+    </frameworks>
+</config>

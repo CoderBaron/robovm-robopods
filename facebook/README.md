@@ -6,6 +6,7 @@
 |-------------------------------------|----------------------------------|---------|
 | [ios-core](ios-core/)               | Facebook Core                    | 16.1.1  |
 | [ios-core-basics](ios-core-basics/) | Facebook Core Basics             | 16.1.1  |
+| [ios-gaming](ios-gaming/)           | Facebook iOS Gaming Services Kit | 16.1.1  |
 | [ios-login](ios-login/)             | Facebook iOS Login Kit           | 16.1.1  |
 | [ios-share](ios-share/)             | Facebook iOS Share Kit           | 16.1.1  |
 | [ios-aem](ios-aem/)                 | Facebook iOS AEM Kit             | 16.1.1  |
