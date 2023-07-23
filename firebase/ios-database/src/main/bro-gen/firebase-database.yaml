@@ -14,19 +14,22 @@ enums:
     FIRDataEventType: {}
 
 classes:
-    FIRDataSnapshot: {}
+    FIRDataSnapshot:
+        methods:
+            '-childSnapshotForPath:':
+                name: child
     FIRDatabase:
         methods:
+            '-reference':
+                property: true
             '-referenceWithPath:':
-                name: reference
-            '+databaseWithURL:':
-                name: create
-                constructor: true
-            '+databaseForApp:URL:':
-                name: create
-                constructor: true
+                name: getReference
             '-useEmulatorWithHost:port:':
                 name: useEmulator
+            '+database.*':
+                name: getDatabase
+            '+sdkVersion':
+                property: true
     FIRDatabaseQuery:
         methods:
             '-observeEventType:withBlock:':
@@ -47,20 +50,34 @@ classes:
                 name: observeSingleEvent
             '-removeObserverWithHandle:':
                 name: removeObserver
-            '-queryStartingAtValue:childKey:':
-                name: queryStartingAtValue
-            '-queryEndingAtValue:childKey:':
-                name: queryEndingAtValue
-            '-queryEqualToValue:childKey:':
-                name: queryEqualToValue
             '-getDataWithCompletionBlock:':
                 name: getData
-            '-queryStartingAfterValue:childKey:':
-                name: queryStartingAfterValue
-            '-queryEndingBeforeValue:childKey:':
-                name: queryEndingBeforeValue
+            '-queryLimitedToFirst:':
+                name: limitToFirst
+            '-queryLimitedToLast:':
+                name: limitToLast
+            '-queryOrderedByChild:':
+                name: orderByChild
+            '-queryOrderedByKey':
+                name: orderByKey
+            '-queryOrderedByValue':
+                name: orderByValue
+            '-queryOrderedByPriority':
+                name: orderByPriority
+            '-queryStartingAtValue.*':
+                name: startAt
+            '-queryStartingAfterValue.*':
+                name: startAfter
+            '-queryEndingBeforeValue.*':
+                name: endBefore
+            '-queryEndingAtValue.*':
+                name: endAt
+            '-queryEqualToValue.*':
+                name: equalTo
     FIRDatabaseReference:
         methods:
+            '-childByAutoId':
+                name: push
             '-setValue:withCompletionBlock:':
                 name: setValue
             '-setValue:andPriority:':
@@ -72,7 +89,7 @@ classes:
             '-setPriority:withCompletionBlock:':
                 name: setPriority
             '-updateChildValues:withCompletionBlock:':
-                name: updateChildValues
+                name: updateChildren
             '-onDisconnectSetValue:withCompletionBlock:':
                 name: onDisconnectSetValue
             '-onDisconnectSetValue:andPriority:':
@@ -82,14 +99,18 @@ classes:
             '-onDisconnectRemoveValueWithCompletionBlock:':
                 name: onDisconnectRemoveValue
             '-onDisconnectUpdateChildValues:withCompletionBlock:':
-                name: onDisconnectUpdateChildValues
+                name: onDisconnectUpdateChildren
             '-cancelDisconnectOperationsWithCompletionBlock:':
                 name: cancelDisconnectOperations
             '-runTransactionBlock:andCompletionBlock:':
                 name: runTransactionBlock
             '-runTransactionBlock:andCompletionBlock:withLocalEvents:':
                 name: runTransactionBlock
-    FIRMutableData: {}
+    FIRMutableData:
+        '-hasChildAtPath:':
+            name: hasChild
+        '-childDataByAppendingPath:':
+            name: child
     FIRServerValue: {}
     FIRTransactionResult:
         methods:

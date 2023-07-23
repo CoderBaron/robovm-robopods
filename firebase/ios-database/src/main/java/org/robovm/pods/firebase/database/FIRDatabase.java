@@ -46,8 +46,6 @@ import org.robovm.apple.dispatch.*;
     protected FIRDatabase() {}
     protected FIRDatabase(Handle h, long handle) { super(h, handle); }
     protected FIRDatabase(SkipInit skipInit) { super(skipInit); }
-    public FIRDatabase(String url) { super((Handle) null, create(url)); retain(getHandle()); }
-    public FIRDatabase(org.robovm.pods.firebase.core.FIRApp app, String url) { super((Handle) null, create(app, url)); retain(getHandle()); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "app")
@@ -68,9 +66,9 @@ import org.robovm.apple.dispatch.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "reference")
-    public native FIRDatabaseReference reference();
+    public native FIRDatabaseReference getReference();
     @Method(selector = "referenceWithPath:")
-    public native FIRDatabaseReference reference(String path);
+    public native FIRDatabaseReference getReference(String path);
     @Method(selector = "referenceFromURL:")
     public native FIRDatabaseReference referenceFromURL(String databaseUrl);
     @Method(selector = "purgeOutstandingWrites")
@@ -82,16 +80,16 @@ import org.robovm.apple.dispatch.*;
     @Method(selector = "useEmulatorWithHost:port:")
     public native void useEmulator(String host, @MachineSizedSInt long port);
     @Method(selector = "database")
-    public static native FIRDatabase database();
+    public static native FIRDatabase getDatabase();
     @Method(selector = "databaseWithURL:")
-    protected static native @Pointer long create(String url);
+    public static native FIRDatabase getDatabase(String url);
     @Method(selector = "databaseForApp:URL:")
-    protected static native @Pointer long create(org.robovm.pods.firebase.core.FIRApp app, String url);
+    public static native FIRDatabase getDatabase(org.robovm.pods.firebase.core.FIRApp app, String url);
     @Method(selector = "databaseForApp:")
-    public static native FIRDatabase databaseForApp(org.robovm.pods.firebase.core.FIRApp app);
+    public static native FIRDatabase getDatabase(org.robovm.pods.firebase.core.FIRApp app);
     @Method(selector = "setLoggingEnabled:")
     public static native void setLoggingEnabled(boolean enabled);
     @Method(selector = "sdkVersion")
-    public static native String sdkVersion();
+    public static native String getSdkVersion();
     /*</methods>*/
 }

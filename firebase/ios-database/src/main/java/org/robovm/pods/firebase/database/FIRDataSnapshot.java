@@ -64,7 +64,7 @@ import org.robovm.apple.dispatch.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "childSnapshotForPath:")
-    public native FIRDataSnapshot childSnapshotForPath(String childPathString);
+    public native FIRDataSnapshot child(String childPathString);
     @Method(selector = "hasChild:")
     public native boolean hasChild(String childPathString);
     @Method(selector = "hasChildren")

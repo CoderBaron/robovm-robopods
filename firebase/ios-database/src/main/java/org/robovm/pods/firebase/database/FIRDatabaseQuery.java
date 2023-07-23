@@ -78,36 +78,36 @@ import org.robovm.apple.dispatch.*;
     @Method(selector = "keepSynced:")
     public native void keepSynced(boolean keepSynced);
     @Method(selector = "queryLimitedToFirst:")
-    public native FIRDatabaseQuery queryLimitedToFirst(@MachineSizedUInt long limit);
+    public native FIRDatabaseQuery limitToFirst(@MachineSizedUInt long limit);
     @Method(selector = "queryLimitedToLast:")
-    public native FIRDatabaseQuery queryLimitedToLast(@MachineSizedUInt long limit);
+    public native FIRDatabaseQuery limitToLast(@MachineSizedUInt long limit);
     @Method(selector = "queryOrderedByChild:")
-    public native FIRDatabaseQuery queryOrderedByChild(String key);
+    public native FIRDatabaseQuery orderByChild(String key);
     @Method(selector = "queryOrderedByKey")
-    public native FIRDatabaseQuery queryOrderedByKey();
+    public native FIRDatabaseQuery orderByKey();
     @Method(selector = "queryOrderedByValue")
-    public native FIRDatabaseQuery queryOrderedByValue();
+    public native FIRDatabaseQuery orderByValue();
     @Method(selector = "queryOrderedByPriority")
-    public native FIRDatabaseQuery queryOrderedByPriority();
+    public native FIRDatabaseQuery orderByPriority();
     @Method(selector = "queryStartingAtValue:")
-    public native FIRDatabaseQuery queryStartingAtValue(NSObject startValue);
+    public native FIRDatabaseQuery startAt(NSObject startValue);
     @Method(selector = "queryStartingAtValue:childKey:")
-    public native FIRDatabaseQuery queryStartingAtValue(NSObject startValue, String childKey);
+    public native FIRDatabaseQuery startAt(NSObject startValue, String childKey);
     @Method(selector = "queryStartingAfterValue:")
-    public native FIRDatabaseQuery queryStartingAfterValue(NSObject startAfterValue);
+    public native FIRDatabaseQuery startAfter(NSObject startAfterValue);
     @Method(selector = "queryStartingAfterValue:childKey:")
-    public native FIRDatabaseQuery queryStartingAfterValue(NSObject startAfterValue, String childKey);
+    public native FIRDatabaseQuery startAfter(NSObject startAfterValue, String childKey);
     @Method(selector = "queryEndingAtValue:")
-    public native FIRDatabaseQuery queryEndingAtValue(NSObject endValue);
+    public native FIRDatabaseQuery endAt(NSObject endValue);
     @Method(selector = "queryEndingAtValue:childKey:")
-    public native FIRDatabaseQuery queryEndingAtValue(NSObject endValue, String childKey);
+    public native FIRDatabaseQuery endAt(NSObject endValue, String childKey);
     @Method(selector = "queryEndingBeforeValue:")
-    public native FIRDatabaseQuery queryEndingBeforeValue(NSObject endValue);
+    public native FIRDatabaseQuery endBefore(NSObject endValue);
     @Method(selector = "queryEndingBeforeValue:childKey:")
-    public native FIRDatabaseQuery queryEndingBeforeValue(NSObject endValue, String childKey);
+    public native FIRDatabaseQuery endBefore(NSObject endValue, String childKey);
     @Method(selector = "queryEqualToValue:")
-    public native FIRDatabaseQuery queryEqualToValue(NSObject value);
+    public native FIRDatabaseQuery equalTo(NSObject value);
     @Method(selector = "queryEqualToValue:childKey:")
-    public native FIRDatabaseQuery queryEqualToValue(NSObject value, String childKey);
+    public native FIRDatabaseQuery equalTo(NSObject value, String childKey);
     /*</methods>*/
 }
