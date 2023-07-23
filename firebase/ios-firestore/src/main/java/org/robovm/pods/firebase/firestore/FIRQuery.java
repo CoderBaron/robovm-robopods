@@ -66,74 +66,74 @@ import org.robovm.apple.dispatch.*;
     @Method(selector = "queryWhereFilter:")
     public native FIRQuery queryWhereFilter(FIRFilter filter);
     @Method(selector = "queryWhereField:isEqualTo:")
-    public native FIRQuery queryWhereFieldIsEqualTo(String field, NSObject value);
+    public native FIRQuery whereEqualTo(String field, NSObject value);
     @Method(selector = "queryWhereFieldPath:isNotEqualTo:")
-    public native FIRQuery queryWhereFieldPathIsNotEqualTo(FIRFieldPath path, NSObject value);
+    public native FIRQuery whereNotEqualTo(FIRFieldPath path, NSObject value);
     @Method(selector = "queryWhereField:isNotEqualTo:")
-    public native FIRQuery queryWhereFieldIsNotEqualTo(String field, NSObject value);
+    public native FIRQuery whereNotEqualTo(String field, NSObject value);
     @Method(selector = "queryWhereFieldPath:isEqualTo:")
-    public native FIRQuery queryWhereFieldPathIsEqualTo(FIRFieldPath path, NSObject value);
+    public native FIRQuery whereEqualTo(FIRFieldPath path, NSObject value);
     @Method(selector = "queryWhereField:isLessThan:")
-    public native FIRQuery queryWhereFieldIsLessThan(String field, NSObject value);
+    public native FIRQuery whereLessThan(String field, NSObject value);
     @Method(selector = "queryWhereFieldPath:isLessThan:")
-    public native FIRQuery queryWhereFieldPathIsLessThan(FIRFieldPath path, NSObject value);
+    public native FIRQuery whereLessThan(FIRFieldPath path, NSObject value);
     @Method(selector = "queryWhereField:isLessThanOrEqualTo:")
-    public native FIRQuery queryWhereFieldIsLessThanOrEqualTo(String field, NSObject value);
+    public native FIRQuery whereLessThanOrEqualTo(String field, NSObject value);
     @Method(selector = "queryWhereFieldPath:isLessThanOrEqualTo:")
-    public native FIRQuery queryWhereFieldPathIsLessThanOrEqualTo(FIRFieldPath path, NSObject value);
+    public native FIRQuery whereLessThanOrEqualTo(FIRFieldPath path, NSObject value);
     @Method(selector = "queryWhereField:isGreaterThan:")
-    public native FIRQuery queryWhereFieldIsGreaterThan(String field, NSObject value);
+    public native FIRQuery whereGreaterThan(String field, NSObject value);
     @Method(selector = "queryWhereFieldPath:isGreaterThan:")
-    public native FIRQuery queryWhereFieldPathIsGreaterThan(FIRFieldPath path, NSObject value);
+    public native FIRQuery whereGreaterThan(FIRFieldPath path, NSObject value);
     @Method(selector = "queryWhereField:isGreaterThanOrEqualTo:")
-    public native FIRQuery queryWhereFieldIsGreaterThanOrEqualTo(String field, NSObject value);
+    public native FIRQuery whereGreaterThanOrEqualTo(String field, NSObject value);
     @Method(selector = "queryWhereFieldPath:isGreaterThanOrEqualTo:")
-    public native FIRQuery queryWhereFieldPathIsGreaterThanOrEqualTo(FIRFieldPath path, NSObject value);
+    public native FIRQuery whereGreaterThanOrEqualTo(FIRFieldPath path, NSObject value);
     @Method(selector = "queryWhereField:arrayContains:")
-    public native FIRQuery queryWhereFieldArrayContains(String field, NSObject value);
+    public native FIRQuery whereArrayContains(String field, NSObject value);
     @Method(selector = "queryWhereFieldPath:arrayContains:")
-    public native FIRQuery queryWhereFieldPathArrayContains(FIRFieldPath path, NSObject value);
+    public native FIRQuery whereArrayContains(FIRFieldPath path, NSObject value);
     @Method(selector = "queryWhereField:arrayContainsAny:")
-    public native FIRQuery queryWhereFieldArrayContainsAny(String field, NSArray<?> values);
+    public native FIRQuery whereArrayContainsAny(String field, NSArray<?> values);
     @Method(selector = "queryWhereFieldPath:arrayContainsAny:")
-    public native FIRQuery queryWhereFieldPathArrayContainsAny(FIRFieldPath path, NSArray<?> values);
+    public native FIRQuery whereArrayContainsAny(FIRFieldPath path, NSArray<?> values);
     @Method(selector = "queryWhereField:in:")
-    public native FIRQuery queryWhereFieldIn(String field, NSArray<?> values);
+    public native FIRQuery whereIn(String field, NSArray<?> values);
     @Method(selector = "queryWhereFieldPath:in:")
-    public native FIRQuery queryWhereFieldPathIn(FIRFieldPath path, NSArray<?> values);
+    public native FIRQuery whereIn(FIRFieldPath path, NSArray<?> values);
     @Method(selector = "queryWhereField:notIn:")
-    public native FIRQuery queryWhereFieldNotIn(String field, NSArray<?> values);
+    public native FIRQuery whereNotIn(String field, NSArray<?> values);
     @Method(selector = "queryWhereFieldPath:notIn:")
-    public native FIRQuery queryWhereFieldPathNotIn(FIRFieldPath path, NSArray<?> values);
+    public native FIRQuery whereNotIn(FIRFieldPath path, NSArray<?> values);
     @Method(selector = "queryFilteredUsingPredicate:")
-    public native FIRQuery queryFilteredUsingPredicate(NSPredicate predicate);
+    public native FIRQuery filterBy(NSPredicate predicate);
     @Method(selector = "queryOrderedByField:")
-    public native FIRQuery queryOrderedByField(String field);
+    public native FIRQuery orderBy(String field);
     @Method(selector = "queryOrderedByFieldPath:")
-    public native FIRQuery queryOrderedByFieldPath(FIRFieldPath path);
+    public native FIRQuery orderBy(FIRFieldPath path);
     @Method(selector = "queryOrderedByField:descending:")
-    public native FIRQuery queryOrderedByFieldDescending(String field, boolean descending);
+    public native FIRQuery orderBy(String field, boolean descending);
     @Method(selector = "queryOrderedByFieldPath:descending:")
-    public native FIRQuery queryOrderedByFieldPathDescending(FIRFieldPath path, boolean descending);
+    public native FIRQuery orderBy(FIRFieldPath path, boolean descending);
     @Method(selector = "queryLimitedTo:")
-    public native FIRQuery queryLimitedTo(@MachineSizedSInt long limit);
+    public native FIRQuery limit(@MachineSizedSInt long limit);
     @Method(selector = "queryLimitedToLast:")
-    public native FIRQuery queryLimitedToLast(@MachineSizedSInt long limit);
+    public native FIRQuery limitToLast(@MachineSizedSInt long limit);
     @Method(selector = "queryStartingAtDocument:")
-    public native FIRQuery queryStartingAtDocument(FIRDocumentSnapshot document);
+    public native FIRQuery startAt(FIRDocumentSnapshot document);
     @Method(selector = "queryStartingAtValues:")
-    public native FIRQuery queryStartingAtValues(NSArray<?> fieldValues);
+    public native FIRQuery startAt(NSArray<?> fieldValues);
     @Method(selector = "queryStartingAfterDocument:")
-    public native FIRQuery queryStartingAfterDocument(FIRDocumentSnapshot document);
+    public native FIRQuery startAfter(FIRDocumentSnapshot document);
     @Method(selector = "queryStartingAfterValues:")
-    public native FIRQuery queryStartingAfterValues(NSArray<?> fieldValues);
+    public native FIRQuery startAfter(NSArray<?> fieldValues);
     @Method(selector = "queryEndingBeforeDocument:")
-    public native FIRQuery queryEndingBeforeDocument(FIRDocumentSnapshot document);
+    public native FIRQuery endBefore(FIRDocumentSnapshot document);
     @Method(selector = "queryEndingBeforeValues:")
-    public native FIRQuery queryEndingBeforeValues(NSArray<?> fieldValues);
+    public native FIRQuery endBefore(NSArray<?> fieldValues);
     @Method(selector = "queryEndingAtDocument:")
-    public native FIRQuery queryEndingAtDocument(FIRDocumentSnapshot document);
+    public native FIRQuery endAt(FIRDocumentSnapshot document);
     @Method(selector = "queryEndingAtValues:")
-    public native FIRQuery queryEndingAtValues(NSArray<?> fieldValues);
+    public native FIRQuery endAt(NSArray<?> fieldValues);
     /*</methods>*/
 }

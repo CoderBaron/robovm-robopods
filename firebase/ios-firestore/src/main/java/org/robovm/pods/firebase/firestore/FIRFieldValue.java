@@ -43,7 +43,6 @@ import org.robovm.apple.dispatch.*;
     /*<bind>*/static { ObjCRuntime.bind(FIRFieldValue.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected FIRFieldValue() {}
     protected FIRFieldValue(Handle h, long handle) { super(h, handle); }
     protected FIRFieldValue(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
@@ -53,16 +52,16 @@ import org.robovm.apple.dispatch.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "fieldValueForDelete")
-    public static native FIRFieldValue fieldValueForDelete();
+    public static native FIRFieldValue delete();
     @Method(selector = "fieldValueForServerTimestamp")
-    public static native FIRFieldValue fieldValueForServerTimestamp();
+    public static native FIRFieldValue serverTimestamp();
     @Method(selector = "fieldValueForArrayUnion:")
-    public static native FIRFieldValue fieldValueForArrayUnion(NSArray<?> elements);
+    public static native FIRFieldValue arrayUnion(NSArray<?> elements);
     @Method(selector = "fieldValueForArrayRemove:")
-    public static native FIRFieldValue fieldValueForArrayRemove(NSArray<?> elements);
+    public static native FIRFieldValue arrayRemove(NSArray<?> elements);
     @Method(selector = "fieldValueForDoubleIncrement:")
-    public static native FIRFieldValue fieldValueForDoubleIncrement(double d);
+    public static native FIRFieldValue increment(double d);
     @Method(selector = "fieldValueForIntegerIncrement:")
-    public static native FIRFieldValue fieldValueForIntegerIncrement(long l);
+    public static native FIRFieldValue increment(long l);
     /*</methods>*/
 }

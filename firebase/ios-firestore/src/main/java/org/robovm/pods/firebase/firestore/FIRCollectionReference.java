@@ -49,7 +49,7 @@ import org.robovm.apple.dispatch.*;
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "collectionID")
-    public native String getCollectionID();
+    public native String getId();
     @Property(selector = "parent")
     public native FIRDocumentReference getParent();
     @Property(selector = "path")

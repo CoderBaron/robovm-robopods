@@ -49,25 +49,25 @@ import org.robovm.apple.dispatch.*;
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "exists")
-    public native boolean isExists();
+    public native boolean exists();
     @Property(selector = "reference")
     public native FIRDocumentReference getReference();
     @Property(selector = "documentID")
-    public native String getDocumentID();
+    public native String getId();
     @Property(selector = "metadata")
     public native FIRSnapshotMetadata getMetadata();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "data")
-    public native NSDictionary<NSString, ?> data();
+    public native NSDictionary<NSString, ?> getData();
     @Method(selector = "dataWithServerTimestampBehavior:")
     public native NSDictionary<NSString, ?> getData(FIRServerTimestampBehavior serverTimestampBehavior);
     @Method(selector = "valueForField:")
-    public native NSObject valueForField(NSObject field);
+    public native NSObject getValue(NSObject field);
     @Method(selector = "valueForField:serverTimestampBehavior:")
-    public native NSObject getValueForField(NSObject field, FIRServerTimestampBehavior serverTimestampBehavior);
+    public native NSObject getValue(NSObject field, FIRServerTimestampBehavior serverTimestampBehavior);
     @Method(selector = "objectForKeyedSubscript:")
-    public native NSObject objectForKeyedSubscript(NSObject key);
+    public native NSObject get(NSObject key);
     /*</methods>*/
 }

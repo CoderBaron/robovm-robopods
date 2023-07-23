@@ -53,15 +53,15 @@ import org.robovm.apple.dispatch.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "setData:forDocument:")
-    public native FIRWriteBatch setData(NSDictionary<NSString, ?> data, FIRDocumentReference document);
+    public native FIRWriteBatch set(NSDictionary<NSString, ?> data, FIRDocumentReference document);
     @Method(selector = "setData:forDocument:merge:")
-    public native FIRWriteBatch setData(NSDictionary<NSString, ?> data, FIRDocumentReference document, boolean merge);
+    public native FIRWriteBatch set(NSDictionary<NSString, ?> data, FIRDocumentReference document, boolean merge);
     @Method(selector = "setData:forDocument:mergeFields:")
-    public native FIRWriteBatch setData(NSDictionary<NSString, ?> data, FIRDocumentReference document, NSArray<?> mergeFields);
+    public native FIRWriteBatch set(NSDictionary<NSString, ?> data, FIRDocumentReference document, NSArray<?> mergeFields);
     @Method(selector = "updateData:forDocument:")
-    public native FIRWriteBatch updateData(NSDictionary<?, ?> fields, FIRDocumentReference document);
+    public native FIRWriteBatch update(NSDictionary<?, ?> fields, FIRDocumentReference document);
     @Method(selector = "deleteDocument:")
-    public native FIRWriteBatch deleteDocument(FIRDocumentReference document);
+    public native FIRWriteBatch delete(FIRDocumentReference document);
     @Method(selector = "commit")
     public native void commit();
     @Method(selector = "commitWithCompletion:")

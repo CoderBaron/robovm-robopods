@@ -53,22 +53,22 @@ import org.robovm.apple.dispatch.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "setData:forDocument:")
-    public native FIRTransaction setData(NSDictionary<NSString, ?> data, FIRDocumentReference document);
+    public native FIRTransaction set(NSDictionary<NSString, ?> data, FIRDocumentReference document);
     @Method(selector = "setData:forDocument:merge:")
-    public native FIRTransaction setData(NSDictionary<NSString, ?> data, FIRDocumentReference document, boolean merge);
+    public native FIRTransaction set(NSDictionary<NSString, ?> data, FIRDocumentReference document, boolean merge);
     @Method(selector = "setData:forDocument:mergeFields:")
-    public native FIRTransaction setData(NSDictionary<NSString, ?> data, FIRDocumentReference document, NSArray<?> mergeFields);
+    public native FIRTransaction set(NSDictionary<NSString, ?> data, FIRDocumentReference document, NSArray<?> mergeFields);
     @Method(selector = "updateData:forDocument:")
-    public native FIRTransaction updateData(NSDictionary<?, ?> fields, FIRDocumentReference document);
+    public native FIRTransaction update(NSDictionary<?, ?> fields, FIRDocumentReference document);
     @Method(selector = "deleteDocument:")
-    public native FIRTransaction deleteDocument(FIRDocumentReference document);
-    public FIRDocumentSnapshot getDocument(FIRDocumentReference document) throws NSErrorException {
+    public native FIRTransaction delete(FIRDocumentReference document);
+    public FIRDocumentSnapshot get(FIRDocumentReference document) throws NSErrorException {
        NSError.NSErrorPtr ptr = new NSError.NSErrorPtr();
-       FIRDocumentSnapshot result = getDocument(document, ptr);
+       FIRDocumentSnapshot result = get(document, ptr);
        if (ptr.get() != null) { throw new NSErrorException(ptr.get()); }
        return result;
     }
     @Method(selector = "getDocument:error:")
-    private native FIRDocumentSnapshot getDocument(FIRDocumentReference document, NSError.NSErrorPtr error);
+    private native FIRDocumentSnapshot get(FIRDocumentReference document, NSError.NSErrorPtr error);
     /*</methods>*/
 }

@@ -54,6 +54,6 @@ import org.robovm.apple.dispatch.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "aggregationWithSource:completion:")
-    public native void aggregation(FIRAggregateSource source, @Block VoidBlock2<FIRAggregateQuerySnapshot, NSError> completion);
+    public native void get(FIRAggregateSource source, @Block VoidBlock2<FIRAggregateQuerySnapshot, NSError> completion);
     /*</methods>*/
 }

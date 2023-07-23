@@ -1,0 +1,318 @@
+package: org.robovm.pods.firebase.firestore
+include: [ foundation, dispatch ]
+framework: FirebaseFirestore
+clang_args: [ '-x', 'objective-c' ]
+headers:
+    - FirebaseFirestore.h
+    - FIRLoadBundleTask.h
+
+private_typedefs:
+    "FIRApp *": org.robovm.pods.firebase.core.FIRApp
+
+typedefs: { }
+
+enums:
+    FIRFirestoreSource: { }
+    FIRDocumentChangeType: { }
+    FIRServerTimestampBehavior: { }
+    FIRFirestoreErrorCode: { nserror: true }
+    FIRLoadBundleTaskState: { }
+    FIRAggregateSource: { }
+classes:
+    FIRCollectionReference:
+        properties:
+            'collectionID':
+                name: id
+        methods:
+            '-documentWith.*':
+                name: document
+            '-addDocument.*':
+                name: addDocument
+    FIRDocumentChange: { }
+    FIRDocumentReference:
+        properties:
+            'documentID':
+                name: id
+        methods:
+            '-collectionWithPath:':
+                name: collection
+            '-set.*':
+                name: set
+            '-update.*':
+                name: update
+            '-delete.*':
+                name: delete
+            '-get.*':
+                name: get
+            '-addSnapshotListener.*':
+                name: addSnapshotListener
+    FIRDocumentSnapshot:
+        properties:
+            'exists':
+                getter: exists
+            'documentID':
+                name: id
+        methods:
+            '-data.*':
+                name: getData
+            '-objectForKeyedSubscript:':
+                name: get
+            '-valueForField.*':
+                name: getValue
+    FIRFieldPath:
+        methods:
+            '-initWithFields:':
+                name: init
+    FIRFieldValue:
+        skip_def_constructor: true
+        methods:
+            '+fieldValueForDelete':
+                name: delete
+            '+fieldValueForServerTimestamp':
+                name: serverTimestamp
+            '+fieldValueForArrayUnion:':
+                name: arrayUnion
+            '+fieldValueForArrayRemove:':
+                name: arrayRemove
+            '+fieldValueForDoubleIncrement:':
+                name: increment
+            '+fieldValueForIntegerIncrement:':
+                name: increment
+    FIRFirestore:
+        methods:
+            '-collectionWithPath:':
+                name: collection
+            '-documentWithPath:':
+                name: document
+            '-collectionGroupWithID:':
+                name: collectionGroup
+            '-runTransactionWithBlock:completion:':
+                name: runTransaction
+            '-enableNetworkWithCompletion:':
+                name: enableNetwork
+            '-disableNetworkWithCompletion:':
+                name: disableNetwork
+            '-clearPersistenceWithCompletion:':
+                name: clearPersistence
+            '-waitForPendingWritesWithCompletion:':
+                name: waitForPendingWrites
+            '-terminateWithCompletion:':
+                name: terminate
+            '-useEmulatorWithHost:port:':
+                name: useEmulator
+            '-loadBundle:.*':
+                name: loadBundle
+            '-loadBundleStream:.*':
+                name: loadBundleStream
+            '-getQueryNamed:completion:':
+                name: getQuery
+            '-runTransactionWithOptions:block:completion:':
+                name: runTransaction
+            '-setIndexConfigurationFromJSON:completion:':
+                name: setIndexConfiguration
+            '-setIndexConfigurationFromStream:completion:':
+                name: setIndexConfiguration
+            '+firestore.*':
+                name: getInstance
+    FIRFirestoreSettings:
+        properties:
+            timestampsInSnapshotsEnabled:
+                getter: areTimestampsInSnapshotsEnabled
+            cacheSettings:
+                type: FIRLocalCacheSettings
+    FIRGeoPoint:
+        methods:
+            '-initWithLatitude:longitude:':
+                name: init
+    FIRQuery:
+        methods:
+            '-getDocuments.*':
+                name: getDocuments
+            '-addSnapshotListener.*':
+                name: addSnapshotListener
+            '-queryWhere.*isEqualTo:':
+                name: whereEqualTo
+            '-queryWhere.*isNotEqualTo:':
+                name: whereNotEqualTo
+            '-queryWhere.*isLessThan:':
+                name: whereLessThan
+            '-queryWhere.*isLessThanOrEqualTo:':
+                name: whereLessThanOrEqualTo
+            '-queryWhere.*isGreaterThan:':
+                name: whereGreaterThan
+            '-queryWhere.*isGreaterThanOrEqualTo:':
+                name: whereGreaterThanOrEqualTo
+            '-queryWhere.*arrayContains:':
+                name: whereArrayContains
+            '-queryWhere.*arrayContainsAny:':
+                name: whereArrayContainsAny
+            '-queryWhere.*in:':
+                name: whereIn
+            '-queryWhere.*notIn:':
+                name: whereNotIn
+            '-queryFilteredUsingPredicate:':
+                name: filterBy
+            '-queryOrderedBy.*':
+                name: orderBy
+            '-queryLimitedTo:':
+                name: limit
+            '-queryLimitedToLast:':
+                name: limitToLast
+            '-queryStartingAt.*':
+                name: startAt
+            '-queryStartingAfter.*':
+                name: startAfter
+            '-queryEndingBefore.*':
+                name: endBefore
+            '-queryEndingAt.*':
+                name: endAt
+    FIRQueryDocumentSnapshot:
+        methods:
+            '-data.*':
+                name: getData
+    FIRQuerySnapshot:
+        properties:
+            'count':
+                getter: size
+        methods:
+            '-documentChangesWithIncludeMetadataChanges:':
+                name: getDocumentChanges
+    FIRSnapshotMetadata:
+        properties:
+            'pendingWrites':
+                getter: hasPendingWrites
+    FIRTimestamp:
+        skip_def_constructor: true
+        methods:
+            '-initWithSeconds:nanoseconds:':
+                name: init
+            '-dateValue':
+                name: asDate
+            '+timestampWithSeconds:nanoseconds:':
+                exclude: true
+            '+timestampWithDate:':
+                name: create
+                constructor: true
+            '+timestamp':
+                name: create
+                constructor: true
+    FIRTransaction:
+        methods:
+            '-setData.*':
+                name: set
+            '-updateData:forDocument:':
+                name: update
+            '-deleteDocument:':
+                name: delete
+            '-getDocument:error:':
+                name: get
+                throws: NSErrorException
+    FIRWriteBatch:
+        methods:
+            '-setData.*':
+                name: set
+            '-updateData:forDocument:':
+                name: update
+            '-deleteDocument:':
+                name: delete
+            '-commitWithCompletion:':
+                name: commit
+    FIRLoadBundleTask:
+        methods:
+            '-removeObserverWithHandle:':
+                name: removeObserver
+    FIRLoadBundleTaskProgress: { }
+    FIRTransactionOptions: { }
+    FIRAggregateQuery:
+        methods:
+            '-aggregationWithSource:completion:':
+                name: get
+    FIRAggregateQuerySnapshot: { }
+    FIRFilter:
+        methods:
+            '+filterWhereField:isEqualTo:':
+                name: equalTo
+            '+filterWhereFieldPath:isEqualTo:':
+                name: equalTo
+            '+filterWhereField:isNotEqualTo:':
+                name: notEqualTo
+            '+filterWhereFieldPath:isNotEqualTo:':
+                name: notEqualTo
+            '+filterWhereField:isGreaterThan:':
+                name: greaterThan
+            '+filterWhereFieldPath:isGreaterThan:':
+                name: greaterThan
+            '+filterWhereField:isGreaterThanOrEqualTo:':
+                name: greaterThanOrEqualTo
+            '+filterWhereFieldPath:isGreaterThanOrEqualTo:':
+                name: greaterThanOrEqualTo
+            '+filterWhereField:isLessThan:':
+                name: lessThan
+            '+filterWhereFieldPath:isLessThan:':
+                name: lessThan
+            '+filterWhereField:isLessThanOrEqualTo:':
+                name: lessThanOrEqualTo
+            '+filterWhereFieldPath:isLessThanOrEqualTo:':
+                name: lessThanOrEqualTo
+            '+filterWhereField:arrayContains:':
+                name: arrayContains
+            '+filterWhereFieldPath:arrayContains:':
+                name: arrayContains
+            '+filterWhereField:arrayContainsAny:':
+                name: arrayContainsAny
+            '+filterWhereFieldPath:arrayContainsAny:':
+                name: arrayContainsAny
+            '+filterWhereField:in:':
+                name: inArray
+            '+filterWhereFieldPath:in:':
+                name: inArray
+            '+filterWhereField:notIn:':
+                name: notInArray
+            '+filterWhereFieldPath:notIn:':
+                name: notInArray
+            '+orFilterWithFilters:':
+                name: or
+            '+andFilterWithFilters:':
+                name: and
+    FIRMemoryCacheSettings:
+        methods:
+            '-initWithGarbageCollectorSettings:':
+                name: init
+    FIRMemoryEagerGCSettings: { }
+    FIRMemoryLRUGCSettings:
+        methods:
+            '-initWithSizeBytes:':
+                name: initWithSizeBytes$
+    FIRPersistentCacheSettings:
+        methods:
+            '-initWithSizeBytes:':
+                name: init
+protocols:
+    FIRListenerRegistration: { }
+    FIRLocalCacheSettings: { }
+    FIRMemoryGarbageCollectorSettings: { }
+
+functions:
+    # Make sure we don't miss any functions if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Function_#{g[0]}'
+
+values:
+    FIRFirestoreErrorDomain:
+        class: FIRFirestoreErrorCode
+        name: getClassDomain
+    kFIRFirestoreCacheSizeUnlimited:
+        class: FIRFirestoreSettings
+        name: FirestoreCacheSizeUnlimited
+
+    # Make sure we don't miss any values if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Value_#{g[0]}'
+
+constants:
+    # Make sure we don't miss any constants if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Constant__#{g[0]}'

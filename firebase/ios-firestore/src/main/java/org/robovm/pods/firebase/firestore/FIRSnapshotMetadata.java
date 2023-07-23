@@ -49,7 +49,7 @@ import org.robovm.apple.dispatch.*;
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "hasPendingWrites")
-    public native boolean isPendingWrites();
+    public native boolean hasPendingWrites();
     @Property(selector = "isFromCache")
     public native boolean isFromCache();
     /*</properties>*/

@@ -58,15 +58,15 @@ import org.robovm.apple.dispatch.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "setIndexConfigurationFromJSON:completion:")
-    public native void setIndexConfigurationFromJSON(String json, @Block VoidBlock1<NSError> completion);
+    public native void setIndexConfiguration(String json, @Block VoidBlock1<NSError> completion);
     @Method(selector = "setIndexConfigurationFromStream:completion:")
-    public native void setIndexConfigurationFromStream(NSInputStream stream, @Block VoidBlock1<NSError> completion);
+    public native void setIndexConfiguration(NSInputStream stream, @Block VoidBlock1<NSError> completion);
     @Method(selector = "collectionWithPath:")
-    public native FIRCollectionReference getCollection(String collectionPath);
+    public native FIRCollectionReference collection(String collectionPath);
     @Method(selector = "documentWithPath:")
-    public native FIRDocumentReference getDocument(String documentPath);
+    public native FIRDocumentReference document(String documentPath);
     @Method(selector = "collectionGroupWithID:")
-    public native FIRQuery getCollectionGroup(String collectionID);
+    public native FIRQuery collectionGroup(String collectionID);
     @Method(selector = "runTransactionWithBlock:completion:")
     public native void runTransaction(@Block Block2<FIRTransaction, NSError.NSErrorPtr, NSObject> updateBlock, @Block VoidBlock2<NSObject, NSError> completion);
     @Method(selector = "runTransactionWithOptions:block:completion:")
@@ -98,13 +98,13 @@ import org.robovm.apple.dispatch.*;
     @Method(selector = "getQueryNamed:completion:")
     public native void getQuery(String name, @Block VoidBlock1<FIRQuery> completion);
     @Method(selector = "firestore")
-    public static native FIRFirestore firestore();
+    public static native FIRFirestore getInstance();
     @Method(selector = "firestoreForApp:")
-    public static native FIRFirestore firestoreForApp(org.robovm.pods.firebase.core.FIRApp app);
+    public static native FIRFirestore getInstance(org.robovm.pods.firebase.core.FIRApp app);
     @Method(selector = "firestoreForApp:database:")
-    public static native FIRFirestore firestoreForApp(org.robovm.pods.firebase.core.FIRApp app, String database);
+    public static native FIRFirestore getInstance(org.robovm.pods.firebase.core.FIRApp app, String database);
     @Method(selector = "firestoreForDatabase:")
-    public static native FIRFirestore firestoreForDatabase(String database);
+    public static native FIRFirestore getInstance(String database);
     @Method(selector = "enableLogging:")
     public static native void enableLogging(boolean logging);
     /*</methods>*/

@@ -61,7 +61,7 @@ import org.robovm.apple.dispatch.*;
     @Method(selector = "initWithSeconds:nanoseconds:")
     protected native @Pointer long init(long seconds, int nanoseconds);
     @Method(selector = "dateValue")
-    public native NSDate dateValue();
+    public native NSDate asDate();
     @Method(selector = "compare:")
     public native NSComparisonResult compare(FIRTimestamp other);
     @Method(selector = "timestampWithDate:")

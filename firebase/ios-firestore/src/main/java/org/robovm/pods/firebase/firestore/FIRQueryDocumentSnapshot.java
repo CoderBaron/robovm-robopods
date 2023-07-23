@@ -53,7 +53,7 @@ import org.robovm.apple.dispatch.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "data")
-    public native NSDictionary<NSString, ?> data();
+    public native NSDictionary<NSString, ?> getData();
     @Method(selector = "dataWithServerTimestampBehavior:")
     public native NSDictionary<NSString, ?> getData(FIRServerTimestampBehavior serverTimestampBehavior);
     /*</methods>*/

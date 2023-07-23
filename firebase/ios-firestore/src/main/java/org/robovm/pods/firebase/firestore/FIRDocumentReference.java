@@ -49,7 +49,7 @@ import org.robovm.apple.dispatch.*;
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "documentID")
-    public native String getDocumentID();
+    public native String getId();
     @Property(selector = "parent")
     public native FIRCollectionReference getParent();
     @Property(selector = "firestore")
@@ -62,29 +62,29 @@ import org.robovm.apple.dispatch.*;
     @Method(selector = "collectionWithPath:")
     public native FIRCollectionReference collection(String collectionPath);
     @Method(selector = "setData:")
-    public native void setData(NSDictionary<NSString, ?> documentData);
+    public native void set(NSDictionary<NSString, ?> documentData);
     @Method(selector = "setData:merge:")
-    public native void setData(NSDictionary<NSString, ?> documentData, boolean merge);
+    public native void set(NSDictionary<NSString, ?> documentData, boolean merge);
     @Method(selector = "setData:mergeFields:")
-    public native void setData(NSDictionary<NSString, ?> documentData, NSArray<?> mergeFields);
+    public native void set(NSDictionary<NSString, ?> documentData, NSArray<?> mergeFields);
     @Method(selector = "setData:completion:")
-    public native void setData(NSDictionary<NSString, ?> documentData, @Block VoidBlock1<NSError> completion);
+    public native void set(NSDictionary<NSString, ?> documentData, @Block VoidBlock1<NSError> completion);
     @Method(selector = "setData:merge:completion:")
-    public native void setData(NSDictionary<NSString, ?> documentData, boolean merge, @Block VoidBlock1<NSError> completion);
+    public native void set(NSDictionary<NSString, ?> documentData, boolean merge, @Block VoidBlock1<NSError> completion);
     @Method(selector = "setData:mergeFields:completion:")
-    public native void setData(NSDictionary<NSString, ?> documentData, NSArray<?> mergeFields, @Block VoidBlock1<NSError> completion);
+    public native void set(NSDictionary<NSString, ?> documentData, NSArray<?> mergeFields, @Block VoidBlock1<NSError> completion);
     @Method(selector = "updateData:")
-    public native void updateData(NSDictionary<?, ?> fields);
+    public native void update(NSDictionary<?, ?> fields);
     @Method(selector = "updateData:completion:")
-    public native void updateData(NSDictionary<?, ?> fields, @Block VoidBlock1<NSError> completion);
+    public native void update(NSDictionary<?, ?> fields, @Block VoidBlock1<NSError> completion);
     @Method(selector = "deleteDocument")
-    public native void deleteDocument();
+    public native void delete();
     @Method(selector = "deleteDocumentWithCompletion:")
-    public native void deleteDocument(@Block VoidBlock1<NSError> completion);
+    public native void delete(@Block VoidBlock1<NSError> completion);
     @Method(selector = "getDocumentWithCompletion:")
-    public native void getDocument(@Block VoidBlock2<FIRDocumentSnapshot, NSError> completion);
+    public native void get(@Block VoidBlock2<FIRDocumentSnapshot, NSError> completion);
     @Method(selector = "getDocumentWithSource:completion:")
-    public native void getDocument(FIRFirestoreSource source, @Block VoidBlock2<FIRDocumentSnapshot, NSError> completion);
+    public native void get(FIRFirestoreSource source, @Block VoidBlock2<FIRDocumentSnapshot, NSError> completion);
     @Method(selector = "addSnapshotListener:")
     public native FIRListenerRegistration addSnapshotListener(@Block VoidBlock2<FIRDocumentSnapshot, NSError> listener);
     @Method(selector = "addSnapshotListenerWithIncludeMetadataChanges:listener:")

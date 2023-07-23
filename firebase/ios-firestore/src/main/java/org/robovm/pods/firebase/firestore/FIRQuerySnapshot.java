@@ -55,7 +55,7 @@ import org.robovm.apple.dispatch.*;
     @Property(selector = "isEmpty")
     public native boolean isEmpty();
     @Property(selector = "count")
-    public native @MachineSizedSInt long getCount();
+    public native @MachineSizedSInt long size();
     @Property(selector = "documents")
     public native NSArray<FIRQueryDocumentSnapshot> getDocuments();
     @Property(selector = "documentChanges")

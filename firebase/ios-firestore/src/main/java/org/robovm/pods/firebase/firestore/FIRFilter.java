@@ -53,48 +53,48 @@ import org.robovm.apple.dispatch.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "filterWhereField:isEqualTo:")
-    public static native FIRFilter filterWhereFieldIsEqualT(String field, NSObject value);
+    public static native FIRFilter equalTo(String field, NSObject value);
     @Method(selector = "filterWhereFieldPath:isEqualTo:")
-    public static native FIRFilter filterWhereFieldPathIsEqualTo(FIRFieldPath path, NSObject value);
+    public static native FIRFilter equalTo(FIRFieldPath path, NSObject value);
     @Method(selector = "filterWhereField:isNotEqualTo:")
-    public static native FIRFilter filterWhereFieldIsNotEqualTo(String field, NSObject value);
+    public static native FIRFilter notEqualTo(String field, NSObject value);
     @Method(selector = "filterWhereFieldPath:isNotEqualTo:")
-    public static native FIRFilter filterWhereFieldPathIsNotEqualTo(FIRFieldPath path, NSObject value);
+    public static native FIRFilter notEqualTo(FIRFieldPath path, NSObject value);
     @Method(selector = "filterWhereField:isGreaterThan:")
-    public static native FIRFilter filterWhereFieldIsGreaterThan(String field, NSObject value);
+    public static native FIRFilter greaterThan(String field, NSObject value);
     @Method(selector = "filterWhereFieldPath:isGreaterThan:")
-    public static native FIRFilter filterWhereFieldPathIsGreaterThan(FIRFieldPath path, NSObject value);
+    public static native FIRFilter greaterThan(FIRFieldPath path, NSObject value);
     @Method(selector = "filterWhereField:isGreaterThanOrEqualTo:")
-    public static native FIRFilter filterWhereFieldIsGreaterThanOrEqualTo(String field, NSObject value);
+    public static native FIRFilter greaterThanOrEqualTo(String field, NSObject value);
     @Method(selector = "filterWhereFieldPath:isGreaterThanOrEqualTo:")
-    public static native FIRFilter filterWhereFieldPathIsGreaterThanOrEqualTo(FIRFieldPath path, NSObject value);
+    public static native FIRFilter greaterThanOrEqualTo(FIRFieldPath path, NSObject value);
     @Method(selector = "filterWhereField:isLessThan:")
-    public static native FIRFilter filterWhereFieldIsLessThan(String field, NSObject value);
+    public static native FIRFilter lessThan(String field, NSObject value);
     @Method(selector = "filterWhereFieldPath:isLessThan:")
-    public static native FIRFilter filterWhereFieldPathIsLessThan(FIRFieldPath path, NSObject value);
+    public static native FIRFilter lessThan(FIRFieldPath path, NSObject value);
     @Method(selector = "filterWhereField:isLessThanOrEqualTo:")
-    public static native FIRFilter filterWhereFieldIsLessThanOrEqualTo(String field, NSObject value);
+    public static native FIRFilter lessThanOrEqualTo(String field, NSObject value);
     @Method(selector = "filterWhereFieldPath:isLessThanOrEqualTo:")
-    public static native FIRFilter filterWhereFieldPathIsLessThanOrEqualTo(FIRFieldPath path, NSObject value);
+    public static native FIRFilter lessThanOrEqualTo(FIRFieldPath path, NSObject value);
     @Method(selector = "filterWhereField:arrayContains:")
-    public static native FIRFilter filterWhereFieldArrayContains(String field, NSObject value);
+    public static native FIRFilter arrayContains(String field, NSObject value);
     @Method(selector = "filterWhereFieldPath:arrayContains:")
-    public static native FIRFilter filterWhereFieldPathArrayContains(FIRFieldPath path, NSObject value);
+    public static native FIRFilter arrayContains(FIRFieldPath path, NSObject value);
     @Method(selector = "filterWhereField:arrayContainsAny:")
-    public static native FIRFilter filterWhereFieldArrayContainsAny(String field, NSArray<?> values);
+    public static native FIRFilter arrayContainsAny(String field, NSArray<?> values);
     @Method(selector = "filterWhereFieldPath:arrayContainsAny:")
-    public static native FIRFilter filterWhereFieldPathArrayContainsAny(FIRFieldPath path, NSArray<?> values);
+    public static native FIRFilter arrayContainsAny(FIRFieldPath path, NSArray<?> values);
     @Method(selector = "filterWhereField:in:")
-    public static native FIRFilter filterWhereFieldIn(String field, NSArray<?> values);
+    public static native FIRFilter inArray(String field, NSArray<?> values);
     @Method(selector = "filterWhereFieldPath:in:")
-    public static native FIRFilter filterWhereFieldPathIn(FIRFieldPath path, NSArray<?> values);
+    public static native FIRFilter inArray(FIRFieldPath path, NSArray<?> values);
     @Method(selector = "filterWhereField:notIn:")
-    public static native FIRFilter filterWhereFieldNotIn(String field, NSArray<?> values);
+    public static native FIRFilter notInArray(String field, NSArray<?> values);
     @Method(selector = "filterWhereFieldPath:notIn:")
-    public static native FIRFilter filterWhereFieldPathNotIn(FIRFieldPath path, NSArray<?> values);
+    public static native FIRFilter notInArray(FIRFieldPath path, NSArray<?> values);
     @Method(selector = "orFilterWithFilters:")
-    public static native FIRFilter orFilter(NSArray<FIRFilter> filters);
+    public static native FIRFilter or(NSArray<FIRFilter> filters);
     @Method(selector = "andFilterWithFilters:")
-    public static native FIRFilter andFilter(NSArray<FIRFilter> filters);
+    public static native FIRFilter and(NSArray<FIRFilter> filters);
     /*</methods>*/
 }
