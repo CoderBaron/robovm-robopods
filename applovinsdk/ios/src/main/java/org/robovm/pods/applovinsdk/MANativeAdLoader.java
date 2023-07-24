@@ -62,6 +62,10 @@ import org.robovm.apple.coreanimation.*;
     public native MAAdRevenueDelegate getRevenueDelegate();
     @Property(selector = "setRevenueDelegate:", strongRef = true)
     public native void setRevenueDelegate(MAAdRevenueDelegate v);
+    @Property(selector = "adReviewDelegate")
+    public native MAAdReviewDelegate getAdReviewDelegate();
+    @Property(selector = "setAdReviewDelegate:", strongRef = true)
+    public native void setAdReviewDelegate(MAAdReviewDelegate v);
     @Property(selector = "placement")
     public native String getPlacement();
     @Property(selector = "setPlacement:")

@@ -50,7 +50,7 @@ val knownGroups = mutableMapOf<String, MutableList<String>>()
 val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
     "AppLovinSDK" to { framework ->
         val artifact = "$framework.framework"
-        val artifactLocation = downloadFolder.extend("applovin-ios-sdk/AppLovinSDK.xcframework/ios-arm64_armv7/$artifact")
+        val artifactLocation = downloadFolder.extend("applovin-ios-sdk/AppLovinSDK.xcframework/ios-arm64/$artifact")
         processFramework(
             artifact = artifact,
             moduleFolder = "applovinsdk/ios",
