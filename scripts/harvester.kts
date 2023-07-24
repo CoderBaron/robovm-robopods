@@ -457,7 +457,6 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
     registerFirebase(it, knownGroups)
     registerFacebook(it, knownGroups)
     registerFlurry(it, knownGroups)
-    registerKochava(it, knownGroups)
     registerMobileAdsMediationAdapters(it, knownGroups)
 }
 
@@ -1279,31 +1278,3 @@ fun registerFlurry(frameworkRegistry: MutableMap<String, (String) -> Unit>, grou
     registry["FlurryMessaging"] = { lib -> action(lib, "flurry/ios-messaging", "flurry_messaging.yaml") }
 }
 
-fun registerKochava(frameworkRegistry: MutableMap<String, (String) -> Unit>, groupRegistry: MutableMap<String, MutableList<String>>) {
-    val registry = GroupFrameworkRegister("Kochava", frameworkRegistry, groupRegistry)
-    val readmeUpdater = oneTimeReadmeUpdater(versionOverrideProvider = null)
-    fun action(framework: String, moduleFolder: String, yaml: String) {
-        val artifactLocation = downloadFolder.extend("Apple-XCFramework-$framework/$framework.xcframework/ios-arm64_armv7/$framework.framework")
-        processFramework(
-            artifact = "$framework.framework",
-            moduleFolder = moduleFolder,
-            sourceHeadersDir = artifactLocation.headers,
-            yaml = yaml,
-            version = { artifactLocation.infoPlist.extractVersion() },
-            readmeFileVersionUpdater = readmeUpdater,
-            instruction = """
-                1. Download recent version of `Source code (zip)` from https://github.com/Kochava/Apple-XCFramework-$framework/releases
-                2. unpack and rename to ${downloadFolder.extend("Apple-XCFramework-$framework")}
-            """.trimIndent(),
-            headersCopier = { frm, sourceHeadersDir, destinationHeadersDir ->
-                copyHeaders(frm, sourceHeadersDir, destinationHeadersDir)
-                // create a wrapper, as objc headers contains less data now that swift one
-                File(destinationHeadersDir, "$framework-wrap.h")
-                    .appendText("\n#include <TargetConditionals.h>\n#import <UIKit/UIKit.h>\n#import <$framework/$framework-Swift.h>")
-            },
-        )
-    }
-    registry["KochavaCore"] = { framework -> action(framework, "kochava/ios-core", "kochava-core.yaml") }
-    registry["KochavaTracker"] = { framework -> action(framework, "kochava/ios-tracker", "kochava-tracker.yaml") }
-    registry["KochavaAdNetwork"] = { framework -> action(framework, "kochava/ios-ads-network", "kochava-ads.yaml") }
-}

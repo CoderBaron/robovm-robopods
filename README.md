@@ -26,7 +26,6 @@ This is the list of currently available AltPods. Click them to get more informat
 | [InMobi](inmobi/)               | Monetization SDK for iOS                                                                                                                                           |
 | [IronSource](ironsource/)       | The Leading Mobile Advertising Technology Platform                                                                                                                 |
 | [Lottie](lottie/)               | An iOS library to natively render After Effects vector animations                                                                                                  |
-| [Kochava](kochava/)             | Kochava SDK for the Apple platform                                                                                                                                 |
 | [OneSignal](onesignal/)         | OneSignal is a free push notification service for mobile apps                                                                                                      |
 | [Pollfish](pollfish/)           | Simple Surveys                                                                                                                                                     |
 | [SAMKeychain](samkeychain/)     | SAMKeychain is a simple wrapper for accessing accounts, getting passwords, setting passwords, and deleting passwords using the system Keychain on Mac OS X and iOS |
@@ -54,7 +53,6 @@ v1.33.0 - in development
 | [HelpShiftX](helpshift/)        | 10.2.2  |
 | [InMobi](inmobi/)               | 10.1.4  |
 | [IronSource](ironsource/)       | 7.3.1   |
-| [Kochava](kochava/)             | 5.1.1   |
 | [Lottie](lottie/)               | 4.2.0   |
 | [OneSignal](onesignal/)         | 3.12.4  |
 | [Pollfish](pollfish/)           | 6.4.1   |
