@@ -34,27 +34,26 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/CASBridgeToBUnit/*</name>*/ 
-    extends /*<extends>*/CASBiddingUnit/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/CASNativeAdStarRatingAdapter/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*/implements CASNativeAdStarRating/*</implements>*/ {
 
-    /*<ptr>*/public static class CASBridgeToBUnitPtr extends Ptr<CASBridgeToBUnit, CASBridgeToBUnitPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(CASBridgeToBUnit.class); }/*</bind>*/
+    /*<ptr>*/
+    /*</ptr>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    protected CASBridgeToBUnit() {}
-    protected CASBridgeToBUnit(Handle h, long handle) { super(h, handle); }
-    protected CASBridgeToBUnit(SkipInit skipInit) { super(skipInit); }
-    /*</constructors>*/
+    /*<constructors>*//*</constructors>*/
     /*<properties>*/
-    
+    @NotImplemented("rating")
+    public NSNumber getRating() { return null; }
+    @NotImplemented("setRating:")
+    public void setRating(NSNumber v) {}
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "isAdCached")
-    public native boolean isAdCached();
+    
     /*</methods>*/
 }

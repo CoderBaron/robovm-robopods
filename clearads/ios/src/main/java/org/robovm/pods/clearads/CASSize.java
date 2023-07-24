@@ -81,12 +81,8 @@ import org.robovm.apple.coreanimation.*;
     public static native CASSize getSmartBanner();
     @Method(selector = "getInlineBannerWithWidth:maxHeight:")
     public static native CASSize getInlineBanner(@MachineSizedFloat double width, @MachineSizedFloat double maxHeight);
-    /**
-     * @deprecated Use getAdaptiveBanner(forMaxWidth:) instead.
-     */
-    @Deprecated
     @Method(selector = "getAdaptiveBannerInContainer:")
-    public static native CASSize getAdaptiveBannerInContainer(UIView inContainer);
+    public static native CASSize getAdaptiveBannerInContainer(UIView view);
     @Method(selector = "getAdaptiveBannerInWindow:")
     public static native CASSize getAdaptiveBannerInWindow(UIWindow inWindow);
     @Method(selector = "getAdaptiveBannerForMaxWidth:")

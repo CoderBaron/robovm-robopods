@@ -36,25 +36,24 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/CASMNativeAdContent/*</name>*/ 
-    extends /*<extends>*/CASNativeAdContent/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/CASNativeAdStarRating/*</name>*/ 
+    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
-    /*<ptr>*/public static class CASMNativeAdContentPtr extends Ptr<CASMNativeAdContent, CASMNativeAdContentPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(CASMNativeAdContent.class); }/*</bind>*/
+    /*<ptr>*/
+    /*</ptr>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    public CASMNativeAdContent() {}
-    protected CASMNativeAdContent(Handle h, long handle) { super(h, handle); }
-    protected CASMNativeAdContent(SkipInit skipInit) { super(skipInit); }
-    /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "mediaContent")
-    public native UIView getMediaContent();
+    @Property(selector = "rating")
+    NSNumber getRating();
+    @Property(selector = "setRating:")
+    void setRating(NSNumber v);
     /*</properties>*/
-    /*<members>*//*</members>*/
     /*<methods>*/
     
     /*</methods>*/
+    /*<adapter>*/
+    /*</adapter>*/
 }

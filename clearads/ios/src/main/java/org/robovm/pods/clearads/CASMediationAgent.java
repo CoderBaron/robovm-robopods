@@ -37,43 +37,26 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/CAS/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/CASMediationAgent/*</name>*/ 
+    extends /*<extends>*/CASMediationUnit/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class CASPtr extends Ptr<CAS, CASPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(CAS.class); }/*</bind>*/
-    /*<constants>*/
-    public static final String FRAMEWORK_VERSION = "3.2.0";
-    public static final int FRAMEWORK_CODE = 3200;
-    /*</constants>*/
+    /*<ptr>*/public static class CASMediationAgentPtr extends Ptr<CASMediationAgent, CASMediationAgentPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(CASMediationAgent.class); }/*</bind>*/
+    /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public CAS() {}
-    protected CAS(Handle h, long handle) { super(h, handle); }
-    protected CAS(SkipInit skipInit) { super(skipInit); }
+    protected CASMediationAgent() {}
+    protected CASMediationAgent(Handle h, long handle) { super(h, handle); }
+    protected CASMediationAgent(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "settings")
-    public static native CASSettings settings();
-    @Method(selector = "targetingOptions")
-    public static native CASTargetingOptions targetingOptions();
-    @Method(selector = "manager")
-    public static native CASMediationManager manager();
-    @Method(selector = "setManager:")
-    public static native void setManager(CASMediationManager value);
-    @Method(selector = "buildManager")
-    public static native CASManagerBuilder buildManager();
-    @Method(selector = "getSDKVersion")
-    public static native String getSDKVersion();
-    @Method(selector = "validateIntegration")
-    public static native void validateIntegration();
-    @Method(selector = "getMessageOf:")
-    public static native String getMessageOf(CASError error);
-    @Method(selector = "getErrorFor:")
-    public static native CASError getErrorFor(String message);
+    @Method(selector = "isAdCached")
+    public native boolean isAdCached();
+    @Method(selector = "toggleIgnoreMode")
+    public native void toggleIgnoreMode();
     /*</methods>*/
 }

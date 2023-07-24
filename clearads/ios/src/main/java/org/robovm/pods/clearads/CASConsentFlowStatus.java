@@ -36,27 +36,28 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/CASAgent/*</name>*/ 
-    extends /*<extends>*/CASMediationUnit/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
+public enum /*<name>*/CASConsentFlowStatus/*</name>*/ implements ValuedEnum {
+    /*<values>*/
+    Obtained(1L);
+    /*</values>*/
 
-    /*<ptr>*/public static class CASAgentPtr extends Ptr<CASAgent, CASAgentPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(CASAgent.class); }/*</bind>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    protected CASAgent() {}
-    protected CASAgent(Handle h, long handle) { super(h, handle); }
-    protected CASAgent(SkipInit skipInit) { super(skipInit); }
-    /*</constructors>*/
-    /*<properties>*/
-    
-    /*</properties>*/
-    /*<members>*//*</members>*/
-    /*<methods>*/
-    @Method(selector = "isAdCached")
-    public native boolean isAdCached();
-    @Method(selector = "toggleIgnoreMode")
-    public native void toggleIgnoreMode();
-    /*</methods>*/
+    /*<methods>*//*</methods>*/
+
+    private final long n;
+
+    private /*<name>*/CASConsentFlowStatus/*</name>*/(long n) { this.n = n; }
+    public long value() { return n; }
+    public static /*<name>*/CASConsentFlowStatus/*</name>*/ valueOf(long n) {
+        for (/*<name>*/CASConsentFlowStatus/*</name>*/ v : values()) {
+            if (v.n == n) {
+                return v;
+            }
+        }
+        throw new IllegalArgumentException("No constant with value " + n + " found in " 
+            + /*<name>*/CASConsentFlowStatus/*</name>*/.class.getName());
+    }
 }

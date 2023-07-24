@@ -21,7 +21,7 @@ enums:
     CASPriceAccuracy: { }
     Gender: { }
     CASType: { }
-
+    CASConsentFlowStatus: {}
 classes:
     CAS:
         methods:
@@ -31,7 +31,6 @@ classes:
                 name: createMediationManager
             '+createWithManagerID:enableTypes:demoAdMode:mediationExtras:onInit:':
                 name: createMediationManager
-    CASAgent: { }
     CASAnalytics: { }
     CASAppOpen:
         methods:
@@ -43,8 +42,6 @@ classes:
             '+createWithManager:':
                 name: create
                 contructor: true
-    CASBUnit: { }
-    CASBannerAgent: { }
     CASBannerInternal: { }
     CASBannerView:
         methods:
@@ -126,6 +123,14 @@ classes:
                 exclude: true # conflicts with property
             '-getTaggedAudience':
                 exclude: true # conflicts with property
+            '-isDebugMode':
+                exclude: true # conflicts with property
+            '-isMutedAdSounds':
+                exclude: true # conflicts with property
+            '-getBannerRefreshInterval':
+                exclude: true # conflicts with property
+            '-getInterstitialInterval':
+                exclude: true # conflicts with property
     CASSize:
         methods:
             '+getInlineBannerWithWidth:maxHeight:':
@@ -145,8 +150,19 @@ classes:
             '-initWithEnabled:':
                 name: init
     CASNativeAdContent: { }
-    CASNativeView: {}
-    CASMNativeAdContent: {}
+    CASNativeView:
+        methods:
+            '-setNativeAd:error:':
+                name: setNativeAd
+                throws: NSErrorException
+
+    CASBiddingUnit: { }
+    CASChoicesView: { }
+    CASMediaView: { }
+    CASMediationAgent: { }
+    CASMediationBannerAgent: { }
+    CASMediationNativeAdContent: { }
+    CASStarRatingView: { }
 protocols:
     CASAdapterFactory: { }
     CASAnalyticsDelegate:
@@ -177,7 +193,7 @@ protocols:
     CASStatusDelegate: { }
     CASStatusHandler: { }
     CASPaidCallback: {}
-
+    CASNativeAdStarRating: {}
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):

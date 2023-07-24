@@ -72,18 +72,20 @@ import org.robovm.apple.coreanimation.*;
     public native String getReviewCount();
     @Property(selector = "adLabel")
     public native String getAdLabel();
-    @Property(selector = "adChoicesContent")
-    public native UIView getAdChoicesContent();
     @Property(selector = "hasVideoContent")
     public native boolean hasVideoContent();
-    @Property(selector = "mediaContent")
-    public native UIView getMediaContent();
+    @Property(selector = "hasMediaContent")
+    public native boolean hasMediaContent();
     @Property(selector = "mediaContentAspectRatio")
     public native @MachineSizedFloat double getMediaContentAspectRatio();
     @Property(selector = "mediaImage")
     public native UIImage getMediaImage();
     @Property(selector = "mediaImageURL")
     public native NSURL getMediaImageURL();
+    @Property(selector = "rootViewController")
+    public native UIViewController getRootViewController();
+    @Property(selector = "setRootViewController:", strongRef = true)
+    public native void setRootViewController(UIViewController v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

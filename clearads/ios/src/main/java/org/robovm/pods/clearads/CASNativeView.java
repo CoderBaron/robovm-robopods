@@ -54,60 +54,74 @@ import org.robovm.apple.coreanimation.*;
     public CASNativeView(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "mainView")
+    public native UIView getMainView();
+    @Property(selector = "setMainView:", strongRef = true)
+    public native void setMainView(UIView v);
+    @Property(selector = "mediaView")
+    public native CASMediaView getMediaView();
+    @Property(selector = "setMediaView:", strongRef = true)
+    public native void setMediaView(CASMediaView v);
+    @Property(selector = "adChoicesView")
+    public native CASChoicesView getAdChoicesView();
+    @Property(selector = "setAdChoicesView:", strongRef = true)
+    public native void setAdChoicesView(CASChoicesView v);
     @Property(selector = "headlineView")
     public native UILabel getHeadlineView();
-    @Property(selector = "setHeadlineView:")
+    @Property(selector = "setHeadlineView:", strongRef = true)
     public native void setHeadlineView(UILabel v);
     @Property(selector = "callToActionView")
     public native UIButton getCallToActionView();
-    @Property(selector = "setCallToActionView:")
+    @Property(selector = "setCallToActionView:", strongRef = true)
     public native void setCallToActionView(UIButton v);
     @Property(selector = "iconView")
     public native UIImageView getIconView();
-    @Property(selector = "setIconView:")
+    @Property(selector = "setIconView:", strongRef = true)
     public native void setIconView(UIImageView v);
     @Property(selector = "bodyView")
     public native UILabel getBodyView();
-    @Property(selector = "setBodyView:")
+    @Property(selector = "setBodyView:", strongRef = true)
     public native void setBodyView(UILabel v);
     @Property(selector = "priceView")
     public native UILabel getPriceView();
-    @Property(selector = "setPriceView:")
+    @Property(selector = "setPriceView:", strongRef = true)
     public native void setPriceView(UILabel v);
     @Property(selector = "advertiserView")
     public native UILabel getAdvertiserView();
-    @Property(selector = "setAdvertiserView:")
+    @Property(selector = "setAdvertiserView:", strongRef = true)
     public native void setAdvertiserView(UILabel v);
     @Property(selector = "storeView")
     public native UILabel getStoreView();
-    @Property(selector = "setStoreView:")
+    @Property(selector = "setStoreView:", strongRef = true)
     public native void setStoreView(UILabel v);
-    @Property(selector = "mediaView")
-    public native UIView getMediaView();
-    @Property(selector = "setMediaView:")
-    public native void setMediaView(UIView v);
     @Property(selector = "starRatingView")
     public native UIView getStarRatingView();
-    @Property(selector = "setStarRatingView:")
+    @Property(selector = "setStarRatingView:", strongRef = true)
     public native void setStarRatingView(UIView v);
     @Property(selector = "reviewCountView")
     public native UILabel getReviewCountView();
-    @Property(selector = "setReviewCountView:")
+    @Property(selector = "setReviewCountView:", strongRef = true)
     public native void setReviewCountView(UILabel v);
     @Property(selector = "adLabelView")
     public native UILabel getAdLabelView();
-    @Property(selector = "setAdLabelView:")
+    @Property(selector = "setAdLabelView:", strongRef = true)
     public native void setAdLabelView(UILabel v);
-    @Property(selector = "adChoicesView")
-    public native UIView getAdChoicesView();
-    @Property(selector = "setAdChoicesView:")
-    public native void setAdChoicesView(UIView v);
+    @Property(selector = "clickableViews")
+    public native NSArray<UIView> getClickableViews();
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    public boolean setNativeAd(CASNativeAdContent ad) throws NSErrorException {
+       NSError.NSErrorPtr ptr = new NSError.NSErrorPtr();
+       boolean result = setNativeAd(ad, ptr);
+       if (ptr.get() != null) { throw new NSErrorException(ptr.get()); }
+       return result;
+    }
+    @Method(selector = "setNativeAd:error:")
+    private native boolean setNativeAd(CASNativeAdContent ad, NSError.NSErrorPtr error);
     @Method(selector = "initWithFrame:")
     protected native @Pointer long init(@ByVal CGRect frame);
     @Method(selector = "initWithCoder:")

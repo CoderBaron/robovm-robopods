@@ -36,18 +36,18 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC18CleverAdsSolutions8CASBUnit")/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/CASBUnit/*</name>*/ 
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/CASBiddingUnit/*</name>*/ 
     extends /*<extends>*/CASMediationUnit/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class CASBUnitPtr extends Ptr<CASBUnit, CASBUnitPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(CASBUnit.class); }/*</bind>*/
+    /*<ptr>*/public static class CASBiddingUnitPtr extends Ptr<CASBiddingUnit, CASBiddingUnitPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(CASBiddingUnit.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected CASBUnit() {}
-    protected CASBUnit(Handle h, long handle) { super(h, handle); }
-    protected CASBUnit(SkipInit skipInit) { super(skipInit); }
+    protected CASBiddingUnit() {}
+    protected CASBiddingUnit(Handle h, long handle) { super(h, handle); }
+    protected CASBiddingUnit(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "cpm")

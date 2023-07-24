@@ -64,10 +64,10 @@ import org.robovm.apple.coreanimation.*;
     public native String getPrivacyPolicyUrl();
     @Property(selector = "setPrivacyPolicyUrl:")
     public native void setPrivacyPolicyUrl(String v);
-    @Property(selector = "dismissHandler")
-    public native @Block Runnable getDismissHandler();
-    @Property(selector = "setDismissHandler:")
-    public native void setDismissHandler(@Block Runnable v);
+    @Property(selector = "completionHandler")
+    public native @Block VoidBlock1<CASConsentFlowStatus> getCompletionHandler();
+    @Property(selector = "setCompletionHandler:")
+    public native void setCompletionHandler(@Block VoidBlock1<CASConsentFlowStatus> v);
     @Property(selector = "viewControllerToPresent")
     public native UIViewController getViewControllerToPresent();
     @Property(selector = "setViewControllerToPresent:")
@@ -77,11 +77,9 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "initWithEnabled:")
     protected native @Pointer long init(boolean isEnabled);
-    @Method(selector = "withPrivacyPolicy:")
-    public native CASConsentFlow withPrivacyPolicy(String url);
-    @Method(selector = "withDismissHandler:")
-    public native CASConsentFlow withDismissHandler(@Block Runnable handler);
     @Method(selector = "withViewControllerToPresent:")
     public native CASConsentFlow withViewControllerToPresent(UIViewController controller);
+    @Method(selector = "present")
+    public native void present();
     /*</methods>*/
 }

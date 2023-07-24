@@ -37,24 +37,26 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/CASBannerAgent/*</name>*/ 
-    extends /*<extends>*/CASAgent/*</extends>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/CASMediationNativeAdContent/*</name>*/ 
+    extends /*<extends>*/CASNativeAdContent/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class CASBannerAgentPtr extends Ptr<CASBannerAgent, CASBannerAgentPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(CASBannerAgent.class); }/*</bind>*/
+    /*<ptr>*/public static class CASMediationNativeAdContentPtr extends Ptr<CASMediationNativeAdContent, CASMediationNativeAdContentPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(CASMediationNativeAdContent.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected CASBannerAgent() {}
-    protected CASBannerAgent(Handle h, long handle) { super(h, handle); }
-    protected CASBannerAgent(SkipInit skipInit) { super(skipInit); }
+    public CASMediationNativeAdContent() {}
+    protected CASMediationNativeAdContent(Handle h, long handle) { super(h, handle); }
+    protected CASMediationNativeAdContent(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "rootViewController")
+    public native UIViewController getRootViewController();
+    @Property(selector = "setRootViewController:")
+    public native void setRootViewController(UIViewController v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "isAdCached")
-    public native boolean isAdCached();
+    
     /*</methods>*/
 }
