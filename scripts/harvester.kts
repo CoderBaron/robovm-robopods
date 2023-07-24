@@ -1105,7 +1105,7 @@ fun registerMobileAdsMediationAdapters(frameworkRegistry: MutableMap<String, (St
     registry["AppLovinAdapter"] = { framework ->
         val artifact = "$framework.framework"
         val artifactLocation =
-            downloadFolder.extend("AppLovinAdapter/AppLovinAdapter.xcframework/ios-arm64_armv7/$artifact")
+            downloadFolder.extend("AppLovinAdapter/AppLovinAdapter.xcframework/ios-arm64/$artifact")
         processFramework(
             artifact = artifact,
             moduleFolder = "firebase/ios-google-mobile-ads-adapters/ios-applovin",
