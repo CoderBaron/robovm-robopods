@@ -26,5 +26,6 @@
         <module>ios-share</module>
         <module>ios-aem</module>
         <module>ios-audience</module>
+        <module>ios-gaming-services-kit</module>
     </modules>
 </project>

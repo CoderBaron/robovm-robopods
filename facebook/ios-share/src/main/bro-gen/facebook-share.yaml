@@ -51,16 +51,6 @@ classes:
         methods:
             '-setImage:forKey:':
                 name: setImage
-    FBSDKGameRequestContent: {}
-    FBSDKGameRequestDialog:
-        methods:
-            '-validateWithError:':
-                name: validate
-            '+dialogWithContent:delegate:':
-                constructor: true
-                name: create
-            '+showWithContent:delegate:':
-                name: show
     FBSDKHashtag:
         methods:
             '-initWithString:':
@@ -145,12 +135,6 @@ classes:
             '+createDeepLinkURLWithQueryDictionary:':
                 name: createDeepLinkURL
 protocols:
-    FBSDKGameRequestDialogDelegate:
-        methods:
-            '-gameRequestDialog:didCompleteWithResults:':
-                name: didComplete
-            '-gameRequestDialog:didFailWithError:':
-                name: didFail
     FBSDKLiking: {}
     FBSDKShareMedia: {}
     FBSDKShareMessengerActionButton: {}

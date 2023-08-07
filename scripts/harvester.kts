@@ -1222,6 +1222,7 @@ fun registerFacebook(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
     registry["FBSDKLoginKit"] = { framework -> action(framework, "facebook/ios-login", "facebook-login.yaml") }
     registry["FBSDKShareKit"] = { framework -> action(framework, "facebook/ios-share", "facebook-share.yaml") }
     registry["FBAEMKit"] = { framework -> action(framework, "facebook/ios-aem", "facebook-aemkit.yaml") }
+    registry["FBSDKGamingServicesKit"] = { framework -> action(framework, "facebook/ios-gaming-services-kit", "facebook-gaming-serv-kit.yaml") }
     registry["FBAudienceNetwork"] = { framework ->
         action(framework, "facebook/ios-audience", "facebook-audience.yaml",
             frameworkLocation = "FBAudienceNetwork/Dynamic/FBAudienceNetwork.xcframework/ios-arm64_armv7/FBAudienceNetwork.framework",
