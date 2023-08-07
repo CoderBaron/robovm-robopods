@@ -56,5 +56,9 @@ import org.robovm.apple.uikit.*;
     public native void present(UIViewController viewController, @Block VoidBlock1<NSError> completionHandler);
     @Method(selector = "loadWithCompletionHandler:")
     public static native void load(@Block VoidBlock2<UMPConsentForm, NSError> completionHandler);
+    @Method(selector = "loadAndPresentIfRequiredFromViewController:completionHandler:")
+    public static native void loadAndPresentIfRequired(UIViewController viewController, @Block VoidBlock1<NSError> completionHandler);
+    @Method(selector = "presentPrivacyOptionsFormFromViewController:completionHandler:")
+    public static native void presentPrivacyOptionsForm(UIViewController viewController, @Block VoidBlock1<NSError> completionHandler);
     /*</methods>*/
 }

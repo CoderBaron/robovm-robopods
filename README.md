@@ -48,7 +48,7 @@ v1.33.0 - in development
 | [Charts](charts/)               | 5.0.0   |
 | [ClearAds](clearads/)           | 3.2.0   |
 | [Facebook](facebook/)           | 16.1.3  |
-| [Firebase](firebase/)           | 10.12.0 |
+| [Firebase](firebase/)           | 10.13.0 |
 | [Fyber](fyber/)                 | 8.2.2   |
 | [HelpShiftX](helpshift/)        | 10.2.2  |
 | [InMobi](inmobi/)               | 10.1.4  |

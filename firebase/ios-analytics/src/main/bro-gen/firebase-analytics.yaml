@@ -22,6 +22,8 @@ classes:
                 name: initiateOnDeviceConversionMeasurement
             '+sessionIDWithCompletion:':
                 name: sessionID
+            '+initiateOnDeviceConversionMeasurementWithPhoneNumber:':
+                name: initiateOnDeviceConversionMeasurementWithPhoneNumber
 protocols: {}
 
 functions:

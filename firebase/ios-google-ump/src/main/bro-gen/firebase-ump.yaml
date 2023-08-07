@@ -12,6 +12,7 @@ enums:
     UMPFormStatus: {}
     UMPRequestErrorCode: {prefix: UMP, name: UMPErrorCode, nserror: true}
     UMPFormErrorCode: {prefix: UMP, merge_with: UMPRequestErrorCode}
+    UMPPrivacyOptionsRequirementStatus: {}
 
 classes:
     UMPConsentForm:
@@ -20,6 +21,10 @@ classes:
                 name: present
             '+loadWithCompletionHandler:':
                 name: load
+            '+loadAndPresentIfRequiredFromViewController:completionHandler:':
+                name: loadAndPresentIfRequired
+            '+presentPrivacyOptionsFormFromViewController:completionHandler:':
+                name: presentPrivacyOptionsForm
     UMPConsentInformation:
         methods:
             '-requestConsentInfoUpdateWithParameters:completionHandler:':
