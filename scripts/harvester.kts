@@ -1097,6 +1097,9 @@ fun registerFirebase(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
             frameworkLocation = pickLocation("UserMessagingPlatform", "Google-Mobile-Ads-SDK"))
     }
     registry["FirebaseAppCheck"] = { framework -> action(framework, "firebase/ios-appcheck", "firebase-appcheck.yaml") }
+    registry["FirebaseInstallations"] = { framework -> action(framework, "firebase/ios-installations", "firebase-installations.yaml",
+        frameworkLocation = pickLocation("FirebaseInstallations", "FirebaseAnalytics"))
+    }
 }
 
 fun registerMobileAdsMediationAdapters(frameworkRegistry: MutableMap<String, (String) -> Unit>, groupRegistry: MutableMap<String, MutableList<String>>) {

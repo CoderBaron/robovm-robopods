@@ -36,5 +36,6 @@
         <module>ios-appcheck</module>
         <module>ios-google-mobile-ads-mediation-testsuite</module>
         <module>ios-google-mobile-ads-adapters</module>
+        <module>ios-installations</module>
     </modules>
 </project>

@@ -1,0 +1,62 @@
+package: org.robovm.pods.firebase.installations
+framework: FirebaseInstallations
+include: [ foundation ]
+clang_args: [ '-x', 'objective-c' ]
+headers:
+    - FirebaseInstallations.h
+
+private_typedefs:
+    "FIRApp *": org.robovm.pods.firebase.core.FIRApp
+
+typedefs: { }
+
+enums:
+    FIRInstallationsErrorCode: { nserror: true}
+
+classes:
+    FIRInstallations:
+        methods:
+            '-installationIDWithCompletion:':
+                name: installationID
+            '-authTokenWithCompletion:':
+                name: authToken
+            '-authTokenForcingRefresh:completion:':
+                name: authTokenForcingRefresh
+            '-deleteWithCompletion:':
+                name: delete
+            '+installationsWithApp:':
+                name: installations
+    FIRInstallationsAuthTokenResult: { }
+protocols:
+
+functions:
+    # Make sure we don't miss any functions if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Function_#{g[0]}'
+
+values:
+    kFirebaseInstallationsErrorDomain:
+        class: FIRInstallationsErrorCode
+        name: getClassDomain
+    FIRInstallationID(DidChange)Notification:
+        class: FIRInstallations
+        static_class: Notifications
+        name: '#{g[0]}'
+        type: NSString
+    kFIRInstallationID(DidChangeNotificationAppName)Key:
+        name: '#{g[0]}'
+        static_class: NotificationKeys
+        type: NSString
+        class: FIRInstallations
+
+    # Make sure we don't miss any values if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Value_#{g[0]}'
+
+constants:
+    # Make sure we don't miss any constants if new ones are introduced in a later version
+    (.*):
+        class: __FixMe
+        name: 'Constant__#{g[0]}'
