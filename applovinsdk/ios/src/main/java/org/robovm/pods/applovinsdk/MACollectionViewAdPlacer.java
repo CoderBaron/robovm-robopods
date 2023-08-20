@@ -51,7 +51,10 @@ import org.robovm.apple.coreanimation.*;
     public MACollectionViewAdPlacer(UICollectionView collectionView, MAAdPlacerSettings settings) { super((Handle) null, create(collectionView, settings)); retain(getHandle()); }
     /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "shouldCollapseEmptyAds")
+    public native boolean isCollapseEmptyAds();
+    @Property(selector = "setCollapseEmptyAds:")
+    public native void setCollapseEmptyAds(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
