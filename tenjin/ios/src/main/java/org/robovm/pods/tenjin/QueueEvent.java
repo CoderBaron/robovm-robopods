@@ -37,7 +37,7 @@ import org.robovm.apple.dispatch.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9TenjinSDK10QueueEvent")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/QueueEvent/*</name>*/ 
     extends /*<extends>*/NSManagedObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {

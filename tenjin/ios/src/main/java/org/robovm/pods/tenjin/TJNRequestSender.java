@@ -53,7 +53,7 @@ import org.robovm.apple.dispatch.*;
     void setDefaultPostCompletionBlock(@Block VoidBlock4<NSData, NSURLResponse, NSError, Boolean> v);
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "post:body:headers:")
+    @Method(selector = "postWithUrl:body:headers:")
     void post(String url, String body, NSDictionary<?, ?> headers);
     @Method(selector = "method:url:body:")
     void method(String method, String url, NSMutableString body);

@@ -55,7 +55,7 @@ import org.robovm.apple.dispatch.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("post:body:headers:")
+    @NotImplemented("postWithUrl:body:headers:")
     public void post(String url, String body, NSDictionary<?, ?> headers) {}
     @NotImplemented("method:url:body:")
     public void method(String method, String url, NSMutableString body) {}

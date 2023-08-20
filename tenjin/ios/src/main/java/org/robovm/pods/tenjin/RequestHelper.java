@@ -49,16 +49,16 @@ import org.robovm.apple.dispatch.*;
     protected RequestHelper() {}
     protected RequestHelper(Handle h, long handle) { super(h, handle); }
     protected RequestHelper(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithApiKey:client:")
-    public RequestHelper(String apiKey, TenjinImpl client) { super((SkipInit) null); initObject(init(apiKey, client)); }
+    @Method(selector = "initWithApiKey:")
+    public RequestHelper(String apiKey) { super((SkipInit) null); initObject(init(apiKey)); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithApiKey:client:")
-    protected native @Pointer long init(String apiKey, TenjinImpl client);
+    @Method(selector = "initWithApiKey:")
+    protected native @Pointer long init(String apiKey);
     @Method(selector = "handlePostRequestWithEndpoint:params:")
     public native void handlePostRequest(String endpoint, NSDictionary<NSString, ?> params);
     /*</methods>*/

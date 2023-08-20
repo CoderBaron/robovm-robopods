@@ -6,8 +6,7 @@ headers:
     - "#include <TargetConditionals.h>"
     - "#import <UIKit/UIKit.h>"
     - "#import <CoreData/CoreData.h>"
-    - TenjinImpl.h
-    - TJNRequestSender.h
+    - TenjinSDK.h
     - TenjinSDK-Swift.h
     - TenjinSDK+AdMobILRD.h
     - TenjinSDK+AppLovinILRD.h
@@ -72,7 +71,9 @@ classes:
             '+updatePostbackConversionValue:coarseValue:lockWindow:':
                 name: updatePostbackConversion
     TJNHTTPClient:
-        exclude: true # from private headers
+        methods:
+            '-initWithApiKey:':
+                name: init
     QueueEvent: {}
     RequestHelper:
         methods:
@@ -115,21 +116,10 @@ classes:
                 name: trackConversionValue
             '-setValue:forKey:':
                 name: setValue
-    PersistedFileStore: { }
-    TenjinConfig:
-        methods:
-            '-setValue:forKey:':
-                name: setValue
-    TenjinIAPHelper:
-        methods:
-            '-getProductFor:withCompletion:':
-                name: getProduct
-            '+extractPropertiesFromProduct:to:':
-                name: extractProperties
 protocols:
     TJNRequestSender:
         methods:
-            '-post:body:headers:':
+            '-postWithUrl:body:headers:':
                 name: post
             '-method:url:body:':
                 name: method
@@ -138,28 +128,6 @@ protocols:
             '-method:url:body:headers:completionBlock:':
                 name: method
 
-    DataStore:
-        methods:
-            '-getString:withDefault:':
-                name: getString
-            '-getInteger:withDefault:':
-                name: getInteger
-            '-getLong:withDefault:':
-                name: getLong
-            '-getFloat:withDefault:':
-                name: getFloat
-            '-getBool:withDefault:':
-                name: getBool
-            '-putString:value:':
-                name: putString
-            '-putInteger:value:':
-                name: putInteger
-            '-putLong:value:':
-                name: putLong
-            '-putFloat:value:':
-                name: putFloat
-            '-putBool:value:':
-                name: putBool
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):

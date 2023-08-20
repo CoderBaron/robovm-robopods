@@ -49,16 +49,16 @@ import org.robovm.apple.dispatch.*;
     protected TenjinRepository() {}
     protected TenjinRepository(Handle h, long handle) { super(h, handle); }
     protected TenjinRepository(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithApiKey:client:")
-    public TenjinRepository(String apiKey, TenjinImpl client) { super((SkipInit) null); initObject(init(apiKey, client)); }
+    @Method(selector = "initWithApiKey:")
+    public TenjinRepository(String apiKey) { super((SkipInit) null); initObject(init(apiKey)); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithApiKey:client:")
-    protected native @Pointer long init(String apiKey, TenjinImpl client);
+    @Method(selector = "initWithApiKey:")
+    protected native @Pointer long init(String apiKey);
     @Method(selector = "setCacheEventsSetting:")
     public static native void setCacheEventsSetting(boolean isRetryEventsEnabled);
     @Method(selector = "getCacheEventsSetting")
