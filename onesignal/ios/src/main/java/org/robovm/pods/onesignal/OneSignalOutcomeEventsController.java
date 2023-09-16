@@ -59,13 +59,17 @@ import org.robovm.apple.uikit.*;
     protected native @Pointer long init(OSSessionManager sessionManager, OSOutcomeEventsFactory outcomeEventsFactory);
     @Method(selector = "clearOutcomes")
     public native void clearOutcomes();
+    @Method(selector = "cleanUniqueOutcomeNotifications")
+    public native void cleanUniqueOutcomeNotifications();
+    @Method(selector = "addOutcome:")
+    public native void addOutcome(String name);
+    @Method(selector = "addUniqueOutcome:")
+    public native void addUniqueOutcome(String name);
+    @Method(selector = "addOutcomeWithValue:value:")
+    public native void addOutcome(String name, NSNumber value);
     @Method(selector = "sendClickActionOutcomes:appId:deviceType:")
     public native void sendClickActionOutcomes(NSArray<OSInAppMessageOutcome> outcomes, String appId, NSNumber deviceType);
-    @Method(selector = "sendOutcomeEvent:appId:deviceType:successBlock:")
-    public native void sendOutcomeEvent(String name, String appId, NSNumber deviceType, @Block VoidBlock1<OSOutcomeEvent> success);
-    @Method(selector = "sendUniqueOutcomeEvent:appId:deviceType:successBlock:")
-    public native void sendUniqueOutcomeEvent(String name, String appId, NSNumber deviceType, @Block VoidBlock1<OSOutcomeEvent> success);
-    @Method(selector = "sendOutcomeEventWithValue:value:appId:deviceType:successBlock:")
-    public native void sendOutcomeEvent(String name, NSNumber weight, String appId, NSNumber deviceType, @Block VoidBlock1<OSOutcomeEvent> success);
+    @Method(selector = "sendSessionEndOutcomes:appId:pushSubscriptionId:onesignalId:influenceParams:onSuccess:onFailure:")
+    public native void sendSessionEndOutcomes(NSNumber timeElapsed, String appId, String pushSubscriptionId, String onesignalId, NSArray<OSFocusInfluenceParam> influenceParams, @Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
     /*</methods>*/
 }

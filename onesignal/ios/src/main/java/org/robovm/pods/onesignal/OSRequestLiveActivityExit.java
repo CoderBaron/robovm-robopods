@@ -47,14 +47,14 @@ import org.robovm.apple.uikit.*;
     public OSRequestLiveActivityExit() {}
     protected OSRequestLiveActivityExit(Handle h, long handle) { super(h, handle); }
     protected OSRequestLiveActivityExit(SkipInit skipInit) { super(skipInit); }
-    public OSRequestLiveActivityExit(String userId, String appId, String activityId) { super((Handle) null, create(userId, appId, activityId)); retain(getHandle()); }
+    public OSRequestLiveActivityExit(String subscriptionId, String appId, String activityId) { super((Handle) null, create(subscriptionId, appId, activityId)); retain(getHandle()); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "withUserId:appId:activityId:")
-    protected static native @Pointer long create(String userId, String appId, String activityId);
+    @Method(selector = "withSubscriptionId:appId:activityId:")
+    protected static native @Pointer long create(String subscriptionId, String appId, String activityId);
     /*</methods>*/
 }

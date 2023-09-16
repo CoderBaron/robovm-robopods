@@ -100,11 +100,5 @@ import org.robovm.apple.uikit.*;
     public native String stringify();
     @Method(selector = "parseWithApns:")
     public static native OSNotification parse(NSDictionary<?, ?> message);
-    @Method(selector = "setCompletionBlock:")
-    public native void setCompletionBlock(@Block VoidBlock1<OSNotification> completion);
-    @Method(selector = "startTimeoutTimer")
-    public native void startTimeoutTimer();
-    @Method(selector = "complete:")
-    public native void complete(OSNotification notification);
     /*</methods>*/
 }

@@ -182,8 +182,11 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
     "OneSignal" to { framework ->
         val artifact = "$framework.framework"
         val versionFile: String by lazy {
-            downloadFolder.extend("OneSignal.xcframework/version").readText()
+            downloadFolder.extend("OneSignalFramework.xcframework/version").readText()
         }
+        val internalFrameworks = arrayOf("OneSignalFramework", "OneSignalCore", "OneSignalOSCore",
+            "OneSignalExtension", "OneSignalLocation", "OneSignalNotifications", "OneSignalInAppMessages",
+            "OneSignalOutcomes", "OneSignalUser" )
         processFramework(
             artifact = artifact,
             moduleFolder = "onesignal/ios",
@@ -191,42 +194,41 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             destinationHeadersDir = Path.of("onesignal", "ios", "src", "main", "bro-gen").toFile(),
             yaml = "onesignal.yaml",
             headerFolderCleaner = { frm, dst ->
-                cleanUpHeaders(frm, dst.extend("OneSignal.framework"))
-                cleanUpHeaders(frm, dst.extend("OneSignalCore.framework"))
-                cleanUpHeaders(frm, dst.extend("OneSignalOutcomes.framework"))
+                internalFrameworks.forEach {
+                    cleanUpHeaders(frm, dst.extend("$it.framework"))
+                }
             },
             headersCopier = { _, src, dst ->
-                copyHeaders("OneSignal.framework",
-                    src.extend("OneSignal.xcframework/ios-arm64_armv7_armv7s/OneSignal.framework/Headers"),
-                    dst.extend("OneSignal.framework/Headers"))
-                copyHeaders("OneSignalCore.framework",
-                    src.extend("OneSignalCore.xcframework/ios-arm64_armv7_armv7s/OneSignalCore.framework/Headers"),
-                    dst.extend("OneSignalCore.framework/Headers"))
-                copyHeaders("OneSignalOutcomes.framework",
-                    src.extend("OneSignalOutcomes.xcframework/ios-arm64_armv7_armv7s/OneSignalOutcomes.framework/Headers"),
-                    dst.extend("OneSignalOutcomes.framework/Headers"))
+                internalFrameworks.forEach {
+                    copyHeaders("$it.framework",
+                        src.extend("$it.xcframework/ios-arm64/$it.framework/Headers"),
+                        dst.extend("$it.framework/Headers"))
+                }
             } ,
             interactiveValidateHeaderFolder = { _, src, instruction, optional ->
-                interactiveValidateHeaderFolder("OneSignal.framework",
-                    src.extend("OneSignal.xcframework/ios-arm64_armv7_armv7s/OneSignal.framework/Headers"),
-                    instruction, optional)
-                interactiveValidateHeaderFolder("OneSignalCore.framework",
-                    src.extend("OneSignalCore.xcframework/ios-arm64_armv7_armv7s/OneSignalCore.framework/Headers"),
-                    instruction, optional)
-                interactiveValidateHeaderFolder("OneSignalOutcomes.framework",
-                    src.extend("OneSignalOutcomes.xcframework/ios-arm64_armv7_armv7s/OneSignalOutcomes.framework/Headers"),
-                    instruction, optional)
+                internalFrameworks.forEach {
+                    interactiveValidateHeaderFolder("$it.framework",
+                        src.extend("$it.xcframework/ios-arm64/$it.framework/Headers"),
+                        instruction, optional)
+                }
             },
             version = { versionFile },
-            instruction = """
-                1. Download OneSignal.xcframework.zip from https://github.com/OneSignal/OneSignal-iOS-SDK/releases
-                2. Unpack, expected loaction  ${downloadFolder.extend("OneSignal.xcframework")}
-                3. Download OneSignalCore.xcframework.zip from https://github.com/OneSignal/OneSignal-iOS-SDK/releases
-                4. Unpack, expected loaction  ${downloadFolder.extend("OneSignalCore.xcframework")}
-                5. Download OneSignalOutcomes.xcframework.zip from https://github.com/OneSignal/OneSignal-iOS-SDK/releases
-                6. Unpack, expected loaction  ${downloadFolder.extend("OneSignalOutcomes.xcframework")}
-                7. create a file ${downloadFolder.extend("OneSignal.xcframework/version")} and put verions there, e.g. 4.0.0 
-            """.trimIndent()
+            instruction = run {
+                """
+                - Download frameworks:
+                
+                """.trimIndent() +
+                internalFrameworks.map {
+                    """
+                    - Download $it.xcframework.zip from https://github.com/OneSignal/OneSignal-iOS-SDK/releases
+                    - Unpack, expected loaction  ${downloadFolder.extend("$it.xcframework")}                        
+                    """.trimIndent()
+                }.joinToString("\n")+
+                """
+                
+                - create a file ${downloadFolder.extend("OneSignalFramework.xcframework/version")} and put verions there, e.g. 4.0.0
+                """.trimIndent()
+            }
         )
     },
     "Pollfish" to { framework ->

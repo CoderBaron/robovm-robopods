@@ -1,14 +1,26 @@
 package: org.robovm.pods.onesignal
 include: [foundation, usernotifications, uikit]
-framework: OneSignal
-internal_frameworks: [OneSignalCore, OneSignalOutcomes]
+framework: OneSignalFramework
+internal_frameworks:
+    - OneSignalCore
+    - OneSignalOSCore
+    - OneSignalExtension
+    - OneSignalLocation
+    - OneSignalNotifications
+    - OneSignalInAppMessages
+    - OneSignalOutcomes
+    - OneSignalUser
 clang_args: ['-x', 'objective-c']
 headers:
-    - OneSignal.h
+    - "#import <OneSignalFramework/OneSignalFramework.h>"
+    - "#import <OneSignalLocation/OneSignalLocationManager.h>"
+    - "#import <OneSignalInAppMessages/OneSignalInAppMessages.h>"
+    - "#import <OneSignalExtension/OneSignalExtension.h>"
 
-private_typedefs: {}
-
-typedefs: {}
+private_typedefs:
+    OS_dispatch_source: org.robovm.apple.dispatch.DispatchSource
+    OS_dispatch_queue: org.robovm.apple.dispatch.DispatchQueue
+typedefs:
 
 enums:
     OSNotificationActionType: {}
@@ -23,22 +35,30 @@ enums:
     FocusEventType: { }
     FocusAttributionState: { }
     HTTPMethod: { }
+    ViewOrientation: { prefix: Orientation }
+    OSResponseStatusType: { prefix: OSResponseStatus }
+    OSUIApplicationReleaseMode: { prefix: UIApplicationRelease }
+    OSInAppMessageActionUrlType: { }
 classes:
+    # structs
+    os_last_location:
+        name: OSLastLocation
+    os_location_coordinate:
+        name: OSLocationCoordinate
+
     OSNotification:
         methods:
             '+parseWithApns:':
                 name: parse
-    OSNotificationAction: {}
-    OSNotificationOpenedResult: {}
     OSNotificationPayload:
         methods:
             '+parseWithApns:':
                 name: parse
-    OSPermissionState: {}
-    OSPermissionStateChanges: {}
+    OSPermissionState:
+        methods:
+            '-initWithPermission:':
+                name: init
     OSPermissionSubscriptionState: {}
-    OSSubscriptionState: {}
-    OSSubscriptionStateChanges: {}
     OneSignal:
         methods:
             '+initWith.*':
@@ -133,16 +153,15 @@ classes:
                 name: enterLiveActivity
             '+exitLiveActivity:withSuccess:withFailure:':
                 name: exitLiveActivity
+            '+login:withToken:':
+                name: login
+            '+initialize:withLaunchOptions:':
+                name: initialize
 
-    OSEmailSubscriptionState: {}
-    OSEmailSubscriptionStateChanges: {}
-    OSInAppMessageAction: {}
     OSDevice: {}
     OSInAppMessageOutcome: {}
     OSInAppMessageTag: {}
-    OSDeviceState: {}
     OSSMSSubscriptionState: { }
-    OSSMSSubscriptionStateChanges: { }
     OSInAppMessage: { }
     OSCachedUniqueOutcome:
         methods:
@@ -193,36 +212,9 @@ classes:
         methods:
             '+shouldLogMissingPrivacyConsentErrorWithMethodName:':
                 name: shouldLogMissingPrivacyConsentError
-    OSRequestBadgeCount:
-        methods:
-            '+withUserId:appId:badgeCount:emailAuthToken:externalIdAuthToken:':
-                name: createWithEmailAuth
-            '+withUserId:appId:badgeCount:smsAuthToken:externalIdAuthToken:':
-                name: createWithSmsAuth
-    OSRequestCreateDevice:
-        methods:
-            '+withAppId:withDeviceType:withEmail:withPlayerId:withEmailAuthHash:withExternalUserId:withExternalIdAuthToken:':
-                name: createWithEmail
-            '+withAppId:withDeviceType:withSMSNumber:withPlayerId:withSMSAuthHash:withExternalUserId:withExternalIdAuthToken:':
-                name: createWithSMSNumber
     OSRequestGetIosParams:
         methods:
             '+withUserId:appId:':
-                name: create
-                constructor: true
-    OSRequestGetTags:
-        methods:
-            '+withUserId:appId:':
-                name: create
-                constructor: true
-    OSRequestLogoutEmail:
-        methods:
-            '+withAppId:emailPlayerId:devicePlayerId:emailAuthHash:':
-                name: create
-                constructor: true
-    OSRequestLogoutSMS:
-        methods:
-            '+withAppId:smsPlayerId:smsAuthHash:devicePlayerId:':
                 name: create
                 constructor: true
     OSRequestPostNotification:
@@ -230,67 +222,14 @@ classes:
             '+withAppId:withJson:':
                 name: create
                 constructor: true
-    OSRequestRegisterUser:
-        methods:
-            '+withData:userId:':
-                name: create
-                constructor: true
-    OSRequestSendPurchases:
-        methods:
-            '+withUserId:externalIdAuthToken:appId:withPurchases:':
-                name: createWithExternalIdAuthToken
-            '+withUserId:emailAuthToken:appId:withPurchases:':
-                name: createWithEmailAuthToken
-    OSRequestSendTagsToServer:
-        methods:
-            '+withUserId:appId:tags:networkType:withEmailAuthHashToken:withExternalIdAuthHashToken:':
-                name: createWithEmailAuthHashToken
-            '+withUserId:appId:tags:networkType:withSMSAuthHashToken:withExternalIdAuthHashToken:':
-                name: createWithSMSAuthHashToken
     OSRequestSubmitNotificationOpened:
         methods:
             '+withUserId:appId:wasOpened:messageId:withDeviceType:':
                 name: create
                 constructor: true
-    OSRequestSyncHashedEmail:
-        methods:
-            '+withUserId:appId:email:networkType:':
-                name: create
-                constructor: true
     OSRequestTrackV1:
         methods:
             '+trackUsageData:appId:':
-                name: create
-                constructor: true
-    OSRequestUpdateDeviceToken:
-        methods:
-            '+withUserId:appId:deviceToken:notificationTypes:externalIdAuthToken:':
-                name: create
-                constructor: true
-            '+withUserId:appId:deviceToken:withParentId:emailAuthToken:email:externalIdAuthToken:':
-                name: create
-                constructor: true
-            '+withUserId:appId:deviceToken:smsAuthToken:externalIdAuthToken:':
-                name: create
-                constructor: true
-    OSRequestUpdateExternalUserId:
-        methods:
-            '+withUserId:withUserIdHashToken:withOneSignalUserId:appId:':
-                name: create
-                constructor: true
-            '+withUserId:withUserIdHashToken:withOneSignalUserId:withEmailHashToken:appId:':
-                name: createWithEmailHashToken
-            '+withUserId:withUserIdHashToken:withOneSignalUserId:withSMSHashToken:appId:':
-                name: createWithSMSHashToken
-    OSRequestUpdateLanguage:
-        methods:
-            '+withUserId:appId:language:emailAuthToken:externalIdAuthToken:':
-                name: createWithEmailAuthToken
-            '+withUserId:appId:language:smsAuthToken:externalIdAuthToken:':
-                name: createWithSMSAuthToken
-    OSRequestUpdateNotificationTypes:
-        methods:
-            '+withUserId:appId:notificationTypes:':
                 name: create
                 constructor: true
     OSSessionManager:
@@ -315,7 +254,6 @@ classes:
                 name: executeSimultaneousRequests
             '-executeSimultaneousRequests:withCompletion:':
                 name: executeSimultaneousRequests
-    OneSignalCore: {}
     OneSignalCoreHelper:
         exclude: true
     OneSignalLog:
@@ -334,6 +272,10 @@ classes:
                 name: sendUniqueOutcomeEvent
             '-sendOutcomeEventWithValue:value:appId:deviceType:successBlock:':
                 name: sendOutcomeEvent
+            '-addOutcomeWithValue:value:':
+                name: addOutcome
+            '-sendSessionEndOutcomes:appId:pushSubscriptionId:onesignalId:influenceParams:onSuccess:onFailure:':
+                name: sendSessionEndOutcomes
     OneSignalOutcomes: {}
     OneSignalRequest: {}
     OneSignalTrackFirebaseAnalytics:
@@ -380,26 +322,136 @@ classes:
                 name: init
     OSRequestLiveActivityEnter:
         methods:
-            '+withUserId:appId:activityId:token:':
+            '+withSubscriptionId:appId:activityId:token:':
                 name: create
                 constructor: true
     OSRequestLiveActivityExit:
         methods:
-            '+withUserId:appId:activityId:':
+            '+withSubscriptionId:appId:activityId:':
                 name: create
                 constructor: true
+    OSBoolObservable:
+        methods:
+            '-initWithChangeSelector:':
+                name: init
+    OSDeviceUtils: { }
+    OSDialogInstanceManager: { }
+    OSDisplayableNotification: { }
+    OSFocusInfluenceParam:
+        methods:
+            '-initWithParamsInfluenceIds:influenceKey:directInfluence:influenceDirectKey:':
+                name: init
+    OSInAppMessageClickEvent: { }
+    OSInAppMessageClickResult: { }
+    OSInAppMessageDidDismissEvent: { }
+    OSInAppMessageDidDisplayEvent: { }
+    OSInAppMessageWillDismissEvent: { }
+    OSInAppMessageWillDisplayEvent: { }
+    OSNetworkingUtils: { }
+    OSNotificationClickEvent: { }
+    OSNotificationClickResult: { }
+    OSNotificationWillDisplayEvent: { }
+    OSNotificationsManager:
+        methods:
+            '+handleWillShowInForegroundForNotification:completion:':
+                name: handleWillShowInForegroundForNotification
+            '+handleNotificationActionWithUrl:actionID:':
+                name: handleNotificationAction
+            '+receiveRemoteNotification:UserInfo:completionHandler:':
+                name: receiveRemoteNotification
+            '+notificationReceived:wasOpened:':
+                name: notificationReceived
+            '+handleWillPresentNotificationInForegroundWithPayload:withCompletion:':
+                name: handleWillPresentNotificationInForeground
+            '+didRegisterForRemoteNotifications:deviceToken:':
+                name: didRegisterForRemoteNotifications
+    OSObservable:
+        methods:
+            '-initWithChangeSelector:':
+                name: init
+    OSOutcomes: { }
+    OSPermissionChangedInternalObserver: { }
+    OSPermissionStateInternal:
+        methods:
+            '-initAsTo':
+                static_constructor: true
+                static_constructor_name: asTo
+            '-initAsFrom':
+                static_constructor: true
+                static_constructor_name: asFrom
+    OSPushSubscriptionChangedState: { }
+    OSPushSubscriptionState: { }
+    OSRemoteParamController: { }
+    OSStubInAppMessages: { }
+    OSStubLocation: { }
+    OneSignalConfigManager: { }
+    OneSignalLiveActivityController: { }
+    OneSignalMobileProvision: { }
+    OneSignalNotificationSettings: { }
+    OneSignalUserManagerImpl:
+        methods:
+            '-loginWithExternalId:token:':
+                name: login
+            '-setLocationWithLatitude:longitude:':
+                name: setLocation
+            '-updateSessionWithSessionCount:sessionTime:refreshDeviceMetadata:sendImmediately:onSuccess:onFailure:':
+                name: updateSession
+    OneSignalWrapper: { }
+    SwizzlingForwarder:
+        methods:
+            '-initWithTarget:withYourSelector:withOriginalSelector:':
+                name: init
+            '-invokeWithArgs:':
+                name: invoke
+    OneSignalAttachmentHandler:
+        methods:
+            '+addAttachments:toNotificationContent:':
+                name: addAttachments
+            '+addActionButtons:toNotificationContent:':
+                name: addActionButtons
+    OneSignalExtension:
+        methods:
+            '+didReceiveNotificationExtensionRequest:withMutableNotificationContent:':
+                name: didReceiveNotificationExtensionRequest
+            '+didReceiveNotificationExtensionRequest:withMutableNotificationContent:withContentHandler:':
+                name: didReceiveNotificationExtensionRequest
+            '+serviceExtensionTimeWillExpireRequest:withMutableNotificationContent:':
+                name: serviceExtensionTimeWillExpireRequest
+    OneSignalExtensionBadgeHandler:
+        methods:
+            '+handleBadgeCountWithNotificationRequest:withNotification:withMutableNotificationContent:':
+                name: handleBadgeCount
+    OneSignalInAppMessages: { }
+    OneSignalLocationManager:
+        methods:
+            '+startLocationSharedWithFlag:':
+                name: startLocationShared
+            '+promptLocationFallbackToSettings:completionHandler:':
+                name: promptLocationFallbackToSettings
+    OneSignalNotificationServiceExtensionHandler:
+        methods:
+            '+didReceiveNotificationExtensionRequest:withMutableNotificationContent:':
+                name: didReceiveNotificationExtensionRequest
+            '+didReceiveNotificationExtensionRequest:withMutableNotificationContent:withContentHandler:':
+                name: didReceiveNotificationExtensionRequest
+            '+serviceExtensionTimeWillExpireRequest:withMutableNotificationContent:':
+                name: serviceExtensionTimeWillExpireRequest
+    OneSignalReceiveReceiptsController:
+        methods:
+            '-sendReceiveReceiptWithNotificationId:':
+                name: sendReceiveReceipt
+            '-sendReceiveReceiptWithPlayerId:notificationId:appId:':
+                name: sendReceiveReceipt
+            '-sendReceiveReceiptWithPlayerId:notificationId:appId:successBlock:failureBlock:':
+                name: sendReceiveReceipt
+            '-sendReceiveReceiptWithPlayerId:notificationId:appId:delay:successBlock:failureBlock:':
+                name: sendReceiveReceipt
 protocols:
-    OSPermissionObserver: {}
-    OSSubscriptionObserver: {}
-    OSEmailSubscriptionObserver: {}
     OSNotificationDisplayTypeDelegate:
         skip_adapter: true # only one method there
         methods:
             '-willPresentInFocusNotificationWithPayload:withCompletion:':
                 name: willPresentInFocusNotification
-    OSInAppMessageDelegate: {}
-    OSSMSSubscriptionObserver: {}
-    OSInAppMessageLifecycleHandler: {}
     OSJSONDecodable:
         methods:
             '+instanceWithData:':
@@ -408,7 +460,56 @@ protocols:
                 name: create
     OSJSONEncodable: { }
     SessionStatusDelegate: { }
+    OSDebug: { }
+    OSDialogPresenter:
+        methods:
+            '-presentDialogWithTitle:withMessage:withActions:cancelTitle:withActionCompletion:':
+                name: presentDialog
+    OSInAppMessageClickListener: { }
+    OSInAppMessageLifecycleListener: { }
+    OSInAppMessages:
+        methods:
+            '+addTrigger:withValue:':
+                name: addTrigger
+    OSLiveActivities:
+        methods:
+            '+enter:withToken:':
+                name: enter
+            '+enter:withToken:withSuccess:withFailure:':
+                name: enter
+            '+exit:withSuccess:withFailure:':
+                name: exit
+    OSLocation: { }
+    OSNotificationClickListener: { }
+    OSNotificationLifecycleListener: { }
+    OSNotificationPermissionObserver: { }
+    OSNotifications:
+        methods:
+            '+requestPermission:fallbackToSettings:':
+                name: requestPermission
+    OSObserver: { }
+    OSPermissionStateObserver: { }
+    OSPushSubscription: { }
+    OSPushSubscriptionObserver:
+        methods:
+            '-onPushSubscriptionDidChangeWithState:':
+                name: onPushSubscriptionDidChange
+    OSSession:
+        methods:
+            '+addOutcomeWithValue:value:':
+                name: addOutcome
+    OSUser:
+        methods:
+            '-addAliasWithLabel:id:':
+                name: addAlias
+            '-addTagWithKey:value:':
+                name: addTag
+            '-onJwtExpiredWithExpiredHandler:':
+                name: onJwtExpired
+    OneSignalNotificationsDelegate: { }
 functions:
+    injectSelector:
+        exclude: true
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):
         class: __FixMe
@@ -420,9 +521,9 @@ values:
         name: '#{g[0]}'
         type: NSString
 
-    ONESIGNAL_VERSION:
+    OneSignal(.*):
         class: OneSignal
-        name: getVersion
+        name: '#{g[0]}'
 
     # Make sure we don't miss any values if new ones are introduced in a later version
     (.*):

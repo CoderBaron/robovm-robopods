@@ -55,6 +55,10 @@ import org.robovm.apple.uikit.*;
     public native SessionStatusDelegate getDelegate();
     @Property(selector = "setDelegate:")
     public native void setDelegate(SessionStatusDelegate v);
+    @Property(selector = "appEntryState")
+    public native AppEntryAction getAppEntryState();
+    @Property(selector = "setAppEntryState:")
+    public native void setAppEntryState(AppEntryAction v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -66,8 +70,8 @@ import org.robovm.apple.uikit.*;
     public native NSArray<OSInfluence> getSessionInfluences();
     @Method(selector = "initSessionFromCache")
     public native void initSessionFromCache();
-    @Method(selector = "restartSessionIfNeeded:")
-    public native void restartSessionIfNeeded(AppEntryAction entryAction);
+    @Method(selector = "restartSessionIfNeeded")
+    public native void restartSessionIfNeeded();
     @Method(selector = "onInAppMessageReceived:")
     public native void onInAppMessageReceived(String messageId);
     @Method(selector = "onDirectInfluenceFromIAMClick:")
@@ -78,8 +82,10 @@ import org.robovm.apple.uikit.*;
     public native void onNotificationReceived(String notificationId);
     @Method(selector = "onDirectInfluenceFromNotificationOpen:withNotificationId:")
     public native void onDirectInfluenceFromNotificationOpen(AppEntryAction entryAction, String directNotificationId);
-    @Method(selector = "attemptSessionUpgrade:")
-    public native void attemptSessionUpgrade(AppEntryAction entryAction);
+    @Method(selector = "attemptSessionUpgrade")
+    public native void attemptSessionUpgrade();
+    @Method(selector = "sessionLaunchTime")
+    public native NSDate sessionLaunchTime();
     @Method(selector = "sharedSessionManager")
     public static native OSSessionManager sharedSessionManager();
     @Method(selector = "resetSharedSessionManager")
