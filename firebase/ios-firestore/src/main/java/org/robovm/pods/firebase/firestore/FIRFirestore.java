@@ -54,11 +54,26 @@ import org.robovm.apple.dispatch.*;
     public native void setSettings(FIRFirestoreSettings v);
     @Property(selector = "app")
     public native org.robovm.pods.firebase.core.FIRApp getApp();
+    @Property(selector = "persistentCacheIndexManager")
+    public native FIRPersistentCacheIndexManager getPersistentCacheIndexManager();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @GlobalValue(symbol="FirebaseFirestoreVersionNumber", optional=true)
+    public static native double getVersionNumber();
+    @GlobalValue(symbol="FirebaseFirestoreVersionString", optional=true)
+    public static native BytePtr getVersionString();
+    
+    /**
+     * @deprecated Instead of creating cache indexes manually, consider using `PersistentCacheIndexManager.enableIndexAutoCreation()` to let the SDK decide whether to create cache indexes for queries running locally.
+     */
+    @Deprecated
     @Method(selector = "setIndexConfigurationFromJSON:completion:")
     public native void setIndexConfigurationFromJSON(String json, @Block VoidBlock1<NSError> completion);
+    /**
+     * @deprecated Instead of creating cache indexes manually, consider using `PersistentCacheIndexManager.enableIndexAutoCreation()` to let the SDK decide whether to create cache indexes for queries running locally.
+     */
+    @Deprecated
     @Method(selector = "setIndexConfigurationFromStream:completion:")
     public native void setIndexConfigurationFromStream(NSInputStream stream, @Block VoidBlock1<NSError> completion);
     @Method(selector = "collectionWithPath:")

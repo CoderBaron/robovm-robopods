@@ -83,6 +83,8 @@ classes:
                 name: useEmulator
             '-revokeTokenWithAuthorizationCode:completion:':
                 name: revokeToken
+            '-initializeRecaptchaConfigWithCompletion:':
+                name: initializeRecaptchaConfig
     FIRAuthCredential: {}
     FIRAuthDataResult: {}
     FIRAuthErrors: {exclude: true} # empty used only for aggregation

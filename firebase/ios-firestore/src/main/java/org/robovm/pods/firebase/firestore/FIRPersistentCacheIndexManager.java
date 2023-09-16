@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.robovm.pods.google.mobileads;
+package org.robovm.pods.firebase.firestore;
 
 /*<imports>*/
 import java.io.*;
@@ -28,38 +28,35 @@ import org.robovm.rt.bro.*;
 import org.robovm.rt.bro.annotation.*;
 import org.robovm.rt.bro.ptr.*;
 import org.robovm.apple.foundation.*;
-import org.robovm.apple.coregraphics.*;
-import org.robovm.apple.storekit.*;
-import org.robovm.apple.uikit.*;
-import org.robovm.apple.coreanimation.*;
-import org.robovm.apple.webkit.*;
+import org.robovm.apple.dispatch.*;
 /*</imports>*/
 
 /*<javadoc>*/
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/GADQueryInfo/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FIRPersistentCacheIndexManager/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class GADQueryInfoPtr extends Ptr<GADQueryInfo, GADQueryInfoPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(GADQueryInfo.class); }/*</bind>*/
+    /*<ptr>*/public static class FIRPersistentCacheIndexManagerPtr extends Ptr<FIRPersistentCacheIndexManager, FIRPersistentCacheIndexManagerPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(FIRPersistentCacheIndexManager.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public GADQueryInfo() {}
-    protected GADQueryInfo(Handle h, long handle) { super(h, handle); }
-    protected GADQueryInfo(SkipInit skipInit) { super(skipInit); }
+    protected FIRPersistentCacheIndexManager() {}
+    protected FIRPersistentCacheIndexManager(Handle h, long handle) { super(h, handle); }
+    protected FIRPersistentCacheIndexManager(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "query")
-    public native String getQuery();
+    
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "createQueryInfoWithRequest:adFormat:completionHandler:")
-    public static native void createQueryInfo(GADRequest request, GADAdFormat adFormat, @Block VoidBlock2<GADQueryInfo, NSError> completionHandler);
-    @Method(selector = "createQueryInfoWithRequest:adFormat:adUnitID:completionHandler:")
-    public static native void createQueryInfo(GADRequest request, GADAdFormat adFormat, String adUnitID, @Block VoidBlock2<GADQueryInfo, NSError> completionHandler);
+    @Method(selector = "enableIndexAutoCreation")
+    public native void enableIndexAutoCreation();
+    @Method(selector = "disableIndexAutoCreation")
+    public native void disableIndexAutoCreation();
+    @Method(selector = "deleteAllIndexes")
+    public native void deleteAllIndexes();
     /*</methods>*/
 }
