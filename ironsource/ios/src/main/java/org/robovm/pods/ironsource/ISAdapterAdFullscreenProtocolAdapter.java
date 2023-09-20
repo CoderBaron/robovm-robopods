@@ -34,34 +34,28 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/ISAdapterAdInteractionDelegate/*</name>*/ 
-    /*<implements>*/extends ISAdapterAdDelegate/*</implements>*/ {
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/ISAdapterAdFullscreenProtocolAdapter/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*/implements ISAdapterAdFullscreenProtocol/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
+    /*<constructors>*//*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
+    /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "adDidClose")
-    void adDidClose();
-    @Method(selector = "adDidFailToShowWithErrorCode:errorMessage:")
-    void adDidFailToShow(@MachineSizedSInt long errorCode, String errorMessage);
-    @Method(selector = "adDidShowSucceed")
-    void adDidShowSucceed();
-    @Method(selector = "adDidBecomeVisible")
-    void adDidBecomeVisible();
-    @Method(selector = "adDidStart")
-    void adDidStart();
-    @Method(selector = "adDidEnd")
-    void adDidEnd();
+    @NotImplemented("loadAdWithAdData:delegate:")
+    public void loadAd(ISAdData adData, ISAdapterAdDelegate delegate) {}
+    @NotImplemented("showAdWithViewController:adData:delegate:")
+    public void showAd(UIViewController viewController, ISAdData adData, ISAdapterAdInteractionDelegate delegate) {}
+    @NotImplemented("isAdAvailableWithAdData:")
+    public boolean isAdAvailable(ISAdData adData) { return false; }
     /*</methods>*/
-    /*<adapter>*/
-    /*</adapter>*/
 }

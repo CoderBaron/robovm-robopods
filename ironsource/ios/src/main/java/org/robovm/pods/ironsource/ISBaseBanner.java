@@ -37,35 +37,34 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/ISBaseAdAdapter/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/ISBaseBanner/*</name>*/ 
+    extends /*<extends>*/ISBaseAdAdapter/*</extends>*/ 
+    /*<implements>*/implements ISAdapterBannerProtocol/*</implements>*/ {
 
-    /*<ptr>*/public static class ISBaseAdAdapterPtr extends Ptr<ISBaseAdAdapter, ISBaseAdAdapterPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(ISBaseAdAdapter.class); }/*</bind>*/
+    /*<ptr>*/public static class ISBaseBannerPtr extends Ptr<ISBaseBanner, ISBaseBannerPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(ISBaseBanner.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public ISBaseAdAdapter() {}
-    protected ISBaseAdAdapter(Handle h, long handle) { super(h, handle); }
-    protected ISBaseAdAdapter(SkipInit skipInit) { super(skipInit); }
+    public ISBaseBanner() {}
+    protected ISBaseBanner(Handle h, long handle) { super(h, handle); }
+    protected ISBaseBanner(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "init:")
+    public ISBaseBanner(ISAdapterConfig providerConfig) { super((SkipInit) null); initObject(init(providerConfig)); }
     @Method(selector = "initWithAdUnit:adapterConfig:")
-    public ISBaseAdAdapter(ISAdUnit adUnit, ISAdapterConfig adapterConfig) { super((SkipInit) null); initObject(init(adUnit, adapterConfig)); }
+    public ISBaseBanner(ISAdUnit adUnit, ISAdapterConfig adapterConfig) { super(adUnit, adapterConfig); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "adUnit")
-    public native ISAdUnit getAdUnit();
-    @Property(selector = "setAdUnit:")
-    public native void setAdUnit(ISAdUnit v);
-    @Property(selector = "adapterConfig")
-    public native ISAdapterConfig getAdapterConfig();
+    
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithAdUnit:adapterConfig:")
-    protected native @Pointer long init(ISAdUnit adUnit, ISAdapterConfig adapterConfig);
-    @Method(selector = "getNetworkAdapter")
-    public native ISAdapterBaseProtocol getNetworkAdapter();
-    @Method(selector = "releaseMemory")
-    public native void releaseMemory();
+    @Method(selector = "init:")
+    protected native @Pointer long init(ISAdapterConfig providerConfig);
+    @Method(selector = "loadAdWithAdData:viewController:size:delegate:")
+    public native void loadAd(ISAdData adData, UIViewController viewController, ISBannerSize size, ISBannerAdDelegate delegate);
+    @Method(selector = "destroyAdWithAdData:")
+    public native void destroyAd(ISAdData adData);
+    @Method(selector = "isSupportAdaptiveBanner")
+    public native boolean isSupportAdaptiveBanner();
     /*</methods>*/
 }

@@ -37,8 +37,8 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/ISAdapterAdInteractionDelegate/*</name>*/ 
-    /*<implements>*/extends ISAdapterAdDelegate/*</implements>*/ {
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/ISAdapterAdFullscreenProtocol/*</name>*/ 
+    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
@@ -49,18 +49,12 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "adDidClose")
-    void adDidClose();
-    @Method(selector = "adDidFailToShowWithErrorCode:errorMessage:")
-    void adDidFailToShow(@MachineSizedSInt long errorCode, String errorMessage);
-    @Method(selector = "adDidShowSucceed")
-    void adDidShowSucceed();
-    @Method(selector = "adDidBecomeVisible")
-    void adDidBecomeVisible();
-    @Method(selector = "adDidStart")
-    void adDidStart();
-    @Method(selector = "adDidEnd")
-    void adDidEnd();
+    @Method(selector = "loadAdWithAdData:delegate:")
+    void loadAd(ISAdData adData, ISAdapterAdDelegate delegate);
+    @Method(selector = "showAdWithViewController:adData:delegate:")
+    void showAd(UIViewController viewController, ISAdData adData, ISAdapterAdInteractionDelegate delegate);
+    @Method(selector = "isAdAvailableWithAdData:")
+    boolean isAdAvailable(ISAdData adData);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

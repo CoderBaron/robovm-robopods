@@ -37,8 +37,8 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/ISAdapterAdInteractionDelegate/*</name>*/ 
-    /*<implements>*/extends ISAdapterAdDelegate/*</implements>*/ {
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/ISBannerAdDelegate/*</name>*/ 
+    /*<implements>*/extends ISAdapterAdViewDelegate/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
@@ -49,18 +49,7 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "adDidClose")
-    void adDidClose();
-    @Method(selector = "adDidFailToShowWithErrorCode:errorMessage:")
-    void adDidFailToShow(@MachineSizedSInt long errorCode, String errorMessage);
-    @Method(selector = "adDidShowSucceed")
-    void adDidShowSucceed();
-    @Method(selector = "adDidBecomeVisible")
-    void adDidBecomeVisible();
-    @Method(selector = "adDidStart")
-    void adDidStart();
-    @Method(selector = "adDidEnd")
-    void adDidEnd();
+    
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

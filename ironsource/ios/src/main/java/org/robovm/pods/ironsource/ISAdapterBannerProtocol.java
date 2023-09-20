@@ -37,7 +37,7 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/ISBaseAdInteractionAdapterProtocol/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/ISAdapterBannerProtocol/*</name>*/ 
     /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
     /*<ptr>*/
@@ -49,10 +49,12 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "showAdWithViewController:adData:delegate:")
-    void showAd(UIViewController viewController, ISAdData adData, ISAdapterAdInteractionDelegate delegate);
-    @Method(selector = "isAdAvailableWithAdData:")
-    boolean isAdAvailable(ISAdData adData);
+    @Method(selector = "loadAdWithAdData:viewController:size:delegate:")
+    void loadAd(ISAdData adData, UIViewController viewController, ISBannerSize size, ISBannerAdDelegate delegate);
+    @Method(selector = "destroyAdWithAdData:")
+    void destroyAd(ISAdData adData);
+    @Method(selector = "isSupportAdaptiveBanner")
+    boolean isSupportAdaptiveBanner();
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

@@ -52,7 +52,7 @@ v1.33.0 - in development
 | [Fyber](fyber/)                 | 8.2.2   |
 | [HelpShiftX](helpshift/)        | 10.2.3  |
 | [InMobi](inmobi/)               | 10.5.8  |
-| [IronSource](ironsource/)       | 7.3.1   |
+| [IronSource](ironsource/)       | 7.5.0   |
 | [Lottie](lottie/)               | 4.3.0   |
 | [OneSignal](onesignal/)         | 5.0.1   |
 | [Pollfish](pollfish/)           | 6.4.1   |

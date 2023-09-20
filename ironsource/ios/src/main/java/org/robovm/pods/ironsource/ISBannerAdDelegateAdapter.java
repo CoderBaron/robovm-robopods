@@ -36,9 +36,9 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/ISBaseAdInteractionAdapterProtocolAdapter/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements ISBaseAdInteractionAdapterProtocol/*</implements>*/ {
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/ISBannerAdDelegateAdapter/*</name>*/ 
+    extends /*<extends>*/ISAdapterAdViewDelegateAdapter/*</extends>*/ 
+    /*<implements>*/implements ISBannerAdDelegate/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
@@ -51,9 +51,6 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("showAdWithViewController:adData:delegate:")
-    public void showAd(UIViewController viewController, ISAdData adData, ISAdapterAdInteractionDelegate delegate) {}
-    @NotImplemented("isAdAvailableWithAdData:")
-    public boolean isAdAvailable(ISAdData adData) { return false; }
+    
     /*</methods>*/
 }

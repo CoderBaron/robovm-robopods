@@ -36,9 +36,9 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/ISBaseAdAdapterProtocolAdapter/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements ISBaseAdAdapterProtocol/*</implements>*/ {
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/ISAdapterAdViewDelegateAdapter/*</name>*/ 
+    extends /*<extends>*/ISAdapterAdDelegateAdapter/*</extends>*/ 
+    /*<implements>*/implements ISAdapterAdViewDelegate/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
@@ -51,7 +51,13 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("loadAdWithAdData:delegate:")
-    public void loadAd(ISAdData adData, ISAdapterAdDelegate delegate) {}
+    @NotImplemented("adDidLoadWithView:")
+    public void adDidLoad(UIView view) {}
+    @NotImplemented("adWillLeaveApplication")
+    public void adWillLeaveApplication() {}
+    @NotImplemented("adWillPresentScreen")
+    public void adWillPresentScreen() {}
+    @NotImplemented("adDidDismissScreen")
+    public void adDidDismissScreen() {}
     /*</methods>*/
 }

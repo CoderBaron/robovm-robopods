@@ -23,6 +23,8 @@ classes:
                 name: init
             '-initWithServerData:configuration:adUnitData:':
                 name: init
+            '-getAdUnitData':
+                exclude: true # conflicts with same property
     ISAdUnit:
         methods:
             '-initWithValue:':
@@ -146,6 +148,12 @@ classes:
             '-initWithImpressionData:':
                 name: init
     ISDemandOnlyBannerView: { }
+    ISBaseBanner:
+        methods:
+            '-loadAdWithAdData:viewController:size:delegate:':
+                name: loadAd
+            '-destroyAdWithAdData:':
+                name: destroyAd
 protocols:
     ISAdapterAdDelegate:
         methods:
@@ -174,16 +182,6 @@ protocols:
         methods:
             '-bannerDidFailToLoadWithError:':
                 name: bannerDidFailToLoad
-    ISBaseAdAdapterProtocol:
-        methods:
-            '-loadAdWithAdData:delegate:':
-                name: loadAd
-    ISBaseAdInteractionAdapterProtocol:
-        methods:
-            '-showAdWithViewController:adData:delegate:':
-                name: showAd
-            '-isAdAvailableWithAdData:':
-                name: isAdAvailable
     ISConsentViewDelegate:
         methods:
             '-consentViewDidFailToLoadWithError:consentViewType:':
@@ -307,6 +305,25 @@ protocols:
                 name: didClick
             '-didCloseWithAdInfo:':
                 name: didClose
+    ISAdapterAdFullscreenProtocol:
+        methods:
+            '-loadAdWithAdData:delegate:':
+                name: loadAd
+            '-showAdWithViewController:adData:delegate:':
+                name: showAd
+            '-isAdAvailableWithAdData:':
+                name: isAdAvailable
+    ISAdapterAdViewDelegate:
+        methods:
+            '-adDidLoadWithView:':
+                name: adDidLoad
+    ISAdapterBannerProtocol:
+        methods:
+            '-loadAdWithAdData:viewController:size:delegate:':
+                name: loadAd
+            '-destroyAdWithAdData:':
+                name: destroyAd
+    ISBannerAdDelegate: { }
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):

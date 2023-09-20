@@ -34,24 +34,28 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/ISBaseAdAdapterProtocol/*</name>*/ 
-    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/ISAdapterBannerProtocolAdapter/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*/implements ISAdapterBannerProtocol/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
+    /*<constructors>*//*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
+    /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "loadAdWithAdData:delegate:")
-    void loadAd(ISAdData adData, ISAdapterAdDelegate delegate);
+    @NotImplemented("loadAdWithAdData:viewController:size:delegate:")
+    public void loadAd(ISAdData adData, UIViewController viewController, ISBannerSize size, ISBannerAdDelegate delegate) {}
+    @NotImplemented("destroyAdWithAdData:")
+    public void destroyAd(ISAdData adData) {}
+    @NotImplemented("isSupportAdaptiveBanner")
+    public boolean isSupportAdaptiveBanner() { return false; }
     /*</methods>*/
-    /*<adapter>*/
-    /*</adapter>*/
 }

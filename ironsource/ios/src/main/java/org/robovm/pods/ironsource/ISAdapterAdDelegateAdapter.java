@@ -55,6 +55,8 @@ import org.robovm.apple.coreanimation.*;
     public void adDidLoad() {}
     @NotImplemented("adDidFailToLoadWithErrorType:errorCode:errorMessage:")
     public void adDidFailToLoad(ISAdapterErrorType errorType, @MachineSizedSInt long errorCode, String errorMessage) {}
+    @NotImplemented("adDidOpen")
+    public void adDidOpen() {}
     @NotImplemented("adDidClick")
     public void adDidClick() {}
     /*</methods>*/
