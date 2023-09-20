@@ -47,21 +47,23 @@ import org.robovm.apple.uikit.*;
     public SingularLinkParams() {}
     protected SingularLinkParams(Handle h, long handle) { super(h, handle); }
     protected SingularLinkParams(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithDeepLink:andPassthrough:isDeferred:")
-    public SingularLinkParams(String link, String sentPassthrough, boolean isLinkDeferred) { super((SkipInit) null); initObject(init(link, sentPassthrough, isLinkDeferred)); }
+    @Method(selector = "initWithDeeplink:passthrough:isDeferred:url:")
+    public SingularLinkParams(String deeplink, String passthrough, boolean isDeferred, NSURL url) { super((SkipInit) null); initObject(init(deeplink, passthrough, isDeferred, url)); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithDeepLink:andPassthrough:isDeferred:")
-    protected native @Pointer long init(String link, String sentPassthrough, boolean isLinkDeferred);
+    @Method(selector = "initWithDeeplink:passthrough:isDeferred:url:")
+    protected native @Pointer long init(String deeplink, String passthrough, boolean isDeferred, NSURL url);
     @Method(selector = "getDeepLink")
     public native String getDeepLink();
     @Method(selector = "getPassthrough")
     public native String getPassthrough();
     @Method(selector = "isDeferred")
     public native boolean isDeferred();
+    @Method(selector = "getUrlParameters")
+    public native NSDictionary<?, ?> getUrlParameters();
     /*</methods>*/
 }
