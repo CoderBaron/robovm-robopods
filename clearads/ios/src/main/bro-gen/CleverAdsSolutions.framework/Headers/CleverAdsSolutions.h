@@ -10,5 +10,5 @@
 #import "CASTypeFlags.h"
 #import "CASInternalUtils.h"
 
-#define CAS_FRAMEWORK_VERSION @"3.2.4"
-#define CAS_FRAMEWORK_CODE 3204
+#define CAS_FRAMEWORK_VERSION @"3.2.5"
+#define CAS_FRAMEWORK_CODE 3205

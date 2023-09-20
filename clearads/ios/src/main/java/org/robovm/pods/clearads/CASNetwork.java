@@ -54,6 +54,8 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "crossPromo")
+    public static native String crossPromo();
     @Method(selector = "googleAds")
     public static native String googleAds();
     @Method(selector = "vungle")
@@ -76,14 +78,10 @@ import org.robovm.apple.coreanimation.*;
     public static native String inMobi();
     @Method(selector = "myTarget")
     public static native String myTarget();
-    @Method(selector = "crossPromo")
-    public static native String crossPromo();
     @Method(selector = "ironSource")
     public static native String ironSource();
     @Method(selector = "yandexAds")
     public static native String yandexAds();
-    @Method(selector = "tapjoy")
-    public static native String tapjoy();
     @Method(selector = "digitalTurbine")
     public static native String digitalTurbine();
     @Method(selector = "mintegral")
@@ -98,6 +96,8 @@ import org.robovm.apple.coreanimation.*;
     public static native String facebookAN();
     @Method(selector = "fyber")
     public static native String fyber();
+    @Method(selector = "tapjoy")
+    public static native String tapjoy();
     @Method(selector = "max")
     public static native String max();
     @Method(selector = "fairBid")
