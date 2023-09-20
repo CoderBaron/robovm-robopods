@@ -60,7 +60,7 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             instruction = """
                 1. Download recent version of applovin-ios-sdk-x.y.z.zip from https://dash.applovin.com/documentation/mediation/manual-integration-ios (login required)
                 2. Also its possible to get direct link to it from podspec file, check https://cocoapods.org/pods/AppLovinSDK
-                3. create a file ${downloadFolder.extend("applovin-ios-sdk//version")} and put verions there, e.g. 4.0.0
+                3. create a file ${downloadFolder.extend("applovin-ios-sdk//version")} and put version there, e.g. 4.0.0
                 3. Unpack and rename to ${downloadFolder.extend("applovin-ios-sdk")}
             """.trimIndent()
         )
