@@ -35,32 +35,24 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
 /*</javadoc>*/
-/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
-public enum /*<name>*/IMSDKEducation/*</name>*/ implements ValuedEnum {
-    /*<values>*/
-    IMSDKEducationHighSchoolOrLess(1L),
-    IMSDKEducationCollageOrGraduate(2L),
-    IMSDKEducationPostGraduateOrAbove(3L);
-    /*</values>*/
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/IMBannerAudioDelegateAdapter/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*/implements IMBannerAudioDelegate/*</implements>*/ {
 
+    /*<ptr>*/
+    /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<methods>*//*</methods>*/
-
-    private final long n;
-
-    private /*<name>*/IMSDKEducation/*</name>*/(long n) { this.n = n; }
-    public long value() { return n; }
-    public static /*<name>*/IMSDKEducation/*</name>*/ valueOf(long n) {
-        for (/*<name>*/IMSDKEducation/*</name>*/ v : values()) {
-            if (v.n == n) {
-                return v;
-            }
-        }
-        throw new IllegalArgumentException("No constant with value " + n + " found in " 
-            + /*<name>*/IMSDKEducation/*</name>*/.class.getName());
-    }
+    /*<constructors>*//*</constructors>*/
+    /*<properties>*/
+    
+    /*</properties>*/
+    /*<members>*//*</members>*/
+    /*<methods>*/
+    @NotImplemented("banner:audioStatusChanged:")
+    public void audioStatusChanged(IMBanner banner, IMBannerAudioStatus status) {}
+    /*</methods>*/
 }

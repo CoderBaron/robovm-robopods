@@ -50,10 +50,6 @@ import org.robovm.apple.coreanimation.*;
     
     /*</properties>*/
     /*<methods>*/
-    @Method(selector = "banner:gotSignals:")
-    void gotSignals(IMBanner banner, NSData signals);
-    @Method(selector = "banner:failedToGetSignalsWithError:")
-    void failedToGetSignals(IMBanner banner, IMRequestStatus status);
     @Method(selector = "bannerDidFinishLoading:")
     void bannerDidFinishLoading(IMBanner banner);
     @Method(selector = "banner:didReceiveWithMetaInfo:")
@@ -62,8 +58,10 @@ import org.robovm.apple.coreanimation.*;
     void didFailToReceive(IMBanner banner, IMRequestStatus error);
     @Method(selector = "banner:didFailToLoadWithError:")
     void didFailToLoad(IMBanner banner, IMRequestStatus error);
+    @Method(selector = "bannerAdImpressed:")
+    void bannerAdImpressed(IMBanner banner);
     @Method(selector = "banner:didInteractWithParams:")
-    void didInteract(IMBanner banner, NSDictionary<?, ?> params);
+    void didInteract(IMBanner banner, NSDictionary<NSString, ?> params);
     @Method(selector = "userWillLeaveApplicationFromBanner:")
     void userWillLeaveApplicationFromBanner(IMBanner banner);
     @Method(selector = "bannerWillPresentScreen:")
@@ -75,9 +73,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "bannerDidDismissScreen:")
     void bannerDidDismissScreen(IMBanner banner);
     @Method(selector = "banner:rewardActionCompletedWithRewards:")
-    void rewardActionCompleted(IMBanner banner, NSDictionary<?, ?> rewards);
-    @Method(selector = "bannerAdImpressed:")
-    void bannerAdImpressed(IMBanner banner);
+    void rewardActionCompleted(IMBanner banner, NSDictionary<NSString, ?> rewards);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

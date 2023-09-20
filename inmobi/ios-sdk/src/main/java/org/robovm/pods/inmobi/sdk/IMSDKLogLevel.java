@@ -40,9 +40,9 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
 public enum /*<name>*/IMSDKLogLevel/*</name>*/ implements ValuedEnum {
     /*<values>*/
-    None(0L),
-    Error(1L),
-    Debug(2L);
+    IMSDKLogLevelNone(0L),
+    IMSDKLogLevelError(1L),
+    IMSDKLogLevelDebug(2L);
     /*</values>*/
 
     /*<bind>*/

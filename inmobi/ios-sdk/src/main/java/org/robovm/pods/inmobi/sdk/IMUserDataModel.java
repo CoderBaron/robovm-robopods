@@ -37,7 +37,7 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9InMobiSDK15IMUserDataModel")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/IMUserDataModel/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
@@ -46,11 +46,11 @@ import org.robovm.apple.coreanimation.*;
     /*<bind>*/static { ObjCRuntime.bind(IMUserDataModel.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public IMUserDataModel() {}
+    protected IMUserDataModel() {}
     protected IMUserDataModel(Handle h, long handle) { super(h, handle); }
     protected IMUserDataModel(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithPhoneNumber:emailId:extras:")
-    public IMUserDataModel(IMUserDataTypes phoneNumber, IMUserDataTypes emailId, NSDictionary<?, ?> extras) { super((SkipInit) null); initObject(init(phoneNumber, emailId, extras)); }
+    public IMUserDataModel(IMUserDataTypes phoneNumber, IMUserDataTypes emailId, NSDictionary<NSString, ?> extras) { super((SkipInit) null); initObject(init(phoneNumber, emailId, extras)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "phoneNumber")
@@ -62,13 +62,15 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "setEmailId:")
     public native void setEmailId(IMUserDataTypes v);
     @Property(selector = "extras")
-    public native NSDictionary<?, ?> getExtras();
+    public native NSDictionary<NSString, ?> getExtras();
     @Property(selector = "setExtras:")
-    public native void setExtras(NSDictionary<?, ?> v);
+    public native void setExtras(NSDictionary<NSString, ?> v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "initWithPhoneNumber:emailId:extras:")
-    protected native @Pointer long init(IMUserDataTypes phoneNumber, IMUserDataTypes emailId, NSDictionary<?, ?> extras);
+    protected native @Pointer long init(IMUserDataTypes phoneNumber, IMUserDataTypes emailId, NSDictionary<NSString, ?> extras);
+    @Method(selector = "isEqual:")
+    public native boolean isEqual(NSObject other);
     /*</methods>*/
 }

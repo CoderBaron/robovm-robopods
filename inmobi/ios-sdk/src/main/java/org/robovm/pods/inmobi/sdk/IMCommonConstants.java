@@ -37,31 +37,33 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9InMobiSDK18IMUnifiedIdService")/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/IMUnifiedIdService/*</name>*/ 
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9InMobiSDK17IMCommonConstants")/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/IMCommonConstants/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class IMUnifiedIdServicePtr extends Ptr<IMUnifiedIdService, IMUnifiedIdServicePtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(IMUnifiedIdService.class); }/*</bind>*/
+    /*<ptr>*/public static class IMCommonConstantsPtr extends Ptr<IMCommonConstants, IMCommonConstantsPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(IMCommonConstants.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    protected IMUnifiedIdService() {}
-    protected IMUnifiedIdService(Handle h, long handle) { super(h, handle); }
-    protected IMUnifiedIdService(SkipInit skipInit) { super(skipInit); }
+    public IMCommonConstants() {}
+    protected IMCommonConstants(Handle h, long handle) { super(h, handle); }
+    protected IMCommonConstants(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "push:")
-    public static native void push(IMUserDataModel data);
-    @Method(selector = "reset")
-    public static native void reset();
-    @Method(selector = "fetchUnifiedIds:")
-    public static native void fetchUnifiedIds(IMUnifiedIdDelegate delegate);
-    @Method(selector = "enableDebugMode:")
-    public static native void enableDebugMode(boolean debugMode);
+    @Method(selector = "IM_GDPR_CONSENT_AVAILABLE")
+    public static native String IM_GDPR_CONSENT_AVAILABLE();
+    @Method(selector = "IM_GDPR_CONSENT_IAB")
+    public static native String IM_GDPR_CONSENT_IAB();
+    @Method(selector = "IM_SUBJECT_TO_GDPR")
+    public static native String IM_SUBJECT_TO_GDPR();
+    @Method(selector = "IM_PARTNER_GDPR_CONSENT_AVAILABLE")
+    public static native String IM_PARTNER_GDPR_CONSENT_AVAILABLE();
+    @Method(selector = "IM_PARTNER_GDPR_APPLIES")
+    public static native String IM_PARTNER_GDPR_APPLIES();
     /*</methods>*/
 }

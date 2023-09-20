@@ -37,7 +37,7 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9InMobiSDK15IMRequestStatus")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/IMRequestStatus/*</name>*/ 
     extends /*<extends>*/NSError/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
@@ -48,8 +48,6 @@ import org.robovm.apple.coreanimation.*;
     /*<constructors>*/
     protected IMRequestStatus(Handle h, long handle) { super(h, handle); }
     protected IMRequestStatus(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithDomain:code:userInfo:")
-    public IMRequestStatus(String domain, IMStatusCode code, NSErrorUserInfo dict) { super((SkipInit) null); initObject(init(domain, code, dict)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "supportsSecureCoding")
@@ -57,8 +55,6 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithDomain:code:userInfo:")
-    protected native @Pointer long init(String domain, IMStatusCode code, NSErrorUserInfo dict);
     /**
      * @since Available in iOS 9.0 and later.
      */

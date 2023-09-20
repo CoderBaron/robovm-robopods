@@ -37,30 +37,28 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
-public enum /*<name>*/IMPrimaryIntegration/*</name>*/ implements ValuedEnum {
-    /*<values>*/
-    Undefined(-1L),
-    AerServ(0L),
-    InMobi(1L);
-    /*</values>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9InMobiSDK11IMWatermark")/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/IMWatermark/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*//*</implements>*/ {
 
-    /*<bind>*/
-    /*</bind>*/
+    /*<ptr>*/public static class IMWatermarkPtr extends Ptr<IMWatermark, IMWatermarkPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(IMWatermark.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<methods>*//*</methods>*/
-
-    private final long n;
-
-    private /*<name>*/IMPrimaryIntegration/*</name>*/(long n) { this.n = n; }
-    public long value() { return n; }
-    public static /*<name>*/IMPrimaryIntegration/*</name>*/ valueOf(long n) {
-        for (/*<name>*/IMPrimaryIntegration/*</name>*/ v : values()) {
-            if (v.n == n) {
-                return v;
-            }
-        }
-        throw new IllegalArgumentException("No constant with value " + n + " found in " 
-            + /*<name>*/IMPrimaryIntegration/*</name>*/.class.getName());
-    }
+    /*<constructors>*/
+    protected IMWatermark() {}
+    protected IMWatermark(Handle h, long handle) { super(h, handle); }
+    protected IMWatermark(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithImageData:")
+    public IMWatermark(NSData imageData) { super((SkipInit) null); initObject(init(imageData)); }
+    /*</constructors>*/
+    /*<properties>*/
+    @Property(selector = "imageData")
+    public native NSData getImageData();
+    /*</properties>*/
+    /*<members>*//*</members>*/
+    /*<methods>*/
+    @Method(selector = "initWithImageData:")
+    protected native @Pointer long init(NSData imageData);
+    /*</methods>*/
 }

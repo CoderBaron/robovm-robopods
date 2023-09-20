@@ -40,14 +40,14 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
 public enum /*<name>*/IMSDKAgeGroup/*</name>*/ implements ValuedEnum {
     /*<values>*/
-    Below18(1L),
-    Between18And24(2L),
-    Between25And29(3L),
-    Between30And34(4L),
-    Between35And44(5L),
-    Between45And54(6L),
-    Between55And65(7L),
-    Above65(8L);
+    IMSDKAgeGroupBelow18(1L),
+    IMSDKAgeGroupBetween18And24(2L),
+    IMSDKAgeGroupBetween25And29(3L),
+    IMSDKAgeGroupBetween30And34(4L),
+    IMSDKAgeGroupBetween35And44(5L),
+    IMSDKAgeGroupBetween45And54(6L),
+    IMSDKAgeGroupBetween55And65(7L),
+    IMSDKAgeGroupAbove65(8L);
     /*</values>*/
 
     /*<bind>*/

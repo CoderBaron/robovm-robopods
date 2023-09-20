@@ -37,34 +37,22 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
-public enum /*<name>*/IMUnifiedTimeout/*</name>*/ implements ValuedEnum {
-    /*<values>*/
-    Preinit(0L),
-    Mutt(1L),
-    MediationLoad(2L),
-    UnifiedAuction(3L),
-    Rendering(4L),
-    Show(5L),
-    Bitmap(6L);
-    /*</values>*/
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ interface /*<name>*/IMBannerAudioDelegate/*</name>*/ 
+    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
 
+    /*<ptr>*/
+    /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<methods>*//*</methods>*/
-
-    private final long n;
-
-    private /*<name>*/IMUnifiedTimeout/*</name>*/(long n) { this.n = n; }
-    public long value() { return n; }
-    public static /*<name>*/IMUnifiedTimeout/*</name>*/ valueOf(long n) {
-        for (/*<name>*/IMUnifiedTimeout/*</name>*/ v : values()) {
-            if (v.n == n) {
-                return v;
-            }
-        }
-        throw new IllegalArgumentException("No constant with value " + n + " found in " 
-            + /*<name>*/IMUnifiedTimeout/*</name>*/.class.getName());
-    }
+    /*<properties>*/
+    
+    /*</properties>*/
+    /*<methods>*/
+    @Method(selector = "banner:audioStatusChanged:")
+    void audioStatusChanged(IMBanner banner, IMBannerAudioStatus status);
+    /*</methods>*/
+    /*<adapter>*/
+    /*</adapter>*/
 }

@@ -37,37 +37,27 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
-public enum /*<name>*/IMCoreAdState/*</name>*/ implements ValuedEnum {
-    /*<values>*/
-    Init(0L),
-    Preloading(1L),
-    Preloaded(2L),
-    Loading(3L),
-    Loaded(4L),
-    ShowCalled(5L),
-    Rendered(6L),
-    Active(7L),
-    Dismissed(8L),
-    Failed(9L);
-    /*</values>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9InMobiSDK19IMPrivacyCompliance")/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/IMPrivacyCompliance/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*//*</implements>*/ {
 
-    /*<bind>*/
-    /*</bind>*/
+    /*<ptr>*/public static class IMPrivacyCompliancePtr extends Ptr<IMPrivacyCompliance, IMPrivacyCompliancePtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(IMPrivacyCompliance.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<methods>*//*</methods>*/
-
-    private final long n;
-
-    private /*<name>*/IMCoreAdState/*</name>*/(long n) { this.n = n; }
-    public long value() { return n; }
-    public static /*<name>*/IMCoreAdState/*</name>*/ valueOf(long n) {
-        for (/*<name>*/IMCoreAdState/*</name>*/ v : values()) {
-            if (v.n == n) {
-                return v;
-            }
-        }
-        throw new IllegalArgumentException("No constant with value " + n + " found in " 
-            + /*<name>*/IMCoreAdState/*</name>*/.class.getName());
-    }
+    /*<constructors>*/
+    public IMPrivacyCompliance() {}
+    protected IMPrivacyCompliance(Handle h, long handle) { super(h, handle); }
+    protected IMPrivacyCompliance(SkipInit skipInit) { super(skipInit); }
+    /*</constructors>*/
+    /*<properties>*/
+    
+    /*</properties>*/
+    /*<members>*//*</members>*/
+    /*<methods>*/
+    @Method(selector = "setDoNotSell:")
+    public static native void setDoNotSell(boolean doNotSell);
+    @Method(selector = "setUSPrivacyString:")
+    public static native void setUSPrivacyString(String privacyString);
+    /*</methods>*/
 }

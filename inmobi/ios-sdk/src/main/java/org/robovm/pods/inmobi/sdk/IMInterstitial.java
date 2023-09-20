@@ -37,7 +37,7 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9InMobiSDK14IMInterstitial")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/IMInterstitial/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
@@ -68,17 +68,17 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "setKeywords:")
     public native void setKeywords(String v);
     @Property(selector = "extras")
-    public native NSDictionary<?, ?> getExtras();
+    public native NSDictionary<NSString, ?> getExtras();
     @Property(selector = "setExtras:")
-    public native void setExtras(NSDictionary<?, ?> v);
-    @Property(selector = "creativeId")
-    public native String getCreativeId();
-    @Property(selector = "preloadManager")
-    public native IMInterstitialPreloadManager getPreloadManager();
+    public native void setExtras(NSDictionary<NSString, ?> v);
     @Property(selector = "contentUrl")
     public native String getContentUrl();
     @Property(selector = "setContentUrl:")
     public native void setContentUrl(String v);
+    @Property(selector = "creativeId")
+    public native String getCreativeId();
+    @Property(selector = "preloadManager")
+    public native IMInterstitialPreloadManager getPreloadManager();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -86,20 +86,20 @@ import org.robovm.apple.coreanimation.*;
     protected native @Pointer long init(long placementId);
     @Method(selector = "initWithPlacementId:delegate:")
     protected native @Pointer long init(long placementId, IMInterstitialDelegate delegate);
-    @Method(selector = "getSignals")
-    public native void getSignals();
     @Method(selector = "load")
     public native void load();
     @Method(selector = "load:")
     public native void load(NSData response);
     @Method(selector = "isReady")
     public native boolean isReady();
-    @Method(selector = "showFromViewController:")
-    public native void showFromViewController(UIViewController viewController);
-    @Method(selector = "showFromViewController:withAnimation:")
-    public native void show(UIViewController viewController, IMInterstitialAnimationType type);
+    @Method(selector = "showFrom:")
+    public native void showFrom(UIViewController viewController);
+    @Method(selector = "showFrom:with:")
+    public native void show(UIViewController viewController, IMInterstitialAnimationType animationType);
     @Method(selector = "getAdMetaInfo")
-    public native NSDictionary<?, ?> getAdMetaInfo();
+    public native NSDictionary<NSString, ?> getAdMetaInfo();
+    @Method(selector = "setWatermarkWith:")
+    public native void setWatermark(IMWatermark watermark);
     @Method(selector = "cancel")
     public native void cancel();
     /*</methods>*/

@@ -52,10 +52,6 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("banner:gotSignals:")
-    public void gotSignals(IMBanner banner, NSData signals) {}
-    @NotImplemented("banner:failedToGetSignalsWithError:")
-    public void failedToGetSignals(IMBanner banner, IMRequestStatus status) {}
     @NotImplemented("bannerDidFinishLoading:")
     public void bannerDidFinishLoading(IMBanner banner) {}
     @NotImplemented("banner:didReceiveWithMetaInfo:")
@@ -64,8 +60,10 @@ import org.robovm.apple.coreanimation.*;
     public void didFailToReceive(IMBanner banner, IMRequestStatus error) {}
     @NotImplemented("banner:didFailToLoadWithError:")
     public void didFailToLoad(IMBanner banner, IMRequestStatus error) {}
+    @NotImplemented("bannerAdImpressed:")
+    public void bannerAdImpressed(IMBanner banner) {}
     @NotImplemented("banner:didInteractWithParams:")
-    public void didInteract(IMBanner banner, NSDictionary<?, ?> params) {}
+    public void didInteract(IMBanner banner, NSDictionary<NSString, ?> params) {}
     @NotImplemented("userWillLeaveApplicationFromBanner:")
     public void userWillLeaveApplicationFromBanner(IMBanner banner) {}
     @NotImplemented("bannerWillPresentScreen:")
@@ -77,8 +75,6 @@ import org.robovm.apple.coreanimation.*;
     @NotImplemented("bannerDidDismissScreen:")
     public void bannerDidDismissScreen(IMBanner banner) {}
     @NotImplemented("banner:rewardActionCompletedWithRewards:")
-    public void rewardActionCompleted(IMBanner banner, NSDictionary<?, ?> rewards) {}
-    @NotImplemented("bannerAdImpressed:")
-    public void bannerAdImpressed(IMBanner banner) {}
+    public void rewardActionCompleted(IMBanner banner, NSDictionary<NSString, ?> rewards) {}
     /*</methods>*/
 }

@@ -37,30 +37,27 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
-public enum /*<name>*/IMSDKEducation/*</name>*/ implements ValuedEnum {
-    /*<values>*/
-    IMSDKEducationHighSchoolOrLess(1L),
-    IMSDKEducationCollageOrGraduate(2L),
-    IMSDKEducationPostGraduateOrAbove(3L);
-    /*</values>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9InMobiSDK20IMBannerAudioHandler")/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/IMBannerAudioHandler/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*//*</implements>*/ {
 
-    /*<bind>*/
-    /*</bind>*/
+    /*<ptr>*/public static class IMBannerAudioHandlerPtr extends Ptr<IMBannerAudioHandler, IMBannerAudioHandlerPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(IMBannerAudioHandler.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<methods>*//*</methods>*/
-
-    private final long n;
-
-    private /*<name>*/IMSDKEducation/*</name>*/(long n) { this.n = n; }
-    public long value() { return n; }
-    public static /*<name>*/IMSDKEducation/*</name>*/ valueOf(long n) {
-        for (/*<name>*/IMSDKEducation/*</name>*/ v : values()) {
-            if (v.n == n) {
-                return v;
-            }
-        }
-        throw new IllegalArgumentException("No constant with value " + n + " found in " 
-            + /*<name>*/IMSDKEducation/*</name>*/.class.getName());
-    }
+    /*<constructors>*/
+    public IMBannerAudioHandler() {}
+    protected IMBannerAudioHandler(Handle h, long handle) { super(h, handle); }
+    protected IMBannerAudioHandler(SkipInit skipInit) { super(skipInit); }
+    /*</constructors>*/
+    /*<properties>*/
+    
+    /*</properties>*/
+    /*<members>*//*</members>*/
+    /*<methods>*/
+    @Method(selector = "onView:addBannerAudioDelegate:")
+    public native void addBannerAudioDelegate(UIView view, IMBannerAudioDelegate delegate);
+    @Method(selector = "setAudioEnabled:")
+    public static native void setAudioEnabled(boolean isEnabled);
+    /*</methods>*/
 }

@@ -37,7 +37,7 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9InMobiSDK12IMAdMetaInfo")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/IMAdMetaInfo/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
@@ -46,7 +46,7 @@ import org.robovm.apple.coreanimation.*;
     /*<bind>*/static { ObjCRuntime.bind(IMAdMetaInfo.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public IMAdMetaInfo() {}
+    protected IMAdMetaInfo() {}
     protected IMAdMetaInfo(Handle h, long handle) { super(h, handle); }
     protected IMAdMetaInfo(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
@@ -54,7 +54,7 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "creativeID")
     public native String getCreativeID();
     @Property(selector = "bidInfo")
-    public native NSDictionary<?, ?> getBidInfo();
+    public native NSDictionary<NSString, ?> getBidInfo();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

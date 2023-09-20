@@ -37,42 +37,34 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9InMobiSDK8IMBanner")/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/IMBanner/*</name>*/ 
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9InMobiSDK7IMAudio")/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/IMAudio/*</name>*/ 
     extends /*<extends>*/UIView/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class IMBannerPtr extends Ptr<IMBanner, IMBannerPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(IMBanner.class); }/*</bind>*/
+    /*<ptr>*/public static class IMAudioPtr extends Ptr<IMAudio, IMAudioPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(IMAudio.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public IMBanner() {}
-    protected IMBanner(Handle h, long handle) { super(h, handle); }
-    protected IMBanner(SkipInit skipInit) { super(skipInit); }
+    public IMAudio() {}
+    protected IMAudio(Handle h, long handle) { super(h, handle); }
+    protected IMAudio(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithFrame:")
-    public IMBanner(@ByVal CGRect frame) { super((SkipInit) null); initObject(init(frame)); }
+    public IMAudio(@ByVal CGRect frame) { super((SkipInit) null); initObject(init(frame)); }
     @Method(selector = "initWithFrame:placementId:")
-    public IMBanner(@ByVal CGRect frame, long placementId) { super((SkipInit) null); initObject(init(frame, placementId)); }
+    public IMAudio(@ByVal CGRect frame, long placementId) { super((SkipInit) null); initObject(init(frame, placementId)); }
     @Method(selector = "initWithFrame:placementId:delegate:")
-    public IMBanner(@ByVal CGRect frame, long placementId, IMBannerDelegate delegate) { super((SkipInit) null); initObject(init(frame, placementId, delegate)); }
+    public IMAudio(@ByVal CGRect frame, long placementId, IMAudioDelegate delegate) { super((SkipInit) null); initObject(init(frame, placementId, delegate)); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "delegate")
+    public native IMAudioDelegate getDelegate();
+    @Property(selector = "setDelegate:", strongRef = true)
+    public native void setDelegate(IMAudioDelegate v);
     @Property(selector = "placementId")
     public native long getPlacementId();
     @Property(selector = "setPlacementId:")
     public native void setPlacementId(long v);
-    @Property(selector = "delegate")
-    public native IMBannerDelegate getDelegate();
-    @Property(selector = "setDelegate:", strongRef = true)
-    public native void setDelegate(IMBannerDelegate v);
-    @Property(selector = "audioDelegate")
-    public native IMBannerAudioDelegate getAudioDelegate();
-    @Property(selector = "setAudioDelegate:", strongRef = true)
-    public native void setAudioDelegate(IMBannerAudioDelegate v);
-    @Property(selector = "refreshInterval")
-    public native @MachineSizedSInt long getRefreshInterval();
-    @Property(selector = "setRefreshInterval:")
-    public native void setRefreshInterval(@MachineSizedSInt long v);
     @Property(selector = "keywords")
     public native String getKeywords();
     @Property(selector = "setKeywords:")
@@ -91,10 +83,6 @@ import org.robovm.apple.coreanimation.*;
     public native void setContentUrl(String v);
     @Property(selector = "creativeId")
     public native String getCreativeId();
-    @Property(selector = "preloadManager")
-    public native IMBannerPreloadManager getPreloadManager();
-    @Property(selector = "isAudioAd")
-    public native boolean isAudioAd();
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();
@@ -106,21 +94,9 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "initWithFrame:placementId:")
     protected native @Pointer long init(@ByVal CGRect frame, long placementId);
     @Method(selector = "initWithFrame:placementId:delegate:")
-    protected native @Pointer long init(@ByVal CGRect frame, long placementId, IMBannerDelegate delegate);
-    @Method(selector = "load")
-    public native void load();
-    @Method(selector = "load:")
-    public native void load(NSData response);
-    @Method(selector = "shouldAutoRefresh:")
-    public native void shouldAutoRefresh(boolean shouldAutoRefresh);
+    protected native @Pointer long init(@ByVal CGRect frame, long placementId, IMAudioDelegate delegate);
     @Method(selector = "getAdMetaInfo")
     public native NSDictionary<NSString, ?> getAdMetaInfo();
-    @Method(selector = "setWatermarkWith:")
-    public native void setWatermarkWith(IMWatermark watermark);
-    @Method(selector = "cancel")
-    public native void cancel();
-    @Method(selector = "willMoveToWindow:")
-    public native void willMoveToWindow(UIWindow newWindow);
     /**
      * @since Available in iOS 9.0 and later.
      */
@@ -131,5 +107,13 @@ import org.robovm.apple.coreanimation.*;
      */
     @Method(selector = "userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
     public static native UIUserInterfaceLayoutDirection getUserInterfaceLayoutDirection(UISemanticContentAttribute semanticContentAttribute, UIUserInterfaceLayoutDirection layoutDirection);
+    @Method(selector = "load")
+    public native void load();
+    @Method(selector = "show")
+    public native void show();
+    @Method(selector = "cancel")
+    public native void cancel();
+    @Method(selector = "willMoveToWindow:")
+    public native void willMoveToWindow(UIWindow newWindow);
     /*</methods>*/
 }

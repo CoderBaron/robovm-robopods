@@ -38,11 +38,11 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
-public enum /*<name>*/IMSDKEducation/*</name>*/ implements ValuedEnum {
+public enum /*<name>*/IMAudioStatus/*</name>*/ implements ValuedEnum {
     /*<values>*/
-    IMSDKEducationHighSchoolOrLess(1L),
-    IMSDKEducationCollageOrGraduate(2L),
-    IMSDKEducationPostGraduateOrAbove(3L);
+    Playing(1L),
+    Paused(2L),
+    Completed(3L);
     /*</values>*/
 
     /*<bind>*/
@@ -52,15 +52,15 @@ public enum /*<name>*/IMSDKEducation/*</name>*/ implements ValuedEnum {
 
     private final long n;
 
-    private /*<name>*/IMSDKEducation/*</name>*/(long n) { this.n = n; }
+    private /*<name>*/IMAudioStatus/*</name>*/(long n) { this.n = n; }
     public long value() { return n; }
-    public static /*<name>*/IMSDKEducation/*</name>*/ valueOf(long n) {
-        for (/*<name>*/IMSDKEducation/*</name>*/ v : values()) {
+    public static /*<name>*/IMAudioStatus/*</name>*/ valueOf(long n) {
+        for (/*<name>*/IMAudioStatus/*</name>*/ v : values()) {
             if (v.n == n) {
                 return v;
             }
         }
         throw new IllegalArgumentException("No constant with value " + n + " found in " 
-            + /*<name>*/IMSDKEducation/*</name>*/.class.getName());
+            + /*<name>*/IMAudioStatus/*</name>*/.class.getName());
     }
 }

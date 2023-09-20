@@ -69,7 +69,7 @@ import org.robovm.apple.coreanimation.*;
     @NotImplemented("nativeAdImpressed:")
     public void nativeAdImpressed(IMNative _native) {}
     @NotImplemented("native:didInteractWithParams:")
-    public void didInteract(IMNative _native, NSDictionary<?, ?> params) {}
+    public void didInteract(IMNative _native, NSDictionary<NSString, ?> params) {}
     @NotImplemented("nativeDidFinishPlayingMedia:")
     public void nativeDidFinishPlayingMedia(IMNative _native) {}
     @NotImplemented("userDidSkipPlayingMediaFromNative:")

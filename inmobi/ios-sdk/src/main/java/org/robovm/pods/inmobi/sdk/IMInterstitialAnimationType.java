@@ -40,9 +40,9 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
 public enum /*<name>*/IMInterstitialAnimationType/*</name>*/ implements ValuedEnum {
     /*<values>*/
-    CoverVertical(0L),
-    FlipHorizontal(1L),
-    None(2L);
+    IMInterstitialAnimationTypeCoverVertical(0L),
+    IMInterstitialAnimationTypeFlipHorizontal(1L),
+    IMInterstitialAnimationTypeAsNone(2L);
     /*</values>*/
 
     /*<bind>*/

@@ -37,7 +37,7 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9InMobiSDK8IMNative")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/IMNative/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
@@ -59,6 +59,22 @@ import org.robovm.apple.coreanimation.*;
     public native long getPlacementId();
     @Property(selector = "setPlacementId:")
     public native void setPlacementId(long v);
+    @Property(selector = "delegate")
+    public native IMNativeDelegate getDelegate();
+    @Property(selector = "setDelegate:", strongRef = true)
+    public native void setDelegate(IMNativeDelegate v);
+    @Property(selector = "keywords")
+    public native String getKeywords();
+    @Property(selector = "setKeywords:")
+    public native void setKeywords(String v);
+    @Property(selector = "extras")
+    public native NSDictionary<NSString, ?> getExtras();
+    @Property(selector = "setExtras:")
+    public native void setExtras(NSDictionary<NSString, ?> v);
+    @Property(selector = "contentUrl")
+    public native String getContentUrl();
+    @Property(selector = "setContentUrl:")
+    public native void setContentUrl(String v);
     @Property(selector = "customAdContent")
     public native String getCustomAdContent();
     @Property(selector = "adTitle")
@@ -75,33 +91,17 @@ import org.robovm.apple.coreanimation.*;
     public native NSURL getAdLandingPageUrl();
     @Property(selector = "isAppDownload")
     public native boolean isAppDownload();
-    @Property(selector = "delegate")
-    public native IMNativeDelegate getDelegate();
-    @Property(selector = "setDelegate:", strongRef = true)
-    public native void setDelegate(IMNativeDelegate v);
-    @Property(selector = "keywords")
-    public native String getKeywords();
-    @Property(selector = "setKeywords:")
-    public native void setKeywords(String v);
-    @Property(selector = "extras")
-    public native NSDictionary<?, ?> getExtras();
-    @Property(selector = "setExtras:")
-    public native void setExtras(NSDictionary<?, ?> v);
     @Property(selector = "creativeId")
     public native String getCreativeId();
-    @Property(selector = "contentUrl")
-    public native String getContentUrl();
-    @Property(selector = "setContentUrl:")
-    public native void setContentUrl(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "primaryViewOfWidth:")
-    public native UIView primaryViewOfWidth(@MachineSizedFloat double width);
     @Method(selector = "initWithPlacementId:")
     protected native @Pointer long init(long placementId);
     @Method(selector = "initWithPlacementId:delegate:")
     protected native @Pointer long init(long placementId, IMNativeDelegate delegate);
+    @Method(selector = "primaryViewOfWidth:")
+    public native UIView primaryViewOfWidth(@MachineSizedFloat double width);
     @Method(selector = "load")
     public native void load();
     @Method(selector = "load:")
@@ -113,6 +113,6 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "recyclePrimaryView")
     public native void recyclePrimaryView();
     @Method(selector = "getAdMetaInfo")
-    public native NSDictionary<?, ?> getAdMetaInfo();
+    public native NSDictionary<NSString, ?> getAdMetaInfo();
     /*</methods>*/
 }
