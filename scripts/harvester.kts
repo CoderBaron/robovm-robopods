@@ -1131,7 +1131,7 @@ fun registerMobileAdsMediationAdapters(frameworkRegistry: MutableMap<String, (St
     registry["MetaAdapter"] = { framework ->
         val artifact = "$framework.framework"
         val artifactLocation =
-            downloadFolder.extend("MetaAdapter/MetaAdapter.xcframework/ios-arm64_armv7/$artifact")
+            downloadFolder.extend("MetaAdapter/MetaAdapter.xcframework/ios-arm64/$artifact")
         processFramework(
             artifact = artifact,
             moduleFolder = "firebase/ios-google-mobile-ads-adapters/ios-facebook",
@@ -1142,7 +1142,7 @@ fun registerMobileAdsMediationAdapters(frameworkRegistry: MutableMap<String, (St
                 1. download MetaAdapter-X.X.X.X.zip from https://developers.google.com/admob/ios/mediation/meta#meta-audience-network-ios-mediation-adapter-changelog
                 2. extract and rename folder to MetaAdapter 
                 3. create a file ${downloadFolder.extend("MetaAdapter/version")} and put verions there, e.g. 4.0.0
-                4. expected location ${downloadFolder.extend("MetaAdapter/MetaAdapter.xcframework/ios-arm64_armv7/")}
+                4. expected location ${downloadFolder.extend("MetaAdapter/MetaAdapter.xcframework/ios-arm64/")}
             """.trimIndent(),
             readmeFileVersionUpdater = { frm, modFolder, version ->
                 updateModuleReadmeFileVersionString(frm, moduleReadmeFile, modFolder, version)
