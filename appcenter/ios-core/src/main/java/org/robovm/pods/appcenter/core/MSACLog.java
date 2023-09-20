@@ -59,6 +59,10 @@ import org.robovm.apple.foundation.*;
     String getDistributionGroupId();
     @Property(selector = "setDistributionGroupId:")
     void setDistributionGroupId(String v);
+    @Property(selector = "dataResidencyRegion")
+    String getDataResidencyRegion();
+    @Property(selector = "setDataResidencyRegion:")
+    void setDataResidencyRegion(String v);
     @Property(selector = "userId")
     String getUserId();
     @Property(selector = "setUserId:")

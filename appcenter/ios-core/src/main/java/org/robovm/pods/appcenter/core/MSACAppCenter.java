@@ -67,6 +67,10 @@ import org.robovm.apple.foundation.*;
     public static native String getLogUrl();
     @Property(selector = "setLogUrl:")
     public static native void setLogUrl(String v);
+    @Property(selector = "dataResidencyRegion")
+    public static native String getDataResidencyRegion();
+    @Property(selector = "setDataResidencyRegion:")
+    public static native void setDataResidencyRegion(String v);
     @Property(selector = "logHandler")
     public static native @Block("(@Block,,,,,)") VoidBlock6<Block0<String>, MSACLogLevel, NSString, BytePtr, BytePtr, Integer> getLogHandler();
     @Property(selector = "setLogHandler:")

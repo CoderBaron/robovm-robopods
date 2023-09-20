@@ -60,6 +60,10 @@ import org.robovm.apple.foundation.*;
     public String getDistributionGroupId() { return null; }
     @NotImplemented("setDistributionGroupId:")
     public void setDistributionGroupId(String v) {}
+    @NotImplemented("dataResidencyRegion")
+    public String getDataResidencyRegion() { return null; }
+    @NotImplemented("setDataResidencyRegion:")
+    public void setDataResidencyRegion(String v) {}
     @NotImplemented("userId")
     public String getUserId() { return null; }
     @NotImplemented("setUserId:")
