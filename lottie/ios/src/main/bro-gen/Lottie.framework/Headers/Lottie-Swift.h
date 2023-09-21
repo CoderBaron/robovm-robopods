@@ -390,7 +390,7 @@ SWIFT_CLASS("_TtC6Lottie23CompatibleAnimationView")
 /// animation using the given rendering engine configuration.
 - (nonnull instancetype)initWithData:(NSData * _Nonnull)data compatibleRenderingEngineOption:(enum CompatibleRenderingEngineOption)compatibleRenderingEngineOption OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @property (nonatomic, strong) CompatibleAnimation * _Nullable compatibleAnimation;
 @property (nonatomic) CGFloat loopAnimationCount;
 @property (nonatomic, strong) CompatibleDictionaryTextProvider * _Nullable compatibleDictionaryTextProvider;
