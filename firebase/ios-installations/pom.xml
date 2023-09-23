@@ -6,7 +6,7 @@
         <artifactId>robopods-firebase-parent</artifactId>
     </parent>
 
-    <artifactId>robopods-firebase-installations</artifactId>
+    <artifactId>robopods-firebase-installations-ios</artifactId>
     <name>RoboPods FireBase Installations iOS v10.15.0</name>
     <packaging>jar</packaging>
 

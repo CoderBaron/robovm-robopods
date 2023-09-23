@@ -1,16 +1,16 @@
 # Firebase iOS Analytics framework
 
 ### Frameworks required for this pod: 
-* FirebaseAnalytics.framework (from Firebase.zip/FirebaseAnalytics/FirebaseAnalytics.xcframework)
-* GoogleAppMeasurement.framework (from Firebase.zip/FirebaseAnalytics/GoogleAppMeasurement.xcframework)
-* FirebaseInstallations.framework (from Firebase.zip/FirebaseAnalytics/FirebaseInstallations.xcframework)
-* nanopb.framework (from Firebase.zip/FirebaseAnalytics/nanopb.xcframework)
+* FirebaseAnalytics.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseAnalytics.xcframework)
+* GoogleAppMeasurement.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleAppMeasurement.xcframework)
+* FirebaseInstallations.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseInstallations.xcframework)
+* nanopb.xcframework (from Firebase.zip/FirebaseAnalytics/nanopb.xcframework)
 
 Plus ones required for ios-core module:
-* FirebaseCore.framework (from Firebase.zip/FirebaseAnalytics/FirebaseCore.xcframework)
-* FirebaseCoreInternal.framework (from Firebase.zip/FirebaseAnalytics/FirebaseCoreInternal.xcframework)
-* GoogleUtilities.framework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
-* FBLPromises.framework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)
+* FirebaseCore.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseCore.xcframework)
+* FirebaseCoreInternal.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseCoreInternal.xcframework)
+* GoogleUtilities.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
+* FBLPromises.xcframework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)
 
 ### to use this pod configure your `robovm.xml`
 

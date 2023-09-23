@@ -2,5 +2,7 @@
     <frameworks>
         <framework>FirebaseAuth</framework>
         <framework>GTMSessionFetcher</framework>
+        <framework>FirebaseAppCheckInterop</framework>
+        <framework>RecaptchaInterop</framework>
     </frameworks>
 </config>

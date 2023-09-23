@@ -1,15 +1,15 @@
 # Firebase iOS RemoteConfig framework
 
 ### Frameworks required for this pod: 
-* FirebaseRemoteConfig.framework (from Firebase.zip/FirebaseRemoteConfig/FirebaseRemoteConfig.xcframework)
-* FirebaseABTesting.framework (from Firebase.zip/FirebaseRemoteConfig/FirebaseABTesting.xcframework)
-* FirebaseInstallations.framework (from Firebase.zip/FirebaseAnalytics/FirebaseInstallations.xcframework)
+* FirebaseRemoteConfig.xcframework (from Firebase.zip/FirebaseRemoteConfig/FirebaseRemoteConfig.xcframework)
+* FirebaseABTesting.xcframework (from Firebase.zip/FirebaseRemoteConfig/FirebaseABTesting.xcframework)
+* FirebaseInstallations.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseInstallations.xcframework)
 
 Plus ones required for ios-core module:
-* FirebaseCore.framework (from Firebase.zip/FirebaseAnalytics/FirebaseCore.xcframework)
-* FirebaseCoreInternal.framework (from Firebase.zip/FirebaseAnalytics/FirebaseCoreInternal.xcframework)
-* GoogleUtilities.framework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
-* FBLPromises.framework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)
+* FirebaseCore.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseCore.xcframework)
+* FirebaseCoreInternal.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseCoreInternal.xcframework)
+* GoogleUtilities.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
+* FBLPromises.xcframework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)
 
 ### to use this pod configure your `robovm.xml`
 

@@ -1,11 +1,12 @@
 # RoboPods for Firebase Google Mobile Ads 
 
 ### Frameworks required for this pod: 
-* GoogleMobileAds.framework (from Firebase.zip/Google-Mobile-Ads-SDK/GoogleMobileAds.xcframework)
-* GoogleAppMeasurement.framework (from FirebaseAnalytics/GoogleAppMeasurement.xcframework)
-* GoogleUtilities.framework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
-* FBLPromises.framework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)
-* nanopb.framework (from Firebase.zip/FirebaseAnalytics/nanopb.xcframework)
+* GoogleMobileAds.xcframework (from Firebase.zip/Google-Mobile-Ads-SDK/GoogleMobileAds.xcframework)
+* UserMessagingPlatform.xcframework (from Firebase.zip/Google-Mobile-Ads-SDK/UserMessagingPlatform.xcframework)
+* GoogleAppMeasurement.xcframework (from FirebaseAnalytics/GoogleAppMeasurement.xcframework)
+* GoogleUtilities.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
+* FBLPromises.xcframework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)
+* nanopb.xcframework (from Firebase.zip/FirebaseAnalytics/nanopb.xcframework)
 
 ### to use this pod configure your `robovm.xml`
 
