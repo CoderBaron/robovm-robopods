@@ -21,7 +21,7 @@
     <dependencies>
         <dependency>
             <groupId>io.github.dkimitsa.robovm</groupId>
-            <artifactId>robopods-facebook-core-ios</artifactId>
+            <artifactId>robopods-facebook-core-basics-ios</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
