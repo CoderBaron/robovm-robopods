@@ -1,7 +1,7 @@
 # Firebase iOS Google User Messaging Platform framework
 
 ### Frameworks required for this pod: 
-* Firebase.zip/Google-Mobile-Ads-SDK/UserMessagingPlatform.framework
+* UserMessagingPlatform.xcframework (from Firebase.zip/Google-Mobile-Ads-SDK/UserMessagingPlatform.xcframework)
 
 ### to use this pod configure your `robovm.xml`
 [the official guide](https://developers.google.com/admob/ump/ios/quick-start).

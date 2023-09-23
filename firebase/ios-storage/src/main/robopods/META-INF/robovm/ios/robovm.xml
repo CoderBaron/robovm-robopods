@@ -1,6 +1,9 @@
 <config>
     <frameworks>
         <framework>FirebaseStorage</framework>
+        <framework>FirebaseAppCheckInterop</framework>
+        <framework>FirebaseAuthInterop</framework>
+        <framework>FirebaseCoreExtension</framework>
         <framework>GTMSessionFetcher</framework>
     </frameworks>
 </config>

@@ -23,60 +23,80 @@ val frameworkPaths = firebaseRoot
     .filter {
         val cp = it.canonicalPath
         it.isDirectory && cp.endsWith(".framework") && (!cp.contains(".xcframework") || cp.contains("ios-arm64_armv7") || cp.contains("ios-arm64"))
-    }.toList()
-
+    }.distinctBy{ it.nameWithoutExtension }
+    .toList()
+val frameworkNames = frameworkPaths.mapTo(mutableSetOf()) { f-> f.nameWithoutExtension }
 val symbolToFramework = mutableMapOf<String, String>()
 val frameworkToImports = mutableMapOf<String, List<String>>()
+val frameworkToDependencies = mutableMapOf<String, Set<String>>()
 
 // get dependencies
-frameworkPaths.parallelStream().forEach { f ->
+frameworkPaths. parallelStream().forEach { f ->
     val name = f.nameWithoutExtension
     val bin = File(f, name)
+    val exports = execAndGetOutSequence("nm -g ${bin.canonicalPath}").mapNotNull {s ->
+        val idx = s.indexOf(" T ").takeIf { it != -1 }
+                ?: s.indexOf(" D ").takeIf { it != -1 }
+        idx?.let { s.substring(it + 3) }?.takeUnless { it.startsWith("__") || it.startsWith("_$") }
+    }.toSet()
     val imports = execAndGetOutSequence("nm -g -u -j ${bin.canonicalPath}").filter {
         it.isNotBlank() && !it.contains(':')
-    }.toList()
-    val exports = execAndGetOutSequence("nm -g -U -j ${bin.canonicalPath}").filter {
-        it.isNotBlank() && !it.contains(':')
-    }.toList()
+    }.distinct().toList()
+    val linkerDependencies = run {
+        // dump dependencies specified as linker command (LC_LINKER_OPTION_
+        var frameworkTagDetected = false
+        val frameworkLinePrefix = "string #2 "
+        execAndGetOutSequence("otool -l ${bin.canonicalPath}").mapNotNull { s ->
+            if (s == "string #1 -framework") {
+                    frameworkTagDetected = true
+                    null
+            } else {
+                val res = if (frameworkTagDetected && s.startsWith(frameworkLinePrefix)) {
+                    s.substring(frameworkLinePrefix.length).takeIf { frameworkNames.contains(it) }
+                } else null
+                frameworkTagDetected = false
+                res
+            }
+        }.toSet()
+    }
 
     synchronized(symbolToFramework) {
-        exports.forEach { symbolToFramework[it] = name }
+        exports.forEach {
+            if (symbolToFramework.containsKey(it))
+                println("### $it ---> $name, was ${symbolToFramework[it]}")
+            symbolToFramework[it] = name
+        }
         frameworkToImports[name] = imports
+        frameworkToDependencies[name] = linkerDependencies
     }
 }
 
 // build framework to framework dependency
-val frameworkToFramework = frameworkToImports.map { e ->
-    val depFrameworks = e.value.mapNotNullTo(mutableSetOf()) { symbol ->
-        symbolToFramework[symbol].takeUnless { it == e.key }
+val frameworkToFramework = frameworkToImports.map { (framework, importedSymbols) ->
+    val depFrameworks = importedSymbols.mapNotNullTo(mutableSetOf()) { symbol ->
+        // remove self-dependencies
+        symbolToFramework[symbol].takeUnless { f -> f == framework }
     }
-    e.key to depFrameworks.sorted()
+    depFrameworks.addAll(frameworkToDependencies[framework] ?: emptyList())
+    framework to depFrameworks.sorted()
 }.toMap()
 
 // build deep dependency
-fun deepWalker(name: String, res: MutableSet<String> = mutableSetOf()): MutableSet<String> {
-    frameworkToFramework[name]?.forEach {
-        if (res.add(it)) {
-            deepWalker(it, res)
-        }
+fun deepWalker(name: String, parent: String, res: MutableMap<String, String> = mutableMapOf()): MutableMap<String, String> {
+    if (!res.containsKey(name)) {
+        res[name] = parent
+        frameworkToFramework[name]?.forEach {deepWalker(it, name, res) }
     }
     return res
 }
 
-// Firebase core is a special case as all Firebase frameworks depends on it
-// get its dependencies
-val firebaseCoreName = "FirebaseCore"
-val firebaseCoreDependencies = deepWalker(firebaseCoreName).also { it.add(firebaseCoreName) }
-
 // build dependency tree
-frameworkToFramework.keys.sorted().forEach { key ->
-    val dependenciesToExclude = if (key != firebaseCoreName) firebaseCoreDependencies else emptySet()
-    val seen = mutableSetOf<String>().also { if (key != firebaseCoreName) it.addAll(dependenciesToExclude) }
-    val dependencies = deepWalker(key, seen)
-    println("$key:")
-    dependencies.filter { !dependenciesToExclude.contains(it) }
-        .sorted()
-        .forEach { println("    $it") }
+frameworkToFramework.keys.sorted().forEach { framework ->
+    println("$framework:")
+    val dependencies = deepWalker(framework, framework)
+    dependencies.remove(framework)
+    dependencies.asSequence().sortedBy { it.key }
+        .forEach { (frm, req) -> println("    $frm by $req") }
 }
 exitProcess(0)
 
@@ -91,7 +111,7 @@ fun execAndGetOutSequence(command: String) = sequence {
     p.inputStream.bufferedReader().apply {
         var line: String?
         while (run { line = readLine(); line } != null) {
-            yield(line!!)
+            yield(line!!.trim())
         }
     }
     p.waitFor().also { code ->

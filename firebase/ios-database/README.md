@@ -1,14 +1,14 @@
 # Firebase iOS Realtime Database framework
 
 ### Frameworks required for this pod: 
-* FirebaseDatabase.framework (from Firebase.zip/FirebaseDatabase/FirebaseDatabase.xcframework)
-* leveldb-library.framework (from Firebase.zip/FirebaseDatabase/leveldb-library.xcframework)
+* FirebaseDatabase.xcframework (from Firebase.zip/FirebaseDatabase/FirebaseDatabase.xcframework)
+* leveldb-library.xcframework (from Firebase.zip/FirebaseDatabase/leveldb-library.xcframework)
 
 Plus ones required for ios-core module:
-* FirebaseCore.framework (from Firebase.zip/FirebaseAnalytics/FirebaseCore.xcframework)
-* FirebaseCoreInternal.framework (from Firebase.zip/FirebaseAnalytics/FirebaseCoreInternal.xcframework)
-* GoogleUtilities.framework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
-* FBLPromises.framework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)
+* FirebaseCore.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseCore.xcframework)
+* FirebaseCoreInternal.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseCoreInternal.xcframework)
+* GoogleUtilities.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
+* FBLPromises.xcframework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)
 
 ### to use this pod configure your `robovm.xml`
 
