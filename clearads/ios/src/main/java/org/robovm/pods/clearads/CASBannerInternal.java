@@ -54,6 +54,10 @@ import org.robovm.apple.coreanimation.*;
     public native boolean isHidden();
     @Property(selector = "setHidden:")
     public native void setHidden(boolean v);
+    @Property(selector = "alpha")
+    public native @MachineSizedFloat double getAlpha();
+    @Property(selector = "setAlpha:")
+    public native void setAlpha(@MachineSizedFloat double v);
     @Property(selector = "intrinsicContentSize")
     public native @ByVal CGSize getIntrinsicContentSize();
     @WeaklyLinked

@@ -16,6 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (class, readonly, nonnull) NSString *adId;
 @property (class, readonly) BOOL isAdTrackingEnabled;
 @property (class, readonly) BOOL isAdTrackingNotDetermined;
+/// Ad tracking status codes
+/// - 0 - notDetermined
+/// - 1 - restricted
+/// - 2 - denied
+/// - 3 - authorized
+/// - 4 - notRequired
 @property (class, readonly) NSUInteger adTrackingStatus;
 
 + (BOOL)tryFirebaseLogEvent:(NSString *)eventName map:(NSDictionary<NSString *, id> *)map;

@@ -46,7 +46,7 @@ v1.34.0 - in development
 | [Azure](azure/)                 | 3.1.4   |
 | [BranchMetrics](branchmetrics/) | 2.2.1   |
 | [Charts](charts/)               | 5.0.0   |
-| [ClearAds](clearads/)           | 3.2.5   |
+| [ClearAds](clearads/)           | 3.3.1   |
 | [Facebook](facebook/)           | 16.2.0  |
 | [Firebase](firebase/)           | 10.16.0 |
 | [Fyber](fyber/)                 | 8.2.2   |

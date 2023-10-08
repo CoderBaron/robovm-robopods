@@ -34,24 +34,26 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-/*</javadoc>*/
-/*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/CASStatusDelegateAdapter/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements CASStatusDelegate/*</implements>*/ {
 
-    /*<ptr>*/
-    /*</ptr>*/
-    /*<bind>*/
-    /*</bind>*/
+/*</javadoc>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC18CleverAdsSolutions18CASConsentPlatform")/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/CASConsentPlatform/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*//*</implements>*/ {
+
+    /*<ptr>*/public static class CASConsentPlatformPtr extends Ptr<CASConsentPlatform, CASConsentPlatformPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(CASConsentPlatform.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*//*</constructors>*/
+    /*<constructors>*/
+    public CASConsentPlatform() {}
+    protected CASConsentPlatform(Handle h, long handle) { super(h, handle); }
+    protected CASConsentPlatform(SkipInit skipInit) { super(skipInit); }
+    /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("onAdStatusChanged:")
-    public void onAdStatusChanged(CASStatusHandler status) {}
+    
     /*</methods>*/
 }

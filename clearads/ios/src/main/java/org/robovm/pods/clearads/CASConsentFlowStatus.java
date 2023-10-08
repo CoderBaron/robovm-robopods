@@ -39,7 +39,12 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
 public enum /*<name>*/CASConsentFlowStatus/*</name>*/ implements ValuedEnum {
     /*<values>*/
-    Obtained(1L);
+    Obtained(3L),
+    NotRequired(4L),
+    Unavailable(5L),
+    InternalError(10L),
+    ViewControllerInvalid(12L),
+    FlowStillPresenting(13L);
     /*</values>*/
 
     /*<bind>*/

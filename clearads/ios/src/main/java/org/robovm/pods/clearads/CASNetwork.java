@@ -82,20 +82,26 @@ import org.robovm.apple.coreanimation.*;
     public static native String ironSource();
     @Method(selector = "yandexAds")
     public static native String yandexAds();
-    @Method(selector = "digitalTurbine")
-    public static native String digitalTurbine();
     @Method(selector = "mintegral")
     public static native String mintegral();
     @Method(selector = "pangle")
     public static native String pangle();
+    @Method(selector = "dtExchange")
+    public static native String dtExchange();
     @Method(selector = "hyprMX")
     public static native String hyprMX();
+    @Method(selector = "smaato")
+    public static native String smaato();
+    @Method(selector = "bigo")
+    public static native String bigo();
     @Method(selector = "adMob")
     public static native String adMob();
     @Method(selector = "facebookAN")
     public static native String facebookAN();
     @Method(selector = "fyber")
     public static native String fyber();
+    @Method(selector = "digitalTurbine")
+    public static native String digitalTurbine();
     @Method(selector = "tapjoy")
     public static native String tapjoy();
     @Method(selector = "max")
@@ -110,6 +116,8 @@ import org.robovm.apple.coreanimation.*;
     public static native String facebookDataProcessing();
     @Method(selector = "vunglePublishIDFV")
     public static native String vunglePublishIDFV();
+    @Method(selector = "getDisplayName:")
+    public static native String getDisplayName(String net);
     @Method(selector = "getActiveNetworkPattern")
     public static native String getActiveNetworkPattern();
     @Method(selector = "getActiveNetworks")

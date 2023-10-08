@@ -286,6 +286,29 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
+typedef SWIFT_ENUM_NAMED(NSInteger, CASNetworkId, "AdNetworkId", open) {
+  CASNetworkIdGoogleAds = 0,
+  CASNetworkIdLiftoffMonetize = 1,
+  CASNetworkIdKidoz = 2,
+  CASNetworkIdChartboost = 3,
+  CASNetworkIdUnityAds = 4,
+  CASNetworkIdAppLovin = 5,
+  CASNetworkIdSuperAwesome = 6,
+  CASNetworkIdAdColony = 8,
+  CASNetworkIdAudienceNetwork = 9,
+  CASNetworkIdInMobi = 10,
+  CASNetworkIdDTExchange = 11,
+  CASNetworkIdMyTarget = 12,
+  CASNetworkIdCrosspromo = 13,
+  CASNetworkIdIronSource = 14,
+  CASNetworkIdYandexAds = 15,
+  CASNetworkIdHyprMX = 16,
+  CASNetworkIdSmaato = 18,
+  CASNetworkIdTapjoy = 20,
+  CASNetworkIdMintegral = 23,
+  CASNetworkIdPangle = 24,
+};
+
 enum CASType : NSInteger;
 @class NSString;
 enum CASPriceAccuracy : NSInteger;
@@ -307,7 +330,7 @@ SWIFT_PROTOCOL_NAMED("CASImpression")
 /// The creative id tied to the ad, if available. May be nil.
 /// You can report creative issues to our Ad review team using this id.
 @property (nonatomic, readonly, copy) NSString * _Nullable creativeIdentifier;
-/// Internal demand source name in CAS database.
+/// The placement ID from the network that showed the ad
 @property (nonatomic, readonly, copy) NSString * _Nonnull identifier;
 /// The amount of impressions of all ad formats to the current user for all sessions.
 @property (nonatomic, readonly) NSInteger impressionDepth;
@@ -373,6 +396,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) CASTargeting
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) CASMediationManager * _Nullable manager;)
 + (CASMediationManager * _Nullable)manager SWIFT_WARN_UNUSED_RESULT;
 + (void)setManager:(CASMediationManager * _Nullable)value;
+/// Create <code>CASMediationManager</code> builder.
+/// Don’t forget to call the <code>ManagerBuilder.create</code> method to create manager instance.
 + (CASManagerBuilder * _Nonnull)buildManager SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nonnull)getSDKVersion SWIFT_WARN_UNUSED_RESULT;
 /// Call Integration Helper and check current integration in console.
@@ -384,11 +409,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) CASMediationManager * 
 @end
 
 @class CASMediationAdapter;
+@class CASConsentPlatform;
 
 SWIFT_PROTOCOL_NAMED("CASAdapterFactory")
 @protocol CASAdapterFactory <NSObject>
 - (nonnull instancetype)init;
 - (CASMediationAdapter * _Nonnull)create SWIFT_WARN_UNUSED_RESULT;
+@optional
+- (CASConsentPlatform * _Nonnull)createCMP SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @protocol CASAnalyticsDelegate;
@@ -426,11 +454,12 @@ SWIFT_CLASS_NAMED("CASAppOpen")
 @interface CASAppOpen : NSObject
 /// Returns the ad manager ID.
 @property (nonatomic, readonly, copy) NSString * _Nonnull managerId;
-/// Registers a callback to be invoked when ads show and dismiss full screen content.
+/// Registers a weak delegate to be invoked when ads show and dismiss full screen content.
 @property (nonatomic, weak) id <CASCallback> _Nullable contentCallback;
 + (CASAppOpen * _Nonnull)createWithManagerId:(NSString * _Nonnull)managerId SWIFT_WARN_UNUSED_RESULT;
 + (CASAppOpen * _Nonnull)createWithManager:(CASMediationManager * _Nonnull)manager SWIFT_WARN_UNUSED_RESULT;
 /// Loads an AppOpenAd.
+/// Note: You must keep a strong link throughout the ad’s lifecycle.
 /// \param orientation The orientation that the ad will be presented in.
 ///
 /// \param completionHandler An object that handles events for loading an app open ad
@@ -514,6 +543,7 @@ SWIFT_CLASS("_TtC18CleverAdsSolutions17CASBannerInternal")
 @interface CASBannerInternal : UIView
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @property (nonatomic, getter=isHidden) BOOL hidden;
+@property (nonatomic) CGFloat alpha;
 @property (nonatomic, readonly) CGSize intrinsicContentSize;
 - (void)didMoveToWindow;
 - (void)didMoveToSuperview;
@@ -629,7 +659,7 @@ enum CASConsentFlowStatus : NSInteger;
 SWIFT_CLASS_NAMED("CASConsentFlow")
 @interface CASConsentFlow : NSObject
 @property (nonatomic) BOOL requestGDPR;
-@property (nonatomic) BOOL requestATT;
+@property (nonatomic) BOOL requestATT SWIFT_DEPRECATED_MSG("The GDPR and ATT request does not support partial activation. Use requestGDPR instead.");
 @property (nonatomic, copy) NSString * _Nullable privacyPolicyUrl;
 @property (nonatomic, copy) void (^ _Nullable completionHandler)(enum CASConsentFlowStatus);
 @property (nonatomic, strong) UIViewController * _Nullable viewControllerToPresent;
@@ -640,13 +670,24 @@ SWIFT_CLASS_NAMED("CASConsentFlow")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 /// Override the view controller to display over the current view controller’s content.
 - (CASConsentFlow * _Nonnull)withViewControllerToPresent:(UIViewController * _Nullable)controller;
-/// Reset User consent status and manual presents a dialog view controller modally.
+/// Manual presents a dialog view controller modally.
 - (void)present;
 @end
 
 typedef SWIFT_ENUM_NAMED(NSInteger, CASConsentFlowStatus, "CASConsentFlowStatus", open) {
-  CASConsentFlowStatusObtained = 1,
+  CASConsentFlowStatusObtained = 3,
+  CASConsentFlowStatusNotRequired = 4,
+  CASConsentFlowStatusUnavailable = 5,
+  CASConsentFlowStatusInternalError = 10,
+  CASConsentFlowStatusViewControllerInvalid = 12,
+  CASConsentFlowStatusFlowStillPresenting = 13,
 };
+
+
+SWIFT_CLASS("_TtC18CleverAdsSolutions18CASConsentPlatform")
+@interface CASConsentPlatform : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 typedef SWIFT_ENUM_NAMED(NSInteger, CASConsentStatus, "CASConsentStatus", open) {
 /// Mediation ads network behavior
@@ -721,6 +762,7 @@ static NSString * _Nonnull const CASErrorDomain = @"CleverAdsSolutions.CASError"
 SWIFT_CLASS_NAMED("CASInitialConfig")
 @interface CASInitialConfig : NSObject
 /// Get the CAS manager initialization error message or NULL if initialization is successful.
+/// Check errors constants from CASInitializationError class.
 @property (nonatomic, readonly, copy) NSString * _Nullable error;
 /// Get the initialized CAS manager.
 @property (nonatomic, readonly, strong) CASMediationManager * _Nonnull manager;
@@ -989,25 +1031,31 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (NSString * _Nonnull)ironSource SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull yandexAds;)
 + (NSString * _Nonnull)yandexAds SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull digitalTurbine;)
-+ (NSString * _Nonnull)digitalTurbine SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull mintegral;)
 + (NSString * _Nonnull)mintegral SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull pangle;)
 + (NSString * _Nonnull)pangle SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull dtExchange;)
++ (NSString * _Nonnull)dtExchange SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull hyprMX;)
 + (NSString * _Nonnull)hyprMX SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull smaato;)
++ (NSString * _Nonnull)smaato SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull bigo;)
++ (NSString * _Nonnull)bigo SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull adMob;)
 + (NSString * _Nonnull)adMob SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull facebookAN;)
 + (NSString * _Nonnull)facebookAN SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull fyber;)
 + (NSString * _Nonnull)fyber SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull digitalTurbine;)
++ (NSString * _Nonnull)digitalTurbine SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull tapjoy SWIFT_DEPRECATED_MSG("No longer supported");)
 + (NSString * _Nonnull)tapjoy SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull max;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull max SWIFT_DEPRECATED_MSG("No longer supported");)
 + (NSString * _Nonnull)max SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull fairBid;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull fairBid SWIFT_DEPRECATED_MSG("No longer supported");)
 + (NSString * _Nonnull)fairBid SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull lastPageAd;)
 + (NSString * _Nonnull)lastPageAd SWIFT_WARN_UNUSED_RESULT;
@@ -1042,6 +1090,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// if “0” no publish the IDFV value.
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull vunglePublishIDFV;)
 + (NSString * _Nonnull)vunglePublishIDFV SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nonnull)getDisplayName:(NSString * _Nonnull)net SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nonnull)getActiveNetworkPattern SWIFT_WARN_UNUSED_RESULT;
 + (NSArray<NSString *> * _Nonnull)getActiveNetworks SWIFT_WARN_UNUSED_RESULT;
 + (BOOL)isActiveNetwork:(NSString * _Nonnull)network SWIFT_WARN_UNUSED_RESULT;
@@ -1150,7 +1199,6 @@ SWIFT_CLASS_NAMED("CASSettings")
 
 
 
-
 @interface CASSettings (SWIFT_EXTENSION(CleverAdsSolutions))
 - (NSInteger)getBannerRefreshInterval SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("Use bannerRefreshInterval property instead");
 - (void)setBannerRefreshWithInterval:(NSInteger)interval SWIFT_DEPRECATED_MSG("Use bannerRefreshInterval property instead");
@@ -1252,6 +1300,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) CASSize * _N
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
 @class NSNumber;
 
 SWIFT_PROTOCOL_NAMED("NativeAdStarRating")
@@ -1267,12 +1316,6 @@ SWIFT_CLASS_NAMED("CASStarRatingView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)layoutSubviews;
 @property (nonatomic, readonly) CGSize intrinsicContentSize;
-@end
-
-
-SWIFT_PROTOCOL("_TtP18CleverAdsSolutions17CASStatusDelegate_")
-@protocol CASStatusDelegate
-- (void)onAdStatusChanged:(id <CASStatusHandler> _Nonnull)status;
 @end
 
 enum Gender : NSInteger;
@@ -1343,19 +1386,19 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSUInteger everythin
 ///     [prepareSettings] for each [MediationInfo] in waterfall
 ///   </li>
 ///   <li>
-///     [isEarlyInit] when true call step 6
+///     [isEarlyInit] when true call [initMain] immediately
 ///   </li>
 ///   <li>
-///     [initBidding]
+///     [initBidding] for each [MediationInfo] in waterfall or [onMigrateToMediation]
 ///   </li>
 ///   <li>
-///     [getVerifyError]
+///     [getVerifyError] stop flow if error returned
 ///   </li>
 ///   <li>
 ///     [initMain]
 ///   </li>
 ///   <li>
-///     [onInitialized] || [onInitializeDelayed] after initialization done
+///     [onInitialized] callback after initialization done
 ///   </li>
 ///   <li>
 ///     [initBanner], [initInterstitial], [initRewarded] for each [MediationInfo] in waterfall

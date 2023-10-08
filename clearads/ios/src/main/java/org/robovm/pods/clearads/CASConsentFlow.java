@@ -56,8 +56,16 @@ import org.robovm.apple.coreanimation.*;
     public native boolean isRequestGDPR();
     @Property(selector = "setRequestGDPR:")
     public native void setRequestGDPR(boolean v);
+    /**
+     * @deprecated The GDPR and ATT request does not support partial activation. Use requestGDPR instead.
+     */
+    @Deprecated
     @Property(selector = "requestATT")
     public native boolean isRequestATT();
+    /**
+     * @deprecated The GDPR and ATT request does not support partial activation. Use requestGDPR instead.
+     */
+    @Deprecated
     @Property(selector = "setRequestATT:")
     public native void setRequestATT(boolean v);
     @Property(selector = "privacyPolicyUrl")

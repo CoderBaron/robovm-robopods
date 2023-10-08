@@ -36,22 +36,47 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/CASStatusDelegate/*</name>*/ 
-    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
+public enum /*<name>*/CASNetworkId/*</name>*/ implements ValuedEnum {
+    /*<values>*/
+    GoogleAds(0L),
+    LiftoffMonetize(1L),
+    Kidoz(2L),
+    Chartboost(3L),
+    UnityAds(4L),
+    AppLovin(5L),
+    SuperAwesome(6L),
+    AdColony(8L),
+    AudienceNetwork(9L),
+    InMobi(10L),
+    DTExchange(11L),
+    MyTarget(12L),
+    Crosspromo(13L),
+    IronSource(14L),
+    YandexAds(15L),
+    HyprMX(16L),
+    Smaato(18L),
+    Tapjoy(20L),
+    Mintegral(23L),
+    Pangle(24L);
+    /*</values>*/
 
-    /*<ptr>*/
-    /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<properties>*/
-    
-    /*</properties>*/
-    /*<methods>*/
-    @Method(selector = "onAdStatusChanged:")
-    void onAdStatusChanged(CASStatusHandler status);
-    /*</methods>*/
-    /*<adapter>*/
-    /*</adapter>*/
+    /*<methods>*//*</methods>*/
+
+    private final long n;
+
+    private /*<name>*/CASNetworkId/*</name>*/(long n) { this.n = n; }
+    public long value() { return n; }
+    public static /*<name>*/CASNetworkId/*</name>*/ valueOf(long n) {
+        for (/*<name>*/CASNetworkId/*</name>*/ v : values()) {
+            if (v.n == n) {
+                return v;
+            }
+        }
+        throw new IllegalArgumentException("No constant with value " + n + " found in " 
+            + /*<name>*/CASNetworkId/*</name>*/.class.getName());
+    }
 }

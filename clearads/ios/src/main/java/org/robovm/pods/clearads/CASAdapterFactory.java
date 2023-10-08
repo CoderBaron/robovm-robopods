@@ -51,6 +51,8 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "create")
     CASMediationAdapter create();
+    @Method(selector = "createCMP")
+    CASConsentPlatform createCMP();
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

@@ -22,6 +22,7 @@ enums:
     Gender: { }
     CASType: { }
     CASConsentFlowStatus: {}
+    CASNetworkId: {}
 classes:
     CAS:
         methods:
@@ -163,6 +164,7 @@ classes:
     CASMediationBannerAgent: { }
     CASMediationNativeAdContent: { }
     CASStarRatingView: { }
+    CASConsentPlatform: { }
 protocols:
     CASAdapterFactory: { }
     CASAnalyticsDelegate:
