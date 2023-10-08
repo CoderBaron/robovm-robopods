@@ -1098,7 +1098,34 @@ fun registerFirebase(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
             versionKey = "GoogleUserMessagingPlatform",
             frameworkLocation = pickLocation("UserMessagingPlatform", "Google-Mobile-Ads-SDK"))
     }
-    registry["FirebaseAppCheck"] = { framework -> action(framework, "firebase/ios-appcheck", "firebase-appcheck.yaml") }
+    registry["FirebaseAppCheck"] = { framework ->
+        action(framework, "firebase/ios-appcheck", "firebase-appcheck.yaml",
+            destinationHeadersDir = Path.of("firebase", "ios-appcheck", "src", "main", "bro-gen").toFile(),
+            headerFolderCleaner = { _, dst ->
+                cleanUpHeaders("FirebaseAppCheck", dst.extend("FirebaseAppCheck.framework"))
+                cleanUpHeaders("FirebaseAppCheckInterop", dst.extend("FirebaseAppCheckInterop.framework"))
+            },
+            headersCopier = { _, _, dst ->
+                copyHeaders("FirebaseAppCheck.framework",
+                    pickLocation("FirebaseAppCheck").extend("Headers"),
+                    dst.extend("FirebaseAppCheck.framework/Headers"))
+                // patch @import in header
+                val h = dst.extend("FirebaseAppCheck.framework/Headers/FIRAppCheck.h")
+                h.readText().replaceFirst("@import FirebaseAppCheckInterop;",
+                    "#import <FirebaseAppCheckInterop/FirebaseAppCheckInterop-umbrella.h>"
+                ).run { h.writeText(this) }
+                copyHeaders("FirebaseAppCheckInterop.framework",
+                    pickLocation("FirebaseAppCheckInterop", "FirebaseAppCheck").extend("Headers"),
+                    dst.extend("FirebaseAppCheckInterop.framework/Headers"))
+            } ,
+            interactiveValidateHeaderFolder = { _, _, instruction, optional ->
+                interactiveValidateHeaderFolder("FirebaseAppCheck.framework",
+                    pickLocation("FirebaseAppCheck").extend("Headers"), instruction, optional)
+                interactiveValidateHeaderFolder("FirebaseAppCheckInterop.framework",
+                    pickLocation("FirebaseAppCheckInterop", "FirebaseAppCheck").extend("Headers"), instruction, optional)
+            },
+        )
+    }
     registry["FirebaseInstallations"] = { framework -> action(framework, "firebase/ios-installations", "firebase-installations.yaml",
         frameworkLocation = pickLocation("FirebaseInstallations", "FirebaseAnalytics"))
     }

@@ -1,9 +1,11 @@
 package: org.robovm.pods.firebase.appcheck
 include: [foundation]
 framework: FirebaseAppCheck
+internal_frameworks: [FirebaseAppCheckInterop]
 clang_args: ['-x', 'objective-c']
 headers:
-    - FirebaseAppCheck.h
+    - "#include <FirebaseAppCheckInterop/FirebaseAppCheckInterop-umbrella.h>"
+    - "#include <FirebaseAppCheck/FirebaseAppCheck.h>"
 
 private_typedefs:
     "FIRApp *": org.robovm.pods.firebase.core.FIRApp
@@ -48,6 +50,16 @@ protocols:
         methods:
             '-createProviderWithApp:':
                 name: createProvider
+    FIRAppCheckProtocol:
+        methods:
+            '-tokenForcingRefresh:completion:':
+                name: tokenForcingRefresh
+            '-limitedUseTokenWithCompletion:':
+                name: limitedUseToken
+    FIRAppCheckTokenResultInterop:
+        exclude: true # doesn't seem to be used
+    FIRAppCheckInterop:
+        exclude: true # doesn't seem to be used
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):
@@ -65,6 +77,8 @@ values:
         class: FIRAppCheck
         static_class: NotificationKeys
         name: '#{g[0]}'
+    FirebaseAppCheckInteropVersion.*:
+        exclude: true
 
 
     # Make sure we don't miss any values if new ones are introduced in a later version

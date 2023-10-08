@@ -74,6 +74,10 @@ import org.robovm.apple.uikit.*;
     public native NSData getAPNSToken();
     @Property(selector = "setAPNSToken:")
     public native void setAPNSToken(NSData v);
+    @Property(selector = "customAuthDomain")
+    public native String getCustomAuthDomain();
+    @Property(selector = "setCustomAuthDomain:")
+    public native void setCustomAuthDomain(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
