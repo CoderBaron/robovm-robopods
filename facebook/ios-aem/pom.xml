@@ -7,7 +7,7 @@
     </parent>
 
     <artifactId>robopods-facebook-aem-ios</artifactId>
-    <name>RoboPods Facebook AEMKit iOS v16.1.3</name>
+    <name>RoboPods Facebook AEMKit iOS v16.2.0</name>
     <packaging>jar</packaging>
 
     <licenses>

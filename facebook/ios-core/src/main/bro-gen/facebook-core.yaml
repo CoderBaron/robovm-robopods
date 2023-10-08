@@ -634,6 +634,8 @@ classes:
         exclude: true #INTERNAL - DO NOT USE
     FBSDKAEMManager:
         exclude: true #INTERNAL - DO NOT USE
+    FBSDKSKAdNetworkReporterV2:
+        exclude: true #INTERNAL - DO NOT USE
 protocols:
     FBSDKAppLinkResolving:
         methods:
@@ -831,12 +833,6 @@ protocols:
         methods:
             '-fb_dataTaskWithRequest:completionHandler:':
                 name: fb_dataTask
-    FBSDKDataPersisting:
-        methods:
-            '-fb_setInteger:forKey:':
-                name: fb_setInteger
-            '-fb_setObject:forKey:':
-                name: fb_setObject
     FBSDKFileManaging:
         methods:
             '-fb_createDirectoryAtPath:withIntermediateDirectories:attributes:error:':
