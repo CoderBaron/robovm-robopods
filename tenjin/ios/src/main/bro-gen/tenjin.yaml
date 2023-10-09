@@ -14,6 +14,7 @@ headers:
     - TenjinSDK+HyperBidILRD.h
     - TenjinSDK+IronSourceILRD.h
     - TenjinSDK+TopOnILRD.h
+    - TenjinSDK+TradPlusILRD.h
 enums:
 
 private_typedefs:

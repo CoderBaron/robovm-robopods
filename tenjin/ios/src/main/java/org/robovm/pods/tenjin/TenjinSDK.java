@@ -218,5 +218,11 @@ import org.robovm.apple.dispatch.*;
     public static native void topOnImpressionFromDict(NSDictionary<?, ?> adImpression);
     @Method(selector = "topOnImpressionFromJSON:")
     public static native void topOnImpressionFromJSON(String jsonString);
+    @Method(selector = "subscribeTradPlusImpressions")
+    public static native void subscribeTradPlusImpressions();
+    @Method(selector = "tradPlusImpressionFromJSON:")
+    public static native void tradPlusImpressionFromJSON(String jsonString);
+    @Method(selector = "handleTradPlusILRD:")
+    public static native void handleTradPlusILRD(NSDictionary<?, ?> adInfo);
     /*</methods>*/
 }
