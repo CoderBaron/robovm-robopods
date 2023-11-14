@@ -365,6 +365,8 @@ classes:
                 name: handleWillPresentNotificationInForeground
             '+didRegisterForRemoteNotifications:deviceToken:':
                 name: didRegisterForRemoteNotifications
+            '+clearBadgeCount:fromClearAll:':
+                name: clearBadgeCount
     OSObservable:
         methods:
             '-initWithChangeSelector:':
