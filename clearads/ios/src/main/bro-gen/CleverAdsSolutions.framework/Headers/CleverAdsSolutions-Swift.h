@@ -304,9 +304,12 @@ typedef SWIFT_ENUM_NAMED(NSInteger, CASNetworkId, "AdNetworkId", open) {
   CASNetworkIdYandexAds = 15,
   CASNetworkIdHyprMX = 16,
   CASNetworkIdSmaato = 18,
+  CASNetworkIdBigo = 19,
   CASNetworkIdTapjoy = 20,
   CASNetworkIdMintegral = 23,
   CASNetworkIdPangle = 24,
+  CASNetworkIdCASExchange = 30,
+  CASNetworkIdLastPageAd = 31,
 };
 
 enum CASType : NSInteger;
@@ -548,19 +551,6 @@ SWIFT_CLASS("_TtC18CleverAdsSolutions17CASBannerInternal")
 - (void)didMoveToWindow;
 - (void)didMoveToSuperview;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-@end
-
-
-
-SWIFT_PROTOCOL_NAMED("CASPaidCallback")
-@protocol CASPaidCallback <CASCallback>
-- (void)didPayRevenueFor:(id <CASStatusHandler> _Nonnull)ad;
-@end
-
-
-@interface CASBannerInternal (SWIFT_EXTENSION(CleverAdsSolutions)) <CASPaidCallback>
-- (void)didClickedAd;
-- (void)didPayRevenueFor:(id <CASStatusHandler> _Nonnull)ad;
 @end
 
 @class CASSize;
@@ -1003,6 +993,10 @@ SWIFT_CLASS_NAMED("CASNativeView")
 
 SWIFT_CLASS_NAMED("CASNetwork")
 @interface CASNetwork : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull casExchange;)
++ (NSString * _Nonnull)casExchange SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull lastPageAd;)
++ (NSString * _Nonnull)lastPageAd SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull crossPromo;)
 + (NSString * _Nonnull)crossPromo SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull googleAds;)
@@ -1057,8 +1051,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (NSString * _Nonnull)max SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull fairBid SWIFT_DEPRECATED_MSG("No longer supported");)
 + (NSString * _Nonnull)fairBid SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull lastPageAd;)
-+ (NSString * _Nonnull)lastPageAd SWIFT_WARN_UNUSED_RESULT;
 /// Advertising Tracking Enabled for Audience Network
 /// Set the <code>FBAdSettings.setAdvertiserTrackingEnabled</code> flag.
 /// The setAdvertiserTrackingEnabled “1” flag allows you to inform Audience Network whether to use the data to deliver personalized ads in line with your own legal obligations,
@@ -1099,6 +1091,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 @end
 
 
+SWIFT_PROTOCOL_NAMED("CASPaidCallback")
+@protocol CASPaidCallback <CASCallback>
+- (void)didPayRevenueFor:(id <CASStatusHandler> _Nonnull)ad;
+@end
+
 typedef SWIFT_ENUM_NAMED(NSInteger, CASPriceAccuracy, "CASPriceAccuracy", open) {
 /// eCPM floor, also known as minimum eCPMs
   CASPriceAccuracyFloor = 0,
@@ -1129,15 +1126,44 @@ SWIFT_CLASS_NAMED("CASSettings")
 /// \param enabled Enables or disables collecting location data.
 ///
 - (void)setTrackLocationWithEnabled:(BOOL)enabled;
+/// Defines the time interval, in seconds, starting from the moment of the initial app installation,
+/// during which users can use the application without ads being displayed while still retaining
+/// access to the Rewarded Ads format.
+/// Within this interval, users enjoy privileged access to the application’s features without intrusive advertisements.
+/// <ul>
+///   <li>
+///     Default: 0 seconds
+///   </li>
+///   <li>
+///     Units: Seconds
+///   </li>
+/// </ul>
+@property (nonatomic) uint64_t trialAdFreeInterval;
 /// Set the number of seconds an ad is displayed before a new ad is shown.
 /// After the interval has passed, a new advertisement will be automatically loaded.
 /// <code>CASBannerView.refreshInterval</code> will override this value for a specific view.
-/// Default: 30 seconds.
+/// <ul>
+///   <li>
+///     Default: 30 seconds.
+///   </li>
+///   <li>
+///     Units: Seconds
+///   </li>
+/// </ul>
 @property (nonatomic) NSInteger bannerRefreshInterval;
 /// The interval between impressions Interstitial Ad in seconds.
-/// Default: 0 seconds.
+/// <ul>
+///   <li>
+///     Default: 0 seconds.
+///   </li>
+///   <li>
+///     Units: Seconds
+///   </li>
+/// </ul>
 /// Use <code>restartInterstitialInterval()</code> for restart interval until next Interstitial ad display.
 @property (nonatomic) NSInteger interstitialInterval;
+/// In Develop
+@property (nonatomic) BOOL audioSessionIsApplicationManaged;
 /// Restart interval until next Interstitial ad display.
 /// By default, the interval before first Interstitial Ad impression is ignored.
 /// You can use this method to delay displaying ad.

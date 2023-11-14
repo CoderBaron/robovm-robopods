@@ -56,9 +56,12 @@ public enum /*<name>*/CASNetworkId/*</name>*/ implements ValuedEnum {
     YandexAds(15L),
     HyprMX(16L),
     Smaato(18L),
+    Bigo(19L),
     Tapjoy(20L),
     Mintegral(23L),
-    Pangle(24L);
+    Pangle(24L),
+    CASExchange(30L),
+    LastPageAd(31L);
     /*</values>*/
 
     /*<bind>*/

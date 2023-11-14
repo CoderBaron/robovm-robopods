@@ -54,6 +54,10 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "casExchange")
+    public static native String casExchange();
+    @Method(selector = "lastPageAd")
+    public static native String lastPageAd();
     @Method(selector = "crossPromo")
     public static native String crossPromo();
     @Method(selector = "googleAds")
@@ -108,8 +112,6 @@ import org.robovm.apple.coreanimation.*;
     public static native String max();
     @Method(selector = "fairBid")
     public static native String fairBid();
-    @Method(selector = "lastPageAd")
-    public static native String lastPageAd();
     @Method(selector = "facebookAdvertiserTracking")
     public static native String facebookAdvertiserTracking();
     @Method(selector = "facebookDataProcessing")

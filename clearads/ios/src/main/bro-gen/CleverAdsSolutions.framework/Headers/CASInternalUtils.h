@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// - 2 - denied
 /// - 3 - authorized
 /// - 4 - notRequired
+/// - 5 - Tracking Usage Description not defined
+/// - 6 - AppTrackingTransparency framework not included
+/// Use `getATTStatusDescription(adTrackingStatus)` to get string
 @property (class, readonly) NSUInteger adTrackingStatus;
 
 + (BOOL)tryFirebaseLogEvent:(NSString *)eventName map:(NSDictionary<NSString *, id> *)map;

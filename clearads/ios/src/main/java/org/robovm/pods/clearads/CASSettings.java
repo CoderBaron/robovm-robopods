@@ -62,6 +62,10 @@ import org.robovm.apple.coreanimation.*;
     public native CASAudience getTaggedAudience();
     @Property(selector = "setTaggedAudience:")
     public native void setTaggedAudience(CASAudience v);
+    @Property(selector = "trialAdFreeInterval")
+    public native long getTrialAdFreeInterval();
+    @Property(selector = "setTrialAdFreeInterval:")
+    public native void setTrialAdFreeInterval(long v);
     @Property(selector = "bannerRefreshInterval")
     public native @MachineSizedSInt long getBannerRefreshInterval();
     @Property(selector = "setBannerRefreshInterval:")
@@ -70,6 +74,10 @@ import org.robovm.apple.coreanimation.*;
     public native @MachineSizedSInt long getInterstitialInterval();
     @Property(selector = "setInterstitialInterval:")
     public native void setInterstitialInterval(@MachineSizedSInt long v);
+    @Property(selector = "audioSessionIsApplicationManaged")
+    public native boolean isAudioSessionIsApplicationManaged();
+    @Property(selector = "setAudioSessionIsApplicationManaged:")
+    public native void setAudioSessionIsApplicationManaged(boolean v);
     @Property(selector = "mutedAdSounds")
     public native boolean isMutedAdSounds();
     @Property(selector = "setMutedAdSounds:")
