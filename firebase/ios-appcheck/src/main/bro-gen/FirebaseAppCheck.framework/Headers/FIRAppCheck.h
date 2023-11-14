@@ -16,7 +16,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import <FirebaseAppCheckInterop/FirebaseAppCheckInterop-umbrella.h>
+#import <FirebaseAppCheckInterop/FirebaseAppCheckInterop.h>
 
 @class FIRApp;
 @class FIRAppCheckToken;

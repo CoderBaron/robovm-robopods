@@ -1,6 +1,7 @@
 <config>
     <frameworks>
         <framework>FirebaseRemoteConfig</framework>
+        <framework>FirebaseSharedSwift</framework>
         <framework>FirebaseABTesting</framework>
         <framework>FirebaseInstallations</framework>
     </frameworks>

@@ -1,6 +1,9 @@
 <config>
     <frameworks>
         <framework>FirebaseFirestore</framework>
+        <framework>FirebaseFirestoreInternal</framework>
+        <framework>FirebaseSharedSwift</framework>
+        <framework>FirebaseCoreExtension</framework>
         <framework>abseil</framework>
         <framework>BoringSSL-GRPC</framework>
         <framework>gRPC-C++</framework>

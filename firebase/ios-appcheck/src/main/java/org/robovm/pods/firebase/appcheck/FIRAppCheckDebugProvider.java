@@ -61,5 +61,7 @@ import org.robovm.apple.foundation.*;
     public native String currentDebugToken();
     @Method(selector = "getTokenWithCompletion:")
     public native void getToken(@Block VoidBlock2<FIRAppCheckToken, NSError> handler);
+    @Method(selector = "getLimitedUseTokenWithCompletion:")
+    public native void getLimitedUseToken(@Block VoidBlock2<FIRAppCheckToken, NSError> handler);
     /*</methods>*/
 }

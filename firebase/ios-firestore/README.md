@@ -2,6 +2,9 @@
 
 ### Frameworks required for this pod: 
 * FirebaseFirestore.xcframework(from Firebase.zip/FirebaseFirestore/FirebaseFirestore.xcframework)
+* FirebaseFirestoreInternal.xcframework(from Firebase.zip/FirebaseFirestore/FirebaseFirestoreInternal.xcframework)
+* FirebaseSharedSwift.xcframework(from Firebase.zip/FirebaseFirestore/FirebaseSharedSwift.xcframework)
+* FirebaseCoreExtension.xcframework(from Firebase.zip/FirebaseFirestore/FirebaseCoreExtension.xcframework)
 * abseil.xcframework (from Firebase.zip/FirebaseFirestore/abseil.xcframework)
 * BoringSSL-GRPC.xcframework (from Firebase.zip/FirebaseFirestore/BoringSSL-GRPC.xcframework)
 * gRPC-C++.xcframework (from Firebase.zip/FirebaseFirestore/gRPC-C++.xcframework)

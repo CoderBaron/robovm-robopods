@@ -135,5 +135,7 @@ import org.robovm.apple.dispatch.*;
     public native FIRQuery queryEndingAtDocument(FIRDocumentSnapshot document);
     @Method(selector = "queryEndingAtValues:")
     public native FIRQuery queryEndingAtValues(NSArray<?> fieldValues);
+    @Method(selector = "aggregate:")
+    public native FIRAggregateQuery aggregate(NSArray<FIRAggregateField> aggregateFields);
     /*</methods>*/
 }

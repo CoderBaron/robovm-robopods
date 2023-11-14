@@ -1019,9 +1019,7 @@ fun registerFirebase(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
     val readmeUpdater = oneTimeReadmeUpdater { versionProvider["Firebase"] }
     // some ios-arm64_armv7 other ios-arm64
     fun pickLocation(framework: String, prefix: String = framework) : File {
-        val candidate = downloadFolder.extend("Firebase/$prefix/$framework.xcframework/ios-arm64/$framework.framework")
-        return if (candidate.exists()) candidate
-        else downloadFolder.extend("Firebase/$prefix/$framework.xcframework/ios-arm64_armv7/$framework.framework")
+        return downloadFolder.extend("Firebase/$prefix/$framework.xcframework/ios-arm64/$framework.framework")
     }
     fun action(
         framework: String, moduleFolder: String, yaml: String, versionKey: String = framework,
@@ -1059,7 +1057,31 @@ fun registerFirebase(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
     registry["FirebaseCrashlytics"] = { framework -> action(framework, "firebase/ios-crashlytics", "firebase-crashlytics.yaml") }
     registry["FirebaseDatabase"] = { framework -> action(framework, "firebase/ios-database", "firebasedatabase.yaml") }
     registry["FirebaseDynamicLinks"] = { framework -> action(framework, "firebase/ios-dylinks", "firebasedylinks.yaml") }
-    registry["FirebaseFirestore"] = { framework -> action(framework, "firebase/ios-firestore", "firebasefirestore.yaml") }
+    registry["FirebaseFirestore"] = { framework ->
+        action(framework,
+            moduleFolder = "firebase/ios-firestore",
+            yaml = "firebasefirestore.yaml",
+            destinationHeadersDir = Path.of("firebase", "ios-firestore", "src", "main", "bro-gen").toFile(),
+            headerFolderCleaner = { _, dst ->
+                cleanUpHeaders("FirebaseFirestore", dst.extend("FirebaseFirestore.framework"))
+                cleanUpHeaders("FirebaseFirestoreInternal", dst.extend("FirebaseFirestoreInternal.framework"))
+            },
+            headersCopier = { _, _, dst ->
+                copyHeaders("FirebaseFirestore.framework",
+                    pickLocation("FirebaseFirestore").extend("Headers"),
+                    dst.extend("FirebaseFirestore.framework/Headers"))
+                copyHeaders("FirebaseFirestoreInternal.framework",
+                    pickLocation("FirebaseFirestoreInternal", "FirebaseFirestore").extend("Headers"),
+                    dst.extend("FirebaseFirestoreInternal.framework/Headers"))
+            } ,
+            interactiveValidateHeaderFolder = { _, _, instruction, optional ->
+                interactiveValidateHeaderFolder("FirebaseFirestore.framework",
+                    pickLocation("FirebaseFirestore").extend("Headers"), instruction, optional)
+                interactiveValidateHeaderFolder("FirebaseFirestoreInternal.framework",
+                    pickLocation("FirebaseFirestoreInternal", "FirebaseFirestore").extend("Headers"), instruction, optional)
+            },
+        )
+    }
     registry["FirebaseMessaging"] = { framework -> action(framework, "firebase/ios-messaging", "firebase-messaging.yaml") }
     registry["FirebaseRemoteConfig"] = { framework -> action(framework, "firebase/ios-remoteconfig", "firebase-remoteconfig.yaml") }
     registry["FirebaseStorage"] = { framework -> action(framework, "firebase/ios-storage", "firebasestorage.yaml") }
@@ -1104,6 +1126,7 @@ fun registerFirebase(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
             headerFolderCleaner = { _, dst ->
                 cleanUpHeaders("FirebaseAppCheck", dst.extend("FirebaseAppCheck.framework"))
                 cleanUpHeaders("FirebaseAppCheckInterop", dst.extend("FirebaseAppCheckInterop.framework"))
+                cleanUpHeaders("AppCheckCore", dst.extend("AppCheckCore.framework"))
             },
             headersCopier = { _, _, dst ->
                 copyHeaders("FirebaseAppCheck.framework",
@@ -1117,12 +1140,17 @@ fun registerFirebase(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
                 copyHeaders("FirebaseAppCheckInterop.framework",
                     pickLocation("FirebaseAppCheckInterop", "FirebaseAppCheck").extend("Headers"),
                     dst.extend("FirebaseAppCheckInterop.framework/Headers"))
+                copyHeaders("AppCheckCore.framework",
+                    pickLocation("AppCheckCore", "FirebaseAppCheck").extend("Headers"),
+                    dst.extend("AppCheckCore.framework/Headers"))
             } ,
             interactiveValidateHeaderFolder = { _, _, instruction, optional ->
                 interactiveValidateHeaderFolder("FirebaseAppCheck.framework",
                     pickLocation("FirebaseAppCheck").extend("Headers"), instruction, optional)
                 interactiveValidateHeaderFolder("FirebaseAppCheckInterop.framework",
                     pickLocation("FirebaseAppCheckInterop", "FirebaseAppCheck").extend("Headers"), instruction, optional)
+                interactiveValidateHeaderFolder("AppCheckCore.framework",
+                    pickLocation("AppCheckCore", "FirebaseAppCheck").extend("Headers"), instruction, optional)
             },
         )
     }

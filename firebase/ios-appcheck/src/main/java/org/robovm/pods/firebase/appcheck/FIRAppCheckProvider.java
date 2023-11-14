@@ -48,6 +48,8 @@ import org.robovm.apple.foundation.*;
     /*<methods>*/
     @Method(selector = "getTokenWithCompletion:")
     void getToken(@Block VoidBlock2<FIRAppCheckToken, NSError> handler);
+    @Method(selector = "getLimitedUseTokenWithCompletion:")
+    void getLimitedUseToken(@Block VoidBlock2<FIRAppCheckToken, NSError> handler);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

@@ -62,8 +62,6 @@ import org.robovm.apple.webkit.*;
     public native NSData getWatermark();
     @Property(selector = "extras")
     public native GADAdNetworkExtras getExtras();
-    @Property(selector = "childDirectedTreatment")
-    public native NSNumber getChildDirectedTreatment();
     @Property(selector = "isTestRequest")
     public native boolean isTestRequest();
     /**
@@ -90,6 +88,12 @@ import org.robovm.apple.webkit.*;
     @Deprecated
     @Property(selector = "userLocationAccuracyInMeters")
     public native @MachineSizedFloat double getUserLocationAccuracyInMeters();
+    /**
+     * @deprecated Deprecated. Use GADMobileAds.sharedInstance.requestConfiguration.tagForChildDirectedTreatment instead.
+     */
+    @Deprecated
+    @Property(selector = "childDirectedTreatment")
+    public native NSNumber getChildDirectedTreatment();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

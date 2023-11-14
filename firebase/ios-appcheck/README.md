@@ -4,6 +4,7 @@ App Check helps protect your backend resources from abuse, such as billing fraud
 ### Frameworks required for this pod: 
 * FirebaseAppCheck.xcframework (from Firebase.zip/FirebaseAppCheck/FirebaseAppCheck.xcframework)
 * FirebaseAppCheckInterop.xcframework (from Firebase.zip/FirebaseAppCheck/FirebaseAppCheckInterop.xcframework)
+* AppCheckCore.xcframework (from Firebase.zip/FirebaseAppCheck/AppCheckCore.xcframework)
 
 Plus ones required for ios-core module:
 * FirebaseCore.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseCore.xcframework)

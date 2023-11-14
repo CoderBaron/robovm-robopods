@@ -69,6 +69,10 @@ import org.robovm.apple.foundation.*;
         public static native NSString AdStorage();
         @GlobalValue(symbol="FIRConsentTypeAnalyticsStorage", optional=true)
         public static native NSString AnalyticsStorage();
+        @GlobalValue(symbol="FIRConsentTypeAdUserData", optional=true)
+        public static native NSString AdUserData();
+        @GlobalValue(symbol="FIRConsentTypeAdPersonalization", optional=true)
+        public static native NSString AdPersonalization();
     }
     
     @Method(selector = "logEventWithName:parameters:")

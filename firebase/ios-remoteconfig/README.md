@@ -2,6 +2,7 @@
 
 ### Frameworks required for this pod: 
 * FirebaseRemoteConfig.xcframework (from Firebase.zip/FirebaseRemoteConfig/FirebaseRemoteConfig.xcframework)
+* FirebaseSharedSwift.xcframework (from Firebase.zip/FirebaseRemoteConfig/FirebaseSharedSwift.xcframework)
 * FirebaseABTesting.xcframework (from Firebase.zip/FirebaseRemoteConfig/FirebaseABTesting.xcframework)
 * FirebaseInstallations.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseInstallations.xcframework)
 

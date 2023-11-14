@@ -2,6 +2,7 @@
 
 ### Frameworks required for this pod: 
 * FirebaseDatabase.xcframework (from Firebase.zip/FirebaseDatabase/FirebaseDatabase.xcframework)
+* FirebaseSharedSwift.xcframework (from Firebase.zip/FirebaseDatabase/FirebaseSharedSwift.xcframework)
 * leveldb-library.xcframework (from Firebase.zip/FirebaseDatabase/leveldb-library.xcframework)
 
 Plus ones required for ios-core module:

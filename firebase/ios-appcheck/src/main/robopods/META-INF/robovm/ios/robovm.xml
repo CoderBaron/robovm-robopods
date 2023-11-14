@@ -2,5 +2,6 @@
     <frameworks>
         <framework>FirebaseAppCheck</framework>
         <framework>FirebaseAppCheckInterop</framework>
+        <framework>AppCheckCore</framework>
     </frameworks>
 </config>

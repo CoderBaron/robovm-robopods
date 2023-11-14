@@ -1,9 +1,11 @@
 package: org.robovm.pods.firebase.firestore
 include: [foundation, dispatch]
+internal_frameworks: [FirebaseFirestoreInternal]
 framework: FirebaseFirestore
 clang_args: ['-x', 'objective-c']
 headers:
-    - FirebaseFirestore-umbrella.h
+    - "#include <FirebaseFirestoreInternal/FirebaseFirestoreInternal-umbrella.h>"
+    - "#include <FirebaseFirestore/FirebaseFirestore-umbrella.h>"
 
 private_typedefs:
     "FIRApp *": org.robovm.pods.firebase.core.FIRApp
@@ -276,6 +278,7 @@ classes:
             '-initWithSizeBytes:':
                 name: init
     FIRPersistentCacheIndexManager: {}
+    FIRAggregateField: {}
 protocols:
     FIRListenerRegistration: { }
     FIRLocalCacheSettings: { }
@@ -298,6 +301,8 @@ values:
         class: FIRFirestore
         readonly: true
         name: 'getVersion#{g[0]}'
+    FirebaseFirestoreInternal.*:
+        exclude: true
 
     # Make sure we don't miss any values if new ones are introduced in a later version
     (.*):

@@ -1,6 +1,7 @@
 <config>
     <frameworks>
         <framework>FirebaseDatabase</framework>
+        <framework>FirebaseSharedSwift</framework>
         <framework>leveldb-library</framework>
     </frameworks>
 </config>

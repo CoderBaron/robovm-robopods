@@ -68,6 +68,10 @@ import org.robovm.apple.webkit.*;
     public native NSNumber getTagForChildDirectedTreatment();
     @Property(selector = "setTagForChildDirectedTreatment:")
     public native void setTagForChildDirectedTreatment(NSNumber v);
+    @Property(selector = "publisherPrivacyPersonalizationState")
+    public native GADPublisherPrivacyPersonalizationState getPublisherPrivacyPersonalizationState();
+    @Property(selector = "setPublisherPrivacyPersonalizationState:")
+    public native void setPublisherPrivacyPersonalizationState(GADPublisherPrivacyPersonalizationState v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

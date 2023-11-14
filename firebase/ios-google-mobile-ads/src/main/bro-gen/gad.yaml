@@ -21,6 +21,7 @@ enums:
     GADAdChoicesPosition: {}
     GADMBannerAnimationType: {prefix: GADMBannerAnimationType, ignore: "kGADMBannerAnimationType.*"}
     GADMediationErrorCode: {exclude: true} # deprecated Use GADErrorCode
+    GADPublisherPrivacyPersonalizationState: {}
 typed_enums:
     GADAdLoaderAdType:
         enum: GADAdLoaderAdType
