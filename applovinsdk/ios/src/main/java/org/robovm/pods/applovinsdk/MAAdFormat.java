@@ -78,6 +78,10 @@ import org.robovm.apple.coreanimation.*;
     public native boolean isFullscreenAd();
     @Property(selector = "isAdViewAd")
     public native boolean isAdViewAd();
+    @Property(selector = "isBannerOrLeaderAd")
+    public native boolean isBannerOrLeaderAd();
+    @Property(selector = "displayName")
+    public native String getDisplayName();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

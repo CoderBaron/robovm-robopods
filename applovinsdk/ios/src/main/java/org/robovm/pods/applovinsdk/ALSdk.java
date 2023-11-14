@@ -72,10 +72,8 @@ import org.robovm.apple.coreanimation.*;
     public native ALAdService getAdService();
     @Property(selector = "eventService")
     public native ALEventService getEventService();
-    @Property(selector = "cfService")
-    public native ALCFService getCfService();
-    @Property(selector = "variableService")
-    public native ALVariableService getVariableService();
+    @Property(selector = "cmpService")
+    public native ALCMPService getCmpService();
     @Property(selector = "mediationProvider")
     public native String getMediationProvider();
     @Property(selector = "setMediationProvider:")

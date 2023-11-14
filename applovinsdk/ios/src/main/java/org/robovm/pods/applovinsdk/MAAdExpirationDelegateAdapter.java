@@ -34,29 +34,24 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/ALCFError/*</name>*/ 
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/MAAdExpirationDelegateAdapter/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements MAAdExpirationDelegate/*</implements>*/ {
 
-    /*<ptr>*/public static class ALCFErrorPtr extends Ptr<ALCFError, ALCFErrorPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(ALCFError.class); }/*</bind>*/
+    /*<ptr>*/
+    /*</ptr>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    protected ALCFError() {}
-    protected ALCFError(Handle h, long handle) { super(h, handle); }
-    protected ALCFError(SkipInit skipInit) { super(skipInit); }
-    /*</constructors>*/
+    /*<constructors>*//*</constructors>*/
     /*<properties>*/
-    @Property(selector = "code")
-    public native ALCFErrorCode getCode();
-    @Property(selector = "message")
-    public native String getMessage();
+    
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @NotImplemented("didReloadExpiredAd:withNewAd:")
+    public void didReloadExpiredAd(MAAd expiredAd, MAAd newAd) {}
     /*</methods>*/
 }

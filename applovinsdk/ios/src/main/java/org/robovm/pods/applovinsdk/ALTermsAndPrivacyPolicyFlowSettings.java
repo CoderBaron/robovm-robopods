@@ -36,31 +36,27 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
-public enum /*<name>*/ALCFErrorCode/*</name>*/ implements ValuedEnum {
-    /*<values>*/
-    Unspecified(-1L),
-    InvalidIntegration(-100L),
-    FlowAlreadyInProgress(-200L),
-    NotInGDPRRegion(-300L);
-    /*</values>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/ALTermsAndPrivacyPolicyFlowSettings/*</name>*/ 
+    extends /*<extends>*/ALConsentFlowSettings/*</extends>*/ 
+    /*<implements>*//*</implements>*/ {
 
-    /*<bind>*/
-    /*</bind>*/
+    /*<ptr>*/public static class ALTermsAndPrivacyPolicyFlowSettingsPtr extends Ptr<ALTermsAndPrivacyPolicyFlowSettings, ALTermsAndPrivacyPolicyFlowSettingsPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(ALTermsAndPrivacyPolicyFlowSettings.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<methods>*//*</methods>*/
-
-    private final long n;
-
-    private /*<name>*/ALCFErrorCode/*</name>*/(long n) { this.n = n; }
-    public long value() { return n; }
-    public static /*<name>*/ALCFErrorCode/*</name>*/ valueOf(long n) {
-        for (/*<name>*/ALCFErrorCode/*</name>*/ v : values()) {
-            if (v.n == n) {
-                return v;
-            }
-        }
-        throw new IllegalArgumentException("No constant with value " + n + " found in " 
-            + /*<name>*/ALCFErrorCode/*</name>*/.class.getName());
-    }
+    /*<constructors>*/
+    protected ALTermsAndPrivacyPolicyFlowSettings() {}
+    protected ALTermsAndPrivacyPolicyFlowSettings(Handle h, long handle) { super(h, handle); }
+    protected ALTermsAndPrivacyPolicyFlowSettings(SkipInit skipInit) { super(skipInit); }
+    /*</constructors>*/
+    /*<properties>*/
+    @Property(selector = "debugUserGeography")
+    public native ALConsentFlowUserGeography getDebugUserGeography();
+    @Property(selector = "setDebugUserGeography:")
+    public native void setDebugUserGeography(ALConsentFlowUserGeography v);
+    /*</properties>*/
+    /*<members>*//*</members>*/
+    /*<methods>*/
+    
+    /*</methods>*/
 }

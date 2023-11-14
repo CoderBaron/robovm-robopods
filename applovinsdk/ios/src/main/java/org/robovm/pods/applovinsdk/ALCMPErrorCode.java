@@ -34,30 +34,33 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-/*</javadoc>*/
-/*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/MAAdapterResponseParametersAdapter/*</name>*/ 
-    extends /*<extends>*/MAAdapterParametersAdapter/*</extends>*/ 
-    /*<implements>*/implements MAAdapterResponseParameters/*</implements>*/ {
 
-    /*<ptr>*/
-    /*</ptr>*/
+/*</javadoc>*/
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
+public enum /*<name>*/ALCMPErrorCode/*</name>*/ implements ValuedEnum {
+    /*<values>*/
+    Unspecified(-1L),
+    IntegrationError(1L),
+    FormUnavailable(2L),
+    FormNotRequired(3L);
+    /*</values>*/
+
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*//*</constructors>*/
-    /*<properties>*/
-    @NotImplemented("thirdPartyAdPlacementIdentifier")
-    public String getThirdPartyAdPlacementIdentifier() { return null; }
-    @NotImplemented("bidResponse")
-    public String getBidResponse() { return null; }
-    @NotImplemented("isBidding")
-    public boolean isBidding() { return false; }
-    @NotImplemented("bidExpirationMillis")
-    public long getBidExpirationMillis() { return 0; }
-    /*</properties>*/
-    /*<members>*//*</members>*/
-    /*<methods>*/
-    
-    /*</methods>*/
+    /*<methods>*//*</methods>*/
+
+    private final long n;
+
+    private /*<name>*/ALCMPErrorCode/*</name>*/(long n) { this.n = n; }
+    public long value() { return n; }
+    public static /*<name>*/ALCMPErrorCode/*</name>*/ valueOf(long n) {
+        for (/*<name>*/ALCMPErrorCode/*</name>*/ v : values()) {
+            if (v.n == n) {
+                return v;
+            }
+        }
+        throw new IllegalArgumentException("No constant with value " + n + " found in " 
+            + /*<name>*/ALCMPErrorCode/*</name>*/.class.getName());
+    }
 }

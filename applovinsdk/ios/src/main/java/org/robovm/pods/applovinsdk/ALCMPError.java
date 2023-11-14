@@ -36,30 +36,31 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
-public enum /*<name>*/ALCFType/*</name>*/ implements ValuedEnum {
-    /*<values>*/
-    Unknown(0L),
-    Standard(1L),
-    Detailed(2L);
-    /*</values>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/ALCMPError/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*//*</implements>*/ {
 
-    /*<bind>*/
-    /*</bind>*/
+    /*<ptr>*/public static class ALCMPErrorPtr extends Ptr<ALCMPError, ALCMPErrorPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(ALCMPError.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<methods>*//*</methods>*/
-
-    private final long n;
-
-    private /*<name>*/ALCFType/*</name>*/(long n) { this.n = n; }
-    public long value() { return n; }
-    public static /*<name>*/ALCFType/*</name>*/ valueOf(long n) {
-        for (/*<name>*/ALCFType/*</name>*/ v : values()) {
-            if (v.n == n) {
-                return v;
-            }
-        }
-        throw new IllegalArgumentException("No constant with value " + n + " found in " 
-            + /*<name>*/ALCFType/*</name>*/.class.getName());
-    }
+    /*<constructors>*/
+    protected ALCMPError() {}
+    protected ALCMPError(Handle h, long handle) { super(h, handle); }
+    protected ALCMPError(SkipInit skipInit) { super(skipInit); }
+    /*</constructors>*/
+    /*<properties>*/
+    @Property(selector = "code")
+    public native ALCMPErrorCode getCode();
+    @Property(selector = "message")
+    public native String getMessage();
+    @Property(selector = "cmpCode")
+    public native @MachineSizedSInt long getCmpCode();
+    @Property(selector = "cmpMessage")
+    public native String getCmpMessage();
+    /*</properties>*/
+    /*<members>*//*</members>*/
+    /*<methods>*/
+    
+    /*</methods>*/
 }

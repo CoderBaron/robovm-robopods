@@ -34,28 +34,32 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-/*</javadoc>*/
-/*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/ALVariableServiceDelegateAdapter/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements ALVariableServiceDelegate/*</implements>*/ {
 
-    /*<ptr>*/
-    /*</ptr>*/
+/*</javadoc>*/
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
+public enum /*<name>*/ALConsentFlowUserGeography/*</name>*/ implements ValuedEnum {
+    /*<values>*/
+    Unknown(0L),
+    GDPR(1L),
+    Other(2L);
+    /*</values>*/
+
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*//*</constructors>*/
-    /*<properties>*/
-    
-    /*</properties>*/
-    /*<members>*//*</members>*/
-    /*<methods>*/
-    /**
-     * @deprecated This API has been deprecated. Please use our SDK's initialization callback to retrieve variables instead.
-     */
-    @Deprecated
-    @NotImplemented("variableService:didUpdateVariables:")
-    public void didUpdateVariables(ALVariableService variableService, NSDictionary<NSString, ?> variables) {}
-    /*</methods>*/
+    /*<methods>*//*</methods>*/
+
+    private final long n;
+
+    private /*<name>*/ALConsentFlowUserGeography/*</name>*/(long n) { this.n = n; }
+    public long value() { return n; }
+    public static /*<name>*/ALConsentFlowUserGeography/*</name>*/ valueOf(long n) {
+        for (/*<name>*/ALConsentFlowUserGeography/*</name>*/ v : values()) {
+            if (v.n == n) {
+                return v;
+            }
+        }
+        throw new IllegalArgumentException("No constant with value " + n + " found in " 
+            + /*<name>*/ALConsentFlowUserGeography/*</name>*/.class.getName());
+    }
 }

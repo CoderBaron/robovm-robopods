@@ -50,6 +50,8 @@ import org.robovm.apple.coreanimation.*;
     String getThirdPartyAdPlacementIdentifier();
     @Property(selector = "bidResponse")
     String getBidResponse();
+    @Property(selector = "isBidding")
+    boolean isBidding();
     @Property(selector = "bidExpirationMillis")
     long getBidExpirationMillis();
     /*</properties>*/

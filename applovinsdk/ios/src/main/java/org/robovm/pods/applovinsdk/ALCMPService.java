@@ -36,26 +36,27 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Deprecated/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/ALVariableServiceDelegate/*</name>*/ 
-    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/ALCMPService/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/
-    /*</ptr>*/
-    /*<bind>*/
-    /*</bind>*/
+    /*<ptr>*/public static class ALCMPServicePtr extends Ptr<ALCMPService, ALCMPServicePtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(ALCMPService.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
+    /*<constructors>*/
+    protected ALCMPService() {}
+    protected ALCMPService(Handle h, long handle) { super(h, handle); }
+    protected ALCMPService(SkipInit skipInit) { super(skipInit); }
+    /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
+    /*<members>*//*</members>*/
     /*<methods>*/
-    /**
-     * @deprecated This API has been deprecated. Please use our SDK's initialization callback to retrieve variables instead.
-     */
-    @Deprecated
-    @Method(selector = "variableService:didUpdateVariables:")
-    void didUpdateVariables(ALVariableService variableService, NSDictionary<NSString, ?> variables);
+    @Method(selector = "showCMPForExistingUserWithCompletion:")
+    public native void showCMPForExistingUserWithCompletion$(@Block VoidBlock1<ALCMPError> completion);
+    @Method(selector = "hasSupportedCMP")
+    public native boolean hasSupportedCMP();
     /*</methods>*/
-    /*<adapter>*/
-    /*</adapter>*/
 }

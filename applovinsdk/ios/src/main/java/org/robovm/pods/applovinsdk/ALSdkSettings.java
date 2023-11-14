@@ -50,8 +50,8 @@ import org.robovm.apple.coreanimation.*;
     protected ALSdkSettings(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "consentFlowSettings")
-    public native ALConsentFlowSettings getConsentFlowSettings();
+    @Property(selector = "termsAndPrivacyPolicyFlowSettings")
+    public native ALTermsAndPrivacyPolicyFlowSettings getTermsAndPrivacyPolicyFlowSettings();
     @Property(selector = "isVerboseLoggingEnabled")
     public native boolean isVerboseLoggingEnabled();
     @Property(selector = "setVerboseLoggingEnabled:")
@@ -96,6 +96,12 @@ import org.robovm.apple.coreanimation.*;
     @Deprecated
     @Property(selector = "setIsVerboseLogging:")
     public native void setIsVerboseLogging(boolean v);
+    /**
+     * @deprecated This property is deprecated and will be removed in a future SDK version. Use the new MAX Terms and Privacy Policy Flow instead (see ALSdkSettings.termsAndPrivacyPolicyFlowSettings)
+     */
+    @Deprecated
+    @Property(selector = "consentFlowSettings")
+    public native ALConsentFlowSettings getConsentFlowSettings();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
