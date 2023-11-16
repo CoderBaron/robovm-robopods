@@ -80,8 +80,6 @@ import org.robovm.apple.storekit.*;
     public native boolean containsInstallOrOpen();
     @Method(selector = "removeInstallOrOpen")
     public native boolean removeInstallOrOpen();
-    @Method(selector = "containsClose")
-    public native boolean containsClose();
     @Method(selector = "moveInstallOrOpenToFront:")
     public native NSObject moveInstallOrOpenToFront(@MachineSizedSInt long networkCount);
     @Method(selector = "persistEventually")

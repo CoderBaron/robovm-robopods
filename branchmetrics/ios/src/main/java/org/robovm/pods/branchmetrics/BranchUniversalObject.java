@@ -208,10 +208,6 @@ import org.robovm.apple.storekit.*;
     public native void registerView();
     @Method(selector = "registerViewWithCallback:")
     public native void registerView(@Block VoidBlock2<NSDictionary<?, ?>, NSError> callback);
-    @Method(selector = "userCompletedAction:")
-    public native void userCompletedAction(String action);
-    @Method(selector = "userCompletedAction:withState:")
-    public native void userCompletedAction(String action, NSDictionary<?, ?> state);
     @Method(selector = "getShortUrlWithLinkProperties:")
     public native String getShortUrl(BranchLinkProperties linkProperties);
     @Method(selector = "getShortUrlWithLinkPropertiesAndIgnoreFirstClick:")

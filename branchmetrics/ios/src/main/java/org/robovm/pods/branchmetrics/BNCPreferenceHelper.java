@@ -122,10 +122,6 @@ import org.robovm.apple.storekit.*;
     public native boolean isDebug();
     @Property(selector = "setIsDebug:")
     public native void setIsDebug(boolean v);
-    @Property(selector = "checkedFacebookAppLinks")
-    public native boolean isCheckedFacebookAppLinks();
-    @Property(selector = "setCheckedFacebookAppLinks:")
-    public native void setCheckedFacebookAppLinks(boolean v);
     @Property(selector = "appleAttributionTokenChecked")
     public native boolean isAppleAttributionTokenChecked();
     @Property(selector = "setAppleAttributionTokenChecked:")
@@ -186,10 +182,6 @@ import org.robovm.apple.storekit.*;
     public native boolean isDisableAdNetworkCallouts();
     @Property(selector = "setDisableAdNetworkCallouts:")
     public native void setDisableAdNetworkCallouts(boolean v);
-    @Property(selector = "faceBookAppLink")
-    public native NSURL getFaceBookAppLink();
-    @Property(selector = "setFaceBookAppLink:")
-    public native void setFaceBookAppLink(NSURL v);
     @Property(selector = "patternListURL")
     public native String getPatternListURL();
     @Property(selector = "setPatternListURL:")
@@ -206,10 +198,6 @@ import org.robovm.apple.storekit.*;
     public native boolean isDropURLOpen();
     @Property(selector = "setDropURLOpen:")
     public native void setDropURLOpen(boolean v);
-    @Property(selector = "sendCloseRequests")
-    public native boolean isSendCloseRequests();
-    @Property(selector = "setSendCloseRequests:")
-    public native void setSendCloseRequests(boolean v);
     @Property(selector = "trackingDisabled")
     public native boolean isTrackingDisabled();
     @Property(selector = "setTrackingDisabled:")
@@ -251,12 +239,6 @@ import org.robovm.apple.storekit.*;
     /*<methods>*/
     @Method(selector = "clearTrackingInformation")
     public native void clearTrackingInformation();
-    @Method(selector = "getAPIBaseURL")
-    public native String getAPIBaseURL();
-    @Method(selector = "getAPIURL:")
-    public native String getAPIURL(String endpoint);
-    @Method(selector = "getEndpointFromURL:")
-    public native String getEndpointFromURL(String url);
     @Method(selector = "setRequestMetadataKey:value:")
     public native void setRequestMetadata(String key, NSObject value);
     @Method(selector = "requestMetadataDictionary")

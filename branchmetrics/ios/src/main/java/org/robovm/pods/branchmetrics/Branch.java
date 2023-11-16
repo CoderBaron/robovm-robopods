@@ -78,14 +78,6 @@ import org.robovm.apple.storekit.*;
     public native void setSessionInitWithBranchUniversalObjectCallback(@Block VoidBlock3<BranchUniversalObject, BranchLinkProperties, NSError> v);
     @Property(selector = "serverInterface")
     public native BNCServerInterface getServerInterface();
-    @Property(selector = "installUserId")
-    public native String getInstallUserId();
-    @Property(selector = "setInstallUserId:")
-    public native void setInstallUserId(String v);
-    @Property(selector = "setIdentityCallback")
-    public native @Block VoidBlock2<NSDictionary<?, ?>, NSError> getSetIdentityCallback();
-    @Property(selector = "setSetIdentityCallback:")
-    public native void setSetIdentityCallback(@Block VoidBlock2<NSDictionary<?, ?>, NSError> v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -146,6 +138,8 @@ import org.robovm.apple.storekit.*;
     public native void registerDeepLinkController(UIViewController controller, String key, BNCViewControllerPresentationOption option);
     @Method(selector = "enableLogging")
     public native void enableLogging();
+    @Method(selector = "useEUEndpoints")
+    public native void useEUEndpoints();
     /**
      * @deprecated setDebug is replaced by enableLogging and test devices. https://help.branch.io/using-branch/docs/adding-test-devices
      */
@@ -160,8 +154,6 @@ import org.robovm.apple.storekit.*;
     public native void addAllowedScheme(String scheme);
     @Method(selector = "setAllowedSchemes:")
     public native void setAllowedSchemes(NSArray<?> schemes);
-    @Method(selector = "registerFacebookDeepLinkingClass:")
-    public native void registerFacebookDeepLinkingClass(NSObject FBSDKAppLinkUtility);
     @Method(selector = "checkPasteboardOnInstall")
     public native void checkPasteboardOnInstall();
     @Method(selector = "willShowPasteboardToast")
@@ -268,98 +260,6 @@ import org.robovm.apple.storekit.*;
     public native void logout();
     @Method(selector = "logoutWithCallback:")
     public native void logout(@Block VoidBlock2<Boolean, NSError> callback);
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "loadRewardsWithCallback:")
-    public native void loadRewards(@Block VoidBlock2<Boolean, NSError> callback);
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "redeemRewards:")
-    public native void redeemRewards(@MachineSizedSInt long count);
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "redeemRewards:callback:")
-    public native void redeemRewards(@MachineSizedSInt long count, @Block VoidBlock2<Boolean, NSError> callback);
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "redeemRewards:forBucket:")
-    public native void redeemRewards(@MachineSizedSInt long count, String bucket);
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "redeemRewards:forBucket:callback:")
-    public native void redeemRewards(@MachineSizedSInt long count, String bucket, @Block VoidBlock2<Boolean, NSError> callback);
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "getCredits")
-    public native @MachineSizedSInt long getCredits();
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "getCreditsForBucket:")
-    public native @MachineSizedSInt long getCreditsForBucket(String bucket);
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "getCreditHistoryWithCallback:")
-    public native void getCreditHistory(@Block VoidBlock2<NSArray<?>, NSError> callback);
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "getCreditHistoryForBucket:andCallback:")
-    public native void getCreditHistory(String bucket, @Block VoidBlock2<NSArray<?>, NSError> callback);
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "getCreditHistoryAfter:number:order:andCallback:")
-    public native void getCreditHistory(String creditTransactionId, @MachineSizedSInt long length, BranchCreditHistoryOrder order, @Block VoidBlock2<NSArray<?>, NSError> callback);
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "getCreditHistoryForBucket:after:number:order:andCallback:")
-    public native void getCreditHistory(String bucket, String creditTransactionId, @MachineSizedSInt long length, BranchCreditHistoryOrder order, @Block VoidBlock2<NSArray<?>, NSError> callback);
-    /**
-     * @deprecated Please use BranchEvent to track commerce events. You can refer to https://help.branch.io/developers-hub/docs/tracking-commerce-content-lifecycle-and-custom-events for additional information.
-     */
-    @Deprecated
-    @Method(selector = "userCompletedAction:")
-    public native void userCompletedAction(String action);
-    /**
-     * @deprecated Please use BranchEvent to track commerce events. You can refer to https://help.branch.io/developers-hub/docs/tracking-commerce-content-lifecycle-and-custom-events for additional information.
-     */
-    @Deprecated
-    @Method(selector = "userCompletedAction:withState:")
-    public native void userCompletedAction(String action, NSDictionary<?, ?> state);
-    /**
-     * @deprecated Please use BranchEvent to track commerce events. You can refer to https://help.branch.io/developers-hub/docs/tracking-commerce-content-lifecycle-and-custom-events for additional information.
-     */
-    @Deprecated
-    @Method(selector = "userCompletedAction:withState:withDelegate:")
-    public native void userCompletedAction(String action, NSDictionary<?, ?> state, NSObject branchViewCallback);
-    /**
-     * @deprecated Please use BranchEvent to track commerce events. You can refer to https://help.branch.io/developers-hub/docs/tracking-commerce-content-lifecycle-and-custom-events for additional information.
-     */
-    @Deprecated
-    @Method(selector = "sendCommerceEvent:metadata:withCompletion:")
-    public native void sendCommerceEvent(BNCCommerceEvent commerceEvent, NSDictionary<NSString, ?> metadata, @Block VoidBlock2<NSDictionary<?, ?>, NSError> completion);
-    @Method(selector = "crossPlatformIdDataWithCompletion:")
-    public native void getCrossPlatformIdData(@Block VoidBlock1<BranchCrossPlatformID> completion);
     @Method(selector = "lastAttributedTouchDataWithAttributionWindow:completion:")
     public native void getLastAttributedTouchData(@MachineSizedSInt long window, @Block VoidBlock2<BranchLastAttributedTouchData, NSError> completion);
     @Method(selector = "getShortURL")

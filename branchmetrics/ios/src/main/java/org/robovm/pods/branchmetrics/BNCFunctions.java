@@ -52,11 +52,11 @@ import org.robovm.apple.storekit.*;
     /*<properties>*//*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Bridge(symbol="BNCURLForBranchDirectory", optional=true)
-    public static native NSURL uRLForBranchDirectory();
     @Bridge(symbol="BNCProductCategoryAllCategories", optional=true)
     public static native NSArray<NSString> productCategoryAllCategories();
     @Bridge(symbol="BNCCurrencyAllCurrencies", optional=true)
     public static native NSArray<NSString> currencyAllCurrencies();
+    @Bridge(symbol="BNCURLForBranchDirectory", optional=true)
+    public static native NSURL uRLForBranchDirectory();
     /*</methods>*/
 }

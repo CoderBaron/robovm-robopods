@@ -22,14 +22,12 @@ enums:
     BranchLinkType: {}
     BNCViewControllerPresentationOption: {prefix: BNCViewControllerOption}
     BranchContentIndexMode: {}
-    BranchCreditHistoryOrder: {prefix: Branch}
     BranchEventAdType: {}
     BranchQRCodeImageFormat: {}
 
 categories:
 
 classes:
-    BNCCommerceEvent: {}
     BNCLinkCache:
         methods:
             '-setObject:forKey:':
@@ -43,7 +41,6 @@ classes:
                 name: setRequestMetadata
             '-addInstrumentationDictionaryKey:value:':
                 name: addInstrumentationDictionary
-    BNCProduct: {}
     BNCServerInterface:
         methods:
             '-getRequest:url:key:callback:':
@@ -305,10 +302,6 @@ classes:
             # workaround as it conflicts with super property keywords by type
             'keywords':
                 name: keywordsBNC
-    BranchCommerceEventRequest:
-        methods:
-            '-initWithCommerceEvent:metadata:completion:':
-                name: init
     BranchContentMetadata:
         methods:
             '+contentMetadataWithDictionary:':
@@ -398,16 +391,6 @@ classes:
                 name: getParamsForServerRequest
             '+objectWithDictionary:':
                 name: create
-                constructor: true
-    BranchCrossPlatformID:
-        methods:
-            '+buildFromJSON:':
-                constructor: true
-            '+requestCrossPlatformIdData:key:completion:':
-                name: requestCrossPlatformIdData
-    BranchProbabilisticCrossPlatformID:
-        methods:
-            '+buildFromJSON:':
                 constructor: true
     BranchLastAttributedTouchData:
         methods:

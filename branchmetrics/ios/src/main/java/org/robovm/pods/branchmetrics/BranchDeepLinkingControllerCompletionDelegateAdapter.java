@@ -55,12 +55,6 @@ import org.robovm.apple.storekit.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    /**
-     * @deprecated This API is deprecated. Instead, use deepLinkingControllerCompletedFrom: viewController
-     */
-    @Deprecated
-    @NotImplemented("deepLinkingControllerCompleted")
-    public void deepLinkingControllerCompleted() {}
     @NotImplemented("deepLinkingControllerCompletedFrom:")
     public void deepLinkingControllerCompletedFrom(UIViewController viewController) {}
     /*</methods>*/
