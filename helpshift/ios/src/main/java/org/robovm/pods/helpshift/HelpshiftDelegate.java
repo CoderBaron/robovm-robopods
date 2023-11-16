@@ -42,42 +42,103 @@ import org.robovm.apple.uikit.*;
     /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
-    /*<constants>*/
-    public static class EventDataKeys {
-        public static final String visible = "visible";
-        public static final String message = "message";
-        public static final String latestIssueId = "latestIssueId";
-        public static final String latestIssuePublishId = "latestIssuePublishId";
-        public static final String isIssueOpen = "open";
-        public static final String messageType = "type";
-        public static final String messageTypeText = "text";
-        public static final String messageTypeAttachment = "attachment";
-        public static final String messageBody = "body";
-        public static final String rating = "rating";
-        public static final String additionalFeedback = "additionalFeedback";
-        public static final String unreadMessageCount = "count";
-        public static final String unreadMessageCountIsFromCache = "fromCache";
-    }
-
-    public static class EventNames {
-        public static final String widgetToggle = "widgetToggle";
-        public static final String conversationStart = "conversationStart";
-        public static final String conversationStatus = "conversationStatus";
-        public static final String messageAdd = "messageAdd";
-        public static final String cSATSubmit = "csatSubmit";
-        public static final String conversationEnd = "conversationEnd";
-        public static final String conversationRejected = "conversationRejected";
-        public static final String conversationResolved = "conversationResolved";
-        public static final String conversationReopened = "conversationReopened";
-        public static final String receivedUnreadMessageCount = "receivedUnreadMessageCount";
-        public static final String sessionStarted = "helpshiftSessionStarted";
-        public static final String sessionEnded = "helpshiftSessionEnded";
-    }
-    /*</constants>*/
+    /*<constants>*//*</constants>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<methods>*/
+    @Library(Library.INTERNAL)
+    public static class EventDataKeys {
+        static { Bro.bind(EventDataKeys.class); }
+
+        @GlobalValue(symbol="HelpshiftEventDataVisible", optional=true)
+        public static native NSString visible();
+        @GlobalValue(symbol="HelpshiftEventDataMessage", optional=true)
+        public static native NSString message();
+        @GlobalValue(symbol="HelpshiftEventDataLatestIssueId", optional=true)
+        public static native NSString latestIssueId();
+        @GlobalValue(symbol="HelpshiftEventDataLatestIssuePublishId", optional=true)
+        public static native NSString latestIssuePublishId();
+        @GlobalValue(symbol="HelpshiftEventDataIsIssueOpen", optional=true)
+        public static native NSString isIssueOpen();
+        @GlobalValue(symbol="HelpshiftEventDataMessageType", optional=true)
+        public static native NSString messageType();
+        @GlobalValue(symbol="HelpshiftEventDataMessageTypeText", optional=true)
+        public static native NSString messageTypeText();
+        @GlobalValue(symbol="HelpshiftEventDataMessageTypeAttachment", optional=true)
+        public static native NSString messageTypeAttachment();
+        @GlobalValue(symbol="HelpshiftEventDataMessageBody", optional=true)
+        public static native NSString messageBody();
+        @GlobalValue(symbol="HelpshiftEventDataRating", optional=true)
+        public static native NSString rating();
+        @GlobalValue(symbol="HelpshiftEventDataAdditionalFeedback", optional=true)
+        public static native NSString additionalFeedback();
+        @GlobalValue(symbol="HelpshiftEventDataUnreadMessageCount", optional=true)
+        public static native NSString unreadMessageCount();
+        @GlobalValue(symbol="HelpshiftEventDataUnreadMessageCountIsFromCache", optional=true)
+        public static native NSString unreadMessageCountIsFromCache();
+        @GlobalValue(symbol="HelpshiftEventDataActionType", optional=true)
+        public static native NSString actionType();
+        @GlobalValue(symbol="HelpshiftEventDataActionTypeCall", optional=true)
+        public static native NSString actionTypeCall();
+        @GlobalValue(symbol="HelpshiftEventDataActionTypeLink", optional=true)
+        public static native NSString actionTypeLink();
+        @GlobalValue(symbol="HelpshiftEventDataActionData", optional=true)
+        public static native NSString actionData();
+        @GlobalValue(symbol="HelpshiftEventDataPublishID", optional=true)
+        public static native NSString publishID();
+        @GlobalValue(symbol="HelpshiftEventDataCreatedTime", optional=true)
+        public static native NSString createdTime();
+        @GlobalValue(symbol="HelpshiftEventDataAttachments", optional=true)
+        public static native NSString attachments();
+        @GlobalValue(symbol="HelpshiftEventDataURL", optional=true)
+        public static native NSString URL();
+        @GlobalValue(symbol="HelpshiftEventDataContentType", optional=true)
+        public static native NSString contentType();
+        @GlobalValue(symbol="HelpshiftEventDataFileName", optional=true)
+        public static native NSString fileName();
+        @GlobalValue(symbol="HelpshiftEventDataSize", optional=true)
+        public static native NSString size();
+        @GlobalValue(symbol="HelpshiftEventDataMessageTypeAppReviewRequest", optional=true)
+        public static native NSString messageTypeAppReviewRequest();
+        @GlobalValue(symbol="HelpshiftEventDataMessageTypeScreenshotRequest", optional=true)
+        public static native NSString messageTypeScreenshotRequest();
+    }
+
+    @Library(Library.INTERNAL)
+    public static class EventNames {
+        static { Bro.bind(EventNames.class); }
+
+        @GlobalValue(symbol="HelpshiftEventNameWidgetToggle", optional=true)
+        public static native NSString widgetToggle();
+        @GlobalValue(symbol="HelpshiftEventNameConversationStart", optional=true)
+        public static native NSString conversationStart();
+        @GlobalValue(symbol="HelpshiftEventNameConversationStatus", optional=true)
+        public static native NSString conversationStatus();
+        @GlobalValue(symbol="HelpshiftEventNameMessageAdd", optional=true)
+        public static native NSString messageAdd();
+        @GlobalValue(symbol="HelpshiftEventNameCSATSubmit", optional=true)
+        public static native NSString CSATSubmit();
+        @GlobalValue(symbol="HelpshiftEventNameConversationEnd", optional=true)
+        public static native NSString conversationEnd();
+        @GlobalValue(symbol="HelpshiftEventNameConversationRejected", optional=true)
+        public static native NSString conversationRejected();
+        @GlobalValue(symbol="HelpshiftEventNameConversationResolved", optional=true)
+        public static native NSString conversationResolved();
+        @GlobalValue(symbol="HelpshiftEventNameConversationReopened", optional=true)
+        public static native NSString conversationReopened();
+        @GlobalValue(symbol="HelpshiftEventNameReceivedUnreadMessageCount", optional=true)
+        public static native NSString receivedUnreadMessageCount();
+        @GlobalValue(symbol="HelpshiftEventNameSessionStarted", optional=true)
+        public static native NSString sessionStarted();
+        @GlobalValue(symbol="HelpshiftEventNameSessionEnded", optional=true)
+        public static native NSString sessionEnded();
+        @GlobalValue(symbol="HelpshiftEventNameUserClickOnAction", optional=true)
+        public static native NSString userClickOnAction();
+        @GlobalValue(symbol="HelpshiftEventNameAgentMessageReceived", optional=true)
+        public static native NSString agentMessageReceived();
+    }
+    
     @Method(selector = "handleHelpshiftEvent:withData:")
     void handleHelpshiftEvent(String eventName, NSDictionary<?, ?> data);
     @Method(selector = "authenticationFailedForUserWithReason:")
