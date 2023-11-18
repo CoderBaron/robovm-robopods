@@ -87,5 +87,7 @@ import org.robovm.apple.corelocation.*;
     public native PollfishParams platform(Platform platform);
     @Method(selector = "monitorOrientationChanges:")
     public native PollfishParams monitorOrientationChanges(boolean monitorOrientationChanges);
+    @Method(selector = "placementId:")
+    public native PollfishParams placementId(String placementId);
     /*</methods>*/
 }
