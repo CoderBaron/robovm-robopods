@@ -16,6 +16,7 @@ enums:
     IMCoreAdState: {prefix: kIMCoreAdState}
     IMAudioStatus: { }
     IMBannerAudioStatus: { }
+    IMRemoteLogLevel: {}
 typed_enums:
 
 classes:
@@ -160,6 +161,10 @@ protocols:
         methods:
             '-banner:audioStatusChanged:':
                 name: audioStatusChanged
+    IMLogging:
+        methods:
+            '-logWithMessage:tag:logLevel:':
+                name: log
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):
