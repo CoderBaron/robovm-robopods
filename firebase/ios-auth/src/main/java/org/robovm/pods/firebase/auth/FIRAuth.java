@@ -91,6 +91,10 @@ import org.robovm.apple.uikit.*;
     
     @Method(selector = "updateCurrentUser:completion:")
     public native void updateCurrentUser(FIRUser user, @Block VoidBlock1<NSError> completion);
+    /**
+     * @deprecated This method is deprecated and will be removed in a future release. This method returns an empty list when Email Enumeration Protection is enabled.
+     */
+    @Deprecated
     @Method(selector = "fetchSignInMethodsForEmail:completion:")
     public native void fetchSignInMethods(String email, @Block VoidBlock2<NSArray<NSString>, NSError> completion);
     @Method(selector = "signInWithEmail:password:completion:")

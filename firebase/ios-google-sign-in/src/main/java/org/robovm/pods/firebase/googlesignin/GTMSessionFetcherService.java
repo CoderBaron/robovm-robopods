@@ -133,6 +133,10 @@ import org.robovm.apple.coreanimation.*;
     public native boolean isSkipBackgroundTask();
     @Property(selector = "setSkipBackgroundTask:")
     public native void setSkipBackgroundTask(boolean v);
+    @Property(selector = "userAgentProvider")
+    public native GTMUserAgentProvider getUserAgentProvider();
+    @Property(selector = "setUserAgentProvider:")
+    public native void setUserAgentProvider(GTMUserAgentProvider v);
     @Property(selector = "userAgent")
     public native String getUserAgent();
     @Property(selector = "setUserAgent:")
