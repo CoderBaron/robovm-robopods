@@ -221,7 +221,7 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
                 internalFrameworks.map {
                     """
                     - Download $it.xcframework.zip from https://github.com/OneSignal/OneSignal-iOS-SDK/releases
-                    - Unpack, expected loaction  ${downloadFolder.extend("$it.xcframework")}                        
+                    - Unpack, expected location  ${downloadFolder.extend("$it.xcframework")}                        
                     """.trimIndent()
                 }.joinToString("\n")+
                 """
