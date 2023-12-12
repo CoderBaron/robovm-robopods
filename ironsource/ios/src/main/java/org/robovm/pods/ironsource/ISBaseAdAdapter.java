@@ -50,6 +50,8 @@ import org.robovm.apple.coreanimation.*;
     protected ISBaseAdAdapter(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithAdUnit:adapterConfig:")
     public ISBaseAdAdapter(ISAdUnit adUnit, ISAdapterConfig adapterConfig) { super((SkipInit) null); initObject(init(adUnit, adapterConfig)); }
+    @Method(selector = "initWithAdUnit:adapterConfig:adUnitObjectId:")
+    public ISBaseAdAdapter(ISAdUnit adUnit, ISAdapterConfig adapterConfig, NSUUID adUnitObjectId) { super((SkipInit) null); initObject(init(adUnit, adapterConfig, adUnitObjectId)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "adUnit")
@@ -58,11 +60,15 @@ import org.robovm.apple.coreanimation.*;
     public native void setAdUnit(ISAdUnit v);
     @Property(selector = "adapterConfig")
     public native ISAdapterConfig getAdapterConfig();
+    @Property(selector = "adUnitObjectId")
+    public native NSUUID getAdUnitObjectId();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "initWithAdUnit:adapterConfig:")
     protected native @Pointer long init(ISAdUnit adUnit, ISAdapterConfig adapterConfig);
+    @Method(selector = "initWithAdUnit:adapterConfig:adUnitObjectId:")
+    protected native @Pointer long init(ISAdUnit adUnit, ISAdapterConfig adapterConfig, NSUUID adUnitObjectId);
     @Method(selector = "getNetworkAdapter")
     public native ISAdapterBaseProtocol getNetworkAdapter();
     @Method(selector = "releaseMemory")

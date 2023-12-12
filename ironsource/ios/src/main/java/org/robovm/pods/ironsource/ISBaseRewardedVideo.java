@@ -52,6 +52,8 @@ import org.robovm.apple.coreanimation.*;
     public ISBaseRewardedVideo(ISAdapterConfig providerConfig) { super((SkipInit) null); initObject(init(providerConfig)); }
     @Method(selector = "initWithAdUnit:adapterConfig:")
     public ISBaseRewardedVideo(ISAdUnit adUnit, ISAdapterConfig adapterConfig) { super(adUnit, adapterConfig); }
+    @Method(selector = "initWithAdUnit:adapterConfig:adUnitObjectId:")
+    public ISBaseRewardedVideo(ISAdUnit adUnit, ISAdapterConfig adapterConfig, NSUUID adUnitObjectId) { super(adUnit, adapterConfig, adUnitObjectId); }
     /*</constructors>*/
     /*<properties>*/
     

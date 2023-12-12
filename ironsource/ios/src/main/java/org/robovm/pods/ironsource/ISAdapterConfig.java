@@ -112,6 +112,10 @@ import org.robovm.apple.coreanimation.*;
     public native NSDictionary<?, ?> getBannerSettings();
     @Property(selector = "setBannerSettings:")
     public native void setBannerSettings(NSDictionary<?, ?> v);
+    @Property(selector = "nativeAdSettings")
+    public native NSDictionary<?, ?> getNativeAdSettings();
+    @Property(selector = "setNativeAdSettings:")
+    public native void setNativeAdSettings(NSDictionary<?, ?> v);
     @Property(selector = "providerDefaultInstance")
     public native String getProviderDefaultInstance();
     @Property(selector = "setProviderDefaultInstance:")

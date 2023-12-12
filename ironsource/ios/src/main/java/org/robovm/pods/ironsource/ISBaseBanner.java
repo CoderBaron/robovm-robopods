@@ -52,6 +52,8 @@ import org.robovm.apple.coreanimation.*;
     public ISBaseBanner(ISAdapterConfig providerConfig) { super((SkipInit) null); initObject(init(providerConfig)); }
     @Method(selector = "initWithAdUnit:adapterConfig:")
     public ISBaseBanner(ISAdUnit adUnit, ISAdapterConfig adapterConfig) { super(adUnit, adapterConfig); }
+    @Method(selector = "initWithAdUnit:adapterConfig:adUnitObjectId:")
+    public ISBaseBanner(ISAdUnit adUnit, ISAdapterConfig adapterConfig, NSUUID adUnitObjectId) { super(adUnit, adapterConfig, adUnitObjectId); }
     /*</constructors>*/
     /*<properties>*/
     

@@ -13,6 +13,7 @@ enums:
     ISAdapterErrorType: {}
     ISLoadWhileShowSupportState: {prefix: LOAD_WHILE_SHOW_}
     ISAdapterErrors: {prefix: ISAdapterError}
+    ISErrorCode: {}
 
 private_typedefs:
 
@@ -25,6 +26,12 @@ classes:
                 name: init
             '-getAdUnitData':
                 exclude: true # conflicts with same property
+            '+adDataWithAdapterConfiguration:adUnit:userId:':
+                name: create
+                constructor: true
+            '+adDataWithAdapterConfiguration:adUnit:userId:bannerSize:':
+                name: create
+                constructor: true
     ISAdUnit:
         methods:
             '-initWithValue:':
@@ -43,6 +50,8 @@ classes:
     ISBaseAdAdapter:
         methods:
             '-initWithAdUnit:adapterConfig:':
+                name: init
+            '-initWithAdUnit:adapterConfig:adUnitObjectId:':
                 name: init
     ISBaseAdInteractionAdapter: {}
     ISBaseInterstitial:
@@ -154,6 +163,33 @@ classes:
                 name: loadAd
             '-destroyAdWithAdData:':
                 name: destroyAd
+    ISAdapterNativeAdViewBinder: { }
+    ISError:
+        skip_def_constructor: true
+        methods:
+            '+createError:withParams:':
+                name: createError
+            '+createError:withMessage:':
+                name: createError
+            '+createErrorWithDomain:code:message:':
+                name: createError
+            '+appendError:withPrefix:':
+                name: appendErrorWithPrefix
+            '+appendError:withSuffix:':
+                name: appendErrorWithSuffix
+    ISNativeAdDataImage:
+        methods:
+            '-initWithImage:url:':
+                name: init
+    ISNativeAdView: { }
+    ISNativeAdViewHolder: { }
+    LevelPlayMediaView: { }
+    LevelPlayNativeAd:
+        methods:
+            '-initWithBuilder:':
+                name: init
+    LevelPlayNativeAdBuilder: { }
+
 protocols:
     ISAdapterAdDelegate:
         methods:
@@ -324,6 +360,22 @@ protocols:
             '-destroyAdWithAdData:':
                 name: destroyAd
     ISBannerAdDelegate: { }
+    ISAdapterNativeAdViewBinderProtocol: { }
+    ISNativeAdDataProtocol: { }
+    ISNativeAdInteractionDelegate:
+        methods:
+            '-didRecordImpression:withAdInfo:':
+                name: didRecordImpression
+            '-didClick:withAdInfo:':
+                name: didClick
+    ISNativeAdLoadDelegate:
+        methods:
+            '-didLoad:withAdInfo:':
+                name: didLoad
+            '-didFailToLoad:withError:':
+                name: didFailToLoad
+    ISNativeAdViewBinderProtocol: { }
+    LevelPlayNativeAdDelegate: { }
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):
@@ -341,7 +393,7 @@ constants:
     DEFAULT_CAPPING_(.*):
         class: ISAdapterConfig
         name: 'DEFAULT_CAPPING_#{g[0]}'
-    (IS_REWARDED_VIDEO|IS_INTERSTITIAL|IS_OFFERWALL|IS_BANNER):
+    (IS_REWARDED_VIDEO|IS_INTERSTITIAL|IS_OFFERWALL|IS_BANNER|IS_NATIVE_AD):
         class: IronSource
         name: '#{g[0]}'
     MEDIATION_SDK_VERSION:
@@ -355,6 +407,13 @@ constants:
         class: ISImpressionData
         static_class: Keys
         name: '#{g[0]}'
+    kSSErrors(.*):
+        class: ISError
+        static_class: Consts
+        name: '#{g[0]}'
+
+    kEmptyString:
+        exclude: true
 
     kSize(.*):
         class: ISBannerSize

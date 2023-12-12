@@ -55,14 +55,14 @@ import org.robovm.apple.coreanimation.*;
     void rewardedVideoDidFailToLoad(NSError error, String instanceId);
     @Method(selector = "rewardedVideoDidOpen:")
     void rewardedVideoDidOpen(String instanceId);
-    @Method(selector = "rewardedVideoDidClose:")
-    void rewardedVideoDidClose(String instanceId);
     @Method(selector = "rewardedVideoDidFailToShowWithError:instanceId:")
     void rewardedVideoDidFailToShow(NSError error, String instanceId);
     @Method(selector = "rewardedVideoDidClick:")
     void rewardedVideoDidClick(String instanceId);
     @Method(selector = "rewardedVideoAdRewarded:")
     void rewardedVideoAdRewarded(String instanceId);
+    @Method(selector = "rewardedVideoDidClose:")
+    void rewardedVideoDidClose(String instanceId);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

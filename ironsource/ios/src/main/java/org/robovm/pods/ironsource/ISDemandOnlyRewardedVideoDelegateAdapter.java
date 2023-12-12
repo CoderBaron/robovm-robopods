@@ -57,13 +57,13 @@ import org.robovm.apple.coreanimation.*;
     public void rewardedVideoDidFailToLoad(NSError error, String instanceId) {}
     @NotImplemented("rewardedVideoDidOpen:")
     public void rewardedVideoDidOpen(String instanceId) {}
-    @NotImplemented("rewardedVideoDidClose:")
-    public void rewardedVideoDidClose(String instanceId) {}
     @NotImplemented("rewardedVideoDidFailToShowWithError:instanceId:")
     public void rewardedVideoDidFailToShow(NSError error, String instanceId) {}
     @NotImplemented("rewardedVideoDidClick:")
     public void rewardedVideoDidClick(String instanceId) {}
     @NotImplemented("rewardedVideoAdRewarded:")
     public void rewardedVideoAdRewarded(String instanceId) {}
+    @NotImplemented("rewardedVideoDidClose:")
+    public void rewardedVideoDidClose(String instanceId) {}
     /*</methods>*/
 }

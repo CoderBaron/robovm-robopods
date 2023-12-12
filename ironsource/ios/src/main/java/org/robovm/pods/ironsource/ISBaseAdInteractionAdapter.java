@@ -50,6 +50,8 @@ import org.robovm.apple.coreanimation.*;
     protected ISBaseAdInteractionAdapter(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithAdUnit:adapterConfig:")
     public ISBaseAdInteractionAdapter(ISAdUnit adUnit, ISAdapterConfig adapterConfig) { super(adUnit, adapterConfig); }
+    @Method(selector = "initWithAdUnit:adapterConfig:adUnitObjectId:")
+    public ISBaseAdInteractionAdapter(ISAdUnit adUnit, ISAdapterConfig adapterConfig, NSUUID adUnitObjectId) { super(adUnit, adapterConfig, adUnitObjectId); }
     /*</constructors>*/
     /*<properties>*/
     
