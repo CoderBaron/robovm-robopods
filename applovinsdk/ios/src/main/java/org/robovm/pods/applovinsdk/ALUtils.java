@@ -61,6 +61,8 @@ import org.robovm.apple.coreanimation.*;
     public static native UIInterfaceOrientationMask currentOrientationMask();
     @Method(selector = "deviceSafeAreaDimensions")
     public static native @ByVal CGRect deviceSafeAreaDimensions();
+    @Method(selector = "tcfConsentStatusForVendorIdentifier:")
+    public static native NSNumber tcfConsentStatusForVendorIdentifier(@MachineSizedSInt long vendorIdentifier);
     @Method(selector = "additionalConsentStatusForATPIdentifier:")
     public static native NSNumber additionalConsentStatusForATPIdentifier(@MachineSizedSInt long atpIdentifier);
     /*</methods>*/
