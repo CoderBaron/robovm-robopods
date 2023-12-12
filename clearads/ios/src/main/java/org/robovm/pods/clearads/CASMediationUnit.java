@@ -83,9 +83,9 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "toggleIgnoreMode")
-    public native void toggleIgnoreMode();
     @Method(selector = "isAdCached")
     public native boolean isAdCached();
+    @Method(selector = "toggleIgnoreMode")
+    public native void toggleIgnoreMode();
     /*</methods>*/
 }

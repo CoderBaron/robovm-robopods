@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CASInternalUtils : NSObject
-@property (class, readonly, nonnull) NSString *adId;
+@property (class, readonly, nullable) NSString *adId;
 @property (class, readonly) BOOL isAdTrackingEnabled;
 @property (class, readonly) BOOL isAdTrackingNotDetermined;
 /// Ad tracking status codes

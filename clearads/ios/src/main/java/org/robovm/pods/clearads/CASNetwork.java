@@ -74,8 +74,6 @@ import org.robovm.apple.coreanimation.*;
     public static native String appLovin();
     @Method(selector = "superAwesome")
     public static native String superAwesome();
-    @Method(selector = "adColony")
-    public static native String adColony();
     @Method(selector = "meta")
     public static native String meta();
     @Method(selector = "inMobi")
@@ -98,6 +96,8 @@ import org.robovm.apple.coreanimation.*;
     public static native String smaato();
     @Method(selector = "bigo")
     public static native String bigo();
+    @Method(selector = "bidMachine")
+    public static native String bidMachine();
     @Method(selector = "adMob")
     public static native String adMob();
     @Method(selector = "facebookAN")
@@ -106,6 +106,8 @@ import org.robovm.apple.coreanimation.*;
     public static native String fyber();
     @Method(selector = "digitalTurbine")
     public static native String digitalTurbine();
+    @Method(selector = "adColony")
+    public static native String adColony();
     @Method(selector = "tapjoy")
     public static native String tapjoy();
     @Method(selector = "max")

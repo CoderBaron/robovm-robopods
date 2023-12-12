@@ -305,7 +305,7 @@ typedef SWIFT_ENUM_NAMED(NSInteger, CASNetworkId, "AdNetworkId", open) {
   CASNetworkIdHyprMX = 16,
   CASNetworkIdSmaato = 18,
   CASNetworkIdBigo = 19,
-  CASNetworkIdTapjoy = 20,
+  CASNetworkIdBidMachine = 20,
   CASNetworkIdMintegral = 23,
   CASNetworkIdPangle = 24,
   CASNetworkIdCASExchange = 30,
@@ -361,10 +361,10 @@ SWIFT_CLASS_NAMED("MediationUnit")
 @property (nonatomic, readonly, copy) NSString * _Nonnull status;
 @property (nonatomic, readonly) enum CASType adType;
 @property (nonatomic, readonly, copy) NSString * _Nonnull versionInfo;
-- (void)toggleIgnoreMode;
 @property (nonatomic, readonly) NSInteger impressionDepth;
 @property (nonatomic, readonly) double lifetimeRevenue;
 - (BOOL)isAdCached SWIFT_WARN_UNUSED_RESULT;
+- (void)toggleIgnoreMode;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1013,8 +1013,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (NSString * _Nonnull)appLovin SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull superAwesome;)
 + (NSString * _Nonnull)superAwesome SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull adColony;)
-+ (NSString * _Nonnull)adColony SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull meta;)
 + (NSString * _Nonnull)meta SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull inMobi;)
@@ -1037,6 +1035,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (NSString * _Nonnull)smaato SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull bigo;)
 + (NSString * _Nonnull)bigo SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull bidMachine;)
++ (NSString * _Nonnull)bidMachine SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull adMob;)
 + (NSString * _Nonnull)adMob SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull facebookAN;)
@@ -1045,6 +1045,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (NSString * _Nonnull)fyber SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull digitalTurbine;)
 + (NSString * _Nonnull)digitalTurbine SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull adColony SWIFT_DEPRECATED_MSG("No longer supported");)
++ (NSString * _Nonnull)adColony SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull tapjoy SWIFT_DEPRECATED_MSG("No longer supported");)
 + (NSString * _Nonnull)tapjoy SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull max SWIFT_DEPRECATED_MSG("No longer supported");)
@@ -1365,6 +1367,15 @@ SWIFT_CLASS_NAMED("CASTargetingOptions")
 /// Your app should have a valid use case for it as well.
 - (void)setLocationWithLatitude:(double)latitude longitude:(double)longitude;
 - (void)clearLocation;
+/// A list of keywords, interests, or intents related to your application.
+/// Words or phrase describing the current activity of the user for targeting purposes.
+- (void)setKeywords:(NSArray<NSString *> * _Nullable)keywords;
+- (NSArray<NSString *> * _Nullable)getKeywords SWIFT_WARN_UNUSED_RESULT;
+/// Sets the content URL for a web site whose content matches the app’s primary content.
+/// This web site content is used for targeting and brand safety purposes.
+/// Limitation: max URL length 512
+- (void)setContentUrl:(NSString * _Nullable)url;
+- (NSString * _Nullable)getContentUrl SWIFT_WARN_UNUSED_RESULT;
 @end
 
 typedef SWIFT_ENUM(NSInteger, Gender, open) {

@@ -57,7 +57,7 @@ public enum /*<name>*/CASNetworkId/*</name>*/ implements ValuedEnum {
     HyprMX(16L),
     Smaato(18L),
     Bigo(19L),
-    Tapjoy(20L),
+    BidMachine(20L),
     Mintegral(23L),
     Pangle(24L),
     CASExchange(30L),

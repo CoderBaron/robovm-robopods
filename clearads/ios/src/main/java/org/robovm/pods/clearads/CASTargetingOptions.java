@@ -70,5 +70,13 @@ import org.robovm.apple.coreanimation.*;
     public native void setLocation(double latitude, double longitude);
     @Method(selector = "clearLocation")
     public native void clearLocation();
+    @Method(selector = "setKeywords:")
+    public native void setKeywords(NSArray<NSString> keywords);
+    @Method(selector = "getKeywords")
+    public native NSArray<NSString> getKeywords();
+    @Method(selector = "setContentUrl:")
+    public native void setContentUrl(String url);
+    @Method(selector = "getContentUrl")
+    public native String getContentUrl();
     /*</methods>*/
 }
