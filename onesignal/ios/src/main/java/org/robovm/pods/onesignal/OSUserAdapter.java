@@ -67,6 +67,8 @@ import org.robovm.apple.uikit.*;
     public void removeTag(String tag) {}
     @NotImplemented("removeTags:")
     public void removeTags(NSArray<NSString> tags) {}
+    @NotImplemented("getTags")
+    public NSDictionary<NSString, NSString> getTags() { return null; }
     @NotImplemented("addEmail:")
     public void addEmail(String email) {}
     @NotImplemented("removeEmail:")

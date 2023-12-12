@@ -65,6 +65,8 @@ import org.robovm.apple.uikit.*;
     void removeTag(String tag);
     @Method(selector = "removeTags:")
     void removeTags(NSArray<NSString> tags);
+    @Method(selector = "getTags")
+    NSDictionary<NSString, NSString> getTags();
     @Method(selector = "addEmail:")
     void addEmail(String email);
     @Method(selector = "removeEmail:")

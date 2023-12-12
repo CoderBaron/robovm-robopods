@@ -80,8 +80,8 @@ import org.robovm.apple.uikit.*;
     public native void logout();
     @Method(selector = "clearAllModelsFromStores")
     public native void clearAllModelsFromStores();
-    @Method(selector = "getTags")
-    public native NSDictionary<NSString, NSString> getTags();
+    @Method(selector = "getTagsInternal")
+    public native NSDictionary<NSString, NSString> getTagsInternal();
     @Method(selector = "setLocationWithLatitude:longitude:")
     public native void setLocation(float latitude, float longitude);
     @Method(selector = "sendPurchases:")
@@ -124,6 +124,8 @@ import org.robovm.apple.uikit.*;
     public native void removeTag(String tag);
     @Method(selector = "removeTags:")
     public native void removeTags(NSArray<NSString> tags);
+    @Method(selector = "getTags")
+    public native NSDictionary<NSString, NSString> getTags();
     @Method(selector = "addEmail:")
     public native void addEmail(String email);
     @Method(selector = "removeEmail:")
