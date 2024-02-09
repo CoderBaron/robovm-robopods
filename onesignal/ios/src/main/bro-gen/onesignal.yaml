@@ -448,6 +448,9 @@ classes:
                 name: sendReceiveReceipt
             '-sendReceiveReceiptWithPlayerId:notificationId:appId:delay:successBlock:failureBlock:':
                 name: sendReceiveReceipt
+    OSPushSubscriptionImpl: { }
+    OSUserChangedState: { }
+    OSUserState: { }
 protocols:
     OSNotificationDisplayTypeDelegate:
         skip_adapter: true # only one method there
@@ -509,6 +512,10 @@ protocols:
             '-onJwtExpiredWithExpiredHandler:':
                 name: onJwtExpired
     OneSignalNotificationsDelegate: { }
+    OSUserStateObserver:
+        methods:
+            '-onUserStateDidChangeWithState:':
+                name: didChange
 functions:
     injectSelector:
         exclude: true

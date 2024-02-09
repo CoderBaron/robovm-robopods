@@ -38,7 +38,7 @@ import org.robovm.apple.uikit.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC13OneSignalUser24OneSignalUserManagerImpl")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/OneSignalUserManagerImpl/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements OneSignalNotificationsDelegate, OSPushSubscription, OSUser/*</implements>*/ {
+    /*<implements>*/implements OneSignalNotificationsDelegate, OSUser/*</implements>*/ {
 
     /*<ptr>*/public static class OneSignalUserManagerImplPtr extends Ptr<OneSignalUserManagerImpl, OneSignalUserManagerImplPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(OneSignalUserManagerImpl.class); }/*</bind>*/
@@ -49,26 +49,24 @@ import org.robovm.apple.uikit.*;
     protected OneSignalUserManagerImpl(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "onesignalId")
-    public native String getOnesignalId();
     @Property(selector = "pushSubscriptionId")
     public native String getPushSubscriptionId();
     @Property(selector = "language")
     public native String getLanguage();
+    @Property(selector = "pushSubscriptionImpl")
+    public native OSPushSubscriptionImpl getPushSubscriptionImpl();
     @Property(selector = "requiresUserAuth")
     public native boolean requiresUserAuth();
     @Property(selector = "setRequiresUserAuth:")
     public native void setRequiresUserAuth(boolean v);
-    @Property(selector = "id")
-    public native String getId();
-    @Property(selector = "token")
-    public native String getToken();
-    @Property(selector = "optedIn")
-    public native boolean isOptedIn();
     @Property(selector = "User")
     public native OSUser getUser();
     @Property(selector = "pushSubscription")
     public native OSPushSubscription getPushSubscription();
+    @Property(selector = "externalId")
+    public native String getExternalId();
+    @Property(selector = "onesignalId")
+    public native String getOnesignalId();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -98,16 +96,12 @@ import org.robovm.apple.uikit.*;
     public native void updateSession(NSNumber sessionCount, NSNumber sessionTime, boolean refreshDeviceMetadata, boolean sendImmediately, @Block Runnable onSuccess, @Block Runnable onFailure);
     @Method(selector = "runBackgroundTasks")
     public native void runBackgroundTasks();
-    @Method(selector = "addObserver:")
-    public native void addObserver(OSPushSubscriptionObserver observer);
-    @Method(selector = "removeObserver:")
-    public native void removeObserver(OSPushSubscriptionObserver observer);
-    @Method(selector = "optIn")
-    public native void optIn();
-    @Method(selector = "optOut")
-    public native void optOut();
     @Method(selector = "onJwtExpiredWithExpiredHandler:")
     public native void onJwtExpired(@Block("(,@Block)") VoidBlock2<NSString, VoidBlock1<NSString>> expiredHandler);
+    @Method(selector = "addObserver:")
+    public native void addObserver(OSUserStateObserver observer);
+    @Method(selector = "removeObserver:")
+    public native void removeObserver(OSUserStateObserver observer);
     @Method(selector = "addAliasWithLabel:id:")
     public native void addAlias(String label, String id);
     @Method(selector = "addAliases:")

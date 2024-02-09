@@ -48,9 +48,17 @@ import org.robovm.apple.uikit.*;
     /*<properties>*/
     @NotImplemented("pushSubscription")
     public OSPushSubscription getPushSubscription() { return null; }
+    @NotImplemented("onesignalId")
+    public String getOnesignalId() { return null; }
+    @NotImplemented("externalId")
+    public String getExternalId() { return null; }
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @NotImplemented("addObserver:")
+    public void addObserver(OSUserStateObserver observer) {}
+    @NotImplemented("removeObserver:")
+    public void removeObserver(OSUserStateObserver observer) {}
     @NotImplemented("addAliasWithLabel:id:")
     public void addAlias(String label, String id) {}
     @NotImplemented("addAliases:")
