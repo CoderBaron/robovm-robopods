@@ -54,10 +54,6 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "casExchange")
-    public static native String casExchange();
-    @Method(selector = "lastPageAd")
-    public static native String lastPageAd();
     @Method(selector = "crossPromo")
     public static native String crossPromo();
     @Method(selector = "googleAds")
@@ -90,14 +86,16 @@ import org.robovm.apple.coreanimation.*;
     public static native String pangle();
     @Method(selector = "dtExchange")
     public static native String dtExchange();
+    @Method(selector = "bigo")
+    public static native String bigo();
     @Method(selector = "hyprMX")
     public static native String hyprMX();
     @Method(selector = "smaato")
     public static native String smaato();
-    @Method(selector = "bigo")
-    public static native String bigo();
-    @Method(selector = "bidMachine")
-    public static native String bidMachine();
+    @Method(selector = "dspExchange")
+    public static native String dspExchange();
+    @Method(selector = "lastPageAd")
+    public static native String lastPageAd();
     @Method(selector = "adMob")
     public static native String adMob();
     @Method(selector = "facebookAN")
@@ -106,14 +104,14 @@ import org.robovm.apple.coreanimation.*;
     public static native String fyber();
     @Method(selector = "digitalTurbine")
     public static native String digitalTurbine();
+    @Method(selector = "casExchange")
+    public static native String casExchange();
+    @Method(selector = "bidMachine")
+    public static native String bidMachine();
     @Method(selector = "adColony")
     public static native String adColony();
     @Method(selector = "tapjoy")
     public static native String tapjoy();
-    @Method(selector = "max")
-    public static native String max();
-    @Method(selector = "fairBid")
-    public static native String fairBid();
     @Method(selector = "facebookAdvertiserTracking")
     public static native String facebookAdvertiserTracking();
     @Method(selector = "facebookDataProcessing")

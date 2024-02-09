@@ -308,7 +308,7 @@ typedef SWIFT_ENUM_NAMED(NSInteger, CASNetworkId, "AdNetworkId", open) {
   CASNetworkIdBidMachine = 20,
   CASNetworkIdMintegral = 23,
   CASNetworkIdPangle = 24,
-  CASNetworkIdCASExchange = 30,
+  CASNetworkIdDSPExchange = 30,
   CASNetworkIdLastPageAd = 31,
 };
 
@@ -993,10 +993,6 @@ SWIFT_CLASS_NAMED("CASNativeView")
 
 SWIFT_CLASS_NAMED("CASNetwork")
 @interface CASNetwork : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull casExchange;)
-+ (NSString * _Nonnull)casExchange SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull lastPageAd;)
-+ (NSString * _Nonnull)lastPageAd SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull crossPromo;)
 + (NSString * _Nonnull)crossPromo SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull googleAds;)
@@ -1029,14 +1025,16 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (NSString * _Nonnull)pangle SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull dtExchange;)
 + (NSString * _Nonnull)dtExchange SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull bigo;)
++ (NSString * _Nonnull)bigo SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull hyprMX;)
 + (NSString * _Nonnull)hyprMX SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull smaato;)
 + (NSString * _Nonnull)smaato SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull bigo;)
-+ (NSString * _Nonnull)bigo SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull bidMachine;)
-+ (NSString * _Nonnull)bidMachine SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull dspExchange;)
++ (NSString * _Nonnull)dspExchange SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull lastPageAd;)
++ (NSString * _Nonnull)lastPageAd SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull adMob;)
 + (NSString * _Nonnull)adMob SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull facebookAN;)
@@ -1045,14 +1043,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (NSString * _Nonnull)fyber SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull digitalTurbine;)
 + (NSString * _Nonnull)digitalTurbine SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull casExchange;)
++ (NSString * _Nonnull)casExchange SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull bidMachine SWIFT_DEPRECATED_MSG("No longer supported");)
++ (NSString * _Nonnull)bidMachine SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull adColony SWIFT_DEPRECATED_MSG("No longer supported");)
 + (NSString * _Nonnull)adColony SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull tapjoy SWIFT_DEPRECATED_MSG("No longer supported");)
 + (NSString * _Nonnull)tapjoy SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull max SWIFT_DEPRECATED_MSG("No longer supported");)
-+ (NSString * _Nonnull)max SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull fairBid SWIFT_DEPRECATED_MSG("No longer supported");)
-+ (NSString * _Nonnull)fairBid SWIFT_WARN_UNUSED_RESULT;
 /// Advertising Tracking Enabled for Audience Network
 /// Set the <code>FBAdSettings.setAdvertiserTrackingEnabled</code> flag.
 /// The setAdvertiserTrackingEnabled “1” flag allows you to inform Audience Network whether to use the data to deliver personalized ads in line with your own legal obligations,

@@ -60,7 +60,7 @@ public enum /*<name>*/CASNetworkId/*</name>*/ implements ValuedEnum {
     BidMachine(20L),
     Mintegral(23L),
     Pangle(24L),
-    CASExchange(30L),
+    DSPExchange(30L),
     LastPageAd(31L);
     /*</values>*/
 
