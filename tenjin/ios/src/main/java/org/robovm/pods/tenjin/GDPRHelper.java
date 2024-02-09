@@ -37,29 +37,25 @@ import org.robovm.apple.dispatch.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9TenjinSDK16TenjinDatasource")/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/TenjinDatasource/*</name>*/ 
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9TenjinSDK10GDPRHelper")/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/GDPRHelper/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class TenjinDatasourcePtr extends Ptr<TenjinDatasource, TenjinDatasourcePtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(TenjinDatasource.class); }/*</bind>*/
+    /*<ptr>*/public static class GDPRHelperPtr extends Ptr<GDPRHelper, GDPRHelperPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(GDPRHelper.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public TenjinDatasource() {}
-    protected TenjinDatasource(Handle h, long handle) { super(h, handle); }
-    protected TenjinDatasource(SkipInit skipInit) { super(skipInit); }
+    public GDPRHelper() {}
+    protected GDPRHelper(Handle h, long handle) { super(h, handle); }
+    protected GDPRHelper(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "setCacheEventsSetting:")
-    public static native void setCacheEventsSetting(boolean isCacheEventsEnabled);
-    @Method(selector = "getCacheEventsSetting")
-    public static native boolean getCacheEventsSetting();
-    @Method(selector = "getAnalyticsInstallationId")
-    public static native String getAnalyticsInstallationId();
+    @Method(selector = "optIn")
+    public native boolean optIn();
     /*</methods>*/
 }

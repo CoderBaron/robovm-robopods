@@ -146,6 +146,8 @@ import org.robovm.apple.dispatch.*;
     public static native void optOutParams(NSArray<?> params);
     @Method(selector = "optInParams:")
     public static native void optInParams(NSArray<?> params);
+    @Method(selector = "optInOutUsingCMP")
+    public static native boolean optInOutUsingCMP();
     @Method(selector = "appendAppSubversion:")
     public static native void appendAppSubversion(NSNumber subversion);
     /**
@@ -172,6 +174,8 @@ import org.robovm.apple.dispatch.*;
     public static native String getCustomerUserId();
     @Method(selector = "setCacheEventSetting:")
     public static native void setCacheEventSetting(boolean isCacheEventsEnabled);
+    @Method(selector = "getAnalyticsInstallationId")
+    public static native String getAnalyticsInstallationId();
     @Method(selector = "verboseLogs")
     public static native void verboseLogs();
     @Method(selector = "debugLogs")
