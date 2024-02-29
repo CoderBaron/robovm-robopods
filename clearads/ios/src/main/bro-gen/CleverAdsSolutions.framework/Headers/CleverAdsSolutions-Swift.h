@@ -294,7 +294,6 @@ typedef SWIFT_ENUM_NAMED(NSInteger, CASNetworkId, "AdNetworkId", open) {
   CASNetworkIdUnityAds = 4,
   CASNetworkIdAppLovin = 5,
   CASNetworkIdSuperAwesome = 6,
-  CASNetworkIdAdColony = 8,
   CASNetworkIdAudienceNetwork = 9,
   CASNetworkIdInMobi = 10,
   CASNetworkIdDTExchange = 11,
@@ -305,7 +304,7 @@ typedef SWIFT_ENUM_NAMED(NSInteger, CASNetworkId, "AdNetworkId", open) {
   CASNetworkIdHyprMX = 16,
   CASNetworkIdSmaato = 18,
   CASNetworkIdBigo = 19,
-  CASNetworkIdBidMachine = 20,
+  CASNetworkIdMadex = 21,
   CASNetworkIdMintegral = 23,
   CASNetworkIdPangle = 24,
   CASNetworkIdDSPExchange = 30,
@@ -1027,6 +1026,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (NSString * _Nonnull)dtExchange SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull bigo;)
 + (NSString * _Nonnull)bigo SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull madex;)
++ (NSString * _Nonnull)madex SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull hyprMX;)
 + (NSString * _Nonnull)hyprMX SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull smaato;)
@@ -1051,28 +1052,27 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (NSString * _Nonnull)adColony SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull tapjoy SWIFT_DEPRECATED_MSG("No longer supported");)
 + (NSString * _Nonnull)tapjoy SWIFT_WARN_UNUSED_RESULT;
-/// Advertising Tracking Enabled for Audience Network
+/// Meta Audience Network  Advertising Tracking Enabled
 /// Set the <code>FBAdSettings.setAdvertiserTrackingEnabled</code> flag.
 /// The setAdvertiserTrackingEnabled “1” flag allows you to inform Audience Network whether to use the data to deliver personalized ads in line with your own legal obligations,
 /// platform terms, and commitments you’ve made to your users.
 /// If the flag is set to “0” we will not be able to deliver personalized ads.
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull facebookAdvertiserTracking;)
 + (NSString * _Nonnull)facebookAdvertiserTracking SWIFT_WARN_UNUSED_RESULT;
-/// Facebook Data Processing Options for Users in California
-/// Set the <code>FBAdSettings.setDataProcessingOptions</code> flag.
-/// Values:
+/// Meta Audience Network Data Processing Options for US Users
+/// Limited Data Use is a data processing option that gives you more control over how your data
+/// is used in Meta’s systems and better supports your compliance efforts with various US state
+/// privacy regulations. To utilize this feature, you must proactively enable Limited Data Use.
+/// Set the <code>FBAdSettings.setDataProcessingOptions</code> flag values:
 /// <ul>
 ///   <li>
-///     “”  - To explicitly not enable Limited Data Use (LDU) mode
+///     “” (empty string)  - To explicitly not enable Limited Data Use (LDU) mode
 ///   </li>
 ///   <li>
 ///     “LDU”  - To enable LDU mode using geolocation
 ///   </li>
-///   <li>
-///     “LDU_1_1000”  - To enable LDU for users and specify user geography
-///   </li>
 /// </ul>
-/// For information about how to implement Facebook’s Limited Data Use flag in California, visit Facebook’s developer documentation.
+/// Visit Meta’s developer documentation for details:
 /// https://developers.facebook.com/docs/marketing-apis/data-processing-options
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull facebookDataProcessing;)
 + (NSString * _Nonnull)facebookDataProcessing SWIFT_WARN_UNUSED_RESULT;

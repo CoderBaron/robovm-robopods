@@ -2,7 +2,7 @@
 //  CASInternalUtils.h
 //  CleverAdsSolutions
 //
-//  Copyright © 2023 Clever Ads Solutions. All rights reserved.
+//  Copyright © 2024 CleverAdsSolutions LTD, CAS.AI. All rights reserved.
 //
 
 #ifndef CASInternalUtils_h

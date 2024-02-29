@@ -88,6 +88,8 @@ import org.robovm.apple.coreanimation.*;
     public static native String dtExchange();
     @Method(selector = "bigo")
     public static native String bigo();
+    @Method(selector = "madex")
+    public static native String madex();
     @Method(selector = "hyprMX")
     public static native String hyprMX();
     @Method(selector = "smaato")
