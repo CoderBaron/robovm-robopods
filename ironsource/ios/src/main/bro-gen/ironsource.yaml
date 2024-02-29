@@ -14,8 +14,15 @@ enums:
     ISLoadWhileShowSupportState: {prefix: LOAD_WHILE_SHOW_}
     ISAdapterErrors: {prefix: ISAdapterError}
     ISErrorCode: {}
+    ISAdOptionsPosition: { }
+    ISMetaDataValueTypes: { prefix: META_DATA_VALUE_ }
+    ISNLogLevel: { prefix: ISNLog }
+    ISNLogTag: { prefix: ISN_TAG_ }
 
 private_typedefs:
+    "MessageToNative *": NSObject
+    "MessageToController *": NSObject
+    "CallbackToNative *": NSObject
 
 classes:
     ISAdData:
@@ -46,6 +53,8 @@ classes:
                 name: init
             '-initWithDescription:width:height:':
                 name: init
+            '+getMaximalAdaptiveHeightWithWidth:':
+                name: getMaximalAdaptiveHeight
     ISBannerView: {}
     ISBaseAdAdapter:
         methods:
@@ -190,6 +199,129 @@ classes:
                 name: init
     LevelPlayNativeAdBuilder: { }
 
+    ISAdapterNativeAdData: { }
+    ISBaseAdUnitAdapter:
+        methods:
+            '-getStringValueFromAdapterConfig:forKey:':
+                name: getStringValueFromAdapterConfig
+            '-getMissingParamErrorStringWithKey:':
+                name: getMissingParamErrorString
+    ISBaseAdapter:
+        methods:
+            '-earlyInitWithAdapterConfig:':
+                name: earlyInit
+            '-getAdaptiveHeightWithWidth:':
+                name: getAdaptiveHeight
+            '-errorForMissingCredentialFieldWithName:':
+                name: errorForMissingCredentialField
+            '-setMetaDataWithKey:andValues:':
+                name: setMetaData
+    ISBaseBannerAdapter: { }
+    ISBaseInterstitialAdapter: { }
+    ISBaseNativeAdAdapter:
+        methods:
+            '-getNativeAdPropertiesWithAdapterConfig:':
+                name: getNativeAdProperties
+    ISBaseRewardedVideoAdapter: { }
+    ISConcurrentMutableDictionary:
+        methods:
+            '-initCommon':
+                static_constructor_name: createCommon
+            '-initWithCapacity:':
+                name: init
+            '-initWithContentsOfFile:':
+                name: init
+            '-initWithContentsOfURL:':
+                name: init
+            '-initWithCoder:':
+                name: init
+            '-initWithDictionary:':
+                name: init
+            '-setObject:forKey:':
+                name: setObject
+            '+dictionaryWithDictionary:':
+                exclude: true
+    ISConcurrentMutableSet:
+        methods:
+            '-initCommon':
+                static_constructor_name: createCommon
+            '-initWithCapacity:':
+                name: init
+            '-initWithCoder:':
+                name: init
+            '-initWithSet:':
+                name: init
+            '-initWithArray:':
+                name: init
+            '+setWithSet:':
+                exclude: true
+    ISContainerParams:
+        methods:
+            '-initWithWidth:height:':
+                name: init
+    ISIronSourceAdapter: { }
+    ISLog: { }
+    ISLoggerManager:
+        methods:
+            '-setLoggingLevels:publisher:console:':
+                name: setLoggingLevels
+            '-log:level:tag:':
+                name: log
+            '-logFromError:level:tag:':
+                name: log
+            '-logFromException:level:tag:':
+                name: log
+            '-logFromException:message:level:tag:':
+                name: log
+            '-dynamicLog:message:level:withTag:':
+                name: dynamicLog
+            '-automationLog:level:withTag:':
+                name: automationLog
+    ISMetaData:
+        methods:
+            '-initWithKey:andValues:':
+                name: init
+            '-initWithKey:values:andValuesType:':
+                name: init
+    ISMetaDataUtils:
+        methods:
+            '+formatValue:forType:':
+                name: formatValue
+            '+formatMetaDataKey:andValues:':
+                name: formatMetaDataKey
+            '+isMetaDataKeyValid:error:':
+                name: isMetaDataKeyValid
+            '+isMetaDataValuesValid:error:':
+                name: isMetaDataValuesValid
+            '+isValidCCPAMetaDataWithKey:andValue:':
+                name: isValidCCPAMetaData
+            '+isValidMetaDataWithKey:flag:andValue:':
+                name: isValidMetaData
+    ISNAdViewsManagerSwiftFacade: { }
+    ISNControllerManagerSwiftFacade:
+        methods:
+            '-sendMessage:callbackHandler:':
+                name: sendMessage
+            '-setControllerMessageListenerWithAdId:listener:':
+                name: setControllerMessageListener
+            '-removeControllerMessageListenerWithAdId:':
+                name: removeControllerMessageListener
+    ISNEvent:
+        methods:
+            '-initWithEventId:eventName:':
+                name: init
+    ISNEventTrackerWrapper: { }
+    ISNSupersonicAdsPublisherSwiftFacade: { }
+    ISNativeAdProperties:
+        methods:
+            '-initWithAdapterConfig:':
+                name: init
+    SupersonicLogManager:
+        methods:
+            '-log:withLevel:withTag:':
+                name: log
+            '-logWithNetworkPrefix:withLevel:withTag:':
+                name: logWithNetworkPrefix
 protocols:
     ISAdapterAdDelegate:
         methods:
@@ -376,6 +508,159 @@ protocols:
                 name: didFailToLoad
     ISNativeAdViewBinderProtocol: { }
     LevelPlayNativeAdDelegate: { }
+    ISAdUnitAdapterProtocol: { }
+    ISAppStoreErrorDelegate: { }
+    ISBannerAdapterDelegate:
+        methods:
+            '-adapterBannerInitFailedWithError:':
+                name: adapterBannerInitFailed
+            '-adapterBannerDidFailToLoadWithError:':
+                name: adapterBannerDidFailToLoad
+    ISBannerAdapterProtocol:
+        methods:
+            '-destroyBannerWithAdapterConfig:':
+                name: destroyBanner
+            '-getAdaptiveHeightWithWidth:':
+                name: getAdaptiveHeight
+            '-initBannerWithUserId:adapterConfig:delegate:':
+                name: initBanner
+            '-loadBannerWithAdapterConfig:adData:viewController:size:delegate:':
+                name: loadBanner
+            '-getBannerBiddingDataWithAdapterConfig:adData:':
+                name: getBannerBiddingData
+            '-collectBannerBiddingDataWithAdapterConfig:adData:delegate:':
+                name: collectBannerBiddingData
+            '-initBannerForBiddingWithUserId:adapterConfig:delegate:':
+                name: initBannerForBidding
+            '-loadBannerForBiddingWithAdapterConfig:adData:serverData:viewController:size:delegate:':
+                name: loadBannerForBidding
+    ISBiddingDataAdapterProtocol: { }
+    ISBiddingDataDelegate:
+        methods:
+            '-successWithBiddingData:':
+                name: success
+            '-failureWithError:':
+                name: failure
+    ISInterstitialAdapterDelegate:
+        methods:
+            '-adapterInterstitialInitFailedWithError:':
+                name: adapterInterstitialInitFailed
+            '-adapterInterstitialDidFailToLoadWithError:':
+                name: adapterInterstitialDidFailToLoad
+            '-adapterInterstitialDidFailToShowWithError:':
+                name: adapterInterstitialDidFailToShow
+    ISInterstitialAdapterProtocol:
+        methods:
+            '-showInterstitialWithViewController:adapterConfig:delegate:':
+                name: showInterstitial
+            '-hasInterstitialWithAdapterConfig:':
+                name: hasInterstitial
+            '-initInterstitialWithUserId:adapterConfig:delegate:':
+                name: initInterstitial
+            '-loadInterstitialWithAdapterConfig:adData:delegate:':
+                name: loadInterstitial
+            '-getInterstitialBiddingDataWithAdapterConfig:adData:':
+                name: getInterstitialBiddingData
+            '-collectInterstitialBiddingDataWithAdapterConfig:adData:delegate:':
+                name: collectInterstitialBiddingData
+            '-initInterstitialForBiddingWithUserId:adapterConfig:delegate:':
+                name: initInterstitialForBidding
+            '-loadInterstitialForBiddingWithAdapterConfig:adData:serverData:delegate:':
+                name: loadInterstitialForBidding
+    ISNAdViewsManagerSwiftFacade:
+        name: ISNAdViewsManagerSwiftFacadeProtocol
+    ISNAppStoreVCRootViewDelegate:
+        methods:
+            '-didReceiveOutOfAppStoreTouchWithType:':
+                name: didReceiveOutOfAppStoreTouch
+    ISNControllerMessageListener:
+        methods:
+            '-onReceiveWithMessage:':
+                name: onReceive
+    ISNEventTrackerInterface:
+        methods:
+            '-logEvent:data:':
+                name: logEvent
+    ISNativeAdAdapterDelegate:
+        methods:
+            '-adapterNativeAdInitFailedWithError:':
+                name: adapterNativeAdInitFailed
+            '-adapterNativeAdDidLoadWithAdData:adViewBinder:':
+                name: adapterNativeAdDidLoad
+            '-adapterNativeAdDidFailToLoadWithError:':
+                name: adapterNativeAdDidFailToLoad
+    ISNativeAdAdapterProtocol:
+        methods:
+            '-initNativeAdsWithUserId:adapterConfig:delegate:':
+                name: initNativeAds
+            '-initNativeAdForBiddingWithUserId:adapterConfig:delegate:':
+                name: initNativeAdForBidding
+            '-loadNativeAdWithAdapterConfig:adData:viewController:delegate:':
+                name: loadNativeAdWithAdapterConfig
+            '-loadNativeAdForBiddingWithAdapterConfig:adData:serverData:viewController:delegate:':
+                name: loadNativeAdForBidding
+            '-destroyNativeAdWithAdapterConfig:':
+                name: destroyNativeAd
+            '-getNativeAdBiddingDataWithAdapterConfig:adData:':
+                name: getNativeAdBiddingData
+            '-collectNativeAdBiddingDataWithAdapterConfig:adData:delegate:':
+                name: collectNativeAdBiddingData
+    ISNativeAdProtocol: { }
+    ISNetworkInitCallbackProtocol: { }
+    ISOfferwallAdapterDelegate:
+        methods:
+            '-adapterOfferwallHasChangedAvailability:withError:':
+                name: adapterOfferwallHasChangedAvailability
+            '-adapterOfferwallDidFailToShowWithError:':
+                name: adapterOfferwallDidFailToShow
+            '-adapterOfferwallDidFailToReceiveCreditsWithError:':
+                name: adapterOfferwallDidFailToReceiveCredits
+    ISOfferwallAdapterProtocol:
+        methods:
+            '-initOfferWallWithUserId:adapterConfig:delegate:':
+                name: initOfferWall
+            '-showOfferwallWithViewController:placement:':
+                name: showOfferwall
+            '-getOfferWallCreditsWithUserId:':
+                name: getOfferWallCredits
+    ISReleaseMemoryAdapterProtocol:
+        methods:
+            '-releaseMemoryWithAdapterConfig:':
+                name: releaseMemory
+    ISRewardedVideoAdapterDelegate:
+        methods:
+            '-adapterRewardedVideoDidFailToLoadWithError:':
+                name: adapterRewardedVideoDidFailToLoad
+            '-adapterRewardedVideoDidFailToShowWithError:':
+                name: adapterRewardedVideoDidFailToShow
+    ISRewardedVideoAdapterProtocol:
+        methods:
+            '-hasRewardedVideoWithAdapterConfig:':
+                name: hasRewardedVideo
+            '-showRewardedVideoWithViewController:adapterConfig:delegate:':
+                name: showRewardedVideo
+            '-initAndLoadRewardedVideoWithUserId:adapterConfig:adData:delegate:':
+                name: initAndLoadRewardedVideo
+            '-initRewardedVideoForCallbacksWithUserId:adapterConfig:delegate:':
+                name: initRewardedVideoForCallbacks
+            '-loadRewardedVideoWithAdapterConfig:adData:delegate:':
+                name: loadRewardedVideo
+            '-getRewardedVideoBiddingDataWithAdapterConfig:adData:':
+                name: getRewardedVideoBiddingData
+            '-collectRewardedVideoBiddingDataWithAdapterConfig:adData:delegate:':
+                name: collectRewardedVideoBiddingData
+            '-loadRewardedVideoForBiddingWithAdapterConfig:adData:serverData:delegate:':
+                name: loadRewardedVideoForBidding
+            '-initRewardedVideoForDemandOnlyWithUserId:adapterConfig:delegate:':
+                name: initRewardedVideoForDemandOnly
+            '-loadRewardedVideoForDemandOnlyWithAdapterConfig:delegate:':
+                name: loadRewardedVideoForDemandOnly
+            '-loadRewardedVideoForDemandOnlyForBiddingWithAdapterConfig:serverData:delegate:':
+                name: loadRewardedVideoForDemandOnlyForBidding
+    ISSetAPSDataProtocol:
+        methods:
+            '-setAPSDataWithAdUnit:apsData:':
+                name: setAPSData
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):
@@ -411,6 +696,13 @@ constants:
         class: ISError
         static_class: Consts
         name: '#{g[0]}'
+    kMetaData(.*):
+        class: ISMetaData
+        static_class: Consts
+        name: '#{g[0]}'
+    kAdOptionsPosKey:
+        class: ISAdOptionsPosition
+        name: getAdOptionsPosKey
 
     kEmptyString:
         exclude: true

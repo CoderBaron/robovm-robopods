@@ -71,6 +71,10 @@ import org.robovm.apple.coreanimation.*;
     public native boolean isAdaptive();
     @Property(selector = "setAdaptive:")
     public native void setAdaptive(boolean v);
+    @Property(selector = "containerParams")
+    public native ISContainerParams getContainerParams();
+    @Property(selector = "setContainerParams:")
+    public native void setContainerParams(ISContainerParams v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -80,5 +84,7 @@ import org.robovm.apple.coreanimation.*;
     protected native @Pointer long init(String description, @MachineSizedSInt long width, @MachineSizedSInt long height);
     @Method(selector = "isSmart")
     public native boolean isSmart();
+    @Method(selector = "getMaximalAdaptiveHeightWithWidth:")
+    public static native @MachineSizedFloat double getMaximalAdaptiveHeight(@MachineSizedFloat double width);
     /*</methods>*/
 }

@@ -143,5 +143,9 @@ import org.robovm.apple.coreanimation.*;
     public native String demandSourceName();
     @Method(selector = "isOneFlow")
     public native NSNumber isOneFlow();
+    @Method(selector = "hasConsentCMP")
+    public native boolean hasConsentCMP();
+    @Method(selector = "getConsentCMP")
+    public native boolean getConsentCMP();
     /*</methods>*/
 }
