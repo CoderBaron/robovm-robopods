@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.safariservices.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -55,7 +56,7 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "showCMPForExistingUserWithCompletion:")
-    public native void showCMPForExistingUserWithCompletion$(@Block VoidBlock1<ALCMPError> completion);
+    public native void showCMPForExistingUser(@Block VoidBlock1<ALCMPError> completion);
     @Method(selector = "hasSupportedCMP")
     public native boolean hasSupportedCMP();
     /*</methods>*/

@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.safariservices.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -56,8 +57,6 @@ import org.robovm.apple.coreanimation.*;
     public static native MAAdFormat getMrec();
     @Property(selector = "leader")
     public static native MAAdFormat getLeader();
-    @Property(selector = "crossPromo")
-    public static native MAAdFormat getCrossPromo();
     @Property(selector = "interstitial")
     public static native MAAdFormat getInterstitial();
     @Property(selector = "appOpen")

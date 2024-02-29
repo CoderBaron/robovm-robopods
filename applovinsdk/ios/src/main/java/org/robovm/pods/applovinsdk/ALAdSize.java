@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.safariservices.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -58,8 +59,6 @@ import org.robovm.apple.coreanimation.*;
     public static native ALAdSize getMrec();
     @Property(selector = "interstitial")
     public static native ALAdSize getInterstitial();
-    @Property(selector = "crossPromo")
-    public static native ALAdSize getCrossPromo();
     @Property(selector = "native")
     public static native ALAdSize getNative();
     /*</properties>*/

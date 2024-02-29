@@ -49,6 +49,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Set debug user geography. You may use this to test CMP flow by setting this to @c ALConsentFlowUserGeographyGDPR.
  *
+ * The flow would only be shown to new users. If you wish to test the flow after completing the CMP prompt, you would need to delete and re-install the app.
+ *
  * NOTE: The debug geography is used only when the app is in debug mode.
  */
 @property (nonatomic, assign) ALConsentFlowUserGeography debugUserGeography;
@@ -93,8 +95,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, getter=isCreativeDebuggerEnabled) BOOL creativeDebuggerEnabled;
 
 /**
- * Enable devices to receive test ads by passing in the advertising identifier (IDFA) of each test device.
- * Refer to AppLovin logs for the IDFA of your current device.
+ * Enable devices to receive test ads by passing in the advertising identifier (IDFA or IDFV) of each test device.
+ * Refer to AppLovin logs for the IDFA or IDFV of your current device.
  */
 @property (nonatomic, copy) NSArray<NSString *> *testDeviceAdvertisingIdentifiers;
 

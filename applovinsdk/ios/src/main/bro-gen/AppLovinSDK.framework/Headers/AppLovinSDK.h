@@ -13,6 +13,7 @@
 #import <AppLovinSDK/ALAdType.h>
 #import <AppLovinSDK/ALAdView.h>
 #import <AppLovinSDK/ALAtomicBoolean.h>
+#import <AppLovinSDK/ALAtomicReference.h>
 #import <AppLovinSDK/ALCCommunicator.h>
 #import <AppLovinSDK/ALCEntity.h>
 #import <AppLovinSDK/ALCMessage.h>

@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.safariservices.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -86,6 +87,14 @@ import org.robovm.apple.coreanimation.*;
     public native boolean isAutoload();
     @Property(selector = "setAutoloadEnabled:")
     public native void setAutoload(boolean v);
+    @Property(selector = "prewarmingToken")
+    public native NSObject getPrewarmingToken();
+    @Property(selector = "setPrewarmingToken:")
+    public native void setPrewarmingToken(NSObject v);
+    @Property(selector = "safariViewControllerDelegate")
+    public native SFSafariViewControllerDelegate getSafariViewControllerDelegate();
+    @Property(selector = "setSafariViewControllerDelegate:")
+    public native void setSafariViewControllerDelegate(SFSafariViewControllerDelegate v);
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();

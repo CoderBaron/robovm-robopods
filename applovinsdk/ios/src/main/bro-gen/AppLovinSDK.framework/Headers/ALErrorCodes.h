@@ -67,6 +67,11 @@
 #define kALErrorCodeUnableToPrecacheVideoResources -202
 
 /**
+ * An attempt to cache an HTML resource to the filesystem failed; the device may be out of space.
+ */
+#define kALErrorCodeUnableToPrecacheHTMLResources -203
+
+/**
  * AppLovin servers have returned an invalid response.
  */
 #define kALErrorCodeInvalidResponse -800

@@ -1,5 +1,5 @@
 package: org.robovm.pods.applovinsdk
-include: [foundation, uikit, coregraphics, coreanimation]
+include: [foundation, uikit, coregraphics, coreanimation, safariservices]
 clang_args: ['-x', 'objective-c']
 framework: AppLovinSDK
 #exclude_deprecated: true
@@ -40,6 +40,8 @@ classes:
                 name: removeAdUpdateObserver
             '-adValueForKey:defaultValue:':
                 name: getAdValue
+            '-collectBidTokenWithCompletion:':
+                name: collectBidToken
     ALAdSize:
         methods:
             '+sizeWithLabel:orDefault:':
@@ -47,6 +49,9 @@ classes:
                 name: create
     ALAdType: {}
     ALAdView:
+        properties:
+            'safariViewControllerDelegate':
+                type: SFSafariViewControllerDelegate
         methods:
             '-initWithSize:':
                 name: init
@@ -435,8 +440,14 @@ classes:
     ALCMPService:
         methods:
             '-showCMPForExistingUserWithCompletion:':
-                name: showCMPForExistingUserWithCompletion$
+                name: showCMPForExistingUser
     ALTermsAndPrivacyPolicyFlowSettings: { }
+    ALAtomicReference:
+        methods:
+            '-compareAndSet:update:':
+                name: compare
+            '-initWithValue:':
+                name: init
 protocols:
     ALAdDisplayDelegate:
         methods:

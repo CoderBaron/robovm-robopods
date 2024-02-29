@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.safariservices.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -59,6 +60,8 @@ import org.robovm.apple.coreanimation.*;
     public native void loadNextAd(ALAdSize adSize, ALAdLoadDelegate delegate);
     @Method(selector = "loadNextAdForZoneIdentifier:andNotify:")
     public native void loadNextAdForZoneIdentifier(String zoneIdentifier, ALAdLoadDelegate delegate);
+    @Method(selector = "collectBidTokenWithCompletion:")
+    public native void collectBidToken(@Block VoidBlock2<NSString, NSString> completion);
     @Method(selector = "loadNextAdForAdToken:andNotify:")
     public native void loadNextAdForAdToken(String adToken, ALAdLoadDelegate delegate);
     @Method(selector = "loadNextAdForZoneIdentifiers:andNotify:")

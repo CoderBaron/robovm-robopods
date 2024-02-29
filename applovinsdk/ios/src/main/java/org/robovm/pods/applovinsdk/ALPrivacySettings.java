@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.safariservices.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -72,5 +73,13 @@ import org.robovm.apple.coreanimation.*;
     public static native boolean isDoNotSell();
     @Method(selector = "isDoNotSellSet")
     public static native boolean isDoNotSellSet();
+    @Method(selector = "tcfVendorConsentStatusForIdentifier:")
+    public static native NSNumber tcfVendorConsentStatusForIdentifier(@MachineSizedSInt long vendorIdentifier);
+    @Method(selector = "additionalConsentStatusForIdentifier:")
+    public static native NSNumber additionalConsentStatusForIdentifier(@MachineSizedSInt long atpIdentifier);
+    @Method(selector = "purposeConsentStatusForIdentifier:")
+    public static native NSNumber purposeConsentStatusForIdentifier(@MachineSizedSInt long purposeIdentifier);
+    @Method(selector = "specialFeatureOptInStatusForIdentifier:")
+    public static native NSNumber specialFeatureOptInStatusForIdentifier(@MachineSizedSInt long specialFeatureIdentifier);
     /*</methods>*/
 }

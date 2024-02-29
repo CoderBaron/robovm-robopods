@@ -15,6 +15,7 @@
 @class ALSdk;
 @class ALAdSize;
 @class ALAdType;
+@class ALSFSafariViewControllerDelegate;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -71,6 +72,17 @@ NS_ASSUME_NONNULL_BEGIN
  * @code -[ALAdView loadNextAd] @endcode.
  */
 @property (nonatomic, assign, getter=isAutoloadEnabled, setter=setAutoloadEnabled:) BOOL autoload;
+
+/**
+ * @c SFSafariViewControllerPrewarmingToken object that corresponds to prewarmed URLs. Must keep a strong reference to this token as long as we expect the prewarmed connections to remain open.
+ * NOTE: Only available in iOS 15+.
+ */
+@property (nonatomic, strong, nullable) id /* SFSafariViewControllerPrewarmingToken */ prewarmingToken;
+
+/**
+ * @c ALSFSafariViewControllerDelegate object for @c SFSafariViewController callbacks.
+ */
+@property (nonatomic, strong, nullable) ALSFSafariViewControllerDelegate *safariViewControllerDelegate;
 
 /**
  * Sets extra info to pass to the SDK.
