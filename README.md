@@ -45,7 +45,7 @@ v1.38.0 - in development
 | [AppLovinSDK](applovinsdk/)     | 12.2.1  |
 | [Azure](azure/)                 | 3.1.4   |
 | [BranchMetrics](branchmetrics/) | 3.3.0   |
-| [Charts](charts/)               | 5.0.0   |
+| [Charts](charts/)               | 5.1.0   |
 | [ClearAds](clearads/)           | 3.5.6   |
 | [Facebook](facebook/)           | 16.3.1  |
 | [Firebase](firebase/)           | 10.21.0 |
