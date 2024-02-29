@@ -39,6 +39,7 @@
 #import "BNCServerInterface.h"
 #import "BNCServerRequestQueue.h"
 
+#import "BranchLogger.h"
 // Not used by Branch singleton public API
 //#import "BranchEvent.h"
 //#import "BranchScene.h"
@@ -46,7 +47,6 @@
 //#import "BranchQRCode.h"
 //#import "BNCConfig.h"
 //#import "NSError+Branch.h"
-//#import "BNCLog.h"
 //#import "BranchConstants.h"
 //#import "UIViewController+Branch.h"
 
@@ -564,9 +564,10 @@ extern NSString * __nonnull const BNCSpotlightFeature;
 ///--------------------
 
 /**
- Enable debug messages to NSLog.
+ Enable debug messages to os_log.
  */
 - (void)enableLogging;
+- (void)enableLoggingAtLevel:(BranchLogLevel)logLevel withCallback:(nullable BranchLogCallback)callback;
 
 /**
  Send requests to EU endpoints.
@@ -576,13 +577,10 @@ extern NSString * __nonnull const BNCSpotlightFeature;
 - (void)useEUEndpoints;
 
 /**
- setDebug is deprecated and all functionality has been disabled.
- 
- If you wish to enable logging, please invoke enableLogging.
-
- If you wish to simulate installs, please see add a Test Device (https://help.branch.io/using-branch/docs/adding-test-devices) then reset your test device's data (https://help.branch.io/using-branch/docs/adding-test-devices#section-resetting-your-test-device-data).
- */
-- (void)setDebug __attribute__((deprecated(("setDebug is replaced by enableLogging and test devices. https://help.branch.io/using-branch/docs/adding-test-devices"))));
+Sets a custom base URL for all calls to the Branch API.
+@param url  Base URL that the Branch API will use.
+*/
++ (void)setAPIUrl:(NSString *)url;
 
 /**
   @brief        Use the `validateSDKIntegration` method as a debugging aid to assure that you've
@@ -644,7 +642,7 @@ extern NSString * __nonnull const BNCSpotlightFeature;
 
             These are ICU standard regular expressions.
 */
-@property (copy, nullable) NSArray<NSString*>/*_Nullable*/* urlPatternsToIgnore;
+- (void)setUrlPatternsToIgnore:(NSArray<NSString *> *)urlsToIgnore;
 
 /**
  Checks the pasteboard (clipboard) for a Branch Link on App Install.
@@ -742,30 +740,6 @@ extern NSString * __nonnull const BNCSpotlightFeature;
 - (void)disableAdNetworkCallouts:(BOOL)disableCallouts;
 
 /**
- Specify that Branch should NOT use an invisible SFSafariViewController to attempt cookie-based matching upon install.
- If you call this method, we will fall back to using our pool of cookie-IDFA pairs for matching.
- */
-- (void)disableCookieBasedMatching __attribute__((deprecated(("Feature removed.  Did not work on iOS 11+"))));
-
-/**
- TL;DR: If you're using a version of the Facebook SDK that prevents application:didFinishLaunchingWithOptions: from
- returning YES/true when a Universal Link is clicked, you should enable this option.
-
- Long explanation: in application:didFinishLaunchingWithOptions: you should choose one of the following:
-
- 1. Always `return YES;`, and do *not* invoke `[[Branch getInstance] accountForFacebookSDKPreventingAppLaunch];`
- 2. Allow the Facebook SDK to determine whether `application:didFinishLaunchingWithOptions:` returns `YES` or `NO`,
-    and invoke `[[Branch getInstance] accountForFacebookSDKPreventingAppLaunch];`
-
- The reason for this second option is that the Facebook SDK will return `NO` if a Universal Link opens the app
- but that UL is not a Facebook UL. Some developers prefer not to modify
- `application:didFinishLaunchingWithOptions:` to always return `YES` and should use this method instead.
- */
-- (void)accountForFacebookSDKPreventingAppLaunch __attribute__((deprecated(("Please ensure application:didFinishLaunchingWithOptions: always returns YES/true instead of using this method. It will be removed in a future release."))));
-
-- (void)suppressWarningLogs __attribute__((deprecated(("suppressWarningLogs is deprecated and all functionality has been disabled. If you wish to turn off all logging, please invoke BNCLogSetDisplayLevel(BNCLogLevelNone)."))));
-
-/**
  For use by other Branch SDKs
  
  @param name Plugin name.  For example, Unity or React Native
@@ -789,16 +763,6 @@ extern NSString * __nonnull const BNCSpotlightFeature;
  @param value Object to be included in request metadata
  */
 - (void)setRequestMetadataKey:(NSString *)key value:(nullable id)value;
-
-- (void)enableDelayedInit __attribute__((deprecated(("No longer valid with new init process"))));
-
-- (void)disableDelayedInit __attribute__((deprecated(("No longer valid with new init process"))));
-
-- (nullable NSURL *)getUrlForOnboardingWithRedirectUrl:(nullable NSString *)redirectUrl __attribute__((deprecated(("Feature removed.  Did not work on iOS 11+"))));;
-
-- (void)resumeInit __attribute__((deprecated(("Feature removed.  Did not work on iOS 11+"))));
-
-- (void)setInstallRequestDelay:(NSInteger)installRequestDelay __attribute__((deprecated(("No longer valid with new init process"))));
 
 /**
  Disables the Branch SDK from tracking the user. This is useful for GDPR privacy compliance.
@@ -833,6 +797,16 @@ extern NSString * __nonnull const BNCSpotlightFeature;
  @param validityWindow -(NSTimeInterval) number of seconds for which referrer_gbraid will be valid starting from now.
  */
 + (void) setReferrerGbraidValidityWindow:(NSTimeInterval) validityWindow;
+
+/*
+ 
+ Sets the value of parameters required by Google Conversion APIs for DMA Compliance in EEA region.
+ 
+ @param eeaRegion -(BOOL) If European regulations, including the DMA, apply to this user and conversion.
+ @param adPersonalizationConsent - (BOOL) If End user has granted/denied ads personalization consent.
+ @param adUserDataUsageConsent - (BOOL) If User has granted/denied consent for 3P transmission of user level data for ads
+ */
++ (void) setDMAParamsForEEA:(BOOL) eeaRegion AdPersonalizationConsent:(BOOL) adPersonalizationConsent AdUserDataUsageConsent:(BOOL) adUserDataUsageConsent;
 
 #pragma mark - Session Item methods
 

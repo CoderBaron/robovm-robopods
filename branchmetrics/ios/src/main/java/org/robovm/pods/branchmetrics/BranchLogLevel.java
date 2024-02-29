@@ -40,29 +40,32 @@ import org.robovm.apple.storekit.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/BranchPluginSupport/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedUIntMarshaler.class)/*</annotations>*/
+public enum /*<name>*/BranchLogLevel/*</name>*/ implements ValuedEnum {
+    /*<values>*/
+    Verbose(0L),
+    Debug(1L),
+    Info(2L),
+    Warning(3L),
+    Error(4L);
+    /*</values>*/
 
-    /*<ptr>*/public static class BranchPluginSupportPtr extends Ptr<BranchPluginSupport, BranchPluginSupportPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(BranchPluginSupport.class); }/*</bind>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    public BranchPluginSupport() {}
-    protected BranchPluginSupport(Handle h, long handle) { super(h, handle); }
-    protected BranchPluginSupport(SkipInit skipInit) { super(skipInit); }
-    /*</constructors>*/
-    /*<properties>*/
-    
-    /*</properties>*/
-    /*<members>*//*</members>*/
-    /*<methods>*/
-    @Method(selector = "deviceDescription")
-    public native NSDictionary<NSString, NSString> deviceDescription();
-    @Method(selector = "instance")
-    public static native BranchPluginSupport instance();
-    @Method(selector = "setCDNBaseUrl:")
-    public static native void setCDNBaseUrl(String url);
-    /*</methods>*/
+    /*<methods>*//*</methods>*/
+
+    private final long n;
+
+    private /*<name>*/BranchLogLevel/*</name>*/(long n) { this.n = n; }
+    public long value() { return n; }
+    public static /*<name>*/BranchLogLevel/*</name>*/ valueOf(long n) {
+        for (/*<name>*/BranchLogLevel/*</name>*/ v : values()) {
+            if (v.n == n) {
+                return v;
+            }
+        }
+        throw new IllegalArgumentException("No constant with value " + n + " found in " 
+            + /*<name>*/BranchLogLevel/*</name>*/.class.getName());
+    }
 }

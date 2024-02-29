@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.robovm.pods.branchmetrics;
+package org.robovm.pods.applovinsdk;
 
 /*<imports>*/
 import java.io.*;
@@ -29,40 +29,43 @@ import org.robovm.rt.bro.annotation.*;
 import org.robovm.rt.bro.ptr.*;
 import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
-import org.robovm.apple.corespotlight.*;
-import org.robovm.apple.uniformtypeid.*;
-import org.robovm.apple.linkpresentation.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
-import org.robovm.apple.storekit.*;
+import org.robovm.apple.safariservices.*;
 /*</imports>*/
 
 /*<javadoc>*/
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/BranchPluginSupport/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/ALAtomicReference<T extends NSObject>/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class BranchPluginSupportPtr extends Ptr<BranchPluginSupport, BranchPluginSupportPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(BranchPluginSupport.class); }/*</bind>*/
+    /*<ptr>*/public static class ALAtomicReferencePtr<T extends NSObject> extends Ptr<ALAtomicReference<T>, ALAtomicReferencePtr<T>> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(ALAtomicReference.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public BranchPluginSupport() {}
-    protected BranchPluginSupport(Handle h, long handle) { super(h, handle); }
-    protected BranchPluginSupport(SkipInit skipInit) { super(skipInit); }
+    public ALAtomicReference() {}
+    protected ALAtomicReference(Handle h, long handle) { super(h, handle); }
+    protected ALAtomicReference(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithValue:")
+    public ALAtomicReference(T initialValue) { super((SkipInit) null); initObject(init(initialValue)); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "deviceDescription")
-    public native NSDictionary<NSString, NSString> deviceDescription();
-    @Method(selector = "instance")
-    public static native BranchPluginSupport instance();
-    @Method(selector = "setCDNBaseUrl:")
-    public static native void setCDNBaseUrl(String url);
+    @Method(selector = "get")
+    public native T get();
+    @Method(selector = "set:")
+    public native void set(T newValue);
+    @Method(selector = "getAndSet:")
+    public native T getAndSet(T newValue);
+    @Method(selector = "compareAndSet:update:")
+    public native boolean compare(T expect, T update);
+    @Method(selector = "initWithValue:")
+    protected native @Pointer long init(T initialValue);
     /*</methods>*/
 }

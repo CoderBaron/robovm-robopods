@@ -24,6 +24,7 @@ enums:
     BranchContentIndexMode: {}
     BranchEventAdType: {}
     BranchQRCodeImageFormat: {}
+    BranchLogLevel: {}
 
 categories:
 
@@ -282,6 +283,10 @@ classes:
                 name: getLongAppLinkURL
             '-addSnapPartnerParameterWithName:value:':
                 name: addSnapPartnerParameter
+            '-enableLoggingAtLevel:withCallback:':
+                name: enableLogging
+            '+setDMAParamsForEEA:AdPersonalizationConsent:AdUserDataUsageConsent:':
+                name: setDMAParamsForEEA
     BranchActivityItemProvider:
         methods:
             '-initWithParams:andTags:andFeature:andStage:andAlias:':
@@ -420,6 +425,10 @@ classes:
         methods:
             '-initWithFrame:AndConfiguration:':
                 name: init
+    BranchLogger:
+        methods:
+            '-logError:error:':
+                name: logError
 protocols:
     BNCNetworkOperationProtocol: {}
     BNCNetworkServiceProtocol:

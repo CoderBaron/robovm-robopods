@@ -60,10 +60,6 @@ import org.robovm.apple.storekit.*;
     public native BranchDelegate getDelegate();
     @Property(selector = "setDelegate:", strongRef = true)
     public native void setDelegate(BranchDelegate v);
-    @Property(selector = "urlPatternsToIgnore")
-    public native NSArray<NSString> getUrlPatternsToIgnore();
-    @Property(selector = "setUrlPatternsToIgnore:")
-    public native void setUrlPatternsToIgnore(NSArray<NSString> v);
     @Deprecated
     @Property(selector = "sessionInitWithParamsCallback")
     public native @Block VoidBlock2<NSDictionary<?, ?>, NSError> getSessionInitWithParamsCallback();
@@ -138,14 +134,10 @@ import org.robovm.apple.storekit.*;
     public native void registerDeepLinkController(UIViewController controller, String key, BNCViewControllerPresentationOption option);
     @Method(selector = "enableLogging")
     public native void enableLogging();
+    @Method(selector = "enableLoggingAtLevel:withCallback:")
+    public native void enableLogging(BranchLogLevel logLevel, @Block VoidBlock3<NSString, BranchLogLevel, NSError> callback);
     @Method(selector = "useEUEndpoints")
     public native void useEUEndpoints();
-    /**
-     * @deprecated setDebug is replaced by enableLogging and test devices. https://help.branch.io/using-branch/docs/adding-test-devices
-     */
-    @Deprecated
-    @Method(selector = "setDebug")
-    public native void setDebug();
     @Method(selector = "validateSDKIntegration")
     public native void validateSDKIntegration();
     @Method(selector = "setDeepLinkDebugMode:")
@@ -154,6 +146,8 @@ import org.robovm.apple.storekit.*;
     public native void addAllowedScheme(String scheme);
     @Method(selector = "setAllowedSchemes:")
     public native void setAllowedSchemes(NSArray<?> schemes);
+    @Method(selector = "setUrlPatternsToIgnore:")
+    public native void setUrlPatternsToIgnore(NSArray<NSString> urlsToIgnore);
     @Method(selector = "checkPasteboardOnInstall")
     public native void checkPasteboardOnInstall();
     @Method(selector = "willShowPasteboardToast")
@@ -182,58 +176,10 @@ import org.robovm.apple.storekit.*;
     public native void setNetworkTimeout(double timeout);
     @Method(selector = "disableAdNetworkCallouts:")
     public native void disableAdNetworkCallouts(boolean disableCallouts);
-    /**
-     * @deprecated Feature removed.  Did not work on iOS 11+
-     */
-    @Deprecated
-    @Method(selector = "disableCookieBasedMatching")
-    public native void disableCookieBasedMatching();
-    /**
-     * @deprecated Please ensure application:didFinishLaunchingWithOptions: always returns YES/true instead of using this method. It will be removed in a future release.
-     */
-    @Deprecated
-    @Method(selector = "accountForFacebookSDKPreventingAppLaunch")
-    public native void accountForFacebookSDKPreventingAppLaunch();
-    /**
-     * @deprecated suppressWarningLogs is deprecated and all functionality has been disabled. If you wish to turn off all logging, please invoke BNCLogSetDisplayLevel(BNCLogLevelNone).
-     */
-    @Deprecated
-    @Method(selector = "suppressWarningLogs")
-    public native void suppressWarningLogs();
     @Method(selector = "registerPluginName:version:")
     public native void registerPlugin(String name, String version);
     @Method(selector = "setRequestMetadataKey:value:")
     public native void setRequestMetadata(String key, NSObject value);
-    /**
-     * @deprecated No longer valid with new init process
-     */
-    @Deprecated
-    @Method(selector = "enableDelayedInit")
-    public native void enableDelayedInit();
-    /**
-     * @deprecated No longer valid with new init process
-     */
-    @Deprecated
-    @Method(selector = "disableDelayedInit")
-    public native void disableDelayedInit();
-    /**
-     * @deprecated Feature removed.  Did not work on iOS 11+
-     */
-    @Deprecated
-    @Method(selector = "getUrlForOnboardingWithRedirectUrl:")
-    public native NSURL getUrl(String redirectUrl);
-    /**
-     * @deprecated Feature removed.  Did not work on iOS 11+
-     */
-    @Deprecated
-    @Method(selector = "resumeInit")
-    public native void resumeInit();
-    /**
-     * @deprecated No longer valid with new init process
-     */
-    @Deprecated
-    @Method(selector = "setInstallRequestDelay:")
-    public native void setInstallRequestDelay(@MachineSizedSInt long installRequestDelay);
     @Method(selector = "getFirstReferringBranchUniversalObject")
     public native BranchUniversalObject getFirstReferringBranchUniversalObject();
     @Method(selector = "getFirstReferringBranchLinkProperties")
@@ -442,6 +388,8 @@ import org.robovm.apple.storekit.*;
     public static native BranchActivityItemProvider getBranchActivityItem(NSDictionary<?, ?> params, String feature, String stage, String campaign, NSArray<?> tags, String alias);
     @Method(selector = "getBranchActivityItemWithParams:feature:stage:tags:alias:delegate:")
     public static native BranchActivityItemProvider getBranchActivityItem(NSDictionary<?, ?> params, String feature, String stage, NSArray<?> tags, String alias, BranchActivityItemProviderDelegate delegate);
+    @Method(selector = "setAPIUrl:")
+    public static native void setAPIUrl(String url);
     @Method(selector = "isBranchLink:")
     public static native boolean isBranchLink(String urlString);
     @Method(selector = "setTrackingDisabled:")
@@ -450,5 +398,7 @@ import org.robovm.apple.storekit.*;
     public static native boolean trackingDisabled();
     @Method(selector = "setReferrerGbraidValidityWindow:")
     public static native void setReferrerGbraidValidityWindow(double validityWindow);
+    @Method(selector = "setDMAParamsForEEA:AdPersonalizationConsent:AdUserDataUsageConsent:")
+    public static native void setDMAParamsForEEA(boolean eeaRegion, boolean adPersonalizationConsent, boolean adUserDataUsageConsent);
     /*</methods>*/
 }

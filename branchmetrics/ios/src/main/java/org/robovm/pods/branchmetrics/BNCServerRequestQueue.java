@@ -78,10 +78,8 @@ import org.robovm.apple.storekit.*;
     public native @MachineSizedSInt long queueDepth();
     @Method(selector = "containsInstallOrOpen")
     public native boolean containsInstallOrOpen();
-    @Method(selector = "removeInstallOrOpen")
-    public native boolean removeInstallOrOpen();
-    @Method(selector = "moveInstallOrOpenToFront:")
-    public native NSObject moveInstallOrOpenToFront(@MachineSizedSInt long networkCount);
+    @Method(selector = "findExistingInstallOrOpen")
+    public native NSObject findExistingInstallOrOpen();
     @Method(selector = "persistEventually")
     public native void persistEventually();
     @Method(selector = "persistImmediately")

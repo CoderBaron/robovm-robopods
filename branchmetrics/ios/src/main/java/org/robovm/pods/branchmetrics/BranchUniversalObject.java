@@ -217,13 +217,9 @@ import org.robovm.apple.storekit.*;
     @Method(selector = "getLongUrlWithChannel:andTags:andFeature:andStage:andAlias:")
     public native String getLongUrl(String channel, NSArray<?> tags, String feature, String stage, String alias);
     @Method(selector = "showShareSheetWithShareText:completion:")
-    public native void showShareSheet(String shareText, @Block VoidBlock2<NSString, Boolean> completion);
-    @Method(selector = "showShareSheetWithLinkProperties:andShareText:fromViewController:completion:")
-    public native void showShareSheet(BranchLinkProperties linkProperties, String shareText, UIViewController viewController, @Block VoidBlock2<NSString, Boolean> completion);
+    public native void showShareSheet(String shareText, @Block VoidBlock3<NSString, Boolean, NSError> completion);
     @Method(selector = "showShareSheetWithLinkProperties:andShareText:fromViewController:completionWithError:")
     public native void showShareSheet(BranchLinkProperties linkProperties, String shareText, UIViewController viewController, @Block VoidBlock3<NSString, Boolean, NSError> completion);
-    @Method(selector = "showShareSheetWithLinkProperties:andShareText:fromViewController:anchor:completion:")
-    public native void showShareSheet(BranchLinkProperties linkProperties, String shareText, UIViewController viewController, UIBarButtonItem anchor, @Block VoidBlock2<NSString, Boolean> completion);
     @Method(selector = "showShareSheetWithLinkProperties:andShareText:fromViewController:anchor:completionWithError:")
     public native void showShareSheet(BranchLinkProperties linkProperties, String shareText, UIViewController viewController, UIBarButtonItem anchor, @Block VoidBlock3<NSString, Boolean, NSError> completion);
     @Method(selector = "listOnSpotlight")

@@ -102,10 +102,6 @@ import org.robovm.apple.storekit.*;
     public native BranchShareLinkDelegate getDelegate();
     @Property(selector = "setDelegate:", strongRef = true)
     public native void setDelegate(BranchShareLinkDelegate v);
-    @Property(selector = "completion")
-    public native @Block VoidBlock2<NSString, Boolean> getCompletion();
-    @Property(selector = "setCompletion:")
-    public native void setCompletion(@Block VoidBlock2<NSString, Boolean> v);
     @Property(selector = "completionError")
     public native @Block VoidBlock3<NSString, Boolean, NSError> getCompletionError();
     @Property(selector = "setCompletionError:")

@@ -166,10 +166,6 @@ import org.robovm.apple.storekit.*;
     public native String getReferringURL();
     @Property(selector = "setReferringURL:")
     public native void setReferringURL(String v);
-    @Property(selector = "branchAPIURL")
-    public native String getBranchAPIURL();
-    @Property(selector = "setBranchAPIURL:")
-    public native void setBranchAPIURL(String v);
     @Property(selector = "limitFacebookTracking")
     public native boolean isLimitFacebookTracking();
     @Property(selector = "setLimitFacebookTracking:")
@@ -234,6 +230,18 @@ import org.robovm.apple.storekit.*;
     public native boolean isInvokeRegisterApp();
     @Property(selector = "setInvokeRegisterApp:")
     public native void setInvokeRegisterApp(boolean v);
+    @Property(selector = "eeaRegion")
+    public native boolean isEeaRegion();
+    @Property(selector = "setEeaRegion:")
+    public native void setEeaRegion(boolean v);
+    @Property(selector = "adPersonalizationConsent")
+    public native boolean isAdPersonalizationConsent();
+    @Property(selector = "setAdPersonalizationConsent:")
+    public native void setAdPersonalizationConsent(boolean v);
+    @Property(selector = "adUserDataUsageConsent")
+    public native boolean isAdUserDataUsageConsent();
+    @Property(selector = "setAdUserDataUsageConsent:")
+    public native void setAdUserDataUsageConsent(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -265,6 +273,8 @@ import org.robovm.apple.storekit.*;
     public native NSMutableString sanitizedMutableBaseURL(String baseUrl);
     @Method(selector = "synchronize")
     public native void synchronize();
+    @Method(selector = "eeaRegionInitialized")
+    public native boolean eeaRegionInitialized();
     @Method(selector = "sharedInstance")
     public static native BNCPreferenceHelper sharedInstance();
     @Method(selector = "clearAll")
