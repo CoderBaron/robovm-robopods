@@ -57,7 +57,7 @@ v1.38.0 - in development
 | [OneSignal](onesignal/)         | 5.1.0   |
 | [Pollfish](pollfish/)           | 6.5.0   |
 | [SAMKeychain](samkeychain/)     | 1.5.3   |
-| [Singular](singular/)           | 12.2.0  |
+| [Singular](singular/)           | 12.3.2  |
 | [Tenjin](tenjin/)               | 1.14.0    |
 | [UnityAds](unityads/)           | 4.9.3   |
 | [YouTubePlayer](youtube/)       | 1.0.4   |

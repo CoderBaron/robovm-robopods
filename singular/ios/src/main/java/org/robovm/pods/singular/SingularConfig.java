@@ -115,6 +115,22 @@ import org.robovm.apple.uikit.*;
     public native @MachineSizedSInt long getWaitForTrackingAuthorizationWithTimeoutInterval();
     @Property(selector = "setWaitForTrackingAuthorizationWithTimeoutInterval:")
     public native void setWaitForTrackingAuthorizationWithTimeoutInterval(@MachineSizedSInt long v);
+    @Property(selector = "deviceAttributionCallback")
+    public native @Block VoidBlock1<NSDictionary<?, ?>> getDeviceAttributionCallback();
+    @Property(selector = "setDeviceAttributionCallback:")
+    public native void setDeviceAttributionCallback(@Block VoidBlock1<NSDictionary<?, ?>> v);
+    @Property(selector = "customSdid")
+    public native String getCustomSdid();
+    @Property(selector = "setCustomSdid:")
+    public native void setCustomSdid(String v);
+    @Property(selector = "didSetSdidHandler")
+    public native @Block VoidBlock1<String> getDidSetSdidHandler();
+    @Property(selector = "setDidSetSdidHandler:")
+    public native void setDidSetSdidHandler(@Block VoidBlock1<String> v);
+    @Property(selector = "sdidReceivedHandler")
+    public native @Block VoidBlock1<String> getSdidReceivedHandler();
+    @Property(selector = "setSdidReceivedHandler:")
+    public native void setSdidReceivedHandler(@Block VoidBlock1<String> v);
     @Property(selector = "supportAppExtension")
     public native boolean isSupportAppExtension();
     @Property(selector = "setSupportAppExtension:")
