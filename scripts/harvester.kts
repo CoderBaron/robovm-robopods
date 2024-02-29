@@ -403,17 +403,17 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
         )
     },
     "TenjinSDK" to { framework ->
-        val artifactLocation = downloadFolder.extend("tenjin-ios-sdk/TenjinSDK.xcframework/ios-arm64_armv7/$framework.framework")
+        val artifactLocation = downloadFolder.extend("TenjinSDK.xcframework/ios-arm64_armv7/$framework.framework")
         val tenjinvVersion: String by lazy {
-            downloadFolder.extend("tenjin-ios-sdk/TenjinSDK.h").readLines()
-                .find{ it.contains(" Version ") }
-                ?.substringAfterLast(" ")
+            artifactLocation.extend("PrivateHeaders/TenjinConst.h").readLines()
+                .find{ it.contains(" kTenjinTenjinSDKVersion ") }
+                ?.substringAfterLast("@\"")?.substringBefore("\"")
                 ?: error("Filed to evaluate $framework version")
         }
         processFramework(
             artifact = "$framework.framework",
             moduleFolder = "tenjin/ios",
-            sourceHeadersDir = artifactLocation,
+            sourceHeadersDir = artifactLocation.headers,
             yaml = "tenjin.yaml",
             version = { tenjinvVersion },
             headersCopier = { _, _, dst ->

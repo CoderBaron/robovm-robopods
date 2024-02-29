@@ -16,6 +16,7 @@ headers:
     - TenjinSDK+TopOnILRD.h
     - TenjinSDK+TradPlusILRD.h
 enums:
+    PurposeConsentStatus: {}
 
 private_typedefs:
     'GADAdValue *': org.robovm.pods.google.mobileads.GADAdValue
@@ -71,6 +72,8 @@ classes:
                 name: updatePostbackConversion
             '+updatePostbackConversionValue:coarseValue:lockWindow:':
                 name: updatePostbackConversion
+            '-setGoogleDMAParametersWithAdPersonalization:adUserData:':
+                name: setGoogleDMAParameters
     TJNHTTPClient:
         methods:
             '-initWithApiKey:':
@@ -117,6 +120,9 @@ classes:
                 name: trackConversionValue
             '-setValue:forKey:':
                 name: setValue
+            '+setBooleanValue:key:':
+                name: setBooleanValue
+
     GDPRHelper: {}
 protocols:
     TJNRequestSender:

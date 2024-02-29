@@ -37,31 +37,30 @@ import org.robovm.apple.dispatch.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9TenjinSDK10GDPRHelper")/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/GDPRHelper/*</name>*/ 
-    extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
+public enum /*<name>*/PurposeConsentStatus/*</name>*/ implements ValuedEnum {
+    /*<values>*/
+    ConsentNull(0L),
+    ConsentTrue(1L),
+    ConsentFalse(2L);
+    /*</values>*/
 
-    /*<ptr>*/public static class GDPRHelperPtr extends Ptr<GDPRHelper, GDPRHelperPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(GDPRHelper.class); }/*</bind>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    protected GDPRHelper() {}
-    protected GDPRHelper(Handle h, long handle) { super(h, handle); }
-    protected GDPRHelper(SkipInit skipInit) { super(skipInit); }
-    /*</constructors>*/
-    /*<properties>*/
-    
-    /*</properties>*/
-    /*<members>*//*</members>*/
-    /*<methods>*/
-    @Method(selector = "getPurposeConsentsTCF")
-    public native String getPurposeConsentsTCF();
-    @Method(selector = "optIn")
-    public native boolean optIn();
-    @Method(selector = "getGoogleAdPersonalization")
-    public native PurposeConsentStatus getGoogleAdPersonalization();
-    @Method(selector = "getGoogleAdUserData")
-    public native PurposeConsentStatus getGoogleAdUserData();
-    /*</methods>*/
+    /*<methods>*//*</methods>*/
+
+    private final long n;
+
+    private /*<name>*/PurposeConsentStatus/*</name>*/(long n) { this.n = n; }
+    public long value() { return n; }
+    public static /*<name>*/PurposeConsentStatus/*</name>*/ valueOf(long n) {
+        for (/*<name>*/PurposeConsentStatus/*</name>*/ v : values()) {
+            if (v.n == n) {
+                return v;
+            }
+        }
+        throw new IllegalArgumentException("No constant with value " + n + " found in " 
+            + /*<name>*/PurposeConsentStatus/*</name>*/.class.getName());
+    }
 }

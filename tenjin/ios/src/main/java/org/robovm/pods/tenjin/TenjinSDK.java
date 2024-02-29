@@ -65,6 +65,8 @@ import org.robovm.apple.dispatch.*;
     public native void handleSubscriptionPurchase(SKPaymentTransaction transaction);
     @Method(selector = "getAttributionInfo:")
     public native void getAttributionInfo(@Block VoidBlock2<NSDictionary<?, ?>, NSError> completionHandler);
+    @Method(selector = "setGoogleDMAParametersWithAdPersonalization:adUserData:")
+    public native void setGoogleDMAParameters(boolean adPersonalization, boolean adUserData);
     /**
      * @deprecated use `initialize`
      */
