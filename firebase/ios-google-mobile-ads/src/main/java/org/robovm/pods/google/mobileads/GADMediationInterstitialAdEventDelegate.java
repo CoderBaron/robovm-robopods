@@ -51,12 +51,7 @@ import org.robovm.apple.webkit.*;
     
     /*</properties>*/
     /*<methods>*/
-    /**
-     * @deprecated Deprecated. No replacement.
-     */
-    @Deprecated
-    @Method(selector = "willBackgroundApplication")
-    void willBackgroundApplication();
+    
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

@@ -68,12 +68,6 @@ import org.robovm.apple.webkit.*;
     public native GADRequestConfiguration getRequestConfiguration();
     @Property(selector = "initializationStatus")
     public native GADInitializationStatus getInitializationStatus();
-    /**
-     * @deprecated Use versionNumber property instead.
-     */
-    @Deprecated
-    @Property(selector = "sdkVersion")
-    public native String getSdkVersion();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

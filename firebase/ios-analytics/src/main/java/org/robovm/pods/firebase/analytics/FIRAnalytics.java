@@ -105,5 +105,9 @@ import org.robovm.apple.foundation.*;
     public static native void initiateOnDeviceConversionMeasurement(String emailAddress);
     @Method(selector = "initiateOnDeviceConversionMeasurementWithPhoneNumber:")
     public static native void initiateOnDeviceConversionMeasurementWithPhoneNumber(String phoneNumber);
+    @Method(selector = "initiateOnDeviceConversionMeasurementWithHashedEmailAddress:")
+    public static native void initiateOnDeviceConversionMeasurementWithHashedEmailAddress(NSData hashedEmailAddress);
+    @Method(selector = "initiateOnDeviceConversionMeasurementWithHashedPhoneNumber:")
+    public static native void initiateOnDeviceConversionMeasurementWithHashedPhoneNumber(NSData hashedPhoneNumber);
     /*</methods>*/
 }

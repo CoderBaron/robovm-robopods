@@ -77,23 +77,5 @@ import org.robovm.apple.webkit.*;
     /*<methods>*/
     @Method(selector = "setPublisherFirstPartyIDEnabled:")
     public native void setPublisherFirstPartyIDEnabled(boolean enabled);
-    /**
-     * @deprecated This method is deprecated. Use the setPublisherFirstPartyIDEnabled: method instead.
-     */
-    @Deprecated
-    @Method(selector = "setSameAppKeyEnabled:")
-    public native void setSameAppKeyEnabled(boolean enabled);
-    /**
-     * @deprecated This method is deprecated. Use the tagForUnderAgeOfConsent property instead. Calling this method internally sets the property.
-     */
-    @Deprecated
-    @Method(selector = "tagForUnderAgeOfConsent:")
-    public native void tagForUnderAgeOfConsent(boolean underAgeOfConsent);
-    /**
-     * @deprecated This method is deprecated. Use the tagForChildDirectedTreatment property instead. Calling this method internally sets the property.
-     */
-    @Deprecated
-    @Method(selector = "tagForChildDirectedTreatment:")
-    public native void tagForChildDirectedTreatment(boolean childDirectedTreatment);
     /*</methods>*/
 }

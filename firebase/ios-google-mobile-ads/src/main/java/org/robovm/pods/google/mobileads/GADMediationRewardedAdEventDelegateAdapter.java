@@ -59,11 +59,5 @@ import org.robovm.apple.webkit.*;
     public void didStartVideo() {}
     @NotImplemented("didEndVideo")
     public void didEndVideo() {}
-    /**
-     * @deprecated Deprecated. Use -didRewardUser.
-     */
-    @Deprecated
-    @NotImplemented("didRewardUserWithReward:")
-    public void didRewardUser(GADAdReward reward) {}
     /*</methods>*/
 }

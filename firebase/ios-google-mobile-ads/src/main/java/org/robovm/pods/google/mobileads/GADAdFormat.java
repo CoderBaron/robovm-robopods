@@ -46,11 +46,6 @@ public enum /*<name>*/GADAdFormat/*</name>*/ implements ValuedEnum {
     Rewarded(2L),
     Native(3L),
     RewardedInterstitial(4L),
-    /**
-     * @deprecated Deprecated. No replacement.
-     */
-    @Deprecated
-    Unknown(5L),
     AppOpen(6L);
     /*</values>*/
 

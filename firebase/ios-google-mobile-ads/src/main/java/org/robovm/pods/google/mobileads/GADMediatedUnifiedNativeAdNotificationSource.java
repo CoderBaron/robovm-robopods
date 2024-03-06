@@ -72,11 +72,5 @@ import org.robovm.apple.webkit.*;
     public static native void mediatedNativeAdDidPauseVideo(GADMediatedUnifiedNativeAd mediatedNativeAd);
     @Method(selector = "mediatedNativeAdDidEndVideoPlayback:")
     public static native void mediatedNativeAdDidEndVideoPlayback(GADMediatedUnifiedNativeAd mediatedNativeAd);
-    /**
-     * @deprecated Deprecated. No replacement.
-     */
-    @Deprecated
-    @Method(selector = "mediatedNativeAdWillLeaveApplication:")
-    public static native void mediatedNativeAdWillLeaveApplication(GADMediatedUnifiedNativeAd mediatedNativeAd);
     /*</methods>*/
 }
