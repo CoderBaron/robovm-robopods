@@ -35,6 +35,7 @@
 #import <AppLovinSDK/ALPrivacySettings.h>
 #import <AppLovinSDK/ALSdk.h>
 #import <AppLovinSDK/ALSdkConfiguration.h>
+#import <AppLovinSDK/ALSdkInitializationConfiguration.h>
 #import <AppLovinSDK/ALSdkSettings.h>
 #import <AppLovinSDK/ALTargetingData.h>
 #import <AppLovinSDK/ALUserSegment.h>

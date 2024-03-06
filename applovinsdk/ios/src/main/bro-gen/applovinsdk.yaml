@@ -172,6 +172,8 @@ classes:
                 name: initializeSdk
             '+initializeSdkWithCompletionHandler:':
                 name: InitializeSdk
+            '-initializeWithConfiguration:completionHandler:':
+                name: initialize
             '+initializeSdk':
                 name: InitializeSdk
             '+sharedWithKey:':
@@ -182,11 +184,14 @@ classes:
                 name: getShared
             '-showMediationDebuggerWithAmazonAdSize:':
                 name: showMediationDebugger
+
     ALSdkConfiguration: {}
     ALSdkSettings:
         methods:
             '-setExtraParameterForKey:value:':
                 name: setExtraParameter
+            '+new':
+                exclude: true
     ALUserService:
         methods:
             '-showConsentDialogWithCompletionHandler:':
@@ -273,7 +278,10 @@ classes:
                 name: showAdForPlacement
             '-showAdForPlacement:customData:viewController:':
                 name: showAdForPlacement
-    ALUserSegment: {}
+    ALUserSegment:
+        methods:
+            '-initWithName:':
+                name: init
     ALConsentFlowSettings: { }
     MAMediatedNetworkInfo: { }
     MAError: { }
@@ -334,7 +342,11 @@ classes:
                 name: log
             '-addAppOpenAdapter:delegate:forPlacementIdentifier:':
                 name: addAppOpenAdapter
-    ALTargetingData: {}
+    ALTargetingData:
+        methods:
+            '+dataWithBuilderBlock:':
+                name: create
+                constructor: true
     ALUtils: {}
     MAAdapterError:
         methods:
@@ -448,6 +460,13 @@ classes:
                 name: compare
             '-initWithValue:':
                 name: init
+    ALSdkInitializationConfiguration:
+        methods:
+            '+configurationWithSdkKey:builderBlock:':
+                #trim_after_first_colon: true
+                name: configurationWithSdkKey$builderBlock$
+    ALSdkInitializationConfigurationBuilder: { }
+    ALTargetingDataBuilder: { }
 protocols:
     ALAdDisplayDelegate:
         methods:

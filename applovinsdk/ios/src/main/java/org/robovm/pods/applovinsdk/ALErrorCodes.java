@@ -59,11 +59,12 @@ import org.robovm.apple.safariservices.*;
     public static final int UnableToPrecacheVideoResources = -202;
     public static final int UnableToPrecacheHTMLResources = -203;
     public static final int InvalidResponse = -800;
+    public static final int InvalidURL = -900;
+    public static final int InvalidBody = -1000;
     public static final int IncentiviziedAdNotPreloaded = -300;
     public static final int IncentivizedUnknownServerError = -400;
     public static final int IncentivizedValidationNetworkTimeout = -500;
     public static final int IncentivizedUserClosedVideo = -600;
-    public static final int InvalidURL = -900;
     /*</constants>*/
     /*<constructors>*//*</constructors>*/
     /*<properties>*//*</properties>*/

@@ -76,6 +76,16 @@
  */
 #define kALErrorCodeInvalidResponse -800
 
+/**
+ * A postback URL you attempted to dispatch was invalid or empty/nil.
+ */
+#define kALErrorCodeInvalidURL -900
+
+/**
+ * The request was invalid due to a malformed body.
+ */
+#define kALErrorCodeInvalidBody -1000
+
 //
 // Rewarded Videos
 //
@@ -99,8 +109,3 @@
  * The user exited out of the rewarded ad early. You may or may not wish to grant a reward depending on your preference.
  */
 #define kALErrorCodeIncentivizedUserClosedVideo -600
-
-/**
- * A postback URL you attempted to dispatch was empty or nil.
- */
-#define kALErrorCodeInvalidURL -900

@@ -51,6 +51,18 @@ import org.robovm.apple.safariservices.*;
     protected ALTermsAndPrivacyPolicyFlowSettings(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "isEnabled")
+    public native boolean isEnabled();
+    @Property(selector = "setEnabled:")
+    public native void setEnabled(boolean v);
+    @Property(selector = "privacyPolicyURL")
+    public native NSURL getPrivacyPolicyURL();
+    @Property(selector = "setPrivacyPolicyURL:")
+    public native void setPrivacyPolicyURL(NSURL v);
+    @Property(selector = "termsOfServiceURL")
+    public native NSURL getTermsOfServiceURL();
+    @Property(selector = "setTermsOfServiceURL:")
+    public native void setTermsOfServiceURL(NSURL v);
     @Property(selector = "debugUserGeography")
     public native ALConsentFlowUserGeography getDebugUserGeography();
     @Property(selector = "setDebugUserGeography:")

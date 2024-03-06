@@ -65,26 +65,54 @@ import org.robovm.apple.safariservices.*;
     public native boolean isCreativeDebuggerEnabled();
     @Property(selector = "setCreativeDebuggerEnabled:")
     public native void setCreativeDebuggerEnabled(boolean v);
-    @Property(selector = "testDeviceAdvertisingIdentifiers")
-    public native NSArray<NSString> getTestDeviceAdvertisingIdentifiers();
-    @Property(selector = "setTestDeviceAdvertisingIdentifiers:")
-    public native void setTestDeviceAdvertisingIdentifiers(NSArray<NSString> v);
-    @Property(selector = "initializationAdUnitIdentifiers")
-    public native NSArray<NSString> getInitializationAdUnitIdentifiers();
-    @Property(selector = "setInitializationAdUnitIdentifiers:")
-    public native void setInitializationAdUnitIdentifiers(NSArray<NSString> v);
-    @Property(selector = "isExceptionHandlerEnabled")
-    public native boolean isExceptionHandlerEnabled();
-    @Property(selector = "setExceptionHandlerEnabled:")
-    public native void setExceptionHandlerEnabled(boolean v);
     @Property(selector = "isLocationCollectionEnabled")
     public native boolean isLocationCollectionEnabled();
     @Property(selector = "setLocationCollectionEnabled:")
     public native void setLocationCollectionEnabled(boolean v);
+    @Property(selector = "userIdentifier")
+    public native String getUserIdentifier();
+    @Property(selector = "setUserIdentifier:")
+    public native void setUserIdentifier(String v);
     @Property(selector = "extraParameters")
     public native NSDictionary<NSString, NSString> getExtraParameters();
     @Property(selector = "setExtraParameters:")
     public native void setExtraParameters(NSDictionary<NSString, NSString> v);
+    /**
+     * @deprecated This property is deprecated and will be removed in a future SDK version. Please use the new ALSdkInitializationConfiguration (see ALSdkInitializationConfiguration.testDeviceAdvertisingIdentifiers)
+     */
+    @Deprecated
+    @Property(selector = "testDeviceAdvertisingIdentifiers")
+    public native NSArray<NSString> getTestDeviceAdvertisingIdentifiers();
+    /**
+     * @deprecated This property is deprecated and will be removed in a future SDK version. Please use the new ALSdkInitializationConfiguration (see ALSdkInitializationConfiguration.testDeviceAdvertisingIdentifiers)
+     */
+    @Deprecated
+    @Property(selector = "setTestDeviceAdvertisingIdentifiers:")
+    public native void setTestDeviceAdvertisingIdentifiers(NSArray<NSString> v);
+    /**
+     * @deprecated This property is deprecated and will be removed in a future SDK version. version. Please use the new ALSdkInitializationConfiguration (see ALSdkInitializationConfiguration.initializationAdUnitIdentifiers
+     */
+    @Deprecated
+    @Property(selector = "initializationAdUnitIdentifiers")
+    public native NSArray<NSString> getInitializationAdUnitIdentifiers();
+    /**
+     * @deprecated This property is deprecated and will be removed in a future SDK version. version. Please use the new ALSdkInitializationConfiguration (see ALSdkInitializationConfiguration.initializationAdUnitIdentifiers
+     */
+    @Deprecated
+    @Property(selector = "setInitializationAdUnitIdentifiers:")
+    public native void setInitializationAdUnitIdentifiers(NSArray<NSString> v);
+    /**
+     * @deprecated This property is deprecated and will be removed in a future SDK version. Please use the new ALSdkInitializationConfiguration (see ALSdkInitializationConfiguration.exceptionHandlerEnabled)
+     */
+    @Deprecated
+    @Property(selector = "isExceptionHandlerEnabled")
+    public native boolean isExceptionHandlerEnabled();
+    /**
+     * @deprecated This property is deprecated and will be removed in a future SDK version. Please use the new ALSdkInitializationConfiguration (see ALSdkInitializationConfiguration.exceptionHandlerEnabled)
+     */
+    @Deprecated
+    @Property(selector = "setExceptionHandlerEnabled:")
+    public native void setExceptionHandlerEnabled(boolean v);
     /**
      * @deprecated This property is deprecated and will be removed in a future SDK version. Please use `-[ALSdkSettings isVerboseLoggingEnabled]` instead.
      */
@@ -98,7 +126,7 @@ import org.robovm.apple.safariservices.*;
     @Property(selector = "setIsVerboseLogging:")
     public native void setIsVerboseLogging(boolean v);
     /**
-     * @deprecated This property is deprecated and will be removed in a future SDK version. Use the new MAX Terms and Privacy Policy Flow instead (see ALSdkSettings.termsAndPrivacyPolicyFlowSettings)
+     * @deprecated This property is deprecated and will be removed in a future SDK version. Please use the new MAX Terms and Privacy Policy Flow instead (see ALSdkSettings.termsAndPrivacyPolicyFlowSettings)
      */
     @Deprecated
     @Property(selector = "consentFlowSettings")

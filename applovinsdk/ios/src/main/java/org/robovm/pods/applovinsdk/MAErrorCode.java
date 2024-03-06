@@ -43,6 +43,7 @@ public enum /*<name>*/MAErrorCode/*</name>*/ implements ValuedEnum {
     Unspecified(-1L),
     NoFill(204L),
     AdLoadFailed(-5001L),
+    InvalidAdUnitIdentifier(-5603L),
     NetworkError(-1000L),
     NetworkTimeout(-1001L),
     NoNetwork(-1009L),
