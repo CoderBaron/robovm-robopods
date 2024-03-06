@@ -35,27 +35,33 @@ import org.robovm.apple.uikit.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/OSDialogInstanceManager/*</name>*/ 
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC15OneSignalOSCore23OSBackgroundTaskManager")/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/OSBackgroundTaskManager/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class OSDialogInstanceManagerPtr extends Ptr<OSDialogInstanceManager, OSDialogInstanceManagerPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(OSDialogInstanceManager.class); }/*</bind>*/
+    /*<ptr>*/public static class OSBackgroundTaskManagerPtr extends Ptr<OSBackgroundTaskManager, OSBackgroundTaskManagerPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(OSBackgroundTaskManager.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public OSDialogInstanceManager() {}
-    protected OSDialogInstanceManager(Handle h, long handle) { super(h, handle); }
-    protected OSDialogInstanceManager(SkipInit skipInit) { super(skipInit); }
+    public OSBackgroundTaskManager() {}
+    protected OSBackgroundTaskManager(Handle h, long handle) { super(h, handle); }
+    protected OSBackgroundTaskManager(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "setSharedOSDialogInstance:")
-    public static native void setSharedOSDialogInstance(OSDialogPresenter instance);
-    @Method(selector = "sharedInstance")
-    public static native OSDialogPresenter sharedInstance();
+    @Method(selector = "taskHandler")
+    public static native OSBackgroundTaskHandler taskHandler();
+    @Method(selector = "setTaskHandler:")
+    public static native void setTaskHandler(OSBackgroundTaskHandler value);
+    @Method(selector = "beginBackgroundTask:")
+    public static native void beginBackgroundTask(String taskIdentifier);
+    @Method(selector = "endBackgroundTask:")
+    public static native void endBackgroundTask(String taskIdentifier);
+    @Method(selector = "setTaskInvalid:")
+    public static native void setTaskInvalid(String taskIdentifier);
     /*</methods>*/
 }

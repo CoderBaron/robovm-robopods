@@ -16,6 +16,7 @@ headers:
     - "#import <OneSignalLocation/OneSignalLocationManager.h>"
     - "#import <OneSignalInAppMessages/OneSignalInAppMessages.h>"
     - "#import <OneSignalExtension/OneSignalExtension.h>"
+    - "#import <OneSignalOSCore/OneSignalOSCore-Swift.h>"
 
 private_typedefs:
     OS_dispatch_source: org.robovm.apple.dispatch.DispatchSource
@@ -451,6 +452,23 @@ classes:
     OSPushSubscriptionImpl: { }
     OSUserChangedState: { }
     OSUserState: { }
+    OneSignalCore:
+        exclude: true # marked as fore testing only
+    OSBackgroundTaskManager: { }
+    OSDelta:
+        methods:
+            '-encodeWithCoder:':
+                name: encode
+            '-initWithCoder:':
+                name: init
+    OSModel:
+        methods:
+            '-encodeWithCoder:':
+                name: encode
+            '-initWithCoder:':
+                name: init
+    OSModelChangedArgs: { }
+    OSOperationRepo: { }
 protocols:
     OSNotificationDisplayTypeDelegate:
         skip_adapter: true # only one method there
@@ -516,6 +534,11 @@ protocols:
         methods:
             '-onUserStateDidChangeWithState:':
                 name: didChange
+    IOneSignalClient:
+        methods:
+            '-executeRequest:onSuccess:onFailure:':
+                name: executeRequest
+    OSBackgroundTaskHandler: {}
 functions:
     injectSelector:
         exclude: true

@@ -33,29 +33,24 @@ import org.robovm.apple.uikit.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/OSDialogInstanceManager/*</name>*/ 
+/*<annotations>*//*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/IOneSignalClientAdapter/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements IOneSignalClient/*</implements>*/ {
 
-    /*<ptr>*/public static class OSDialogInstanceManagerPtr extends Ptr<OSDialogInstanceManager, OSDialogInstanceManagerPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(OSDialogInstanceManager.class); }/*</bind>*/
+    /*<ptr>*/
+    /*</ptr>*/
+    /*<bind>*/
+    /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*/
-    public OSDialogInstanceManager() {}
-    protected OSDialogInstanceManager(Handle h, long handle) { super(h, handle); }
-    protected OSDialogInstanceManager(SkipInit skipInit) { super(skipInit); }
-    /*</constructors>*/
+    /*<constructors>*//*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "setSharedOSDialogInstance:")
-    public static native void setSharedOSDialogInstance(OSDialogPresenter instance);
-    @Method(selector = "sharedInstance")
-    public static native OSDialogPresenter sharedInstance();
+    @NotImplemented("executeRequest:onSuccess:onFailure:")
+    public void executeRequest(OneSignalRequest request, @Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock) {}
     /*</methods>*/
 }

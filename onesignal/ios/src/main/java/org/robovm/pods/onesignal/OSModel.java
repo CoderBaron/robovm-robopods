@@ -35,27 +35,29 @@ import org.robovm.apple.uikit.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/OSDialogInstanceManager/*</name>*/ 
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC15OneSignalOSCore7OSModel")/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/OSModel/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements NSCoding/*</implements>*/ {
 
-    /*<ptr>*/public static class OSDialogInstanceManagerPtr extends Ptr<OSDialogInstanceManager, OSDialogInstanceManagerPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(OSDialogInstanceManager.class); }/*</bind>*/
+    /*<ptr>*/public static class OSModelPtr extends Ptr<OSModel, OSModelPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(OSModel.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public OSDialogInstanceManager() {}
-    protected OSDialogInstanceManager(Handle h, long handle) { super(h, handle); }
-    protected OSDialogInstanceManager(SkipInit skipInit) { super(skipInit); }
+    protected OSModel() {}
+    protected OSModel(Handle h, long handle) { super(h, handle); }
+    protected OSModel(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithCoder:")
+    public OSModel(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "setSharedOSDialogInstance:")
-    public static native void setSharedOSDialogInstance(OSDialogPresenter instance);
-    @Method(selector = "sharedInstance")
-    public static native OSDialogPresenter sharedInstance();
+    @Method(selector = "encodeWithCoder:")
+    public native void encode(NSCoder coder);
+    @Method(selector = "initWithCoder:")
+    protected native @Pointer long init(NSCoder coder);
     /*</methods>*/
 }

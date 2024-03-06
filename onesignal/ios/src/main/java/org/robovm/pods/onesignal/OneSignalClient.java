@@ -38,7 +38,7 @@ import org.robovm.apple.uikit.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/OneSignalClient/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements IOneSignalClient/*</implements>*/ {
 
     /*<ptr>*/public static class OneSignalClientPtr extends Ptr<OneSignalClient, OneSignalClientPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(OneSignalClient.class); }/*</bind>*/
@@ -53,17 +53,9 @@ import org.robovm.apple.uikit.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "executeRequest:onSuccess:onFailure:")
-    public native void executeRequest(OneSignalRequest request, @Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
-    @Method(selector = "executeSynchronousRequest:onSuccess:onFailure:")
-    public native void executeSynchronousRequest(OneSignalRequest request, @Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
-    @Method(selector = "executeDataRequest:onSuccess:onFailure:")
-    public native void executeDataRequest(OneSignalRequest request, @Block VoidBlock1<NSData> successBlock, @Block VoidBlock1<NSError> failureBlock);
-    @Method(selector = "executeSimultaneousRequests:withSuccess:onFailure:")
-    public native void executeSimultaneousRequests(NSDictionary<NSString, OneSignalRequest> requests, @Block VoidBlock1<NSDictionary<NSString, NSDictionary>> successBlock, @Block VoidBlock1<NSDictionary<NSString, NSError>> failureBlock);
-    @Method(selector = "executeSimultaneousRequests:withCompletion:")
-    public native void executeSimultaneousRequests(NSDictionary<NSString, OneSignalRequest> requests, @Block VoidBlock1<NSDictionary<?, ?>> completionBlock);
     @Method(selector = "sharedClient")
     public static native OneSignalClient sharedClient();
+    @Method(selector = "executeRequest:onSuccess:onFailure:")
+    public native void executeRequest(OneSignalRequest request, @Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
     /*</methods>*/
 }

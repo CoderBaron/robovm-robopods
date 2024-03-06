@@ -35,27 +35,25 @@ import org.robovm.apple.uikit.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/OSDialogInstanceManager/*</name>*/ 
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC15OneSignalOSCore15OSOperationRepo")/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/OSOperationRepo/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class OSDialogInstanceManagerPtr extends Ptr<OSDialogInstanceManager, OSDialogInstanceManagerPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(OSDialogInstanceManager.class); }/*</bind>*/
+    /*<ptr>*/public static class OSOperationRepoPtr extends Ptr<OSOperationRepo, OSOperationRepoPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(OSOperationRepo.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public OSDialogInstanceManager() {}
-    protected OSDialogInstanceManager(Handle h, long handle) { super(h, handle); }
-    protected OSDialogInstanceManager(SkipInit skipInit) { super(skipInit); }
+    public OSOperationRepo() {}
+    protected OSOperationRepo(Handle h, long handle) { super(h, handle); }
+    protected OSOperationRepo(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "setSharedOSDialogInstance:")
-    public static native void setSharedOSDialogInstance(OSDialogPresenter instance);
-    @Method(selector = "sharedInstance")
-    public static native OSDialogPresenter sharedInstance();
+    @Method(selector = "addFlushDeltaQueueToDispatchQueueInBackground:")
+    public native void addFlushDeltaQueueToDispatchQueueInBackground(boolean inBackground);
     /*</methods>*/
 }
