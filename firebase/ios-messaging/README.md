@@ -2,15 +2,17 @@
 
 ### Frameworks required for this pod: 
 * FirebaseMessaging.xcframework (from Firebase.zip/FirebaseMessaging/FirebaseMessaging.xcframework)
-* FirebaseInstallations.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseInstallations.xcframework)
 * GoogleDataTransport.xcframework (from Firebase.zip/FirebaseMessaging/GoogleDataTransport.xcframework
-* nanopb.xcframework (from Firebase.zip/FirebaseAnalytics/nanopb.xcframework)
 
 Plus ones required for ios-core module:
+* FBLPromises.xcframework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)
 * FirebaseCore.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseCore.xcframework)
 * FirebaseCoreInternal.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseCoreInternal.xcframework)
+* FirebaseInstallations.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseInstallations.xcframework)
+* GoogleAppMeasurement.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleAppMeasurement.xcframework)
+* GoogleAppMeasurementIdentitySupport.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleAppMeasurementIdentitySupport.xcframework)
 * GoogleUtilities.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
-* FBLPromises.xcframework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)
+* nanopb.xcframework (from Firebase.zip/FirebaseAnalytics/nanopb.xcframework)
 
 ### to use this pod configure your `robovm.xml`
 [the official guide](https://firebase.google.com/docs/cloud-messaging/ios/client).

@@ -78,14 +78,29 @@ val frameworkToFramework = frameworkToImports.map { (framework, importedSymbols)
         symbolToFramework[symbol].takeUnless { f -> f == framework }
     }
     depFrameworks.addAll(frameworkToDependencies[framework] ?: emptyList())
+    // for FirebaseCore always add FirebaseCoreInternal as it doesn't refer it dirrectly
+    // for analytics always add FirebaseInstallations
+    when (framework){
+        "FirebaseCore" -> depFrameworks.add("FirebaseCoreInternal")
+        "FirebaseAnalytics" -> depFrameworks.add("FirebaseInstallations")
+        "FirebaseAppCheck" -> depFrameworks.add("AppCheckCore")
+        "FirebaseFirestore" -> depFrameworks.add("FirebaseFirestoreInternal")
+    }
     framework to depFrameworks.sorted()
 }.toMap()
 
 // build deep dependency
-fun deepWalker(name: String, parent: String, res: MutableMap<String, String> = mutableMapOf()): MutableMap<String, String> {
-    if (!res.containsKey(name)) {
-        res[name] = parent
-        frameworkToFramework[name]?.forEach {deepWalker(it, name, res) }
+fun deepWalker(
+    name: String,
+    parent: String = name,
+    res: MutableList<Pair<String, String>> = mutableListOf(),
+    visited: MutableSet<String> = mutableSetOf()
+): MutableList<Pair<String, String>> {
+    if (!visited.contains(name)) {
+        visited.add(name)
+        if (name != parent) res.add(parent to name)
+        frameworkToFramework[name]?.forEach { deepWalker(it, name, res, visited) }
+        visited.remove(name)
     }
     return res
 }
@@ -93,10 +108,35 @@ fun deepWalker(name: String, parent: String, res: MutableMap<String, String> = m
 // build dependency tree
 frameworkToFramework.keys.sorted().forEach { framework ->
     println("$framework:")
-    val dependencies = deepWalker(framework, framework)
-    dependencies.remove(framework)
-    dependencies.asSequence().sortedBy { it.key }
-        .forEach { (frm, req) -> println("    $frm by $req") }
+    val dependencies = mutableMapOf<String, MutableSet<String>>()
+    deepWalker(framework)?.forEach { (framework, dependency) ->
+        dependencies.getOrPut( framework, { mutableSetOf<String>() }).add(dependency)
+    }
+    fun recursiveWalker(items: MutableMap<String, MutableSet<String>>, level: Int = 1, frm: String, action: (level: Int, frm: String) -> Unit) {
+        items.remove(frm)?.forEach {
+            action(level, it)
+            recursiveWalker(items, level + 1, it, action)
+        }
+    }
+    recursiveWalker(dependencies.toMutableMap(), frm = framework) { level, frm -> println("    ".repeat(level) + frm) }
+    fun flatSetOf(frm: String) = mutableSetOf<String>().also { flatSet ->
+        recursiveWalker(dependencies.toMutableMap(), frm = frm) { _, frm -> flatSet.add(frm) }
+    }
+    val flatSet = flatSetOf(framework)
+    if (flatSet.size > 1) {
+        if (flatSet.contains("FirebaseCore")) {
+            println("    >>> flat list (without dependencies of FirebaseCore) ")
+            val coreFlatSet = flatSetOf("FirebaseCore")
+            flatSet.removeAll(coreFlatSet)
+            flatSet.remove("FirebaseCore")
+        } else {
+            println("    >>> flat list")
+        }
+        flatSet.sorted().forEach { println("    <framework>" + it + "</framework>") }
+    }
+
+//    dependencies.asSequence().sortedBy { it.key }
+//        .forEach { (frm, req) -> println("    $frm by $req") }
 }
 exitProcess(0)
 

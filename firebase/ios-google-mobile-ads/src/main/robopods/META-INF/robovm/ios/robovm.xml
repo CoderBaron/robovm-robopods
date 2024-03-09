@@ -2,10 +2,6 @@
     <frameworks>
         <framework>GoogleMobileAds</framework>
         <framework>UserMessagingPlatform</framework>
-        <framework>GoogleAppMeasurement</framework>
-        <framework>nanopb</framework>
-        <framework>GoogleUtilities</framework>
-        <framework>FBLPromises</framework>
 
         <framework>JavaScriptCore</framework>
     </frameworks>

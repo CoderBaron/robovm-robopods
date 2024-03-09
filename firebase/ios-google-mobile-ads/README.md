@@ -3,9 +3,15 @@
 ### Frameworks required for this pod: 
 * GoogleMobileAds.xcframework (from Firebase.zip/Google-Mobile-Ads-SDK/GoogleMobileAds.xcframework)
 * UserMessagingPlatform.xcframework (from Firebase.zip/Google-Mobile-Ads-SDK/UserMessagingPlatform.xcframework)
-* GoogleAppMeasurement.xcframework (from FirebaseAnalytics/GoogleAppMeasurement.xcframework)
-* GoogleUtilities.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
+
+Plus ones required for ios-core module:
 * FBLPromises.xcframework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)
+* FirebaseCore.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseCore.xcframework)
+* FirebaseCoreInternal.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseCoreInternal.xcframework)
+* FirebaseInstallations.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseInstallations.xcframework)
+* GoogleAppMeasurement.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleAppMeasurement.xcframework)
+* GoogleAppMeasurementIdentitySupport.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleAppMeasurementIdentitySupport.xcframework)
+* GoogleUtilities.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
 * nanopb.xcframework (from Firebase.zip/FirebaseAnalytics/nanopb.xcframework)
 
 ### to use this pod configure your `robovm.xml`
