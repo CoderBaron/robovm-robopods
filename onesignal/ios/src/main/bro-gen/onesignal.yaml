@@ -452,7 +452,7 @@ classes:
     OSPushSubscriptionImpl: { }
     OSUserChangedState: { }
     OSUserState: { }
-    OneSignalCore:
+    OneSignalCoreImpl:
         exclude: true # marked as fore testing only
     OSBackgroundTaskManager: { }
     OSDelta:
