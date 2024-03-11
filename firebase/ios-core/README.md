@@ -6,9 +6,20 @@
 * FirebaseCoreInternal.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseCoreInternal.xcframework)
 * FirebaseInstallations.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseInstallations.xcframework)
 * GoogleAppMeasurement.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleAppMeasurement.xcframework)
-* GoogleAppMeasurementIdentitySupport.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleAppMeasurementIdentitySupport.xcframework)
 * GoogleUtilities.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
 * nanopb.xcframework (from Firebase.zip/FirebaseAnalytics/nanopb.xcframework)
+
+### Identity supports is not included by purpose as its optional 
+In case its required it to be added to application `robovm.xml` file:
+
+* GoogleAppMeasurementIdentitySupport.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleAppMeasurementIdentitySupport.xcframework)
+```
+<config>
+    <frameworks>
+        <framework>GoogleAppMeasurementIdentitySupport</framework>
+    </frameworks>
+</config>```
+
 
 ### to use this pod configure your `robovm.xml`
 

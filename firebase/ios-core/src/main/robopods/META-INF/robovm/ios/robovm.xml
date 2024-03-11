@@ -5,7 +5,6 @@
         <framework>FirebaseCoreInternal</framework>
         <framework>FirebaseInstallations</framework>
         <framework>GoogleAppMeasurement</framework>
-        <framework>GoogleAppMeasurementIdentitySupport</framework>
         <framework>GoogleUtilities</framework>
         <framework>nanopb</framework>
     </frameworks>
