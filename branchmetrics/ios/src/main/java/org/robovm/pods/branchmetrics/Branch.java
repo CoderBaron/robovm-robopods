@@ -132,8 +132,10 @@ import org.robovm.apple.storekit.*;
     public native void registerDeepLinkController(UIViewController controller, String key);
     @Method(selector = "registerDeepLinkController:forKey:withPresentation:")
     public native void registerDeepLinkController(UIViewController controller, String key, BNCViewControllerPresentationOption option);
-    @Method(selector = "enableLogging")
-    public native void enableLogging();
+    /**
+     * @deprecated This API is deprecated. Please use the static version.
+     */
+    @Deprecated
     @Method(selector = "enableLoggingAtLevel:withCallback:")
     public native void enableLogging(BranchLogLevel logLevel, @Block VoidBlock3<NSString, BranchLogLevel, NSError> callback);
     @Method(selector = "useEUEndpoints")
@@ -388,6 +390,10 @@ import org.robovm.apple.storekit.*;
     public static native BranchActivityItemProvider getBranchActivityItem(NSDictionary<?, ?> params, String feature, String stage, String campaign, NSArray<?> tags, String alias);
     @Method(selector = "getBranchActivityItemWithParams:feature:stage:tags:alias:delegate:")
     public static native BranchActivityItemProvider getBranchActivityItem(NSDictionary<?, ?> params, String feature, String stage, NSArray<?> tags, String alias, BranchActivityItemProviderDelegate delegate);
+    @Method(selector = "enableLogging")
+    public static native void enableLogging();
+    @Method(selector = "enableLoggingAtLevel:withCallback:")
+    public static native void enableLoggingAtLevel(BranchLogLevel logLevel, @Block VoidBlock3<NSString, BranchLogLevel, NSError> callback);
     @Method(selector = "setAPIUrl:")
     public static native void setAPIUrl(String url);
     @Method(selector = "isBranchLink:")

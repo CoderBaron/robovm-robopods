@@ -45,9 +45,8 @@ public enum /*<name>*/BranchLogLevel/*</name>*/ implements ValuedEnum {
     /*<values>*/
     Verbose(0L),
     Debug(1L),
-    Info(2L),
-    Warning(3L),
-    Error(4L);
+    Warning(2L),
+    Error(3L);
     /*</values>*/
 
     /*<bind>*/

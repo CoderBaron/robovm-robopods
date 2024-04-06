@@ -287,6 +287,10 @@ classes:
                 name: enableLogging
             '+setDMAParamsForEEA:AdPersonalizationConsent:AdUserDataUsageConsent:':
                 name: setDMAParamsForEEA
+            '+enableLoggingAtLevel:withCallback:':
+                name: enableLoggingAtLevel
+            '-enableLogging':
+                exclude: true # This API is deprecated. Please use the static version.
     BranchActivityItemProvider:
         methods:
             '-initWithParams:andTags:andFeature:andStage:andAlias:':
@@ -429,6 +433,14 @@ classes:
         methods:
             '-logError:error:':
                 name: logError
+            '-logWarning:error:':
+                name: logWarning
+            '-logDebug:error:':
+                name: logDebug
+            '-logVerbose:error:':
+                name: logVerbose
+            '+formatMessage:logLevel:error:':
+                name: formatMessage
 protocols:
     BNCNetworkOperationProtocol: {}
     BNCNetworkServiceProtocol:

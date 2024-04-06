@@ -73,19 +73,21 @@ import org.robovm.apple.storekit.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "shouldLog:")
+    public native boolean shouldLog(BranchLogLevel level);
     @Method(selector = "disableCallerDetails")
     public native void disableCallerDetails();
     @Method(selector = "logError:error:")
     public native void logError(String message, NSError error);
-    @Method(selector = "logWarning:")
-    public native void logWarning(String message);
-    @Method(selector = "logInfo:")
-    public native void logInfo(String message);
-    @Method(selector = "logDebug:")
-    public native void logDebug(String message);
-    @Method(selector = "logVerbose:")
-    public native void logVerbose(String message);
+    @Method(selector = "logWarning:error:")
+    public native void logWarning(String message, NSError error);
+    @Method(selector = "logDebug:error:")
+    public native void logDebug(String message, NSError error);
+    @Method(selector = "logVerbose:error:")
+    public native void logVerbose(String message, NSError error);
     @Method(selector = "shared")
     public static native BranchLogger shared();
+    @Method(selector = "formatMessage:logLevel:error:")
+    public static native String formatMessage(String message, BranchLogLevel logLevel, NSError error);
     /*</methods>*/
 }
