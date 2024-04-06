@@ -84,6 +84,8 @@ import org.robovm.pods.facebook.corebasics.*;
     void extractPermissions(NSDictionary<NSString, ?> responseObject, NSMutableSet<NSString> grantedPermissions, NSMutableSet<NSString> declinedPermissions, NSMutableSet<NSString> expiredPermissions);
     @Method(selector = "validateFacebookReservedURLSchemes")
     void validateFacebookReservedURLSchemes();
+    @Method(selector = "validateDomainConfiguration")
+    void validateDomainConfiguration();
     @Method(selector = "parametersFromFBURL:")
     NSDictionary<NSString, ?> parametersFromFBURL(NSURL url);
     @Method(selector = "topMostViewController")

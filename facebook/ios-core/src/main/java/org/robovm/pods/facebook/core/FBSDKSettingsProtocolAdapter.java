@@ -137,6 +137,10 @@ import org.robovm.pods.facebook.corebasics.*;
     public void setShouldUseCachedValuesForExpensiveMetadata(boolean v) {}
     @NotImplemented("persistableDataProcessingOptions")
     public NSDictionary<NSString, ?> getPersistableDataProcessingOptions() { return null; }
+    @NotImplemented("isDomainErrorEnabled")
+    public boolean isDomainErrorEnabled() { return false; }
+    @NotImplemented("setIsDomainErrorEnabled:")
+    public void setIsDomainErrorEnabled(boolean v) {}
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

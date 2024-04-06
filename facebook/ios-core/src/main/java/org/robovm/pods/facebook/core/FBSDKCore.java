@@ -49,8 +49,8 @@ import org.robovm.pods.facebook.corebasics.*;
     /*<bind>*/
     /*</bind>*/
     /*<constants>*/
-    public static final String Version = "16.3.1";
-    public static final String DefaultGraphApiVersion = "v16.0";
+    public static final String Version = "17.0.0";
+    public static final String DefaultGraphApiVersion = "v17.0";
     /*</constants>*/
     /*<constructors>*//*</constructors>*/
     /*<properties>*//*</properties>*/

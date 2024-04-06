@@ -58,17 +58,31 @@ import org.robovm.pods.facebook.corebasics.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "createGraphRequestWithGraphPath:parameters:tokenString:HTTPMethod:flags:forAppEvents:useAlternativeDefaultDomainPrefix:")
+    public native FBSDKGraphRequestProtocol createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, String tokenString, FBSDKHTTPMethod method, FBSDKGraphRequestFlags flags, boolean forAppEvents, boolean useAlternativeDefaultDomainPrefix);
     @Method(selector = "createGraphRequestWithGraphPath:parameters:tokenString:HTTPMethod:flags:")
     public native FBSDKGraphRequestProtocol createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, String tokenString, FBSDKHTTPMethod method, FBSDKGraphRequestFlags flags);
     @Method(selector = "createGraphRequestWithGraphPath:parameters:")
     public native FBSDKGraphRequestProtocol createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters);
+    @Method(selector = "createGraphRequestWithGraphPath:parameters:useAlternativeDefaultDomainPrefix:")
+    public native FBSDKGraphRequestProtocol createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, boolean useAlternativeDefaultDomainPrefix);
     @Method(selector = "createGraphRequestWithGraphPath:")
     public native FBSDKGraphRequestProtocol createGraphRequest(String graphPath);
+    @Method(selector = "createGraphRequestWithGraphPath:useAlternativeDefaultDomainPrefix:")
+    public native FBSDKGraphRequestProtocol createGraphRequest(String graphPath, boolean useAlternativeDefaultDomainPrefix);
     @Method(selector = "createGraphRequestWithGraphPath:parameters:HTTPMethod:")
     public native FBSDKGraphRequestProtocol createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, FBSDKHTTPMethod method);
+    @Method(selector = "createGraphRequestWithGraphPath:parameters:HTTPMethod:useAlternativeDefaultDomainPrefix:")
+    public native FBSDKGraphRequestProtocol createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, FBSDKHTTPMethod method, boolean useAlternativeDefaultDomainPrefix);
     @Method(selector = "createGraphRequestWithGraphPath:parameters:tokenString:version:HTTPMethod:")
     public native FBSDKGraphRequestProtocol createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, String tokenString, String version, FBSDKHTTPMethod method);
+    @Method(selector = "createGraphRequestWithGraphPath:parameters:tokenString:version:HTTPMethod:forAppEvents:")
+    public native FBSDKGraphRequestProtocol createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, String tokenString, String version, FBSDKHTTPMethod method, boolean forAppEvents);
+    @Method(selector = "createGraphRequestWithGraphPath:parameters:tokenString:version:HTTPMethod:forAppEvents:useAlternativeDefaultDomainPrefix:")
+    public native FBSDKGraphRequestProtocol createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, String tokenString, String version, FBSDKHTTPMethod method, boolean forAppEvents, boolean useAlternativeDefaultDomainPrefix);
     @Method(selector = "createGraphRequestWithGraphPath:parameters:flags:")
     public native FBSDKGraphRequestProtocol createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, FBSDKGraphRequestFlags flags);
+    @Method(selector = "createGraphRequestWithGraphPath:parameters:flags:useAlternativeDefaultDomainPrefix:")
+    public native FBSDKGraphRequestProtocol createGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, FBSDKGraphRequestFlags flags, boolean useAlternativeDefaultDomainPrefix);
     /*</methods>*/
 }

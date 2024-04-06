@@ -9,6 +9,9 @@
         <framework>StoreKit</framework>
         <framework>WebKit</framework>
     </frameworks>
+    <weakFrameworks>
+        <framework>apptrackingtransparency</framework>
+    </weakFrameworks>
     <exportedSymbols>
         <!-- required when static version of framework is used to keep symbols from being dropped by linker as unused -->
         <symbol>FB**</symbol>

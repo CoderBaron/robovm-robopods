@@ -69,8 +69,16 @@ import org.robovm.apple.avfoundation.*;
     public void videoComplete(FBRewardedVideoAd rewardedVideoAd) {}
     @NotImplemented("rewardedVideoAdWillLogImpression:")
     public void willLogImpression(FBRewardedVideoAd rewardedVideoAd) {}
+    /**
+     * @deprecated Functionality has been deprecated. This delegate method will not be called.
+     */
+    @Deprecated
     @NotImplemented("rewardedVideoAdServerRewardDidSucceed:")
     public void serverRewardDidSucceed(FBRewardedVideoAd rewardedVideoAd) {}
+    /**
+     * @deprecated Functionality has been deprecated. This delegate method will not be called.
+     */
+    @Deprecated
     @NotImplemented("rewardedVideoAdServerRewardDidFail:")
     public void serverRewardDidFail(FBRewardedVideoAd rewardedVideoAd) {}
     @NotImplemented("rewardedVideoAdCompanionViewProvider:")

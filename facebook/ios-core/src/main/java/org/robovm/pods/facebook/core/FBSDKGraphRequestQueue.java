@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.robovm.pods.facebook.audience;
+package org.robovm.pods.facebook.core;
 
 /*<imports>*/
 import java.io.*;
@@ -28,44 +28,43 @@ import org.robovm.rt.bro.*;
 import org.robovm.rt.bro.annotation.*;
 import org.robovm.rt.bro.ptr.*;
 import org.robovm.apple.foundation.*;
-import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.dispatch.*;
-import org.robovm.apple.coremedia.*;
-import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.uikit.*;
+import org.robovm.apple.webkit.*;
+import org.robovm.apple.coreanimation.*;
 import org.robovm.apple.storekit.*;
-import org.robovm.apple.avfoundation.*;
+import org.robovm.pods.facebook.corebasics.*;
 /*</imports>*/
 
 /*<javadoc>*/
 
 /*</javadoc>*/
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBAudienceNetworkAds/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKGraphRequestQueue/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
 
-    /*<ptr>*/public static class FBAudienceNetworkAdsPtr extends Ptr<FBAudienceNetworkAds, FBAudienceNetworkAdsPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(FBAudienceNetworkAds.class); }/*</bind>*/
-    /*<constants>*/
-    public static final String getVersion = "6.15.0";
-    /*</constants>*/
+    /*<ptr>*/public static class FBSDKGraphRequestQueuePtr extends Ptr<FBSDKGraphRequestQueue, FBSDKGraphRequestQueuePtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(FBSDKGraphRequestQueue.class); }/*</bind>*/
+    /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FBAudienceNetworkAds() {}
-    protected FBAudienceNetworkAds(Handle h, long handle) { super(h, handle); }
-    protected FBAudienceNetworkAds(SkipInit skipInit) { super(skipInit); }
+    protected FBSDKGraphRequestQueue() {}
+    protected FBSDKGraphRequestQueue(Handle h, long handle) { super(h, handle); }
+    protected FBSDKGraphRequestQueue(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @GlobalValue(symbol="FBAudienceNetworkErrorDomain", optional=true)
-    public static native String getErrorDomain();
-    
-    @Method(selector = "initializeWithSettings:completionHandler:")
-    public static native void initialize(FBAdInitSettings settings, @Block VoidBlock1<FBAdInitResults> completionHandler);
-    @Method(selector = "handleDeeplink:")
-    public static native void handleDeeplink(NSURL deeplink);
+    @Method(selector = "configureWithGraphRequestConnectionFactory:")
+    public native void configure(FBSDKGraphRequestConnectionFactoryProtocol graphRequestConnectionFactory);
+    @Method(selector = "enqueueRequest:completion:")
+    public native void enqueueRequest(FBSDKGraphRequestProtocol request, @Block VoidBlock3<FBSDKGraphRequestConnecting, NSObject, NSError> completion);
+    @Method(selector = "flush")
+    public native void flush();
+    @Method(selector = "sharedInstance")
+    public static native FBSDKGraphRequestQueue sharedInstance();
     /*</methods>*/
 }

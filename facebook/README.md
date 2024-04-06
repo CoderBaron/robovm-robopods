@@ -4,19 +4,20 @@
 
 | RoboPod                                             | Description                      | Version |
 |-----------------------------------------------------|----------------------------------|---------|
-| [ios-core](ios-core/)                               | Facebook Core                    | 16.3.1  |
-| [ios-core-basics](ios-core-basics/)                 | Facebook Core Basics             | 16.3.1  |
-| [ios-login](ios-login/)                             | Facebook iOS Login Kit           | 16.3.1  |
-| [ios-share](ios-share/)                             | Facebook iOS Share Kit           | 16.3.1  |
-| [ios-aem](ios-aem/)                                 | Facebook iOS AEM Kit             | 16.3.1  |
-| [ios-audience](ios-audience/)                       | Facebook iOS Audience Ad Network | 6.14.0  |
-| [ios-gaming-services-kit](ios-gaming-services-kit/) | Facebook iOS Gaming Service Kit  | 16.3.1  |
+| [ios-core](ios-core/)                               | Facebook Core                    | 17.0.0  |
+| [ios-core-basics](ios-core-basics/)                 | Facebook Core Basics             | 17.0.0  |
+| [ios-login](ios-login/)                             | Facebook iOS Login Kit           | 17.0.0  |
+| [ios-share](ios-share/)                             | Facebook iOS Share Kit           | 17.0.0  |
+| [ios-aem](ios-aem/)                                 | Facebook iOS AEM Kit             | 17.0.0  |
+| [ios-audience](ios-audience/)                       | Facebook iOS Audience Ad Network | 6.15.0  |
+| [ios-gaming-services-kit](ios-gaming-services-kit/) | Facebook iOS Gaming Service Kit  | 17.0.0  |
 
 ## Versions
 
 | RoboPods Version | Facebook Version |
 |------------------|------------------|
-| 1.35.0           | 16.3.1           |
+| 1.39.0           | 17.0.0           |
+| 1.37.0           | 16.3.1           |
 | 1.35.0           | 16.2.1           |
 | 1.34.0           | 16.2.0           |
 | 1.33.0           | 16.1.3           |
