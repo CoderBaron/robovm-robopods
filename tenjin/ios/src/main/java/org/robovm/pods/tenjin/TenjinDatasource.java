@@ -56,7 +56,7 @@ import org.robovm.apple.dispatch.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "setBooleanValue:key:")
-    public static native void setBooleanValue$key$(boolean value, String key);
+    public static native void setBoolean(boolean value, String key);
     @Method(selector = "setCacheEventsSetting:")
     public static native void setCacheEventsSetting(boolean isCacheEventsEnabled);
     @Method(selector = "getCacheEventsSetting")

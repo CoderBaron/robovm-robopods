@@ -63,5 +63,7 @@ import org.robovm.apple.dispatch.*;
     public native PurposeConsentStatus getGoogleAdPersonalization();
     @Method(selector = "getGoogleAdUserData")
     public native PurposeConsentStatus getGoogleAdUserData();
+    @Method(selector = "isGoogleDMADisabled")
+    public native boolean isGoogleDMADisabled();
     /*</methods>*/
 }

@@ -93,7 +93,10 @@ classes:
                 name: init
             '-initWithApiKey:client:':
                 name: init
-    TenjinDatasource: { }
+    TenjinDatasource:
+        methods:
+            '+setBooleanValue:key:':
+                name: setBoolean
     TenjinImpl:
         methods:
             '-initWithToken:andSharedSecret:andAppSubversion:ping:requestSender:':

@@ -150,6 +150,10 @@ import org.robovm.apple.dispatch.*;
     public static native void optInParams(NSArray<?> params);
     @Method(selector = "optInOutUsingCMP")
     public static native boolean optInOutUsingCMP();
+    @Method(selector = "optOutGoogleDMA")
+    public static native void optOutGoogleDMA();
+    @Method(selector = "optInGoogleDMA")
+    public static native void optInGoogleDMA();
     @Method(selector = "appendAppSubversion:")
     public static native void appendAppSubversion(NSNumber subversion);
     /**
