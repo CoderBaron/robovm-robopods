@@ -51,7 +51,7 @@ v1.39.0 - in development
 | [Firebase](firebase/)           | 10.23.0 |
 | [Fyber](fyber/)                 | 8.2.2   |
 | [HelpShiftX](helpshift/)        | 10.3.0  |
-| [InMobi](inmobi/)               | 10.6.4  |
+| [InMobi](inmobi/)               | 10.7.1  |
 | [IronSource](ironsource/)       | 7.8.0   |
 | [Lottie](lottie/)               | 4.4.2   |
 | [OneSignal](onesignal/)         | 5.1.4   |
