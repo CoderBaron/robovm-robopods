@@ -89,8 +89,16 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    /**
+     * @deprecated Use CAS.targetingOptions.locationCollectionEnabled instead.
+     */
+    @Deprecated
     @Method(selector = "isTrackLocationEnabled")
     public native boolean isTrackLocationEnabled();
+    /**
+     * @deprecated Use CAS.targetingOptions.locationCollectionEnabled instead.
+     */
+    @Deprecated
     @Method(selector = "setTrackLocationWithEnabled:")
     public native void setTrackLocation(boolean enabled);
     @Method(selector = "restartInterstitialInterval")

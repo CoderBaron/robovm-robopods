@@ -13,7 +13,8 @@ typedef NS_OPTIONS (NSUInteger, CASTypeFlags){
     CASTypeFlagsInterstitial = 1 << 1,
     CASTypeFlagsRewarded = 1 << 2,
     CASTypeFlagsNative = 1 << 3,
-    CASTypeFlagsOpenApp = 1 << 6,
+    CASTypeFlagsOpenApp __deprecated_enum_msg("Renamed to AppOpen") = 1 << 6,
+    CASTypeFlagsAppOpen = 1 << 6,
     CASTypeFlagsEverything = CASTypeFlagsBanner | CASTypeFlagsInterstitial | CASTypeFlagsRewarded
 };
 

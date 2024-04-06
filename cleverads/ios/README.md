@@ -26,7 +26,7 @@ repositories {
 }
 dependencies {
    ... other dependencies ...
-   implementation "io.github.dkimitsa.robovm:robopods-clearads-ios:$altpodsVersion"
+   implementation "io.github.dkimitsa.robovm:robopods-cleverads-ios:$altpodsVersion"
 }
 ```
 

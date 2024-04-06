@@ -36,16 +36,15 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Marshaler(Bits.AsMachineSizedIntMarshaler.class)/*</annotations>*/
-public final class /*<name>*/CASTypeFlags/*</name>*/ extends Bits</*<name>*/CASTypeFlags/*</name>*/> {
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
+public enum /*<name>*/CASType/*</name>*/ implements ValuedEnum {
     /*<values>*/
-    public static final CASTypeFlags None = new CASTypeFlags(0L);
-    public static final CASTypeFlags Banner = new CASTypeFlags(1L);
-    public static final CASTypeFlags Interstitial = new CASTypeFlags(2L);
-    public static final CASTypeFlags Rewarded = new CASTypeFlags(4L);
-    public static final CASTypeFlags Native = new CASTypeFlags(8L);
-    public static final CASTypeFlags OpenApp = new CASTypeFlags(64L);
-    public static final CASTypeFlags Everything = new CASTypeFlags(7L);
+    Banner(0L),
+    Interstitial(1L),
+    Rewarded(2L),
+    AppOpen(3L),
+    Native(4L),
+    None(5L);
     /*</values>*/
 
     /*<bind>*/
@@ -53,17 +52,17 @@ public final class /*<name>*/CASTypeFlags/*</name>*/ extends Bits</*<name>*/CAST
     /*<constants>*//*</constants>*/
     /*<methods>*//*</methods>*/
 
-    private static final /*<name>*/CASTypeFlags/*</name>*/[] values = _values(/*<name>*/CASTypeFlags/*</name>*/.class);
+    private final long n;
 
-    public /*<name>*/CASTypeFlags/*</name>*/(long value) { super(value); }
-    private /*<name>*/CASTypeFlags/*</name>*/(long value, long mask) { super(value, mask); }
-    protected /*<name>*/CASTypeFlags/*</name>*/ wrap(long value, long mask) {
-        return new /*<name>*/CASTypeFlags/*</name>*/(value, mask);
-    }
-    protected /*<name>*/CASTypeFlags/*</name>*/[] _values() {
-        return values;
-    }
-    public static /*<name>*/CASTypeFlags/*</name>*/[] values() {
-        return values.clone();
+    private /*<name>*/CASType/*</name>*/(long n) { this.n = n; }
+    public long value() { return n; }
+    public static /*<name>*/CASType/*</name>*/ valueOf(long n) {
+        for (/*<name>*/CASType/*</name>*/ v : values()) {
+            if (v.n == n) {
+                return v;
+            }
+        }
+        throw new IllegalArgumentException("No constant with value " + n + " found in " 
+            + /*<name>*/CASType/*</name>*/.class.getName());
     }
 }

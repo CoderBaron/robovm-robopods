@@ -39,10 +39,12 @@ classes:
                 name: loadAd
             '+createWithManagerId:':
                 name: create
-                contructor: true
+                constructor: true
             '+createWithManager:':
                 name: create
-                contructor: true
+                constructor: true
+            '-loadAdWithCompletionHandler:':
+                name: loadAd
     CASBannerInternal: { }
     CASBannerView:
         methods:

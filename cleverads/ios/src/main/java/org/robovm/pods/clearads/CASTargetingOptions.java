@@ -48,16 +48,12 @@ import org.robovm.apple.coreanimation.*;
     public CASTargetingOptions() {}
     protected CASTargetingOptions(Handle h, long handle) { super(h, handle); }
     protected CASTargetingOptions(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithOptions:")
-    public CASTargetingOptions(CASTargetingOptions options) { super((SkipInit) null); initObject(init(options)); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithOptions:")
-    protected native @Pointer long init(CASTargetingOptions options);
     @Method(selector = "setGender:")
     public native void setGender(Gender gender);
     @Method(selector = "getGender")
@@ -70,6 +66,10 @@ import org.robovm.apple.coreanimation.*;
     public native void setLocation(double latitude, double longitude);
     @Method(selector = "clearLocation")
     public native void clearLocation();
+    @Method(selector = "setLocationCollectionEnabled:")
+    public native void setLocationCollectionEnabled(boolean enabled);
+    @Method(selector = "getLocationCollectionEnabled")
+    public native boolean getLocationCollectionEnabled();
     @Method(selector = "setKeywords:")
     public native void setKeywords(NSArray<NSString> keywords);
     @Method(selector = "getKeywords")

@@ -48,6 +48,8 @@ import org.robovm.apple.coreanimation.*;
     protected CASAppOpen() {}
     protected CASAppOpen(Handle h, long handle) { super(h, handle); }
     protected CASAppOpen(SkipInit skipInit) { super(skipInit); }
+    public CASAppOpen(String managerId) { super((Handle) null, create(managerId)); retain(getHandle()); }
+    public CASAppOpen(CASMediationManager manager) { super((Handle) null, create(manager)); retain(getHandle()); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "managerId")
@@ -59,6 +61,12 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "loadAdWithCompletionHandler:")
+    public native void loadAd(@Block VoidBlock2<CASAppOpen, NSError> completionHandler);
+    /**
+     * @deprecated Loading app open ads now assumes the current orientation of the device, matching other full-screen formats.
+     */
+    @Deprecated
     @Method(selector = "loadAdWithOrientation:completionHandler:")
     public native void loadAd(UIInterfaceOrientation orientation, @Block VoidBlock2<CASAppOpen, NSError> completionHandler);
     @Method(selector = "isAdAvailable")
@@ -66,8 +74,8 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "presentFromRootViewController:")
     public native void presentFromRootViewController(UIViewController controller);
     @Method(selector = "createWithManagerId:")
-    public static native CASAppOpen create(String managerId);
+    protected static native @Pointer long create(String managerId);
     @Method(selector = "createWithManager:")
-    public static native CASAppOpen create(CASMediationManager manager);
+    protected static native @Pointer long create(CASMediationManager manager);
     /*</methods>*/
 }

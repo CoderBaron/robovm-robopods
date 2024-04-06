@@ -213,7 +213,7 @@
         <module>adapty</module>
         <module>singular</module>
         <module>tenjin</module>
-        <module>clearads</module>
+        <module>cleverads</module>
         <!-- Firebase to be kept last, as its Ads adapters depend on facebook/inmobi/applovinsdk -->
         <module>firebase</module>
     </modules>

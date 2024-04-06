@@ -64,6 +64,8 @@ import org.robovm.apple.coreanimation.*;
     public static native @MachineSizedUInt long rewarded();
     @Method(selector = "native")
     public static native @MachineSizedUInt long typeNative();
+    @Method(selector = "appOpen")
+    public static native @MachineSizedUInt long appOpen();
     @Method(selector = "everything")
     public static native @MachineSizedUInt long everything();
     /*</methods>*/
