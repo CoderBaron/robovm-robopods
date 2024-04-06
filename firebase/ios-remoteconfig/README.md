@@ -4,6 +4,7 @@
 * FirebaseABTesting.xcframework (from Firebase.zip/FirebaseRemoteConfig/FirebaseABTesting.xcframework)
 * FirebaseRemoteConfig.xcframework (from Firebase.zip/FirebaseRemoteConfig/FirebaseRemoteConfig.xcframework)
 * FirebaseSharedSwift.xcframework (from Firebase.zip/FirebaseRemoteConfig/FirebaseSharedSwift.xcframework)
+* FirebaseRemoteConfigInterop.xcframework (from Firebase.zip/FirebaseRemoteConfig/FirebaseRemoteConfigInterop.xcframework)
 
 Plus ones required for ios-core module:
 * FBLPromises.xcframework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)

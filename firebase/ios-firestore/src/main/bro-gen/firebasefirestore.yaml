@@ -19,6 +19,7 @@ enums:
     FIRFirestoreErrorCode: { nserror: true}
     FIRLoadBundleTaskState: {}
     FIRAggregateSource: {}
+    FIRListenSource: {}
 classes:
     FIRCollectionReference:
         methods:
@@ -55,6 +56,9 @@ classes:
                 name: getDocument
             '-addSnapshotListenerWithIncludeMetadataChanges:listener:':
                 name: addSnapshotListener
+            '-addSnapshotListenerWithOptions:listener:':
+                name: addSnapshotListener
+
     FIRDocumentSnapshot:
         methods:
             '-dataWithServerTimestampBehavior:':
@@ -162,6 +166,8 @@ classes:
                 name: queryOrderedByFieldDescending
             '-queryOrderedByFieldPath:descending:':
                 name: queryOrderedByFieldPathDescending
+            '-addSnapshotListenerWithOptions:listener:':
+                name: addSnapshotListener
     FIRQueryDocumentSnapshot:
         methods:
     FIRQuerySnapshot:
@@ -279,6 +285,14 @@ classes:
                 name: init
     FIRPersistentCacheIndexManager: {}
     FIRAggregateField: {}
+    FIRSnapshotListenOptions:
+        methods:
+            '-optionsWithIncludeMetadataChanges:':
+                name: create
+                constructor: true
+            '-optionsWithSource:':
+                name: create
+                constructor: true
 protocols:
     FIRListenerRegistration: { }
     FIRLocalCacheSettings: { }

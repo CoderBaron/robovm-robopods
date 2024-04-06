@@ -3,5 +3,6 @@
         <framework>FirebaseABTesting</framework>
         <framework>FirebaseRemoteConfig</framework>
         <framework>FirebaseSharedSwift</framework>
+        <framework>FirebaseRemoteConfigInterop</framework>
     </frameworks>
 </config>

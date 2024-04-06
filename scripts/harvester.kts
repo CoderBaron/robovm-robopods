@@ -1054,7 +1054,31 @@ fun registerFirebase(frameworkRegistry: MutableMap<String, (String) -> Unit>, gr
     }
     registry["FirebaseAnalytics"] = { framework -> action(framework, "firebase/ios-analytics", "firebase-analytics.yaml") }
     registry["FirebaseAuth"] = { framework -> action(framework, "firebase/ios-auth", "firebaseauth.yaml") }
-    registry["FirebaseCrashlytics"] = { framework -> action(framework, "firebase/ios-crashlytics", "firebase-crashlytics.yaml") }
+    registry["FirebaseCrashlytics"] = { framework ->
+        action(framework,
+            moduleFolder = "firebase/ios-crashlytics",
+            yaml = "firebase-crashlytics.yaml",
+            destinationHeadersDir = Path.of("firebase", "ios-crashlytics", "src", "main", "bro-gen").toFile(),
+            headerFolderCleaner = { _, dst ->
+                cleanUpHeaders("FirebaseCrashlytics", dst.extend("FirebaseCrashlytics.framework"))
+                cleanUpHeaders("FirebaseRemoteConfigInterop", dst.extend("FirebaseRemoteConfigInterop.framework"))
+            },
+            headersCopier = { _, _, dst ->
+                copyHeaders("FirebaseCrashlytics.framework",
+                    pickLocation("FirebaseCrashlytics").extend("Headers"),
+                    dst.extend("FirebaseCrashlytics.framework/Headers"))
+                copyHeaders("FirebaseRemoteConfigInterop.framework",
+                    pickLocation("FirebaseRemoteConfigInterop", "FirebaseCrashlytics").extend("Headers"),
+                    dst.extend("FirebaseRemoteConfigInterop.framework/Headers"))
+            } ,
+            interactiveValidateHeaderFolder = { _, _, instruction, optional ->
+                interactiveValidateHeaderFolder("FirebaseCrashlytics.framework",
+                    pickLocation("FirebaseCrashlytics").extend("Headers"), instruction, optional)
+                interactiveValidateHeaderFolder("FirebaseRemoteConfigInterop.framework",
+                    pickLocation("FirebaseRemoteConfigInterop", "FirebaseCrashlytics").extend("Headers"), instruction, optional)
+            }
+        )
+    }
     registry["FirebaseDatabase"] = { framework -> action(framework, "firebase/ios-database", "firebasedatabase.yaml") }
     registry["FirebaseDynamicLinks"] = { framework -> action(framework, "firebase/ios-dylinks", "firebasedylinks.yaml") }
     registry["FirebaseFirestore"] = { framework ->

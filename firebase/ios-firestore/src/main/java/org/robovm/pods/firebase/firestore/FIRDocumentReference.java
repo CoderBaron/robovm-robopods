@@ -89,5 +89,7 @@ import org.robovm.apple.dispatch.*;
     public native FIRListenerRegistration addSnapshotListener(@Block VoidBlock2<FIRDocumentSnapshot, NSError> listener);
     @Method(selector = "addSnapshotListenerWithIncludeMetadataChanges:listener:")
     public native FIRListenerRegistration addSnapshotListener(boolean includeMetadataChanges, @Block VoidBlock2<FIRDocumentSnapshot, NSError> listener);
+    @Method(selector = "addSnapshotListenerWithOptions:listener:")
+    public native FIRListenerRegistration addSnapshotListener(FIRSnapshotListenOptions options, @Block VoidBlock2<FIRDocumentSnapshot, NSError> listener);
     /*</methods>*/
 }

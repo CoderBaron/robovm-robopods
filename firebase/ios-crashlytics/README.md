@@ -6,6 +6,7 @@
 * FirebaseSessions.xcframework (from Firebase.zip/FirebaseCrashlytics/FirebaseSessions.xcframework)
 * GoogleDataTransport.xcframework (from Firebase.zip/FirebaseCrashlytics/GoogleDataTransport.xcframework)
 * Promises.xcframework (from Firebase.zip/FirebaseCrashlytics/Promises.xcframework)
+* FirebaseRemoteConfigInterop.xcframework (from Firebase.zip/FirebaseCrashlytics/FirebaseRemoteConfigInterop.xcframework)
 
 Plus ones required for ios-core module:
 * FBLPromises.xcframework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)
