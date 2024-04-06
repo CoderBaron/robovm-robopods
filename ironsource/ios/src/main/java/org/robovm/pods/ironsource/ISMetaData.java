@@ -48,6 +48,7 @@ import org.robovm.apple.coreanimation.*;
         public static final String CCPAKey = "do_not_sell";
         public static final String ISCOPPAKey = "is_child_directed";
         public static final String TestSuiteKey = "is_test_suite";
+        public static final String IIQFKey = "iiqf";
         public static final String TrueValue = "true";
         public static final String FalseValue = "false";
         public static final String TestSuiteEnableValue = "enable";
