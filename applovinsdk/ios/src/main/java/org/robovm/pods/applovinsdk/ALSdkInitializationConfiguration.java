@@ -49,6 +49,8 @@ import org.robovm.apple.safariservices.*;
     protected ALSdkInitializationConfiguration() {}
     protected ALSdkInitializationConfiguration(Handle h, long handle) { super(h, handle); }
     protected ALSdkInitializationConfiguration(SkipInit skipInit) { super(skipInit); }
+    public ALSdkInitializationConfiguration(String sdkKey) { super((Handle) null, create(sdkKey)); retain(getHandle()); }
+    public ALSdkInitializationConfiguration(String sdkKey, @Block VoidBlock1<ALSdkInitializationConfigurationBuilder> builderBlock) { super((Handle) null, create(sdkKey, builderBlock)); retain(getHandle()); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "sdkKey")
@@ -72,7 +74,11 @@ import org.robovm.apple.safariservices.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "configurationWithSdkKey:")
+    protected static native @Pointer long create(String sdkKey);
     @Method(selector = "configurationWithSdkKey:builderBlock:")
-    public static native ALSdkInitializationConfiguration configurationWithSdkKey$builderBlock$(String sdkKey, @Block VoidBlock1<ALSdkInitializationConfigurationBuilder> builderBlock);
+    protected static native @Pointer long create(String sdkKey, @Block VoidBlock1<ALSdkInitializationConfigurationBuilder> builderBlock);
+    @Method(selector = "builderWithSdkKey:")
+    public static native ALSdkInitializationConfigurationBuilder builder(String sdkKey);
     /*</methods>*/
 }

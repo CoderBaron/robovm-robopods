@@ -59,7 +59,7 @@ import org.robovm.apple.safariservices.*;
     @Method(selector = "didStartRewardedVideoForAd:")
     void didStartRewardedVideoForAd(MAAd ad);
     /**
-     * @deprecated This function is deprecated because not all adapters support this callback. Please use -[MAAdDelegate didHideAd:] instead
+     * @deprecated This API is deprecated because not all adapters support this callback. Please use -[MAAdDelegate didHideAd:] instead
      */
     @Deprecated
     @Method(selector = "didCompleteRewardedVideoForAd:")

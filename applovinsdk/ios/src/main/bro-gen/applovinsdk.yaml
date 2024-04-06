@@ -463,8 +463,13 @@ classes:
     ALSdkInitializationConfiguration:
         methods:
             '+configurationWithSdkKey:builderBlock:':
-                #trim_after_first_colon: true
-                name: configurationWithSdkKey$builderBlock$
+                name: create
+                constructor: true
+            '+configurationWithSdkKey:':
+                name: create
+                constructor: true
+            '+builderWithSdkKey:':
+                name: builder
     ALSdkInitializationConfigurationBuilder: { }
     ALTargetingDataBuilder: { }
 protocols:

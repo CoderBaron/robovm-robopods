@@ -73,16 +73,8 @@ import org.robovm.apple.safariservices.*;
     @Deprecated
     @Property(selector = "setUserIdentifier:")
     public native void setUserIdentifier(String v);
-    /**
-     * @deprecated The setter of this property has been moved to @c ALSdkInitializationConfiguration and will be removed in a future SDK version.
-     */
-    @Deprecated
     @Property(selector = "userSegment")
     public native ALUserSegment getUserSegment();
-    /**
-     * @deprecated The setter of this property has been moved to @c ALSdkInitializationConfiguration and will be removed in a future SDK version.
-     */
-    @Deprecated
     @Property(selector = "targetingData")
     public native ALTargetingData getTargetingData();
     @Property(selector = "adService")
@@ -92,13 +84,13 @@ import org.robovm.apple.safariservices.*;
     @Property(selector = "cmpService")
     public native ALCMPService getCmpService();
     /**
-     * @deprecated This property has been moved to @c ALSdkInitializationConfiguration and will be removed in a future SDK version.
+     * @deprecated This setter has been moved to @c ALSdkInitializationConfiguration and will be removed in a future SDK version.
      */
     @Deprecated
     @Property(selector = "mediationProvider")
     public native String getMediationProvider();
     /**
-     * @deprecated This property has been moved to @c ALSdkInitializationConfiguration and will be removed in a future SDK version.
+     * @deprecated This setter has been moved to @c ALSdkInitializationConfiguration and will be removed in a future SDK version.
      */
     @Deprecated
     @Property(selector = "setMediationProvider:")

@@ -57,14 +57,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSString *userIdentifier __deprecated_msg("This property has been moved to @c ALSdkSettings and will be removed in a future SDK version.");
 
 /**
- * @deprecated The setter of this property has been moved to @c ALSdkInitializationConfiguration and will be removed in a future SDK version.
+ * A user segment allows AppLovin to serve ads by using custom-defined rules that are based on which segment the user is in. The user segment is a custom string of 32 alphanumeric characters or less.
  */
-@property (nonatomic, strong, readonly) ALUserSegment *userSegment __deprecated_msg("The setter of this property has been moved to @c ALSdkInitializationConfiguration and will be removed in a future SDK version.");
+@property (nonatomic, strong, readonly, nullable) ALUserSegment *userSegment;
 
 /**
- * @deprecated The setter of this property has been moved to @c ALSdkInitializationConfiguration and will be removed in a future SDK version.
+ * A class which allows you to send any demographic or interest-based targeting data.
  */
-@property (nonatomic, strong, readonly) ALTargetingData *targetingData __deprecated_msg("The setter of this property has been moved to @c ALSdkInitializationConfiguration and will be removed in a future SDK version.");
+@property (nonatomic, strong, readonly, nullable) ALTargetingData *targetingData;
 
 #pragma mark - SDK Services
 
@@ -90,9 +90,11 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - MAX
 
 /**
+ * The mediation provider. Set this either by using one of the provided strings in ALMediationProvider.h, or your own string if you do not find an applicable one there.
+ *
  * @deprecated This property has been moved to @c ALSdkInitializationConfiguration and will be removed in a future SDK version.
  */
-@property (nonatomic, copy, nullable) NSString *mediationProvider __deprecated_msg("This property has been moved to @c ALSdkInitializationConfiguration and will be removed in a future SDK version.");
+@property (nonatomic, copy, nullable) NSString *mediationProvider __deprecated_msg("This setter has been moved to @c ALSdkInitializationConfiguration and will be removed in a future SDK version.");
 
 /**
  * The list of available mediation networks, as an array of @c MAMediatedNetworkInfo objects.
@@ -140,7 +142,7 @@ typedef void (^ALSdkInitializationCompletionHandler)(ALSdkConfiguration *configu
  *
  * @return The shared instance of AppLovin’s SDK, or @c nil (indicating an error) if the SDK key is not set in the application’s @code Info.plist @endcode.
  */
-+ (nullable ALSdk *)shared;
++ (ALSdk *)shared;
 
 /**
  * Initializes the SDK with the given initialization configuration and completion block.

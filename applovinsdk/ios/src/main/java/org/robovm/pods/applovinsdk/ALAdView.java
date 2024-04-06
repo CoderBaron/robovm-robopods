@@ -87,10 +87,16 @@ import org.robovm.apple.safariservices.*;
     public native boolean isAutoload();
     @Property(selector = "setAutoloadEnabled:")
     public native void setAutoload(boolean v);
+    /**
+     * @since Available in iOS 15.0 and later.
+     */
     @Property(selector = "prewarmingToken")
-    public native NSObject getPrewarmingToken();
+    public native SFSafariViewControllerPrewarmingToken getPrewarmingToken();
+    /**
+     * @since Available in iOS 15.0 and later.
+     */
     @Property(selector = "setPrewarmingToken:")
-    public native void setPrewarmingToken(NSObject v);
+    public native void setPrewarmingToken(SFSafariViewControllerPrewarmingToken v);
     @Property(selector = "safariViewControllerDelegate")
     public native SFSafariViewControllerDelegate getSafariViewControllerDelegate();
     @Property(selector = "setSafariViewControllerDelegate:")

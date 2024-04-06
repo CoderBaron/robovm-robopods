@@ -82,6 +82,7 @@ import org.robovm.apple.safariservices.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "build")
+    public native ALTargetingData build();
     /*</methods>*/
 }

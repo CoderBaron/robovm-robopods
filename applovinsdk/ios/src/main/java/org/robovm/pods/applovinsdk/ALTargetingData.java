@@ -147,5 +147,7 @@ import org.robovm.apple.safariservices.*;
     public native void clearAll();
     @Method(selector = "dataWithBuilderBlock:")
     protected static native @Pointer long create(@Block VoidBlock1<ALTargetingDataBuilder> builderBlock);
+    @Method(selector = "builder")
+    public static native ALTargetingDataBuilder builder();
     /*</methods>*/
 }

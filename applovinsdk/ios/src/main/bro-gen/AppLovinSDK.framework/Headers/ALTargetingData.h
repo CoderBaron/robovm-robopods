@@ -57,7 +57,20 @@ typedef NS_ENUM(NSInteger, ALGender)
 
 #pragma mark - Initialization
 
+/**
+ * Creates a @c ALTargetingData object from the builder in the builderBlock.
+ *
+ * @return a @c ALTargetingData object.
+ */
 + (instancetype)dataWithBuilderBlock:(NS_NOESCAPE ALTargetingDataBuilderBlock)builderBlock;
+
+/**
+ * Creates a builder object for @c ALTargetingData.
+ * Please call @c -build to create a @c ALTargetingData object.
+ *
+ * @return a @c ALTargetingDataBuilder object.
+ */
++ (ALTargetingDataBuilder *)builder;
 
 - (instancetype)init __attribute__((unavailable("Please create a ALTargetingData instance in ALSdkInitializationConfiguration")));
 - (instancetype)new NS_UNAVAILABLE;
@@ -112,6 +125,15 @@ typedef NS_ENUM(NSInteger, ALGender)
  * Set this property to @c nil to clear this value.
  */
 @property (nonatomic, copy, nullable) NSArray<NSString *> *interests;
+
+#pragma mark - Build
+
+/**
+ * Builds a @c ALTargetingData object from the builder properties' values.
+ *
+ * @return a @c ALTargetingData object.
+ */
+- (ALTargetingData *)build;
 
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;

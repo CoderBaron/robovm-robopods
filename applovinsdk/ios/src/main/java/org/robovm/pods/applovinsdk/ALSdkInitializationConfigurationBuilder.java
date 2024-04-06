@@ -86,6 +86,7 @@ import org.robovm.apple.safariservices.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "build")
+    public native ALSdkInitializationConfiguration build();
     /*</methods>*/
 }

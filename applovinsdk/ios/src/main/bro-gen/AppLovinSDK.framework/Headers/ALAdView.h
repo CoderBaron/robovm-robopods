@@ -16,6 +16,7 @@
 @class ALAdSize;
 @class ALAdType;
 @class ALSFSafariViewControllerDelegate;
+@class SFSafariViewControllerPrewarmingToken;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
  * This interface represents a view-based ad — i.e. banner, MREC, or leader.
  */
 @interface ALAdView : UIView
-    
+
 /**
  * @name Ad Delegates
  */
@@ -75,9 +76,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * @c SFSafariViewControllerPrewarmingToken object that corresponds to prewarmed URLs. Must keep a strong reference to this token as long as we expect the prewarmed connections to remain open.
- * NOTE: Only available in iOS 15+.
  */
-@property (nonatomic, strong, nullable) id /* SFSafariViewControllerPrewarmingToken */ prewarmingToken;
+@property (nonatomic, strong, nullable) SFSafariViewControllerPrewarmingToken *prewarmingToken API_AVAILABLE(ios(15.0));
 
 /**
  * @c ALSFSafariViewControllerDelegate object for @c SFSafariViewController callbacks.
