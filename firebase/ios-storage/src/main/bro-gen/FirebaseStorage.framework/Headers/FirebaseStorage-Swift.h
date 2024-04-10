@@ -636,7 +636,6 @@ SWIFT_CLASS_NAMED("StorageReference")
 /// upload.
 - (FIRStorageUploadTask * _Nonnull)putData:(NSData * _Nonnull)uploadData metadata:(FIRStorageMetadata * _Nullable)metadata completion:(void (^ _Nullable)(FIRStorageMetadata * _Nullable, NSError * _Nullable))completion;
 /// Asynchronously uploads a file to the currently specified <code>StorageReference</code>.
-/// <code>putData</code> should be used instead of <code>putFile</code> in Extensions.
 /// \param fileURL A URL representing the system file path of the object to be uploaded.
 ///
 /// \param metadata <code>StorageMetadata</code> containing additional information (MIME type, etc.)
@@ -649,12 +648,10 @@ SWIFT_CLASS_NAMED("StorageReference")
 - (FIRStorageUploadTask * _Nonnull)putFile:(NSURL * _Nonnull)fileURL metadata:(FIRStorageMetadata * _Nullable)metadata;
 /// Asynchronously uploads a file to the currently specified <code>StorageReference</code>,
 /// without additional metadata.
-/// <code>putData</code> should be used instead of <code>putFile</code> in Extensions.
 /// @param fileURL A URL representing the system file path of the object to be uploaded.
 /// @return An instance of StorageUploadTask, which can be used to monitor or manage the upload.
 - (FIRStorageUploadTask * _Nonnull)putFile:(NSURL * _Nonnull)fileURL;
 /// Asynchronously uploads a file to the currently specified <code>StorageReference</code>.
-/// <code>putData</code> should be used instead of <code>putFile</code> in Extensions.
 /// \param fileURL A URL representing the system file path of the object to be uploaded.
 ///
 /// \param metadata <code>StorageMetadata</code> containing additional information (MIME type, etc.)
