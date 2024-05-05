@@ -66,7 +66,5 @@ import org.robovm.apple.coreanimation.*;
     public static native String getVersion();
     @Method(selector = "isInitialized")
     public static native boolean isInitialized();
-    @Method(selector = "createExpectedParametersString:current:received:")
-    public static native String createExpectedParametersString(String fieldName, String current, String received);
     /*</methods>*/
 }
