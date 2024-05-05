@@ -53,7 +53,7 @@ v1.40.0 - in development
 | [HelpShiftX](helpshift/)        | 10.3.0  |
 | [InMobi](inmobi/)               | 10.7.1  |
 | [IronSource](ironsource/)       | 7.9.1   |
-| [Lottie](lottie/)               | 4.4.2   |
+| [Lottie](lottie/)               | 4.4.3   |
 | [OneSignal](onesignal/)         | 5.1.6   |
 | [Pollfish](pollfish/)           | 6.5.0   |
 | [SAMKeychain](samkeychain/)     | 1.5.3   |

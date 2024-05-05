@@ -162,15 +162,12 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
     "Lottie" to { framework ->
         val artifact = "$framework.framework"
         val artifactLocation = downloadFolder.extend("Lottie.xcframework/ios-arm64//$artifact")
-        val versionFile: String by lazy {
-            downloadFolder.extend("Lottie.xcframework/version").readText()
-        }
         processFramework(
             artifact = artifact,
             moduleFolder = "lottie/ios",
             sourceHeadersDir = artifactLocation.headers,
             yaml = "lottie.yaml",
-            version = { versionFile },
+            version = { artifactLocation.infoPlist.extractVersion() },
             instruction = """
                 1. goto https://github.com/airbnb/lottie-ios/releases and download latest Lottie.xcframework.zip
                 2. unpack 
