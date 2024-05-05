@@ -55,9 +55,9 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "setGender:")
-    public native void setGender(Gender gender);
+    public native void setGender(CASGender gender);
     @Method(selector = "getGender")
-    public native Gender getGender();
+    public native CASGender getGender();
     @Method(selector = "setAge:")
     public native void setAge(@MachineSizedSInt long age);
     @Method(selector = "getAge")

@@ -46,6 +46,7 @@ public enum /*<name>*/CASNetworkId/*</name>*/ implements ValuedEnum {
     UnityAds(4L),
     AppLovin(5L),
     SuperAwesome(6L),
+    StartIO(7L),
     AudienceNetwork(9L),
     InMobi(10L),
     DTExchange(11L),

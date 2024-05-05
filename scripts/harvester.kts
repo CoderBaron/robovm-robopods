@@ -438,7 +438,7 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             artifact = "$framework.framework",
             moduleFolder = "cleverads/ios",
             sourceHeadersDir = artifactLocation.headers,
-            yaml = "clearads.yaml",
+            yaml = "cleverads.yaml",
             version = {
                 artifactLocation.headers.extend("CleverAdsSolutions.h").readLines()
                     .find{ it.contains("CAS_FRAMEWORK_VERSION") }

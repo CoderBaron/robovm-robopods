@@ -43,6 +43,7 @@ public enum /*<name>*/CASConsentFlowStatus/*</name>*/ implements ValuedEnum {
     NotRequired(4L),
     Unavailable(5L),
     InternalError(10L),
+    NetworkError(11L),
     ViewControllerInvalid(12L),
     FlowStillPresenting(13L);
     /*</values>*/

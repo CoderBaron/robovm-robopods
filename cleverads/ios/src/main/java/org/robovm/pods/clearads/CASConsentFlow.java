@@ -68,6 +68,10 @@ import org.robovm.apple.coreanimation.*;
     @Deprecated
     @Property(selector = "setRequestATT:")
     public native void setRequestATT(boolean v);
+    @Property(selector = "forceTesting")
+    public native boolean isForceTesting();
+    @Property(selector = "setForceTesting:")
+    public native void setForceTesting(boolean v);
     @Property(selector = "privacyPolicyUrl")
     public native String getPrivacyPolicyUrl();
     @Property(selector = "setPrivacyPolicyUrl:")
@@ -80,6 +84,10 @@ import org.robovm.apple.coreanimation.*;
     public native UIViewController getViewControllerToPresent();
     @Property(selector = "setViewControllerToPresent:")
     public native void setViewControllerToPresent(UIViewController v);
+    @Property(selector = "debugGeography")
+    public native CASUserDebugGeography getDebugGeography();
+    @Property(selector = "setDebugGeography:")
+    public native void setDebugGeography(CASUserDebugGeography v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -87,6 +95,8 @@ import org.robovm.apple.coreanimation.*;
     protected native @Pointer long init(boolean isEnabled);
     @Method(selector = "withViewControllerToPresent:")
     public native CASConsentFlow withViewControllerToPresent(UIViewController controller);
+    @Method(selector = "presentIfRequired")
+    public native void presentIfRequired();
     @Method(selector = "present")
     public native void present();
     /*</methods>*/

@@ -37,7 +37,7 @@ import org.robovm.apple.coreanimation.*;
 
 /*</javadoc>*/
 /*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
-public enum /*<name>*/Gender/*</name>*/ implements ValuedEnum {
+public enum /*<name>*/CASGender/*</name>*/ implements ValuedEnum {
     /*<values>*/
     Unknown(0L),
     Male(1L),
@@ -51,15 +51,15 @@ public enum /*<name>*/Gender/*</name>*/ implements ValuedEnum {
 
     private final long n;
 
-    private /*<name>*/Gender/*</name>*/(long n) { this.n = n; }
+    private /*<name>*/CASGender/*</name>*/(long n) { this.n = n; }
     public long value() { return n; }
-    public static /*<name>*/Gender/*</name>*/ valueOf(long n) {
-        for (/*<name>*/Gender/*</name>*/ v : values()) {
+    public static /*<name>*/CASGender/*</name>*/ valueOf(long n) {
+        for (/*<name>*/CASGender/*</name>*/ v : values()) {
             if (v.n == n) {
                 return v;
             }
         }
         throw new IllegalArgumentException("No constant with value " + n + " found in " 
-            + /*<name>*/Gender/*</name>*/.class.getName());
+            + /*<name>*/CASGender/*</name>*/.class.getName());
     }
 }

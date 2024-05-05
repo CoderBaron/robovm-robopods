@@ -311,6 +311,7 @@ typedef SWIFT_ENUM_NAMED(NSInteger, CASNetworkId, "AdNetworkId", open) {
   CASNetworkIdUnityAds = 4,
   CASNetworkIdAppLovin = 5,
   CASNetworkIdSuperAwesome = 6,
+  CASNetworkIdStartIO = 7,
   CASNetworkIdAudienceNetwork = 9,
   CASNetworkIdInMobi = 10,
   CASNetworkIdDTExchange = 11,
@@ -646,6 +647,7 @@ SWIFT_CLASS_NAMED("CASChoicesView")
 @end
 
 enum CASConsentFlowStatus : NSInteger;
+enum CASUserDebugGeography : NSInteger;
 
 /// Use this object for configure Consent flow dialogs for GDPR and Apple ATT request.
 /// Create and attach the object to CAS initialization.
@@ -671,9 +673,11 @@ SWIFT_CLASS_NAMED("CASConsentFlow")
 @interface CASConsentFlow : NSObject
 @property (nonatomic) BOOL requestGDPR;
 @property (nonatomic) BOOL requestATT SWIFT_DEPRECATED_MSG("The GDPR and ATT request does not support partial activation. Use requestGDPR instead.");
+@property (nonatomic) BOOL forceTesting;
 @property (nonatomic, copy) NSString * _Nullable privacyPolicyUrl;
 @property (nonatomic, copy) void (^ _Nullable completionHandler)(enum CASConsentFlowStatus);
 @property (nonatomic, strong) UIViewController * _Nullable viewControllerToPresent;
+@property (nonatomic) enum CASUserDebugGeography debugGeography;
 /// Create Consent flow configuration
 /// \param isEnabled If enabled then the consent flow will be shown to users who are protected by laws.
 ///
@@ -683,16 +687,38 @@ SWIFT_CLASS_NAMED("CASConsentFlow")
 /// If you do not define a context, it will be determined automatically.
 /// The form can open on each new UIViewController until the user closes it.
 - (CASConsentFlow * _Nonnull)withViewControllerToPresent:(UIViewController * _Nullable)controller;
-/// Manual presents a dialog view controller modally.
+/// Shows the consent form only if it is required and the user has not responded previously.
+/// If the consent status is required, the SDK loads a form and immediately presents it.
+- (void)presentIfRequired;
+/// Force shows the form to modify user  consent at any time.
+/// When a user interacts with your UI element, call function to show the form
+/// so the user can update their privacy options at any time.
 - (void)present;
 @end
 
+typedef SWIFT_ENUM_NAMED(NSInteger, CASUserDebugGeography, "DebugGeography", open) {
+/// Debug geography disabled.
+  CASUserDebugGeographyDisabled = 0,
+/// Geography appears as in EEA.
+  CASUserDebugGeographyEEA = 1,
+/// Geography appears as not in EEA.
+  CASUserDebugGeographyNotEEA = 2,
+};
+
 typedef SWIFT_ENUM_NAMED(NSInteger, CASConsentFlowStatus, "CASConsentFlowStatus", open) {
+/// User consent obtained. Personalized vs non-personalized undefined.
   CASConsentFlowStatusObtained = 3,
+/// User consent not required.
   CASConsentFlowStatusNotRequired = 4,
+/// User consent unavailable.
   CASConsentFlowStatusUnavailable = 5,
+/// There was an internal error.
   CASConsentFlowStatusInternalError = 10,
+/// There was an error loading data from the network.
+  CASConsentFlowStatusNetworkError = 11,
+/// There was an error with the UI context is passed in.
   CASConsentFlowStatusViewControllerInvalid = 12,
+/// There was an error with another form is still being displayed.
   CASConsentFlowStatusFlowStillPresenting = 13,
 };
 
@@ -1056,6 +1082,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (NSString * _Nonnull)hyprMX SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull smaato;)
 + (NSString * _Nonnull)smaato SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull startio;)
++ (NSString * _Nonnull)startio SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull dspExchange;)
 + (NSString * _Nonnull)dspExchange SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull lastPageAd;)
@@ -1366,15 +1394,15 @@ SWIFT_CLASS_NAMED("CASStarRatingView")
 @property (nonatomic, readonly) CGSize intrinsicContentSize;
 @end
 
-enum Gender : NSInteger;
+enum CASGender : NSInteger;
 
 SWIFT_CLASS_NAMED("CASTargetingOptions")
 @interface CASTargetingOptions : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 /// The user’s gender
-- (void)setGender:(enum Gender)gender;
+- (void)setGender:(enum CASGender)gender;
 /// The user’s gender
-- (enum Gender)getGender SWIFT_WARN_UNUSED_RESULT;
+- (enum CASGender)getGender SWIFT_WARN_UNUSED_RESULT;
 /// The user’s age
 /// Limitation: 1-99 and 0 is ‘unknown’
 - (void)setAge:(NSInteger)age;
@@ -1410,12 +1438,6 @@ SWIFT_CLASS_NAMED("CASTargetingOptions")
 - (NSString * _Nullable)getContentUrl SWIFT_WARN_UNUSED_RESULT;
 @end
 
-typedef SWIFT_ENUM(NSInteger, Gender, open) {
-  GenderUnknown = 0,
-  GenderMale = 1,
-  GenderFemale = 2,
-};
-
 typedef SWIFT_ENUM_NAMED(NSInteger, CASType, "CASType", open) {
   CASTypeBanner = 0,
   CASTypeInterstitial = 1,
@@ -1444,6 +1466,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSUInteger everythin
 + (NSUInteger)everything SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+typedef SWIFT_ENUM_NAMED(NSInteger, CASGender, "Gender", open) {
+  CASGenderUnknown = 0,
+  CASGenderMale = 1,
+  CASGenderFemale = 2,
+};
 
 
 /// Adapter initialization stack trace:

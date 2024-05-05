@@ -94,6 +94,8 @@ import org.robovm.apple.coreanimation.*;
     public static native String hyprMX();
     @Method(selector = "smaato")
     public static native String smaato();
+    @Method(selector = "startio")
+    public static native String startio();
     @Method(selector = "dspExchange")
     public static native String dspExchange();
     @Method(selector = "lastPageAd")

@@ -36,28 +36,30 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/CASBannerDelegate/*</name>*/ 
-    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
+public enum /*<name>*/CASUserDebugGeography/*</name>*/ implements ValuedEnum {
+    /*<values>*/
+    Disabled(0L),
+    EEA(1L),
+    NotEEA(2L);
+    /*</values>*/
 
-    /*<ptr>*/
-    /*</ptr>*/
     /*<bind>*/
     /*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<properties>*/
-    
-    /*</properties>*/
-    /*<methods>*/
-    @Method(selector = "bannerAdViewDidLoad:")
-    void bannerAdViewDidLoad(CASBannerView view);
-    @Method(selector = "bannerAdView:didFailWith:")
-    void didFail(CASBannerView adView, CASError error);
-    @Method(selector = "bannerAdView:willPresent:")
-    void willPresent(CASBannerView adView, CASStatusHandler impression);
-    @Method(selector = "bannerAdViewDidRecordClick:")
-    void bannerAdViewDidRecordClick(CASBannerView adView);
-    /*</methods>*/
-    /*<adapter>*/
-    /*</adapter>*/
+    /*<methods>*//*</methods>*/
+
+    private final long n;
+
+    private /*<name>*/CASUserDebugGeography/*</name>*/(long n) { this.n = n; }
+    public long value() { return n; }
+    public static /*<name>*/CASUserDebugGeography/*</name>*/ valueOf(long n) {
+        for (/*<name>*/CASUserDebugGeography/*</name>*/ v : values()) {
+            if (v.n == n) {
+                return v;
+            }
+        }
+        throw new IllegalArgumentException("No constant with value " + n + " found in " 
+            + /*<name>*/CASUserDebugGeography/*</name>*/.class.getName());
+    }
 }

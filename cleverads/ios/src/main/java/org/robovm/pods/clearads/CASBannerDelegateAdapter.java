@@ -54,7 +54,7 @@ import org.robovm.apple.coreanimation.*;
     @NotImplemented("bannerAdViewDidLoad:")
     public void bannerAdViewDidLoad(CASBannerView view) {}
     @NotImplemented("bannerAdView:didFailWith:")
-    public void didFai(CASBannerView adView, CASError error) {}
+    public void didFail(CASBannerView adView, CASError error) {}
     @NotImplemented("bannerAdView:willPresent:")
     public void willPresent(CASBannerView adView, CASStatusHandler impression) {}
     @NotImplemented("bannerAdViewDidRecordClick:")

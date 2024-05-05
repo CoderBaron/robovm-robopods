@@ -19,10 +19,11 @@ enums:
     CASError: { nserror: true }
     CASLoadingManagerMode: { }
     CASPriceAccuracy: { }
-    Gender: { }
     CASType: { }
     CASConsentFlowStatus: {}
     CASNetworkId: {}
+    CASUserDebugGeography: { }
+    CASGender: { }
 classes:
     CAS:
         methods:
@@ -181,7 +182,7 @@ protocols:
     CASBannerDelegate:
         methods:
             '-bannerAdView:didFailWith:':
-                name: didFai
+                name: didFail
             '-bannerAdView:willPresent:':
                 name: willPresent
     CASCallback:
