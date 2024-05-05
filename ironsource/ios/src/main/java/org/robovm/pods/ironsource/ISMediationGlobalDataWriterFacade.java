@@ -34,34 +34,27 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-/*</javadoc>*/
-/*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/ISRewardedVideoManualDelegateAdapter/*</name>*/ 
-    extends /*<extends>*/ISRewardedVideoDelegateAdapter/*</extends>*/ 
-    /*<implements>*/implements ISRewardedVideoManualDelegate/*</implements>*/ {
 
-    /*<ptr>*/
-    /*</ptr>*/
-    /*<bind>*/
-    /*</bind>*/
+/*</javadoc>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/ISMediationGlobalDataWriterFacade/*</name>*/ 
+    extends /*<extends>*/NSObject/*</extends>*/ 
+    /*<implements>*//*</implements>*/ {
+
+    /*<ptr>*/public static class ISMediationGlobalDataWriterFacadePtr extends Ptr<ISMediationGlobalDataWriterFacade, ISMediationGlobalDataWriterFacadePtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(ISMediationGlobalDataWriterFacade.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
-    /*<constructors>*//*</constructors>*/
+    /*<constructors>*/
+    public ISMediationGlobalDataWriterFacade() {}
+    protected ISMediationGlobalDataWriterFacade(Handle h, long handle) { super(h, handle); }
+    protected ISMediationGlobalDataWriterFacade(SkipInit skipInit) { super(skipInit); }
+    /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    /**
-     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoManualDelegate instead.
-     */
-    @Deprecated
-    @NotImplemented("rewardedVideoDidLoad")
-    public void rewardedVideoDidLoad() {}
-    /**
-     * @deprecated This API has been deprecated as of SDK 7.3.0. Please use the alternate API in LevelPlayRewardedVideoManualDelegate instead.
-     */
-    @Deprecated
-    @NotImplemented("rewardedVideoDidFailToLoadWithError:")
-    public void rewardedVideoDidFailToLoad(NSError error) {}
+    @Method(selector = "setGoogleWaterMark:")
+    public native void setGoogleWaterMark(String waterMark);
     /*</methods>*/
 }

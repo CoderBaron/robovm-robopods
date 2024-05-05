@@ -69,5 +69,7 @@ import org.robovm.apple.coreanimation.*;
     public void adapterBannerWillLeaveApplication() {}
     @NotImplemented("adapterBannerDidShow")
     public void adapterBannerDidShow() {}
+    @NotImplemented("adapterBannerDidFailToShowWithError:")
+    public void adapterBannerDidFailToShow(NSError error) {}
     /*</methods>*/
 }

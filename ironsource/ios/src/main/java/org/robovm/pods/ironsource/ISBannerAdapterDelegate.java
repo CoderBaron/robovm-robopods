@@ -67,6 +67,8 @@ import org.robovm.apple.coreanimation.*;
     void adapterBannerWillLeaveApplication();
     @Method(selector = "adapterBannerDidShow")
     void adapterBannerDidShow();
+    @Method(selector = "adapterBannerDidFailToShowWithError:")
+    void adapterBannerDidFailToShow(NSError error);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

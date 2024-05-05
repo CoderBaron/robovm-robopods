@@ -52,6 +52,7 @@ import org.robovm.apple.coreanimation.*;
         public static final String TrueValue = "true";
         public static final String FalseValue = "false";
         public static final String TestSuiteEnableValue = "enable";
+        public static final String GoogleWaterMark = "google_water_mark";
     }
     /*</constants>*/
     /*<constructors>*/

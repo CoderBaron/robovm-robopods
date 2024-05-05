@@ -34,34 +34,25 @@ import org.robovm.apple.coreanimation.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
 /*</javadoc>*/
-/*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ interface /*<name>*/ISOfferwallAdapterDelegate/*</name>*/ 
-    /*<implements>*/extends NSObjectProtocol/*</implements>*/ {
+/*<annotations>*/@Library(Library.INTERNAL)/*</annotations>*/
+/*<visibility>*/public final/*</visibility>*/ class /*<name>*/UIViewExtensions/*</name>*/ 
+    extends /*<extends>*/NSExtensions/*</extends>*/ 
+    /*<implements>*//*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
-    /*<bind>*/
-    /*</bind>*/
+    /*<bind>*/static { ObjCRuntime.bind(UIViewExtensions.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
+    /*<constructors>*/
+    private UIViewExtensions() {}
+    /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
+    /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "adapterOfferwallHasChangedAvailability:withError:")
-    void adapterOfferwallHasChangedAvailability(boolean available, NSError error);
-    @Method(selector = "adapterOfferwallDidShow")
-    void adapterOfferwallDidShow();
-    @Method(selector = "adapterOfferwallDidFailToShowWithError:")
-    void adapterOfferwallDidFailToShow(NSError error);
-    @Method(selector = "adapterOfferwallDidClose")
-    void adapterOfferwallDidClose();
-    @Method(selector = "adapterOfferwallDidReceiveCredits:")
-    boolean adapterOfferwallDidReceiveCredits(NSDictionary<?, ?> creditInfo);
-    @Method(selector = "adapterOfferwallDidFailToReceiveCreditsWithError:")
-    void adapterOfferwallDidFailToReceiveCredits(NSError error);
+    @Method(selector = "addSubviewAndAdjust:")
+    public static native void addSubviewAndAdjust(UIView thiz, UIView view);
     /*</methods>*/
-    /*<adapter>*/
-    /*</adapter>*/
 }

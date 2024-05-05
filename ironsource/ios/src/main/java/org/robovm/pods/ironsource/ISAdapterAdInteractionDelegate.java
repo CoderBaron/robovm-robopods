@@ -51,8 +51,6 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "adDidClose")
     void adDidClose();
-    @Method(selector = "adDidFailToShowWithErrorCode:errorMessage:")
-    void adDidFailToShow(@MachineSizedSInt long errorCode, String errorMessage);
     @Method(selector = "adDidShowSucceed")
     void adDidShowSucceed();
     @Method(selector = "adDidBecomeVisible")

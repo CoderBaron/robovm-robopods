@@ -55,6 +55,8 @@ import org.robovm.apple.coreanimation.*;
     void adDidFailToLoad(ISAdapterErrorType errorType, @MachineSizedSInt long errorCode, String errorMessage);
     @Method(selector = "adDidOpen")
     void adDidOpen();
+    @Method(selector = "adDidFailToShowWithErrorCode:errorMessage:")
+    void adDidFailToShow(@MachineSizedSInt long errorCode, String errorMessage);
     @Method(selector = "adDidClick")
     void adDidClick();
     /*</methods>*/

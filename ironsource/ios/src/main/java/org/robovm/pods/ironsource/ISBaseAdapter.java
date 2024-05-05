@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/ISBaseAdapter/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements ISInterstitialAdapterProtocol, ISRewardedVideoAdapterProtocol, ISBannerAdapterProtocol, ISOfferwallAdapterProtocol, ISBiddingDataAdapterProtocol, ISNativeAdAdapterProtocol/*</implements>*/ {
+    /*<implements>*/implements ISInterstitialAdapterProtocol, ISRewardedVideoAdapterProtocol, ISBannerAdapterProtocol, ISBiddingDataAdapterProtocol, ISNativeAdAdapterProtocol/*</implements>*/ {
 
     /*<ptr>*/public static class ISBaseAdapterPtr extends Ptr<ISBaseAdapter, ISBaseAdapterPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(ISBaseAdapter.class); }/*</bind>*/
@@ -169,14 +169,6 @@ import org.robovm.apple.coreanimation.*;
     public native void initBannerForBidding(String userId, ISAdapterConfig adapterConfig, ISBannerAdapterDelegate delegate);
     @Method(selector = "loadBannerForBiddingWithAdapterConfig:adData:serverData:viewController:size:delegate:")
     public native void loadBannerForBidding(ISAdapterConfig adapterConfig, NSDictionary<?, ?> adData, String serverData, UIViewController viewController, ISBannerSize size, ISBannerAdapterDelegate delegate);
-    @Method(selector = "initOfferWallWithUserId:adapterConfig:delegate:")
-    public native void initOfferWall(String userId, ISAdapterConfig adapterConfig, ISOfferwallAdapterDelegate delegate);
-    @Method(selector = "showOfferwallWithViewController:placement:")
-    public native void showOfferwall(UIViewController viewController, String placementName);
-    @Method(selector = "getOfferWallCreditsWithUserId:")
-    public native void getOfferWallCredits(String userId);
-    @Method(selector = "hasOfferwall")
-    public native boolean hasOfferwall();
     @Method(selector = "getPlayerBiddingData")
     public native NSDictionary<?, ?> getPlayerBiddingData();
     @Method(selector = "initNativeAdsWithUserId:adapterConfig:delegate:")

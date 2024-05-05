@@ -24,6 +24,9 @@ private_typedefs:
     "MessageToController *": NSObject
     "CallbackToNative *": NSObject
 
+categories:
+    UIView: {}
+
 classes:
     ISAdData:
         methods:
@@ -322,11 +325,14 @@ classes:
                 name: log
             '-logWithNetworkPrefix:withLevel:withTag:':
                 name: logWithNetworkPrefix
+    ISMediationGlobalDataWriterFacade: {}
 protocols:
     ISAdapterAdDelegate:
         methods:
             '-adDidFailToLoadWithErrorType:errorCode:errorMessage:':
                 name: adDidFailToLoad
+            '-adDidFailToShowWithErrorCode:errorMessage:':
+                name: adDidFailToShow
     ISAdapterAdInteractionDelegate:
         methods:
             '-adDidFailToShowWithErrorCode:errorMessage:':
@@ -346,10 +352,6 @@ protocols:
         methods:
             '-getLoadWhileShowSupportedStateWithAdapterConfig:':
                 name: getLoadWhileShowSupportedState
-    ISBannerDelegate:
-        methods:
-            '-bannerDidFailToLoadWithError:':
-                name: bannerDidFailToLoad
     ISConsentViewDelegate:
         methods:
             '-consentViewDidFailToLoadWithError:consentViewType:':
@@ -377,12 +379,6 @@ protocols:
     ISImpressionDataDelegate: {}
     ISInitializationDelegate: {}
     ISInterstitialAdDelegate: {}
-    ISInterstitialDelegate:
-        methods:
-            '-interstitialDidFailToLoadWithError:':
-                name: interstitialDidFailToLoad
-            '-interstitialDidFailToShowWithError:':
-                name: interstitialDidFailToShow
     ISLogDelegate:
         methods:
             '-sendLog:level:tag:':
@@ -391,21 +387,7 @@ protocols:
         methods:
             '-onInitDidFailWithErrorCode:errorMessage:':
                 name: onInitDidFail
-    ISOfferwallDelegate:
-        methods:
-            '-offerwallDidFailToShowWithError:':
-                name: offerwallDidFailToShow
-            '-didFailToReceiveOfferwallCreditsWithError:':
-                name: didFailToReceiveOfferwallCredits
     ISRewardedVideoAdDelegate: {}
-    ISRewardedVideoDelegate:
-        methods:
-            '-rewardedVideoDidFailToShowWithError:':
-                name: rewardedVideoDidFailToShow
-    ISRewardedVideoManualDelegate:
-        methods:
-            '-rewardedVideoDidFailToLoadWithError:':
-                name: rewardedVideoDidFailToLoad
     ISSegmentDelegate: {}
     LevelPlayBannerDelegate:
         methods:
@@ -516,6 +498,8 @@ protocols:
                 name: adapterBannerInitFailed
             '-adapterBannerDidFailToLoadWithError:':
                 name: adapterBannerDidFailToLoad
+            '-adapterBannerDidFailToShowWithError:':
+                name: adapterBannerDidFailToShow
     ISBannerAdapterProtocol:
         methods:
             '-destroyBannerWithAdapterConfig:':
@@ -607,22 +591,6 @@ protocols:
                 name: collectNativeAdBiddingData
     ISNativeAdProtocol: { }
     ISNetworkInitCallbackProtocol: { }
-    ISOfferwallAdapterDelegate:
-        methods:
-            '-adapterOfferwallHasChangedAvailability:withError:':
-                name: adapterOfferwallHasChangedAvailability
-            '-adapterOfferwallDidFailToShowWithError:':
-                name: adapterOfferwallDidFailToShow
-            '-adapterOfferwallDidFailToReceiveCreditsWithError:':
-                name: adapterOfferwallDidFailToReceiveCredits
-    ISOfferwallAdapterProtocol:
-        methods:
-            '-initOfferWallWithUserId:adapterConfig:delegate:':
-                name: initOfferWall
-            '-showOfferwallWithViewController:placement:':
-                name: showOfferwall
-            '-getOfferWallCreditsWithUserId:':
-                name: getOfferWallCredits
     ISReleaseMemoryAdapterProtocol:
         methods:
             '-releaseMemoryWithAdapterConfig:':

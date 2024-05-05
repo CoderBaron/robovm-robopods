@@ -115,7 +115,6 @@
                     <configuration>
                         <release>8</release>
                         <debug>true</debug>
-                        <optimize>true</optimize>
                         <encoding>UTF-8</encoding>
                     </configuration>
                 </plugin>

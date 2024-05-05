@@ -53,8 +53,6 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @NotImplemented("adDidClose")
     public void adDidClose() {}
-    @NotImplemented("adDidFailToShowWithErrorCode:errorMessage:")
-    public void adDidFailToShow(@MachineSizedSInt long errorCode, String errorMessage) {}
     @NotImplemented("adDidShowSucceed")
     public void adDidShowSucceed() {}
     @NotImplemented("adDidBecomeVisible")
