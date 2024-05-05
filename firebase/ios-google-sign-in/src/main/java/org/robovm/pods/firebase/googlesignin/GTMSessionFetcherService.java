@@ -129,6 +129,10 @@ import org.robovm.apple.coreanimation.*;
      */
     @Property(selector = "setMetricsCollectionBlock:")
     public native void setMetricsCollectionBlock(@Block VoidBlock1<NSURLSessionTaskMetrics> v);
+    @Property(selector = "stopFetchingTriggersCompletionHandler")
+    public native boolean isStopFetchingTriggersCompletionHandler();
+    @Property(selector = "setStopFetchingTriggersCompletionHandler:")
+    public native void setStopFetchingTriggersCompletionHandler(boolean v);
     @Property(selector = "skipBackgroundTask")
     public native boolean isSkipBackgroundTask();
     @Property(selector = "setSkipBackgroundTask:")

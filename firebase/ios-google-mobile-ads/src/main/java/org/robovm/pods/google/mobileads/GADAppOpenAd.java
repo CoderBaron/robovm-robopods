@@ -56,6 +56,8 @@ import org.robovm.apple.webkit.*;
     public native GADFullScreenContentDelegate getFullScreenContentDelegate();
     @Property(selector = "setFullScreenContentDelegate:", strongRef = true)
     public native void setFullScreenContentDelegate(GADFullScreenContentDelegate v);
+    @Property(selector = "adUnitID")
+    public native String getAdUnitID();
     @Property(selector = "responseInfo")
     public native GADResponseInfo getResponseInfo();
     @Property(selector = "paidEventHandler")
