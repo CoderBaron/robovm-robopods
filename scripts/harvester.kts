@@ -330,16 +330,13 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
         )
     },
     "Singular" to { lib ->
-        val singularVersion: String by lazy {
-            downloadFolder.extend("Singular-iOS-sdk/version/").readText()
-        }
-        val artifactLocation = downloadFolder.extend("Singular-iOS-sdk")
+        val artifactLocation = downloadFolder.extend("Singular.xcframework/ios-arm64/Singular.framework")
         processFramework(
             artifact = "$lib.lib",
             moduleFolder = "singular/ios",
             sourceHeadersDir = artifactLocation,
             yaml = "singular.yaml",
-            version = { singularVersion },
+            version = { artifactLocation.infoPlist.extractVersion(versionKey = "CFBundleVersion") },
             instruction = """
                 0. download latest version from https://support.singular.net/hc/en-us/articles/12054824479387
                 1. unpack and rename to ${downloadFolder.extend("Singular-iOS-sdk")}
@@ -786,12 +783,12 @@ fun processFramework(
     log.d("$artifact:  <<<< finished processing")
 }
 
-fun extractVersionFromPlist(infoPlist: File): String {
+fun extractVersionFromPlist(infoPlist: File, versionKey: String = "CFBundleShortVersionString"): String {
     return execAndGetString(
         arrayOf(
             "/usr/libexec/PlistBuddy",
             "-c",
-            "Print :CFBundleShortVersionString",
+            "Print :$versionKey",
             infoPlist.canonicalPath
         )
     )[0]
@@ -837,8 +834,8 @@ val File.headers: File
 val File.infoPlist: File
     get() = File(this, "Info.plist")
 
-fun File.extractVersion(): String {
-    return extractVersionFromPlist(this)
+fun File.extractVersion(versionKey: String = "CFBundleShortVersionString"): String {
+    return extractVersionFromPlist(this, versionKey)
 }
 
 fun File.extend(path: String): File = File(this, path)
