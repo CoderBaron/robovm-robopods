@@ -74,6 +74,8 @@ classes:
                 name: updatePostbackConversion
             '-setGoogleDMAParametersWithAdPersonalization:adUserData:':
                 name: setGoogleDMAParameters
+            '+sendEventWithName:andValue:':
+                name: sendEvent
     TJNHTTPClient:
         methods:
             '-initWithApiKey:':

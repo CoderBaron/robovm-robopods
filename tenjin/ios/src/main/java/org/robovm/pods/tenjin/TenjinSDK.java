@@ -127,8 +127,14 @@ import org.robovm.apple.dispatch.*;
     public static native void connect(NSURL url);
     @Method(selector = "sendEventWithName:")
     public static native void sendEvent(String eventName);
+    /**
+     * @deprecated use `sendEventWithName: andValue:` instead
+     */
+    @Deprecated
     @Method(selector = "sendEventWithName:andEventValue:")
     public static native void sendEvent(String eventName, String eventValue);
+    @Method(selector = "sendEventWithName:andValue:")
+    public static native void sendEvent(String eventName, @MachineSizedSInt long eventValue);
     @Deprecated
     @Method(selector = "transaction:")
     public static native void transaction(SKPaymentTransaction transaction);
