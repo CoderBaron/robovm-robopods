@@ -1189,12 +1189,11 @@ fun registerMobileAdsMediationAdapters(frameworkRegistry: MutableMap<String, (St
             moduleFolder = "firebase/ios-google-mobile-ads-adapters/ios-applovin",
             sourceHeadersDir = artifactLocation.headers,
             yaml = "applovin-adapter.yaml",
-            version = { downloadFolder.extend("AppLovinAdapter/version").readText() },
+            version = { artifactLocation.infoPlist.extractVersion() },
             instruction = """
                 1. download AppLovinAdapter-X.X.X.X.zip from https://developers.google.com/admob/ios/mediation/applovin#applovin-ios-mediation-adapter-changelog
                 2. extract and rename folder to AppLovinAdapter
-                3. create a file ${downloadFolder.extend("AppLovinAdapter/version")} and put verions there, e.g. 4.0.0
-                4. expected location ${downloadFolder.extend("AppLovinAdapter/AppLovinAdapter.xcframework/ios-arm64_armv7/")}
+                3. expected location ${downloadFolder.extend("AppLovinAdapter/AppLovinAdapter.xcframework/ios-arm64_armv7/")}
             """.trimIndent(),
             readmeFileVersionUpdater = { frm, modFolder, version ->
                 updateModuleReadmeFileVersionString(frm, moduleReadmeFile, modFolder, version)
@@ -1210,12 +1209,11 @@ fun registerMobileAdsMediationAdapters(frameworkRegistry: MutableMap<String, (St
             moduleFolder = "firebase/ios-google-mobile-ads-adapters/ios-facebook",
             sourceHeadersDir = artifactLocation.headers,
             yaml = "facebook-adapter.yaml",
-            version = { downloadFolder.extend("MetaAdapter/version").readText() },
+            version = { artifactLocation.infoPlist.extractVersion() },
             instruction = """
                 1. download MetaAdapter-X.X.X.X.zip from https://developers.google.com/admob/ios/mediation/meta#meta-audience-network-ios-mediation-adapter-changelog
                 2. extract and rename folder to MetaAdapter 
-                3. create a file ${downloadFolder.extend("MetaAdapter/version")} and put verions there, e.g. 4.0.0
-                4. expected location ${downloadFolder.extend("MetaAdapter/MetaAdapter.xcframework/ios-arm64/")}
+                3. expected location ${downloadFolder.extend("MetaAdapter/MetaAdapter.xcframework/ios-arm64/")}
             """.trimIndent(),
             readmeFileVersionUpdater = { frm, modFolder, version ->
                 updateModuleReadmeFileVersionString(frm, moduleReadmeFile, modFolder, version)
@@ -1231,7 +1229,7 @@ fun registerMobileAdsMediationAdapters(frameworkRegistry: MutableMap<String, (St
             moduleFolder = "firebase/ios-google-mobile-ads-adapters/ios-inmobi",
             sourceHeadersDir = artifactLocation.headers,
             yaml = "inmobi-adapter.yaml",
-            version = { downloadFolder.extend("InMobiAdapter/version").readText() },
+            version = { artifactLocation.infoPlist.extractVersion() },
             instruction = """
                 1. download InMobiAdapter-X.X.X.X.zip from https://developers.google.com/admob/ios/mediation/inmobi#inmobi-ios-mediation-adapter-changelog
                 2. extract and rename folder to InMobiAdapter 
