@@ -64,7 +64,5 @@ import org.robovm.apple.safariservices.*;
     public native void collectBidToken(@Block VoidBlock2<NSString, NSString> completion);
     @Method(selector = "loadNextAdForAdToken:andNotify:")
     public native void loadNextAdForAdToken(String adToken, ALAdLoadDelegate delegate);
-    @Method(selector = "loadNextAdForZoneIdentifiers:andNotify:")
-    public native void loadNextAdForZoneIdentifiers(NSArray<NSString> zoneIdentifiers, ALAdLoadDelegate delegate);
     /*</methods>*/
 }

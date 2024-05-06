@@ -42,7 +42,7 @@ v1.40.0 - in development
 |---------------------------------|---------|
 | [AdaptySDK](adapty/)            | 1.17.7  |
 | [AppCenter](appcenter/)         | 5.0.4   |
-| [AppLovinSDK](applovinsdk/)     | 12.4.1  |
+| [AppLovinSDK](applovinsdk/)     | 12.4.2  |
 | [Azure](azure/)                 | 3.1.4   |
 | [BranchMetrics](branchmetrics/) | 3.4.3   |
 | [Charts](charts/)               | 5.1.0   |
