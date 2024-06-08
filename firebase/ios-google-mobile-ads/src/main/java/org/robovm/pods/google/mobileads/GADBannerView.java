@@ -90,6 +90,8 @@ import org.robovm.apple.webkit.*;
     public native @Block VoidBlock1<GADAdValue> getPaidEventHandler();
     @Property(selector = "setPaidEventHandler:")
     public native void setPaidEventHandler(@Block VoidBlock1<GADAdValue> v);
+    @Property(selector = "isCollapsible")
+    public native boolean isCollapsible();
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();
