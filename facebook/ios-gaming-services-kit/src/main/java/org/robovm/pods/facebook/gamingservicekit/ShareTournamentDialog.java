@@ -37,7 +37,7 @@ import org.robovm.pods.facebook.share.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC22FBSDKGamingServicesKit21ShareTournamentDialog")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("FBSDKGamingServicesKit.ShareTournamentDialog")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/ShareTournamentDialog/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {

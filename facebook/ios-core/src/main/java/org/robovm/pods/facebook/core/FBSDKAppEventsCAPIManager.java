@@ -40,7 +40,7 @@ import org.robovm.pods.facebook.corebasics.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC12FBSDKCoreKit25FBSDKAppEventsCAPIManager")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("FBSDKCoreKit.FBSDKAppEventsCAPIManager")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKAppEventsCAPIManager/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*/implements FBSDKCAPIReporter/*</implements>*/ {
