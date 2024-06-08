@@ -35,7 +35,7 @@ import org.robovm.apple.uikit.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC15OneSignalOSCore23OSBackgroundTaskManager")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("OneSignalOSCore.OSBackgroundTaskManager")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/OSBackgroundTaskManager/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {

@@ -35,7 +35,7 @@ import org.robovm.apple.uikit.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC15OneSignalOSCore18OSModelChangedArgs")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("OneSignalOSCore.OSModelChangedArgs")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/OSModelChangedArgs/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {

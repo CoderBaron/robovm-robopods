@@ -35,7 +35,7 @@ import org.robovm.apple.uikit.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC13OneSignalUser11OSUserState")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("OneSignalUser.OSUserState")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/OSUserState/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {

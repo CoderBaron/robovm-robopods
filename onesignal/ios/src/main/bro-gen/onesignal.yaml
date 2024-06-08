@@ -12,11 +12,14 @@ internal_frameworks:
     - OneSignalUser
 clang_args: ['-x', 'objective-c']
 headers:
+    - "#import <OneSignalCore/OneSignalCore.h>"
+    - "#import <OneSignalOSCore/OneSignalOSCore-Swift.h>"
+    - "#import <OneSignalNotifications/OneSignalNotifications.h>"
+    - "#import <OneSignalUser/OneSignalUser-Swift.h>"
     - "#import <OneSignalFramework/OneSignalFramework.h>"
     - "#import <OneSignalLocation/OneSignalLocationManager.h>"
     - "#import <OneSignalInAppMessages/OneSignalInAppMessages.h>"
     - "#import <OneSignalExtension/OneSignalExtension.h>"
-    - "#import <OneSignalOSCore/OneSignalOSCore-Swift.h>"
 
 private_typedefs:
     OS_dispatch_source: org.robovm.apple.dispatch.DispatchSource
@@ -469,6 +472,14 @@ classes:
                 name: init
     OSModelChangedArgs: { }
     OSOperationRepo: { }
+    OSStubLiveActivities:
+        methods:
+            '+enter:withToken:':
+                name: enter
+            '+enter:withToken:withSuccess:withFailure:':
+                name: enter
+            '+exit:withSuccess:withFailure:':
+                name: exit
 protocols:
     OSNotificationDisplayTypeDelegate:
         skip_adapter: true # only one method there

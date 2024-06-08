@@ -35,7 +35,7 @@ import org.robovm.apple.uikit.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC13OneSignalUser30OSPushSubscriptionChangedState")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("OneSignalUser.OSPushSubscriptionChangedState")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/OSPushSubscriptionChangedState/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {

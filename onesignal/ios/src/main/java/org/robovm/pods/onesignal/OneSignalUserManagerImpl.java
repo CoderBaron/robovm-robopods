@@ -35,7 +35,7 @@ import org.robovm.apple.uikit.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC13OneSignalUser24OneSignalUserManagerImpl")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("OneSignalUser.OneSignalUserManagerImpl")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/OneSignalUserManagerImpl/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*/implements OneSignalNotificationsDelegate, OSUser/*</implements>*/ {

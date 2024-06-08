@@ -35,35 +35,33 @@ import org.robovm.apple.uikit.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/OneSignalLiveActivityController/*</name>*/ 
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("OneSignalOSCore.OSStubLiveActivities")/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/OSStubLiveActivities/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements OSLiveActivities, OSPushSubscriptionObserver/*</implements>*/ {
+    /*<implements>*/implements OSLiveActivities/*</implements>*/ {
 
-    /*<ptr>*/public static class OneSignalLiveActivityControllerPtr extends Ptr<OneSignalLiveActivityController, OneSignalLiveActivityControllerPtr> {}/*</ptr>*/
-    /*<bind>*/static { ObjCRuntime.bind(OneSignalLiveActivityController.class); }/*</bind>*/
+    /*<ptr>*/public static class OSStubLiveActivitiesPtr extends Ptr<OSStubLiveActivities, OSStubLiveActivitiesPtr> {}/*</ptr>*/
+    /*<bind>*/static { ObjCRuntime.bind(OSStubLiveActivities.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public OneSignalLiveActivityController() {}
-    protected OneSignalLiveActivityController(Handle h, long handle) { super(h, handle); }
-    protected OneSignalLiveActivityController(SkipInit skipInit) { super(skipInit); }
+    public OSStubLiveActivities() {}
+    protected OSStubLiveActivities(Handle h, long handle) { super(h, handle); }
+    protected OSStubLiveActivities(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "LiveActivities")
-    public static native Class<?> LiveActivities();
+    @Method(selector = "liveActivities")
+    public static native Class<?> liveActivities();
     @Method(selector = "enter:withToken:")
-    public static native void enter(String activityId, String token);
+    public static native void enter(String activityId, String withToken);
     @Method(selector = "enter:withToken:withSuccess:withFailure:")
-    public static native void enter(String activityId, String token, @Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
+    public static native void enter(String activityId, String withToken, @Block VoidBlock1<NSDictionary<?, ?>> withSuccess, @Block VoidBlock1<NSError> withFailure);
     @Method(selector = "exit:")
     public static native void exit(String activityId);
     @Method(selector = "exit:withSuccess:withFailure:")
-    public static native void exit(String activityId, @Block VoidBlock1<NSDictionary<?, ?>> successBlock, @Block VoidBlock1<NSError> failureBlock);
-    @Method(selector = "onPushSubscriptionDidChangeWithState:")
-    public native void onPushSubscriptionDidChange(OSPushSubscriptionChangedState state);
+    public static native void exit(String activityId, @Block VoidBlock1<NSDictionary<?, ?>> withSuccess, @Block VoidBlock1<NSError> withFailure);
     /*</methods>*/
 }
