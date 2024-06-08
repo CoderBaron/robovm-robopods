@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @param hasUserConsent @c YES if the user provided consent for information-sharing with AppLovin. @c NO by default.
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/privacy#general-data-protection-regulation-(%E2%80%9Cgdpr%E2%80%9D)">MAX Integration Guide ⇒ iOS ⇒ Privacy ⇒ General Data Protection Regulation ("GDPR")</a>
+ * @see <a href="https://developers.applovin.com/en/ios/overview/privacy#consent-and-age-related-flags-in-gdpr-and-other-regions">MAX Integration Guide ⇒ iOS ⇒ Privacy ⇒ Consent and Age-Related Flags in GDPR and Other Regions</a>
  */
 + (void)setHasUserConsent:(BOOL)hasUserConsent;
 
@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @return @c YES if the user provided consent for information sharing. @c NO if the user declined to share information or the consent value has not been set (see @c isUserConsentSet).
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/privacy#general-data-protection-regulation-(%E2%80%9Cgdpr%E2%80%9D)">MAX Integration Guide ⇒ iOS ⇒ Privacy ⇒ General Data Protection Regulation ("GDPR")</a>
+ * @see <a href="https://developers.applovin.com/en/ios/overview/privacy#consent-and-age-related-flags-in-gdpr-and-other-regions">MAX Integration Guide ⇒ iOS ⇒ Privacy ⇒ Consent and Age-Related Flags in GDPR and Other Regions</a>
  */
 + (BOOL)hasUserConsent;
 
@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @param isAgeRestrictedUser @c YES if the user is age-restricted (i.e. under 16).
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/privacy#children-data">MAX Integration Guide ⇒ iOS ⇒ Privacy ⇒ Children Data</a>
+ * @see <a href="https://developers.applovin.com/en/ios/overview/privacy#prohibition-on-ads-to-and-personal-information-from-children-and-apps-exclusively-designed-for-or-exclusively-directed-to-children">MAX Integration Guide ⇒ iOS ⇒ Privacy ⇒ Prohibition on Ads to, and Personal Information from, Children and Apps Exclusively Designed for, or Exclusively Directed to, Children</a>
  */
 + (void)setIsAgeRestrictedUser:(BOOL)isAgeRestrictedUser;
 
@@ -52,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @return @c YES if the user is age-restricted. @c NO if the user is not age-restricted or the age-restriction value has not been set (see @c isAgeRestrictedUserSet).
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/privacy#children-data">MAX Integration Guide ⇒ iOS ⇒ Privacy ⇒ Children Data</a>
+ * @see <a href="https://developers.applovin.com/en/ios/overview/privacy#prohibition-on-ads-to-and-personal-information-from-children-and-apps-exclusively-designed-for-or-exclusively-directed-to-children">MAX Integration Guide ⇒ iOS ⇒ Privacy ⇒ Prohibition on Ads to, and Personal Information from, Children and Apps Exclusively Designed for, or Exclusively Directed to, Children</a>
  */
 + (BOOL)isAgeRestrictedUser;
 
@@ -68,7 +68,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @param doNotSell @c YES if the user opted out of the sale of their personal information.
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/privacy#california-consumer-privacy-act-(%E2%80%9Cccpa%E2%80%9D)">MAX Integration Guide ⇒ iOS ⇒ Privacy ⇒ California Consumer Privacy Act ("CCPA")</a>
+ * @see <a href="https://developers.applovin.com/en/ios/overview/privacy#multi-state-consumer-privacy-laws">MAX Integration Guide ⇒ iOS ⇒ Privacy ⇒ Multi-State Consumer Privacy Laws</a>
  */
 + (void)setDoNotSell:(BOOL)doNotSell;
 
@@ -77,7 +77,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @return @c YES if the user opted out of the sale of their personal information. @c NO if the user opted in to the sale of their personal information or the value has not been set (see @c isDoNotSellSet).
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/privacy#california-consumer-privacy-act-(%E2%80%9Cccpa%E2%80%9D)">MAX Integration Guide ⇒ iOS ⇒ Privacy ⇒ California Consumer Privacy Act ("CCPA")</a>
+ * @see <a href="https://developers.applovin.com/en/ios/overview/privacy#multi-state-consumer-privacy-laws">MAX Integration Guide ⇒ iOS ⇒ Privacy ⇒ Multi-State Consumer Privacy Laws</a>
  */
 + (BOOL)isDoNotSell;
 

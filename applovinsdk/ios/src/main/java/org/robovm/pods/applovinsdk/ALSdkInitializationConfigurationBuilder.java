@@ -61,8 +61,6 @@ import org.robovm.apple.safariservices.*;
     public native String getPluginVersion();
     @Property(selector = "setPluginVersion:")
     public native void setPluginVersion(String v);
-    @Property(selector = "settings")
-    public native ALSdkSettings getSettings();
     @Property(selector = "userSegment")
     public native ALUserSegment getUserSegment();
     @Property(selector = "setUserSegment:")

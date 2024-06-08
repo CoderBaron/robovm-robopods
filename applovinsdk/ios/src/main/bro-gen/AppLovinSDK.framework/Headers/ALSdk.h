@@ -105,7 +105,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Present the mediation debugger UI.
  * This debugger tool provides the status of your integration for each third-party ad network.
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/testing-networks/mediation-debugger">MAX Integration Guide ⇒ iOS ⇒ Testing Networks ⇒ Mediation Debugger</a>
+ * @see <a href="https://developers.applovin.com/en/ios/testing-networks/mediation-debugger/">MAX Integration Guide ⇒ iOS ⇒ Testing Networks ⇒ Mediation Debugger</a>
  */
 - (void)showMediationDebugger;
 
@@ -113,7 +113,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Present the mediation debugger UI.
  * This debugger tool provides the status of your integration for each third-party ad network.
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/testing-networks/mediation-debugger">MAX Integration Guide ⇒ iOS ⇒ Testing Networks ⇒ Mediation Debugger</a>
+ * @see <a href="https://developers.applovin.com/en/ios/testing-networks/mediation-debugger/">MAX Integration Guide ⇒ iOS ⇒ Testing Networks ⇒ Mediation Debugger</a>
  *
  * @param amazonAdSizes A map of the MAX Ad Unit ID to Amazon Publisher Services' @c DTBAdSize.
  */
@@ -152,7 +152,7 @@ typedef void (^ALSdkInitializationCompletionHandler)(ALSdkConfiguration *configu
  * @param initializationConfiguration  The configuration to initialize the SDK with.
  * @param completionHandler                        The callback that the SDK will call when the SDK finishes initializing.
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/integration#initialize-the-sdk">MAX Integration Guide ⇒ iOS ⇒ Integration ⇒ Initialize the SDK</a>
+ * @see <a href="https://developers.applovin.com/en/ios/overview/integration#initialize-the-sdk">MAX Integration Guide ⇒ iOS ⇒ Overview ⇒ Integration ⇒ Initialize the SDK</a>
  */
 - (void)initializeWithConfiguration:(ALSdkInitializationConfiguration *)initializationConfiguration completionHandler:(nullable ALSdkInitializationCompletionHandler)completionHandler;
 
@@ -177,7 +177,7 @@ typedef void (^ALSdkInitializationCompletionHandler)(ALSdkConfiguration *configu
  *
  * @param completionHandler The callback that the SDK will call when the SDK finishes initializing.
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/integration#initialize-the-sdk">MAX Integration Guide ⇒ iOS ⇒ Integration ⇒ Initialize the SDK</a>
+ * @see <a href="https://developers.applovin.com/en/ios/overview/integration#initialize-the-sdk">MAX Integration Guide ⇒ iOS ⇒ Overview ⇒ Integration ⇒ Initialize the SDK</a>
  */
 - (void)initializeSdkWithCompletionHandler:(nullable ALSdkInitializationCompletionHandler)completionHandler __deprecated_msg("This method is deprecated and will be removed in a future SDK version. Please use `-[[ALSdk shared] initializeWithConfiguration:completionHandler:]` instead.");
 
@@ -186,7 +186,7 @@ typedef void (^ALSdkInitializationCompletionHandler)(ALSdkConfiguration *configu
  *
  * @warning Make sure your SDK key is set in the application’s @code Info.plist @endcode under the property @c AppLovinSdkKey.
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/integration#initialize-the-sdk">MAX Integration Guide ⇒ iOS ⇒ Integration ⇒ Initialize the SDK</a>
+ * @see <a href="https://developers.applovin.com/en/ios/overview/integration#initialize-the-sdk">MAX Integration Guide ⇒ iOS ⇒ Overview ⇒ Integration ⇒ Initialize the SDK</a>
  */
 + (void)initializeSdk __deprecated_msg("This method is deprecated and will be removed in a future SDK version. Please use `-[[ALSdk shared] initializeWithConfiguration:completionHandler:]` instead.");
 
@@ -197,7 +197,7 @@ typedef void (^ALSdkInitializationCompletionHandler)(ALSdkConfiguration *configu
  *
  * @param completionHandler The callback that the SDK will run on the main queue when the SDK finishes initializing.
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/integration#initialize-the-sdk">MAX Integration Guide ⇒ iOS ⇒ Integration ⇒ Initialize the SDK</a>
+ * @see <a href="https://developers.applovin.com/en/ios/overview/integration#initialize-the-sdk">MAX Integration Guide ⇒ iOS ⇒ Overview ⇒ Integration ⇒ Initialize the SDK</a>
  */
 + (void)initializeSdkWithCompletionHandler:(nullable ALSdkInitializationCompletionHandler)completionHandler __deprecated_msg("This method is deprecated and will be removed in a future SDK version. Please use `-[[ALSdk shared] initializeWithConfiguration:completionHandler:]` instead.");
 

@@ -59,8 +59,6 @@ import org.robovm.apple.safariservices.*;
     public native String getMediationProvider();
     @Property(selector = "pluginVersion")
     public native String getPluginVersion();
-    @Property(selector = "settings")
-    public native ALSdkSettings getSettings();
     @Property(selector = "userSegment")
     public native ALUserSegment getUserSegment();
     @Property(selector = "targetingData")

@@ -5,7 +5,6 @@
 //  Created by Chris Cong on 1/22/24.
 //
 
-#import <AppLovinSDK/ALSdkSettings.h>
 #import <AppLovinSDK/ALTargetingData.h>
 #import <AppLovinSDK/ALUserSegment.h>
 
@@ -19,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void (^ALSdkInitializationConfigurationBuilderBlock) (ALSdkInitializationConfigurationBuilder *builder);
 
 /**
- * This class contains configurable properties and settings for the initialization of the AppLovin SDK.
+ * This class contains configurable properties for the initialization of the AppLovin SDK.
  * It also reads any values you have already configured in the application's @c Info.plist.
  * To be used in @code [[ALSdk shared] initializeWithConfiguration:completionHandler].
  */
@@ -29,7 +28,6 @@ typedef void (^ALSdkInitializationConfigurationBuilderBlock) (ALSdkInitializatio
 @property (nonatomic, copy, readonly, nullable) NSString *mediationProvider;
 @property (nonatomic, copy, readonly, nullable) NSString *pluginVersion;
 
-@property (nonatomic, strong, readonly) ALSdkSettings *settings;
 @property (nonatomic, strong, readonly, nullable) ALUserSegment *userSegment;
 @property (nonatomic, strong, readonly, nullable) ALTargetingData *targetingData;
 
@@ -68,7 +66,7 @@ typedef void (^ALSdkInitializationConfigurationBuilderBlock) (ALSdkInitializatio
 
 /**
  * Builder class used to create an ALSdkInitializationConfiguration object.
- * This class contains configurable properties and settings for the initialization of the AppLovin SDK.
+ * This class contains configurable properties for the initialization of the AppLovin SDK.
  */
 @interface ALSdkInitializationConfigurationBuilder : NSObject
 
@@ -87,11 +85,6 @@ typedef void (^ALSdkInitializationConfigurationBuilderBlock) (ALSdkInitializatio
  * Sets the plugin version for the mediation adapter or plugin.
  */
 @property (nonatomic, copy, nullable) NSString *pluginVersion;
-
-/**
- * The settings object for the AppLovinSDK to initialize with. Note: its properties are mutable and may be modified after initialization.
- */
-@property (nonatomic, strong, readonly) ALSdkSettings *settings;
 
 /**
  * A user segment allows AppLovin to serve ads by using custom-defined rules that are based on which segment the user is in. The user segment is a custom string
