@@ -36,7 +36,7 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC18CleverAdsSolutions10CASTypeInt")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("CleverAdsSolutions.CASTypeInt")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/CASTypeInt/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {

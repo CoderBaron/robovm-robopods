@@ -26,9 +26,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// - 6 - AppTrackingTransparency framework not included
 /// Use `getATTStatusDescription(adTrackingStatus)` to get string
 @property (class, readonly) NSUInteger adTrackingStatus;
++ (void)trackingAuthorizationRequest:(nullable void (^)(NSUInteger))completion;
 
 + (BOOL)tryFirebaseLogEvent:(NSString *)eventName map:(NSDictionary<NSString *, id> *)map;
-+ (void)trackingAuthorizationRequest:(nullable void (^)(NSUInteger))completion;
++ (BOOL)tryTenjinLogEvent:(NSString *)eventName json:(NSString *)eventJson;
++ (BOOL)tryTenjinLogImpressionEvent:(NSString *)eventJson;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -36,7 +36,7 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC18CleverAdsSolutions18CASConsentPlatform")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("CleverAdsSolutions.CASConsentPlatform")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/CASConsentPlatform/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {

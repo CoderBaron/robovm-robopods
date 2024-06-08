@@ -63,6 +63,8 @@ classes:
         methods:
             '+tryFirebaseLogEvent:map:':
                 name: tryFirebaseLogEvent
+            '+tryTenjinLogEvent:json:':
+                name: tryTenjinLogEvent
     CASLastPageAdContent:
         methods:
             '-initWithHeadline:adText:destinationURL:imageURL:iconURL:':
