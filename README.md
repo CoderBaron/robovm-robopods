@@ -41,7 +41,7 @@ v1.41.0 - in development
 | Name                            | 1.41.0  |
 |---------------------------------|---------|
 | [AdaptySDK](adapty/)            | 1.17.7  |
-| [AppCenter](appcenter/)         | 5.0.4   |
+| [AppCenter](appcenter/)         | 5.0.5   |
 | [AppLovinSDK](applovinsdk/)     | 12.5.0  |
 | [Azure](azure/)                 | 3.1.4   |
 | [BranchMetrics](branchmetrics/) | 3.4.3   |
