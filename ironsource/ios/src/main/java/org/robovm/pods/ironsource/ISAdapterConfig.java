@@ -120,6 +120,8 @@ import org.robovm.apple.coreanimation.*;
     public native String getProviderDefaultInstance();
     @Property(selector = "setProviderDefaultInstance:")
     public native void setProviderDefaultInstance(String v);
+    @Property(selector = "providerNetworkKey")
+    public native String getProviderNetworkKey();
     @Property(selector = "customNetwork")
     public native String getCustomNetwork();
     @Property(selector = "isCustomNetwork")

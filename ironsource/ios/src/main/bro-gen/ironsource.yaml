@@ -18,6 +18,9 @@ enums:
     ISMetaDataValueTypes: { prefix: META_DATA_VALUE_ }
     ISNLogLevel: { prefix: ISNLog }
     ISNLogTag: { prefix: ISN_TAG_ }
+    ISAAdFormatType: { }
+    ISALogLevel: { }
+    LPMAdSizeType: { prefix: LPMAdSize }
 
 private_typedefs:
     "MessageToNative *": NSObject
@@ -326,6 +329,77 @@ classes:
             '-logWithNetworkPrefix:withLevel:withTag:':
                 name: logWithNetworkPrefix
     ISMediationGlobalDataWriterFacade: {}
+    ISAAdFormat:
+        methods:
+            '-initWithAdFormatType:':
+                name: init
+    ISAAdSize: { }
+    ISABannerAdInfo: { }
+    ISABannerAdLoader:
+        methods:
+            '+loadAdWithAdRequest:delegate:':
+                name: loadAd
+    ISABannerAdRequest: { }
+    ISABannerAdRequestBuilder:
+        methods:
+            '-initWithInstanceId:adm:size:':
+                name: init
+    ISABannerAdView: { }
+    ISAInitRequest: { }
+    ISAInitRequestBuilder:
+        methods:
+            '-initWithAppKey:':
+                name: init
+    ISAInterstitialAd: { }
+    ISAInterstitialAdInfo: { }
+    ISAInterstitialAdLoader:
+        methods:
+            '+loadAdWithAdRequest:delegate:':
+                name: loadAd
+    ISAInterstitialAdRequest: { }
+    ISAInterstitialAdRequestBuilder:
+        methods:
+            '-initWithInstanceId:adm:':
+                name: init
+    ISARewardedAd: { }
+    ISARewardedAdInfo: { }
+    ISARewardedAdLoader:
+        methods:
+            '+loadAdWithAdRequest:delegate:':
+                name: loadAd
+    ISARewardedAdRequest: { }
+    ISARewardedAdRequestBuilder:
+        methods:
+            '-initWithInstanceId:adm:':
+                name: init
+    IronSourceAds:
+        methods:
+            '+initWithRequest:completion:':
+                name: init
+    LPMAdInfo: { }
+    LPMAdSize:
+        methods:
+            '+customSizeWithWidth:height:':
+                name: customSize
+    LPMBannerAdView:
+        methods:
+            '-initWithAdUnitId:':
+                name: init
+            '-loadAdWithViewController:':
+                name: loadAd
+    LPMConfiguration: { }
+    LPMInitRequest:
+        methods:
+            '-initWithAppKey:legacyAdFormats:userId:':
+                name: init
+    LPMInitRequestBuilder:
+        methods:
+            '-initWithAppKey:':
+                name: init
+    LevelPlay:
+        methods:
+            '+initWithRequest:completion:':
+                name: init
 protocols:
     ISAdapterAdDelegate:
         methods:
@@ -629,6 +703,45 @@ protocols:
         methods:
             '-setAPSDataWithAdUnit:apsData:':
                 name: setAPSData
+    ISABannerAdLoaderDelegate:
+        methods:
+            '-bannerAdDidFailToLoadWithError:':
+                name: bannerAdDidFailToLoad
+    ISABannerAdViewDelegate: { }
+    ISAInterstitialAdDelegate:
+        methods:
+            '-interstitialAd:didFailToShowWithError:':
+                name: didFailToShow
+    ISAInterstitialAdLoaderDelegate:
+        methods:
+            '-interstitialAdDidFailToLoadWithError:':
+                name: interstitialAdDidFailToLoad
+    ISARewardedAdDelegate:
+        methods:
+            '-rewardedAd:didFailToShowWithError:':
+                name: didFailToShow
+    ISARewardedAdLoaderDelegate:
+        methods:
+            '-rewardedAdDidFailToLoadWithError:':
+                name: rewardedAdDidFailToLoad
+    LPMBannerAdViewDelegate:
+        methods:
+            '-didLoadAdWithAdInfo:':
+                name: didLoadAd
+            '-didFailToLoadAdWithAdUnitId:error:':
+                name: didFailToLoadAd
+            '-didClickAdWithAdInfo:':
+                name: didClickAd
+            '-didDisplayAdWithAdInfo:':
+                name: didDisplayAd
+            '-didFailToDisplayAdWithAdInfo:error:':
+                name: didFailToDisplayAd
+            '-didLeaveAppWithAdInfo:':
+                name: didLeaveApp
+            '-didExpandAdWithAdInfo:':
+                name: didExpandAd
+            '-didCollapseAdWithAdInfo:':
+                name: didCollapseAd
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):

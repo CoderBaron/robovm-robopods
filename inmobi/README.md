@@ -26,4 +26,4 @@
 
 ## Official website
 
-https://support.inmobi.com/monetize/
+https://www.inmobi.com/sdk
