@@ -54,6 +54,10 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "casExchange")
+    public static native String casExchange();
+    @Method(selector = "dspExchange")
+    public static native String dspExchange();
     @Method(selector = "crossPromo")
     public static native String crossPromo();
     @Method(selector = "googleAds")
@@ -74,8 +78,6 @@ import org.robovm.apple.coreanimation.*;
     public static native String meta();
     @Method(selector = "inMobi")
     public static native String inMobi();
-    @Method(selector = "myTarget")
-    public static native String myTarget();
     @Method(selector = "ironSource")
     public static native String ironSource();
     @Method(selector = "yandexAds")
@@ -88,16 +90,18 @@ import org.robovm.apple.coreanimation.*;
     public static native String dtExchange();
     @Method(selector = "bigo")
     public static native String bigo();
-    @Method(selector = "madex")
-    public static native String madex();
     @Method(selector = "hyprMX")
     public static native String hyprMX();
     @Method(selector = "smaato")
     public static native String smaato();
     @Method(selector = "startio")
     public static native String startio();
-    @Method(selector = "dspExchange")
-    public static native String dspExchange();
+    @Method(selector = "loopMe")
+    public static native String loopMe();
+    @Method(selector = "madex")
+    public static native String madex();
+    @Method(selector = "ogury")
+    public static native String ogury();
     @Method(selector = "lastPageAd")
     public static native String lastPageAd();
     @Method(selector = "adMob")
@@ -108,8 +112,8 @@ import org.robovm.apple.coreanimation.*;
     public static native String fyber();
     @Method(selector = "digitalTurbine")
     public static native String digitalTurbine();
-    @Method(selector = "casExchange")
-    public static native String casExchange();
+    @Method(selector = "myTarget")
+    public static native String myTarget();
     @Method(selector = "bidMachine")
     public static native String bidMachine();
     @Method(selector = "adColony")
