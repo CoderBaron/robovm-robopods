@@ -480,6 +480,7 @@ classes:
                 name: enter
             '+exit:withSuccess:withFailure:':
                 name: exit
+    OSBundleUtils: {}
 protocols:
     OSNotificationDisplayTypeDelegate:
         skip_adapter: true # only one method there

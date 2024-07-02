@@ -92,8 +92,8 @@ import org.robovm.apple.uikit.*;
     public native void setPushToken(String pushToken);
     @Method(selector = "startNewSession")
     public native void startNewSession();
-    @Method(selector = "updateSessionWithSessionCount:sessionTime:refreshDeviceMetadata:sendImmediately:onSuccess:onFailure:")
-    public native void updateSession(NSNumber sessionCount, NSNumber sessionTime, boolean refreshDeviceMetadata, boolean sendImmediately, @Block Runnable onSuccess, @Block Runnable onFailure);
+    @Method(selector = "sendSessionTime:")
+    public native void sendSessionTime(NSNumber sessionTime);
     @Method(selector = "runBackgroundTasks")
     public native void runBackgroundTasks();
     @Method(selector = "onJwtExpiredWithExpiredHandler:")
