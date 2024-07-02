@@ -27,10 +27,16 @@ classes:
         methods:
             '-tokenForcingRefresh:completion:':
                 name: tokenForcingRefresh
+                parameters:
+                    1:
+                        type: '@Block VoidBlock2<FIRAppCheckTokenProtocol, NSError>'
             '+appCheckWithApp:':
                 name: appCheck
             '-limitedUseTokenWithCompletion:':
                 name: limitedUseToken
+                parameters:
+                    0:
+                        type: '@Block VoidBlock2<FIRAppCheckTokenProtocol, NSError>'
     FIRAppCheckDebugProvider:
         methods:
             '-initWithApp:':
@@ -115,6 +121,7 @@ protocols:
         methods:
             '-tokenDidUpdate:serviceName:':
                 name: tokenDidUpdate
+    FIRAppCheckTokenProtocol: {}
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):

@@ -33,9 +33,9 @@ import org.robovm.apple.foundation.*;
 /*<javadoc>*/
 /*</javadoc>*/
 /*<annotations>*//*</annotations>*/
-/*<visibility>*/public/*</visibility>*/ class /*<name>*/FIRAppCheckProtocolAdapter/*</name>*/ 
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FIRAppCheckTokenProtocolAdapter/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FIRAppCheckProtocol/*</implements>*/ {
+    /*<implements>*/implements FIRAppCheckTokenProtocol/*</implements>*/ {
 
     /*<ptr>*/
     /*</ptr>*/
@@ -44,13 +44,13 @@ import org.robovm.apple.foundation.*;
     /*<constants>*//*</constants>*/
     /*<constructors>*//*</constructors>*/
     /*<properties>*/
-    
+    @NotImplemented("token")
+    public String getToken() { return null; }
+    @NotImplemented("expirationDate")
+    public NSDate getExpirationDate() { return null; }
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @NotImplemented("tokenForcingRefresh:completion:")
-    public void tokenForcingRefresh(boolean forcingRefresh, @Block VoidBlock2<FIRAppCheckTokenProtocol, NSError> handler) {}
-    @NotImplemented("limitedUseTokenWithCompletion:")
-    public void limitedUseToken(@Block VoidBlock2<FIRAppCheckTokenProtocol, NSError> handler) {}
+    
     /*</methods>*/
 }
