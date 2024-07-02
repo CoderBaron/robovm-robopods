@@ -3,16 +3,16 @@
 ## Install Instructions
 
 ### 3rd party native framework
-This RoboPod requires you to add the native `libSingular.a`.
+This RoboPod requires you to add the native `Singular.xcframework`.
 
 ### to use this pod configure your `robovm.xml`
 
 ```
 <config>
     ...
-    <libs>
-        <lib>libs/libSingular.a</lib>  <!-- path to libSingular.a -->
-    </libs>
+    <frameworkPaths>
+        <path>libs</path>  <!-- path where Singular.xcframework is located -->
+    </frameworkPaths>
 </config>
 ```
 

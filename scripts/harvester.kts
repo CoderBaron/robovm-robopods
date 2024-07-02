@@ -327,24 +327,18 @@ val knownFrameworks = mutableMapOf<String, (String) -> Unit>(
             """.trimIndent()
         )
     },
-    "Singular" to { lib ->
+    "Singular" to { framework ->
         val artifactLocation = downloadFolder.extend("Singular.xcframework/ios-arm64/Singular.framework")
         processFramework(
-            artifact = "$lib.lib",
+            artifact = "$framework.framework",
             moduleFolder = "singular/ios",
-            sourceHeadersDir = artifactLocation,
+            sourceHeadersDir = artifactLocation.headers,
             yaml = "singular.yaml",
             version = { artifactLocation.infoPlist.extractVersion(versionKey = "CFBundleVersion") },
             instruction = """
                 0. download latest version from https://support.singular.net/hc/en-us/articles/12054824479387
-                1. unpack and rename to ${downloadFolder.extend("Singular-iOS-sdk")}
-                3. create a file ${downloadFolder.extend("Singular-iOS-sdk/version")} and put verions there, e.g. 11.0.4 
-            """.trimIndent(),
-            headersCopier = { frm, sourceHeadersDir, destinationHeadersDir ->
-                copyHeadersFiltered(frm, sourceHeadersDir, destinationHeadersDir, flatten = true) {
-                    it.fileName.toString().endsWith(".h")
-                }
-            }
+                1. unpack, expected location ${downloadFolder.extend("Singular.xcframework")}
+            """.trimIndent()
         )
     },
     "IronSource" to { framework ->
