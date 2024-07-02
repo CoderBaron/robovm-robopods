@@ -66,30 +66,6 @@ import org.robovm.apple.coregraphics.*;
     public native double getTimeout();
     @Property(selector = "setTimeout:")
     public native void setTimeout(double v);
-    /**
-     * @deprecated In current version setting this property will not affect anything. In the next SDK version this property will be removed. Please use 'userData' property of IASDKCore instance instead.
-     */
-    @Deprecated
-    @Property(selector = "userData")
-    public native IAUserData getUserData();
-    /**
-     * @deprecated In current version setting this property will not affect anything. In the next SDK version this property will be removed. Please use 'userData' property of IASDKCore instance instead.
-     */
-    @Deprecated
-    @Property(selector = "setUserData:")
-    public native void setUserData(IAUserData v);
-    /**
-     * @deprecated In current version setting this property will not affect anything. In the next SDK version this property will be removed. Please use 'keywords' property of IASDKCore instead.
-     */
-    @Deprecated
-    @Property(selector = "keywords")
-    public native String getKeywords();
-    /**
-     * @deprecated In current version setting this property will not affect anything. In the next SDK version this property will be removed. Please use 'keywords' property of IASDKCore instead.
-     */
-    @Deprecated
-    @Property(selector = "setKeywords:")
-    public native void setKeywords(String v);
     @Property(selector = "debugger")
     public native IADebugger getDebugger();
     @Property(selector = "setDebugger:")
@@ -98,18 +74,6 @@ import org.robovm.apple.coregraphics.*;
     public native IAInterfaceAdDescription getSubtypeDescription();
     @Property(selector = "setSubtypeDescription:")
     public native void setSubtypeDescription(IAInterfaceAdDescription v);
-    /**
-     * @deprecated In current version setting this property will not affect anything. In the next SDK version this property will be removed. Please use 'muteAudio' property of IASDKCore instance instead.
-     */
-    @Deprecated
-    @Property(selector = "muteAudio")
-    public native boolean isMuteAudio();
-    /**
-     * @deprecated In current version setting this property will not affect anything. In the next SDK version this property will be removed. Please use 'muteAudio' property of IASDKCore instance instead.
-     */
-    @Deprecated
-    @Property(selector = "setMuteAudio:")
-    public native void setMuteAudio(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

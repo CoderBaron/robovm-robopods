@@ -49,7 +49,7 @@ v1.42.0 - in development
 | [ClearAds](cleverads/)          | 3.8.1   |
 | [Facebook](facebook/)           | 17.0.2  |
 | [Firebase](firebase/)           | 10.28.0 |
-| [Fyber](fyber/)                 | 8.2.2   |
+| [Fyber](fyber/)                 | 8.3.1   |
 | [HelpShiftX](helpshift/)        | 10.3.0  |
 | [InMobi](inmobi/)               | 10.7.2  |
 | [IronSource](ironsource/)       | 8.1.0   |
