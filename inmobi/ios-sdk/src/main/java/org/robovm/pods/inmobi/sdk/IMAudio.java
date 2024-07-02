@@ -37,7 +37,7 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9InMobiSDK7IMAudio")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("InMobiSDK.IMAudio")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/IMAudio/*</name>*/ 
     extends /*<extends>*/UIView/*</extends>*/ 
     /*<implements>*//*</implements>*/ {

@@ -37,7 +37,7 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9InMobiSDK14IMInterstitial")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("InMobiSDK.IMInterstitial")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/IMInterstitial/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {

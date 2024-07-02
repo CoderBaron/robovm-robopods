@@ -37,7 +37,7 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9InMobiSDK19IMPrivacyCompliance")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("InMobiSDK.IMPrivacyCompliance")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/IMPrivacyCompliance/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {

@@ -94,7 +94,7 @@ classes:
     IMPrivacyCompliance: { }
     IMWatermark:
         methods:
-            '-initWithImageData:':
+            '-initWithWaterMarkImageData:':
                 name: init
 protocols:
     IMBannerDelegate:

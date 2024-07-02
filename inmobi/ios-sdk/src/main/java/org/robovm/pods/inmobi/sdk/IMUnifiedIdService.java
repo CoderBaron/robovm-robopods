@@ -37,7 +37,7 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9InMobiSDK18IMUnifiedIdService")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("InMobiSDK.IMUnifiedIdService")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/IMUnifiedIdService/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {

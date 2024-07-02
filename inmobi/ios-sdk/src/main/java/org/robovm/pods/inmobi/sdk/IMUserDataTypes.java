@@ -37,7 +37,7 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9InMobiSDK15IMUserDataTypes")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("InMobiSDK.IMUserDataTypes")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/IMUserDataTypes/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {

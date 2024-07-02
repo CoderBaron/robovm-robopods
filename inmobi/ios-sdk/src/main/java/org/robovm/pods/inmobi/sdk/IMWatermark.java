@@ -37,7 +37,7 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9InMobiSDK11IMWatermark")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("InMobiSDK.IMWatermark")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/IMWatermark/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
@@ -49,8 +49,8 @@ import org.robovm.apple.coreanimation.*;
     protected IMWatermark() {}
     protected IMWatermark(Handle h, long handle) { super(h, handle); }
     protected IMWatermark(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithImageData:")
-    public IMWatermark(NSData imageData) { super((SkipInit) null); initObject(init(imageData)); }
+    @Method(selector = "initWithWaterMarkImageData:")
+    public IMWatermark(NSData waterMarkImageData) { super((SkipInit) null); initObject(init(waterMarkImageData)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "imageData")
@@ -58,7 +58,7 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "initWithImageData:")
-    protected native @Pointer long init(NSData imageData);
+    @Method(selector = "initWithWaterMarkImageData:")
+    protected native @Pointer long init(NSData waterMarkImageData);
     /*</methods>*/
 }
