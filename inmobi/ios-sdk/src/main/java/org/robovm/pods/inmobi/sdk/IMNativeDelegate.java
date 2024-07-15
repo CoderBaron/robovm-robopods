@@ -67,7 +67,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "nativeAdImpressed:")
     void nativeAdImpressed(IMNative _native);
     @Method(selector = "native:didInteractWithParams:")
-    void didInteract(IMNative _native, NSDictionary<?, ?> params);
+    void didInteract(IMNative _native, NSDictionary<NSString, ?> params);
     @Method(selector = "nativeDidFinishPlayingMedia:")
     void nativeDidFinishPlayingMedia(IMNative _native);
     @Method(selector = "userDidSkipPlayingMediaFromNative:")

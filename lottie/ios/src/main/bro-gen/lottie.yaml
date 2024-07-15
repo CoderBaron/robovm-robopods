@@ -166,6 +166,10 @@ classes:
         methods:
             '-initWithValues:':
                 name: init
+    LottieAnimationLayer:
+        methods:
+            '-initWithCoder:':
+                name: init
 protocols: {}
 
 

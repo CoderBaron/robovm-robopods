@@ -59,5 +59,7 @@ import org.robovm.apple.webkit.*;
     /*<methods>*/
     @Method(selector = "createQueryInfoWithRequest:adFormat:completionHandler:")
     public static native void createQueryInfo(GADRequest request, GADAdFormat adFormat, @Block VoidBlock2<GADQueryInfo, NSError> completionHandler);
+    @Method(selector = "createQueryInfoWithRequest:adFormat:adUnitID:completionHandler:")
+    public static native void createQueryInfo(GADRequest request, GADAdFormat adFormat, String adUnitID, @Block VoidBlock2<GADQueryInfo, NSError> completionHandler);
     /*</methods>*/
 }

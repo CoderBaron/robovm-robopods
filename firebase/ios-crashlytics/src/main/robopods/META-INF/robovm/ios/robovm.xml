@@ -1,9 +1,11 @@
 <config>
     <frameworks>
+        <framework>FirebaseCoreExtension</framework>
         <framework>FirebaseCrashlytics</framework>
-        <framework>FirebaseInstallations</framework>
-        <framework>nanopb</framework>
+        <framework>FirebaseSessions</framework>
         <framework>GoogleDataTransport</framework>
+        <framework>Promises</framework>
+        <framework>FirebaseRemoteConfigInterop</framework>
     </frameworks>
     <exportedSymbols>
         <symbol>_mh_execute_header</symbol> <!-- check https://github.com/dkimitsa/robovm-robopods/issues/1 -->

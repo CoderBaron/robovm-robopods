@@ -63,7 +63,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "initWithFrame:")
     public CompatibleAnimationView(@ByVal CGRect frame) { super((SkipInit) null); initObject(init(frame)); }
     @Method(selector = "initWithCoder:")
-    public CompatibleAnimationView(NSCoder _) { super((SkipInit) null); initObject(init(_)); }
+    public CompatibleAnimationView(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "compatibleAnimation")
@@ -139,7 +139,7 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "initWithFrame:")
     protected native @Pointer long init(@ByVal CGRect frame);
     @Method(selector = "initWithCoder:")
-    protected native @Pointer long init(NSCoder _);
+    protected native @Pointer long init(NSCoder coder);
     @Method(selector = "play")
     public native void play();
     @Method(selector = "playWithCompletion:")

@@ -55,6 +55,8 @@ import org.robovm.apple.uikit.*;
     /*<methods>*/
     @GlobalValue(symbol="FIRPhoneMultiFactorID", optional=true)
     public static native String getPhoneFactorID();
+    @GlobalValue(symbol="FIRTOTPMultiFactorID", optional=true)
+    public static native String getTOTPFactorID();
     
     @Method(selector = "getSessionWithCompletion:")
     public native void getSession(@Block VoidBlock2<FIRMultiFactorSession, NSError> completion);

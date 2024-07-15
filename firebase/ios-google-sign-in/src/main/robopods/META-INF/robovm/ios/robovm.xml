@@ -1,8 +1,8 @@
 <config>
     <frameworks>
-        <framework>GoogleSignIn</framework>
         <framework>AppAuth</framework>
         <framework>GTMAppAuth</framework>
         <framework>GTMSessionFetcher</framework>
+        <framework>GoogleSignIn</framework>
     </frameworks>
 </config>

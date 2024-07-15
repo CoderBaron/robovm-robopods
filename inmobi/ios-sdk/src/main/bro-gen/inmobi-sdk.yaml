@@ -4,6 +4,7 @@ include: [foundation, uikit, corelocation, coregraphics, coreanimation]
 clang_args: ['-x', 'objective-c']
 headers: 
     - InMobiSDK.h
+    - InMobiSDK-Swift.h
 
 enums:
     IMSDKLogLevel: {prefix: kIMSDKLogLevel}
@@ -11,11 +12,11 @@ enums:
     IMSDKEducation: {prefix: kIMSDKEducation}
     IMSDKAgeGroup: {prefix: kIMSDKAgeGroup}
     IMStatusCode: {prefix: kIMStatusCode}
-    IMMediationEvent: {prefix: kIMMediationEvent}
     IMInterstitialAnimationType: {prefix: kIMInterstitialAnimationType}
-    IMPrimaryIntegration: {prefix: kIMPrimaryIntegration}
     IMCoreAdState: {prefix: kIMCoreAdState}
-    IMUnifiedTimeout: {prefix: kIMUnifiedTimeout}
+    IMAudioStatus: { }
+    IMBannerAudioStatus: { }
+    IMRemoteLogLevel: {}
 typed_enums:
 
 classes:
@@ -26,6 +27,8 @@ classes:
                 name: init
             '-initWithFrame:placementId:delegate:':
                 name: init
+            '-setWatermarkWith:':
+                name: setWatermarkWith
     IMBannerPreloadManager: {}
     IMInterstitial:
         methods:
@@ -35,6 +38,10 @@ classes:
                 name: init
             '-showFromViewController:withAnimation:':
                 name: show
+            '-showFrom:with:':
+                name: show
+            '-setWatermarkWith:':
+                name: setWatermark
     IMInterstitialPreloadManager: {}
     IMNative:
         methods:
@@ -62,12 +69,33 @@ classes:
         methods:
             '-initWithPhoneNumber:emailId:extras:':
                 name: init
+            '-copyWithZone:':
+                exclude: true
     IMUserDataTypes:
         methods:
             '-initWithMd5:sha1:sha256:':
                 #trim_after_first_colon: true
                 name: init
+            '-copyWithZone:':
+                exclude: true
     IMODTargetingService: {}
+    IMAudio:
+        methods:
+            '-initWithFrame:placementId:':
+                name: init
+            '-initWithFrame:placementId:delegate:':
+                name: init
+    IMBannerAudioHandler:
+        methods:
+            '-onView:addBannerAudioDelegate:':
+                name: addBannerAudioDelegate
+    IMCommonConstants: { }
+    IMMovableView: {}
+    IMPrivacyCompliance: { }
+    IMWatermark:
+        methods:
+            '-initWithWaterMarkImageData:':
+                name: init
 protocols:
     IMBannerDelegate:
         methods:
@@ -115,6 +143,28 @@ protocols:
         methods:
             '-onFetchCompleted:error:':
                 name: onFetchCompleted
+    IMAudioDelegate:
+        methods:
+            '-audioAd:didReceiveWithMetaInfo:':
+                name: didReceive
+            '-audioAd:didFailToLoadWithError:':
+                name: didFailToLoad
+            '-audioAd:didFailToShowWithError:':
+                name: didFailToShow
+            '-audioAd:didInteractWithParams:':
+                name: didInteract
+            '-audioAd:rewardActionCompletedWithRewards:':
+                name: rewardActionCompleted
+            '-audioAd:audioStatusChanged:':
+                name: audioStatusChanged
+    IMBannerAudioDelegate:
+        methods:
+            '-banner:audioStatusChanged:':
+                name: audioStatusChanged
+    IMLogging:
+        methods:
+            '-logWithMessage:tag:logLevel:':
+                name: log
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):
@@ -255,6 +305,8 @@ constants:
         class: IMConstants
     IM_PARTNER_GDPR_APPLIES:
         class: IMConstants
+    SWIFT_(.*):
+        exclude: true
 
     # Make sure we don't miss any constants if new ones are introduced in a later version
     (.*):

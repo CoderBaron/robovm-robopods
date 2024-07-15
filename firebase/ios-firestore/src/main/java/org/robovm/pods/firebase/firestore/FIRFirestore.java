@@ -54,9 +54,16 @@ import org.robovm.apple.dispatch.*;
     public native void setSettings(FIRFirestoreSettings v);
     @Property(selector = "app")
     public native org.robovm.pods.firebase.core.FIRApp getApp();
+    @Property(selector = "persistentCacheIndexManager")
+    public native FIRPersistentCacheIndexManager getPersistentCacheIndexManager();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @GlobalValue(symbol="FirebaseFirestoreVersionNumber", optional=true)
+    public static native double getVersionNumber();
+    @GlobalValue(symbol="FirebaseFirestoreVersionString", optional=true)
+    public static native BytePtr getVersionString();
+
     @Method(selector = "setIndexConfigurationFromJSON:completion:")
     public native void setIndexConfiguration(String json, @Block VoidBlock1<NSError> completion);
     @Method(selector = "setIndexConfigurationFromStream:completion:")

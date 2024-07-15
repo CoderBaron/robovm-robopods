@@ -74,10 +74,6 @@ import org.robovm.apple.coreanimation.*;
     public native NSDictionary<?, ?> getRewardedVideoCustomParameters();
     @Property(selector = "setRewardedVideoCustomParameters:")
     public native void setRewardedVideoCustomParameters(NSDictionary<?, ?> v);
-    @Property(selector = "offerwallCustomParameters")
-    public native NSDictionary<?, ?> getOfferwallCustomParameters();
-    @Property(selector = "setOfferwallCustomParameters:")
-    public native void setOfferwallCustomParameters(NSDictionary<?, ?> v);
     @Property(selector = "version")
     public native String getVersion();
     @Property(selector = "setVersion:")
@@ -169,12 +165,6 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    /**
-     * @deprecated As of version 6.5.2, use class method: getConfigurations
-     */
-    @Deprecated
-    @Method(selector = "configurations")
-    public static native ISConfigurations configurations();
     @Method(selector = "getConfigurations")
     public static native ISConfigurations getConfigurations();
     /*</methods>*/

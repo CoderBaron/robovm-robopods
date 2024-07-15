@@ -1,5 +1,7 @@
 <config>
     <frameworks>
+        <framework>AppCheckCore</framework>
         <framework>FirebaseAppCheck</framework>
+        <framework>FirebaseAppCheckInterop</framework>
     </frameworks>
 </config>

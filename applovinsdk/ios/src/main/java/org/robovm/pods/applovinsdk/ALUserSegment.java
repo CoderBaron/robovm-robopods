@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.safariservices.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -48,15 +49,26 @@ import org.robovm.apple.coreanimation.*;
     protected ALUserSegment() {}
     protected ALUserSegment(Handle h, long handle) { super(h, handle); }
     protected ALUserSegment(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithName:")
+    public ALUserSegment(String name) { super((SkipInit) null); initObject(init(name)); }
     /*</constructors>*/
     /*<properties>*/
+    /**
+     * @deprecated This method is deprecated and will be removed in a future SDK version. Please initialize a ALUserSegment instance in ALSdkInitializationConfiguration
+     */
+    @Deprecated
     @Property(selector = "name")
     public native String getName();
+    /**
+     * @deprecated This method is deprecated and will be removed in a future SDK version. Please initialize a ALUserSegment instance in ALSdkInitializationConfiguration
+     */
+    @Deprecated
     @Property(selector = "setName:")
     public native void setName(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "initWithName:")
+    protected native @Pointer long init(String name);
     /*</methods>*/
 }

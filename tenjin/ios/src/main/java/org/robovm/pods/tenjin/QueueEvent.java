@@ -31,12 +31,13 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.storekit.*;
 import org.robovm.apple.coredata.*;
+import org.robovm.apple.dispatch.*;
 /*</imports>*/
 
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC9TenjinSDK10QueueEvent")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/QueueEvent/*</name>*/ 
     extends /*<extends>*/NSManagedObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {

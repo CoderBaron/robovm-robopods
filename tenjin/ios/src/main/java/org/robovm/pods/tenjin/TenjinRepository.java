@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.storekit.*;
 import org.robovm.apple.coredata.*;
+import org.robovm.apple.dispatch.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -49,7 +50,7 @@ import org.robovm.apple.coredata.*;
     protected TenjinRepository(Handle h, long handle) { super(h, handle); }
     protected TenjinRepository(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithApiKey:")
-    public TenjinRepository(String apiKey) { super((SkipInit) null); initObject(iniWithApiKey$(apiKey)); }
+    public TenjinRepository(String apiKey) { super((SkipInit) null); initObject(init(apiKey)); }
     /*</constructors>*/
     /*<properties>*/
     
@@ -57,7 +58,7 @@ import org.robovm.apple.coredata.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "initWithApiKey:")
-    protected native @Pointer long iniWithApiKey$(String apiKey);
+    protected native @Pointer long init(String apiKey);
     @Method(selector = "setCacheEventsSetting:")
     public static native void setCacheEventsSetting(boolean isRetryEventsEnabled);
     @Method(selector = "getCacheEventsSetting")

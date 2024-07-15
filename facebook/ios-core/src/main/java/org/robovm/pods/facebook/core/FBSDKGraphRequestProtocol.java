@@ -70,6 +70,10 @@ import org.robovm.pods.facebook.corebasics.*;
     void setGraphErrorRecoveryDisabled(boolean v);
     @Property(selector = "hasAttachments")
     boolean hasAttachments();
+    @Property(selector = "forAppEvents")
+    boolean isForAppEvents();
+    @Property(selector = "useAlternativeDefaultDomainPrefix")
+    boolean isUseAlternativeDefaultDomainPrefix();
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "startWithCompletion:")

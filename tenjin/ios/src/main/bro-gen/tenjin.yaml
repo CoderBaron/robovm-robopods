@@ -1,14 +1,22 @@
 package: org.robovm.pods.tenjin
 framework: TenjinSDK
-include: [foundation, uikit, storekit, coredata]
+include: [foundation, uikit, storekit, coredata, dispatch]
 clang_args: ['-x', 'objective-c']
 headers:
     - "#include <TargetConditionals.h>"
     - "#import <UIKit/UIKit.h>"
     - "#import <CoreData/CoreData.h>"
-    - TJNRequestSender.h
+    - TenjinSDK.h
     - TenjinSDK-Swift.h
+    - TenjinSDK+AdMobILRD.h
+    - TenjinSDK+AppLovinILRD.h
+    - TenjinSDK+CASILRD.h
+    - TenjinSDK+HyperBidILRD.h
+    - TenjinSDK+IronSourceILRD.h
+    - TenjinSDK+TopOnILRD.h
+    - TenjinSDK+TradPlusILRD.h
 enums:
+    PurposeConsentStatus: {}
 
 private_typedefs:
     'GADAdValue *': org.robovm.pods.google.mobileads.GADAdValue
@@ -64,22 +72,74 @@ classes:
                 name: updatePostbackConversion
             '+updatePostbackConversionValue:coarseValue:lockWindow:':
                 name: updatePostbackConversion
+            '-setGoogleDMAParametersWithAdPersonalization:adUserData:':
+                name: setGoogleDMAParameters
+            '+sendEventWithName:andValue:':
+                name: sendEvent
     TJNHTTPClient:
-        exclude: true # from private headers
+        methods:
+            '-initWithApiKey:':
+                name: init
     QueueEvent: {}
     RequestHelper:
         methods:
             '-initWithApiKey:':
+                name: init
+            '-initWithApiKey:client:':
                 name: init
             '-handlePostRequestWithEndpoint:params:':
                 name: handlePostRequest
     TenjinRepository:
         methods:
             '-initWithApiKey:':
-                name: iniWithApiKey$
+                name: init
+            '-initWithApiKey:client:':
+                name: init
+    TenjinDatasource:
+        methods:
+            '+setBooleanValue:key:':
+                name: setBoolean
+    TenjinImpl:
+        methods:
+            '-initWithToken:andSharedSecret:andAppSubversion:ping:requestSender:':
+                name: init
+            '-initWithToken:andSharedSecret:andAppSubversion:ping:':
+                name: init
+            '-pingWithDeferredDeeplink:':
+                name: ping
+            '-pingEventWithName:':
+                name: pingEvent
+            '-pingEventWithName:andIntegerValue:':
+                name: pingEvent
+            '-transactionWithProductName:andCurrencyCode:andQuantity:andUnitPrice:':
+                name: transaction
+            '-deviceDataWithEvent:':
+                name: deviceData
+            '-transaction:andReceipt:':
+                name: transaction
+            '-transactionWithProductName:andCurrencyCode:andQuantity:andUnitPrice:andTransactionId:andReceipt:':
+                name: transaction
+            '-transactionWithProductName:andCurrencyCode:andQuantity:andUnitPrice:andTransactionId:andBase64Receipt:':
+                name: transaction
+            '-trackConversionValue:coarseValue:lockWindow:hasLockWindow:':
+                name: trackConversionValue
+            '-setValue:forKey:':
+                name: setValue
+            '+setBooleanValue:key:':
+                name: setBooleanValue
+
+    GDPRHelper: {}
 protocols:
     TJNRequestSender:
-        exclude: true # from private headers
+        methods:
+            '-postWithUrl:body:headers:':
+                name: post
+            '-method:url:body:':
+                name: method
+            '-method:url:body:headers:':
+                name: method
+            '-method:url:body:headers:completionBlock:':
+                name: method
 
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version

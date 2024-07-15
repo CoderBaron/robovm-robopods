@@ -1,0 +1,8 @@
+<config>
+    <frameworks>
+        <framework>CleverAdsSolutions</framework>
+
+        <!-- dependencies -->
+        <framework>AVFAudio</framework>
+    </frameworks>
+</config>

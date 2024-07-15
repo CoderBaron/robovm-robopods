@@ -1,14 +1,20 @@
 # Firebase iOS Authentication framework
 
 ### Frameworks required for this pod: 
-* FirebaseAuth.framework (from Firebase.zip/FirebaseAuth/FirebaseAuth.xcframework)
-* GTMSessionFetcher.framework (from Firebase.zip/FirebaseAuth/GTMSessionFetcher.xcframework)
+* FirebaseAppCheckInterop.xcframework (from Firebase.zip/FirebaseAuth/FirebaseAppCheckInterop.xcframework)
+* FirebaseAuth.xcframework (from Firebase.zip/FirebaseAuth/FirebaseAuth.xcframework)
+* GTMSessionFetcher.xcframework (from Firebase.zip/FirebaseAuth/GTMSessionFetcher.xcframework)
+* RecaptchaInterop.xcframework (from Firebase.zip/FirebaseAuth/RecaptchaInterop.xcframework)
 
 Plus ones required for ios-core module:
-* FirebaseCore.framework (from Firebase.zip/FirebaseAnalytics/FirebaseCore.xcframework)
-* FirebaseCoreInternal.framework (from Firebase.zip/FirebaseAnalytics/FirebaseCoreInternal.xcframework)
-* GoogleUtilities.framework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
-* FBLPromises.framework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)
+* FBLPromises.xcframework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)
+* FirebaseCore.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseCore.xcframework)
+* FirebaseCoreInternal.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseCoreInternal.xcframework)
+* FirebaseInstallations.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseInstallations.xcframework)
+* GoogleAppMeasurement.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleAppMeasurement.xcframework)
+* GoogleAppMeasurementIdentitySupport.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleAppMeasurementIdentitySupport.xcframework)
+* GoogleUtilities.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
+* nanopb.xcframework (from Firebase.zip/FirebaseAnalytics/nanopb.xcframework)
 
 ### to use this pod configure your `robovm.xml`
 

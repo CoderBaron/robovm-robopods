@@ -1,8 +1,11 @@
 <config>
     <frameworks>
+        <framework>FBLPromises</framework>
         <framework>FirebaseCore</framework>
         <framework>FirebaseCoreInternal</framework>
+        <framework>FirebaseInstallations</framework>
+        <framework>GoogleAppMeasurement</framework>
         <framework>GoogleUtilities</framework>
-        <framework>FBLPromises</framework>
+        <framework>nanopb</framework>
     </frameworks>
 </config>

@@ -60,7 +60,7 @@ import org.robovm.apple.uikit.*;
     @Method(selector = "updateFromDownloadParams:")
     public static native void updateFromDownloadParams(NSDictionary<?, ?> params);
     @Method(selector = "trackOpenEvent:")
-    public static native void trackOpenEvent(OSNotificationOpenedResult results);
+    public static native void trackOpenEvent(OSNotificationClickEvent event);
     @Method(selector = "trackReceivedEvent:")
     public static native void trackReceivedEvent(OSNotification notification);
     @Method(selector = "trackInfluenceOpenEvent")

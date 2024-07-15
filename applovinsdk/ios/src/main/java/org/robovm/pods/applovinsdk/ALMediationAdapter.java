@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.safariservices.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -77,6 +78,16 @@ import org.robovm.apple.coreanimation.*;
     public native void e(String message, NSException ex);
     @Method(selector = "userError:becauseOf:")
     public native void userError(String message, NSException ex);
+    @Method(selector = "logDebug:")
+    public native void logDebug(String message);
+    @Method(selector = "logInfo:")
+    public native void logInfo(String message);
+    @Method(selector = "logWarn:")
+    public native void logWarn(String message);
+    @Method(selector = "logError:")
+    public native void logError(String message);
+    @Method(selector = "logUserError:")
+    public native void logUserError(String message);
     @Method(selector = "initializeWithParameters:withCompletionHandler:")
     public native void initialize(MAAdapterInitializationParameters parameters, @Block Runnable completionHandler);
     @Method(selector = "shouldInitializeOnMainThread")

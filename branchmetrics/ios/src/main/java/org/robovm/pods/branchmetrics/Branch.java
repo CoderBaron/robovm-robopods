@@ -60,10 +60,6 @@ import org.robovm.apple.storekit.*;
     public native BranchDelegate getDelegate();
     @Property(selector = "setDelegate:", strongRef = true)
     public native void setDelegate(BranchDelegate v);
-    @Property(selector = "urlPatternsToIgnore")
-    public native NSArray<NSString> getUrlPatternsToIgnore();
-    @Property(selector = "setUrlPatternsToIgnore:")
-    public native void setUrlPatternsToIgnore(NSArray<NSString> v);
     @Deprecated
     @Property(selector = "sessionInitWithParamsCallback")
     public native @Block VoidBlock2<NSDictionary<?, ?>, NSError> getSessionInitWithParamsCallback();
@@ -136,14 +132,14 @@ import org.robovm.apple.storekit.*;
     public native void registerDeepLinkController(UIViewController controller, String key);
     @Method(selector = "registerDeepLinkController:forKey:withPresentation:")
     public native void registerDeepLinkController(UIViewController controller, String key, BNCViewControllerPresentationOption option);
-    @Method(selector = "enableLogging")
-    public native void enableLogging();
     /**
-     * @deprecated setDebug is replaced by enableLogging and test devices. https://help.branch.io/using-branch/docs/adding-test-devices
+     * @deprecated This API is deprecated. Please use the static version.
      */
     @Deprecated
-    @Method(selector = "setDebug")
-    public native void setDebug();
+    @Method(selector = "enableLoggingAtLevel:withCallback:")
+    public native void enableLogging(BranchLogLevel logLevel, @Block VoidBlock3<NSString, BranchLogLevel, NSError> callback);
+    @Method(selector = "useEUEndpoints")
+    public native void useEUEndpoints();
     @Method(selector = "validateSDKIntegration")
     public native void validateSDKIntegration();
     @Method(selector = "setDeepLinkDebugMode:")
@@ -152,14 +148,8 @@ import org.robovm.apple.storekit.*;
     public native void addAllowedScheme(String scheme);
     @Method(selector = "setAllowedSchemes:")
     public native void setAllowedSchemes(NSArray<?> schemes);
-    @Method(selector = "registerFacebookDeepLinkingClass:")
-    public native void registerFacebookDeepLinkingClass(NSObject FBSDKAppLinkUtility);
-    @Method(selector = "delayInitToCheckForSearchAds")
-    public native void delayInitToCheckForSearchAds();
-    @Method(selector = "useLongerWaitForAppleSearchAds")
-    public native void useLongerWaitForAppleSearchAds();
-    @Method(selector = "ignoreAppleSearchAdsTestData")
-    public native void ignoreAppleSearchAdsTestData();
+    @Method(selector = "setUrlPatternsToIgnore:")
+    public native void setUrlPatternsToIgnore(NSArray<NSString> urlsToIgnore);
     @Method(selector = "checkPasteboardOnInstall")
     public native void checkPasteboardOnInstall();
     @Method(selector = "willShowPasteboardToast")
@@ -188,58 +178,10 @@ import org.robovm.apple.storekit.*;
     public native void setNetworkTimeout(double timeout);
     @Method(selector = "disableAdNetworkCallouts:")
     public native void disableAdNetworkCallouts(boolean disableCallouts);
-    /**
-     * @deprecated Feature removed.  Did not work on iOS 11+
-     */
-    @Deprecated
-    @Method(selector = "disableCookieBasedMatching")
-    public native void disableCookieBasedMatching();
-    /**
-     * @deprecated Please ensure application:didFinishLaunchingWithOptions: always returns YES/true instead of using this method. It will be removed in a future release.
-     */
-    @Deprecated
-    @Method(selector = "accountForFacebookSDKPreventingAppLaunch")
-    public native void accountForFacebookSDKPreventingAppLaunch();
-    /**
-     * @deprecated suppressWarningLogs is deprecated and all functionality has been disabled. If you wish to turn off all logging, please invoke BNCLogSetDisplayLevel(BNCLogLevelNone).
-     */
-    @Deprecated
-    @Method(selector = "suppressWarningLogs")
-    public native void suppressWarningLogs();
     @Method(selector = "registerPluginName:version:")
     public native void registerPlugin(String name, String version);
     @Method(selector = "setRequestMetadataKey:value:")
     public native void setRequestMetadata(String key, NSObject value);
-    /**
-     * @deprecated No longer valid with new init process
-     */
-    @Deprecated
-    @Method(selector = "enableDelayedInit")
-    public native void enableDelayedInit();
-    /**
-     * @deprecated No longer valid with new init process
-     */
-    @Deprecated
-    @Method(selector = "disableDelayedInit")
-    public native void disableDelayedInit();
-    /**
-     * @deprecated Feature removed.  Did not work on iOS 11+
-     */
-    @Deprecated
-    @Method(selector = "getUrlForOnboardingWithRedirectUrl:")
-    public native NSURL getUrl(String redirectUrl);
-    /**
-     * @deprecated Feature removed.  Did not work on iOS 11+
-     */
-    @Deprecated
-    @Method(selector = "resumeInit")
-    public native void resumeInit();
-    /**
-     * @deprecated No longer valid with new init process
-     */
-    @Deprecated
-    @Method(selector = "setInstallRequestDelay:")
-    public native void setInstallRequestDelay(@MachineSizedSInt long installRequestDelay);
     @Method(selector = "getFirstReferringBranchUniversalObject")
     public native BranchUniversalObject getFirstReferringBranchUniversalObject();
     @Method(selector = "getFirstReferringBranchLinkProperties")
@@ -266,98 +208,6 @@ import org.robovm.apple.storekit.*;
     public native void logout();
     @Method(selector = "logoutWithCallback:")
     public native void logout(@Block VoidBlock2<Boolean, NSError> callback);
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "loadRewardsWithCallback:")
-    public native void loadRewards(@Block VoidBlock2<Boolean, NSError> callback);
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "redeemRewards:")
-    public native void redeemRewards(@MachineSizedSInt long count);
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "redeemRewards:callback:")
-    public native void redeemRewards(@MachineSizedSInt long count, @Block VoidBlock2<Boolean, NSError> callback);
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "redeemRewards:forBucket:")
-    public native void redeemRewards(@MachineSizedSInt long count, String bucket);
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "redeemRewards:forBucket:callback:")
-    public native void redeemRewards(@MachineSizedSInt long count, String bucket, @Block VoidBlock2<Boolean, NSError> callback);
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "getCredits")
-    public native @MachineSizedSInt long getCredits();
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "getCreditsForBucket:")
-    public native @MachineSizedSInt long getCreditsForBucket(String bucket);
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "getCreditHistoryWithCallback:")
-    public native void getCreditHistory(@Block VoidBlock2<NSArray<?>, NSError> callback);
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "getCreditHistoryForBucket:andCallback:")
-    public native void getCreditHistory(String bucket, @Block VoidBlock2<NSArray<?>, NSError> callback);
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "getCreditHistoryAfter:number:order:andCallback:")
-    public native void getCreditHistory(String creditTransactionId, @MachineSizedSInt long length, BranchCreditHistoryOrder order, @Block VoidBlock2<NSArray<?>, NSError> callback);
-    /**
-     * @deprecated Referral feature has been deprecated. This is no-op.
-     */
-    @Deprecated
-    @Method(selector = "getCreditHistoryForBucket:after:number:order:andCallback:")
-    public native void getCreditHistory(String bucket, String creditTransactionId, @MachineSizedSInt long length, BranchCreditHistoryOrder order, @Block VoidBlock2<NSArray<?>, NSError> callback);
-    /**
-     * @deprecated Please use BranchEvent to track commerce events. You can refer to https://help.branch.io/developers-hub/docs/tracking-commerce-content-lifecycle-and-custom-events for additional information.
-     */
-    @Deprecated
-    @Method(selector = "userCompletedAction:")
-    public native void userCompletedAction(String action);
-    /**
-     * @deprecated Please use BranchEvent to track commerce events. You can refer to https://help.branch.io/developers-hub/docs/tracking-commerce-content-lifecycle-and-custom-events for additional information.
-     */
-    @Deprecated
-    @Method(selector = "userCompletedAction:withState:")
-    public native void userCompletedAction(String action, NSDictionary<?, ?> state);
-    /**
-     * @deprecated Please use BranchEvent to track commerce events. You can refer to https://help.branch.io/developers-hub/docs/tracking-commerce-content-lifecycle-and-custom-events for additional information.
-     */
-    @Deprecated
-    @Method(selector = "userCompletedAction:withState:withDelegate:")
-    public native void userCompletedAction(String action, NSDictionary<?, ?> state, NSObject branchViewCallback);
-    /**
-     * @deprecated Please use BranchEvent to track commerce events. You can refer to https://help.branch.io/developers-hub/docs/tracking-commerce-content-lifecycle-and-custom-events for additional information.
-     */
-    @Deprecated
-    @Method(selector = "sendCommerceEvent:metadata:withCompletion:")
-    public native void sendCommerceEvent(BNCCommerceEvent commerceEvent, NSDictionary<NSString, ?> metadata, @Block VoidBlock2<NSDictionary<?, ?>, NSError> completion);
-    @Method(selector = "crossPlatformIdDataWithCompletion:")
-    public native void getCrossPlatformIdData(@Block VoidBlock1<BranchCrossPlatformID> completion);
     @Method(selector = "lastAttributedTouchDataWithAttributionWindow:completion:")
     public native void getLastAttributedTouchData(@MachineSizedSInt long window, @Block VoidBlock2<BranchLastAttributedTouchData, NSError> completion);
     @Method(selector = "getShortURL")
@@ -540,6 +390,12 @@ import org.robovm.apple.storekit.*;
     public static native BranchActivityItemProvider getBranchActivityItem(NSDictionary<?, ?> params, String feature, String stage, String campaign, NSArray<?> tags, String alias);
     @Method(selector = "getBranchActivityItemWithParams:feature:stage:tags:alias:delegate:")
     public static native BranchActivityItemProvider getBranchActivityItem(NSDictionary<?, ?> params, String feature, String stage, NSArray<?> tags, String alias, BranchActivityItemProviderDelegate delegate);
+    @Method(selector = "enableLogging")
+    public static native void enableLogging();
+    @Method(selector = "enableLoggingAtLevel:withCallback:")
+    public static native void enableLoggingAtLevel(BranchLogLevel logLevel, @Block VoidBlock3<NSString, BranchLogLevel, NSError> callback);
+    @Method(selector = "setAPIUrl:")
+    public static native void setAPIUrl(String url);
     @Method(selector = "isBranchLink:")
     public static native boolean isBranchLink(String urlString);
     @Method(selector = "setTrackingDisabled:")
@@ -548,9 +404,7 @@ import org.robovm.apple.storekit.*;
     public static native boolean trackingDisabled();
     @Method(selector = "setReferrerGbraidValidityWindow:")
     public static native void setReferrerGbraidValidityWindow(double validityWindow);
-    @Method(selector = "setLogInAppPurchasesAsEventsEnabled:")
-    public static native void setLogInAppPurchasesAsEventsEnabled(boolean enabled);
-    @Method(selector = "logInAppPurchasesBranchEventsEnabled")
-    public static native boolean logInAppPurchasesBranchEventsEnabled();
+    @Method(selector = "setDMAParamsForEEA:AdPersonalizationConsent:AdUserDataUsageConsent:")
+    public static native void setDMAParamsForEEA(boolean eeaRegion, boolean adPersonalizationConsent, boolean adUserDataUsageConsent);
     /*</methods>*/
 }

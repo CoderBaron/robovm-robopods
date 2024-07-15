@@ -67,8 +67,16 @@ import org.robovm.apple.avfoundation.*;
     void videoComplete(FBRewardedVideoAd rewardedVideoAd);
     @Method(selector = "rewardedVideoAdWillLogImpression:")
     void willLogImpression(FBRewardedVideoAd rewardedVideoAd);
+    /**
+     * @deprecated Functionality has been deprecated. This delegate method will not be called.
+     */
+    @Deprecated
     @Method(selector = "rewardedVideoAdServerRewardDidSucceed:")
     void serverRewardDidSucceed(FBRewardedVideoAd rewardedVideoAd);
+    /**
+     * @deprecated Functionality has been deprecated. This delegate method will not be called.
+     */
+    @Deprecated
     @Method(selector = "rewardedVideoAdServerRewardDidFail:")
     void serverRewardDidFail(FBRewardedVideoAd rewardedVideoAd);
     @Method(selector = "rewardedVideoAdCompanionViewProvider:")

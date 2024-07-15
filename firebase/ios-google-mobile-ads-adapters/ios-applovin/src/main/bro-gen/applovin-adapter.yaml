@@ -6,7 +6,7 @@ include:
     - ../../../../../../applovinsdk/ios/src/main/bro-gen/applovinsdk.yaml
 clang_args: ['-x', 'objective-c']
 headers: 
-    - ApplovinAdapter.h
+    - AppLovinAdapter.h
 
 private_typedefs:
 

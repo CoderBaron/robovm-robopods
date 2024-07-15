@@ -1,8 +1,11 @@
 <config>
     <frameworks>
-        <framework>OneSignal</framework>
+        <framework>OneSignalFramework</framework>
         <framework>OneSignalCore</framework>
+        <framework>OneSignalOSCore</framework>
+        <framework>OneSignalNotifications</framework>
         <framework>OneSignalOutcomes</framework>
+        <framework>OneSignalUser</framework>
         <framework>CoreGraphics</framework>
         <framework>WebKit</framework>
         <framework>SystemConfiguration</framework>

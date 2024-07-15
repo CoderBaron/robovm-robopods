@@ -10,6 +10,9 @@
 
 | RoboPods Version | InMobi Version          |
 |------------------|-------------------------|
+| 1.42.0           | 10.7.4                  |
+| 1.35.0-1.40.0    | 10.6.0-10.7.2           |
+| 1.33.0           | 10.5.8                  |
 | 1.31.0           | 10.1.4 (no api changes) |
 | 1.26.0           | 10.1.0                  |
 | 1.23.0           | 10.0.7                  |
@@ -24,4 +27,4 @@
 
 ## Official website
 
-https://support.inmobi.com/monetize/
+https://www.inmobi.com/sdk

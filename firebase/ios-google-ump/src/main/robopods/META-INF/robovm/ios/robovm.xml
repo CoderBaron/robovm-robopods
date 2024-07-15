@@ -1,5 +1,7 @@
 <config>
     <frameworks>
         <framework>UserMessagingPlatform</framework>
+
+        <framework>WebKit</framework>
     </frameworks>
 </config>

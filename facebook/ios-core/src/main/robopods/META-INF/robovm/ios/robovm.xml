@@ -4,12 +4,9 @@
     </libs>
     <frameworks>
         <framework>FBSDKCoreKit</framework>
+        <framework>FBAEMKit</framework>  <!-- as pointed by FBSDKCoreKit.podspec -->
+
         <framework>Accelerate</framework>
-        <framework>WebKit</framework>
-        <framework>StoreKit</framework>
-        <framework>CoreGraphics</framework>
-        <framework>UIKit</framework>
-        <framework>SafariServices</framework>
     </frameworks>
     <exportedSymbols>
         <!-- required when static version of framework is used to keep symbols from being dropped by linker as unused -->

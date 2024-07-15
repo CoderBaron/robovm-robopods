@@ -40,17 +40,23 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
 public enum /*<name>*/IMStatusCode/*</name>*/ implements ValuedEnum {
     /*<values>*/
-    NetworkUnReachable(0L),
-    NoFill(1L),
-    RequestInvalid(2L),
-    RequestPending(3L),
-    RequestTimedOut(4L),
-    MultipleLoadsOnSameInstance(5L),
-    InternalError(6L),
-    ServerError(7L),
-    AdActive(8L),
-    EarlyRefreshRequest(9L),
-    DroppingNetworkRequest(10L);
+    IMStatusCodeNetworkUnReachable(0L),
+    IMStatusCodeNoFill(1L),
+    IMStatusCodeRequestInvalid(2L),
+    IMStatusCodeRequestPending(3L),
+    IMStatusCodeRequestTimedOut(4L),
+    IMStatusCodeMultipleLoadsOnSameInstance(5L),
+    IMStatusCodeInternalError(6L),
+    IMStatusCodeServerError(7L),
+    IMStatusCodeAdActive(8L),
+    IMStatusCodeEarlyRefreshRequest(9L),
+    IMStatusCodeDroppingNetworkRequest(10L),
+    IMStatusCodeIncorrectPlacementID(11L),
+    IMStatusCodeSdkNotInitialised(12L),
+    IMStatusCodeInvalidBannerframe(13L),
+    IMStatusCodeInvalidAudioFrame(14L),
+    IMStatusCodeAudioDisabled(22L),
+    IMStatusCodeAudioDeviceVolumeLow(23L);
     /*</values>*/
 
     /*<bind>*/

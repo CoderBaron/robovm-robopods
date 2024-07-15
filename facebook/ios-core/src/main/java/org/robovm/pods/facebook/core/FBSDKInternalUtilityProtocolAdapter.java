@@ -86,6 +86,8 @@ import org.robovm.pods.facebook.corebasics.*;
     public void extractPermissions(NSDictionary<NSString, ?> responseObject, NSMutableSet<NSString> grantedPermissions, NSMutableSet<NSString> declinedPermissions, NSMutableSet<NSString> expiredPermissions) {}
     @NotImplemented("validateFacebookReservedURLSchemes")
     public void validateFacebookReservedURLSchemes() {}
+    @NotImplemented("validateDomainConfiguration")
+    public void validateDomainConfiguration() {}
     @NotImplemented("parametersFromFBURL:")
     public NSDictionary<NSString, ?> parametersFromFBURL(NSURL url) { return null; }
     @NotImplemented("topMostViewController")

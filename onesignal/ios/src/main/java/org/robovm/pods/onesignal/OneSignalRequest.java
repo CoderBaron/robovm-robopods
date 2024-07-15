@@ -77,6 +77,10 @@ import org.robovm.apple.uikit.*;
     public native boolean isDataRequest();
     @Property(selector = "setDataRequest:")
     public native void setDataRequest(boolean v);
+    @Property(selector = "timestamp")
+    public native NSDate getTimestamp();
+    @Property(selector = "setTimestamp:")
+    public native void setTimestamp(NSDate v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

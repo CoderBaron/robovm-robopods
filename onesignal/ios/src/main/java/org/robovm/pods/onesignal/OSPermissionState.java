@@ -47,20 +47,18 @@ import org.robovm.apple.uikit.*;
     public OSPermissionState() {}
     protected OSPermissionState(Handle h, long handle) { super(h, handle); }
     protected OSPermissionState(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithPermission:")
+    public OSPermissionState(boolean permission) { super((SkipInit) null); initObject(init(permission)); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "reachable")
-    public native boolean isReachable();
-    @Property(selector = "hasPrompted")
-    public native boolean hasPrompted();
-    @Property(selector = "providesAppNotificationSettings")
-    public native boolean providesAppNotificationSettings();
-    @Property(selector = "status")
-    public native OSNotificationPermission getStatus();
+    @Property(selector = "permission")
+    public native boolean isPermission();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "toDictionary")
-    public native NSDictionary<?, ?> toDictionary();
+    @Method(selector = "jsonRepresentation")
+    public native NSDictionary<?, ?> jsonRepresentation();
+    @Method(selector = "initWithPermission:")
+    protected native @Pointer long init(boolean permission);
     /*</methods>*/
 }

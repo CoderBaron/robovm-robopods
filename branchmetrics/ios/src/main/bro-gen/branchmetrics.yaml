@@ -22,14 +22,13 @@ enums:
     BranchLinkType: {}
     BNCViewControllerPresentationOption: {prefix: BNCViewControllerOption}
     BranchContentIndexMode: {}
-    BranchCreditHistoryOrder: {prefix: Branch}
     BranchEventAdType: {}
     BranchQRCodeImageFormat: {}
+    BranchLogLevel: {}
 
 categories:
 
 classes:
-    BNCCommerceEvent: {}
     BNCLinkCache:
         methods:
             '-setObject:forKey:':
@@ -43,7 +42,6 @@ classes:
                 name: setRequestMetadata
             '-addInstrumentationDictionaryKey:value:':
                 name: addInstrumentationDictionary
-    BNCProduct: {}
     BNCServerInterface:
         methods:
             '-getRequest:url:key:callback:':
@@ -285,6 +283,14 @@ classes:
                 name: getLongAppLinkURL
             '-addSnapPartnerParameterWithName:value:':
                 name: addSnapPartnerParameter
+            '-enableLoggingAtLevel:withCallback:':
+                name: enableLogging
+            '+setDMAParamsForEEA:AdPersonalizationConsent:AdUserDataUsageConsent:':
+                name: setDMAParamsForEEA
+            '+enableLoggingAtLevel:withCallback:':
+                name: enableLoggingAtLevel
+            '-enableLogging':
+                exclude: true # This API is deprecated. Please use the static version.
     BranchActivityItemProvider:
         methods:
             '-initWithParams:andTags:andFeature:andStage:andAlias:':
@@ -305,10 +311,6 @@ classes:
             # workaround as it conflicts with super property keywords by type
             'keywords':
                 name: keywordsBNC
-    BranchCommerceEventRequest:
-        methods:
-            '-initWithCommerceEvent:metadata:completion:':
-                name: init
     BranchContentMetadata:
         methods:
             '+contentMetadataWithDictionary:':
@@ -399,16 +401,6 @@ classes:
             '+objectWithDictionary:':
                 name: create
                 constructor: true
-    BranchCrossPlatformID:
-        methods:
-            '+buildFromJSON:':
-                constructor: true
-            '+requestCrossPlatformIdData:key:completion:':
-                name: requestCrossPlatformIdData
-    BranchProbabilisticCrossPlatformID:
-        methods:
-            '+buildFromJSON:':
-                constructor: true
     BranchLastAttributedTouchData:
         methods:
             '+buildFromJSON:':
@@ -437,6 +429,18 @@ classes:
         methods:
             '-initWithFrame:AndConfiguration:':
                 name: init
+    BranchLogger:
+        methods:
+            '-logError:error:':
+                name: logError
+            '-logWarning:error:':
+                name: logWarning
+            '-logDebug:error:':
+                name: logDebug
+            '-logVerbose:error:':
+                name: logVerbose
+            '+formatMessage:logLevel:error:':
+                name: formatMessage
 protocols:
     BNCNetworkOperationProtocol: {}
     BNCNetworkServiceProtocol:

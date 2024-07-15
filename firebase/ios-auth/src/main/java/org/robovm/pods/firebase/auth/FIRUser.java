@@ -77,6 +77,10 @@ import org.robovm.apple.uikit.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    /**
+     * @deprecated This method is deprecated and will be removed in a future release. Use sendEmailVerification(beforeUpdatingEmail email: String) instead.
+     */
+    @Deprecated
     @Method(selector = "updateEmail:completion:")
     public native void updateEmail(String email, @Block VoidBlock1<NSError> completion);
     @Method(selector = "updatePassword:completion:")

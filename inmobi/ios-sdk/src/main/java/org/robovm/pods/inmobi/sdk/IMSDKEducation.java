@@ -40,9 +40,9 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
 public enum /*<name>*/IMSDKEducation/*</name>*/ implements ValuedEnum {
     /*<values>*/
-    HighSchoolOrLess(1L),
-    CollegeOrGraduate(2L),
-    PostGraduateOrAbove(3L);
+    IMSDKEducationHighSchoolOrLess(1L),
+    IMSDKEducationCollageOrGraduate(2L),
+    IMSDKEducationPostGraduateOrAbove(3L);
     /*</values>*/
 
     /*<bind>*/

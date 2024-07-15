@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AppLovinSDK/MAAdDelegate.h>
+#import <AppLovinSDK/MAAdExpirationDelegate.h>
 #import <AppLovinSDK/MAAdRequestDelegate.h>
 #import <AppLovinSDK/MAAdRevenueDelegate.h>
 #import <AppLovinSDK/MAAdReviewDelegate.h>
@@ -19,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * This class represents a full-screen interstitial ad.
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/interstitials">MAX Integration Guide ⇒ iOS ⇒ Interstitials</a>
+ * @see <a href="https://developers.applovin.com/en/ios/ad-formats/interstitial-ads">MAX Integration Guide ⇒ iOS ⇒ Ad Formats ⇒ Interstitials</a>
  */
 @interface MAInterstitialAd : NSObject
 
@@ -57,6 +58,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak, nullable) id<MAAdRequestDelegate> requestDelegate;
 
 /**
+ * A delegate that will be notified about ad expiration events.
+ */
+@property (nonatomic, weak, nullable) id<MAAdExpirationDelegate> expirationDelegate;
+
+/**
  * A delegate that will be notified about Ad Review events.
  */
 @property (nonatomic, weak, nullable) id<MAAdReviewDelegate> adReviewDelegate;
@@ -64,7 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Load the ad for the current interstitial. Set @code -[MAInterstitialAd delegate] @endcode to assign a delegate that should be notified about ad load state.
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/interstitials#loading-an-interstitial-ad">MAX Integration Guide ⇒ iOs ⇒ Interstitials ⇒ Loading an Interstitial Ad</a>
+ * @see <a href="https://developers.applovin.com/en/ios/ad-formats/interstitial-ads#loading-an-interstitial-ad">MAX Integration Guide ⇒ iOS ⇒ Ad Formats ⇒ Interstitials ⇒ Loading an Interstitial Ad</a>
  */
 - (void)loadAd;
 
@@ -75,7 +81,7 @@ NS_ASSUME_NONNULL_BEGIN
  * <li>Use @code -[MAInterstitialAd ready] @endcode to check if an ad was successfully loaded.</li>
  * </ul>
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/interstitials#showing-an-interstitial-ad">MAX Integration Guide ⇒ iOs ⇒ Interstitials ⇒ Showing an Interstitial Ad</a>
+ * @see <a href="https://developers.applovin.com/en/ios/ad-formats/interstitial-ads#showing-an-interstitial-ad">MAX Integration Guide ⇒ iOS ⇒ Ad Formats ⇒ Interstitials ⇒ Showing an Interstitial Ad</a>
  */
 - (void)showAd;
 

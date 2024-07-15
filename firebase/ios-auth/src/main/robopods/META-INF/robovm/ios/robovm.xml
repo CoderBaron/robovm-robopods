@@ -1,6 +1,8 @@
 <config>
     <frameworks>
+        <framework>FirebaseAppCheckInterop</framework>
         <framework>FirebaseAuth</framework>
         <framework>GTMSessionFetcher</framework>
+        <framework>RecaptchaInterop</framework>
     </frameworks>
 </config>

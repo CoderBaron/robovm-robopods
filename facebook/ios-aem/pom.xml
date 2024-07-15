@@ -2,12 +2,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.github.dkimitsa.robovm</groupId>
-        <version>1.32.0-SNAPSHOT</version>
+        <version>1.42.0-SNAPSHOT</version>
         <artifactId>robopods-facebook-parent</artifactId>
     </parent>
 
     <artifactId>robopods-facebook-aem-ios</artifactId>
-    <name>RoboPods Facebook AEMKit iOS v16.1.1</name>
+    <name>RoboPods Facebook AEMKit iOS v17.0.2</name>
     <packaging>jar</packaging>
 
     <licenses>
@@ -21,7 +21,7 @@
     <dependencies>
         <dependency>
             <groupId>io.github.dkimitsa.robovm</groupId>
-            <artifactId>robopods-facebook-core-ios</artifactId>
+            <artifactId>robopods-facebook-core-basics-ios</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.safariservices.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -42,12 +43,15 @@ public enum /*<name>*/MAErrorCode/*</name>*/ implements ValuedEnum {
     Unspecified(-1L),
     NoFill(204L),
     AdLoadFailed(-5001L),
+    InvalidAdUnitIdentifier(-5603L),
     NetworkError(-1000L),
     NetworkTimeout(-1001L),
     NoNetwork(-1009L),
     FullscreenAdAlreadyShowing(-23L),
     FullscreenAdNotReady(-24L),
-    FullscreenAdInvalidViewController(-25L);
+    FullscreenAdInvalidViewController(-25L),
+    FullscreenAdAlreadyLoading(-26L),
+    FullscreenAdLoadWhileShowing(-27L);
     /*</values>*/
 
     /*<bind>*/

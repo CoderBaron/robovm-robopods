@@ -16,6 +16,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import <FirebaseAppCheckInterop/FirebaseAppCheckInterop.h>
+
 @class FIRApp;
 @class FIRAppCheckToken;
 @protocol FIRAppCheckProviderFactory;
@@ -36,7 +38,7 @@ FOUNDATION_EXPORT NSString *const kFIRAppCheckAppNameNotificationKey NS_SWIFT_NA
 
 /// A class used to manage app check tokens for a given Firebase app.
 NS_SWIFT_NAME(AppCheck)
-@interface FIRAppCheck : NSObject
+@interface FIRAppCheck : NSObject <FIRAppCheckProtocol>
 
 - (instancetype)init NS_UNAVAILABLE;
 
@@ -51,6 +53,26 @@ NS_SWIFT_NAME(AppCheck)
 /// @return An instance of `AppCheck` corresponding to the passed application.
 /// @throw Throws an exception if required `FirebaseApp` options are missing.
 + (nullable instancetype)appCheckWithApp:(FIRApp *)firebaseApp NS_SWIFT_NAME(appCheck(app:));
+
+/// Sets the `AppCheckProviderFactory` to use to generate
+/// `AppCheckDebugProvider` objects.
+///
+/// An instance of `DeviceCheckProviderFactory` is used by default, but you can
+/// also use a custom `AppCheckProviderFactory` implementation or an
+/// instance of `AppCheckDebugProviderFactory` to test your app on a simulator
+/// on a local machine or a build server.
+///
+/// NOTE: Make sure to call this method before `FirebaseApp.configure()`. If
+/// this method is called after configuring Firebase, the changes will not take
+/// effect.
++ (void)setAppCheckProviderFactory:(nullable id<FIRAppCheckProviderFactory>)factory;
+
+/// If this flag is disabled then Firebase app check will not periodically auto-refresh the app
+/// check token. The default value of the flag is equal to
+/// `FirebaseApp.dataCollectionDefaultEnabled`. To disable the flag by default set
+/// `FirebaseAppCheckTokenAutoRefreshEnabled` flag in the app Info.plist to `NO`. Once the flag is
+/// set explicitly, the value will be persisted and used as a default value on next app launches.
+@property(nonatomic, assign) BOOL isTokenAutoRefreshEnabled;
 
 /// Requests Firebase app check token. This method should *only* be used if you need to authorize
 /// requests to a non-Firebase backend. Requests to Firebase backend are authorized automatically if
@@ -81,26 +103,6 @@ NS_SWIFT_NAME(AppCheck)
 /// ``tokenForcingRefresh()`` method.
 - (void)limitedUseTokenWithCompletion:(void (^)(FIRAppCheckToken *_Nullable token,
                                                 NSError *_Nullable error))handler;
-
-/// Sets the `AppCheckProviderFactory` to use to generate
-/// `AppCheckDebugProvider` objects.
-///
-/// An instance of `DeviceCheckProviderFactory` is used by default, but you can
-/// also use a custom `AppCheckProviderFactory` implementation or an
-/// instance of `AppCheckDebugProviderFactory` to test your app on a simulator
-/// on a local machine or a build server.
-///
-/// NOTE: Make sure to call this method before `FirebaseApp.configure()`. If
-/// this method is called after configuring Firebase, the changes will not take
-/// effect.
-+ (void)setAppCheckProviderFactory:(nullable id<FIRAppCheckProviderFactory>)factory;
-
-/// If this flag is disabled then Firebase app check will not periodically auto-refresh the app
-/// check token. The default value of the flag is equal to
-/// `FirebaseApp.dataCollectionDefaultEnabled`. To disable the flag by default set
-/// `FirebaseAppCheckTokenAutoRefreshEnabled` flag in the app Info.plist to `NO`. Once the flag is
-/// set explicitly, the value will be persisted and used as a default value on next app launches.
-@property(nonatomic, assign) BOOL isTokenAutoRefreshEnabled;
 
 @end
 

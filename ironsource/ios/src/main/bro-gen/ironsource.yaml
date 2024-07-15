@@ -13,8 +13,22 @@ enums:
     ISAdapterErrorType: {}
     ISLoadWhileShowSupportState: {prefix: LOAD_WHILE_SHOW_}
     ISAdapterErrors: {prefix: ISAdapterError}
+    ISErrorCode: {}
+    ISAdOptionsPosition: { }
+    ISMetaDataValueTypes: { prefix: META_DATA_VALUE_ }
+    ISNLogLevel: { prefix: ISNLog }
+    ISNLogTag: { prefix: ISN_TAG_ }
+    ISAAdFormatType: { }
+    ISALogLevel: { }
+    LPMAdSizeType: { prefix: LPMAdSize }
 
 private_typedefs:
+    "MessageToNative *": NSObject
+    "MessageToController *": NSObject
+    "CallbackToNative *": NSObject
+
+categories:
+    UIView: {}
 
 classes:
     ISAdData:
@@ -23,6 +37,14 @@ classes:
                 name: init
             '-initWithServerData:configuration:adUnitData:':
                 name: init
+            '-getAdUnitData':
+                exclude: true # conflicts with same property
+            '+adDataWithAdapterConfiguration:adUnit:userId:':
+                name: create
+                constructor: true
+            '+adDataWithAdapterConfiguration:adUnit:userId:bannerSize:':
+                name: create
+                constructor: true
     ISAdUnit:
         methods:
             '-initWithValue:':
@@ -37,10 +59,14 @@ classes:
                 name: init
             '-initWithDescription:width:height:':
                 name: init
+            '+getMaximalAdaptiveHeightWithWidth:':
+                name: getMaximalAdaptiveHeight
     ISBannerView: {}
     ISBaseAdAdapter:
         methods:
             '-initWithAdUnit:adapterConfig:':
+                name: init
+            '-initWithAdUnit:adapterConfig:adUnitObjectId:':
                 name: init
     ISBaseAdInteractionAdapter: {}
     ISBaseInterstitial:
@@ -146,11 +172,241 @@ classes:
             '-initWithImpressionData:':
                 name: init
     ISDemandOnlyBannerView: { }
+    ISBaseBanner:
+        methods:
+            '-loadAdWithAdData:viewController:size:delegate:':
+                name: loadAd
+            '-destroyAdWithAdData:':
+                name: destroyAd
+    ISAdapterNativeAdViewBinder: { }
+    ISError:
+        skip_def_constructor: true
+        methods:
+            '+createError:withParams:':
+                name: createError
+            '+createError:withMessage:':
+                name: createError
+            '+createErrorWithDomain:code:message:':
+                name: createError
+            '+appendError:withPrefix:':
+                name: appendErrorWithPrefix
+            '+appendError:withSuffix:':
+                name: appendErrorWithSuffix
+    ISNativeAdDataImage:
+        methods:
+            '-initWithImage:url:':
+                name: init
+    ISNativeAdView: { }
+    ISNativeAdViewHolder: { }
+    LevelPlayMediaView: { }
+    LevelPlayNativeAd:
+        methods:
+            '-initWithBuilder:':
+                name: init
+    LevelPlayNativeAdBuilder: { }
+
+    ISAdapterNativeAdData: { }
+    ISBaseAdUnitAdapter:
+        methods:
+            '-getStringValueFromAdapterConfig:forKey:':
+                name: getStringValueFromAdapterConfig
+            '-getMissingParamErrorStringWithKey:':
+                name: getMissingParamErrorString
+    ISBaseAdapter:
+        methods:
+            '-earlyInitWithAdapterConfig:':
+                name: earlyInit
+            '-getAdaptiveHeightWithWidth:':
+                name: getAdaptiveHeight
+            '-errorForMissingCredentialFieldWithName:':
+                name: errorForMissingCredentialField
+            '-setMetaDataWithKey:andValues:':
+                name: setMetaData
+    ISBaseBannerAdapter: { }
+    ISBaseInterstitialAdapter: { }
+    ISBaseNativeAdAdapter:
+        methods:
+            '-getNativeAdPropertiesWithAdapterConfig:':
+                name: getNativeAdProperties
+    ISBaseRewardedVideoAdapter: { }
+    ISConcurrentMutableDictionary:
+        methods:
+            '-initCommon':
+                static_constructor_name: createCommon
+            '-initWithCapacity:':
+                name: init
+            '-initWithContentsOfFile:':
+                name: init
+            '-initWithContentsOfURL:':
+                name: init
+            '-initWithCoder:':
+                name: init
+            '-initWithDictionary:':
+                name: init
+            '-setObject:forKey:':
+                name: setObject
+            '+dictionaryWithDictionary:':
+                exclude: true
+    ISConcurrentMutableSet:
+        methods:
+            '-initCommon':
+                static_constructor_name: createCommon
+            '-initWithCapacity:':
+                name: init
+            '-initWithCoder:':
+                name: init
+            '-initWithSet:':
+                name: init
+            '-initWithArray:':
+                name: init
+            '+setWithSet:':
+                exclude: true
+    ISContainerParams:
+        methods:
+            '-initWithWidth:height:':
+                name: init
+    ISIronSourceAdapter: { }
+    ISLog: { }
+    ISLoggerManager:
+        methods:
+            '-setLoggingLevels:publisher:console:':
+                name: setLoggingLevels
+            '-log:level:tag:':
+                name: log
+            '-logFromError:level:tag:':
+                name: log
+            '-logFromException:level:tag:':
+                name: log
+            '-logFromException:message:level:tag:':
+                name: log
+            '-dynamicLog:message:level:withTag:':
+                name: dynamicLog
+            '-automationLog:level:withTag:':
+                name: automationLog
+    ISMetaData:
+        methods:
+            '-initWithKey:andValues:':
+                name: init
+            '-initWithKey:values:andValuesType:':
+                name: init
+    ISMetaDataUtils:
+        methods:
+            '+formatValue:forType:':
+                name: formatValue
+            '+formatMetaDataKey:andValues:':
+                name: formatMetaDataKey
+            '+isMetaDataKeyValid:error:':
+                name: isMetaDataKeyValid
+            '+isMetaDataValuesValid:error:':
+                name: isMetaDataValuesValid
+            '+isValidCCPAMetaDataWithKey:andValue:':
+                name: isValidCCPAMetaData
+            '+isValidMetaDataWithKey:flag:andValue:':
+                name: isValidMetaData
+    ISNAdViewsManagerSwiftFacade: { }
+    ISNControllerManagerSwiftFacade:
+        methods:
+            '-sendMessage:callbackHandler:':
+                name: sendMessage
+            '-setControllerMessageListenerWithAdId:listener:':
+                name: setControllerMessageListener
+            '-removeControllerMessageListenerWithAdId:':
+                name: removeControllerMessageListener
+    ISNEvent:
+        methods:
+            '-initWithEventId:eventName:':
+                name: init
+    ISNEventTrackerWrapper: { }
+    ISNSupersonicAdsPublisherSwiftFacade: { }
+    ISNativeAdProperties:
+        methods:
+            '-initWithAdapterConfig:':
+                name: init
+    SupersonicLogManager:
+        methods:
+            '-log:withLevel:withTag:':
+                name: log
+            '-logWithNetworkPrefix:withLevel:withTag:':
+                name: logWithNetworkPrefix
+    ISMediationGlobalDataWriterFacade: {}
+    ISAAdFormat:
+        methods:
+            '-initWithAdFormatType:':
+                name: init
+    ISAAdSize: { }
+    ISABannerAdInfo: { }
+    ISABannerAdLoader:
+        methods:
+            '+loadAdWithAdRequest:delegate:':
+                name: loadAd
+    ISABannerAdRequest: { }
+    ISABannerAdRequestBuilder:
+        methods:
+            '-initWithInstanceId:adm:size:':
+                name: init
+    ISABannerAdView: { }
+    ISAInitRequest: { }
+    ISAInitRequestBuilder:
+        methods:
+            '-initWithAppKey:':
+                name: init
+    ISAInterstitialAd: { }
+    ISAInterstitialAdInfo: { }
+    ISAInterstitialAdLoader:
+        methods:
+            '+loadAdWithAdRequest:delegate:':
+                name: loadAd
+    ISAInterstitialAdRequest: { }
+    ISAInterstitialAdRequestBuilder:
+        methods:
+            '-initWithInstanceId:adm:':
+                name: init
+    ISARewardedAd: { }
+    ISARewardedAdInfo: { }
+    ISARewardedAdLoader:
+        methods:
+            '+loadAdWithAdRequest:delegate:':
+                name: loadAd
+    ISARewardedAdRequest: { }
+    ISARewardedAdRequestBuilder:
+        methods:
+            '-initWithInstanceId:adm:':
+                name: init
+    IronSourceAds:
+        methods:
+            '+initWithRequest:completion:':
+                name: init
+    LPMAdInfo: { }
+    LPMAdSize:
+        methods:
+            '+customSizeWithWidth:height:':
+                name: customSize
+    LPMBannerAdView:
+        methods:
+            '-initWithAdUnitId:':
+                name: init
+            '-loadAdWithViewController:':
+                name: loadAd
+    LPMConfiguration: { }
+    LPMInitRequest:
+        methods:
+            '-initWithAppKey:legacyAdFormats:userId:':
+                name: init
+    LPMInitRequestBuilder:
+        methods:
+            '-initWithAppKey:':
+                name: init
+    LevelPlay:
+        methods:
+            '+initWithRequest:completion:':
+                name: init
 protocols:
     ISAdapterAdDelegate:
         methods:
             '-adDidFailToLoadWithErrorType:errorCode:errorMessage:':
                 name: adDidFailToLoad
+            '-adDidFailToShowWithErrorCode:errorMessage:':
+                name: adDidFailToShow
     ISAdapterAdInteractionDelegate:
         methods:
             '-adDidFailToShowWithErrorCode:errorMessage:':
@@ -170,20 +426,6 @@ protocols:
         methods:
             '-getLoadWhileShowSupportedStateWithAdapterConfig:':
                 name: getLoadWhileShowSupportedState
-    ISBannerDelegate:
-        methods:
-            '-bannerDidFailToLoadWithError:':
-                name: bannerDidFailToLoad
-    ISBaseAdAdapterProtocol:
-        methods:
-            '-loadAdWithAdData:delegate:':
-                name: loadAd
-    ISBaseAdInteractionAdapterProtocol:
-        methods:
-            '-showAdWithViewController:adData:delegate:':
-                name: showAd
-            '-isAdAvailableWithAdData:':
-                name: isAdAvailable
     ISConsentViewDelegate:
         methods:
             '-consentViewDidFailToLoadWithError:consentViewType:':
@@ -211,12 +453,6 @@ protocols:
     ISImpressionDataDelegate: {}
     ISInitializationDelegate: {}
     ISInterstitialAdDelegate: {}
-    ISInterstitialDelegate:
-        methods:
-            '-interstitialDidFailToLoadWithError:':
-                name: interstitialDidFailToLoad
-            '-interstitialDidFailToShowWithError:':
-                name: interstitialDidFailToShow
     ISLogDelegate:
         methods:
             '-sendLog:level:tag:':
@@ -225,21 +461,7 @@ protocols:
         methods:
             '-onInitDidFailWithErrorCode:errorMessage:':
                 name: onInitDidFail
-    ISOfferwallDelegate:
-        methods:
-            '-offerwallDidFailToShowWithError:':
-                name: offerwallDidFailToShow
-            '-didFailToReceiveOfferwallCreditsWithError:':
-                name: didFailToReceiveOfferwallCredits
     ISRewardedVideoAdDelegate: {}
-    ISRewardedVideoDelegate:
-        methods:
-            '-rewardedVideoDidFailToShowWithError:':
-                name: rewardedVideoDidFailToShow
-    ISRewardedVideoManualDelegate:
-        methods:
-            '-rewardedVideoDidFailToLoadWithError:':
-                name: rewardedVideoDidFailToLoad
     ISSegmentDelegate: {}
     LevelPlayBannerDelegate:
         methods:
@@ -307,6 +529,219 @@ protocols:
                 name: didClick
             '-didCloseWithAdInfo:':
                 name: didClose
+    ISAdapterAdFullscreenProtocol:
+        methods:
+            '-loadAdWithAdData:delegate:':
+                name: loadAd
+            '-showAdWithViewController:adData:delegate:':
+                name: showAd
+            '-isAdAvailableWithAdData:':
+                name: isAdAvailable
+    ISAdapterAdViewDelegate:
+        methods:
+            '-adDidLoadWithView:':
+                name: adDidLoad
+    ISAdapterBannerProtocol:
+        methods:
+            '-loadAdWithAdData:viewController:size:delegate:':
+                name: loadAd
+            '-destroyAdWithAdData:':
+                name: destroyAd
+    ISBannerAdDelegate: { }
+    ISAdapterNativeAdViewBinderProtocol: { }
+    ISNativeAdDataProtocol: { }
+    ISNativeAdInteractionDelegate:
+        methods:
+            '-didRecordImpression:withAdInfo:':
+                name: didRecordImpression
+            '-didClick:withAdInfo:':
+                name: didClick
+    ISNativeAdLoadDelegate:
+        methods:
+            '-didLoad:withAdInfo:':
+                name: didLoad
+            '-didFailToLoad:withError:':
+                name: didFailToLoad
+    ISNativeAdViewBinderProtocol: { }
+    LevelPlayNativeAdDelegate: { }
+    ISAdUnitAdapterProtocol: { }
+    ISAppStoreErrorDelegate: { }
+    ISBannerAdapterDelegate:
+        methods:
+            '-adapterBannerInitFailedWithError:':
+                name: adapterBannerInitFailed
+            '-adapterBannerDidFailToLoadWithError:':
+                name: adapterBannerDidFailToLoad
+            '-adapterBannerDidFailToShowWithError:':
+                name: adapterBannerDidFailToShow
+    ISBannerAdapterProtocol:
+        methods:
+            '-destroyBannerWithAdapterConfig:':
+                name: destroyBanner
+            '-getAdaptiveHeightWithWidth:':
+                name: getAdaptiveHeight
+            '-initBannerWithUserId:adapterConfig:delegate:':
+                name: initBanner
+            '-loadBannerWithAdapterConfig:adData:viewController:size:delegate:':
+                name: loadBanner
+            '-getBannerBiddingDataWithAdapterConfig:adData:':
+                name: getBannerBiddingData
+            '-collectBannerBiddingDataWithAdapterConfig:adData:delegate:':
+                name: collectBannerBiddingData
+            '-initBannerForBiddingWithUserId:adapterConfig:delegate:':
+                name: initBannerForBidding
+            '-loadBannerForBiddingWithAdapterConfig:adData:serverData:viewController:size:delegate:':
+                name: loadBannerForBidding
+    ISBiddingDataAdapterProtocol: { }
+    ISBiddingDataDelegate:
+        methods:
+            '-successWithBiddingData:':
+                name: success
+            '-failureWithError:':
+                name: failure
+    ISInterstitialAdapterDelegate:
+        methods:
+            '-adapterInterstitialInitFailedWithError:':
+                name: adapterInterstitialInitFailed
+            '-adapterInterstitialDidFailToLoadWithError:':
+                name: adapterInterstitialDidFailToLoad
+            '-adapterInterstitialDidFailToShowWithError:':
+                name: adapterInterstitialDidFailToShow
+    ISInterstitialAdapterProtocol:
+        methods:
+            '-showInterstitialWithViewController:adapterConfig:delegate:':
+                name: showInterstitial
+            '-hasInterstitialWithAdapterConfig:':
+                name: hasInterstitial
+            '-initInterstitialWithUserId:adapterConfig:delegate:':
+                name: initInterstitial
+            '-loadInterstitialWithAdapterConfig:adData:delegate:':
+                name: loadInterstitial
+            '-getInterstitialBiddingDataWithAdapterConfig:adData:':
+                name: getInterstitialBiddingData
+            '-collectInterstitialBiddingDataWithAdapterConfig:adData:delegate:':
+                name: collectInterstitialBiddingData
+            '-initInterstitialForBiddingWithUserId:adapterConfig:delegate:':
+                name: initInterstitialForBidding
+            '-loadInterstitialForBiddingWithAdapterConfig:adData:serverData:delegate:':
+                name: loadInterstitialForBidding
+    ISNAdViewsManagerSwiftFacade:
+        name: ISNAdViewsManagerSwiftFacadeProtocol
+    ISNAppStoreVCRootViewDelegate:
+        methods:
+            '-didReceiveOutOfAppStoreTouchWithType:':
+                name: didReceiveOutOfAppStoreTouch
+    ISNControllerMessageListener:
+        methods:
+            '-onReceiveWithMessage:':
+                name: onReceive
+    ISNEventTrackerInterface:
+        methods:
+            '-logEvent:data:':
+                name: logEvent
+    ISNativeAdAdapterDelegate:
+        methods:
+            '-adapterNativeAdInitFailedWithError:':
+                name: adapterNativeAdInitFailed
+            '-adapterNativeAdDidLoadWithAdData:adViewBinder:':
+                name: adapterNativeAdDidLoad
+            '-adapterNativeAdDidFailToLoadWithError:':
+                name: adapterNativeAdDidFailToLoad
+    ISNativeAdAdapterProtocol:
+        methods:
+            '-initNativeAdsWithUserId:adapterConfig:delegate:':
+                name: initNativeAds
+            '-initNativeAdForBiddingWithUserId:adapterConfig:delegate:':
+                name: initNativeAdForBidding
+            '-loadNativeAdWithAdapterConfig:adData:viewController:delegate:':
+                name: loadNativeAdWithAdapterConfig
+            '-loadNativeAdForBiddingWithAdapterConfig:adData:serverData:viewController:delegate:':
+                name: loadNativeAdForBidding
+            '-destroyNativeAdWithAdapterConfig:':
+                name: destroyNativeAd
+            '-getNativeAdBiddingDataWithAdapterConfig:adData:':
+                name: getNativeAdBiddingData
+            '-collectNativeAdBiddingDataWithAdapterConfig:adData:delegate:':
+                name: collectNativeAdBiddingData
+    ISNativeAdProtocol: { }
+    ISNetworkInitCallbackProtocol: { }
+    ISReleaseMemoryAdapterProtocol:
+        methods:
+            '-releaseMemoryWithAdapterConfig:':
+                name: releaseMemory
+    ISRewardedVideoAdapterDelegate:
+        methods:
+            '-adapterRewardedVideoDidFailToLoadWithError:':
+                name: adapterRewardedVideoDidFailToLoad
+            '-adapterRewardedVideoDidFailToShowWithError:':
+                name: adapterRewardedVideoDidFailToShow
+    ISRewardedVideoAdapterProtocol:
+        methods:
+            '-hasRewardedVideoWithAdapterConfig:':
+                name: hasRewardedVideo
+            '-showRewardedVideoWithViewController:adapterConfig:delegate:':
+                name: showRewardedVideo
+            '-initAndLoadRewardedVideoWithUserId:adapterConfig:adData:delegate:':
+                name: initAndLoadRewardedVideo
+            '-initRewardedVideoForCallbacksWithUserId:adapterConfig:delegate:':
+                name: initRewardedVideoForCallbacks
+            '-loadRewardedVideoWithAdapterConfig:adData:delegate:':
+                name: loadRewardedVideo
+            '-getRewardedVideoBiddingDataWithAdapterConfig:adData:':
+                name: getRewardedVideoBiddingData
+            '-collectRewardedVideoBiddingDataWithAdapterConfig:adData:delegate:':
+                name: collectRewardedVideoBiddingData
+            '-loadRewardedVideoForBiddingWithAdapterConfig:adData:serverData:delegate:':
+                name: loadRewardedVideoForBidding
+            '-initRewardedVideoForDemandOnlyWithUserId:adapterConfig:delegate:':
+                name: initRewardedVideoForDemandOnly
+            '-loadRewardedVideoForDemandOnlyWithAdapterConfig:delegate:':
+                name: loadRewardedVideoForDemandOnly
+            '-loadRewardedVideoForDemandOnlyForBiddingWithAdapterConfig:serverData:delegate:':
+                name: loadRewardedVideoForDemandOnlyForBidding
+    ISSetAPSDataProtocol:
+        methods:
+            '-setAPSDataWithAdUnit:apsData:':
+                name: setAPSData
+    ISABannerAdLoaderDelegate:
+        methods:
+            '-bannerAdDidFailToLoadWithError:':
+                name: bannerAdDidFailToLoad
+    ISABannerAdViewDelegate: { }
+    ISAInterstitialAdDelegate:
+        methods:
+            '-interstitialAd:didFailToShowWithError:':
+                name: didFailToShow
+    ISAInterstitialAdLoaderDelegate:
+        methods:
+            '-interstitialAdDidFailToLoadWithError:':
+                name: interstitialAdDidFailToLoad
+    ISARewardedAdDelegate:
+        methods:
+            '-rewardedAd:didFailToShowWithError:':
+                name: didFailToShow
+    ISARewardedAdLoaderDelegate:
+        methods:
+            '-rewardedAdDidFailToLoadWithError:':
+                name: rewardedAdDidFailToLoad
+    LPMBannerAdViewDelegate:
+        methods:
+            '-didLoadAdWithAdInfo:':
+                name: didLoadAd
+            '-didFailToLoadAdWithAdUnitId:error:':
+                name: didFailToLoadAd
+            '-didClickAdWithAdInfo:':
+                name: didClickAd
+            '-didDisplayAdWithAdInfo:':
+                name: didDisplayAd
+            '-didFailToDisplayAdWithAdInfo:error:':
+                name: didFailToDisplayAd
+            '-didLeaveAppWithAdInfo:':
+                name: didLeaveApp
+            '-didExpandAdWithAdInfo:':
+                name: didExpandAd
+            '-didCollapseAdWithAdInfo:':
+                name: didCollapseAd
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):
@@ -324,7 +759,7 @@ constants:
     DEFAULT_CAPPING_(.*):
         class: ISAdapterConfig
         name: 'DEFAULT_CAPPING_#{g[0]}'
-    (IS_REWARDED_VIDEO|IS_INTERSTITIAL|IS_OFFERWALL|IS_BANNER):
+    (IS_REWARDED_VIDEO|IS_INTERSTITIAL|IS_OFFERWALL|IS_BANNER|IS_NATIVE_AD):
         class: IronSource
         name: '#{g[0]}'
     MEDIATION_SDK_VERSION:
@@ -338,6 +773,20 @@ constants:
         class: ISImpressionData
         static_class: Keys
         name: '#{g[0]}'
+    kSSErrors(.*):
+        class: ISError
+        static_class: Consts
+        name: '#{g[0]}'
+    kMetaData(.*):
+        class: ISMetaData
+        static_class: Consts
+        name: '#{g[0]}'
+    kAdOptionsPosKey:
+        class: ISAdOptionsPosition
+        name: getAdOptionsPosKey
+
+    kEmptyString:
+        exclude: true
 
     kSize(.*):
         class: ISBannerSize

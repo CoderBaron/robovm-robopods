@@ -55,6 +55,7 @@ import org.robovm.apple.dispatch.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    
+    @Method(selector = "valueForAggregateField:")
+    public native NSObject valueForAggregateField(FIRAggregateField aggregateField);
     /*</methods>*/
 }

@@ -2,12 +2,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.github.dkimitsa.robovm</groupId>
-        <version>1.32.0-SNAPSHOT</version>
+        <version>1.42.0-SNAPSHOT</version>
         <artifactId>robopods-firebase-parent</artifactId>
     </parent>
 
     <artifactId>robopods-firebase-dynamic-links-ios</artifactId>
-    <name>RoboPods FireBase Dynamic Links iOS v10.11.0</name>
+    <name>RoboPods FireBase Dynamic Links iOS v10.28.0</name>
     <packaging>jar</packaging>
 
     <licenses>

@@ -21,7 +21,9 @@ It is available for a download as `FacebookSDK_Dynamic.framework.zip` and allows
 ```
 
 ### Frameworks required for this pod:
-* FBSDKCoreKit.framework
+* FBSDKCoreKit.xcframework
+* FBSDKCoreKit_Basics.xcframework
+* FBAEMKit.xcframework 
 
 ### to use this pod configure your `robovm.xml`
 

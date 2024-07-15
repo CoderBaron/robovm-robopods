@@ -54,20 +54,14 @@ import org.robovm.apple.coreanimation.*;
     void didReceive(IMInterstitial interstitial, IMAdMetaInfo metaInfo);
     @Method(selector = "interstitial:didFailToReceiveWithError:")
     void didFailToReceive(IMInterstitial interstitial, NSError error);
-    @Method(selector = "interstitial:gotSignals:")
-    void gotSignals(IMInterstitial interstitial, NSData signals);
-    @Method(selector = "interstitial:failedToGetSignalsWithError:")
-    void failedToGetSignals(IMInterstitial interstitial, IMRequestStatus status);
-    /**
-     * @deprecated Please use new API interstitial:didReceiveWithMetaInfo: as this API can be removed in future
-     */
-    @Deprecated
     @Method(selector = "interstitialDidReceiveAd:")
     void interstitialDidReceiveAd(IMInterstitial interstitial);
     @Method(selector = "interstitialDidFinishLoading:")
     void interstitialDidFinishLoading(IMInterstitial interstitial);
     @Method(selector = "interstitial:didFailToLoadWithError:")
     void didFailToLoad(IMInterstitial interstitial, IMRequestStatus error);
+    @Method(selector = "interstitialAdImpressed:")
+    void interstitialAdImpressed(IMInterstitial interstitial);
     @Method(selector = "interstitialWillPresent:")
     void interstitialWillPresent(IMInterstitial interstitial);
     @Method(selector = "interstitialDidPresent:")
@@ -79,13 +73,11 @@ import org.robovm.apple.coreanimation.*;
     @Method(selector = "interstitialDidDismiss:")
     void interstitialDidDismiss(IMInterstitial interstitial);
     @Method(selector = "interstitial:didInteractWithParams:")
-    void didInteract(IMInterstitial interstitial, NSDictionary<?, ?> params);
+    void didInteract(IMInterstitial interstitial, NSDictionary<NSString, ?> params);
     @Method(selector = "interstitial:rewardActionCompletedWithRewards:")
-    void rewardActionCompleted(IMInterstitial interstitial, NSDictionary<?, ?> rewards);
+    void rewardActionCompleted(IMInterstitial interstitial, NSDictionary<NSString, ?> rewards);
     @Method(selector = "userWillLeaveApplicationFromInterstitial:")
     void userWillLeaveApplicationFromInterstitial(IMInterstitial interstitial);
-    @Method(selector = "interstitialAdImpressed:")
-    void interstitialAdImpressed(IMInterstitial interstitial);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

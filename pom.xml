@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.dkimitsa.robovm</groupId>
-    <version>1.32.0-SNAPSHOT</version>
+    <version>1.42.0-SNAPSHOT</version>
     <artifactId>robopods-parent</artifactId>
     <name>RoboPods Parent</name>
     <packaging>pom</packaging>
@@ -115,7 +115,6 @@
                     <configuration>
                         <release>8</release>
                         <debug>true</debug>
-                        <optimize>true</optimize>
                         <encoding>UTF-8</encoding>
                     </configuration>
                 </plugin>
@@ -208,13 +207,12 @@
         <module>ironsource</module>
         <module>appcenter</module>
         <module>azure</module>
-        <module>kochava</module>
         <module>unityads</module>
         <module>youtube</module>
         <module>adapty</module>
         <module>singular</module>
         <module>tenjin</module>
-        <module>clearads</module>
+        <module>cleverads</module>
         <!-- Firebase to be kept last, as its Ads adapters depend on facebook/inmobi/applovinsdk -->
         <module>firebase</module>
     </modules>

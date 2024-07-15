@@ -52,8 +52,8 @@ import org.robovm.apple.webkit.*;
     protected GADMobileAds(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "sdkVersion")
-    public native String getSdkVersion();
+    @Property(selector = "versionNumber")
+    public native @ByVal GADVersionNumber getVersionNumber();
     @Property(selector = "applicationVolume")
     public native float getApplicationVolume();
     @Property(selector = "setApplicationVolume:")
@@ -75,6 +75,9 @@ import org.robovm.apple.webkit.*;
     public static native @org.robovm.rt.bro.annotation.Marshaler(StringMarshalers.AsAsciiZMarshaler.class) String getVersion();
     @GlobalValue(symbol="GADCustomEventParametersServer", optional=true)
     public static native String CustomEventParametersServer();
+    
+    @Bridge(symbol="GADGetStringFromVersionNumber", optional=true)
+    public static native String getStringFromVersionNumber(@ByVal GADVersionNumber version);
     
     @Method(selector = "isSDKVersionAtLeastMajor:minor:patch:")
     public native boolean isSDKVersionAtLeast(@MachineSizedSInt long major, @MachineSizedSInt long minor, @MachineSizedSInt long patch);

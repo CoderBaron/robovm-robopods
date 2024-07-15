@@ -61,12 +61,6 @@ import org.robovm.apple.webkit.*;
     void didMuteVideo();
     @Method(selector = "didUnmuteVideo")
     void didUnmuteVideo();
-    /**
-     * @deprecated Deprecated. No replacement.
-     */
-    @Deprecated
-    @Method(selector = "willBackgroundApplication")
-    void willBackgroundApplication();
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

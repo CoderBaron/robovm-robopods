@@ -129,10 +129,18 @@ import org.robovm.apple.coreanimation.*;
      */
     @Property(selector = "setMetricsCollectionBlock:")
     public native void setMetricsCollectionBlock(@Block VoidBlock1<NSURLSessionTaskMetrics> v);
+    @Property(selector = "stopFetchingTriggersCompletionHandler")
+    public native boolean isStopFetchingTriggersCompletionHandler();
+    @Property(selector = "setStopFetchingTriggersCompletionHandler:")
+    public native void setStopFetchingTriggersCompletionHandler(boolean v);
     @Property(selector = "skipBackgroundTask")
     public native boolean isSkipBackgroundTask();
     @Property(selector = "setSkipBackgroundTask:")
     public native void setSkipBackgroundTask(boolean v);
+    @Property(selector = "userAgentProvider")
+    public native GTMUserAgentProvider getUserAgentProvider();
+    @Property(selector = "setUserAgentProvider:")
+    public native void setUserAgentProvider(GTMUserAgentProvider v);
     @Property(selector = "userAgent")
     public native String getUserAgent();
     @Property(selector = "setUserAgent:")

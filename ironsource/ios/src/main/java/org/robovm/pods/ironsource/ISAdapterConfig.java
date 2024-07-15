@@ -112,10 +112,16 @@ import org.robovm.apple.coreanimation.*;
     public native NSDictionary<?, ?> getBannerSettings();
     @Property(selector = "setBannerSettings:")
     public native void setBannerSettings(NSDictionary<?, ?> v);
+    @Property(selector = "nativeAdSettings")
+    public native NSDictionary<?, ?> getNativeAdSettings();
+    @Property(selector = "setNativeAdSettings:")
+    public native void setNativeAdSettings(NSDictionary<?, ?> v);
     @Property(selector = "providerDefaultInstance")
     public native String getProviderDefaultInstance();
     @Property(selector = "setProviderDefaultInstance:")
     public native void setProviderDefaultInstance(String v);
+    @Property(selector = "providerNetworkKey")
+    public native String getProviderNetworkKey();
     @Property(selector = "customNetwork")
     public native String getCustomNetwork();
     @Property(selector = "isCustomNetwork")
@@ -139,5 +145,9 @@ import org.robovm.apple.coreanimation.*;
     public native String demandSourceName();
     @Method(selector = "isOneFlow")
     public native NSNumber isOneFlow();
+    @Method(selector = "hasConsentCMP")
+    public native boolean hasConsentCMP();
+    @Method(selector = "getConsentCMP")
+    public native boolean getConsentCMP();
     /*</methods>*/
 }

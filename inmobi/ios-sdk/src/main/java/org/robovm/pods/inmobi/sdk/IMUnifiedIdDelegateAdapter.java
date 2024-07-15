@@ -53,6 +53,6 @@ import org.robovm.apple.coreanimation.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("onFetchCompleted:error:")
-    public void onFetchCompleted(NSDictionary<?, ?> response, NSError error) {}
+    public void onFetchCompleted(NSDictionary<NSString, ?> response, NSError error) {}
     /*</methods>*/
 }

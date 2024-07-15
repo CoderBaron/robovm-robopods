@@ -40,8 +40,8 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
 public enum /*<name>*/IMSDKGender/*</name>*/ implements ValuedEnum {
     /*<values>*/
-    Male(1L),
-    Female(2L);
+    IMSDKGenderMale(1L),
+    IMSDKGenderFemale(2L);
     /*</values>*/
 
     /*<bind>*/

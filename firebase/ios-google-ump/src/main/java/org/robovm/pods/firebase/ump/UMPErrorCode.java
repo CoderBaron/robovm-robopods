@@ -44,7 +44,8 @@ public enum /*<name>*/UMPErrorCode/*</name>*/ implements NSErrorCode {
     FormErrorCodeInternal(5L),
     FormErrorCodeAlreadyUsed(6L),
     FormErrorCodeUnavailable(7L),
-    FormErrorCodeTimeout(8L);
+    FormErrorCodeTimeout(8L),
+    FormErrorCodeInvalidViewController(9L);
     /*</values>*/
 
     /*<bind>*/static { Bro.bind(UMPErrorCode.class); }/*</bind>*/

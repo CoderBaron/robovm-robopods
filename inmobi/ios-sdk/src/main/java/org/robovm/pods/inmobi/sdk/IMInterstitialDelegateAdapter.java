@@ -56,20 +56,14 @@ import org.robovm.apple.coreanimation.*;
     public void didReceive(IMInterstitial interstitial, IMAdMetaInfo metaInfo) {}
     @NotImplemented("interstitial:didFailToReceiveWithError:")
     public void didFailToReceive(IMInterstitial interstitial, NSError error) {}
-    @NotImplemented("interstitial:gotSignals:")
-    public void gotSignals(IMInterstitial interstitial, NSData signals) {}
-    @NotImplemented("interstitial:failedToGetSignalsWithError:")
-    public void failedToGetSignals(IMInterstitial interstitial, IMRequestStatus status) {}
-    /**
-     * @deprecated Please use new API interstitial:didReceiveWithMetaInfo: as this API can be removed in future
-     */
-    @Deprecated
     @NotImplemented("interstitialDidReceiveAd:")
     public void interstitialDidReceiveAd(IMInterstitial interstitial) {}
     @NotImplemented("interstitialDidFinishLoading:")
     public void interstitialDidFinishLoading(IMInterstitial interstitial) {}
     @NotImplemented("interstitial:didFailToLoadWithError:")
     public void didFailToLoad(IMInterstitial interstitial, IMRequestStatus error) {}
+    @NotImplemented("interstitialAdImpressed:")
+    public void interstitialAdImpressed(IMInterstitial interstitial) {}
     @NotImplemented("interstitialWillPresent:")
     public void interstitialWillPresent(IMInterstitial interstitial) {}
     @NotImplemented("interstitialDidPresent:")
@@ -81,12 +75,10 @@ import org.robovm.apple.coreanimation.*;
     @NotImplemented("interstitialDidDismiss:")
     public void interstitialDidDismiss(IMInterstitial interstitial) {}
     @NotImplemented("interstitial:didInteractWithParams:")
-    public void didInteract(IMInterstitial interstitial, NSDictionary<?, ?> params) {}
+    public void didInteract(IMInterstitial interstitial, NSDictionary<NSString, ?> params) {}
     @NotImplemented("interstitial:rewardActionCompletedWithRewards:")
-    public void rewardActionCompleted(IMInterstitial interstitial, NSDictionary<?, ?> rewards) {}
+    public void rewardActionCompleted(IMInterstitial interstitial, NSDictionary<NSString, ?> rewards) {}
     @NotImplemented("userWillLeaveApplicationFromInterstitial:")
     public void userWillLeaveApplicationFromInterstitial(IMInterstitial interstitial) {}
-    @NotImplemented("interstitialAdImpressed:")
-    public void interstitialAdImpressed(IMInterstitial interstitial) {}
     /*</methods>*/
 }

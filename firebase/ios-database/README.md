@@ -1,14 +1,20 @@
 # Firebase iOS Realtime Database framework
 
 ### Frameworks required for this pod: 
-* FirebaseDatabase.framework (from Firebase.zip/FirebaseDatabase/FirebaseDatabase.xcframework)
-* leveldb-library.framework (from Firebase.zip/FirebaseDatabase/leveldb-library.xcframework)
+* FirebaseAppCheckInterop.xcframework (from Firebase.zip/FirebaseDatabase/FirebaseAppCheckInterop.xcframework)
+* FirebaseDatabase.xcframework (from Firebase.zip/FirebaseDatabase/FirebaseDatabase.xcframework)
+* FirebaseSharedSwift.xcframework (from Firebase.zip/FirebaseDatabase/FirebaseSharedSwift.xcframework)
+* leveldb.xcframework (from Firebase.zip/FirebaseDatabase/leveldb.xcframework)
 
 Plus ones required for ios-core module:
-* FirebaseCore.framework (from Firebase.zip/FirebaseAnalytics/FirebaseCore.xcframework)
-* FirebaseCoreInternal.framework (from Firebase.zip/FirebaseAnalytics/FirebaseCoreInternal.xcframework)
-* GoogleUtilities.framework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
-* FBLPromises.framework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)
+* FBLPromises.xcframework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)
+* FirebaseCore.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseCore.xcframework)
+* FirebaseCoreInternal.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseCoreInternal.xcframework)
+* FirebaseInstallations.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseInstallations.xcframework)
+* GoogleAppMeasurement.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleAppMeasurement.xcframework)
+* GoogleAppMeasurementIdentitySupport.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleAppMeasurementIdentitySupport.xcframework)
+* GoogleUtilities.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
+* nanopb.xcframework (from Firebase.zip/FirebaseAnalytics/nanopb.xcframework)
 
 ### to use this pod configure your `robovm.xml`
 

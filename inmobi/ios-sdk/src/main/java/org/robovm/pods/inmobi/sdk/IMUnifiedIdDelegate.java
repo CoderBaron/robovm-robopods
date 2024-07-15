@@ -51,7 +51,7 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "onFetchCompleted:error:")
-    void onFetchCompleted(NSDictionary<?, ?> response, NSError error);
+    void onFetchCompleted(NSDictionary<NSString, ?> response, NSError error);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

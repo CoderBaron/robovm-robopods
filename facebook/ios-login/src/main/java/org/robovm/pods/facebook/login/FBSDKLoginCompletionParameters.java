@@ -117,6 +117,10 @@ import org.robovm.pods.facebook.corebasics.*;
     public native String getGraphDomain();
     @Property(selector = "setGraphDomain:")
     public native void setGraphDomain(String v);
+    @Property(selector = "userTokenNonce")
+    public native String getUserTokenNonce();
+    @Property(selector = "setUserTokenNonce:")
+    public native void setUserTokenNonce(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

@@ -21,6 +21,7 @@ enums:
     GADAdChoicesPosition: {}
     GADMBannerAnimationType: {prefix: GADMBannerAnimationType, ignore: "kGADMBannerAnimationType.*"}
     GADMediationErrorCode: {exclude: true} # deprecated Use GADErrorCode
+    GADPublisherPrivacyPersonalizationState: {}
 typed_enums:
     GADAdLoaderAdType:
         enum: GADAdLoaderAdType
@@ -199,6 +200,8 @@ classes:
     GADQueryInfo:
         methods:
             '+createQueryInfoWithRequest:adFormat:completionHandler:':
+                name: createQueryInfo
+            '+createQueryInfoWithRequest:adFormat:adUnitID:completionHandler:':
                 name: createQueryInfo
     GADMediationAppOpenAdConfiguration: { }
 protocols:
@@ -555,6 +558,9 @@ functions:
     GADClosestValidSizeForAdSizes:
         class: GADAdSize
         name: getClosestValidSize
+    GADGetStringFromVersionNumber:
+        class: GADMobileAds
+        name: getStringFromVersionNumber
 
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):

@@ -90,6 +90,10 @@ import org.robovm.apple.coreanimation.*;
     public native ChartLimitLabelPosition getLabelPosition();
     @Property(selector = "setLabelPosition:")
     public native void setLabelPosition(ChartLimitLabelPosition v);
+    @Property(selector = "labelRotationAngle")
+    public native @MachineSizedFloat double getLabelRotationAngle();
+    @Property(selector = "setLabelRotationAngle:")
+    public native void setLabelRotationAngle(@MachineSizedFloat double v);
     @Property(selector = "lineWidth")
     public native @MachineSizedFloat double getLineWidth();
     @Property(selector = "setLineWidth:")

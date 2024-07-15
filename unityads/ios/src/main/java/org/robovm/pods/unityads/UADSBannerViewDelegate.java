@@ -51,6 +51,8 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "bannerViewDidLoad:")
     void bannerViewDidLoad(UADSBannerView bannerView);
+    @Method(selector = "bannerViewDidShow:")
+    void bannerViewDidShow(UADSBannerView bannerView);
     @Method(selector = "bannerViewDidClick:")
     void bannerViewDidClick(UADSBannerView bannerView);
     @Method(selector = "bannerViewDidLeaveApplication:")

@@ -1,9 +1,6 @@
 <config>
     <frameworks>
         <framework>FirebaseAnalytics</framework>
-        <framework>FirebaseInstallations</framework>
-        <framework>GoogleAppMeasurement</framework>
-        <framework>nanopb</framework>
 
         <framework>StoreKit</framework>
     </frameworks>

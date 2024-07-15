@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.safariservices.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -60,7 +61,7 @@ import org.robovm.apple.coreanimation.*;
     @NotImplemented("didStartRewardedVideoForAd:")
     public void didStartRewardedVideoForAd(MAAd ad) {}
     /**
-     * @deprecated This function is deprecated because not all adapters support this callback. Please use -[MAAdDelegate didHideAd:] instead
+     * @deprecated This API is deprecated because not all adapters support this callback. Please use -[MAAdDelegate didHideAd:] instead
      */
     @Deprecated
     @NotImplemented("didCompleteRewardedVideoForAd:")

@@ -97,6 +97,10 @@ import org.robovm.apple.coreanimation.*;
     public native float getTaskPriority();
     @Property(selector = "setTaskPriority:")
     public native void setTaskPriority(float v);
+    @Property(selector = "userAgentProvider")
+    public native GTMUserAgentProvider getUserAgentProvider();
+    @Property(selector = "setUserAgentProvider:")
+    public native void setUserAgentProvider(GTMUserAgentProvider v);
     @Property(selector = "useBackgroundSession")
     public native boolean isUseBackgroundSession();
     @Property(selector = "setUseBackgroundSession:")

@@ -50,5 +50,7 @@ import org.robovm.apple.foundation.*;
     /*<methods>*/
     @NotImplemented("getTokenWithCompletion:")
     public void getToken(@Block VoidBlock2<FIRAppCheckToken, NSError> handler) {}
+    @NotImplemented("getLimitedUseTokenWithCompletion:")
+    public void getLimitedUseToken(@Block VoidBlock2<FIRAppCheckToken, NSError> handler) {}
     /*</methods>*/
 }

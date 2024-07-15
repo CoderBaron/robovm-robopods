@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.safariservices.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -56,15 +57,31 @@ import org.robovm.apple.coreanimation.*;
     public native ALAdType getType();
     @Property(selector = "zoneIdentifier")
     public native String getZoneIdentifier();
-    @Property(selector = "isVideoAd")
-    public native boolean isVideoAd();
+    /**
+     * @deprecated This API has been deprecated and will be removed in a future release.
+     */
+    @Deprecated
     @Property(selector = "adIdNumber")
     public native NSNumber getAdIdNumber();
+    /**
+     * @deprecated This API has been deprecated and will be removed in a future release.
+     */
+    @Deprecated
+    @Property(selector = "isVideoAd")
+    public native boolean isVideoAd();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    /**
+     * @deprecated This API has been deprecated and will be removed in a future release.
+     */
+    @Deprecated
     @Method(selector = "adValueForKey:")
     public native String adValueForKey(String key);
+    /**
+     * @deprecated This API has been deprecated and will be removed in a future release.
+     */
+    @Deprecated
     @Method(selector = "adValueForKey:defaultValue:")
     public native String getAdValue(String key, String defaultValue);
     /*</methods>*/

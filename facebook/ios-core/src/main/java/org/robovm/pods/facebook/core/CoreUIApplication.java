@@ -40,7 +40,7 @@ import org.robovm.pods.facebook.corebasics.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC12FBSDKCoreKit17CoreUIApplication")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("FBSDKCoreKit.CoreUIApplication")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/CoreUIApplication/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {

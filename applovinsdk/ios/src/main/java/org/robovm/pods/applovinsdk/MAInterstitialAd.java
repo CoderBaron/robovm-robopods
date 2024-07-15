@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.safariservices.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -66,6 +67,10 @@ import org.robovm.apple.coreanimation.*;
     public native MAAdRequestDelegate getRequestDelegate();
     @Property(selector = "setRequestDelegate:", strongRef = true)
     public native void setRequestDelegate(MAAdRequestDelegate v);
+    @Property(selector = "expirationDelegate")
+    public native MAAdExpirationDelegate getExpirationDelegate();
+    @Property(selector = "setExpirationDelegate:", strongRef = true)
+    public native void setExpirationDelegate(MAAdExpirationDelegate v);
     @Property(selector = "adReviewDelegate")
     public native MAAdReviewDelegate getAdReviewDelegate();
     @Property(selector = "setAdReviewDelegate:", strongRef = true)

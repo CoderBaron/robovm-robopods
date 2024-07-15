@@ -8,10 +8,12 @@
 #define kTenjinAdRevenueIronSourceEndpoint @"ad_impressions/ironsource"
 #define kTenjinHyperBidRevenueEndpoint @"ad_impressions/hyperbid"
 #define kTenjinTopOnRevenueEndpoint @"ad_impressions/topon"
+#define kTenjinCASRevenueEndpoint @"ad_impressions/cas"
+#define kTenjinTradPlusRevenueEndpoint @"ad_impressions/tradplus"
 #define kTenjinConversionEndpoint @"conversion-values"
 
 //this line replaced by build script
-#define kTenjinTenjinSDKVersion @"1.12.25"
+#define kTenjinTenjinSDKVersion @"1.14.3"
 
 
 #define kTenjinPlatformIos @"ios"
@@ -39,6 +41,8 @@
 #define kTenjinDeviceModel @"device_model"
 #define kTenjinAAAttributionToken @"attribution_token"
 #define kTenjinCustomerUserId @"customer_user_id"
+#define kTenjinEvent @"event"
+#define kTenjinAnalyticsId @"analytics_installation_id"
 
 #define kTenjinSessionId @"session_id"
 #define kTenjinSentAt @"sent_at"
@@ -47,10 +51,15 @@
 #define kTenjinCoarseConversionValue @"coarse_conversion_value"
 #define kTenjinLockWindow @"lock_window"
 #define kTenjinRetryEnabled @"retry_enabled"
+#define kTenjinGoogleAdPersonalization @"ad_personalization"
+#define kTenjinGoogleAdUserData @"ad_user_data"
+#define kTenjinIABTCF @"iab_tcf"
+#define kTenjinGoogleAdPersonalizationKey @"TENJIN_GOOGLE_AD_PERSONALIZATION"
+#define kTenjinGoogleAdUserDataKey @"TENJIN_GOOGLE_AD_USER_DATA"
+#define kTenjinGoogleDMADisabled @"TENJIN_GOOGLE_DMA_DISABLED"
 
-//one hour in seconds
-#define kTenjinMaxWait 3600
+#define kTenjinAttributionMaxBackoff 15
 
 #define kTenjinStartupMaxRetries 5
 #define kTenjinRetrySleepBaseInSeconds 2.0
-#define kTenjinRetrySleepCapInSeconds 30.0
+#define kTenjinRetrySleepCapInSeconds 15.0

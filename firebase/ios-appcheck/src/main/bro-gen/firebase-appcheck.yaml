@@ -1,9 +1,12 @@
 package: org.robovm.pods.firebase.appcheck
 include: [foundation]
 framework: FirebaseAppCheck
+internal_frameworks: [FirebaseAppCheckInterop, AppCheckCore]
 clang_args: ['-x', 'objective-c']
 headers:
-    - FirebaseAppCheck.h
+    - "#include <FirebaseAppCheckInterop/FirebaseAppCheckInterop-umbrella.h>"
+    - "#include <AppCheckCore/AppCheckCore-umbrella.h>"
+    - "#include <FirebaseAppCheck/FirebaseAppCheck.h>"
 
 private_typedefs:
     "FIRApp *": org.robovm.pods.firebase.core.FIRApp
@@ -11,7 +14,10 @@ private_typedefs:
 typedefs: {}
 
 enums:
-    FIRAppCheckErrorCode: { nserror: true}
+    FIRAppCheckErrorCode: { nserror: true }
+    GACAppCheckErrorCode: { nserror: true }
+    GACAppCheckMessageCode: {prefix: GACLoggerAppCheckMessage}
+    GACAppCheckLogLevel: {}
 classes:
     FIRAppAttestProvider: #since 14.0
         methods:
@@ -21,10 +27,16 @@ classes:
         methods:
             '-tokenForcingRefresh:completion:':
                 name: tokenForcingRefresh
+                parameters:
+                    1:
+                        type: '@Block VoidBlock2<FIRAppCheckTokenProtocol, NSError>'
             '+appCheckWithApp:':
                 name: appCheck
             '-limitedUseTokenWithCompletion:':
                 name: limitedUseToken
+                parameters:
+                    0:
+                        type: '@Block VoidBlock2<FIRAppCheckTokenProtocol, NSError>'
     FIRAppCheckDebugProvider:
         methods:
             '-initWithApp:':
@@ -39,15 +51,77 @@ classes:
             '-initWithApp:':
                 name: init
     FIRDeviceCheckProviderFactory: {} #since 11.0
+    GACAppAttestProvider: #since 14.0
+        methods:
+            '-initWithServiceName:resourceName:baseURL:APIKey:keychainAccessGroup:requestHooks:':
+                name: init
+    GACAppCheck:
+        methods:
+            '-initWithServiceName:resourceName:appCheckProvider:settings:tokenDelegate:keychainAccessGroup:':
+                name: init
+    GACAppCheckDebugProvider:
+        methods:
+            '-initWithServiceName:resourceName:baseURL:APIKey:requestHooks:':
+                name: init
+    GACAppCheckLogger: { }
+    GACAppCheckSettings: { }
+    GACAppCheckToken:
+        methods:
+            '-initWithToken:expirationDate:':
+                name: init
+            '-initWithToken:expirationDate:receivedAtDate:':
+                name: init
+    GACAppCheckTokenResult:
+        methods:
+            '-initWithToken:':
+                name: init
+            '-initWithError:':
+                name: init
+            '-initWithToken:error:':
+                name: init
+    GACDeviceCheckProvider: #since 11.0
+        methods:
+            '-initWithServiceName:resourceName:APIKey:requestHooks:':
+                name: init
 protocols:
     FIRAppCheckProvider:
         methods:
             '-getTokenWithCompletion:':
                 name: getToken
+            '-getLimitedUseTokenWithCompletion:':
+                name: getLimitedUseToken
     FIRAppCheckProviderFactory:
         methods:
             '-createProviderWithApp:':
                 name: createProvider
+    FIRAppCheckProtocol:
+        methods:
+            '-tokenForcingRefresh:completion:':
+                name: tokenForcingRefresh
+            '-limitedUseTokenWithCompletion:':
+                name: limitedUseToken
+    FIRAppCheckTokenResultInterop:
+        exclude: true # doesn't seem to be used
+    FIRAppCheckInterop:
+        exclude: true # doesn't seem to be used
+    GACAppCheckProtocol:
+        methods:
+            '-tokenForcingRefresh:completion:':
+                name: tokenForcingRefresh
+            '-limitedUseTokenWithCompletion:':
+                name: limitedUseToken
+    GACAppCheckProvider:
+        methods:
+            '-getTokenWithCompletion:':
+                name: getToken
+            '-getLimitedUseTokenWithCompletion:':
+                name: getLimitedUseToken
+    GACAppCheckSettingsProtocol: { }
+    GACAppCheckTokenDelegate:
+        methods:
+            '-tokenDidUpdate:serviceName:':
+                name: tokenDidUpdate
+    FIRAppCheckTokenProtocol: {}
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):
@@ -65,7 +139,19 @@ values:
         class: FIRAppCheck
         static_class: NotificationKeys
         name: '#{g[0]}'
-
+    FirebaseAppCheckInteropVersion.*:
+        exclude: true
+    GACAppCheckErrorDomain:
+        class: GACAppCheckErrorCode
+        name: getClassDomain
+    AppCheckCoreVersionNumber:
+        class: GACAppCheck
+        name: getVersionNumber
+        readonly: true
+    AppCheckCoreVersionString:
+        class: GACAppCheck
+        name: getVersionString
+        marshaler: StringMarshalers.AsAsciiZMarshaler
 
     # Make sure we don't miss any values if new ones are introduced in a later version
     (.*):

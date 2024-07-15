@@ -89,5 +89,7 @@ import org.robovm.pods.facebook.corebasics.*;
     public native void overrideGraphAPIVersion(String version);
     @Method(selector = "setCanMakeRequests")
     public static native void setCanMakeRequests();
+    @Method(selector = "setDidFetchDomainConfiguration")
+    public static native void setDidFetchDomainConfiguration();
     /*</methods>*/
 }

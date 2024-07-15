@@ -122,14 +122,6 @@ import org.robovm.apple.storekit.*;
     public native boolean isDebug();
     @Property(selector = "setIsDebug:")
     public native void setIsDebug(boolean v);
-    @Property(selector = "checkedFacebookAppLinks")
-    public native boolean isCheckedFacebookAppLinks();
-    @Property(selector = "setCheckedFacebookAppLinks:")
-    public native void setCheckedFacebookAppLinks(boolean v);
-    @Property(selector = "checkedAppleSearchAdAttribution")
-    public native boolean isCheckedAppleSearchAdAttribution();
-    @Property(selector = "setCheckedAppleSearchAdAttribution:")
-    public native void setCheckedAppleSearchAdAttribution(boolean v);
     @Property(selector = "appleAttributionTokenChecked")
     public native boolean isAppleAttributionTokenChecked();
     @Property(selector = "setAppleAttributionTokenChecked:")
@@ -162,14 +154,6 @@ import org.robovm.apple.storekit.*;
     public native NSMutableDictionary<?, ?> getSavedAnalyticsData();
     @Property(selector = "setSavedAnalyticsData:")
     public native void setSavedAnalyticsData(NSMutableDictionary<?, ?> v);
-    @Property(selector = "appleSearchAdDetails")
-    public native NSDictionary<?, ?> getAppleSearchAdDetails();
-    @Property(selector = "setAppleSearchAdDetails:")
-    public native void setAppleSearchAdDetails(NSDictionary<?, ?> v);
-    @Property(selector = "appleSearchAdNeedsSend")
-    public native boolean isAppleSearchAdNeedsSend();
-    @Property(selector = "setAppleSearchAdNeedsSend:")
-    public native void setAppleSearchAdNeedsSend(boolean v);
     @Property(selector = "lastSystemBuildVersion")
     public native String getLastSystemBuildVersion();
     @Property(selector = "setLastSystemBuildVersion:")
@@ -182,10 +166,6 @@ import org.robovm.apple.storekit.*;
     public native String getReferringURL();
     @Property(selector = "setReferringURL:")
     public native void setReferringURL(String v);
-    @Property(selector = "branchAPIURL")
-    public native String getBranchAPIURL();
-    @Property(selector = "setBranchAPIURL:")
-    public native void setBranchAPIURL(String v);
     @Property(selector = "limitFacebookTracking")
     public native boolean isLimitFacebookTracking();
     @Property(selector = "setLimitFacebookTracking:")
@@ -198,10 +178,6 @@ import org.robovm.apple.storekit.*;
     public native boolean isDisableAdNetworkCallouts();
     @Property(selector = "setDisableAdNetworkCallouts:")
     public native void setDisableAdNetworkCallouts(boolean v);
-    @Property(selector = "faceBookAppLink")
-    public native NSURL getFaceBookAppLink();
-    @Property(selector = "setFaceBookAppLink:")
-    public native void setFaceBookAppLink(NSURL v);
     @Property(selector = "patternListURL")
     public native String getPatternListURL();
     @Property(selector = "setPatternListURL:")
@@ -218,10 +194,6 @@ import org.robovm.apple.storekit.*;
     public native boolean isDropURLOpen();
     @Property(selector = "setDropURLOpen:")
     public native void setDropURLOpen(boolean v);
-    @Property(selector = "sendCloseRequests")
-    public native boolean isSendCloseRequests();
-    @Property(selector = "setSendCloseRequests:")
-    public native void setSendCloseRequests(boolean v);
     @Property(selector = "trackingDisabled")
     public native boolean isTrackingDisabled();
     @Property(selector = "setTrackingDisabled:")
@@ -258,21 +230,23 @@ import org.robovm.apple.storekit.*;
     public native boolean isInvokeRegisterApp();
     @Property(selector = "setInvokeRegisterApp:")
     public native void setInvokeRegisterApp(boolean v);
-    @Property(selector = "logInAppPurchasesAsBranchEvents")
-    public native boolean isLogInAppPurchasesAsBranchEvents();
-    @Property(selector = "setLogInAppPurchasesAsBranchEvents:")
-    public native void setLogInAppPurchasesAsBranchEvents(boolean v);
+    @Property(selector = "eeaRegion")
+    public native boolean isEeaRegion();
+    @Property(selector = "setEeaRegion:")
+    public native void setEeaRegion(boolean v);
+    @Property(selector = "adPersonalizationConsent")
+    public native boolean isAdPersonalizationConsent();
+    @Property(selector = "setAdPersonalizationConsent:")
+    public native void setAdPersonalizationConsent(boolean v);
+    @Property(selector = "adUserDataUsageConsent")
+    public native boolean isAdUserDataUsageConsent();
+    @Property(selector = "setAdUserDataUsageConsent:")
+    public native void setAdUserDataUsageConsent(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "clearTrackingInformation")
     public native void clearTrackingInformation();
-    @Method(selector = "getAPIBaseURL")
-    public native String getAPIBaseURL();
-    @Method(selector = "getAPIURL:")
-    public native String getAPIURL(String endpoint);
-    @Method(selector = "getEndpointFromURL:")
-    public native String getEndpointFromURL(String url);
     @Method(selector = "setRequestMetadataKey:value:")
     public native void setRequestMetadata(String key, NSObject value);
     @Method(selector = "requestMetadataDictionary")
@@ -299,6 +273,8 @@ import org.robovm.apple.storekit.*;
     public native NSMutableString sanitizedMutableBaseURL(String baseUrl);
     @Method(selector = "synchronize")
     public native void synchronize();
+    @Method(selector = "eeaRegionInitialized")
+    public native boolean eeaRegionInitialized();
     @Method(selector = "sharedInstance")
     public static native BNCPreferenceHelper sharedInstance();
     @Method(selector = "clearAll")

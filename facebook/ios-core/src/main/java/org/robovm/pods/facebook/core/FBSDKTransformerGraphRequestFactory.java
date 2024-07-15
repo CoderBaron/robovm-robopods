@@ -40,7 +40,7 @@ import org.robovm.pods.facebook.corebasics.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("_TtC12FBSDKCoreKit35FBSDKTransformerGraphRequestFactory")/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("FBSDKCoreKit.FBSDKTransformerGraphRequestFactory")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKTransformerGraphRequestFactory/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {

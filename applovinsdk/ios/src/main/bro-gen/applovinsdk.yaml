@@ -1,5 +1,5 @@
 package: org.robovm.pods.applovinsdk
-include: [foundation, uikit, coregraphics, coreanimation]
+include: [foundation, uikit, coregraphics, coreanimation, safariservices]
 clang_args: ['-x', 'objective-c']
 framework: AppLovinSDK
 #exclude_deprecated: true
@@ -17,8 +17,8 @@ enums:
     ALAdContentRating: { }
     ALGender: { }
     MAAdapterInitializationStatus: { }
-    ALCFType: { }
-    ALCFErrorCode: { }
+    ALCMPErrorCode: { }
+    ALConsentFlowUserGeography: { }
 classes:
     ALAd:
         methods:
@@ -40,6 +40,8 @@ classes:
                 name: removeAdUpdateObserver
             '-adValueForKey:defaultValue:':
                 name: getAdValue
+            '-collectBidTokenWithCompletion:':
+                name: collectBidToken
     ALAdSize:
         methods:
             '+sizeWithLabel:orDefault:':
@@ -47,6 +49,9 @@ classes:
                 name: create
     ALAdType: {}
     ALAdView:
+        properties:
+            'safariViewControllerDelegate':
+                type: SFSafariViewControllerDelegate
         methods:
             '-initWithSize:':
                 name: init
@@ -167,6 +172,8 @@ classes:
                 name: initializeSdk
             '+initializeSdkWithCompletionHandler:':
                 name: InitializeSdk
+            '-initializeWithConfiguration:completionHandler:':
+                name: initialize
             '+initializeSdk':
                 name: InitializeSdk
             '+sharedWithKey:':
@@ -177,21 +184,18 @@ classes:
                 name: getShared
             '-showMediationDebuggerWithAmazonAdSize:':
                 name: showMediationDebugger
+
     ALSdkConfiguration: {}
     ALSdkSettings:
         methods:
             '-setExtraParameterForKey:value:':
                 name: setExtraParameter
+            '+new':
+                exclude: true
     ALUserService:
         methods:
             '-showConsentDialogWithCompletionHandler:':
                 name: showConsentDialog
-    ALVariableService:
-        methods:
-            '-boolForKey:defaultValue:':
-                name: getBool
-            '-stringForKey:defaultValue:':
-                name: getString
     MAAd:
         methods:
             '-adValueForKey:defaultValue:':
@@ -274,7 +278,10 @@ classes:
                 name: showAdForPlacement
             '-showAdForPlacement:customData:viewController:':
                 name: showAdForPlacement
-    ALUserSegment: {}
+    ALUserSegment:
+        methods:
+            '-initWithName:':
+                name: init
     ALConsentFlowSettings: { }
     MAMediatedNetworkInfo: { }
     MAError: { }
@@ -335,7 +342,11 @@ classes:
                 name: log
             '-addAppOpenAdapter:delegate:forPlacementIdentifier:':
                 name: addAppOpenAdapter
-    ALTargetingData: {}
+    ALTargetingData:
+        methods:
+            '+dataWithBuilderBlock:':
+                name: create
+                constructor: true
     ALUtils: {}
     MAAdapterError:
         methods:
@@ -437,11 +448,30 @@ classes:
             '-setLocalExtraParameterForKey:value:':
                 #trim_after_first_colon: true
                 name: setLocalExtraParameterForKey$value$
-    ALCFError: { }
-    ALCFService:
+    ALCMPError: { }
+    ALCMPService:
         methods:
-            '-scfWithCompletionHander:':
-                name: scfWithCompletionHander$
+            '-showCMPForExistingUserWithCompletion:':
+                name: showCMPForExistingUser
+    ALTermsAndPrivacyPolicyFlowSettings: { }
+    ALAtomicReference:
+        methods:
+            '-compareAndSet:update:':
+                name: compare
+            '-initWithValue:':
+                name: init
+    ALSdkInitializationConfiguration:
+        methods:
+            '+configurationWithSdkKey:builderBlock:':
+                name: create
+                constructor: true
+            '+configurationWithSdkKey:':
+                name: create
+                constructor: true
+            '+builderWithSdkKey:':
+                name: builder
+    ALSdkInitializationConfigurationBuilder: { }
+    ALTargetingDataBuilder: { }
 protocols:
     ALAdDisplayDelegate:
         methods:
@@ -507,10 +537,6 @@ protocols:
                 name: didExecutePostback
             '-postbackService:didFailToExecutePostback:errorCode:':
                 name: didFailToExecutePostback
-    ALVariableServiceDelegate:
-        methods:
-            '-variableService:didUpdateVariables:':
-                name: didUpdateVariables
     MAAdDelegate:
         methods:
             '-didFailToLoadAdForAdUnitIdentifier:withErrorCode:':
@@ -695,6 +721,10 @@ protocols:
                 name: didFailToDisplayAppOpenAd
             '-didFailToDisplayAppOpenAdWithError:extraInfo:':
                 name: didFailToDisplayAppOpenAd
+    MAAdExpirationDelegate:
+        methods:
+            '-didReloadExpiredAd:withNewAd:':
+                name: didReloadExpiredAd
 functions:
 
     # Make sure we don't miss any functions if new ones are introduced in a later version

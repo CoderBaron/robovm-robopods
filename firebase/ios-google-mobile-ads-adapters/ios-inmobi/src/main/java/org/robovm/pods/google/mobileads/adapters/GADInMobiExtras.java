@@ -108,6 +108,6 @@ import org.robovm.pods.inmobi.sdk.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "setLocationWithCity:state:country:")
-    public native void setLocation(String _city, String _state, String _country);
+    public native void setLocation(String city, String state, String country);
     /*</methods>*/
 }

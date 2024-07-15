@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.storekit.*;
 import org.robovm.apple.coredata.*;
+import org.robovm.apple.dispatch.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -64,6 +65,8 @@ import org.robovm.apple.coredata.*;
     public native void handleSubscriptionPurchase(SKPaymentTransaction transaction);
     @Method(selector = "getAttributionInfo:")
     public native void getAttributionInfo(@Block VoidBlock2<NSDictionary<?, ?>, NSError> completionHandler);
+    @Method(selector = "setGoogleDMAParametersWithAdPersonalization:adUserData:")
+    public native void setGoogleDMAParameters(boolean adPersonalization, boolean adUserData);
     /**
      * @deprecated use `initialize`
      */
@@ -124,8 +127,14 @@ import org.robovm.apple.coredata.*;
     public static native void connect(NSURL url);
     @Method(selector = "sendEventWithName:")
     public static native void sendEvent(String eventName);
+    /**
+     * @deprecated use `sendEventWithName: andValue:` instead
+     */
+    @Deprecated
     @Method(selector = "sendEventWithName:andEventValue:")
     public static native void sendEvent(String eventName, String eventValue);
+    @Method(selector = "sendEventWithName:andValue:")
+    public static native void sendEvent(String eventName, @MachineSizedSInt long eventValue);
     @Deprecated
     @Method(selector = "transaction:")
     public static native void transaction(SKPaymentTransaction transaction);
@@ -145,6 +154,12 @@ import org.robovm.apple.coredata.*;
     public static native void optOutParams(NSArray<?> params);
     @Method(selector = "optInParams:")
     public static native void optInParams(NSArray<?> params);
+    @Method(selector = "optInOutUsingCMP")
+    public static native boolean optInOutUsingCMP();
+    @Method(selector = "optOutGoogleDMA")
+    public static native void optOutGoogleDMA();
+    @Method(selector = "optInGoogleDMA")
+    public static native void optInGoogleDMA();
     @Method(selector = "appendAppSubversion:")
     public static native void appendAppSubversion(NSNumber subversion);
     /**
@@ -171,6 +186,8 @@ import org.robovm.apple.coredata.*;
     public static native String getCustomerUserId();
     @Method(selector = "setCacheEventSetting:")
     public static native void setCacheEventSetting(boolean isCacheEventsEnabled);
+    @Method(selector = "getAnalyticsInstallationId")
+    public static native String getAnalyticsInstallationId();
     @Method(selector = "verboseLogs")
     public static native void verboseLogs();
     @Method(selector = "debugLogs")
@@ -191,5 +208,37 @@ import org.robovm.apple.coredata.*;
     public static native void registerAppForAdNetworkAttribution();
     @Method(selector = "requestTrackingAuthorizationWithCompletionHandler:")
     public static native void requestTrackingAuthorization(@Block("(@MachineSizedUInt)") VoidBlock1<Long> completion);
+    @Method(selector = "handleAdMobILRD::")
+    public static native void handleAdMobILRD(NSObject adView, org.robovm.pods.google.mobileads.GADAdValue adValue);
+    @Method(selector = "adMobImpressionFromJSON:")
+    public static native void adMobImpressionFromJSON(String jsonString);
+    @Method(selector = "subscribeAppLovinImpressions")
+    public static native void subscribeAppLovinImpressions();
+    @Method(selector = "appLovinImpressionFromJSON:")
+    public static native void appLovinImpressionFromJSON(String jsonString);
+    @Method(selector = "subscribeCASBannerImpressions")
+    public static native void subscribeCASBannerImpressions();
+    @Method(selector = "casImpressionFromJSON:")
+    public static native void casImpressionFromJSON(String jsonString);
+    @Method(selector = "handleCASILRD:")
+    public static native void handleCASILRD(NSObject adImpression);
+    @Method(selector = "hyperBidImpressionFromDict:")
+    public static native void hyperBidImpressionFromDict(NSDictionary<?, ?> adImpression);
+    @Method(selector = "hyperBidImpressionFromJSON:")
+    public static native void hyperBidImpressionFromJSON(String jsonString);
+    @Method(selector = "subscribeIronSourceImpressions")
+    public static native void subscribeIronSourceImpressions();
+    @Method(selector = "ironSourceImpressionFromJSON:")
+    public static native void ironSourceImpressionFromJSON(String jsonString);
+    @Method(selector = "topOnImpressionFromDict:")
+    public static native void topOnImpressionFromDict(NSDictionary<?, ?> adImpression);
+    @Method(selector = "topOnImpressionFromJSON:")
+    public static native void topOnImpressionFromJSON(String jsonString);
+    @Method(selector = "subscribeTradPlusImpressions")
+    public static native void subscribeTradPlusImpressions();
+    @Method(selector = "tradPlusImpressionFromJSON:")
+    public static native void tradPlusImpressionFromJSON(String jsonString);
+    @Method(selector = "handleTradPlusILRD:")
+    public static native void handleTradPlusILRD(NSDictionary<?, ?> adInfo);
     /*</methods>*/
 }

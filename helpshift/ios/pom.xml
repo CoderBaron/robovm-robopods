@@ -2,12 +2,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.github.dkimitsa.robovm</groupId>
-        <version>1.32.0-SNAPSHOT</version>
+        <version>1.42.0-SNAPSHOT</version>
         <artifactId>robopods-helpshift-parent</artifactId>
     </parent>
 
     <artifactId>robopods-helpshift-ios</artifactId>
-    <name>RoboPods HelpShift iOS v10.2.2</name>
+    <name>RoboPods HelpShift iOS v10.3.0</name>
     <packaging>jar</packaging>
 
     <licenses>

@@ -77,6 +77,11 @@ import org.robovm.apple.avfoundation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    /**
+     * @since Available in iOS 12.0 and later.
+     * @deprecated Deprecated in iOS 17.0. The setter for advertiserTrackingEnabled flag is deprecated: The setAdvertiserTrackingEnabled flag is not used for Audience Network SDK 6.15.0+ on iOS 17+ as the Audience Network SDK 6.15.0+ on iOS 17+ now relies on [ATTrackingManager trackingAuthorizationStatus] to accurately represent ATT permission for users of your app
+     */
+    @Deprecated
     @Method(selector = "setAdvertiserTrackingEnabled:")
     public static native void setAdvertiserTrackingEnabled(boolean advertiserTrackingEnabled);
     @Method(selector = "isTestMode")

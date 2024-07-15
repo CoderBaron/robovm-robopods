@@ -85,6 +85,10 @@ import org.robovm.apple.webkit.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    /**
+     * @deprecated Deprecated. Simulators are already in test mode by default.
+     */
+    @Deprecated
     @GlobalValue(symbol="GADSimulatorID", optional=true)
     public static native NSString GADSimulatorID();
     

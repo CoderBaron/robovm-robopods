@@ -52,8 +52,12 @@ import org.robovm.apple.uikit.*;
     public static native UMPConsentInformation getSharedInstance();
     @Property(selector = "consentStatus")
     public native UMPConsentStatus getConsentStatus();
+    @Property(selector = "canRequestAds")
+    public native boolean canRequestAds();
     @Property(selector = "formStatus")
     public native UMPFormStatus getFormStatus();
+    @Property(selector = "privacyOptionsRequirementStatus")
+    public native UMPPrivacyOptionsRequirementStatus getPrivacyOptionsRequirementStatus();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

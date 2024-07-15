@@ -37,7 +37,7 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("InMobiSDK.IMBanner")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/IMBanner/*</name>*/ 
     extends /*<extends>*/UIView/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
@@ -49,20 +49,26 @@ import org.robovm.apple.coreanimation.*;
     public IMBanner() {}
     protected IMBanner(Handle h, long handle) { super(h, handle); }
     protected IMBanner(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithFrame:")
+    public IMBanner(@ByVal CGRect frame) { super((SkipInit) null); initObject(init(frame)); }
     @Method(selector = "initWithFrame:placementId:")
     public IMBanner(@ByVal CGRect frame, long placementId) { super((SkipInit) null); initObject(init(frame, placementId)); }
     @Method(selector = "initWithFrame:placementId:delegate:")
     public IMBanner(@ByVal CGRect frame, long placementId, IMBannerDelegate delegate) { super((SkipInit) null); initObject(init(frame, placementId, delegate)); }
-    @Method(selector = "initWithFrame:")
-    public IMBanner(@ByVal CGRect frame) { super(frame); }
-    @Method(selector = "initWithCoder:")
-    public IMBanner(NSCoder coder) { super(coder); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "placementId")
+    public native long getPlacementId();
+    @Property(selector = "setPlacementId:")
+    public native void setPlacementId(long v);
     @Property(selector = "delegate")
     public native IMBannerDelegate getDelegate();
     @Property(selector = "setDelegate:", strongRef = true)
     public native void setDelegate(IMBannerDelegate v);
+    @Property(selector = "audioDelegate")
+    public native IMBannerAudioDelegate getAudioDelegate();
+    @Property(selector = "setAudioDelegate:", strongRef = true)
+    public native void setAudioDelegate(IMBannerAudioDelegate v);
     @Property(selector = "refreshInterval")
     public native @MachineSizedSInt long getRefreshInterval();
     @Property(selector = "setRefreshInterval:")
@@ -72,47 +78,49 @@ import org.robovm.apple.coreanimation.*;
     @Property(selector = "setKeywords:")
     public native void setKeywords(String v);
     @Property(selector = "extras")
-    public native NSDictionary<?, ?> getExtras();
+    public native NSDictionary<NSString, ?> getExtras();
     @Property(selector = "setExtras:")
-    public native void setExtras(NSDictionary<?, ?> v);
-    @Property(selector = "placementId")
-    public native long getPlacementId();
-    @Property(selector = "setPlacementId:")
-    public native void setPlacementId(long v);
+    public native void setExtras(NSDictionary<NSString, ?> v);
     @Property(selector = "transitionAnimation")
     public native UIViewAnimationTransition getTransitionAnimation();
     @Property(selector = "setTransitionAnimation:")
     public native void setTransitionAnimation(UIViewAnimationTransition v);
-    @Property(selector = "creativeId")
-    public native String getCreativeId();
-    @Property(selector = "preloadManager")
-    public native IMBannerPreloadManager getPreloadManager();
     @Property(selector = "contentUrl")
     public native String getContentUrl();
     @Property(selector = "setContentUrl:")
     public native void setContentUrl(String v);
+    @Property(selector = "creativeId")
+    public native String getCreativeId();
+    @Property(selector = "preloadManager")
+    public native IMBannerPreloadManager getPreloadManager();
+    @Property(selector = "isAudioAd")
+    public native boolean isAudioAd();
     @WeaklyLinked
     @Property(selector = "layerClass")
     public static native Class<? extends CALayer> getLayerClass();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "initWithFrame:")
+    protected native @Pointer long init(@ByVal CGRect frame);
     @Method(selector = "initWithFrame:placementId:")
     protected native @Pointer long init(@ByVal CGRect frame, long placementId);
     @Method(selector = "initWithFrame:placementId:delegate:")
     protected native @Pointer long init(@ByVal CGRect frame, long placementId, IMBannerDelegate delegate);
-    @Method(selector = "getSignals")
-    public native void getSignals();
     @Method(selector = "load")
     public native void load();
     @Method(selector = "load:")
     public native void load(NSData response);
     @Method(selector = "shouldAutoRefresh:")
-    public native void shouldAutoRefresh(boolean refresh);
+    public native void shouldAutoRefresh(boolean shouldAutoRefresh);
     @Method(selector = "getAdMetaInfo")
-    public native NSDictionary<?, ?> getAdMetaInfo();
+    public native NSDictionary<NSString, ?> getAdMetaInfo();
+    @Method(selector = "setWatermarkWith:")
+    public native void setWatermarkWith(IMWatermark watermark);
     @Method(selector = "cancel")
     public native void cancel();
+    @Method(selector = "willMoveToWindow:")
+    public native void willMoveToWindow(UIWindow newWindow);
     /**
      * @since Available in iOS 9.0 and later.
      */

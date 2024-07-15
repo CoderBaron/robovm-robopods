@@ -2,15 +2,14 @@
 //  LevelPlayBannerDelegate.h
 //  IronSource
 //
-//  Created by Hadar Pur on 23/03/2022.
 //  Copyright © 2022 IronSource. All rights reserved.
 //
 
 #ifndef LevelPlayBannerDelegate_h
 #define LevelPlayBannerDelegate_h
 
-#import "ISBannerView.h"
 #import "ISAdInfo.h"
+#import "ISBannerView.h"
 
 @protocol LevelPlayBannerDelegate <NSObject>
 

@@ -1,10 +1,12 @@
 package: org.robovm.pods.firebase.crashlytics
 framework: FirebaseCrashlytics
+internal_frameworks: [FirebaseRemoteConfigInterop]
 include: [foundation]
 clang_args: ['-x', 'objective-c']
 headers: 
     - FirebaseCrashlytics.h
-
+    - FirebaseCrashlytics-Swift.h
+    - "#include <FirebaseRemoteConfigInterop/FirebaseRemoteConfigInterop-Swift.h>"
 enums: {}
 
 
@@ -40,15 +42,41 @@ classes:
                 constructor: true
                 name: create
     FIRCrashlyticsReport:
-      methods:
-        '-logWithFormat:':
-          name: log
-        '-logWithFormat:arguments:':
-          name: log
-        '-setCustomValue:forKey:':
-          name: setCustomValue
-protocols: {}
-
+        methods:
+            '-logWithFormat:':
+              name: log
+            '-logWithFormat:arguments:':
+              name: log
+            '-setCustomValue:forKey:':
+              name: setCustomValue
+    FIRCLSRemoteConfigManager:
+        methods:
+            '-initWithRemoteConfig:persistenceDelegate:':
+                name: init
+            '-updateRolloutsStateWithRolloutsState:reportID:':
+                name: updateRolloutsState
+    FIRCLSwiftFileUtility: { }
+    FIRRemoteConfigConstants: { }
+    FIRRolloutAssignment:
+        methods:
+            '-initWithRolloutId:variantId:templateVersion:parameterKey:parameterValue:':
+                name: init
+    FIRRolloutsState:
+        methods:
+            '-initWithAssignmentList:':
+                name: init
+protocols:
+    FIRCLSPersistenceLog:
+        methods:
+            '-updateRolloutsStateToPersistenceWithRollouts:reportID:':
+                name: updateRolloutsStateToPersistence
+            '-debugLogWithMessage:':
+                name: debugLog
+    FIRRemoteConfigInterop:
+        methods:
+            '-registerRolloutsStateSubscriber:for:':
+                name: registerRolloutsStateSubscriber
+    FIRRolloutsStateSubscriber: { }
 functions:
     # Make sure we don't miss any functions if new ones are introduced in a later version
     (.*):
@@ -62,6 +90,9 @@ values:
         name: 'Value_#{g[0]}'
 
 constants:
+    SWIFT_.*:
+        exclude: true
+
     # Make sure we don't miss any constants if new ones are introduced in a later version
     (.*):
         class: __FixMe

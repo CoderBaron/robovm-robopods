@@ -1,5 +1,256 @@
 ## Version of AltPods to framework version mapping
 
+v1.41.0
+| Name                            | 1.41.0  |
+|---------------------------------|---------|
+| [AdaptySDK](adapty/)            | 1.17.7  |
+| [AppCenter](appcenter/)         | 5.0.5   |
+| [AppLovinSDK](applovinsdk/)     | 12.5.0  |
+| [Azure](azure/)                 | 3.1.4   |
+| [BranchMetrics](branchmetrics/) | 3.4.4   |
+| [Charts](charts/)               | 5.1.0   |
+| [ClearAds](cleverads/)          | 3.7.3   |
+| [Facebook](facebook/)           | 17.0.2  |
+| [Firebase](firebase/)           | 10.27.0 |
+| [Fyber](fyber/)                 | 8.2.2   |
+| [HelpShiftX](helpshift/)        | 10.3.0  |
+| [InMobi](inmobi/)               | 10.7.2  |
+| [IronSource](ironsource/)       | 8.1.0   |
+| [Lottie](lottie/)               | 4.4.3   |
+| [OneSignal](onesignal/)         | 5.2.0   |
+| [Pollfish](pollfish/)           | 6.5.0   |
+| [SAMKeychain](samkeychain/)     | 1.5.3   |
+| [Singular](singular/)           | 12.4.2  |
+| [Tenjin](tenjin/)               | 1.14.3  |
+| [UnityAds](unityads/)           | 4.12.0  |
+| [YouTubePlayer](youtube/)       | 1.0.4   |
+
+v1.40.0
+| Name                            | 1.40.0  |
+|---------------------------------|---------|
+| [AdaptySDK](adapty/)            | 1.17.7  |
+| [AppCenter](appcenter/)         | 5.0.4   |
+| [AppLovinSDK](applovinsdk/)     | 12.4.2  |
+| [Azure](azure/)                 | 3.1.4   |
+| [BranchMetrics](branchmetrics/) | 3.4.3   |
+| [Charts](charts/)               | 5.1.0   |
+| [ClearAds](cleverads/)          | 3.7.0   |
+| [Facebook](facebook/)           | 17.0.1  |
+| [Firebase](firebase/)           | 10.25.0 |
+| [Fyber](fyber/)                 | 8.2.2   |
+| [HelpShiftX](helpshift/)        | 10.3.0  |
+| [InMobi](inmobi/)               | 10.7.2  |
+| [IronSource](ironsource/)       | 8.0.0   |
+| [Lottie](lottie/)               | 4.4.3   |
+| [OneSignal](onesignal/)         | 5.1.6   |
+| [Pollfish](pollfish/)           | 6.5.0   |
+| [SAMKeychain](samkeychain/)     | 1.5.3   |
+| [Singular](singular/)           | 12.4.2  |
+| [Tenjin](tenjin/)               | 1.14.3  |
+| [UnityAds](unityads/)           | 4.11.1  |
+| [YouTubePlayer](youtube/)       | 1.0.4   |
+
+v1.39.0
+| Name                            | 1.39.0  |
+|---------------------------------|---------|
+| [AdaptySDK](adapty/)            | 1.17.7  |
+| [AppCenter](appcenter/)         | 5.0.4   |
+| [AppLovinSDK](applovinsdk/)     | 12.4.1  |
+| [Azure](azure/)                 | 3.1.4   |
+| [BranchMetrics](branchmetrics/) | 3.4.1   |
+| [Charts](charts/)               | 5.1.0   |
+| [ClearAds](cleverads/)          | 3.6.0   |
+| [Facebook](facebook/)           | 17.0.0  |
+| [Firebase](firebase/)           | 10.24.0 |
+| [Fyber](fyber/)                 | 8.2.2   |
+| [HelpShiftX](helpshift/)        | 10.3.0  |
+| [InMobi](inmobi/)               | 10.7.1  |
+| [IronSource](ironsource/)       | 7.9.1   |
+| [Lottie](lottie/)               | 4.4.2   |
+| [OneSignal](onesignal/)         | 5.1.4   |
+| [Pollfish](pollfish/)           | 6.5.0   |
+| [SAMKeychain](samkeychain/)     | 1.5.3   |
+| [Singular](singular/)           | 12.3.2  |
+| [Tenjin](tenjin/)               | 1.14.1  |
+| [UnityAds](unityads/)           | 4.10.0  |
+| [YouTubePlayer](youtube/)       | 1.0.4   |
+
+v1.38.0
+| Name                            | 1.38.0  |
+|---------------------------------|---------|
+| [AdaptySDK](adapty/)            | 1.17.7  |
+| [AppCenter](appcenter/)         | 5.0.4   |
+| [AppLovinSDK](applovinsdk/)     | 12.3.0  |
+| [Azure](azure/)                 | 3.1.4   |
+| [BranchMetrics](branchmetrics/) | 3.3.0   |
+| [Charts](charts/)               | 5.1.0   |
+| [ClearAds](clearads/)           | 3.5.6   |
+| [Facebook](facebook/)           | 16.3.1  |
+| [Firebase](firebase/)           | 10.22.0 |
+| [Fyber](fyber/)                 | 8.2.2   |
+| [HelpShiftX](helpshift/)        | 10.3.0  |
+| [InMobi](inmobi/)               | 10.6.4  |
+| [IronSource](ironsource/)       | 7.8.0   |
+| [Lottie](lottie/)               | 4.4.1   |
+| [OneSignal](onesignal/)         | 5.1.3   |
+| [Pollfish](pollfish/)           | 6.5.0   |
+| [SAMKeychain](samkeychain/)     | 1.5.3   |
+| [Singular](singular/)           | 12.3.2  |
+| [Tenjin](tenjin/)               | 1.14.0  |
+| [UnityAds](unityads/)           | 4.9.3   |
+| [YouTubePlayer](youtube/)       | 1.0.4   |
+
+v1.37.0
+| Name                            | 1.37.0  |
+|---------------------------------|---------|
+| [AdaptySDK](adapty/)            | 1.17.7  |
+| [AppCenter](appcenter/)         | 5.0.4   |
+| [AppLovinSDK](applovinsdk/)     | 12.1.0  |
+| [Azure](azure/)                 | 3.1.4   |
+| [BranchMetrics](branchmetrics/) | 3.0.1   |
+| [Charts](charts/)               | 5.0.0   |
+| [ClearAds](clearads/)           | 3.5.2   |
+| [Facebook](facebook/)           | 16.3.1  |
+| [Firebase](firebase/)           | 10.21.0 |
+| [Fyber](fyber/)                 | 8.2.2   |
+| [HelpShiftX](helpshift/)        | 10.3.0  |
+| [InMobi](inmobi/)               | 10.6.0  |
+| [IronSource](ironsource/)       | 7.6.0   |
+| [Lottie](lottie/)               | 4.4.0   |
+| [OneSignal](onesignal/)         | 5.1.0   |
+| [Pollfish](pollfish/)           | 6.5.0   |
+| [SAMKeychain](samkeychain/)     | 1.5.3   |
+| [Singular](singular/)           | 12.2.0  |
+| [Tenjin](tenjin/)               | 1.13.0  |
+| [UnityAds](unityads/)           | 4.9.2   |
+| [YouTubePlayer](youtube/)       | 1.0.4   |
+
+v1.36.0
+| Name                            | 1.36.0  |
+|---------------------------------|---------|
+| [AdaptySDK](adapty/)            | 1.17.7  |
+| [AppCenter](appcenter/)         | 5.0.4   |
+| [AppLovinSDK](applovinsdk/)     | 12.1.0  |
+| [Azure](azure/)                 | 3.1.4   |
+| [BranchMetrics](branchmetrics/) | 3.0.1   |
+| [Charts](charts/)               | 5.0.0   |
+| [ClearAds](clearads/)           | 3.5.0   |
+| [Facebook](facebook/)           | 16.3.1  |
+| [Firebase](firebase/)           | 10.19.0 |
+| [Fyber](fyber/)                 | 8.2.2   |
+| [HelpShiftX](helpshift/)        | 10.3.0  |
+| [InMobi](inmobi/)               | 10.6.0  |
+| [IronSource](ironsource/)       | 7.6.0   |
+| [Lottie](lottie/)               | 4.3.3   |
+| [OneSignal](onesignal/)         | 5.0.5   |
+| [Pollfish](pollfish/)           | 6.5.0   |
+| [SAMKeychain](samkeychain/)     | 1.5.3   |
+| [Singular](singular/)           | 12.2.0  |
+| [Tenjin](tenjin/)               | 1.12.30 |
+| [UnityAds](unityads/)           | 4.9.2   |
+| [YouTubePlayer](youtube/)       | 1.0.4   |
+
+v1.35
+| Name                            | 1.35.0  |
+|---------------------------------|---------|
+| [AdaptySDK](adapty/)            | 1.17.7  |
+| [AppCenter](appcenter/)         | 5.0.4   |
+| [AppLovinSDK](applovinsdk/)     | 12.0.0  |
+| [Azure](azure/)                 | 3.1.4   |
+| [BranchMetrics](branchmetrics/) | 3.0.0   |
+| [Charts](charts/)               | 5.0.0   |
+| [ClearAds](clearads/)           | 3.4.2   |
+| [Facebook](facebook/)           | 16.2.1  |
+| [Firebase](firebase/)           | 10.18.0 |
+| [Fyber](fyber/)                 | 8.2.2   |
+| [HelpShiftX](helpshift/)        | 10.3.0  |
+| [InMobi](inmobi/)               | 10.6.0  |
+| [IronSource](ironsource/)       | 7.5.1   |
+| [Lottie](lottie/)               | 4.3.3   |
+| [OneSignal](onesignal/)         | 5.0.4   |
+| [Pollfish](pollfish/)           | 6.5.0   |
+| [SAMKeychain](samkeychain/)     | 1.5.3   |
+| [Singular](singular/)           | 12.2.0  |
+| [Tenjin](tenjin/)               | 1.12.28 |
+| [UnityAds](unityads/)           | 4.9.2   |
+| [YouTubePlayer](youtube/)       | 1.0.4   |
+
+v1.34.0
+| Name                            | 1.34.0  |
+|---------------------------------|---------|
+| [AdaptySDK](adapty/)            | 1.17.7  |
+| [AppCenter](appcenter/)         | 5.0.4   |
+| [AppLovinSDK](applovinsdk/)     | 11.11.3 |
+| [Azure](azure/)                 | 3.1.4   |
+| [BranchMetrics](branchmetrics/) | 2.2.2   |
+| [Charts](charts/)               | 5.0.0   |
+| [ClearAds](clearads/)           | 3.3.1   |
+| [Facebook](facebook/)           | 16.2.0  |
+| [Firebase](firebase/)           | 10.16.0 |
+| [Fyber](fyber/)                 | 8.2.2   |
+| [HelpShiftX](helpshift/)        | 10.2.3  |
+| [InMobi](inmobi/)               | 10.5.8  |
+| [IronSource](ironsource/)       | 7.5.0   |
+| [Lottie](lottie/)               | 4.3.3   |
+| [OneSignal](onesignal/)         | 5.0.2   |
+| [Pollfish](pollfish/)           | 6.4.1   |
+| [SAMKeychain](samkeychain/)     | 1.5.3   |
+| [Singular](singular/)           | 12.1.1  |
+| [Tenjin](tenjin/)               | 1.12.28 |
+| [UnityAds](unityads/)           | 4.9.0   |
+| [YouTubePlayer](youtube/)       | 1.0.4   |
+
+v1.33
+| Name                            | 1.33.0  |
+|---------------------------------|---------|
+| [AdaptySDK](adapty/)            | 1.17.7  |
+| [AppCenter](appcenter/)         | 5.0.4   |
+| [AppLovinSDK](applovinsdk/)     | 11.11.3 |
+| [Azure](azure/)                 | 3.1.4   |
+| [BranchMetrics](branchmetrics/) | 2.2.1   |
+| [Charts](charts/)               | 5.0.0   |
+| [ClearAds](clearads/)           | 3.2.5   |
+| [Facebook](facebook/)           | 16.1.3  |
+| [Firebase](firebase/)           | 10.15.0 |
+| [Fyber](fyber/)                 | 8.2.2   |
+| [HelpShiftX](helpshift/)        | 10.2.3  |
+| [InMobi](inmobi/)               | 10.5.8  |
+| [IronSource](ironsource/)       | 7.5.0   |
+| [Lottie](lottie/)               | 4.3.1   |
+| [OneSignal](onesignal/)         | 5.0.2   |
+| [Pollfish](pollfish/)           | 6.4.1   |
+| [SAMKeychain](samkeychain/)     | 1.5.3   |
+| [Singular](singular/)           | 12.1.1  |
+| [Tenjin](tenjin/)               | 1.12.27 |
+| [UnityAds](unityads/)           | 4.8.0   |
+| [YouTubePlayer](youtube/)       | 1.0.4   |
+
+v1.32.0
+| Name                            | 1.32.0  |
+|---------------------------------|---------|
+| [AdaptySDK](adapty/)            | 1.17.7  |
+| [AppCenter](appcenter/)         | 5.0.2   |
+| [AppLovinSDK](applovinsdk/)     | 11.10.1 |
+| [Azure](azure/)                 | 3.1.4   |
+| [BranchMetrics](branchmetrics/) | 2.1.2   |
+| [Charts](charts/)               | 5.0.0   |
+| [ClearAds](clearads/)           | 3.1.8   |
+| [Facebook](facebook/)           | 16.1.1  |
+| [Firebase](firebase/)           | 10.11.0 |
+| [Fyber](fyber/)                 | 8.2.2   |
+| [HelpShiftX](helpshift/)        | 10.2.2  |
+| [InMobi](inmobi/)               | 10.1.4  |
+| [IronSource](ironsource/)       | 7.3.1   |
+| [Kochava](kochava/)             | 5.1.1   |
+| [Lottie](lottie/)               | 4.2.0   |
+| [OneSignal](onesignal/)         | 3.12.4  |
+| [Pollfish](pollfish/)           | 6.4.1   |
+| [SAMKeychain](samkeychain/)     | 1.5.3   |
+| [Singular](singular/)           | 12.0.6  |
+| [Tenjin](tenjin/)               | 1.12.25 |
+| [UnityAds](unityads/)           | 4.7.1   |
+| [YouTubePlayer](youtube/)       | 1.0.4   |
+
 v1.31.0
 | Name                            | 1.31.0  |
 |---------------------------------|---------|

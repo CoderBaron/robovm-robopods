@@ -37,7 +37,7 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("InMobiSDK.IMSdk")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/IMSdk/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
@@ -46,7 +46,7 @@ import org.robovm.apple.coreanimation.*;
     /*<bind>*/static { ObjCRuntime.bind(IMSdk.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public IMSdk() {}
+    protected IMSdk() {}
     protected IMSdk(Handle h, long handle) { super(h, handle); }
     protected IMSdk(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
@@ -57,36 +57,42 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "initWithAccountID:andCompletionHandler:")
     public static native void init(String accountID, @Block VoidBlock1<NSError> completionBlock);
+    @Method(selector = "initWithAccountID:consentDictionary:andCompletionHandler:")
+    public static native void init(String accountID, NSDictionary<NSString, ?> consentDictionary, @Block VoidBlock1<NSError> completionBlock);
+    /**
+     * @deprecated Please use new API initWithAccountID:consentDictionary:andCompletionHandler: as this API can be removed in future
+     */
+    @Deprecated
+    @Method(selector = "initWithAccountID:consentDictionary:")
+    public static native void init(String accountID, NSDictionary<NSString, ?> consentDictionary);
     /**
      * @deprecated Please use new API initWithAccountID:andCompletionHandler: as this API can be removed in future
      */
     @Deprecated
     @Method(selector = "initWithAccountID:")
     public static native void init(String accountID);
-    @Method(selector = "initWithAccountID:consentDictionary:andCompletionHandler:")
-    public static native void init(String accountID, NSDictionary<?, ?> consentDictionary, @Block VoidBlock1<NSError> completionBlock);
-    /**
-     * @deprecated Please use new API initWithAccountID:consentDictionary:andCompletionHandler: as this API can be removed in future
-     */
-    @Deprecated
-    @Method(selector = "initWithAccountID:consentDictionary:")
-    public static native void init(String accountID, NSDictionary<?, ?> consentDictionary);
     @Method(selector = "updateGDPRConsent:")
-    public static native void updateGDPRConsent(NSDictionary<?, ?> consentDictionary);
+    public static native void updateGDPRConsent(NSDictionary<NSString, ?> consentDictionary);
     @Method(selector = "setPartnerGDPRConsent:")
-    public static native void setPartnerGDPRConsent(NSDictionary<?, ?> consentDictionary);
+    public static native void setPartnerGDPRConsent(NSDictionary<NSString, ?> consentDictionary);
+    @Method(selector = "setIsAgeRestricted:")
+    public static native void setIsAgeRestricted(boolean isRestricted);
     @Method(selector = "getVersion")
     public static native String getVersion();
     @Method(selector = "setLogLevel:")
     public static native void setLogLevel(IMSDKLogLevel desiredLogLevel);
-    @Method(selector = "setMute:")
-    public static native void setMute(boolean shouldMute);
     @Method(selector = "getToken")
     public static native String getToken();
     @Method(selector = "getTokenWithExtras:andKeywords:")
-    public static native String getToken(NSDictionary<?, ?> extras, String keywords);
+    public static native String getToken(NSDictionary<NSString, ?> extras, String keywords);
+    @Method(selector = "shouldAutoManageAVAudioSession:")
+    public static native void shouldAutoManageAVAudioSession(boolean value);
+    @Method(selector = "setMute:")
+    public static native void setMute(boolean shouldMute);
+    @Method(selector = "setPublisherProvidedUnifiedId:")
+    public static native void setPublisherProvidedUnifiedId(NSDictionary<NSString, ?> ids);
     @Method(selector = "setAge:")
-    public static native void setAge(short age);
+    public static native void setAge(@MachineSizedSInt long age);
     @Method(selector = "setAreaCode:")
     public static native void setAreaCode(String areaCode);
     @Method(selector = "setAgeGroup:")
@@ -107,11 +113,5 @@ import org.robovm.apple.coreanimation.*;
     public static native void setLocation(CLLocation location);
     @Method(selector = "setPostalCode:")
     public static native void setPostalCode(String postalcode);
-    @Method(selector = "shouldAutoManageAVAudioSession:")
-    public static native void shouldAutoManageAVAudioSession(boolean value);
-    @Method(selector = "setPublisherProvidedUnifiedId:")
-    public static native void setPublisherProvidedUnifiedId(NSDictionary<?, ?> ids);
-    @Method(selector = "setIsAgeRestricted:")
-    public static native void setIsAgeRestricted(boolean isRestricted);
     /*</methods>*/
 }

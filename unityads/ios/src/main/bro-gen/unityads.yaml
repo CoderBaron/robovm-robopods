@@ -134,6 +134,11 @@ classes:
                 constructor: true
     UADSInstallationId: { }
     UADSSessionId: { }
+    UADSBannerLoadOptions:
+        methods:
+            '+newBannerLoadOptionsWith:size:':
+                name: create
+                constructor: true
 protocols:
     UADSBannerAdRefreshViewDelegate:
         methods:

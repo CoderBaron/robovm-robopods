@@ -62,34 +62,8 @@ import org.robovm.apple.webkit.*;
     public native NSData getWatermark();
     @Property(selector = "extras")
     public native GADAdNetworkExtras getExtras();
-    @Property(selector = "childDirectedTreatment")
-    public native NSNumber getChildDirectedTreatment();
     @Property(selector = "isTestRequest")
     public native boolean isTestRequest();
-    /**
-     * @deprecated Deprecated and unsupported. Always returns NO.
-     */
-    @Deprecated
-    @Property(selector = "hasUserLocation")
-    public native boolean hasUserLocation();
-    /**
-     * @deprecated Deprecated and unsupported. Always returns 0.
-     */
-    @Deprecated
-    @Property(selector = "userLatitude")
-    public native @MachineSizedFloat double getUserLatitude();
-    /**
-     * @deprecated Deprecated and unsupported. Always returns 0.
-     */
-    @Deprecated
-    @Property(selector = "userLongitude")
-    public native @MachineSizedFloat double getUserLongitude();
-    /**
-     * @deprecated Deprecated and unsupported. Always returns 0.
-     */
-    @Deprecated
-    @Property(selector = "userLocationAccuracyInMeters")
-    public native @MachineSizedFloat double getUserLocationAccuracyInMeters();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

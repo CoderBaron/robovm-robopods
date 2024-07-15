@@ -1,11 +1,14 @@
 <config>
     <frameworks>
+        <framework>FirebaseAppCheckInterop</framework>
+        <framework>FirebaseCoreExtension</framework>
         <framework>FirebaseFirestore</framework>
-        <framework>abseil</framework>
-        <framework>BoringSSL-GRPC</framework>
-        <framework>gRPC-C++</framework>
-        <framework>gRPC-Core</framework>
-        <framework>leveldb-library</framework>
-        <framework>nanopb</framework>
+        <framework>FirebaseFirestoreInternal</framework>
+        <framework>FirebaseSharedSwift</framework>
+        <framework>absl</framework>
+        <framework>grpc</framework>
+        <framework>grpcpp</framework>
+        <framework>leveldb</framework>
+        <framework>openssl_grpc</framework>
     </frameworks>
 </config>

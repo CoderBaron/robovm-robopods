@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AppLovinSDK/MAAdDelegate.h>
+#import <AppLovinSDK/MAAdExpirationDelegate.h>
 #import <AppLovinSDK/MAAdRequestDelegate.h>
 #import <AppLovinSDK/MAAdReviewDelegate.h>
 #import <AppLovinSDK/MAAdRevenueDelegate.h>
@@ -20,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * This class represents a full-screen rewarded ad.
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/rewarded-ads">MAX Integration Guide ⇒ iOS ⇒ Rewarded Ads</a>
+ * @see <a href="https://developers.applovin.com/en/ios/ad-formats/rewarded-ads">MAX Integration Guide ⇒ iOS ⇒ Ad Formats ⇒ Rewarded Ads</a>
  */
 @interface MARewardedAd : NSObject
 
@@ -62,6 +63,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak, nullable) id<MAAdRequestDelegate> requestDelegate;
 
 /**
+ * A delegate that will be notified about ad expiration events.
+ */
+@property (nonatomic, weak, nullable) id<MAAdExpirationDelegate> expirationDelegate;
+
+/**
  * A delegate that will be notified about Ad Review events.
  */
 @property (nonatomic, weak, nullable) id<MAAdReviewDelegate> adReviewDelegate;
@@ -69,7 +75,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Load the current rewarded ad. Use @code -[MARewardedAd delegate] @endcode to assign a delegate that should be notified about ad load state.
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/rewarded-ads#loading-a-rewarded-ad">MAX Integration Guide ⇒ iOS ⇒ Rewarded Ads ⇒ Loading a Rewarded Ad</a>
+ * @see <a href="https://developers.applovin.com/en/ios/ad-formats/rewarded-ads#loading-a-rewarded-ad">MAX Integration Guide ⇒ iOS ⇒ Ad Formats ⇒ Rewarded Ads ⇒ Loading a Rewarded Ad</a>
  */
 - (void)loadAd;
 
@@ -80,7 +86,7 @@ NS_ASSUME_NONNULL_BEGIN
  * <li>Use @code -[MARewardedAd ready] @endcode to check if an ad was successfully loaded.</li>
  * </ul>
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/rewarded-ads#showing-a-rewarded-ad">MAX Integration Guide ⇒ iOS ⇒ Rewarded Ads ⇒ Showing a Rewarded Ad</a>
+ * @see <a href="https://developers.applovin.com/en/ios/ad-formats/rewarded-ads#showing-a-rewarded-ad">MAX Integration Guide ⇒ iOS ⇒ Ad Formats ⇒ Rewarded Ads ⇒ Showing a Rewarded Ad</a>
  */
 - (void)showAd;
 
@@ -91,7 +97,7 @@ NS_ASSUME_NONNULL_BEGIN
  * <li>Use @code -[MARewardedAd ready] @endcode to check if an ad was successfully loaded.</li>
  * </ul>
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/rewarded-ads#showing-a-rewarded-ad">MAX Integration Guide ⇒ iOS ⇒ Rewarded Ads ⇒ Showing a Rewarded Ad</a>
+ * @see <a href="https://developers.applovin.com/en/ios/ad-formats/rewarded-ads#showing-a-rewarded-ad">MAX Integration Guide ⇒ iOS ⇒ Ad Formats ⇒ Rewarded Ads ⇒ Showing a Rewarded Ad</a>
  *
  * @param placement The placement to tie the showing ad’s events to.
  */
@@ -104,7 +110,7 @@ NS_ASSUME_NONNULL_BEGIN
  * <li>Use @code -[MARewardedAd ready] @endcode to check if an ad was successfully loaded.</li>
  * </ul>
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/rewarded-ads#showing-a-rewarded-ad">MAX Integration Guide ⇒ iOS ⇒ Rewarded Ads ⇒ Showing a Rewarded Ad</a>
+ * @see <a href="https://developers.applovin.com/en/ios/ad-formats/rewarded-ads#showing-a-rewarded-ad">MAX Integration Guide ⇒ iOS ⇒ Ad Formats ⇒ Rewarded Ads ⇒ Showing a Rewarded Ad</a>
  *
  * @param placement The placement to tie the showing ad’s events to.
  * @param customData The custom data to tie the showing ad’s events to. Maximum size is 8KB.
@@ -118,7 +124,7 @@ NS_ASSUME_NONNULL_BEGIN
  * <li>Use @code -[MARewardedAd ready] @endcode to check if an ad was successfully loaded.</li>
  * </ul>
  *
- * @see <a href="https://dash.applovin.com/documentation/mediation/ios/getting-started/rewarded-ads#showing-a-rewarded-ad">MAX Integration Guide ⇒ iOS ⇒ Rewarded Ads ⇒ Showing a Rewarded Ad</a>
+ * @see <a href="https://developers.applovin.com/en/ios/ad-formats/rewarded-ads#showing-a-rewarded-ad">MAX Integration Guide ⇒ iOS ⇒ Ad Formats ⇒ Rewarded Ads ⇒ Showing a Rewarded Ad</a>
  *
  * @param placement The placement to tie the showing ad’s events to.
  * @param customData The custom data to tie the showing ad’s events to. Maximum size is 8KB.

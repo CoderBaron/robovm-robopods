@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.safariservices.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -50,6 +51,8 @@ import org.robovm.apple.coreanimation.*;
     protected ALSdkConfiguration(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "consentFlowUserGeography")
+    public native ALConsentFlowUserGeography getConsentFlowUserGeography();
     @Property(selector = "countryCode")
     public native String getCountryCode();
     @Property(selector = "enabledAmazonAdUnitIdentifiers")

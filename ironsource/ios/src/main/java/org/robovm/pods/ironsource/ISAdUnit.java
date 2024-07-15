@@ -65,9 +65,9 @@ import org.robovm.apple.coreanimation.*;
     public static native ISAdUnit IS_AD_UNIT_REWARDED_VIDEO();
     @Method(selector = "IS_AD_UNIT_INTERSTITIAL")
     public static native ISAdUnit IS_AD_UNIT_INTERSTITIAL();
-    @Method(selector = "IS_AD_UNIT_OFFERWALL")
-    public static native ISAdUnit IS_AD_UNIT_OFFERWALL();
     @Method(selector = "IS_AD_UNIT_BANNER")
     public static native ISAdUnit IS_AD_UNIT_BANNER();
+    @Method(selector = "IS_AD_UNIT_NATIVE_AD")
+    public static native ISAdUnit IS_AD_UNIT_NATIVE_AD();
     /*</methods>*/
 }

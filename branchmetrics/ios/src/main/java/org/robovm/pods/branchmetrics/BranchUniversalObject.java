@@ -208,10 +208,6 @@ import org.robovm.apple.storekit.*;
     public native void registerView();
     @Method(selector = "registerViewWithCallback:")
     public native void registerView(@Block VoidBlock2<NSDictionary<?, ?>, NSError> callback);
-    @Method(selector = "userCompletedAction:")
-    public native void userCompletedAction(String action);
-    @Method(selector = "userCompletedAction:withState:")
-    public native void userCompletedAction(String action, NSDictionary<?, ?> state);
     @Method(selector = "getShortUrlWithLinkProperties:")
     public native String getShortUrl(BranchLinkProperties linkProperties);
     @Method(selector = "getShortUrlWithLinkPropertiesAndIgnoreFirstClick:")
@@ -221,13 +217,9 @@ import org.robovm.apple.storekit.*;
     @Method(selector = "getLongUrlWithChannel:andTags:andFeature:andStage:andAlias:")
     public native String getLongUrl(String channel, NSArray<?> tags, String feature, String stage, String alias);
     @Method(selector = "showShareSheetWithShareText:completion:")
-    public native void showShareSheet(String shareText, @Block VoidBlock2<NSString, Boolean> completion);
-    @Method(selector = "showShareSheetWithLinkProperties:andShareText:fromViewController:completion:")
-    public native void showShareSheet(BranchLinkProperties linkProperties, String shareText, UIViewController viewController, @Block VoidBlock2<NSString, Boolean> completion);
+    public native void showShareSheet(String shareText, @Block VoidBlock3<NSString, Boolean, NSError> completion);
     @Method(selector = "showShareSheetWithLinkProperties:andShareText:fromViewController:completionWithError:")
     public native void showShareSheet(BranchLinkProperties linkProperties, String shareText, UIViewController viewController, @Block VoidBlock3<NSString, Boolean, NSError> completion);
-    @Method(selector = "showShareSheetWithLinkProperties:andShareText:fromViewController:anchor:completion:")
-    public native void showShareSheet(BranchLinkProperties linkProperties, String shareText, UIViewController viewController, UIBarButtonItem anchor, @Block VoidBlock2<NSString, Boolean> completion);
     @Method(selector = "showShareSheetWithLinkProperties:andShareText:fromViewController:anchor:completionWithError:")
     public native void showShareSheet(BranchLinkProperties linkProperties, String shareText, UIViewController viewController, UIBarButtonItem anchor, @Block VoidBlock3<NSString, Boolean, NSError> completion);
     @Method(selector = "listOnSpotlight")

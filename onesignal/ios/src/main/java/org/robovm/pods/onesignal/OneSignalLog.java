@@ -38,7 +38,7 @@ import org.robovm.apple.uikit.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/OneSignalLog/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*//*</implements>*/ {
+    /*<implements>*/implements OSDebug/*</implements>*/ {
 
     /*<ptr>*/public static class OneSignalLogPtr extends Ptr<OneSignalLog, OneSignalLogPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(OneSignalLog.class); }/*</bind>*/
@@ -53,9 +53,15 @@ import org.robovm.apple.uikit.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "setLogLevel:")
-    public static native void setLogLevel(OSLogLevel logLevel);
+    @Method(selector = "Debug")
+    public static native Class<?> Debug();
     @Method(selector = "onesignalLog:message:")
     public static native void log(OSLogLevel logLevel, String message);
+    @Method(selector = "getLogLevel")
+    public static native OSLogLevel getLogLevel();
+    @Method(selector = "setLogLevel:")
+    public static native void setLogLevel(OSLogLevel logLevel);
+    @Method(selector = "setAlertLevel:")
+    public static native void setAlertLevel(OSLogLevel logLevel);
     /*</methods>*/
 }

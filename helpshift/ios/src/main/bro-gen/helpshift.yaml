@@ -26,6 +26,16 @@ classes:
                 name: showSingleFAQ
             '+handleNotificationWithUserInfoDictionary:isAppLaunch:withController:':
                 name: handleNotification
+            '+showConversationWithConfig:':
+                name: showConversation
+            '+showFAQsWithConfig:':
+                name: showFAQs
+            '+showFAQSection:withConfig:':
+                name: showFAQSection
+            '+showSingleFAQ:withConfig:':
+                name: showSingleFAQ
+            '+handleNotificationWithUserInfoDictionary:isAppLaunch:':
+                name: handleNotification
 protocols:
     HelpshiftDelegate:
         methods:
@@ -46,6 +56,31 @@ values:
         name: getVersionString
         type: String
         marshaler: StringMarshalers.AsAsciiZMarshaler
+    HelpshiftEventName(CSATSubmit):
+        class: HelpshiftDelegate
+        static_class: EventNames
+        type: NSString
+        name: '#{g[0]}'
+    HelpshiftEventName(.*):
+        class: HelpshiftDelegate
+        static_class: EventNames
+        type: NSString
+        name: '#{g[0].downcase_first}'
+    HelpshiftEventData(URL):
+        class: HelpshiftDelegate
+        static_class: EventDataKeys
+        type: NSString
+        name: '#{g[0]}'
+    HelpshiftEventData(.*):
+        class: HelpshiftDelegate
+        static_class: EventDataKeys
+        type: NSString
+        name: '#{g[0].downcase_first}'
+    HelpshiftUser(.*):
+        class: Helpshift
+        static_class: UserDetailKeys
+        type: NSString
+        name: 'user#{g[0]}'
 
     HelpshiftXVersionNumber:
         exclude: true
@@ -56,19 +91,6 @@ values:
         name: 'Value_#{g[0]}'
 
 constants:
-    Helpshift(UserName|UserIdentifier|UserEmail|UserAuthToken):
-        class: Helpshift
-        static_class: UserDetailKeys
-        name: '#{g[0].downcase_first}'
-    HelpshiftEventName(.*):
-        class: HelpshiftDelegate
-        static_class: EventNames
-        name: '#{g[0].downcase_first}'
-    HelpshiftEventData(.*):
-        class: HelpshiftDelegate
-        static_class: EventDataKeys
-        name: '#{g[0].downcase_first}'
-
 
     # Make sure we don't miss any constants if new ones are introduced in a later version
     (.*):

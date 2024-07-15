@@ -4,24 +4,16 @@
     </libs>
     <frameworks>
         <framework>FBAudienceNetwork</framework>
-        <framework>AVFoundation</framework>
+
         <framework>AdSupport</framework>
-        <framework>AudioToolbox</framework>
-        <framework>CFNetwork</framework>
-        <framework>CoreGraphics</framework>
-        <framework>CoreMedia</framework>
-        <framework>CoreMotion</framework>
-        <framework>CoreVideo</framework>
-        <framework>CoreVideo</framework>
-        <framework>LocalAuthentication</framework>
-        <framework>OpenGLES</framework>
-        <framework>Photos</framework>
-        <framework>QuartzCore</framework>
-        <framework>SafariServices</framework>
-        <framework>Security</framework>
         <framework>StoreKit</framework>
-        <framework>SystemConfiguration</framework>
-        <framework>VideoToolbox</framework>
         <framework>WebKit</framework>
     </frameworks>
+    <weakFrameworks>
+        <framework>apptrackingtransparency</framework>
+    </weakFrameworks>
+    <exportedSymbols>
+        <!-- required when static version of framework is used to keep symbols from being dropped by linker as unused -->
+        <symbol>FB**</symbol>
+    </exportedSymbols>
 </config>

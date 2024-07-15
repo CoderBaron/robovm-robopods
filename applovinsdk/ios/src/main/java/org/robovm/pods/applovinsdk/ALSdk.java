@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.safariservices.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -60,8 +61,16 @@ import org.robovm.apple.coreanimation.*;
     public native ALSdkSettings getSettings();
     @Property(selector = "configuration")
     public native ALSdkConfiguration getConfiguration();
+    /**
+     * @deprecated This property has been moved to @c ALSdkSettings and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Property(selector = "userIdentifier")
     public native String getUserIdentifier();
+    /**
+     * @deprecated This property has been moved to @c ALSdkSettings and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Property(selector = "setUserIdentifier:")
     public native void setUserIdentifier(String v);
     @Property(selector = "userSegment")
@@ -72,12 +81,18 @@ import org.robovm.apple.coreanimation.*;
     public native ALAdService getAdService();
     @Property(selector = "eventService")
     public native ALEventService getEventService();
-    @Property(selector = "cfService")
-    public native ALCFService getCfService();
-    @Property(selector = "variableService")
-    public native ALVariableService getVariableService();
+    @Property(selector = "cmpService")
+    public native ALCMPService getCmpService();
+    /**
+     * @deprecated This setter has been moved to @c ALSdkInitializationConfiguration and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Property(selector = "mediationProvider")
     public native String getMediationProvider();
+    /**
+     * @deprecated This setter has been moved to @c ALSdkInitializationConfiguration and will be removed in a future SDK version.
+     */
+    @Deprecated
     @Property(selector = "setMediationProvider:")
     public native void setMediationProvider(String v);
     @Property(selector = "availableMediatedNetworks")
@@ -87,28 +102,62 @@ import org.robovm.apple.coreanimation.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "setPluginVersion:")
-    public native void setPluginVersion(String pluginVersion);
     @Method(selector = "showMediationDebugger")
     public native void showMediationDebugger();
     @Method(selector = "showMediationDebuggerWithAmazonAdSize:")
     public native void showMediationDebugger(NSDictionary<NSString, NSArray> amazonAdSizes);
     @Method(selector = "showCreativeDebugger")
     public native void showCreativeDebugger();
-    @Method(selector = "initializeSdk")
-    public native void initializeSdk();
-    @Method(selector = "initializeSdkWithCompletionHandler:")
-    public native void initializeSdk(@Block VoidBlock1<ALSdkConfiguration> completionHandler);
-    @Method(selector = "initializeSdk")
-    public static native void InitializeSdk();
-    @Method(selector = "initializeSdkWithCompletionHandler:")
-    public static native void InitializeSdk(@Block VoidBlock1<ALSdkConfiguration> completionHandler);
+    @Method(selector = "initializeWithConfiguration:completionHandler:")
+    public native void initialize(ALSdkInitializationConfiguration initializationConfiguration, @Block VoidBlock1<ALSdkConfiguration> completionHandler);
     @Method(selector = "shared")
     public static native ALSdk shared();
+    /**
+     * @deprecated This method is deprecated and will be removed in a future SDK version. (see ALSdkInitializationConfiguration.pluginVersion)
+     */
+    @Deprecated
+    @Method(selector = "setPluginVersion:")
+    public native void setPluginVersion(String pluginVersion);
+    /**
+     * @deprecated This method is deprecated and will be removed in a future SDK version. Please use `-[[ALSdk shared] initializeWithConfiguration:completionHandler:]` instead.
+     */
+    @Deprecated
+    @Method(selector = "initializeSdk")
+    public native void initializeSdk();
+    /**
+     * @deprecated This method is deprecated and will be removed in a future SDK version. Please use `-[[ALSdk shared] initializeWithConfiguration:completionHandler:]` instead.
+     */
+    @Deprecated
+    @Method(selector = "initializeSdkWithCompletionHandler:")
+    public native void initializeSdk(@Block VoidBlock1<ALSdkConfiguration> completionHandler);
+    /**
+     * @deprecated This method is deprecated and will be removed in a future SDK version. Please use `-[[ALSdk shared] initializeWithConfiguration:completionHandler:]` instead.
+     */
+    @Deprecated
+    @Method(selector = "initializeSdk")
+    public static native void InitializeSdk();
+    /**
+     * @deprecated This method is deprecated and will be removed in a future SDK version. Please use `-[[ALSdk shared] initializeWithConfiguration:completionHandler:]` instead.
+     */
+    @Deprecated
+    @Method(selector = "initializeSdkWithCompletionHandler:")
+    public static native void InitializeSdk(@Block VoidBlock1<ALSdkConfiguration> completionHandler);
+    /**
+     * @deprecated This method is deprecated and will be removed in a future SDK version. Please use `+[ALSdk shared]` and initialize with `-[[ALSdk shared] initializeWithConfiguration:completionHandler:]` as soon as possible
+     */
+    @Deprecated
     @Method(selector = "sharedWithSettings:")
     public static native ALSdk getShared(ALSdkSettings settings);
+    /**
+     * @deprecated This method is deprecated and will be removed in a future SDK version. Please use `+[ALSdk shared]` and initialize with `-[[ALSdk shared] initializeWithConfiguration:completionHandler:]` as soon as possible
+     */
+    @Deprecated
     @Method(selector = "sharedWithKey:")
     public static native ALSdk getShared(String key);
+    /**
+     * @deprecated This method is deprecated and will be removed in a future SDK version. Please use `+[ALSdk shared]` and initialize with `-[[ALSdk shared] initializeWithConfiguration:completionHandler:]` as soon as possible
+     */
+    @Deprecated
     @Method(selector = "sharedWithKey:settings:")
     public static native ALSdk getShared(String key, ALSdkSettings settings);
     /*</methods>*/

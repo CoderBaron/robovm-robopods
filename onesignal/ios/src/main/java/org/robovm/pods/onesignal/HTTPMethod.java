@@ -45,7 +45,8 @@ public enum /*<name>*/HTTPMethod/*</name>*/ implements ValuedEnum {
     DELETE(4L),
     OPTIONS(5L),
     CONNECT(6L),
-    TRACE(7L);
+    TRACE(7L),
+    PATCH(8L);
     /*</values>*/
 
     /*<bind>*/

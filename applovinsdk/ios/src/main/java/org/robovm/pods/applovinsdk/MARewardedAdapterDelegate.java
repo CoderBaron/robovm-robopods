@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.safariservices.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -71,14 +72,22 @@ import org.robovm.apple.coreanimation.*;
     void didHideRewardedAd();
     @Method(selector = "didHideRewardedAdWithExtraInfo:")
     void didHideRewardedAd(NSDictionary<NSString, ?> extraInfo);
-    @Method(selector = "didStartRewardedAdVideo")
-    void didStartRewardedAdVideo();
-    @Method(selector = "didCompleteRewardedAdVideo")
-    void didCompleteRewardedAdVideo();
     @Method(selector = "didRewardUserWithReward:")
     void didRewardUser(MAReward reward);
     @Method(selector = "didRewardUserWithReward:extraInfo:")
     void didRewardUser(MAReward reward, NSDictionary<NSString, ?> extraInfo);
+    /**
+     * @deprecated This API is deprecated because not all adapters support this callback. Please use -[MARewardedAdapterDelegate didDisplayRewardedAd:] instead
+     */
+    @Deprecated
+    @Method(selector = "didStartRewardedAdVideo")
+    void didStartRewardedAdVideo();
+    /**
+     * @deprecated This API is deprecated because not all adapters support this callback. Please use -[MARewardedAdapterDelegate didHideRewardedAd:] instead
+     */
+    @Deprecated
+    @Method(selector = "didCompleteRewardedAdVideo")
+    void didCompleteRewardedAdVideo();
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

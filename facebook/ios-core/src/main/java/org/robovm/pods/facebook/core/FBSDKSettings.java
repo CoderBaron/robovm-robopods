@@ -166,6 +166,10 @@ import org.robovm.pods.facebook.corebasics.*;
     public native String getGraphAPIDebugParamValue();
     @Property(selector = "graphAPIDebugParameterValue")
     public native String getGraphAPIDebugParameterValue();
+    @Property(selector = "isDomainErrorEnabled")
+    public native boolean isDomainErrorEnabled();
+    @Property(selector = "setIsDomainErrorEnabled:")
+    public native void setIsDomainErrorEnabled(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

@@ -74,6 +74,10 @@ import org.robovm.apple.uikit.*;
     public native NSData getAPNSToken();
     @Property(selector = "setAPNSToken:")
     public native void setAPNSToken(NSData v);
+    @Property(selector = "customAuthDomain")
+    public native String getCustomAuthDomain();
+    @Property(selector = "setCustomAuthDomain:")
+    public native void setCustomAuthDomain(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -87,6 +91,10 @@ import org.robovm.apple.uikit.*;
     
     @Method(selector = "updateCurrentUser:completion:")
     public native void updateCurrentUser(FIRUser user, @Block VoidBlock1<NSError> completion);
+    /**
+     * @deprecated This method is deprecated and will be removed in a future release. This method returns an empty list when Email Enumeration Protection is enabled.
+     */
+    @Deprecated
     @Method(selector = "fetchSignInMethodsForEmail:completion:")
     public native void fetchSignInMethods(String email, @Block VoidBlock2<NSArray<NSString>, NSError> completion);
     @Method(selector = "signInWithEmail:password:completion:")
@@ -147,6 +155,8 @@ import org.robovm.apple.uikit.*;
     public native boolean canHandleNotification(NSDictionary<?, ?> userInfo);
     @Method(selector = "revokeTokenWithAuthorizationCode:completion:")
     public native void revokeToken(String authorizationCode, @Block VoidBlock1<NSError> completion);
+    @Method(selector = "initializeRecaptchaConfigWithCompletion:")
+    public native void initializeRecaptchaConfig(@Block VoidBlock1<NSError> completion);
     @Method(selector = "useUserAccessGroup:error:")
     public native boolean useUserAccessGroup(String accessGroup, NSError.NSErrorPtr outError);
     @Method(selector = "getStoredUserForAccessGroup:error:")

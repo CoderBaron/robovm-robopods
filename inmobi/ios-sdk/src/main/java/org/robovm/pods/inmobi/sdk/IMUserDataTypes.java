@@ -37,7 +37,7 @@ import org.robovm.apple.coreanimation.*;
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
+/*<annotations>*/@Library(Library.INTERNAL) @NativeClass("InMobiSDK.IMUserDataTypes")/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/IMUserDataTypes/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
     /*<implements>*//*</implements>*/ {
@@ -46,7 +46,7 @@ import org.robovm.apple.coreanimation.*;
     /*<bind>*/static { ObjCRuntime.bind(IMUserDataTypes.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public IMUserDataTypes() {}
+    protected IMUserDataTypes() {}
     protected IMUserDataTypes(Handle h, long handle) { super(h, handle); }
     protected IMUserDataTypes(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithMd5:sha1:sha256:")
@@ -70,5 +70,7 @@ import org.robovm.apple.coreanimation.*;
     /*<methods>*/
     @Method(selector = "initWithMd5:sha1:sha256:")
     protected native @Pointer long init(String md5, String sha1, String sha256);
+    @Method(selector = "isEqual:")
+    public native boolean isEqual(NSObject other);
     /*</methods>*/
 }

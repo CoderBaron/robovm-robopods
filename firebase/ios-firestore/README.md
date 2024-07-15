@@ -1,19 +1,26 @@
 # Firebase iOS Cloud Firestore framework
 
 ### Frameworks required for this pod: 
-* FirebaseFirestore.framework(from Firebase.zip/FirebaseFirestore/FirebaseFirestore.xcframework)
-* abseil.framework (from Firebase.zip/FirebaseFirestore/abseil.xcframework)
-* BoringSSL-GRPC.framework (from Firebase.zip/FirebaseFirestore/BoringSSL-GRPC.xcframework)
-* gRPC-C++.framework (from Firebase.zip/FirebaseFirestore/gRPC-C++.xcframework)
-* gRPC-Core.framework (from Firebase.zipFirebaseFirestore/gRPC-Core.xcframework)
-* leveldb-library.framework (from Firebase.zip/FirebaseFirestore/leveldb-library.xcframework)
-* nanopb.framework (from Firebase.zip/FirebaseAnalytics/nanopb.xcframework)
-  
+* FirebaseAppCheckInterop.xcframework (from Firebase.zip/FirebaseFirestore/FirebaseAppCheckInterop.xcframework)
+* FirebaseCoreExtension.xcframework (from Firebase.zip/FirebaseFirestore/FirebaseCoreExtension.xcframework)
+* FirebaseFirestore.xcframework (from Firebase.zip/FirebaseFirestore/FirebaseFirestore.xcframework)
+* FirebaseFirestoreInternal.xcframework (from Firebase.zip/FirebaseFirestore/FirebaseFirestoreInternal.xcframework)
+* FirebaseSharedSwift.xcframework (from Firebase.zip/FirebaseFirestore/FirebaseSharedSwift.xcframework)
+* absl.xcframework (from Firebase.zip/FirebaseFirestore/absl.xcframework)
+* grpc.xcframework (from Firebase.zip/FirebaseFirestore/grpc.xcframework)
+* grpcpp.xcframework (from Firebase.zipFirebaseFirestore/grpcpp.xcframework)
+* leveldb.xcframework (from Firebase.zip/FirebaseFirestore/leveldb.xcframework)
+* openssl_grpc.xcframework (from Firebase.zip/FirebaseFirestore/openssl_grpc.xcframework)
+
 Plus ones required for ios-core module:
-* FirebaseCore.framework (from Firebase.zip/FirebaseAnalytics/FirebaseCore.xcframework)
-* FirebaseCoreInternal.framework (from Firebase.zip/FirebaseAnalytics/FirebaseCoreInternal.xcframework)
-* GoogleUtilities.framework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
-* FBLPromises.framework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)
+* FBLPromises.xcframework (from Firebase.zip/FirebaseAnalytics/FBLPromises.xcframework)
+* FirebaseCore.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseCore.xcframework)
+* FirebaseCoreInternal.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseCoreInternal.xcframework)
+* FirebaseInstallations.xcframework (from Firebase.zip/FirebaseAnalytics/FirebaseInstallations.xcframework)
+* GoogleAppMeasurement.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleAppMeasurement.xcframework)
+* GoogleAppMeasurementIdentitySupport.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleAppMeasurementIdentitySupport.xcframework)
+* GoogleUtilities.xcframework (from Firebase.zip/FirebaseAnalytics/GoogleUtilities.xcframework)
+* nanopb.xcframework (from Firebase.zip/FirebaseAnalytics/nanopb.xcframework)
 
 ### to use this pod configure your `robovm.xml`
 

@@ -56,6 +56,8 @@ import org.robovm.apple.webkit.*;
     public native GADFullScreenContentDelegate getFullScreenContentDelegate();
     @Property(selector = "setFullScreenContentDelegate:", strongRef = true)
     public native void setFullScreenContentDelegate(GADFullScreenContentDelegate v);
+    @Property(selector = "adUnitID")
+    public native String getAdUnitID();
     @Property(selector = "responseInfo")
     public native GADResponseInfo getResponseInfo();
     @Property(selector = "paidEventHandler")
@@ -71,7 +73,5 @@ import org.robovm.apple.webkit.*;
     public native void presentFromRootViewController(UIViewController rootViewController);
     @Method(selector = "loadWithAdUnitID:request:completionHandler:")
     public static native void load(String adUnitID, GADRequest request, @Block VoidBlock2<GADAppOpenAd, NSError> completionHandler);
-    @Method(selector = "loadWithAdUnitID:request:orientation:completionHandler:")
-    public static native void load(String adUnitID, GADRequest request, UIInterfaceOrientation orientation, @Block VoidBlock2<GADAppOpenAd, NSError> completionHandler);
     /*</methods>*/
 }

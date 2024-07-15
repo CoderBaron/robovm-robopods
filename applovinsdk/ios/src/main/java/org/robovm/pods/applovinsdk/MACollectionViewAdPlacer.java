@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.safariservices.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -51,7 +52,10 @@ import org.robovm.apple.coreanimation.*;
     public MACollectionViewAdPlacer(UICollectionView collectionView, MAAdPlacerSettings settings) { super((Handle) null, create(collectionView, settings)); retain(getHandle()); }
     /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "shouldCollapseEmptyAds")
+    public native boolean isCollapseEmptyAds();
+    @Property(selector = "setCollapseEmptyAds:")
+    public native void setCollapseEmptyAds(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

@@ -22,6 +22,12 @@ classes:
                 name: initiateOnDeviceConversionMeasurement
             '+sessionIDWithCompletion:':
                 name: sessionID
+            '+initiateOnDeviceConversionMeasurementWithPhoneNumber:':
+                name: initiateOnDeviceConversionMeasurementWithPhoneNumber
+            '+initiateOnDeviceConversionMeasurementWithHashedEmailAddress:':
+                name: initiateOnDeviceConversionMeasurementWithHashedEmailAddress
+            '+initiateOnDeviceConversionMeasurementWithHashedPhoneNumber:':
+                name: initiateOnDeviceConversionMeasurementWithHashedPhoneNumber
 protocols: {}
 
 functions:

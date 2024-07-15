@@ -53,20 +53,20 @@ import org.robovm.apple.avfoundation.*;
     protected FBAdImage(Handle h, long handle) { super(h, handle); }
     protected FBAdImage(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithURL:width:height:")
-    public FBAdImage(NSURL url, @MachineSizedSInt long width, @MachineSizedSInt long height) { super((SkipInit) null); initObject(init(url, width, height)); }
+    public FBAdImage(NSURL url, @MachineSizedFloat double width, @MachineSizedFloat double height) { super((SkipInit) null); initObject(init(url, width, height)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "url")
     public native NSURL getUrl();
     @Property(selector = "width")
-    public native @MachineSizedSInt long getWidth();
+    public native @MachineSizedFloat double getWidth();
     @Property(selector = "height")
-    public native @MachineSizedSInt long getHeight();
+    public native @MachineSizedFloat double getHeight();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "initWithURL:width:height:")
-    protected native @Pointer long init(NSURL url, @MachineSizedSInt long width, @MachineSizedSInt long height);
+    protected native @Pointer long init(NSURL url, @MachineSizedFloat double width, @MachineSizedFloat double height);
     @Method(selector = "loadImageAsyncWithBlock:")
     public native void loadImageAsync(@Block VoidBlock1<UIImage> block);
     /*</methods>*/

@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.safariservices.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -73,13 +74,21 @@ import org.robovm.apple.coreanimation.*;
     public void didHideRewardedInterstitialAd() {}
     @NotImplemented("didHideRewardedInterstitialAdWithExtraInfo:")
     public void didHideRewardedInterstitialAd(NSDictionary<NSString, ?> extraInfo) {}
-    @NotImplemented("didStartRewardedInterstitialAdVideo")
-    public void didStartRewardedInterstitialAdVideo() {}
-    @NotImplemented("didCompleteRewardedInterstitialAdVideo")
-    public void didCompleteRewardedInterstitialAdVideo() {}
     @NotImplemented("didRewardUserWithReward:")
     public void didRewardUser(MAReward reward) {}
     @NotImplemented("didRewardUserWithReward:extraInfo:")
     public void didRewardUser(MAReward reward, NSDictionary<NSString, ?> extraInfo) {}
+    /**
+     * @deprecated This API is deprecated because not all adapters support this callback. Please use -[MARewardedInterstitialAdapterDelegate didDisplayRewardedInterstitialAd:] instead
+     */
+    @Deprecated
+    @NotImplemented("didStartRewardedInterstitialAdVideo")
+    public void didStartRewardedInterstitialAdVideo() {}
+    /**
+     * @deprecated This API is deprecated because not all adapters support this callback. Please use -[MARewardedInterstitialAdapterDelegate didHideRewardedInterstitialAd:] instead
+     */
+    @Deprecated
+    @NotImplemented("didCompleteRewardedInterstitialAdVideo")
+    public void didCompleteRewardedInterstitialAdVideo() {}
     /*</methods>*/
 }

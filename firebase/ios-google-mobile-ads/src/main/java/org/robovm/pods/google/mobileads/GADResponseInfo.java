@@ -62,12 +62,6 @@ import org.robovm.apple.webkit.*;
     public native NSArray<GADAdNetworkResponseInfo> getAdNetworkInfoArray();
     @Property(selector = "dictionaryRepresentation")
     public native NSDictionary<NSString, ?> getDictionaryRepresentation();
-    /**
-     * @deprecated Deprecated. Use loadedAdNetworkResponseInfo.adNetworkClassName instead.
-     */
-    @Deprecated
-    @Property(selector = "adNetworkClassName")
-    public native String getAdNetworkClassName();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

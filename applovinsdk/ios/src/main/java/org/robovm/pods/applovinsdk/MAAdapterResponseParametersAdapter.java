@@ -31,6 +31,7 @@ import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.apple.coregraphics.*;
 import org.robovm.apple.coreanimation.*;
+import org.robovm.apple.safariservices.*;
 /*</imports>*/
 
 /*<javadoc>*/
@@ -51,6 +52,8 @@ import org.robovm.apple.coreanimation.*;
     public String getThirdPartyAdPlacementIdentifier() { return null; }
     @NotImplemented("bidResponse")
     public String getBidResponse() { return null; }
+    @NotImplemented("isBidding")
+    public boolean isBidding() { return false; }
     @NotImplemented("bidExpirationMillis")
     public long getBidExpirationMillis() { return 0; }
     /*</properties>*/

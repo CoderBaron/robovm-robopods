@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.github.dkimitsa.robovm</groupId>
-        <version>1.32.0-SNAPSHOT</version>
+        <version>1.42.0-SNAPSHOT</version>
         <artifactId>robopods-parent</artifactId>
     </parent>
 
@@ -27,5 +27,6 @@
         <module>ios-share</module>
         <module>ios-aem</module>
         <module>ios-audience</module>
+        <module>ios-gaming-services-kit</module>
     </modules>
 </project>

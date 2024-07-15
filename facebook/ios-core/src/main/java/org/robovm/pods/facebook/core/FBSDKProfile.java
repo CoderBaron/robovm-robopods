@@ -52,12 +52,12 @@ import org.robovm.pods.facebook.corebasics.*;
     protected FBSDKProfile() {}
     protected FBSDKProfile(Handle h, long handle) { super(h, handle); }
     protected FBSDKProfile(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:")
-    public FBSDKProfile(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate) { super((SkipInit) null); initObject(init(userID, firstName, middleName, lastName, name, linkURL, refreshDate)); }
-    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:hometown:location:gender:")
-    public FBSDKProfile(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email, NSArray<NSString> friendIDs, NSDate birthday, FBSDKUserAgeRange ageRange, FBSDKLocation hometown, FBSDKLocation location, String gender) { super((SkipInit) null); initObject(init(userID, firstName, middleName, lastName, name, linkURL, refreshDate, imageURL, email, friendIDs, birthday, ageRange, hometown, location, gender)); }
-    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:hometown:location:gender:isLimited:")
-    public FBSDKProfile(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email, NSArray<NSString> friendIDs, NSDate birthday, FBSDKUserAgeRange ageRange, FBSDKLocation hometown, FBSDKLocation location, String gender, boolean isLimited) { super((SkipInit) null); initObject(init(userID, firstName, middleName, lastName, name, linkURL, refreshDate, imageURL, email, friendIDs, birthday, ageRange, hometown, location, gender, isLimited)); }
+    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:permissions:")
+    public FBSDKProfile(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSSet<NSString> permissions) { super((SkipInit) null); initObject(init(userID, firstName, middleName, lastName, name, linkURL, refreshDate, permissions)); }
+    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:hometown:location:gender:permissions:")
+    public FBSDKProfile(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email, NSArray<NSString> friendIDs, NSDate birthday, FBSDKUserAgeRange ageRange, FBSDKLocation hometown, FBSDKLocation location, String gender, NSSet<NSString> permissions) { super((SkipInit) null); initObject(init(userID, firstName, middleName, lastName, name, linkURL, refreshDate, imageURL, email, friendIDs, birthday, ageRange, hometown, location, gender, permissions)); }
+    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:hometown:location:gender:isLimited:permissions:")
+    public FBSDKProfile(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email, NSArray<NSString> friendIDs, NSDate birthday, FBSDKUserAgeRange ageRange, FBSDKLocation hometown, FBSDKLocation location, String gender, boolean isLimited, NSSet<NSString> permissions) { super((SkipInit) null); initObject(init(userID, firstName, middleName, lastName, name, linkURL, refreshDate, imageURL, email, friendIDs, birthday, ageRange, hometown, location, gender, isLimited, permissions)); }
     @Method(selector = "initWithCoder:")
     public FBSDKProfile(NSCoder coder) { super((SkipInit) null); initObject(init(coder)); }
     /*</constructors>*/
@@ -92,6 +92,8 @@ import org.robovm.pods.facebook.corebasics.*;
     public native FBSDKLocation getLocation();
     @Property(selector = "gender")
     public native String getGender();
+    @Property(selector = "permissions")
+    public native NSSet<NSString> getPermissions();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -107,12 +109,12 @@ import org.robovm.pods.facebook.corebasics.*;
         public static native NSString ChangeNew();
     }
     
-    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:")
-    protected native @Pointer long init(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate);
-    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:hometown:location:gender:")
-    protected native @Pointer long init(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email, NSArray<NSString> friendIDs, NSDate birthday, FBSDKUserAgeRange ageRange, FBSDKLocation hometown, FBSDKLocation location, String gender);
-    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:hometown:location:gender:isLimited:")
-    protected native @Pointer long init(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email, NSArray<NSString> friendIDs, NSDate birthday, FBSDKUserAgeRange ageRange, FBSDKLocation hometown, FBSDKLocation location, String gender, boolean isLimited);
+    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:permissions:")
+    protected native @Pointer long init(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSSet<NSString> permissions);
+    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:hometown:location:gender:permissions:")
+    protected native @Pointer long init(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email, NSArray<NSString> friendIDs, NSDate birthday, FBSDKUserAgeRange ageRange, FBSDKLocation hometown, FBSDKLocation location, String gender, NSSet<NSString> permissions);
+    @Method(selector = "initWithUserID:firstName:middleName:lastName:name:linkURL:refreshDate:imageURL:email:friendIDs:birthday:ageRange:hometown:location:gender:isLimited:permissions:")
+    protected native @Pointer long init(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate, NSURL imageURL, String email, NSArray<NSString> friendIDs, NSDate birthday, FBSDKUserAgeRange ageRange, FBSDKLocation hometown, FBSDKLocation location, String gender, boolean isLimited, NSSet<NSString> permissions);
     @Method(selector = "isUpdatedWithAccessTokenChange")
     public static native boolean isUpdatedWithAccessTokenChange();
     @Method(selector = "setIsUpdatedWithAccessTokenChange:")

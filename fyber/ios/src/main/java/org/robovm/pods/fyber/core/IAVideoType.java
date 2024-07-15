@@ -42,10 +42,8 @@ import org.robovm.apple.coregraphics.*;
 public enum /*<name>*/IAVideoType/*</name>*/ implements ValuedEnum {
     /*<values>*/
     Undefined(0L),
-    @Deprecated
-    MRect(1L),
-    Interstitial(2L),
-    Rewarded(3L);
+    Interstitial(1L),
+    Rewarded(2L);
     /*</values>*/
 
     /*<bind>*/

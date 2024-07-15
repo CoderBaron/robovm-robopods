@@ -39,7 +39,7 @@ import org.robovm.apple.coreanimation.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/ISBaseAdInteractionAdapter/*</name>*/ 
     extends /*<extends>*/ISBaseAdAdapter/*</extends>*/ 
-    /*<implements>*/implements ISBaseAdInteractionAdapterProtocol/*</implements>*/ {
+    /*<implements>*/implements ISAdapterAdFullscreenProtocol/*</implements>*/ {
 
     /*<ptr>*/public static class ISBaseAdInteractionAdapterPtr extends Ptr<ISBaseAdInteractionAdapter, ISBaseAdInteractionAdapterPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(ISBaseAdInteractionAdapter.class); }/*</bind>*/
@@ -50,12 +50,16 @@ import org.robovm.apple.coreanimation.*;
     protected ISBaseAdInteractionAdapter(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithAdUnit:adapterConfig:")
     public ISBaseAdInteractionAdapter(ISAdUnit adUnit, ISAdapterConfig adapterConfig) { super(adUnit, adapterConfig); }
+    @Method(selector = "initWithAdUnit:adapterConfig:adUnitObjectId:")
+    public ISBaseAdInteractionAdapter(ISAdUnit adUnit, ISAdapterConfig adapterConfig, NSUUID adUnitObjectId) { super(adUnit, adapterConfig, adUnitObjectId); }
     /*</constructors>*/
     /*<properties>*/
     
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "loadAdWithAdData:delegate:")
+    public native void loadAd(ISAdData adData, ISAdapterAdDelegate delegate);
     @Method(selector = "showAdWithViewController:adData:delegate:")
     public native void showAd(UIViewController viewController, ISAdData adData, ISAdapterAdInteractionDelegate delegate);
     @Method(selector = "isAdAvailableWithAdData:")
